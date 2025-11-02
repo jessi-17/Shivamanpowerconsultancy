@@ -1,6 +1,6 @@
 // import { Header } from "@radix-ui/react-accordion";
 import React from "react";
-import Header from "../_components/Header";
+import Header from "../src/components/own/Header";
 
 const page = () => {
   return (
@@ -18,3 +18,4 @@ const page = () => {
 };
 
 export default page;
+
