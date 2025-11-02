@@ -1,6 +1,6 @@
 import Image from "next/image";
 import "./global.css";
-import Header from "./_components/Header";
+import Header from "../src/components/own/Header";
 import { Icon } from "@iconify/react";
 import heroimg1 from "../public/hero img-1.png";
 import heroimg2 from "../public/hero img.png";
