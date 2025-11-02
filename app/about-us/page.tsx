@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from "../src/components/own/Header";
+import Header from "../../src/components/own/Header";
 
 import "../global.css";
 
@@ -20,3 +20,4 @@ const page = () => {
 
 
 export default page
+
