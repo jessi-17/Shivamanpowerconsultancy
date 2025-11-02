@@ -95,3 +95,6 @@ span{
   /* font-size: bold; */
  font-family: helveticabold !important; 
 }
+.link-trigger:hover .link{
+  @apply bg-(--color-bland-800) text-(--color-bland-25) p-1 rotate-0 transition-all;
+}
