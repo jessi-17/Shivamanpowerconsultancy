@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: helveticalight;
+  src: url("../fonts/HelveticaNeueLight.otf");
+}
+@font-face {
+  font-family: helveticaMedium;
+  src: url("../fonts/HelveticaNeueMedium.otf");
+}
+@font-face {
+  font-family: helveticaBold;
+  src: url("../fonts/HelveticaNeueBold.otf");
+}
+
+.font-light-hel {
+  font-family: helveticalight !important;
+}
+.font-medium-hel {
+  font-family: helveticamedium !important;
+}
+.font-bold-hel {
+  font-family: helveticabold !important;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  line-height: 150%;
+  font-weight: 400;
+  background-color: #FAFAFA;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: helveticalight !important;
+}
+p{
+  font-size: light !important;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+  color: var(--color-bland-700);
+}
+section {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-width: 992px) {
+    margin: 0 1rem;
+  }
+  @media screen and (max-width: 576px) {
+    margin: 0 1rem;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+.top-margins{
+  margin-top: 80px;
+  @media(max-width:768px) {
+    margin-top: 40px;
+    
+  }
+}
+:root{
+    --primary-color-15:#FEFAFB;
+    --primary-color-25:#FCF3F4;
+    --primary-color-50:#F9E7E8;
+    --primary-color-75:#F3D0D2;
+    --primary-color-100:#E6A0A5;
+    --primary-color-200:#DA7179;
+    --primary-color:#C1121F;
+    --primary-color-500:#9A0E19;
+    --primary-color-600:#740B13;
+    --primary-color-800:#4D070C;
+    --primary-color-900:#270406;    
+    --color-bland-800:#272727;
+    --color-bland-700:#484848;
+    --color-bland-600:#6B6B6B;
+    --color-bland-500:#878787;
+    --color-bland-400:#DADADA;
+    --color-bland-300:#EDEDED;
+    --color-bland-100:#F6F6F6;
+    --color-bland-50:#FBFBFB;
+    --color-bland-25:#FFFFFF;
+}
+[data-state="open"] .fixed.inset-0.bg-black {
+  background-color: transparent !important;
+}
+
+[data-radix-sheet-content] > button {
+  display: none !important;
+}
+span{
+  color: var(--primary-color);
+  /* font-size: bold; */
+ font-family: helveticabold !important; 
+}

@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "title": "About",
+    "path": ["/about-us"],
+    "actualPath": "/about-us"
+  },
+  {
+    "id": 2,
+    "title": "Services",
+    "path": ["/services", "/service-details"],
+    "actualPath": "/services",
+    "icon": "/static/img/plus-ic.svg"
+  },
+  {
+    "id": 3,
+    "title": "Current Demands",
+    "path": ["/CurrentDemands"],
+    "actualPath": "/CurrentDemands",
+    "icon": "/static/img/plus-ic.svg"
+  },
+  {
+    "id": 4,
+    "title": "Testimonials",
+    "path": ["/Testimonials", "/Testimonials-details"],
+    "actualPath": "/Testimonials"
+  },
+  {
+    "id": 5,
+    "title": "Careers",
+    "path": ["/careers", "/career-details"],
+    "actualPath": "/careers"
+  },
+  {
+    "id": 6,
+    "title": "Contact us",
+    "path": ["/contact-us"],
+    "actualPath": "/contact-us",
+    "isButton": true
+  }
+]
