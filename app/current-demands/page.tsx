@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from "../src/components/own/Header";
+import Header from "../../src/components/own/Header";
 
 const page = () => {
   return (
@@ -19,3 +19,4 @@ const page = () => {
 
 
 export default page
+
