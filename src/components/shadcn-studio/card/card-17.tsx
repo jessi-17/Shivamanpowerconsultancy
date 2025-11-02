@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-
+import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 interface CardTransform {
@@ -109,7 +109,7 @@ const Card3dDemo = () => {
         <CardTitle>Dynamic 3D Hover Card</CardTitle>
       </CardHeader>
       <CardContent className='space-y-6 text-sm'>
-        <img
+        <Image
           ref={imageRef}
           src='https://cdn.shadcnstudio.com/ss-assets/components/card/image-10.png?width=350&format=auto'
           alt='Banner'
