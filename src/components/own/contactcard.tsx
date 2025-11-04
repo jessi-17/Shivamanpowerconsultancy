@@ -36,7 +36,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   const res = await fetch("/api/submit-form", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ yourname, phone, email, interest }),
+    // body: JSON.stringify({ yourname, phone, email, interest }),
   });
 
   const data = await res.json();
@@ -51,9 +51,9 @@ const handleSubmit = async (e: React.FormEvent) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-wrap lg:flex-nowrap items-center min-h-[220px] w-[86%] mx-auto bg-(--color-bland-25) rounded-2xl px-8 py-6 shadow-lg transition-shadow duration-300 z-0 border border-[#0000000f] gap-8 md:gap-4"
+      className="flex flex-wrap lg:flex-nowrap items-center min-h-[220px] mx-auto bg-(--color-bland-25) rounded-2xl px-8 py-6 shadow-lg transition-shadow duration-300 z-0 border border-[#0000000f] gap-8 md:gap-4 max-w-[80%]"
     >
-      <div className="grid w-full max-w-sm items-center gap-3">
+      <div className="items-center gap-3">
         <Label htmlFor="name">Name</Label>
         <Input
           type="text"
@@ -65,7 +65,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         />
       </div>
 
-      <div className="grid w-full max-w-sm items-center gap-3">
+      <div className="items-center gap-3">
         <Label htmlFor="phone">Phone</Label>
         <Input
           type="tel"
@@ -77,7 +77,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         />
       </div>
 
-      <div className="grid w-full max-w-sm items-center gap-3">
+      <div className="items-center gap-3">
         <Label htmlFor="email">Email</Label>
         <Input
           type="email"
@@ -89,7 +89,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         />
       </div>
 
-      <div className="grid w-full items-center gap-3">
+      <div className="items-center gap-3">
         <Label>You're Interested In</Label>
         <Select onValueChange={handleSelectChange}>
           <SelectTrigger className="border border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-400 w-full">
