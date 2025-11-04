@@ -98,3 +98,7 @@ span{
 .link-trigger:hover .link{
   @apply bg-(--color-bland-800) text-(--color-bland-25) p-1 rotate-0 transition-all;
 }
+.CTA_bg {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.447), rgba(0, 0, 0, 0.562)), url("../public/hero img.png");
+  background-position:center;
+}
