@@ -53,7 +53,7 @@ const handleSubmit = async (e: React.FormEvent) => {
       onSubmit={handleSubmit}
       className="flex flex-wrap lg:flex-nowrap items-center min-h-[220px] mx-auto bg-(--color-bland-25) rounded-2xl px-8 py-6 shadow-lg transition-shadow duration-300 z-0 border border-[#0000000f] gap-8 md:gap-4 max-w-[80%]"
     >
-      <div className="items-center gap-3">
+      <div className="flex  flex-col justify-start gap-2">
         <Label htmlFor="name">Name</Label>
         <Input
           type="text"
@@ -65,7 +65,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         />
       </div>
 
-      <div className="items-center gap-3">
+      <div className="flex  flex-col justify-start gap-2">
         <Label htmlFor="phone">Phone</Label>
         <Input
           type="tel"
@@ -77,7 +77,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         />
       </div>
 
-      <div className="items-center gap-3">
+      <div className="flex  flex-col justify-start gap-2">
         <Label htmlFor="email">Email</Label>
         <Input
           type="email"
@@ -89,7 +89,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         />
       </div>
 
-      <div className="items-center gap-3">
+      <div className="flex  flex-col justify-start gap-2 flex-1">
         <Label>You're Interested In</Label>
         <Select onValueChange={handleSelectChange}>
           <SelectTrigger className="border border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-400 w-full">
@@ -102,7 +102,6 @@ const handleSubmit = async (e: React.FormEvent) => {
               <SelectItem value="Labour work">Labour work</SelectItem>
               <SelectItem value="Plumber">Plumber</SelectItem>
               <SelectItem value="Hair salon">Hair salon</SelectItem>
-              <SelectItem value="Pineapple">Pineapple</SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>
