@@ -10,13 +10,28 @@ import pattern from "../public/pattern.svg";
 import Marqueesection from "@/components/own/Marquee";
 import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
+import service1 from "../public/recruitment.png";
+import service6 from "../public/skilldevelopment.png";
+import service5 from "../public/overseasplacement.png";
+import service4 from "../public/executiveserach.png";
+import service3 from "../public/HR consulting.png";
+import service2 from "../public/Industrialworkforce.png";
 import industry from "../public/industry.png";
+
+import { useEffect, useRef } from "react";
+
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+interface CardTransform {
+  rotateX: number;
+  rotateY: number;
+  scale: number;
+}
+
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import Card3dDemo from "@/components/own/Cards";
 import {
   Accordion,
   AccordionContent,
@@ -35,7 +50,7 @@ export default function Home() {
         <div className="content-wrapper">
           <section className="top-margins flex flex-col gap-8 md:flex-row items-start justify-between px-4 ">
             <div className="flex flex-col w-full md:max-w-[670px] gap-4 ">
-              <h1 className="font-medium text-left leading-[120%] md:text-left text-4xl lg:text-6xl">
+              <h1 className="font-extrabold text-left leading-[120%] md:text-left text-4xl lg:text-6xl">
                 Your Strategic <span>Manpower Partner</span> for the Gulf Region
               </h1>
               <p className="text-(--color-bland-700) leading-[150%] text-left md:text-left">
@@ -156,33 +171,334 @@ export default function Home() {
                 </div>
                 <div className="flex flex-1 gap-6 flex-wrap">
                   <div className="flex-1">
-                    <Card3dDemo />
+                    <Card
+                      onMouseMove={(e) => {
+                        const card = e.currentTarget;
+                        const rect = card.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+
+                        const centerX = rect.width / 2;
+                        const centerY = rect.height / 2;
+
+                        const rotateX = -((y - centerY) / 10);
+                        const rotateY = (x - centerX) / 10;
+
+                        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+                      }}
+                      onMouseLeave={(e) => {
+                        const card = e.currentTarget;
+                        card.style.transform =
+                          "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+                      }}
+                      className="border border-[#00000017] inset-shadow-2xl inset-2 bg-(--color-bland-25) cursor-pointer flex gap-2 h-[420px] sm:h-full transition-transform duration-200"
+                    >
+                      <CardHeader className="flex justify-end items-center w-full">
+                        <CardTitle className="border-2 w-fit rounded-4xl !text-(--color-bland-600)">
+                          <Icon
+                            icon="si:arrow-right-duotone"
+                            width="32"
+                            height="32"
+                          />
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="text-sm items-center flex flex-col px-4">
+                        <Image
+                          src={service1}
+                          alt="img"
+                          className="rounded-md object-fit drop-shadow-2xl"
+                          width={180}
+                          height={150}
+                        />
+                        <div className="flex flex-col items-center gap-4">
+                          <p className="text-2xl text-center">
+                            Recruitment & Staffing
+                          </p>
+                          <h2 className="text-center text-base text-(--color-bland-700)">
+                            From temporary staff to long-term employees, we
+                            connect businesses with talent that fits their
+                            requirements and culture.
+                          </h2>
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
                   <div className="flex-1">
-                    <Card3dDemo />
+                    <Card
+                      onMouseMove={(e) => {
+                        const card = e.currentTarget;
+                        const rect = card.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+
+                        const centerX = rect.width / 2;
+                        const centerY = rect.height / 2;
+
+                        const rotateX = -((y - centerY) / 10);
+                        const rotateY = (x - centerX) / 10;
+
+                        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+                      }}
+                      onMouseLeave={(e) => {
+                        const card = e.currentTarget;
+                        card.style.transform =
+                          "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+                      }}
+                      className="border border-[#00000017] inset-shadow-2xl inset-2 bg-(--color-bland-25) cursor-pointer flex gap-2 h-[420px] sm:h-full transition-transform duration-200"
+                    >
+                      <CardHeader className="flex justify-end  items-center w-full ">
+                        <CardTitle className="border-2 w-fit rounded-4xl !text-(--color-bland-600)">
+                          <Icon
+                            icon="si:arrow-right-duotone"
+                            width="32"
+                            height="32"
+                          />
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="text-sm items-center flex flex-col px-4">
+                        <Image
+                          src={service2}
+                          alt="img"
+                          className="rounded-md object-fit drop-shadow-2xl"
+                          width={180}
+                          height={150}
+                        />
+                        <div className="flex flex-col items-center gap-4">
+                          <p className="text-2xl text-center">
+                            Industrial Workforce Supply
+                          </p>
+                          <h2 className="text-center text-base text-(--color-bland-700)">
+                            From temporary staff to long-term employees, we
+                            connect businesses with talent that fits their
+                            requirements and culture.
+                          </h2>
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-6">
                   <div className="flex-2 flex flex-wrap gap-6">
                     <div className="flex-1">
-                      <Card3dDemo />
+                      <Card
+                        onMouseMove={(e) => {
+                          const card = e.currentTarget;
+                          const rect = card.getBoundingClientRect();
+                          const x = e.clientX - rect.left;
+                          const y = e.clientY - rect.top;
+
+                          const centerX = rect.width / 2;
+                          const centerY = rect.height / 2;
+
+                          const rotateX = -((y - centerY) / 10);
+                          const rotateY = (x - centerX) / 10;
+
+                          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+                        }}
+                        onMouseLeave={(e) => {
+                          const card = e.currentTarget;
+                          card.style.transform =
+                            "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+                        }}
+                        className="border border-[#00000017] inset-shadow-2xl inset-2 bg-(--color-bland-25) cursor-pointer flex gap-2 h-[420px] sm:h-full transition-transform duration-200"
+                      >
+                        <CardHeader className="flex justify-end  items-center w-full ">
+                          <CardTitle className="border-2 w-fit rounded-4xl !text-(--color-bland-600)">
+                            <Icon
+                              icon="si:arrow-right-duotone"
+                              width="32"
+                              height="32"
+                            />
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="text-sm items-center flex flex-col px-4">
+                          <Image
+                            src={service3}
+                            alt="img"
+                            className="rounded-md object-fit drop-shadow-2xl"
+                            width={180}
+                            height={150}
+                          />
+                          <div className="flex flex-col items-center gap-4">
+                            <p className="text-2xl text-center">
+                              HR Consulting
+                            </p>
+                            <h2 className="text-center text-base text-(--color-bland-700)">
+                              From temporary staff to long-term employees, we
+                              connect businesses with talent that fits their
+                              requirements and culture.
+                            </h2>
+                          </div>
+                        </CardContent>
+                      </Card>
                     </div>
                     <div className="flex-1">
-                      <Card3dDemo />
+                      <Card
+                        onMouseMove={(e) => {
+                          const card = e.currentTarget;
+                          const rect = card.getBoundingClientRect();
+                          const x = e.clientX - rect.left;
+                          const y = e.clientY - rect.top;
+
+                          const centerX = rect.width / 2;
+                          const centerY = rect.height / 2;
+
+                          const rotateX = -((y - centerY) / 10);
+                          const rotateY = (x - centerX) / 10;
+
+                          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+                        }}
+                        onMouseLeave={(e) => {
+                          const card = e.currentTarget;
+                          card.style.transform =
+                            "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+                        }}
+                        className="border border-[#00000017] inset-shadow-2xl inset-2 bg-(--color-bland-25) cursor-pointer flex gap-2 h-[420px] sm:h-full transition-transform duration-200"
+                      >
+                        <CardHeader className="flex justify-end  items-center w-full ">
+                          <CardTitle className="border-2 w-fit rounded-4xl !text-(--color-bland-600)">
+                            <Icon
+                              icon="si:arrow-right-duotone"
+                              width="32"
+                              height="32"
+                            />
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="text-sm items-center flex flex-col px-4">
+                          <Image
+                            src={service4}
+                            alt="img"
+                            className="rounded-md object-fit drop-shadow-2xl"
+                            width={180}
+                            height={150}
+                          />
+                          <div className="flex flex-col items-center gap-4">
+                            <p className="text-2xl text-center">
+                              Executive Search
+                            </p>
+                            <h2 className="text-center text-base text-(--color-bland-700)">
+                              From temporary staff to long-term employees, we
+                              connect businesses with talent that fits their
+                              requirements and culture.
+                            </h2>
+                          </div>
+                        </CardContent>
+                      </Card>
                     </div>
                   </div>
                   <div className="flex-2 flex flex-wrap gap-6">
                     <div className="flex-1">
-                      <Card3dDemo />
+                      <Card
+                        onMouseMove={(e) => {
+                          const card = e.currentTarget;
+                          const rect = card.getBoundingClientRect();
+                          const x = e.clientX - rect.left;
+                          const y = e.clientY - rect.top;
+
+                          const centerX = rect.width / 2;
+                          const centerY = rect.height / 2;
+
+                          const rotateX = -((y - centerY) / 10);
+                          const rotateY = (x - centerX) / 10;
+
+                          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+                        }}
+                        onMouseLeave={(e) => {
+                          const card = e.currentTarget;
+                          card.style.transform =
+                            "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+                        }}
+                        className="border border-[#00000017] inset-shadow-2xl inset-2 bg-(--color-bland-25) cursor-pointer flex gap-2 h-[420px] sm:h-full transition-transform duration-200"
+                      >
+                        <CardHeader className="flex justify-end  items-center w-full ">
+                          <CardTitle className="border-2 w-fit rounded-4xl !text-(--color-bland-600)">
+                            <Icon
+                              icon="si:arrow-right-duotone"
+                              width="32"
+                              height="32"
+                            />
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="text-sm items-center flex flex-col px-4">
+                          <Image
+                            src={service5}
+                            alt="img"
+                            className="rounded-md object-fit drop-shadow-2xl"
+                            width={180}
+                            height={150}
+                          />
+                          <div className="flex flex-col items-center gap-4">
+                            <p className="text-2xl text-center">
+                              Overseas Placement
+                            </p>
+                            <h2 className="text-center text-base text-(--color-bland-700)">
+                              From temporary staff to long-term employees, we
+                              connect businesses with talent that fits their
+                              requirements and culture.
+                            </h2>
+                          </div>
+                        </CardContent>
+                      </Card>
                     </div>
                     <div className="flex-1">
-                      <Card3dDemo />
+                      <Card
+                        onMouseMove={(e) => {
+                          const card = e.currentTarget;
+                          const rect = card.getBoundingClientRect();
+                          const x = e.clientX - rect.left;
+                          const y = e.clientY - rect.top;
+
+                          const centerX = rect.width / 2;
+                          const centerY = rect.height / 2;
+
+                          const rotateX = -((y - centerY) / 10);
+                          const rotateY = (x - centerX) / 10;
+
+                          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+                        }}
+                        onMouseLeave={(e) => {
+                          const card = e.currentTarget;
+                          card.style.transform =
+                            "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+                        }}
+                        className="border border-[#00000017] inset-shadow-2xl inset-2 bg-(--color-bland-25) cursor-pointer flex gap-2 h-[420px] sm:h-full transition-transform duration-200"
+                      >
+                        <CardHeader className="flex justify-end  items-center w-full ">
+                          <CardTitle className="border-2 w-fit rounded-4xl !text-(--color-bland-600)">
+                            <Icon
+                              icon="si:arrow-right-duotone"
+                              width="32"
+                              height="32"
+                            />
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="text-sm items-center flex flex-col px-4">
+                          <Image
+                            src={service6}
+                            alt="img"
+                            className="rounded-md object-fit drop-shadow-2xl"
+                            width={180}
+                            height={150}
+                          />
+                          <div className="flex flex-col items-center gap-4">
+                            <p className="text-[24px] !font-normal text-center">
+                              Skill Development & Training
+                            </p>
+                            <h2 className="text-center text-base text-(--color-bland-700)">
+                              From temporary staff to long-term employees, we
+                              connect businesses with talent that fits their
+                              requirements and culture.
+                            </h2>
+                          </div>
+                        </CardContent>
+                      </Card>
                     </div>
                   </div>
                 </div>
               </div>
             </section>
           </div>
+
 
           {/* industries we serve */}
           <section className="top-margins px-4">
@@ -495,48 +811,86 @@ export default function Home() {
             <div className="flex-1 mt-4 md:mt-16  w-full md:max-w-[60%]">
               <Accordion type="single" collapsible>
                 <AccordionItem value="item-1">
-                  <AccordionTrigger className="hover:no-underline font-medium text-lg leading-[120%] text-(--color-bland-800) cursor-pointer py-6"> What is your process for vetting candidates?</AccordionTrigger>
-                  <AccordionContent >
-                    <p>Our rigorous process includes multi-stage interviews, skill assessments, background checks, and verification of all credentials to ensure you only meet with qualified, reliable professionals.</p>
+                  <AccordionTrigger className="hover:no-underline font-medium text-lg leading-[120%] text-(--color-bland-800) cursor-pointer py-6">
+                    {" "}
+                    What is your process for vetting candidates?
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p>
+                      Our rigorous process includes multi-stage interviews,
+                      skill assessments, background checks, and verification of
+                      all credentials to ensure you only meet with qualified,
+                      reliable professionals.
+                    </p>
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
-                  <AccordionTrigger className="hover:no-underline font-medium text-lg leading-[120%] text-(--color-bland-800) cursor-pointer py-6">  Which countries in the Gulf do you specialize in?</AccordionTrigger>
+                  <AccordionTrigger className="hover:no-underline font-medium text-lg leading-[120%] text-(--color-bland-800) cursor-pointer py-6">
+                    {" "}
+                    Which countries in the Gulf do you specialize in?
+                  </AccordionTrigger>
                   <AccordionContent>
                     <p>
-                      Our rigorous process includes multi-stage interviews, skill assessments, background checks, and verification of all credentials to ensure you only meet with qualified, reliable professionals.
-                      </p>
+                      Our rigorous process includes multi-stage interviews,
+                      skill assessments, background checks, and verification of
+                      all credentials to ensure you only meet with qualified,
+                      reliable professionals.
+                    </p>
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
-                  <AccordionTrigger className="hover:no-underline font-medium text-lg leading-[120%] text-(--color-bland-800) cursor-pointer py-6"> Are there any fees for candidates to apply for a job?</AccordionTrigger>
+                  <AccordionTrigger className="hover:no-underline font-medium text-lg leading-[120%] text-(--color-bland-800) cursor-pointer py-6">
+                    {" "}
+                    Are there any fees for candidates to apply for a job?
+                  </AccordionTrigger>
                   <AccordionContent>
                     <p>
-                    Our rigorous process includes multi-stage interviews, skill assessments, background checks, and verification of all credentials to ensure you only meet with qualified, reliable professionals.
+                      Our rigorous process includes multi-stage interviews,
+                      skill assessments, background checks, and verification of
+                      all credentials to ensure you only meet with qualified,
+                      reliable professionals.
                     </p>
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4">
-                  <AccordionTrigger className="hover:no-underline font-medium text-lg leading-[120%] text-(--color-bland-800) cursor-pointer py-6"> What support do you offer after I get a job offer?</AccordionTrigger>
+                  <AccordionTrigger className="hover:no-underline font-medium text-lg leading-[120%] text-(--color-bland-800) cursor-pointer py-6">
+                    {" "}
+                    What support do you offer after I get a job offer?
+                  </AccordionTrigger>
                   <AccordionContent>
                     <p>
-                      Our rigorous process includes multi-stage interviews, skill assessments, background checks, and verification of all credentials to ensure you only meet with qualified, reliable professionals.
-                      </p>
+                      Our rigorous process includes multi-stage interviews,
+                      skill assessments, background checks, and verification of
+                      all credentials to ensure you only meet with qualified,
+                      reliable professionals.
+                    </p>
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-5">
-                  <AccordionTrigger className="hover:no-underline font-medium text-lg leading-[120%] text-(--color-bland-800) cursor-pointer py-6"> Which countries in the Gulf do you specialize in?</AccordionTrigger>
+                  <AccordionTrigger className="hover:no-underline font-medium text-lg leading-[120%] text-(--color-bland-800) cursor-pointer py-6">
+                    {" "}
+                    Which countries in the Gulf do you specialize in?
+                  </AccordionTrigger>
                   <AccordionContent>
                     <p>
-                    Our rigorous process includes multi-stage interviews, skill assessments, background checks, and verification of all credentials to ensure you only meet with qualified, reliable professionals.
+                      Our rigorous process includes multi-stage interviews,
+                      skill assessments, background checks, and verification of
+                      all credentials to ensure you only meet with qualified,
+                      reliable professionals.
                     </p>
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-6">
-                  <AccordionTrigger className="hover:no-underline font-medium text-lg leading-[120%] text-(--color-bland-800) cursor-pointer py-6"> Are there any fees for candidates to apply for a job? </AccordionTrigger>
+                  <AccordionTrigger className="hover:no-underline font-medium text-lg leading-[120%] text-(--color-bland-800) cursor-pointer py-6">
+                    {" "}
+                    Are there any fees for candidates to apply for a job?{" "}
+                  </AccordionTrigger>
                   <AccordionContent>
                     <p>
-                    Our rigorous process includes multi-stage interviews, skill assessments, background checks, and verification of all credentials to ensure you only meet with qualified, reliable professionals.
+                      Our rigorous process includes multi-stage interviews,
+                      skill assessments, background checks, and verification of
+                      all credentials to ensure you only meet with qualified,
+                      reliable professionals.
                     </p>
                   </AccordionContent>
                 </AccordionItem>
@@ -546,7 +900,6 @@ export default function Home() {
           {/* Footer */}
           <section className="px-4 top-margins ">
             <Footer2 />
-
           </section>
         </div>
       </div>
