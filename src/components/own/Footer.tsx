@@ -70,7 +70,7 @@ const Footer2 = ({
   ],
 }: Footer2Props) => {
   return (
-    <section className="py-8">
+    <div className="py-8">
       <div className="container">
         <footer>
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-6">
@@ -78,16 +78,16 @@ const Footer2 = ({
               <div className="flex items-center gap-2 lg:justify-start">
                 <Image src={logo} alt="logo" width={100} height={100} />
               </div>
-              <p className="mt-4 font-medium max-w-[60%]">{tagline}</p>
+              <h2 className="mt-4 max-w-[50%] font-light-hel">{tagline}</h2>
             </div>
             {menuItems.map((section, sectionIdx) => (
               <div key={sectionIdx}>
-                <h3 className="mb-4 font-bold">{section.title}</h3>
+                <h3 className="mb-4 font-bold tracking-wider text-lg">{section.title}</h3>
                 <ul className="text-muted-foreground space-y-4">
                   {section.links.map((link, linkIdx) => (
                     <li
                       key={linkIdx}
-                      className="hover:text-primary font-medium"
+                      className="hover:text-primary font-light-hel text-base hover:font-bold"
                     >
                       <a href={link.url}>{link.text}</a>
                     </li>
@@ -108,7 +108,7 @@ const Footer2 = ({
           </div>
         </footer>
       </div>
-    </section>
+    </div>
   );
 };
 

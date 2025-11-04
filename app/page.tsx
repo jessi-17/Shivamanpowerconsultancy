@@ -39,6 +39,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Footer2 } from "@/components/own/Footer";
+import industries from "./_lib/data/industriesweserve";
+import Link from "next/link";
+import CTA from "@/components/own/CTA";
 export default function Home() {
   const [open, setopen] = useState(false);
   return (
@@ -53,13 +56,13 @@ export default function Home() {
               <h1 className="font-extrabold text-left leading-[120%] md:text-left text-4xl lg:text-6xl">
                 Your Strategic <span>Manpower Partner</span> for the Gulf Region
               </h1>
-              <p className="text-(--color-bland-700) leading-[150%] text-left md:text-left">
+              <h2 className="text-(--color-bland-700) leading-[150%] text-left md:text-left">
                 As a government-recognized consultancy, For over 25 years, we've
                 connected <br className="hidden md:block" /> leading companies
                 in the UAE, Saudi Arabia, Qatar, and across the Gulf with a{" "}
                 <br className="hidden md:block" /> world-class, vetted
                 workforce. We build careers and bridge opportunities.
-              </p>
+              </h2>
               <ul className="flex flex-col gap-2 mt-4">
                 <li className="flex items-start gap-4 text-(--color-bland-500) leading-[150%] text-left ">
                   <Icon
@@ -68,7 +71,7 @@ export default function Home() {
                     width="18"
                     height="18"
                   />
-                  <p> Registered Overseas Recruitment (RA) Compliance </p>
+                  <h4> Registered Overseas Recruitment (RA) Compliance </h4>
                 </li>
                 <li className="flex items-center gap-4 text-(--color-bland-500) leading-[150%] text-left ">
                   <Icon
@@ -77,7 +80,7 @@ export default function Home() {
                     width="18"
                     height="18"
                   />
-                  <p>E-Migrate Process Support </p>
+                  <h4>E-Migrate Process Support </h4>
                 </li>
                 <li className="flex items-center gap-4 text-(--color-bland-500) leading-[150%] text-left ">
                   <Icon
@@ -86,7 +89,7 @@ export default function Home() {
                     width="18"
                     height="18"
                   />
-                  <p>Trade Testing & Skill Screening </p>
+                  <h4>Trade Testing & Skill Screening </h4>
                 </li>
                 <li className="flex items-center gap-4 text-(--color-bland-500) leading-[150%] text-left ">
                   <Icon
@@ -95,7 +98,7 @@ export default function Home() {
                     width="18"
                     height="18"
                   />
-                  <p>Visa, Medical & Document Assistance </p>
+                  <h4>Visa, Medical & Document Assistance </h4>
                 </li>
               </ul>
             </div>
@@ -145,12 +148,12 @@ export default function Home() {
                     <h2 className="text-3xl font-bold leadin-[120%] tracking-wider">
                       Tailored Recruitment Solutions for Every Business Need{" "}
                     </h2>
-                    <p className="tracking-wide">
+                    <h4 className="tracking-wide">
                       We don't believe in one-size-fits-all staffing. Whether
                       you're a small business or a large enterprise, we provide
                       manpower that's reliable, skilled, and ready to perform
                       from day one.
-                    </p>
+                    </h4>
                     <div className="w-full flex-wrap flex  flex-col md:flex-row gap-6">
                       <Button className="px-5 py-5 bg-(--primary-color) text-(--color-bland-25) rounded-[32px] text-base !font-light leading-[150%] cursor-pointer hover:scale-95 border-(--primary-color)">
                         Book a call Now{" "}
@@ -165,6 +168,7 @@ export default function Home() {
                           icon="si:arrow-right-duotone"
                           className="!h-[30px] !w-[24px]"
                         />
+                     
                       </Button>
                     </div>
                   </div>
@@ -502,7 +506,7 @@ export default function Home() {
 
           {/* industries we serve */}
           <section className="top-margins px-4">
-            <div className="flex flex-col items-center justify-center gap-2 pb-8 md:pb-20">
+         <div className="flex flex-col items-center justify-center gap-2 pb-8 md:pb-20">
               <h2 className="text-[42px] font-black leading-[120%]">
                 Industries we <span>serve</span>
               </h2>
@@ -511,272 +515,83 @@ export default function Home() {
                 trust and expertise.
               </p>
             </div>
+
+
             <div className="flex flex-col gap-8 md:gap-2">
-              <div className="p-4 sm:p-8 rounded-[16px] hover:shadow-xl link-trigger">
-                <div className="grid grid-cols-5 md:grid-cols-12 gap-6">
-                  <div className="max-w-fit col-span-1 font-semibold text-[#000]">
-                    01
-                  </div>
-                  <div className="w-full h-full col-span-4 md:col-span-5">
-                    <Image
-                      src={industry}
-                      alt="img"
-                      className="rounded-[16px] h-auto sm:h-[320px] object-cover"
-                    />
-                  </div>
-                  <div className="col-span-4 md:col-span-5 flex flex-col gap-4 md:w-[450px] md:px-4">
-                    <p className="font-bold text-2xl text-(--color-bland-800)">
-                      Manufacturing & production
-                    </p>
-                    <p className="font-medium tracking-wider leading-[150%]">
-                      From machine operators to supervisors, we provide manpower
-                      that keeps assembly lines running efficiently and safely.
-                    </p>
-                  </div>
-                  <div className="flex justify-end col-span-1">
-                    <div className="flex justify-end border-2 w-fit rounded-4xl text-(--color-bland-600) h-fit -rotate-45 hover:rotate-0 link">
-                      <Icon
-                        icon="si:arrow-right-duotone"
-                        width="32"
-                        height="32"
+            {industries.map((industry,index) => {
+              return (
+                <div key={index} className="p-4 sm:p-8 rounded-[16px] hover:shadow-xl link-trigger">
+                  <div className="grid grid-cols-5 md:grid-cols-12 gap-6">
+                    <div className="max-w-fit col-span-1 font-semibold text-[#000]">
+                      {industry.id.toString().padStart(2, "0")}
+                    </div>
+                    <div className="w-full h-full col-span-4 md:col-span-5">
+                      <Image
+                        src={industry.src}
+                        alt="img"
+                        className="rounded-[16px] h-auto sm:h-[320px] object-cover"
                       />
+                    </div>
+                    <div className="col-span-4 md:col-span-5 flex flex-col gap-4 md:w-[450px] md:px-4">
+                      <p className="font-bold text-2xl text-(--color-bland-800)">
+                        {industry.title}
+                      </p>
+                      <h2 className="font-normal tracking-wider leading-[150%]">
+                        {industry.description}
+                      </h2>
+                    </div>
+                    <div className="flex justify-end col-span-1">
+                      <Link  href={industry.link} className="flex justify-end border-2 w-fit rounded-4xl text-(--color-bland-600) h-fit -rotate-45 hover:rotate-0 link">
+                        <Icon
+                          icon="si:arrow-right-duotone"
+                          width="32"
+                          height="32"
+                        />
+                      </Link>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="p-4 sm:p-8 rounded-[16px] hover:shadow-xl link-trigger">
-                <div className="grid grid-cols-5 md:grid-cols-12 gap-6">
-                  <div className="max-w-fit col-span-1 font-semibold text-[#000]">
-                    01
-                  </div>
-                  <div className="w-full h-full col-span-4 md:col-span-5">
-                    <Image
-                      src={industry}
-                      alt="img"
-                      className="rounded-[16px] h-auto sm:h-[320px] object-cover"
-                    />
-                  </div>
-                  <div className="col-span-4 md:col-span-5 flex flex-col gap-4 md:w-[450px] md:px-4">
-                    <p className="font-bold text-2xl text-(--color-bland-800)">
-                      Manufacturing & production
-                    </p>
-                    <p className="font-medium tracking-wider leading-[150%]">
-                      From machine operators to supervisors, we provide manpower
-                      that keeps assembly lines running efficiently and safely.
-                    </p>
-                  </div>
-                  <div className="flex justify-end col-span-1">
-                    <div className="flex justify-end border-2 w-fit rounded-4xl text-(--color-bland-600) h-fit -rotate-45 hover:rotate-0 link">
-                      <Icon
-                        icon="si:arrow-right-duotone"
-                        width="32"
-                        height="32"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="p-4 sm:p-8 rounded-[16px] hover:shadow-xl link-trigger">
-                <div className="grid grid-cols-5 md:grid-cols-12 gap-6">
-                  <div className="max-w-fit col-span-1 font-semibold text-[#000]">
-                    01
-                  </div>
-                  <div className="w-full h-full col-span-4 md:col-span-5">
-                    <Image
-                      src={industry}
-                      alt="img"
-                      className="rounded-[16px] h-auto sm:h-[320px] object-cover"
-                    />
-                  </div>
-                  <div className="col-span-4 md:col-span-5 flex flex-col gap-4 md:w-[450px] md:px-4">
-                    <p className="font-bold text-2xl text-(--color-bland-800)">
-                      Manufacturing & production
-                    </p>
-                    <p className="font-medium tracking-wider leading-[150%]">
-                      From machine operators to supervisors, we provide manpower
-                      that keeps assembly lines running efficiently and safely.
-                    </p>
-                  </div>
-                  <div className="flex justify-end col-span-1">
-                    <div className="flex justify-end border-2 w-fit rounded-4xl text-(--color-bland-600) h-fit -rotate-45 hover:rotate-0 link">
-                      <Icon
-                        icon="si:arrow-right-duotone"
-                        width="32"
-                        height="32"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="p-4 sm:p-8 rounded-[16px] hover:shadow-xl link-trigger">
-                <div className="grid grid-cols-5 md:grid-cols-12 gap-6">
-                  <div className="max-w-fit col-span-1 font-semibold text-[#000]">
-                    01
-                  </div>
-                  <div className="w-full h-full col-span-4 md:col-span-5">
-                    <Image
-                      src={industry}
-                      alt="img"
-                      className="rounded-[16px] h-auto sm:h-[320px] object-cover"
-                    />
-                  </div>
-                  <div className="col-span-4 md:col-span-5 flex flex-col gap-4 md:w-[450px] md:px-4">
-                    <p className="font-bold text-2xl text-(--color-bland-800)">
-                      Manufacturing & production
-                    </p>
-                    <p className="font-medium tracking-wider leading-[150%]">
-                      From machine operators to supervisors, we provide manpower
-                      that keeps assembly lines running efficiently and safely.
-                    </p>
-                  </div>
-                  <div className="flex justify-end col-span-1">
-                    <div className="flex justify-end border-2 w-fit rounded-4xl text-(--color-bland-600) h-fit -rotate-45 hover:rotate-0 link">
-                      <Icon
-                        icon="si:arrow-right-duotone"
-                        width="32"
-                        height="32"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              );
+            })}
+
 
               <Collapsible open={open} onOpenChange={setopen}>
                 <CollapsibleContent>
-                  <div>
-                    <div className="p-4 sm:p-8 rounded-[16px] hover:shadow-xl link-trigger">
-                      <div className="grid grid-cols-5 md:grid-cols-12 gap-6">
-                        <div className="max-w-fit col-span-1 font-semibold text-[#000]">
-                          01
-                        </div>
-                        <div className="w-full h-full col-span-4 md:col-span-5">
-                          <Image
-                            src={industry}
-                            alt="img"
-                            className="rounded-[16px] h-auto sm:h-[320px] object-cover"
-                          />
-                        </div>
-                        <div className="col-span-4 md:col-span-5 flex flex-col gap-4 md:w-[450px] md:px-4">
-                          <p className="font-bold text-2xl text-(--color-bland-800)">
-                            Manufacturing & production
-                          </p>
-                          <p className="font-medium tracking-wider leading-[150%]">
-                            From machine operators to supervisors, we provide
-                            manpower that keeps assembly lines running
-                            efficiently and safely.
-                          </p>
-                        </div>
-                        <div className="flex justify-end col-span-1">
-                          <div className="flex justify-end border-2 w-fit rounded-4xl text-(--color-bland-600) h-fit -rotate-45 hover:rotate-0 link">
-                            <Icon
-                              icon="si:arrow-right-duotone"
-                              width="32"
-                              height="32"
-                            />
-                          </div>
-                        </div>
-                      </div>
+             {industries.map((industry,index) => {
+              return (
+                <div key={index} className="p-4 sm:p-8 rounded-[16px] hover:shadow-xl link-trigger">
+                  <div className="grid grid-cols-5 md:grid-cols-12 gap-6">
+                    <div className="max-w-fit col-span-1 font-semibold text-[#000]">
+                      {industry.id.toString().padStart(2, "0")}
                     </div>
-                    <div className="p-4 sm:p-8 rounded-[16px] hover:shadow-xl link-trigger">
-                      <div className="grid grid-cols-5 md:grid-cols-12 gap-6">
-                        <div className="max-w-fit col-span-1 font-semibold text-[#000]">
-                          01
-                        </div>
-                        <div className="w-full h-full col-span-4 md:col-span-5">
-                          <Image
-                            src={industry}
-                            alt="img"
-                            className="rounded-[16px] h-auto sm:h-[320px] object-cover"
-                          />
-                        </div>
-                        <div className="col-span-4 md:col-span-5 flex flex-col gap-4 md:w-[450px] md:px-4">
-                          <p className="font-bold text-2xl text-(--color-bland-800)">
-                            Manufacturing & production
-                          </p>
-                          <p className="font-medium tracking-wider leading-[150%]">
-                            From machine operators to supervisors, we provide
-                            manpower that keeps assembly lines running
-                            efficiently and safely.
-                          </p>
-                        </div>
-                        <div className="flex justify-end col-span-1">
-                          <div className="flex justify-end border-2 w-fit rounded-4xl text-(--color-bland-600) h-fit -rotate-45 hover:rotate-0 link">
-                            <Icon
-                              icon="si:arrow-right-duotone"
-                              width="32"
-                              height="32"
-                            />
-                          </div>
-                        </div>
-                      </div>
+                    <div className="w-full h-full col-span-4 md:col-span-5">
+                      <Image
+                        src={industry.src}
+                        alt="img"
+                        className="rounded-[16px] h-auto sm:h-[320px] object-cover"
+                      />
                     </div>
-                    <div className="p-4 sm:p-8 rounded-[16px] hover:shadow-xl link-trigger">
-                      <div className="grid grid-cols-5 md:grid-cols-12 gap-6">
-                        <div className="max-w-fit col-span-1 font-semibold text-[#000]">
-                          01
-                        </div>
-                        <div className="w-full h-full col-span-4 md:col-span-5">
-                          <Image
-                            src={industry}
-                            alt="img"
-                            className="rounded-[16px] h-auto sm:h-[320px] object-cover"
-                          />
-                        </div>
-                        <div className="col-span-4 md:col-span-5 flex flex-col gap-4 md:w-[450px] md:px-4">
-                          <p className="font-bold text-2xl text-(--color-bland-800)">
-                            Manufacturing & production
-                          </p>
-                          <p className="font-medium tracking-wider leading-[150%]">
-                            From machine operators to supervisors, we provide
-                            manpower that keeps assembly lines running
-                            efficiently and safely.
-                          </p>
-                        </div>
-                        <div className="flex justify-end col-span-1">
-                          <div className="flex justify-end border-2 w-fit rounded-4xl text-(--color-bland-600) h-fit -rotate-45 hover:rotate-0 link">
-                            <Icon
-                              icon="si:arrow-right-duotone"
-                              width="32"
-                              height="32"
-                            />
-                          </div>
-                        </div>
-                      </div>
+                    <div className="col-span-4 md:col-span-5 flex flex-col gap-4 md:w-[450px] md:px-4">
+                      <p className="font-bold text-2xl text-(--color-bland-800)">
+                        {industry.title}
+                      </p>
+                      <h2 className="font-normal tracking-wider leading-[150%]">
+                        {industry.description}
+                      </h2>
                     </div>
-                    <div className="p-4 sm:p-8 rounded-[16px] hover:shadow-xl link-trigger">
-                      <div className="grid grid-cols-5 md:grid-cols-12 gap-6">
-                        <div className="max-w-fit col-span-1 font-semibold text-[#000]">
-                          01
-                        </div>
-                        <div className="w-full h-full col-span-4 md:col-span-5">
-                          <Image
-                            src={industry}
-                            alt="img"
-                            className="rounded-[16px] h-auto sm:h-[320px] object-cover"
-                          />
-                        </div>
-                        <div className="col-span-4 md:col-span-5 flex flex-col gap-4 md:w-[450px] md:px-4">
-                          <p className="font-bold text-2xl text-(--color-bland-800)">
-                            Manufacturing & production
-                          </p>
-                          <p className="font-medium tracking-wider leading-[150%]">
-                            From machine operators to supervisors, we provide
-                            manpower that keeps assembly lines running
-                            efficiently and safely.
-                          </p>
-                        </div>
-                        <div className="flex justify-end col-span-1">
-                          <div className="flex justify-end border-2 w-fit rounded-4xl text-(--color-bland-600) h-fit -rotate-45 hover:rotate-0 link">
-                            <Icon
-                              icon="si:arrow-right-duotone"
-                              width="32"
-                              height="32"
-                            />
-                          </div>
-                        </div>
+                    <div className="flex justify-end col-span-1">
+                      <div className="flex justify-end border-2 w-fit rounded-4xl text-(--color-bland-600) h-fit -rotate-45 hover:rotate-0 link">
+                        <Icon
+                          icon="si:arrow-right-duotone"
+                          width="32"
+                          height="32"
+                        />
                       </div>
                     </div>
                   </div>
+                </div>
+              );
+            })}
                 </CollapsibleContent>
                 <CollapsibleTrigger
                   asChild
@@ -808,94 +623,110 @@ export default function Home() {
                 We're Here to Help.
               </h2>
             </div>
-            <div className="flex-1 mt-4 md:mt-16  w-full md:max-w-[60%]">
+            <div className="flex-1 mt-4  w-full md:max-w-[60%]">
               <Accordion type="single" collapsible>
                 <AccordionItem value="item-1">
                   <AccordionTrigger className="hover:no-underline font-medium text-lg leading-[120%] text-(--color-bland-800) cursor-pointer py-6">
                     {" "}
+                    <p>
                     What is your process for vetting candidates?
+                    </p>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p>
+                    <h2 className="text-base font-medium leading-[150%]">
                       Our rigorous process includes multi-stage interviews,
                       skill assessments, background checks, and verification of
                       all credentials to ensure you only meet with qualified,
                       reliable professionals.
-                    </p>
+                    </h2 >
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
                   <AccordionTrigger className="hover:no-underline font-medium text-lg leading-[120%] text-(--color-bland-800) cursor-pointer py-6">
                     {" "}
+                    <p>
                     Which countries in the Gulf do you specialize in?
+                    </p>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p>
+                 <h2 className="text-base font-medium leading-[150%]">
                       Our rigorous process includes multi-stage interviews,
                       skill assessments, background checks, and verification of
                       all credentials to ensure you only meet with qualified,
                       reliable professionals.
-                    </p>
+                    </h2 >
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
                   <AccordionTrigger className="hover:no-underline font-medium text-lg leading-[120%] text-(--color-bland-800) cursor-pointer py-6">
                     {" "}
+                    <p>
                     Are there any fees for candidates to apply for a job?
+                    </p>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p>
+                 <h2 className="text-base font-medium leading-[150%]">
                       Our rigorous process includes multi-stage interviews,
                       skill assessments, background checks, and verification of
                       all credentials to ensure you only meet with qualified,
                       reliable professionals.
-                    </p>
+                    </h2 >
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4">
                   <AccordionTrigger className="hover:no-underline font-medium text-lg leading-[120%] text-(--color-bland-800) cursor-pointer py-6">
                     {" "}
+                    <p>
                     What support do you offer after I get a job offer?
+                    </p>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p>
+                  <h2 className="text-base font-medium leading-[150%]">
                       Our rigorous process includes multi-stage interviews,
                       skill assessments, background checks, and verification of
                       all credentials to ensure you only meet with qualified,
                       reliable professionals.
-                    </p>
+                    </h2 >
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-5">
                   <AccordionTrigger className="hover:no-underline font-medium text-lg leading-[120%] text-(--color-bland-800) cursor-pointer py-6">
                     {" "}
+                    <p>
                     Which countries in the Gulf do you specialize in?
+                    </p>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p>
+                 <h2 className="text-base font-medium leading-[150%]">
                       Our rigorous process includes multi-stage interviews,
                       skill assessments, background checks, and verification of
                       all credentials to ensure you only meet with qualified,
                       reliable professionals.
-                    </p>
+                    </h2 >
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-6">
                   <AccordionTrigger className="hover:no-underline font-medium text-lg leading-[120%] text-(--color-bland-800) cursor-pointer py-6">
                     {" "}
+                    <p>
                     Are there any fees for candidates to apply for a job?{" "}
+                    </p>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p>
+                 <h2 className="text-base font-medium leading-[150%]">
                       Our rigorous process includes multi-stage interviews,
                       skill assessments, background checks, and verification of
                       all credentials to ensure you only meet with qualified,
                       reliable professionals.
-                    </p>
+                    </h2 >
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
             </div>
+          </section>
+          {/* CTA section  */}
+          <section className="px-4 top-margins ">
+            <CTA />
           </section>
           {/* Footer */}
           <section className="px-4 top-margins ">
