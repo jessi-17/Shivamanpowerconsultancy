@@ -42,6 +42,7 @@ import { Footer2 } from "@/components/own/Footer";
 import industries from "./_lib/data/industriesweserve";
 import Link from "next/link";
 import CTA from "@/components/own/CTA";
+import Contactcard from "@/components/own/contactcard";
 export default function Home() {
   const [open, setopen] = useState(false);
   return (
@@ -51,7 +52,7 @@ export default function Home() {
           <Header />
         </div>
         <div className="content-wrapper">
-          <section className="top-margins flex flex-col gap-8 md:flex-row items-start justify-between px-4 ">
+          <section className="top-margins flex flex-col gap-8 md:flex-row items-start justify-between px-4 pb-40 relative">
             <div className="flex flex-col w-full md:max-w-[670px] gap-4 ">
               <h1 className="font-extrabold text-left leading-[120%] md:text-left text-4xl lg:text-6xl">
                 Your Strategic <span>Manpower Partner</span> for the Gulf Region
@@ -102,7 +103,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <div className="flex flex-col items-center md:items-end gap-4 relative w-full">
+            <div className="flex flex-col items-center md:items-end gap-4 relative w-full z-0">
               <Image
                 src={pattern}
                 alt="img"
@@ -123,6 +124,9 @@ export default function Home() {
                 alt="img"
                 className="absolute bottom-5 md:bottom-30  left-0  md:left-12 z-30"
               />
+            </div>
+            <div className="md:absolute bottom-10  z-0 w-full">
+              <Contactcard />
             </div>
           </section>
           {/* marqueesection */}
