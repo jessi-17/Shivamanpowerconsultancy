@@ -102,3 +102,10 @@ span{
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.447), rgba(0, 0, 0, 0.562)), url("../public/hero img.png");
   background-position:center;
 }
+.scrollstate{
+  padding-left: 160px;
+  @media(max-width:1024px){
+    padding-left: 0px;
+    
+  }
+}

@@ -43,6 +43,7 @@ import industries from "./_lib/data/industriesweserve";
 import Link from "next/link";
 import CTA from "@/components/own/CTA";
 import Contactcard from "@/components/own/contactcard";
+import ScrollStats from "@/components/own/ScrollStats";
 export default function Home() {
   const [open, setopen] = useState(false);
   return (
@@ -509,7 +510,7 @@ export default function Home() {
 
 
           {/* industries we serve */}
-          <section className="top-margins px-4">
+        <section className="top-margins px-4">
          <div className="flex flex-col items-center justify-center gap-2 pb-8 md:pb-20">
               <h2 className="text-[42px] font-black leading-[120%]">
                 Industries we <span>serve</span>
@@ -616,7 +617,10 @@ export default function Home() {
                 </CollapsibleTrigger>
               </Collapsible>
             </div>
-          </section>
+        </section>
+
+        {/* scroll statts section */}
+        <ScrollStats />
 
           {/* Testimonials section */}
           <section className=" px-4 top-margins flex flex-col md:flex-row gap-8 items-start ">
