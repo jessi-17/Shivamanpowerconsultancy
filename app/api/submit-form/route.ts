@@ -24,7 +24,7 @@ async function appendToSheet({ yourname, phone, email, interest }: any) {
     valueInputOption: "USER_ENTERED",
     requestBody: { values },
   });
-}
+} 
 
 async function sendEmail({ yourname, phone, email, interest }: any) {
   await resend.emails.send({
