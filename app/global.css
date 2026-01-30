@@ -27,7 +27,6 @@
 
 body {
   font-size: 16px;
-  font-family: "Plus Jakarta Sans", sans-serif !important;
   line-height: 150%;
   font-weight: 400;
   background-color: #FAFAFA;
@@ -36,8 +35,6 @@ h1,h2,h3,h4,h5,h6{
   font-family: helveticalight !important;
 }
 p{
-
-  font-family: "Plus Jakarta Sans", sans-serif !important;
   color: var(--color-bland-700);
 }
 section {
@@ -60,6 +57,9 @@ section {
     margin-top: 40px;
     
   }
+}
+.pri-button{
+  @apply px-4 py-2 bg-(--primary-color) text-(--color-bland-25) rounded-[32px] text-base font-semibold leading-[150%] h-[45px] w-[130px] cursor-pointer hover:scale-95 border-(--primary-color) ; 
 }
 :root{
     --primary-color-15:#FEFAFB;
@@ -92,8 +92,6 @@ section {
 }
 span{
   color: var(--primary-color);
-  /* font-size: bold; */
- font-family: helveticabold !important; 
 }
 .link-trigger:hover .link{
   @apply bg-(--color-bland-800) text-(--color-bland-25) p-1 rotate-0 transition-all;
