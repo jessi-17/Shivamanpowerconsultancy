@@ -29,6 +29,33 @@ export default function RootLayout({
       >
         {children}
       </body>
+      
+    <script>
+        (function (w, d, s, u) {
+            w.gbwawc = {
+                url: u,
+                options: {
+                    waId: "919815358832",
+                    siteName: "Shiva Travel & Manpower Consultants Nakodar",
+                    siteTag: "Usually reply in 1 minutes",
+                    siteLogo: "https://waw.gallabox.com/chatbotavatars/1.png",
+                    widgetPosition: "RIGHT",
+                    welcomeMessage: "Welcome to Shiva Travel & Manpower Consultants Nakodar !!!",
+                    brandColor: "#25D366",
+                    messageText: "more Information say hi",
+                    replyOptions: [],
+                    version: "v1",
+                    widgetPositionMarginX: 12,
+                    widgetPositionMarginY: 12,
+                },
+            };
+            var h = d.getElementsByTagName(s)[0],
+                j = d.createElement(s);
+            j.async = true;
+            j.src = u + "/whatsapp-widget.min.js?_=" + "2026-02-08 21";
+            h.parentNode.insertBefore(j, h);
+        })(window, document, "script", "https://waw.gallabox.com");
+    </script>
     </html>
   );
 }
