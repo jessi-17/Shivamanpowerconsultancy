@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./global.css";
 
 const geistSans = Geist({
@@ -19,43 +20,46 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-      </body>
-      
-    <script>
-        (function (w, d, s, u) {
-            w.gbwawc = {
+
+        <Script id="gallabox-whatsapp" strategy="afterInteractive">
+          {`
+            (function (w, d, s, u) {
+              w.gbwawc = {
                 url: u,
                 options: {
-                    waId: "919815358832",
-                    siteName: "Shiva Travel & Manpower Consultants Nakodar",
-                    siteTag: "Usually reply in 1 minutes",
-                    siteLogo: "https://waw.gallabox.com/chatbotavatars/1.png",
-                    widgetPosition: "RIGHT",
-                    welcomeMessage: "Welcome to Shiva Travel & Manpower Consultants Nakodar !!!",
-                    brandColor: "#25D366",
-                    messageText: "more Information say hi",
-                    replyOptions: [],
-                    version: "v1",
-                    widgetPositionMarginX: 12,
-                    widgetPositionMarginY: 12,
+                  waId: "919815358832",
+                  siteName: "Shiva Travel & Manpower Consultants Nakodar",
+                  siteTag: "Usually reply in 1 minutes",
+                  siteLogo: "https://waw.gallabox.com/chatbotavatars/1.png",
+                  widgetPosition: "RIGHT",
+                  welcomeMessage: "Welcome to Shiva Travel & Manpower Consultants Nakodar !!!",
+                  brandColor: "#25D366",
+                  messageText: "more Information say hi",
+                  replyOptions: [],
+                  version: "v1",
+                  widgetPositionMarginX: 12,
+                  widgetPositionMarginY: 12,
                 },
-            };
-            var h = d.getElementsByTagName(s)[0],
+              };
+              var h = d.getElementsByTagName(s)[0],
                 j = d.createElement(s);
-            j.async = true;
-            j.src = u + "/whatsapp-widget.min.js?_=" + "2026-02-08 21";
-            h.parentNode.insertBefore(j, h);
-        })(window, document, "script", "https://waw.gallabox.com");
-    </script>
+              j.async = true;
+              j.src = u + "/whatsapp-widget.min.js";
+              h.parentNode.insertBefore(j, h);
+            })(window, document, "script", "https://waw.gallabox.com");
+          `}
+        </Script>
+
+      </body>
     </html>
   );
 }
