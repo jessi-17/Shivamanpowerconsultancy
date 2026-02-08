@@ -12,7 +12,7 @@ const page = () => {
         <div className="content-wrapper">
           <section className="flex flex-col md:flex-row justify-between mt-20 gap-8">
             <h1 className="text-bland-800 font-semibold text-4xl md:text-[67px] leading-[120%] text-left">
-        The Journey  <br className="hidden md:block"/> That Built <span className="text-bland-700">Our <br className="hidden md:block" /> Success</span>
+        Comming Soon
             </h1>
             <Image src={aboutUsImage} alt="About Us" className=" h-auto  w-auto object-cover"/>
           </section>
