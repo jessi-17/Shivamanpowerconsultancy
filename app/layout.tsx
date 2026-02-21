@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./global.css";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -15,8 +14,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "ShivaManpowerConsultants",
+  icons: {
+    icon: "/logo.jpg",
+  },
   description: "Shiva Travel & Manpower Consultants Nakodar is a leading travel and manpower consultancy based in Nakodar, Punjab. We specialize in providing comprehensive travel solutions and manpower services to individuals and businesses. With a commitment to excellence and customer satisfaction, we strive to deliver top-notch services that meet the diverse needs of our clients. Whether you're looking for travel arrangements or seeking skilled manpower, Shiva Travel & Manpower Consultants Nakodar is your trusted partner for all your travel and manpower requirements.",
 };
+
 
 export default function RootLayout({
   children,
