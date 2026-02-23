@@ -160,6 +160,7 @@ export default function Home() {
                       from day one.
                     </h4>
                     <div className="w-full flex-wrap flex  flex-col md:flex-row gap-6">
+                      <Link href="/contactus">
                       <Button className="px-5 py-5 bg-(--primary-color) text-(--color-bland-25) rounded-[32px] text-base !font-light leading-[150%] cursor-pointer hover:scale-95 border-(--primary-color)">
                         Book a call Now{" "}
                         <span className="!text-(--color-bland-25)">
@@ -167,6 +168,8 @@ export default function Home() {
                           <Icon icon="gg:phone" width="24" height="24" />
                         </span>
                       </Button>
+                      </Link>
+                      <Link href="/contactus">
                       <Button className="px-5 py-5  text-(--primary-color) rounded-[32px] text-base !font-light leading-[150%] cursor-pointer hover:scale-95 border-(--primary-color) flex gap-1 hover:font-bold">
                         Know more{" "}
                         <Icon
@@ -175,6 +178,7 @@ export default function Home() {
                         />
                      
                       </Button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -546,7 +550,7 @@ export default function Home() {
                       </h2>
                     </div>
                     <div className="flex justify-end col-span-1">
-                      <Link  href={industry.link} className="flex justify-end border-2 w-fit rounded-4xl text-(--color-bland-600) h-fit -rotate-45 hover:rotate-0 link">
+                      <Link  href="/contactus" className="flex justify-end border-2 w-fit rounded-4xl text-(--color-bland-600) h-fit -rotate-45 hover:rotate-0 link">
                         <Icon
                           icon="si:arrow-right-duotone"
                           width="32"

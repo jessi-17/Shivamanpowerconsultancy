@@ -27,8 +27,9 @@ const Header = () => {
     { href: "/", label: "Home" },
     { href: "/about-us", label: "About us" },
     { href: "/services", label: "Services" },
-    { href: "/current-demands", label: "Current Demands" },
+    // { href: "/current-demands", label: "Current Demands" },
     { href: "/success-stories", label: "Success Stories" },
+    // { href: "/contactus", label: "Contact Us" },
   ];
 
   return (
@@ -120,9 +121,11 @@ const Header = () => {
             </Button>
           </NavigationMenuItem>
           <NavigationMenuItem className="hover:drop-shadow-lg">
+            <Link href="/contactus">
             <Button className="px-4 py-2 bg-(--primary-color) text-(--color-bland-25) rounded-[32px] text-base font-semibold leading-[150%] h-[45px] w-[130px] cursor-pointer hover:scale-95 border-(--primary-color)">
               Contact Us
             </Button>
+            </Link>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
