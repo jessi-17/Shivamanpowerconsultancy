@@ -9,7 +9,7 @@ const ScrollStats = () => {
             className="border-1 px-4.5 py-1.5 rounded-4xl w-fit text-(--primary-color-900) !font-bold tracking-wide  bg-[#ffffffa1]  text-sm border-[#0000001b] shadow inset-4 inset-shadow-2xs cursor-pointer  
                   hover:border-(--primary-color) hover:scale-95 md:mt-10"
           >
-            Why Trust Shiva trade
+            Why Trust us
           </h6>
           <h2 className="text-[42px] font-black leading-[120%] md:max-w-[80%]">
             Trusted for <span>25 years</span> in Overseas Hiring
