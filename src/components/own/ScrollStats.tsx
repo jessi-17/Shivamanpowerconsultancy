@@ -51,7 +51,7 @@ const ScrollStats = () => {
               </div>
             </div>
           </div>
-          <div className="flex-1 h-auto flex items-end p-[60px] bg-[#910D17] min-h-[500px] max-w-[100%]">
+          {/* <div className="flex-1 h-auto flex items-end p-[60px] bg-[#910D17] min-h-[500px] max-w-[100%]">
             <div className="flex flex-col gap-8">
               <h1 className="text-[94px] font-bold font-bold-hel leading-[120%] text-white text-shadow-lg">5000+</h1>
               <div className="flex flex-col gap-4">
@@ -61,7 +61,7 @@ const ScrollStats = () => {
                 </h2>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       {/* <div>ScrollStats</div> */}
