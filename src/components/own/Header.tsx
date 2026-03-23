@@ -38,7 +38,12 @@ const Header = () => {
         className="flex justify-between items-center min-w-full py-2 px-4 md:hidden"
       >
         <NavigationMenuList>
-          <Image src="/logo.jpg" alt="logo" width="72" height="68" />
+          <Link href="/" className="flex items-center gap-2">
+            <Image src="/logo.jpg" alt="Shiva Manpower Consultants logo" width="42" height="40" />
+            <span className="font-bold text-sm leading-tight text-(--color-bland-800)">
+              Shiva Travels &<br />Manpower Consultancy
+            </span>
+          </Link>
         </NavigationMenuList>
 
         <NavigationMenuList>
@@ -96,7 +101,13 @@ const Header = () => {
       </NavigationMenu>
       <NavigationMenu className="hidden md:flex bg-(--color-bland-25) min-h-[70px] items-center justify-between min-w-full py-2">
         <NavigationMenuList>
-          <Image src="/logo.jpg" alt="logo" width="72" height="68" />
+          <Link href="/" className="flex items-center gap-3">
+            <Image src="/logo.jpg" alt="Shiva Manpower Consultants logo" width="56" height="52" />
+            <div className="flex flex-col">
+              <span className="font-bold text-base leading-tight text-(--color-bland-800)">Shiva Travels</span>
+              <span className="text-xs text-(--color-bland-400) tracking-wide">& Manpower Consultancy</span>
+            </div>
+          </Link>
         </NavigationMenuList>
 
         <NavigationMenuList className="flex gap-8">
