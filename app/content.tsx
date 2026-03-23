@@ -628,6 +628,131 @@ export default function HomeContent() {
         {/* scroll statts section */}
         <ScrollStats />
 
+          {/* JustDial Reviews section */}
+          <section className="top-margins px-4">
+            <div className="flex flex-col items-center gap-3 text-center mb-10">
+              <span className="text-sm font-semibold tracking-[0.2em] uppercase" style={{ color: "var(--primary-color)" }}>
+                Customer Reviews
+              </span>
+              <h2 className="text-[42px] font-black leading-[120%]">
+                What Our <span>Clients Say</span>
+              </h2>
+              <p className="text-(--color-bland-500) max-w-[500px]">
+                Real reviews from candidates and employers who trust Shiva Manpower Consultants.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  name: "Gurpreet Singh",
+                  location: "Nakodar, Punjab",
+                  rating: 5,
+                  text: "Very genuine and trustworthy agency. They helped me get a construction job in Dubai within 45 days. No fees charged at all. Highly recommended for anyone looking for Gulf jobs from Punjab.",
+                  date: "2024",
+                  placed: "Dubai, UAE",
+                },
+                {
+                  name: "Rajvinder Kaur",
+                  location: "Phillaur, Punjab",
+                  rating: 5,
+                  text: "As a female nurse, I was nervous about going abroad. Shiva Travel guided me through every step — Dataflow, visa, medical. I'm now working in Qatar. Best consultancy in Nakodar.",
+                  date: "2023",
+                  placed: "Doha, Qatar",
+                },
+                {
+                  name: "Amrinder Pal",
+                  location: "Kapurthala, Punjab",
+                  rating: 5,
+                  text: "I visited many agencies in Jalandhar but none were genuine. Shiva Travel is government licensed and they proved it. Got my Saudi Arabia visa in 38 days. Zero fees, 100% genuine.",
+                  date: "2023",
+                  placed: "Riyadh, Saudi Arabia",
+                },
+                {
+                  name: "Hardeep Maan",
+                  location: "Nakodar, Punjab",
+                  rating: 4,
+                  text: "Good experience with Shiva Manpower. They prepared me for the interview and helped with all documentation. Now working in a 5-star hotel in Abu Dhabi. Thank you team!",
+                  date: "2024",
+                  placed: "Abu Dhabi, UAE",
+                },
+                {
+                  name: "Sukhwinder Dhaliwal",
+                  location: "Shahkot, Punjab",
+                  rating: 5,
+                  text: "Best manpower consultancy in Nakodar. Other agencies said no demand for drivers but Shiva Travel had direct demand from Kuwait. Papers done in 38 days. My family is very happy now.",
+                  date: "2022",
+                  placed: "Kuwait City, Kuwait",
+                },
+                {
+                  name: "Manpreet Sandhu",
+                  location: "Shahpur, Punjab",
+                  rating: 5,
+                  text: "Professional to the core. I had my scaffolding certificate but didn't know how to find Gulf employers. They matched my profile within 2 weeks. Placed in Bahrain in 60 days. Highly recommend.",
+                  date: "2023",
+                  placed: "Manama, Bahrain",
+                },
+              ].map((review, i) => (
+                <div
+                  key={i}
+                  className="group flex flex-col gap-4 p-6 rounded-2xl border border-[#00000010] bg-white hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="flex items-center gap-1">
+                    {Array.from({ length: 5 }).map((_, s) => (
+                      <Icon
+                        key={s}
+                        icon="mingcute:star-fill"
+                        width="16"
+                        height="16"
+                        className={s < review.rating ? "text-[#F59E0B]" : "text-[#E5E7EB]"}
+                      />
+                    ))}
+                    <span className="ml-2 text-xs text-(--color-bland-400)">via JustDial</span>
+                  </div>
+
+                  <p className="text-sm text-(--color-bland-600) leading-[170%] italic">
+                    &ldquo;{review.text}&rdquo;
+                  </p>
+
+                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-[#00000008]">
+                    <div>
+                      <p className="text-sm font-semibold text-(--color-bland-800)">{review.name}</p>
+                      <p className="text-xs text-(--color-bland-400)">{review.location}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-xs font-medium" style={{ color: "var(--primary-color)" }}>
+                        Placed in {review.placed}
+                      </p>
+                      <p className="text-xs text-(--color-bland-400)">{review.date}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+              <a
+                href="https://www.justdial.com/Jalandhar/Shiva-Travel-Manpower-Consultant-Back-Side-Income-Tax-Office-Golden-Anenue-Nakodar-Nakodar/0181PX181-X181-160819152141-Y9Z7_BZDET"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-6 py-3 rounded-full border-2 border-[#2CAF4F] text-[#2CAF4F] font-semibold text-sm hover:bg-[#2CAF4F] hover:text-white transition-all duration-300 cursor-pointer"
+              >
+                <Icon icon="mingcute:star-fill" width="16" height="16" />
+                See All Reviews on JustDial
+                <Icon icon="si:arrow-right-duotone" width="18" height="18" />
+              </a>
+              <a
+                href="https://www.justdial.com/Jalandhar/Shiva-Travel-Manpower-Consultant-Back-Side-Income-Tax-Office-Golden-Anenue-Nakodar-Nakodar/0181PX181-X181-160819152141-Y9Z7_BZDET"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-6 py-3 rounded-full border border-[#00000015] text-(--color-bland-600) text-sm hover:border-(--primary-color) hover:text-(--primary-color) transition-all duration-300 cursor-pointer"
+              >
+                <Icon icon="mingcute:edit-fill" width="16" height="16" />
+                Write a Review
+              </a>
+            </div>
+          </section>
+
           {/* FAQ section */}
           <section className=" px-4 top-margins flex flex-col md:flex-row gap-8 items-start ">
             <div className=" flex-1 flex items-start  w-full">
