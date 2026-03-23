@@ -27,39 +27,38 @@ const Footer2 = ({
     {
       title: "Sitemap",
       links: [
-        { text: "Home", url: "#" },
-        { text: "About us", url: "#" },
-        { text: "Services", url: "#" },
-        { text: "Current Demands", url: "#" },
-        { text: "Success Stories", url: "#" },
+        { text: "Home", url: "/" },
+        { text: "About us", url: "/about-us" },
+        { text: "Services", url: "/services" },
+        { text: "Success Stories", url: "/success-stories" },
+        { text: "Contact Us", url: "/contactus" },
       ],
     },
     {
       title: "Company",
       links: [
-        { text: "About", url: "#" },
-        { text: "Team", url: "#" },
-        { text: "Blog", url: "#" },
-        { text: "Careers", url: "#" },
-        { text: "Contact", url: "#" },
-        { text: "Privacy", url: "#" },
+        { text: "About", url: "/about-us" },
+        { text: "Services", url: "/services" },
+        { text: "Careers", url: "/applynow" },
+        { text: "Contact", url: "/contactus" },
       ],
     },
     {
-      title: "Current Demands",
+      title: "Quick Links",
       links: [
-        { text: "Demand 1", url: "#" },
-        { text: "Demand 2", url: "#" },
-        { text: "Demand 3", url: "#" },
+        { text: "Gulf Job Openings Update", url: "https://www.instagram.com/shiva.travels.consultants?igsh=Y25ncHdseWlmcXE=" },
+        { text: "Success Stories from Punjab", url: "https://www.instagram.com/shiva.travels.consultants?igsh=Y25ncHdseWlmcXE=" },
+        { text: "Dubai Visa Process Guide", url: "https://www.facebook.com/share/1FbKs7X4WF/" },
+        { text: "Latest Placement Updates", url: "https://www.facebook.com/share/1FbKs7X4WF/" },
       ],
     },
     {
-      title: "Social",
+      title: "Connect With Us",
       links: [
-        { text: "Twitter", url: "#" },
-        { text: "Instagram", url: "#" },
-        { text: "Facebook", url: "#" },
-        { text: "LinkedIn", url: "#" },
+        { text: "Instagram", url: "https://www.instagram.com/shiva.travels.consultants?igsh=Y25ncHdseWlmcXE=" },
+        { text: "Facebook", url: "https://www.facebook.com/share/1FbKs7X4WF/" },
+        { text: "98148-20432", url: "tel:9814820432" },
+        { text: "98149-20432", url: "tel:9814920432" },
       ],
     },
   ],
@@ -89,7 +88,7 @@ const Footer2 = ({
                       key={linkIdx}
                       className="hover:text-primary font-light-hel text-base hover:font-bold"
                     >
-                      <a href={link.url}>{link.text}</a>
+                      <a href={link.url} {...(link.url.startsWith("http") || link.url.startsWith("tel:") ? { target: "_blank", rel: "noopener noreferrer" } : {})}>{link.text}</a>
                     </li>
                   ))}
                 </ul>

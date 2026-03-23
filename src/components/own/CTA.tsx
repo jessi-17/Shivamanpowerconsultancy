@@ -25,15 +25,15 @@ const CTA = () => {
             experts guide you toward a better, more rewarding future.
           </h4>
           <div className="w-full flex-wrap flex  flex-col md:flex-row gap-6 items-center justify-center mt-6">
-            <Link href="/contactus">
+            <a href="https://wa.me/919815358832?text=Hi%2C%20I%20want%20more%20information" target="_blank" rel="noopener noreferrer">
               <Button className="px-5 py-5 bg-(--primary-color) text-(--color-bland-25) rounded-[32px] text-base !font-light leading-[150%] cursor-pointer hover:scale-95 border-(--primary-color)">
                 Book a call Now{" "}
                 <span className="!text-(--color-bland-25)">
                   {" "}
-                  <Icon icon="gg:phone" width="24" height="24" />
+                  <Icon icon="mdi:whatsapp" width="24" height="24" />
                 </span>
               </Button>
-            </Link>
+            </a>
 
             <Link href="/contactus">
               <Button className="px-5 py-5  text-(--color-bland-400) rounded-[32px] text-base !font-light leading-[150%] cursor-pointer hover:scale-95 border-(--primary-color) flex gap-1 hover:font-bold">

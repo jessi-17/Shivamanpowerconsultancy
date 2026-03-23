@@ -78,12 +78,16 @@ const Header = () => {
                   ))}
 
                   <div className="flex items-center justify-between mt-4">
-                    <Button className="px-4 py-2 bg-(--primary-color) text-(--color-bland-25) rounded-[32px] text-base font-semibold leading-[150%] h-[45px] w-[130px] cursor-pointer hover:scale-95 border-(--primary-color)">
-                      Contact Us
-                    </Button>
-                    <Button className="text-(--color-bland-700) font-medium tracking-tight cursor-pointer hover:border-b-1 hover:text-(--primary-color) rounded-none shadow-none p-2 w-[50%]">
-                      Apply Now
-                    </Button>
+                    <Link href="/contactus">
+                      <Button className="px-4 py-2 bg-(--primary-color) text-(--color-bland-25) rounded-[32px] text-base font-semibold leading-[150%] h-[45px] w-[130px] cursor-pointer hover:scale-95 border-(--primary-color)">
+                        Contact Us
+                      </Button>
+                    </Link>
+                    <Link href="/applynow">
+                      <Button className="text-(--color-bland-700) font-medium tracking-tight cursor-pointer hover:border-b-1 hover:text-(--primary-color) rounded-none shadow-none p-2 w-[50%]">
+                        Apply Now
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </SheetHeader>
@@ -116,9 +120,11 @@ const Header = () => {
 
         <NavigationMenuList className="flex items-center gap-8">
           <NavigationMenuItem>
-            <Button className="text-(--color-bland-700) font-medium tracking-tight cursor-pointer hover:border-b-1 hover:text-(--primary-color) rounded-none shadow-none p-2">
-              Apply Now
-            </Button>
+            <Link href="/applynow">
+              <Button className="text-(--color-bland-700) font-medium tracking-tight cursor-pointer hover:border-b-1 hover:text-(--primary-color) rounded-none shadow-none p-2">
+                Apply Now
+              </Button>
+            </Link>
           </NavigationMenuItem>
           <NavigationMenuItem className="hover:drop-shadow-lg">
             <Link href="/contactus">
