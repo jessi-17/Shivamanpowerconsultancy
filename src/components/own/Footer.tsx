@@ -31,6 +31,7 @@ const Footer2 = ({
         { text: "About us", url: "/about-us" },
         { text: "Services", url: "/services" },
         { text: "Success Stories", url: "/success-stories" },
+        { text: "Blog", url: "/blog" },
         { text: "Contact Us", url: "/contactus" },
       ],
     },
