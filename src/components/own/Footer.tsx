@@ -1,7 +1,10 @@
+"use client";
 // import { Logo, LogoImage, LogoText } from "@/components/shadcnblocks/logo";
 
 import Image from "next/image";
-import logo from "../../../public/logo.jpg"
+import logo from "../../../public/logo.jpg";
+import { useLanguage } from "@/context/LanguageContext";
+import { t } from "@/lib/translations";
 interface MenuItem {
   title: string;
   links: {
@@ -69,6 +72,7 @@ const Footer2 = ({
     { text: "Privacy Policy", url: "#" },
   ],
 }: Footer2Props) => {
+  const { lang } = useLanguage();
   return (
     <div className="py-8">
       <div className="container">
@@ -78,7 +82,9 @@ const Footer2 = ({
               <div className="flex items-center gap-2 lg:justify-start">
                 <Image src={logo} alt="logo" width={100} height={100} />
               </div>
-              <h2 className="mt-4 max-w-[50%] font-light-hel">{tagline}</h2>
+              <h2 className="mt-4 max-w-[50%] font-light-hel">
+                {lang === "pa" ? t.footerTagline.pa : t.footerTagline.en}
+              </h2>
             </div>
             {menuItems.map((section, sectionIdx) => (
               <div key={sectionIdx}>

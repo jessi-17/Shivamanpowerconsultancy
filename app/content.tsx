@@ -44,6 +44,15 @@ import Link from "next/link";
 import CTA from "@/components/own/CTA";
 import Contactcard from "@/components/own/contactcard";
 import ScrollStats from "@/components/own/ScrollStats";
+import { useLanguage } from "@/context/LanguageContext";
+import { t } from "@/lib/translations";
+
+function BiText({ k }: { k: keyof typeof t }) {
+  const { lang } = useLanguage();
+  const entry = t[k];
+  return <>{lang === "pa" ? entry.pa : entry.en}</>;
+}
+
 export default function HomeContent() {
   const [open, setopen] = useState(false);
   return (
@@ -56,14 +65,10 @@ export default function HomeContent() {
           <section className="top-margins flex flex-col gap-8 md:flex-row items-start justify-between px-4 pb-40 relative">
             <div className="flex flex-col w-full md:max-w-[670px] gap-4 ">
               <h1 className="font-extrabold text-left leading-[120%] md:text-left text-4xl lg:text-6xl">
-                Your Strategic <span>Manpower Partner</span> for the Gulf Region
+                <BiText k="heroTitle" />
               </h1>
               <p className="text-(--color-bland-700) leading-[150%] text-left md:text-left">
-                As a government-recognized consultancy, For over 25 years, we've
-                connected <br className="hidden md:block" /> leading companies
-                in the UAE, Saudi Arabia, Qatar, and across the Gulf with a{" "}
-                <br className="hidden md:block" /> world-class, vetted
-                workforce. We build careers and bridge opportunities.
+                <BiText k="heroSub" />
               </p>
               <ul className="flex flex-col gap-2 mt-4">
                 <li className="flex items-start gap-4 text-(--color-bland-500) leading-[150%] text-left ">
@@ -73,7 +78,7 @@ export default function HomeContent() {
                     width="18"
                     height="18"
                   />
-                  <span> Registered Overseas Recruitment (RA) Compliance </span>
+                  <span><BiText k="heroBullet1" /></span>
                 </li>
                 <li className="flex items-center gap-4 text-(--color-bland-500) leading-[150%] text-left ">
                   <Icon
@@ -82,7 +87,7 @@ export default function HomeContent() {
                     width="18"
                     height="18"
                   />
-                  <span>E-Migrate Process Support </span>
+                  <span><BiText k="heroBullet2" /></span>
                 </li>
                 <li className="flex items-center gap-4 text-(--color-bland-500) leading-[150%] text-left ">
                   <Icon
@@ -91,16 +96,7 @@ export default function HomeContent() {
                     width="18"
                     height="18"
                   />
-                  <span>Trade Testing & Skill Screening </span>
-                </li>
-                <li className="flex items-center gap-4 text-(--color-bland-500) leading-[150%] text-left ">
-                  <Icon
-                    icon="mingcute:check-2-fill"
-                    className="text-(--color-bland-700)"
-                    width="18"
-                    height="18"
-                  />
-                  <span>Visa, Medical & Document Assistance </span>
+                  <span><BiText k="heroBullet3" /></span>
                 </li>
               </ul>
             </div>

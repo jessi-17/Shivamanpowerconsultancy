@@ -18,17 +18,59 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
+import { t } from "@/lib/translations";
+
+// Bilingual label: shows English + Punjabi line when PA is active
+function NavLabel({ labelKey }: { labelKey: keyof typeof t }) {
+  const { lang } = useLanguage();
+  const entry = t[labelKey];
+  return <>{lang === "pa" ? entry.pa : entry.en}</>;
+}
+
+// EN / PA pill toggle
+function LangToggle() {
+  const { lang, toggle } = useLanguage();
+  return (
+    <button
+      onClick={toggle}
+      className="flex items-center gap-0.5 rounded-full border text-xs font-semibold overflow-hidden cursor-pointer"
+      style={{ borderColor: "var(--primary-color)" }}
+      aria-label="Toggle language"
+    >
+      <span
+        className="px-2.5 py-1 transition-colors"
+        style={{
+          background: lang === "en" ? "var(--primary-color)" : "transparent",
+          color: lang === "en" ? "#fff" : "var(--primary-color)",
+        }}
+      >
+        EN
+      </span>
+      <span
+        className="px-2.5 py-1 transition-colors"
+        style={{
+          background: lang === "pa" ? "var(--primary-color)" : "transparent",
+          color: lang === "pa" ? "#fff" : "var(--primary-color)",
+          fontFamily: "sans-serif",
+        }}
+      >
+        ਪੰ
+      </span>
+    </button>
+  );
+}
 
 const Header = () => {
   const isMobile = useIsMobile();
   const pathname = usePathname();
 
   const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about-us", label: "About us" },
-    { href: "/services", label: "Services" },
-    { href: "/success-stories", label: "Success Stories" },
-    { href: "/blog", label: "Blog" },
+    { href: "/", labelKey: "home" as keyof typeof t },
+    { href: "/about-us", labelKey: "aboutUs" as keyof typeof t },
+    { href: "/services", labelKey: "services" as keyof typeof t },
+    { href: "/success-stories", labelKey: "successStories" as keyof typeof t },
+    { href: "/blog", labelKey: "blog" as keyof typeof t },
   ];
 
   return (
@@ -46,7 +88,8 @@ const Header = () => {
           </Link>
         </NavigationMenuList>
 
-        <NavigationMenuList>
+        <NavigationMenuList className="flex items-center gap-2">
+          <LangToggle />
           <Sheet>
             <SheetTrigger asChild>
               <Icon
@@ -77,19 +120,19 @@ const Header = () => {
                           : "text-(--color-bland-700) border-transparent hover:text-(--color-bland-800) hover:border-(--primary-color)"
                       }`}
                     >
-                      {link.label}
+                      <NavLabel labelKey={link.labelKey} />
                     </Link>
                   ))}
 
                   <div className="flex items-center justify-between mt-4">
                     <Link href="/contactus">
                       <Button className="px-4 py-2 bg-(--primary-color) text-(--color-bland-25) rounded-[32px] text-base font-semibold leading-[150%] h-[45px] w-[130px] cursor-pointer hover:scale-95 border-(--primary-color)">
-                        Contact Us
+                        <NavLabel labelKey="contactUs" />
                       </Button>
                     </Link>
                     <Link href="/applynow">
                       <Button className="text-(--color-bland-700) font-medium tracking-tight cursor-pointer hover:border-b-1 hover:text-(--primary-color) rounded-none shadow-none p-2 w-[50%]">
-                        Apply Now
+                        <NavLabel labelKey="applyNow" />
                       </Button>
                     </Link>
                   </div>
@@ -99,6 +142,7 @@ const Header = () => {
           </Sheet>
         </NavigationMenuList>
       </NavigationMenu>
+
       <NavigationMenu className="hidden md:flex bg-(--color-bland-25) min-h-[70px] items-center justify-between min-w-full py-2">
         <NavigationMenuList>
           <Link href="/" className="flex items-center gap-3">
@@ -114,7 +158,6 @@ const Header = () => {
           {navLinks.map((link) => (
             <NavigationMenuItem key={link.href}>
               <Link
-                key={link.href}
                 href={link.href}
                 className={`font-light-hel navlinks relative cursor-pointer py-1 w-fit border-b-3 ${
                   pathname === link.href
@@ -122,25 +165,28 @@ const Header = () => {
                     : "text-(--color-bland-700) border-transparent hover:text-(--color-bland-800) hover:border-(--primary-color)"
                 }`}
               >
-                {link.label}
+                <NavLabel labelKey={link.labelKey} />
               </Link>
             </NavigationMenuItem>
           ))}
         </NavigationMenuList>
 
-        <NavigationMenuList className="flex items-center gap-8">
+        <NavigationMenuList className="flex items-center gap-4">
+          <NavigationMenuItem>
+            <LangToggle />
+          </NavigationMenuItem>
           <NavigationMenuItem>
             <Link href="/applynow">
               <Button className="text-(--color-bland-700) font-medium tracking-tight cursor-pointer hover:border-b-1 hover:text-(--primary-color) rounded-none shadow-none p-2">
-                Apply Now
+                <NavLabel labelKey="applyNow" />
               </Button>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem className="hover:drop-shadow-lg">
             <Link href="/contactus">
-            <Button className="px-4 py-2 bg-(--primary-color) text-(--color-bland-25) rounded-[32px] text-base font-semibold leading-[150%] h-[45px] w-[130px] cursor-pointer hover:scale-95 border-(--primary-color)">
-              Contact Us
-            </Button>
+              <Button className="px-4 py-2 bg-(--primary-color) text-(--color-bland-25) rounded-[32px] text-base font-semibold leading-[150%] h-[45px] w-[130px] cursor-pointer hover:scale-95 border-(--primary-color)">
+                <NavLabel labelKey="contactUs" />
+              </Button>
             </Link>
           </NavigationMenuItem>
         </NavigationMenuList>
@@ -150,4 +196,3 @@ const Header = () => {
 };
 
 export default Header;
-
