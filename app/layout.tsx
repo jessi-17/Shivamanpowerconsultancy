@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./global.css";
+import LeadPopup from "@/components/own/LeadPopup";
+import ClientOnlyComponents from "@/components/own/ClientOnlyComponents";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -229,7 +232,20 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
+
+        {/* Google Analytics */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-6WTP8DK0FM" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-6WTP8DK0FM');
+          `}
+        </Script>
 
         <Script id="gallabox-whatsapp" strategy="afterInteractive">
           {`
@@ -259,6 +275,8 @@ export default function RootLayout({
             })(window, document, "script", "https://waw.gallabox.com");
           `}
         </Script>
+        <LeadPopup />
+        <ClientOnlyComponents />
       </body>
     </html>
   );
