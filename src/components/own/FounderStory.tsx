@@ -197,9 +197,11 @@ export default function FounderStory() {
               }}
             >
               <Image
-                src="/Professional Indian executive.png"
+                src="/Professional Indian executive.webp"
                 alt="Founder of Shiva Manpower Consultants Nakodar"
                 fill
+                sizes="(max-width: 640px) 100vw, 500px"
+                loading="lazy"
                 style={{ objectFit: "cover", objectPosition: "center top" }}
               />
             </div>

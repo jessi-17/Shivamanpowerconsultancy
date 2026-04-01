@@ -38,7 +38,7 @@ export default function CTASection() {
           bottom: 0,
           width: "35%",
           opacity: 0.15,
-          backgroundImage: "url('/Homepage.jpg')",
+          backgroundImage: "url('/Homepage.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           maskImage: "linear-gradient(to right, rgba(0,0,0,0.4), transparent)",

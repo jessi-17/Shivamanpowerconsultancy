@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import HeroSection from "@/components/own/HeroSection";
 import TrustBar from "@/components/own/TrustBar";
-import CareerDestinations from "@/components/own/CareerDestinations";
-import CTASection from "@/components/own/CTASection";
-import PartnersBar from "@/components/own/PartnersBar";
-import LocalCTA from "@/components/own/LocalCTA";
-import FounderTimeline from "@/components/own/FounderTimeline";
-import WhyChooseUs from "@/components/own/WhyChooseUs";
-import Testimonials from "@/components/own/Testimonials";
-import ClientVideos from "@/components/own/ClientVideos";
-import VisaProcess from "@/components/own/VisaProcess";
-import WhatMakesUsDifferent from "@/components/own/WhatMakesUsDifferent";
-import ContactForm from "@/components/own/ContactForm";
+
+// Lazy load all below-fold components — only HeroSection + TrustBar load immediately
+const LocalCTA = dynamic(() => import("@/components/own/LocalCTA"));
+const FounderTimeline = dynamic(() => import("@/components/own/FounderTimeline"));
+const CareerDestinations = dynamic(() => import("@/components/own/CareerDestinations"));
+const PartnersBar = dynamic(() => import("@/components/own/PartnersBar"));
+const CTASection = dynamic(() => import("@/components/own/CTASection"));
+const WhyChooseUs = dynamic(() => import("@/components/own/WhyChooseUs"));
+const VisaProcess = dynamic(() => import("@/components/own/VisaProcess"));
+const WhatMakesUsDifferent = dynamic(() => import("@/components/own/WhatMakesUsDifferent"));
+const Testimonials = dynamic(() => import("@/components/own/Testimonials"));
+const ClientVideos = dynamic(() => import("@/components/own/ClientVideos"));
+const ContactForm = dynamic(() => import("@/components/own/ContactForm"));
 
 export const metadata: Metadata = {
   title: "Shiva Travel & Manpower Consultants Nakodar | Overseas Recruitment Agency Punjab",

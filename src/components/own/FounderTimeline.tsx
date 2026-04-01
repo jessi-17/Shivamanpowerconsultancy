@@ -45,7 +45,7 @@ export default function FounderTimeline() {
             border: "3px solid rgba(96,165,250,0.2)",
             boxShadow: "0 0 0 8px rgba(0,82,220,0.06)",
           }}>
-            <Image src="/founder.jpeg" alt="Mr. Tarsem Lal" fill
+            <Image src="/founder.webp" alt="Mr. Tarsem Lal" fill sizes="120px" loading="lazy"
               style={{ objectFit: "cover", objectPosition: "center top" }} />
           </div>
           <div>

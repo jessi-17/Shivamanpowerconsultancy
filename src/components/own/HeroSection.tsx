@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import Image from "next/image";
 import gsap from "gsap";
@@ -184,6 +184,7 @@ export default function HeroSection() {
           alt=""
           fill
           priority
+          sizes="100vw"
           style={{
             objectFit: "cover",
             objectPosition: "center 30%",
@@ -225,7 +226,8 @@ export default function HeroSection() {
           src="/globe.jpg"
           alt=""
           fill
-          priority
+          sizes="100vw"
+          loading="eager"
           style={{
             objectFit: "contain",
             objectPosition: "center",
@@ -242,7 +244,7 @@ export default function HeroSection() {
           width: "100%",
           maxWidth: "var(--max-width)",
           margin: "0 auto",
-          padding: m ? "120px 20px 80px" : "140px 60px 120px",
+          padding: m ? "120px 20px 80px" : "140px 60px 160px",
           willChange: "transform, opacity",
         }}
       >
@@ -385,8 +387,134 @@ export default function HeroSection() {
               View All Jobs
             </a>
           </div>
+          {/* Quick Inquiry Form — inline under CTA buttons */}
+          <HeroInquiryForm />
         </div>
       </div>
     </div>
+  );
+}
+
+function HeroInquiryForm() {
+  const m = useIsMobile();
+  const [form, setForm] = useState({ destination: "", phone: "" });
+  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.phone) return;
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/submit-form", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          yourname: "Hero Quick Inquiry",
+          phone: form.phone,
+          email: "",
+          interest: form.destination,
+          experience: "",
+          message: `Quick inquiry: ${form.destination || "Not selected"}`,
+        }),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setForm({ destination: "", phone: "" });
+      }
+    } catch {
+      setStatus("idle");
+    }
+  };
+
+  const fieldStyle: React.CSSProperties = {
+    padding: m ? "12px 14px" : "14px 16px",
+    backgroundColor: "rgba(255,255,255,0.08)",
+    border: "1.5px solid rgba(255,255,255,0.12)",
+    borderRadius: 10,
+    fontFamily: "var(--font-body)",
+    fontSize: 14,
+    color: "#fff",
+    outline: "none",
+    transition: "border-color 150ms",
+  };
+
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className="hero-animate"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: 10,
+        padding: m ? "14px" : "14px 18px",
+        backgroundColor: "rgba(0,12,47,0.55)",
+        backdropFilter: "blur(20px)",
+        border: "1px solid rgba(255,255,255,0.08)",
+        borderRadius: 14,
+        flexWrap: m ? "wrap" : "nowrap",
+        marginTop: 4,
+      }}
+    >
+      <select
+        value={form.destination}
+        onChange={(e) => setForm({ ...form, destination: e.target.value })}
+        style={{
+          ...fieldStyle,
+          flex: m ? "1 1 100%" : "0 0 170px",
+          appearance: "none",
+          WebkitAppearance: "none",
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E")`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "right 12px center",
+          paddingRight: 32,
+        } as React.CSSProperties}
+      >
+        <option value="" style={{ color: "#000" }}>Select Country</option>
+        <option value="UAE" style={{ color: "#000" }}>UAE (Dubai)</option>
+        <option value="Saudi Arabia" style={{ color: "#000" }}>Saudi Arabia</option>
+        <option value="Poland" style={{ color: "#000" }}>Poland</option>
+        <option value="Romania" style={{ color: "#000" }}>Romania</option>
+        <option value="Qatar" style={{ color: "#000" }}>Qatar</option>
+        <option value="Kuwait" style={{ color: "#000" }}>Kuwait</option>
+        <option value="Other" style={{ color: "#000" }}>Other</option>
+      </select>
+
+      <input
+        type="tel"
+        placeholder="Your Phone Number"
+        value={form.phone}
+        onChange={(e) => setForm({ ...form, phone: e.target.value })}
+        required
+        style={{
+          ...fieldStyle,
+          flex: m ? "1 1 100%" : "0 0 170px",
+        }}
+        onFocus={(e) => { e.currentTarget.style.borderColor = "#60a5fa"; }}
+        onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)"; }}
+      />
+
+      <button
+        type="submit"
+        disabled={status === "loading"}
+        style={{
+          flex: m ? "1 1 100%" : "0 0 auto",
+          padding: "14px 28px",
+          backgroundColor: status === "success" ? "#16a34a" : "#0052dc",
+          color: "#fff",
+          fontFamily: "var(--font-display)",
+          fontSize: 15,
+          fontWeight: 700,
+          border: "none",
+          borderRadius: 10,
+          cursor: status === "loading" ? "wait" : "pointer",
+          transition: "all 150ms cubic-bezier(0.16,1,0.3,1)",
+          whiteSpace: "nowrap",
+        }}
+        onMouseEnter={(e) => { if (status === "idle") e.currentTarget.style.transform = "translateY(-2px)"; }}
+        onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
+      >
+        {status === "loading" ? "Sending..." : status === "success" ? "We'll Call You!" : "Get Free Consultation →"}
+      </button>
+    </form>
   );
 }

@@ -143,6 +143,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* DNS prefetch for external resources */}
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://waw.gallabox.com" />
+        <link rel="dns-prefetch" href="https://api.iconify.design" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -155,9 +160,9 @@ export default function RootLayout({
         <CookieBanner />
         <LeadPopup />
 
-        {/* Google Analytics */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-6WTP8DK0FM" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
+        {/* Google Analytics — lazyOnload so it doesn't block paint */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-6WTP8DK0FM" strategy="lazyOnload" />
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -166,7 +171,8 @@ export default function RootLayout({
           `}
         </Script>
 
-        <Script id="gallabox-whatsapp" strategy="afterInteractive">
+        {/* Gallabox WhatsApp — lazyOnload, not needed for initial render */}
+        <Script id="gallabox-whatsapp" strategy="lazyOnload">
           {`
             (function (w, d, s, u) {
               w.gbwawc = {
