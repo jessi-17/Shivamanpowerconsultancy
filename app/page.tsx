@@ -1,27 +1,24 @@
 import type { Metadata } from "next";
-import HomeContent from "./content";
+import Navbar from "@/components/own/Navbar";
+import HeroSection from "@/components/own/HeroSection";
+import TrustBar from "@/components/own/TrustBar";
+import CareerDestinations from "@/components/own/CareerDestinations";
+import CTASection from "@/components/own/CTASection";
+import PartnersBar from "@/components/own/PartnersBar";
+import LocalCTA from "@/components/own/LocalCTA";
+import FounderTimeline from "@/components/own/FounderTimeline";
+import WhyChooseUs from "@/components/own/WhyChooseUs";
+import Testimonials from "@/components/own/Testimonials";
+import ClientVideos from "@/components/own/ClientVideos";
+import VisaProcess from "@/components/own/VisaProcess";
+import WhatMakesUsDifferent from "@/components/own/WhatMakesUsDifferent";
+import ContactForm from "@/components/own/ContactForm";
+import Footer from "@/components/own/Footer";
 
 export const metadata: Metadata = {
-  title: "Shiva Travels Manpower Consultants Nakodar | Best Dubai Visa Services & Overseas Job Consultancy Punjab",
+  title: "Shiva Travel & Manpower Consultants Nakodar | Overseas Recruitment Agency Punjab",
   description:
-    "Shiva Travels Manpower Consultants Nakodar – Best manpower consultancy in Nakodar Punjab. Dubai jobs from Punjab, UAE job consultancy Nakodar, overseas job consultancy Punjab. Factory worker jobs in Dubai, labour jobs in UAE from Punjab, CV selection jobs UAE, direct joining jobs abroad. Work visa services Punjab, Romania work visa. Trusted & government-licensed. Zero fees.",
-  keywords: [
-    "Shiva Travels Manpower Consultants Nakodar",
-    "Manpower Consultancy in Nakodar Punjab",
-    "Overseas Job Consultancy Punjab",
-    "Dubai Jobs from Punjab",
-    "UAE Job Consultancy Nakodar",
-    "Work Abroad Consultants Punjab",
-    "Visa Consultancy Nakodar Punjab",
-    "Best Manpower Consultants in Punjab",
-    "Factory Worker Jobs in Dubai",
-    "Labour Jobs in UAE from Punjab",
-    "Punjab to Dubai Jobs",
-    "Nakodar Job Consultancy",
-    "Jalandhar Job Consultants",
-    "Kapurthala Overseas Jobs",
-    "Doaba Work Abroad Services",
-  ],
+    "Government licensed manpower consultancy in Nakodar, Punjab. 25+ years placing workers from Jalandhar and Doaba region in UAE, Saudi Arabia, Qatar, Poland, Romania. Zero candidate fees. Walk in office on Golden Avenue, Nakodar.",
   alternates: {
     canonical: "/",
   },
@@ -89,7 +86,21 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <HomeContent />
+      <Navbar />
+      <HeroSection />
+      <TrustBar />
+      <LocalCTA />
+      <FounderTimeline />
+      <CareerDestinations />
+      <PartnersBar />
+      <CTASection />
+      <WhyChooseUs />
+      <VisaProcess />
+      <WhatMakesUsDifferent />
+      <Testimonials />
+      <ClientVideos />
+      <ContactForm />
+      <Footer />
     </>
   );
 }

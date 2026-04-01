@@ -1,80 +1,141 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react'
-
-// ⚠️  Replace this with your real Google Ads Tag ID (e.g. "AW-123456789")
-const GOOGLE_ADS_TAG_ID = 'AW-XXXXXXXXXX'
-
-const CONSENT_KEY = 'cookie_consent'
-
-function loadGoogleAds(tagId: string) {
-  if (typeof window === 'undefined') return
-
-  // Avoid loading the script twice
-  if (document.querySelector(`script[src*="${tagId}"]`)) return
-
-  const script = document.createElement('script')
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${tagId}`
-  script.async = true
-  document.head.appendChild(script)
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ;(window as any).dataLayer = (window as any).dataLayer || []
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  function gtag(...args: any[]) { (window as any).dataLayer.push(args) }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ;(window as any).gtag = gtag
-  gtag('js', new Date())
-  gtag('config', tagId)
-}
+import { useState, useEffect } from "react";
+import gsap from "gsap";
 
 export default function CookieBanner() {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem(CONSENT_KEY)
-    if (consent === 'accepted') {
-      loadGoogleAds(GOOGLE_ADS_TAG_ID)
-    } else if (!consent) {
-      setVisible(true)
+    // Already consented
+    if (localStorage.getItem("cookie-consent")) return;
+
+    const handleScroll = () => {
+      const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      if (scrollPercent >= 20) {
+        setVisible(true);
+        window.removeEventListener("scroll", handleScroll);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (!visible) return;
+    const el = document.getElementById("cookie-banner");
+    if (el) {
+      gsap.fromTo(el, { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" });
     }
-  }, [])
+  }, [visible]);
 
   const handleAccept = () => {
-    localStorage.setItem(CONSENT_KEY, 'accepted')
-    setVisible(false)
-    loadGoogleAds(GOOGLE_ADS_TAG_ID)
-  }
+    localStorage.setItem("cookie-consent", "accepted");
+    dismiss();
+  };
 
-  const handleDecline = () => {
-    localStorage.setItem(CONSENT_KEY, 'declined')
-    setVisible(false)
-  }
+  const handleReject = () => {
+    localStorage.setItem("cookie-consent", "rejected");
+    dismiss();
+  };
 
-  if (!visible) return null
+  const dismiss = () => {
+    const el = document.getElementById("cookie-banner");
+    if (el) {
+      gsap.to(el, {
+        y: 100, opacity: 0, duration: 0.4, ease: "power3.in",
+        onComplete: () => setVisible(false),
+      });
+    }
+  };
+
+  if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-xl">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-        <p className="text-sm text-gray-600">
-          We use cookies to improve your experience and show you relevant ads.
-          By accepting, you agree to our use of cookies for personalised advertising.
+    <div
+      id="cookie-banner"
+      style={{
+        position: "fixed",
+        bottom: 24,
+        left: "50%",
+        transform: "translateX(-50%)",
+        zIndex: 9999,
+        width: "calc(100% - 48px)",
+        maxWidth: 560,
+        backgroundColor: "rgba(0,12,47,0.95)",
+        backdropFilter: "blur(16px)",
+        WebkitBackdropFilter: "blur(16px)",
+        borderRadius: 16,
+        padding: "20px 24px",
+        display: "flex",
+        alignItems: "center",
+        gap: 16,
+        flexWrap: "wrap",
+        boxShadow: "0 8px 32px rgba(0,0,0,0.25)",
+      }}
+    >
+      <div style={{ flex: "1 1 260px" }}>
+        <p style={{
+          fontFamily: "var(--font-body)",
+          fontSize: 13,
+          color: "rgba(255,255,255,0.8)",
+          lineHeight: 1.5,
+          margin: 0,
+        }}>
+          We use cookies to improve your experience and analyze site traffic.
         </p>
-        <div className="flex gap-2 shrink-0">
-          <button
-            onClick={handleDecline}
-            className="px-4 py-2 text-sm font-medium border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors"
-          >
-            Decline
-          </button>
-          <button
-            onClick={handleAccept}
-            className="px-4 py-2 text-sm font-medium bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors"
-          >
-            Accept
-          </button>
-        </div>
+      </div>
+      <div style={{ display: "flex", gap: 8, flexShrink: 0 }}>
+        <button
+          onClick={handleReject}
+          style={{
+            padding: "8px 18px",
+            backgroundColor: "transparent",
+            border: "1px solid rgba(255,255,255,0.2)",
+            borderRadius: 8,
+            color: "rgba(255,255,255,0.6)",
+            fontFamily: "var(--font-display)",
+            fontSize: 13,
+            fontWeight: 600,
+            cursor: "pointer",
+            transition: "all 150ms",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = "rgba(255,255,255,0.4)";
+            e.currentTarget.style.color = "#fff";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)";
+            e.currentTarget.style.color = "rgba(255,255,255,0.6)";
+          }}
+        >
+          Reject
+        </button>
+        <button
+          onClick={handleAccept}
+          style={{
+            padding: "8px 18px",
+            backgroundColor: "#0052dc",
+            border: "none",
+            borderRadius: 8,
+            color: "#fff",
+            fontFamily: "var(--font-display)",
+            fontSize: 13,
+            fontWeight: 600,
+            cursor: "pointer",
+            transition: "all 150ms",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = "#1d4ed8";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "#0052dc";
+          }}
+        >
+          Accept
+        </button>
       </div>
     </div>
-  )
+  );
 }
