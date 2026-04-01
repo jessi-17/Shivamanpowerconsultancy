@@ -12,9 +12,9 @@ import {
 } from "@/components/ui/carousel";
 
 const officeImages = [
-  { src: "/office image .jpeg", alt: "Shiva Travel & Manpower Consultants Nakodar office front" },
-  { src: "/carousel 1.jpeg", alt: "Shiva Manpower Consultants Nakodar office" },
-  { src: "/carousel 2.jpeg", alt: "Shiva Travel recruitment team Jalandhar" },
+  { src: "/office image .webp", alt: "Shiva Travel & Manpower Consultants Nakodar office front" },
+  { src: "/carousel 1.webp", alt: "Shiva Manpower Consultants Nakodar office" },
+  { src: "/carousel 2.webp", alt: "Shiva Travel recruitment team Jalandhar" },
   { src: "/carousel 3.webp", alt: "Overseas placement process at Shiva Manpower" },
   { src: "/carousel 4.webp", alt: "Shiva Travel Manpower Consultants team" },
 ];
@@ -44,7 +44,7 @@ function OfficeCarousel() {
           {officeImages.map((img) => (
             <CarouselItem key={img.src}>
               <div style={{ position: "relative", width: "100%", height: m ? 260 : 440, borderRadius: 16, overflow: "hidden" }}>
-                <Image src={img.src} alt={img.alt} fill style={{ objectFit: "cover", objectPosition: "center" }} />
+                <Image src={img.src} alt={img.alt} fill sizes="(max-width: 640px) 100vw, 50vw" loading="lazy" style={{ objectFit: "cover", objectPosition: "center" }} />
               </div>
             </CarouselItem>
           ))}
@@ -67,7 +67,7 @@ function OfficeCarousel() {
               transition: "opacity 200ms",
             }}
           >
-            <Image src={img.src} alt={img.alt} fill style={{ objectFit: "cover", objectPosition: "center" }} />
+            <Image src={img.src} alt={img.alt} fill sizes="60px" loading="lazy" style={{ objectFit: "cover", objectPosition: "center" }} />
           </div>
         ))}
       </div>

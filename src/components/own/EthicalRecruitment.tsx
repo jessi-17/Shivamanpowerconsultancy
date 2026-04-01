@@ -153,7 +153,7 @@ export default function EthicalRecruitment() {
           <div style={{
             width: "100%", height: 480, borderRadius: 20, overflow: "hidden", position: "relative",
           }}>
-            <Image src="/Professional Indian executive.png" alt="Professional workplace" fill style={{ objectFit: "cover" }} />
+            <Image src="/Professional Indian executive.webp" alt="Professional workplace" fill sizes="(max-width: 640px) 100vw, 45vw" loading="lazy" style={{ objectFit: "cover" }} />
           </div>
           {/* Floating "Certified Hub" card */}
           <div style={{

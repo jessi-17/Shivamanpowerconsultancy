@@ -77,9 +77,11 @@ export default function WhatMakesUsDifferent() {
             }}
           >
             <Image
-              src="/Professional Punjab office environment.png"
+              src="/Professional Punjab office environment.webp"
               alt="Shiva Manpower Consultants Nakodar office"
               fill
+              sizes="(max-width: 640px) 100vw, 45vw"
+              loading="lazy"
               style={{ objectFit: "cover", objectPosition: "center top" }}
             />
           </div>

@@ -119,7 +119,7 @@ export default function CareerDestinations() {
               onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
             >
               <div style={{ width: "100%", height: "100%", borderRadius: 20, position: "relative", overflow: "hidden" }}>
-                <Image src={dest.image} alt={dest.name} fill style={{ objectFit: "cover" }} />
+                <Image src={dest.image} alt={dest.name} fill sizes="(max-width: 640px) 100vw, 25vw" loading="lazy" style={{ objectFit: "cover" }} />
                 <div
                   style={{
                     position: "absolute",

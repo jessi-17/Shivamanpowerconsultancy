@@ -70,7 +70,7 @@ export default function ContactForm() {
       }}>
         <div style={{
           position: "absolute", inset: 0, opacity: 0.18,
-          backgroundImage: "url('/Office desk.png')",
+          backgroundImage: "url('/Office desk.webp')",
           backgroundSize: "cover", backgroundPosition: "center",
         }} />
         <div style={{ position: "relative", zIndex: 1 }}>
