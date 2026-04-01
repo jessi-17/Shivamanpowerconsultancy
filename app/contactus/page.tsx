@@ -1,39 +1,47 @@
 import type { Metadata } from "next";
-import ContactContent from "./content";
+import Navbar from "@/components/own/Navbar";
+import Footer from "@/components/own/Footer";
 
 export const metadata: Metadata = {
-  title: "Contact Us – Best Dubai Visa & Gulf Job Consultancy in Nakodar, Jalandhar",
-  description:
-    "Contact Shiva Travels Manpower Consultants Nakodar for Dubai visa services, Gulf job placements, Romania work visa & employer partnerships. Nakodar job consultancy, Jalandhar job consultants, Kapurthala overseas jobs. Visit our office in Nakodar near Jalandhar, Punjab. Call +91-9815358832. Trusted manpower consultancy in Nakodar Punjab.",
-  keywords: [
-    "Nakodar Job Consultancy",
-    "Jalandhar Job Consultants",
-    "Kapurthala Overseas Jobs",
-    "Doaba Work Abroad Services",
-    "visa agent Nakodar Jalandhar",
-    "Jobs in UAE from Nakodar Punjab",
-    "Abroad Job Consultants Jalandhar Nakodar",
-    "International Job Consultancy Nakodar",
-    "Visa Consultancy Nakodar Punjab",
-    "Trusted manpower consultancy in Nakodar Punjab",
-  ],
-  openGraph: {
-    title: "Contact Us – Best Dubai Visa & Gulf Job Consultancy Nakodar, Jalandhar",
-    description:
-      "Contact Shiva Manpower for Dubai visa, Gulf jobs & Romania work visa. Office in Nakodar, Jalandhar. Call +91-9815358832. Zero candidate fees.",
-    url: "/contactus",
-  },
-  twitter: {
-    card: "summary",
-    title: "Contact Shiva Manpower – Dubai Visa & Gulf Recruitment Nakodar",
-    description:
-      "Best Dubai visa & Gulf recruitment consultancy in Nakodar, Jalandhar. Call +91-9815358832. Zero fees.",
-  },
-  alternates: {
-    canonical: "/contactus",
-  },
+  title: "Contact Shiva Travel Manpower Consultants Nakodar",
+  description: "Visit our office at Golden Avenue, Nakodar or call +91 98148-20432. Government licensed overseas recruitment agency. Walk in consultations available Monday to Saturday.",
 };
 
-export default function ContactPage() {
-  return <ContactContent />;
+export default function ContactUs() {
+  return (
+    <>
+      <Navbar />
+      <div style={{
+        minHeight: "80vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        padding: "140px 24px 80px",
+        backgroundColor: "var(--surface)",
+      }}>
+        <div>
+          <h1 style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "clamp(2rem, 4vw, 3rem)",
+            fontWeight: 700,
+            color: "var(--on-surface)",
+            marginBottom: 16,
+          }}>
+            Contact Us
+          </h1>
+          <p style={{
+            fontFamily: "var(--font-body)",
+            fontSize: 16,
+            color: "var(--on-surface-variant)",
+            maxWidth: 480,
+            lineHeight: 1.6,
+          }}>
+            This page is coming soon. For now, reach us on WhatsApp or visit our office at Golden Avenue, Near Time Cafe, Nakodar, Jalandhar.
+          </p>
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
 }
