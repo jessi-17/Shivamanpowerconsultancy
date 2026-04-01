@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/own/Navbar";
-import Footer from "@/components/own/Footer";
 
 export const metadata: Metadata = {
   title: "Contact Shiva Travel Manpower Consultants Nakodar",
@@ -10,7 +8,6 @@ export const metadata: Metadata = {
 export default function ContactUs() {
   return (
     <>
-      <Navbar />
       <div style={{
         minHeight: "80vh",
         display: "flex",
@@ -41,7 +38,6 @@ export default function ContactUs() {
           </p>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

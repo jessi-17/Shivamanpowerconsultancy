@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/own/Navbar";
-import Footer from "@/components/own/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -36,7 +34,6 @@ const team = [
 export default function AboutUs() {
   return (
     <>
-      <Navbar />
       <main>
         {/* Hero */}
         <section style={{
@@ -287,7 +284,6 @@ export default function AboutUs() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

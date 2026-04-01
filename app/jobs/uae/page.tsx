@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/own/Navbar";
-import Footer from "@/components/own/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -50,7 +48,6 @@ const visaProcess = [
 export default function JobsInUAE() {
   return (
     <>
-      <Navbar />
       <main>
         {/* Hero */}
         <section style={{
@@ -310,7 +307,6 @@ export default function JobsInUAE() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }
