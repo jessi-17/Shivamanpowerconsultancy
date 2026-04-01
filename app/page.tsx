@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/own/Navbar";
 import HeroSection from "@/components/own/HeroSection";
 import TrustBar from "@/components/own/TrustBar";
 import CareerDestinations from "@/components/own/CareerDestinations";
@@ -13,7 +12,6 @@ import ClientVideos from "@/components/own/ClientVideos";
 import VisaProcess from "@/components/own/VisaProcess";
 import WhatMakesUsDifferent from "@/components/own/WhatMakesUsDifferent";
 import ContactForm from "@/components/own/ContactForm";
-import Footer from "@/components/own/Footer";
 
 export const metadata: Metadata = {
   title: "Shiva Travel & Manpower Consultants Nakodar | Overseas Recruitment Agency Punjab",
@@ -86,7 +84,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <Navbar />
       <HeroSection />
       <TrustBar />
       <LocalCTA />
@@ -100,7 +97,6 @@ export default function Home() {
       <Testimonials />
       <ClientVideos />
       <ContactForm />
-      <Footer />
     </>
   );
 }

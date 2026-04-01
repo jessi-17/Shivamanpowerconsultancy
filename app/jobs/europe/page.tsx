@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/own/Navbar";
-import Footer from "@/components/own/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -76,7 +74,6 @@ const salaryRanges = [
 export default function JobsInEurope() {
   return (
     <>
-      <Navbar />
       <main>
         {/* Hero */}
         <section style={{
@@ -336,7 +333,6 @@ export default function JobsInEurope() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

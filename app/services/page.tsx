@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/own/Navbar";
-import Footer from "@/components/own/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -63,7 +61,6 @@ const process = [
 export default function Services() {
   return (
     <>
-      <Navbar />
       <main>
         {/* Hero */}
         <section style={{
@@ -257,7 +254,6 @@ export default function Services() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

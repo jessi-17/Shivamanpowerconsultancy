@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Manrope, Inter } from "next/font/google";
 import Script from "next/script";
+import Navbar from "@/components/own/Navbar";
+import Footer from "@/components/own/Footer";
 import CookieBanner from "@/components/own/CookieBanner";
 import LeadPopup from "@/components/own/LeadPopup";
 import "./global.css";
@@ -147,7 +149,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${manrope.variable} ${inter.variable}`}>
+        <Navbar />
         {children}
+        <Footer />
         <CookieBanner />
         <LeadPopup />
 
