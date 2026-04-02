@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, Inter } from "next/font/google";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/own/Navbar";
 import Footer from "@/components/own/Footer";
 import CookieBanner from "@/components/own/CookieBanner";
@@ -159,6 +160,7 @@ export default function RootLayout({
         <Footer />
         <CookieBanner />
         <LeadPopup />
+        <Analytics />
 
         {/* Google Analytics — lazyOnload so it doesn't block paint */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-6WTP8DK0FM" strategy="lazyOnload" />
