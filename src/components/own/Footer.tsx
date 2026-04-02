@@ -318,9 +318,9 @@ export default function Footer() {
                 color: "#000c2f", marginBottom: 16,
               }}>Contact Us</h4>
 
-              <div style={{ display: "flex", alignItems: "flex-start", gap: 8, marginBottom: 12 }}>
-                <Icon icon="mdi:map-marker-outline" width={16} style={{ color: "#64748b", marginTop: 3, flexShrink: 0 }} />
-                <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "#64748b", lineHeight: 1.6 }}>
+              <div style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: 12 }}>
+                <Icon icon="mdi:map-marker" width={20} style={{ color: "#0052dc", marginTop: 2, flexShrink: 0 }} />
+                <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "#64748b", lineHeight: 1.6, margin: 0 }}>
                   Golden Avenue, Near Sukhjeet Hospital,<br />
                   Jalandhar Road, Nakodar, Punjab
                 </p>
