@@ -59,7 +59,7 @@ export default function LeadPopup() {
     e.preventDefault();
     const text = `Hi, I'm ${name}. ${message}`;
     const encoded = encodeURIComponent(text);
-    window.open(`https://wa.me/919814820432?text=${encoded}`, "_blank");
+    window.open(`https://wa.me/919815358832?text=${encoded}`, "_blank");
     handleDismiss();
   };
 

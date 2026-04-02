@@ -11,6 +11,7 @@ const navLinks = [
   { label: "Opportunities", href: "/current-demands" },
   { label: "Success Stories", href: "/success-stories" },
   { label: "Blog", href: "/blog" },
+  { label: "FAQ", href: "/faq" },
 ];
 
 export default function Navbar() {
@@ -64,9 +65,11 @@ export default function Navbar() {
               color: scrolled ? "var(--primary)" : "#ffffff",
               transition: `color var(--duration-normal) var(--ease-out)`,
               lineHeight: 1.15,
+              display: "inline-block",
+              whiteSpace: "pre-line",
             }}
           >
-            Shiva Travels & <br /> Manpower Consultancy
+            {"Shiva Travels &\nManpower Consultancy"}
           </span>
         </Link>
 

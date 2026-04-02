@@ -549,8 +549,9 @@ section {
   transform: scale(1);
 }
 
-/* Contact page — sections go full width edge-to-edge */
-.contact-page section {
+/* Pages — sections go full width edge-to-edge */
+.contact-page section,
+.full-width-page section {
   max-width: none;
   padding-left: 0;
   padding-right: 0;

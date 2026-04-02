@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
 
 export const metadata: Metadata = {
   title: "Jobs in Saudi Arabia | Riyadh, Jeddah, Dammam Work Opportunities",
@@ -39,7 +40,15 @@ const salaryRanges = [
 export default function JobsInSaudi() {
   return (
     <>
-      <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([
+          { name: "Home", href: "/" },
+          { name: "Jobs", href: "/current-demands" },
+          { name: "Jobs in Saudi Arabia", href: "/jobs/saudi-arabia" },
+        ])) }}
+      />
+      <main className="full-width-page">
         {/* Hero */}
         <section style={{
           background: "linear-gradient(135deg, #1a472a 0%, #2d5a3f 100%)",
@@ -250,7 +259,7 @@ export default function JobsInSaudi() {
               }}>
                 Contact Us
               </Link>
-              <a href="https://wa.me/919814820432" target="_blank" rel="noopener noreferrer" style={{
+              <a href="https://wa.me/919815358832" target="_blank" rel="noopener noreferrer" style={{
                 display: "inline-block", padding: "14px 36px",
                 backgroundColor: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.3)",
                 color: "#fff", fontFamily: "var(--font-display)", fontSize: 15,

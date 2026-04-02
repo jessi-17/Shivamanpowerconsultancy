@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { breadcrumbJsonLd } from "../_lib/breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Visa Services | Work Visa Processing for Gulf & Europe",
+  title: "Visa Services | Work Visa Processing for Gulf & Europe | Nakodar & Jalandhar",
   description:
-    "Complete visa processing services for UAE, Saudi Arabia, Qatar, Poland, Romania. Work visa, employment visa, document attestation, medical coordination, E-Migrate compliance. Government licensed agency.",
+    "Complete visa processing services for UAE, Saudi Arabia, Qatar, Poland, Romania from Nakodar & Jalandhar, Punjab. Work visa, employment visa, document attestation, medical coordination, E-Migrate compliance. Government licensed agency.",
 };
 
 const services = [
@@ -61,7 +62,14 @@ const process = [
 export default function Services() {
   return (
     <>
-      <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([
+          { name: "Home", href: "/" },
+          { name: "Visa Services", href: "/services" },
+        ])) }}
+      />
+      <main className="full-width-page">
         {/* Hero */}
         <section style={{
           background: "linear-gradient(135deg, var(--primary) 0%, #0052dc 100%)",

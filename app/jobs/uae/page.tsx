@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
 
 export const metadata: Metadata = {
   title: "Jobs in UAE | Dubai, Abu Dhabi, Sharjah Work Opportunities",
@@ -48,7 +49,15 @@ const visaProcess = [
 export default function JobsInUAE() {
   return (
     <>
-      <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([
+          { name: "Home", href: "/" },
+          { name: "Jobs", href: "/current-demands" },
+          { name: "Jobs in UAE", href: "/jobs/uae" },
+        ])) }}
+      />
+      <main className="full-width-page">
         {/* Hero */}
         <section style={{
           background: "linear-gradient(135deg, var(--primary) 0%, #0052dc 100%)",
@@ -295,7 +304,7 @@ export default function JobsInUAE() {
               }}>
                 Contact Us
               </Link>
-              <a href="https://wa.me/919814820432" target="_blank" rel="noopener noreferrer" style={{
+              <a href="https://wa.me/919815358832" target="_blank" rel="noopener noreferrer" style={{
                 display: "inline-block", padding: "14px 36px",
                 backgroundColor: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.3)",
                 color: "#fff", fontFamily: "var(--font-display)", fontSize: 15,

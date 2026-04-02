@@ -13,6 +13,7 @@ const quickLinks = [
   { label: "Opportunities", href: "/current-demands" },
   { label: "Success Stories", href: "/success-stories" },
   { label: "Blog", href: "/blog" },
+  { label: "FAQ", href: "/faq" },
   { label: "Contact Us", href: "/contactus" },
 ];
 
@@ -33,10 +34,10 @@ const blogPosts = [
 ];
 
 const socials = [
-  { icon: "mdi:whatsapp", href: "https://wa.me/919814820432", label: "WhatsApp" },
+  { icon: "mdi:facebook", href: "https://www.facebook.com/shivatravelnakodar/", label: "Facebook" },
   { icon: "mdi:instagram", href: "https://www.instagram.com/shiva.travels.consultants/", label: "Instagram" },
-  { icon: "mdi:phone", href: "tel:+919814820432", label: "Call" },
-  { icon: "mdi:email-outline", href: "mailto:info@shivamanpower.com", label: "Email" },
+  { icon: "mdi:youtube", href: "https://www.youtube.com/@ShivaTravelNakodar", label: "YouTube" },
+  { icon: "mdi:whatsapp", href: "https://wa.me/919815358832", label: "WhatsApp" },
 ];
 
 export default function Footer() {
@@ -328,14 +329,14 @@ export default function Footer() {
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
                 <Icon icon="mdi:phone-outline" width={16} style={{ color: "#64748b", flexShrink: 0 }} />
                 <a href="tel:+919814820432" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "#64748b", textDecoration: "none" }}>
-                  +91 98148-20432
+                  +91 98148-20432 <span style={{ fontSize: 11, color: "#94a3b8" }}>(Call)</span>
                 </a>
               </div>
 
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
-                <Icon icon="mdi:phone-outline" width={16} style={{ color: "#64748b", flexShrink: 0 }} />
-                <a href="tel:+919814920432" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "#64748b", textDecoration: "none" }}>
-                  +91 98149-20432
+                <Icon icon="mdi:whatsapp" width={16} style={{ color: "#64748b", flexShrink: 0 }} />
+                <a href="https://wa.me/919815358832" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "#64748b", textDecoration: "none" }}>
+                  +91 98153-58832 <span style={{ fontSize: 11, color: "#94a3b8" }}>(WhatsApp)</span>
                 </a>
               </div>
 

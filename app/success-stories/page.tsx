@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { breadcrumbJsonLd } from "../_lib/breadcrumb";
 
 export const metadata: Metadata = {
   title: "Success Stories | Workers Placed by Shiva Travel & Manpower Consultants",
@@ -92,7 +93,14 @@ const stats = [
 export default function SuccessStories() {
   return (
     <>
-      <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([
+          { name: "Home", href: "/" },
+          { name: "Success Stories", href: "/success-stories" },
+        ])) }}
+      />
+      <main className="full-width-page">
         {/* Hero */}
         <section style={{
           background: "linear-gradient(135deg, var(--primary) 0%, #0052dc 100%)",

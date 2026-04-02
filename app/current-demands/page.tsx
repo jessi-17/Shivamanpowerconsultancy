@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { breadcrumbJsonLd } from "../_lib/breadcrumb";
 
 export const metadata: Metadata = {
   title: "Current Job Openings | Overseas Opportunities for Indian Workers",
@@ -10,7 +11,14 @@ export const metadata: Metadata = {
 export default function CurrentDemands() {
   return (
     <>
-      <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([
+          { name: "Home", href: "/" },
+          { name: "Current Openings", href: "/current-demands" },
+        ])) }}
+      />
+      <main className="full-width-page">
         <section style={{
           background: "linear-gradient(135deg, var(--primary) 0%, #0052dc 100%)",
           padding: "160px 24px 80px",
@@ -37,7 +45,7 @@ export default function CurrentDemands() {
               We are currently updating our job listings. Contact us directly for the latest openings.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-              <a href="https://wa.me/919814820432" target="_blank" rel="noopener noreferrer" style={{
+              <a href="https://wa.me/919815358832" target="_blank" rel="noopener noreferrer" style={{
                 display: "inline-block", padding: "14px 36px", backgroundColor: "#fff",
                 color: "var(--primary)", fontFamily: "var(--font-display)", fontSize: 15,
                 fontWeight: 700, borderRadius: 10, textDecoration: "none",

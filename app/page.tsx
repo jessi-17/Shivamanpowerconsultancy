@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import HeroSection from "@/components/own/HeroSection";
 import TrustBar from "@/components/own/TrustBar";
+import { breadcrumbJsonLd } from "./_lib/breadcrumb";
 
 // Lazy load all below-fold components — only HeroSection + TrustBar load immediately
 const LocalCTA = dynamic(() => import("@/components/own/LocalCTA"));
@@ -19,7 +20,7 @@ const ContactForm = dynamic(() => import("@/components/own/ContactForm"));
 export const metadata: Metadata = {
   title: "Shiva Travel & Manpower Consultants Nakodar | Overseas Recruitment Agency Punjab",
   description:
-    "Government licensed manpower consultancy in Nakodar, Punjab. 25+ years placing workers from Jalandhar and Doaba region in UAE, Saudi Arabia, Qatar, Poland, Romania. Zero candidate fees. Walk in office on Golden Avenue, Nakodar.",
+    "Government licensed manpower consultancy in Nakodar, near Jalandhar, Punjab. 25+ years placing workers from Jalandhar, Kapurthala, Phagwara & Doaba region in UAE, Saudi Arabia, Qatar, Poland, Romania. Zero candidate fees.",
   alternates: {
     canonical: "/",
   },
@@ -86,6 +87,12 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([
+          { name: "Home", href: "/" },
+        ])) }}
       />
       <HeroSection />
       <TrustBar />
