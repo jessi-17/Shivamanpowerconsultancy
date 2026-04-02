@@ -1,4 +1,11 @@
 @import "tailwindcss";
+@source "../src";
+
+@theme {
+  --default-font-family: var(--font-inter), "Inter", sans-serif;
+  --font-family-display: var(--font-manrope), "Manrope", sans-serif;
+  --font-family-body: var(--font-inter), "Inter", sans-serif;
+}
 
 /* ============================================
    THE GLOBAL ARCHITECT — Design System Tokens
@@ -101,6 +108,12 @@
 /* ============================================
    Base Resets & Typography
    ============================================ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 html, body {
   overflow-x: hidden;
