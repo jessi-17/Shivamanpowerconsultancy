@@ -127,7 +127,7 @@ Founded in 1998 in Nakodar, we've been serving the Doaba region for over 25 year
 
 ### Our Office
 
-Visit us at Golden Avenue, Near Time Cafe, Nakodar, Jalandhar – 144040. Open Monday–Saturday, 9am–6pm.
+Visit us at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab – 144040. Open Monday–Saturday, 9am–6pm.
 
 ### Areas We Serve
 
@@ -910,6 +910,458 @@ We regularly receive demands from top hotel chains in Dubai and Abu Dhabi, inclu
       "waiter jobs Dubai",
       "hospitality jobs Gulf",
       "5-star hotel jobs Dubai from India",
+    ],
+  },
+  {
+    slug: "schengen-work-visa-from-india-complete-guide",
+    title: "Schengen Work Visa from India – Complete Guide to Europe Work Permits 2025",
+    excerpt:
+      "Everything you need to know about getting a Schengen work visa from India. Learn which European countries hire Indian workers, visa types, documents required, costs, and step-by-step process.",
+    content: `
+## Schengen Work Visa from India: Your Complete Guide
+
+Europe is quickly becoming a top destination for Indian workers seeking better salaries, quality of life, and international career growth. The Schengen Area — a zone of 29 European countries with open internal borders — offers some of the best work opportunities for skilled and semi-skilled workers from India.
+
+### What is the Schengen Area?
+
+The Schengen Area is a group of European countries that have abolished passport controls at their mutual borders. This means once you enter one Schengen country with a valid visa, you can travel freely within the zone. However, your **work permit is country-specific** — you can only work in the country that issued your work visa.
+
+Key Schengen countries include France, Germany, Italy, Spain, Poland, Portugal, Greece, Croatia, the Netherlands, and more.
+
+### Which Schengen Countries Hire Indian Workers?
+
+Not all Schengen countries actively recruit from India. The ones with the highest demand for Indian workers are:
+
+| Country | Top Sectors | Avg. Monthly Salary (EUR) |
+|---------|------------|--------------------------|
+| Poland | Construction, Manufacturing, Logistics | 800 – 1,500 |
+| Romania | Construction, Agriculture, Hospitality | 600 – 1,200 |
+| Croatia | Construction, Tourism, Agriculture | 700 – 1,300 |
+| Hungary | Manufacturing, Food Processing | 700 – 1,200 |
+| Czech Republic | Manufacturing, Automotive | 900 – 1,500 |
+| Portugal | Agriculture, Construction | 800 – 1,300 |
+
+### Types of Work Visas in Schengen Countries
+
+1. **National Work Visa (Type D)** — Long-stay visa for employment, valid for 1–2 years and renewable
+2. **Seasonal Work Visa** — Short-term visa for agriculture, tourism, or hospitality (up to 6–9 months)
+3. **EU Blue Card** — For highly skilled professionals with a university degree and a high-salary job offer
+
+### Documents Required
+
+- Valid passport (minimum 12 months validity recommended)
+- Passport-size photographs (Schengen format: 35mm x 45mm, white background)
+- Job offer letter or employment contract from the European employer
+- Work permit issued by the destination country
+- Educational and experience certificates (attested/apostilled)
+- Medical fitness certificate
+- Travel insurance (minimum EUR 30,000 coverage)
+- Proof of accommodation in the destination country
+- Police clearance certificate
+- Completed visa application form
+
+### Step-by-Step Process
+
+**Step 1: Secure a Job Offer** — Register with a licensed recruitment agency like Shiva Manpower. The agency matches your profile with European employer requirements.
+
+**Step 2: Employer Obtains Work Permit** — The European employer applies for a work permit on your behalf through their country's labour office.
+
+**Step 3: Document Preparation** — Gather and attest all required documents. Your agency guides you through apostille, translations, and attestations.
+
+**Step 4: Visa Application** — Apply at the embassy or consulate of the destination country (e.g., Polish Embassy for Poland jobs). Book an appointment through VFS Global.
+
+**Step 5: Biometrics & Interview** — Attend the visa appointment for fingerprinting, photograph, and a short interview.
+
+**Step 6: Visa Decision** — Processing typically takes 15–60 days depending on the country.
+
+**Step 7: Pre-Departure** — Complete medical tests, attend orientation, and book travel.
+
+### Processing Time & Costs
+
+- **Processing time**: 30–90 days (varies by country)
+- **Visa application fee**: EUR 75–100 (approximately ₹7,000–9,000)
+- **VFS service charge**: ₹2,000–3,000
+- **Document attestation**: ₹5,000–15,000 depending on documents
+
+### Common Mistakes to Avoid
+
+1. **Applying without a valid work permit** — A Schengen tourist visa does NOT allow you to work
+2. **Using unlicensed agents** — Always verify the agency's RA license on the MEA website
+3. **Submitting incomplete documents** — Leads to delays or rejection
+4. **Ignoring medical requirements** — Some countries require specific vaccinations
+5. **Not checking contract details** — Read your employment contract carefully before signing
+
+### How Shiva Manpower Helps
+
+Shiva Travel & Manpower Consultants is a government-licensed recruitment agency (RA License B-1794/PUN/PER/100/5/10094/2022) with active partnerships with employers across Poland, Romania, Croatia, and other European countries. We handle the entire process — from matching your profile to visa stamping — with zero fees to candidates.
+
+Visit us at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040** or call **+91 98148-20432** to register for upcoming Europe opportunities.
+    `,
+    image: "/Blog-13.jpg",
+    category: "Visa Guide",
+    date: "2025-04-01",
+    readTime: "8 min read",
+    keywords: [
+      "Schengen visa from India",
+      "Europe work visa India",
+      "Schengen work permit",
+      "how to get Schengen work visa",
+    ],
+  },
+  {
+    slug: "croatia-work-visa-indian-workers-jobs-guide",
+    title: "Croatia Work Visa for Indian Workers – Jobs, Salary & Complete Process 2025",
+    excerpt:
+      "Complete guide to Croatia work visa and jobs for Indian workers. Discover available roles, salary ranges, visa process, requirements, and how to apply from Punjab through a licensed agency.",
+    content: `
+## Croatia Work Visa for Indian Workers: A Growing Opportunity
+
+Croatia, a beautiful EU member country on the Adriatic coast, is emerging as one of the most promising European destinations for Indian workers. With a growing economy, labour shortages in key sectors, and a welcoming approach to foreign workers, Croatia offers excellent opportunities for skilled and semi-skilled workers from India.
+
+### Why Choose Croatia?
+
+- **EU Member State** — Croatia joined the EU in 2013 and the Schengen Area in 2023
+- **Growing Economy** — GDP growth driving demand for construction, tourism, and manufacturing workers
+- **Labour Shortage** — Croatia's aging population means more jobs for foreign workers
+- **Good Salaries** — Significantly higher than Indian wages with European worker protections
+- **Quality of Life** — Safe country with excellent healthcare and infrastructure
+- **Gateway to Europe** — Work experience in Croatia opens doors to other EU countries
+
+### Jobs Available in Croatia for Indian Workers
+
+**Construction (Highest Demand):**
+- Masons, carpenters, welders, steel fixers
+- Painters, tile fitters, plumbers, electricians
+- Construction helpers and general labourers
+
+**Tourism & Hospitality:**
+- Hotel staff, restaurant workers, kitchen helpers
+- Housekeeping, bartenders, waiters
+
+**Agriculture:**
+- Farm workers, greenhouse workers
+- Fruit picking, vegetable harvesting (seasonal)
+
+**Manufacturing:**
+- Factory workers, machine operators
+- Packaging, assembly line workers
+
+### Salary Ranges in Croatia (2025)
+
+| Role | Monthly (EUR) | Monthly (INR approx.) |
+|------|--------------|----------------------|
+| Construction Worker | 800 – 1,300 | ₹72,000 – ₹1,17,000 |
+| Factory Worker | 700 – 1,000 | ₹63,000 – ₹90,000 |
+| Agricultural Worker | 600 – 900 | ₹54,000 – ₹81,000 |
+| Hospitality Staff | 700 – 1,100 | ₹63,000 – ₹99,000 |
+| Welder / Skilled Trade | 900 – 1,500 | ₹81,000 – ₹1,35,000 |
+| Driver | 800 – 1,200 | ₹72,000 – ₹1,08,000 |
+
+*Note: Croatia uses the Euro (EUR). Accommodation is often provided or subsidised by the employer.*
+
+### Croatia Work Visa Process from India
+
+**Step 1: Job Offer** — A Croatian employer issues a formal employment contract through a licensed recruitment agency.
+
+**Step 2: Work Permit** — The employer applies for a work and residence permit at the Croatian Ministry of Interior. This is the most time-consuming step.
+
+**Step 3: Document Preparation** — You prepare your passport, certificates, medical reports, and police clearance. Documents may need apostille and translation into Croatian.
+
+**Step 4: Visa Application** — Apply at the Croatian Embassy or VFS Global centre in India (New Delhi). Submit biometrics and attend an interview.
+
+**Step 5: Visa Approval & Travel** — Once approved, your visa is stamped and you travel to Croatia. Upon arrival, you complete residence registration.
+
+### Requirements
+
+- Valid passport (minimum 12 months validity)
+- Clean criminal record (police clearance certificate)
+- Medical fitness certificate
+- Relevant work experience (1–3 years preferred)
+- Age: 21–45 years (varies by employer)
+- Basic English communication (Croatian language is a plus but rarely required)
+
+### Processing Time
+
+The entire process from job offer to departure typically takes **60–90 days**. Work permits are usually issued for 1 year and are renewable.
+
+### Benefits of Working in Croatia
+
+- Employer-provided or subsidised accommodation
+- Health insurance coverage
+- Overtime pay as per EU labour laws
+- Paid annual leave (minimum 20 days)
+- Safe working conditions regulated by EU standards
+- Opportunity to apply for long-term EU residence after 5 years
+
+### How Shiva Manpower Helps
+
+Shiva Travel & Manpower Consultants has established direct relationships with Croatian employers in construction, manufacturing, and hospitality sectors. As a government-licensed agency (RA License B-1794/PUN/PER/100/5/10094/2022), we handle the complete process from profile matching to visa stamping — with zero fees charged to candidates.
+
+Visit our office at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040** or call **+91 98148-20432** to register for Croatia job openings.
+    `,
+    image: "/Blog-14.jpg",
+    category: "Europe Jobs",
+    date: "2025-03-25",
+    readTime: "7 min read",
+    keywords: [
+      "Croatia work visa from India",
+      "Croatia jobs for Indians",
+      "Croatia work permit",
+      "jobs in Croatia from Punjab",
+    ],
+  },
+  {
+    slug: "how-to-apply-overseas-jobs-from-punjab",
+    title: "How to Apply for Overseas Jobs from Punjab – Step-by-Step Process 2025",
+    excerpt:
+      "Complete step-by-step guide on how to apply for overseas jobs from Punjab. Learn about documents, licensed agencies, E-Migrate, common mistakes to avoid, and the full timeline from application to departure.",
+    content: `
+## How to Apply for Overseas Jobs from Punjab: The Complete Roadmap
+
+Every year, thousands of young men and women from Punjab travel abroad for work — to Gulf countries like UAE, Saudi Arabia, and Qatar, as well as European nations like Poland, Romania, and Croatia. But many first-time applicants are unsure about the correct process. This guide walks you through every step, so you can go abroad safely and legally.
+
+### Step 1: Get Your Passport
+
+Your passport is the most essential document for any overseas job. If you don't have one:
+- Apply online at passportindia.gov.in
+- Book an appointment at your nearest Passport Seva Kendra (PSK) — Jalandhar PSK is the closest for Doaba region residents
+- Processing time: 7–15 working days for normal, 1–3 days for Tatkal
+- Ensure your passport has **at least 12 months validity** before applying for jobs
+
+### Step 2: Prepare Your Documents
+
+Keep the following documents ready:
+- Passport (original + photocopies)
+- Updated CV/Resume with recent photograph
+- Educational certificates (8th, 10th, 12th, ITI, Diploma, Degree)
+- Experience certificates from previous employers
+- Trade test certificates (for skilled workers like welders, electricians, plumbers)
+- Aadhaar Card
+- Passport-size photographs (white background, multiple copies)
+
+### Step 3: Find a Licensed Recruitment Agency
+
+This is the **most critical step**. Only apply through agencies that hold a valid RA (Recruiting Agent) license from the Ministry of External Affairs (MEA).
+
+**How to verify an agency:**
+1. Visit the MEA website: mea.gov.in
+2. Go to the "RA Search" section under Protector General of Emigrants
+3. Search by agency name or state
+4. Confirm their license number and validity period
+
+**Red flags of a fake agency:**
+- No physical office — only a phone number or WhatsApp
+- Demands upfront payment of ₹1–5 lakhs or more
+- Promises "guaranteed visa" without an interview
+- Not registered on E-Migrate
+- Cannot provide their RA license number
+
+### Step 4: Register Your Profile
+
+Visit the licensed agency's office and register your profile. Provide:
+- Your passport copy
+- Updated CV
+- Copies of all certificates
+- Your job preferences (country, role, salary expectations)
+
+The agency will enter your details into their database and match your profile with incoming employer demands.
+
+### Step 5: Attend Interviews & Trade Tests
+
+When a matching opportunity arises, the agency will call you for:
+- **Client Interview** — In-person or video call with the Gulf/European employer
+- **Trade Test** — Practical skill demonstration (for welders, electricians, fitters, etc.)
+- **CV Selection** — For some bulk hiring, employers select based on CV alone
+
+### Step 6: Receive Offer Letter & Complete Documentation
+
+Once selected:
+- You receive a formal offer letter from the employer
+- The agency initiates visa and work permit processing
+- You complete your **medical examination** at a GAMCA-approved centre (for Gulf) or designated centre (for Europe)
+- Police clearance certificate is obtained if required
+
+### Step 7: E-Migrate Registration
+
+All Indian workers travelling to ECR (Emigration Check Required) countries must register on the **E-Migrate portal** (emigrate.gov.in). Your licensed agency handles this registration. The E-Migrate system:
+- Verifies the employer and recruitment agency
+- Records your employment contract details
+- Provides emigration clearance
+
+### Step 8: Visa Stamping & Pre-Departure
+
+- Your visa is stamped on your passport
+- Attend a **Pre-Departure Orientation Seminar (PDOS)** — mandatory for first-time emigrants
+- Book your flight (often arranged by the employer or agency)
+- Depart for your new job
+
+### Timeline: How Long Does It Take?
+
+| Stage | Duration |
+|-------|----------|
+| Document preparation | 1–2 weeks |
+| Profile matching & interview | 1–4 weeks |
+| Work permit processing | 2–8 weeks (varies by country) |
+| Visa processing | 1–4 weeks |
+| Medical & E-Migrate | 1–2 weeks |
+| **Total (approx.)** | **6–16 weeks** |
+
+### Common Mistakes to Avoid
+
+1. **Paying large sums to agents** — Genuine agencies never charge candidates
+2. **Going on a tourist/visit visa to work** — This is illegal and can result in deportation and ban
+3. **Not reading your employment contract** — Understand your salary, working hours, and benefits before signing
+4. **Trusting social media ads** — Many fake agents advertise on Facebook and Instagram
+5. **Skipping medical tests** — Medical unfitness can cause last-minute visa rejection
+
+### How Shiva Manpower Helps
+
+Shiva Travel & Manpower Consultants has been guiding Punjab youth through the overseas job process for over 25 years. As a government-licensed agency (RA License B-1794/PUN/PER/100/5/10094/2022), we provide end-to-end support — from document preparation to post-arrival assistance — with zero fees to candidates.
+
+Walk into our office at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040** or call **+91 98148-20432** to start your journey today.
+    `,
+    image: "/Blog-15.jpg",
+    category: "Career Guide",
+    date: "2025-03-20",
+    readTime: "9 min read",
+    keywords: [
+      "how to apply for overseas jobs",
+      "foreign jobs from Punjab",
+      "how to go abroad for work from India",
+      "overseas job application process",
+    ],
+  },
+  {
+    slug: "work-permit-requirements-gulf-europe-from-india",
+    title: "Work Permit Requirements for Gulf & Europe from India – Country-by-Country Guide 2025",
+    excerpt:
+      "Detailed country-by-country guide to work permit requirements for Indian workers going to UAE, Saudi Arabia, Qatar, Kuwait, Poland, Romania, and Croatia. Documents, medical tests, age limits, and more.",
+    content: `
+## Work Permit Requirements for Gulf & Europe: What Indian Workers Need
+
+Understanding the specific work permit requirements for each country is essential before applying for overseas jobs. Requirements vary significantly between Gulf countries and European nations. This guide breaks down what you need for the most popular destinations.
+
+### Common Documents Required (All Countries)
+
+Regardless of the destination, every Indian worker going abroad for employment needs:
+
+- Valid passport (minimum 6–12 months validity)
+- Passport-size photographs (specifications vary by country)
+- Updated CV/Resume
+- Educational certificates
+- Work experience certificates
+- Police clearance certificate (PCC)
+- Medical fitness certificate
+- E-Migrate registration (for ECR countries)
+
+### Country-by-Country Requirements
+
+| Requirement | UAE | Saudi Arabia | Qatar | Kuwait | Poland | Romania | Croatia |
+|-------------|-----|-------------|-------|--------|--------|---------|---------|
+| **Min. Age** | 18 | 21 | 21 | 21 | 18 | 18 | 18 |
+| **Max. Age** | 55 | 50 | 50 | 50 | No limit | No limit | No limit |
+| **Min. Education** | 8th pass | 8th pass | 8th pass | 8th pass | 10th pass | 10th pass | 10th pass |
+| **Medical Test** | GAMCA | GAMCA | GAMCA | GAMCA | Designated | Designated | Designated |
+| **Trade Test** | Sometimes | Often | Sometimes | Sometimes | Rarely | Rarely | Rarely |
+| **E-Migrate** | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| **Passport Validity** | 6 months | 6 months | 6 months | 6 months | 12 months | 12 months | 12 months |
+| **Processing Time** | 30–45 days | 30–60 days | 30–60 days | 45–60 days | 45–90 days | 45–90 days | 60–90 days |
+| **Visa Cost to Worker** | Zero | Zero | Zero | Zero | Zero | Zero | Zero |
+
+### Medical Requirements
+
+**Gulf Countries (GAMCA Medical):**
+All Gulf-bound workers must undergo a medical examination at a GAMCA (GCC Approved Medical Centres Association) approved centre. The medical includes:
+- Complete blood count (CBC)
+- Blood sugar and cholesterol
+- HIV, Hepatitis B & C tests
+- Chest X-ray (to rule out tuberculosis)
+- General physical examination
+- Eye and ear examination
+
+Medical results are valid for **2 months**. Cost: approximately ₹2,000–3,500.
+
+**European Countries:**
+Medical requirements for Europe are generally less intensive but still mandatory:
+- General health certificate from a registered medical practitioner
+- Some countries may require specific vaccinations
+- Tuberculosis screening may be required
+- Drug test (for certain roles)
+
+### Trade Test Requirements
+
+Trade tests are practical skill assessments required for skilled positions. They are more common for Gulf countries.
+
+**Who needs a trade test?**
+- Welders (welding test with specific positions — 1G, 2G, 3G, 6G)
+- Electricians (wiring, troubleshooting tests)
+- Plumbers (pipe fitting, connection tests)
+- Fitters (mechanical assembly tests)
+- Carpenters (woodwork tests)
+- AC Technicians (installation and repair tests)
+
+Trade tests are conducted at approved trade test centres. Your recruitment agency will arrange the test when required.
+
+### E-Migrate Requirements
+
+The E-Migrate system is mandatory for all Indian workers going to ECR countries for employment. Here is what is needed:
+
+- Aadhaar-linked mobile number
+- Valid passport
+- Employment contract details
+- Employer verification (done by Indian Embassy in the destination country)
+- Recruitment agency's RA license details
+
+Your licensed agency handles the E-Migrate registration. The process takes 2–5 working days once all documents are submitted.
+
+### Age Limits by Country
+
+**Gulf Countries** tend to have stricter age limits:
+- UAE: 18–55 years (some employers prefer 21–45)
+- Saudi Arabia: 21–50 years
+- Qatar: 21–50 years
+- Kuwait: 21–50 years
+
+**European Countries** are more flexible:
+- Poland, Romania, Croatia: No strict upper age limit, but employers typically prefer 21–50 years
+- Fitness for the job is more important than age in European countries
+
+### Education Requirements
+
+**For Gulf Countries:**
+- General labour and helpers: 8th pass minimum
+- Skilled trades (electrician, plumber, welder): ITI certificate preferred
+- Technical roles: Diploma or degree required
+- Professional roles (nurse, engineer): Relevant degree mandatory
+
+**For European Countries:**
+- Most roles require minimum 10th pass
+- Skilled trades: ITI or equivalent vocational training preferred
+- Professional roles: Relevant degree and sometimes credential verification
+
+### How to Prepare Your Documents
+
+1. **Get all certificates attested** — Some countries require apostille (for Hague Convention countries like EU nations) or embassy attestation (for Gulf)
+2. **Translate documents** — European countries may require certified translations
+3. **Keep multiple photocopies** — At least 5 sets of all documents
+4. **Update your CV** — Include all relevant work experience with dates
+5. **Get reference letters** — From previous employers if possible
+
+### How Shiva Manpower Helps
+
+At Shiva Travel & Manpower Consultants, we guide candidates through the specific requirements for each destination country. Our experienced team ensures your documents are complete, correctly attested, and submitted on time — whether you are heading to Dubai, Saudi Arabia, Qatar, Poland, Romania, or Croatia. We hold RA License B-1794/PUN/PER/100/5/10094/2022 and charge zero fees to candidates.
+
+Visit us at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040** or call **+91 98148-20432** to get started with your overseas job application.
+    `,
+    image: "/Blog-16.jpg",
+    category: "Visa Guide",
+    date: "2025-03-18",
+    readTime: "9 min read",
+    keywords: [
+      "work permit requirements",
+      "documents required for work visa",
+      "Gulf work permit from India",
+      "Europe work permit requirements",
     ],
   },
 ];

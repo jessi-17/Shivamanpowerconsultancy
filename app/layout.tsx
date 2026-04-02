@@ -67,6 +67,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: baseUrl,
+    languages: {
+      "en-IN": baseUrl,
+    },
   },
   robots: {
     index: true,
@@ -95,7 +98,7 @@ const jsonLd = {
   telephone: "+91-9814820432",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Golden Avenue, Near Time Cafe",
+    streetAddress: "Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road",
     addressLocality: "Nakodar",
     addressRegion: "Punjab",
     postalCode: "144040",
@@ -112,9 +115,19 @@ const jsonLd = {
     opens: "09:00",
     closes: "18:00",
   },
-  sameAs: [],
+  sameAs: [
+    "https://www.facebook.com/shivatravelnakodar/",
+    "https://www.instagram.com/shiva.travels.consultants/",
+    "https://www.youtube.com/@ShivaTravelNakodar",
+  ],
   priceRange: "Free for candidates",
   areaServed: [
+    { "@type": "City", name: "Nakodar", containedInPlace: { "@type": "State", name: "Punjab" } },
+    { "@type": "City", name: "Jalandhar", containedInPlace: { "@type": "State", name: "Punjab" } },
+    { "@type": "City", name: "Kapurthala", containedInPlace: { "@type": "State", name: "Punjab" } },
+    { "@type": "City", name: "Phagwara", containedInPlace: { "@type": "State", name: "Punjab" } },
+    { "@type": "City", name: "Nawanshahr", containedInPlace: { "@type": "State", name: "Punjab" } },
+    { "@type": "City", name: "Hoshiarpur", containedInPlace: { "@type": "State", name: "Punjab" } },
     { "@type": "Country", name: "United Arab Emirates" },
     { "@type": "Country", name: "Saudi Arabia" },
     { "@type": "Country", name: "Qatar" },
@@ -134,6 +147,14 @@ const jsonLd = {
     "Industrial workforce supply",
     "Overseas placement from India",
   ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    bestRating: "5",
+    worstRating: "1",
+    reviewCount: "14",
+    ratingCount: "14",
+  },
 };
 
 export default function RootLayout({
@@ -180,7 +201,7 @@ export default function RootLayout({
               w.gbwawc = {
                 url: u,
                 options: {
-                  waId: "919814820432",
+                  waId: "919815358832",
                   siteName: "Shiva Travel & Manpower Consultants Nakodar",
                   siteTag: "Usually reply in 1 minutes",
                   siteLogo: "https://waw.gallabox.com/chatbotavatars/1.png",

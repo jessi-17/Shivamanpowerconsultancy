@@ -128,7 +128,7 @@ export default function WhyChooseUs() {
         {/* Right — image + stats card + certified badge */}
         <div ref={rightRef} className="reveal-right" style={{ flex: "1 1 400px", position: "relative" }}>
           <div style={{ width: "100%", height: m ? 280 : 480, borderRadius: 20, overflow: "hidden", position: "relative" }}>
-            <Image src="/Professional Indian executive.png" alt="Professional workplace" fill sizes="(max-width: 640px) 100vw, 40vw" loading="lazy" style={{ objectFit: "cover" }} />
+            <Image src="/Professional Indian executive.png" alt="Government licensed overseas recruitment agency in Nakodar Punjab" fill sizes="(max-width: 640px) 100vw, 40vw" loading="lazy" style={{ objectFit: "cover" }} />
             {/* Certified Hub badge — overlaid on image */}
             {!m && (
               <div style={{

@@ -63,7 +63,7 @@ export default function ContactUsPage() {
     {
       name: "Nakodar (HQ)",
       subtitle: "Primary Office & Visa Processing Centre",
-      address: "Golden Avenue, Near Time Cafe, Nakodar",
+      address: "Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar",
       email: "info@shivamanpower.com",
       image: "/Office desk.webp",
     },
@@ -193,20 +193,133 @@ export default function ContactUsPage() {
                 </span>
               </div>
             </div>
+
+            {/* Review Ratings */}
+            <div style={{ display: "flex", flexWrap: "wrap", gap: m ? 8 : 12, marginTop: 8 }}>
+              {/* Google Reviews */}
+              <a
+                href="https://www.google.com/maps/place/Shiva+Travel+%26+Manpower+Consultants/data=!4m7!3m6!1s0x391a69fabdbdae21:0xf30a21ac23d4724a!8m2!3d31.135376!4d75.4817507!16s%2Fg%2F11l1p0zx6s!19sChIJIa69vfpp"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "flex", alignItems: "center", gap: 10,
+                  backgroundColor: "rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(255,255,255,0.12)",
+                  borderRadius: 12,
+                  padding: "12px 18px",
+                  backdropFilter: "blur(12px)",
+                  textDecoration: "none",
+                  transition: "all 200ms ease",
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.15)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.08)"; }}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                <div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                    <span style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700, color: "#fff" }}>4.7</span>
+                    <div style={{ display: "flex", gap: 1 }}>
+                      {[1,2,3,4,5].map((s) => (
+                        <svg key={s} width="14" height="14" viewBox="0 0 24 24" fill={s <= 4 ? "#FBBC05" : "none"} stroke="#FBBC05" strokeWidth="2">
+                          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                  <span style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "rgba(255,255,255,0.6)" }}>
+                    21 Google Reviews
+                  </span>
+                </div>
+              </a>
+
+              {/* JustDial Rating */}
+              <div style={{
+                display: "flex", alignItems: "center", gap: 10,
+                backgroundColor: "rgba(255,255,255,0.08)",
+                border: "1px solid rgba(255,255,255,0.12)",
+                borderRadius: 12,
+                padding: "12px 18px",
+                backdropFilter: "blur(12px)",
+              }}>
+                <div style={{
+                  width: 22, height: 22, borderRadius: 4,
+                  backgroundColor: "#fff",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  fontFamily: "var(--font-display)", fontSize: 10, fontWeight: 900, color: "#0052dc",
+                }}>
+                  JD
+                </div>
+                <div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                    <span style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700, color: "#fff" }}>4.5</span>
+                    <div style={{ display: "flex", gap: 1 }}>
+                      {[1,2,3,4,5].map((s) => (
+                        <svg key={s} width="14" height="14" viewBox="0 0 24 24" fill={s <= 4 ? "#FBBC05" : "none"} stroke="#FBBC05" strokeWidth="2">
+                          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                  <span style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "rgba(255,255,255,0.6)" }}>
+                    JustDial Rated
+                  </span>
+                </div>
+              </div>
+
+              {/* Leave a Review */}
+              <a
+                href="https://g.page/r/CUpydCMsIQrzEB0/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "flex", alignItems: "center", gap: 8,
+                  backgroundColor: "rgba(255,255,255,0.15)",
+                  border: "1px solid rgba(255,255,255,0.20)",
+                  borderRadius: 12,
+                  padding: "12px 20px",
+                  backdropFilter: "blur(12px)",
+                  textDecoration: "none",
+                  transition: "all 200ms ease",
+                  cursor: "pointer",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.25)";
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.35)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.15)";
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.20)";
+                }}
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FBBC05" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+                <span style={{ fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 600, color: "#fff" }}>
+                  Leave a Review
+                </span>
+              </a>
+            </div>
           </div>
 
           {/* Right — Inquiry Form */}
           <div style={{
-            flex: m ? "1 1 100%" : "0 0 500px",
+            flex: m ? "1 1 100%" : "1 1 400px",
+            maxWidth: 520,
             backgroundColor: "#ffffff",
             borderRadius: 12,
-            padding: m ? "32px 20px" : "40px",
+            padding: m ? "28px 18px" : "40px",
             boxShadow: "0 4px 6px rgba(0,0,0,0.10), 0 10px 15px rgba(0,0,0,0.10)",
             border: "1px solid #c4c6ce",
+            width: "100%",
           }}>
             <h2 style={{
               fontFamily: "var(--font-display)",
-              fontSize: 24,
+              fontSize: m ? 20 : 24,
               fontWeight: 700,
               color: "#000c2f",
               marginBottom: 24,
@@ -215,8 +328,8 @@ export default function ContactUsPage() {
             </h2>
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               {/* Name + Phone */}
-              <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                <div style={{ flex: "1 1 200px" }}>
+              <div style={{ display: "flex", gap: 16, flexDirection: m ? "column" : "row" }}>
+                <div style={{ flex: "1 1 0" }}>
                   <label style={labelStyle}>Full Name</label>
                   <input
                     type="text"
@@ -229,7 +342,7 @@ export default function ContactUsPage() {
                     onBlur={(e) => { e.currentTarget.style.boxShadow = "none"; }}
                   />
                 </div>
-                <div style={{ flex: "1 1 200px" }}>
+                <div style={{ flex: "1 1 0" }}>
                   <label style={labelStyle}>Phone Number</label>
                   <div style={{ display: "flex", gap: 8 }}>
                     <div style={{
@@ -420,12 +533,12 @@ export default function ContactUsPage() {
           margin: "0 auto",
           padding: m ? "0 20px" : "0 50px",
           display: "flex",
-          flexWrap: "wrap",
+          flexDirection: m ? "column" : "row",
           gap: m ? 32 : 48,
         }}>
         {/* Left — Office Card */}
         <div style={{
-          flex: "1 1 400px",
+          flex: m ? "1 1 100%" : "1 1 400px",
           backgroundColor: "#ffffff",
           borderRadius: 12,
           overflow: "hidden",
@@ -436,7 +549,7 @@ export default function ContactUsPage() {
             height: 192,
             position: "relative",
             backgroundColor: "#001f5d",
-            backgroundImage: "url('/Office desk.webp')",
+            backgroundImage: "url('/office image .webp')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}>
@@ -451,18 +564,18 @@ export default function ContactUsPage() {
                 fontWeight: 700,
                 color: "#fff",
               }}>
-                Nakodar Hub
+                Visit Our Office Today
               </span>
             </div>
           </div>
           {/* Office Details */}
-          <div style={{ padding: 32, display: "flex", flexDirection: "column", gap: 16 }}>
+          <div style={{ padding: m ? 20 : 32, display: "flex", flexDirection: "column", gap: 16 }}>
             <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5784ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: 2 }}>
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
               </svg>
               <span style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "#43474d", lineHeight: "22px" }}>
-                Golden Avenue, Near Time Cafe / Sukhjeet Hospital, Nakodar, Jalandhar, Punjab 144040
+                Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040
               </span>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
@@ -485,7 +598,7 @@ export default function ContactUsPage() {
               overflow: "hidden",
             }}>
               <iframe
-                src="https://www.google.com/maps/place/Shiva+Travel+%26+Manpower+Consultants+-Best+Travel+Agent,+Visa+And+Work+Permit+Consultants,+Travel+Agency/@31.1353763,75.4815797,21z/data=!4m6!3m5!1s0x391a69fabdbdae21:0xf30a21ac23d4724a!8m2!3d31.135376!4d75.4817507!16s%2Fg%2F11l1p0zx6s?hl=en-GB&entry=ttu&g_ep=EgoyMDI2MDMzMS4wIKXMDSoASAFQAw%3D%3D"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212.96!2d75.4815797!3d31.1353763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a69fabdbdae21%3A0xf30a21ac23d4724a!2sShiva%20Travel%20%26%20Manpower%20Consultants!5e0!3m2!1sen!2sin!4v1"
                 width="100%"
                 height="100%"
                 style={{ border: 0, borderRadius: 8 }}
@@ -500,7 +613,7 @@ export default function ContactUsPage() {
 
         {/* Right — Quick Contact Panel */}
         <div style={{
-          flex: "1 1 400px",
+          flex: m ? "1 1 100%" : "1 1 400px",
           display: "flex",
           flexDirection: "column",
           gap: 24,
@@ -510,11 +623,11 @@ export default function ContactUsPage() {
             backgroundColor: "#eff4ff",
             border: "1px solid #c4c6ce",
             borderRadius: 12,
-            padding: 32,
+            padding: m ? 20 : 32,
           }}>
             <h3 style={{
               fontFamily: "var(--font-display)",
-              fontSize: 20,
+              fontSize: m ? 18 : 20,
               fontWeight: 700,
               color: "#0b1c30",
               marginBottom: 20,
@@ -523,7 +636,7 @@ export default function ContactUsPage() {
             </h3>
             {/* WhatsApp */}
             <a
-              href="https://wa.me/919814820432"
+              href="https://wa.me/919815358832"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -556,7 +669,7 @@ export default function ContactUsPage() {
                   WhatsApp
                 </div>
                 <div style={{ fontFamily: "var(--font-body)", fontSize: 16, fontWeight: 700, color: "#0b1c30" }}>
-                  +91 98148-20432
+                  +91 98153-58832
                 </div>
               </div>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0b1c30" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -604,11 +717,44 @@ export default function ContactUsPage() {
             </a>
           </div>
 
+          {/* Leave a Google Review */}
+          <a
+            href="https://search.google.com/local/writereview?placeid=ChIJIa69vfppGjkRSnLUI6whCvM"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "flex", alignItems: "center", gap: 16,
+              backgroundColor: "#ffffff", borderRadius: 12, padding: m ? 16 : 20,
+              border: "1px solid #e5e7eb", textDecoration: "none",
+              transition: "border-color 0.2s",
+            }}
+          >
+            <div style={{
+              width: 44, height: 44, borderRadius: "50%",
+              backgroundColor: "#fef3c7", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+            }}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#f59e0b" stroke="none">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+            <div>
+              <div style={{ fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, color: "#0b1c30" }}>
+                Leave a Google Review
+              </div>
+              <div style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "#64748b" }}>
+                Share your experience with us
+              </div>
+            </div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: "auto", flexShrink: 0 }}>
+              <path d="M7 17l9.2-9.2M17 17V7H7" />
+            </svg>
+          </a>
+
           {/* Visit Headquarters */}
           <div style={{
             backgroundColor: "#000c2f",
             borderRadius: 12,
-            padding: 32,
+            padding: m ? 20 : 32,
             position: "relative",
             overflow: "hidden",
           }}>
@@ -638,8 +784,8 @@ export default function ContactUsPage() {
               marginBottom: 16,
               position: "relative",
             }}>
-              Golden Avenue, Near Time Cafe / Sukhjeet Hospital,<br />
-              Nakodar, Jalandhar, Punjab 144040
+              Golden Avenue, Near Sukhjeet Hospital,<br />
+              Jalandhar Road, Nakodar, Punjab 144040
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: 8, position: "relative" }}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#dbe1ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -830,32 +976,41 @@ export default function ContactUsPage() {
           padding: "40px 0",
         }}>
           {/* Line */}
-          <div style={{
+          {!m && <div style={{
             position: "absolute",
             top: "50%",
-            left: m ? 20 : "5%",
-            right: m ? 20 : "5%",
+            left: "5%",
+            right: "5%",
             height: 2,
             backgroundColor: "#c4c6ce",
             transform: "translateY(-50%)",
-          }} />
+          }} />}
           {/* Steps */}
           <div style={{
             display: "flex",
             justifyContent: "space-between",
             position: "relative",
-            flexWrap: m ? "wrap" : "nowrap",
-            gap: m ? 16 : 0,
+            flexDirection: m ? "column" : "row",
+            gap: m ? 20 : 0,
+            alignItems: m ? "flex-start" : undefined,
+            paddingLeft: m ? 24 : 0,
           }}>
+            {m && <div style={{
+              position: "absolute",
+              top: 0,
+              bottom: 0,
+              left: 31,
+              width: 2,
+              backgroundColor: "#c4c6ce",
+            }} />}
             {journeySteps.map((step, i) => (
               <div key={step} style={{
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: m ? "row" : "column",
                 alignItems: "center",
                 gap: 12,
                 backgroundColor: "#f8f9ff",
-                padding: "0 16px",
-                flex: m ? "1 1 40%" : undefined,
+                padding: m ? "4px 16px 4px 0" : "0 16px",
               }}>
                 <div style={{
                   width: 16,
@@ -879,6 +1034,217 @@ export default function ContactUsPage() {
             ))}
           </div>
         </div>
+        </div>
+      </section>
+
+      {/* ===== WALL OF FAME ===== */}
+      <section
+        style={{
+          padding: m ? "40px 0 80px" : "64px 0 96px",
+          backgroundColor: "#ffffff",
+        }}
+      >
+        <div style={{ maxWidth: "var(--max-width)", margin: "0 auto", padding: m ? "0 20px" : "0 32px" }}>
+          <div style={{ textAlign: "center", marginBottom: 40 }}>
+            <p style={{
+              fontFamily: "var(--font-body)",
+              fontSize: 11,
+              fontWeight: 700,
+              letterSpacing: "0.12em",
+              color: "#5784ff",
+              textTransform: "uppercase",
+              marginBottom: 10,
+            }}>
+              NOT ACTORS. REAL PLACEMENTS.
+            </p>
+            <h2 style={{
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
+              fontWeight: 700,
+              color: "#000c2f",
+              lineHeight: 1.2,
+              marginBottom: 8,
+            }}>
+              Wall of Fame
+            </h2>
+            <p style={{
+              fontFamily: "var(--font-body)",
+              fontSize: 16,
+              color: "#43474d",
+            }}>
+              Real workers placed in real jobs — straight from our Instagram.
+            </p>
+          </div>
+
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: m ? "repeat(2, 1fr)" : "repeat(4, 1fr)",
+            gap: 16,
+          }}>
+            {[
+              { id: "DWEVQ5PjuBd", label: "Interviews", country: "Nakodar Office" },
+              { id: "DFUZ2gJNj2d", label: "Bulgaria Placement", country: "Europe" },
+              { id: "DWNzMiVFbzb", label: "Factory Worker", country: "Dubai" },
+              { id: "DUffhPTkf0C", label: "KFC Dubai Visa", country: "UAE" },
+              { id: "DUDr71Bksev", label: "Work Permit Approved", country: "Bulgaria" },
+              { id: "DSqwW-NEcHC", label: "Client Success", country: "Gulf Region" },
+              { id: "DWEVQ5PjuBd", label: "Office Tour", country: "Nakodar" },
+            ].map((reel) => (
+              <a
+                key={reel.id + reel.label}
+                href={`https://www.instagram.com/reel/${reel.id}/`}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "block",
+                  borderRadius: 16,
+                  overflow: "hidden",
+                  position: "relative",
+                  height: m ? 280 : 380,
+                  backgroundColor: "#0b1c30",
+                  textDecoration: "none",
+                }}
+              >
+                <iframe
+                  src={`https://www.instagram.com/reel/${reel.id}/embed/`}
+                  style={{
+                    width: "130%",
+                    height: "170%",
+                    border: "none",
+                    position: "absolute",
+                    top: -60,
+                    left: "-15%",
+                    pointerEvents: "none",
+                  }}
+                  scrolling="no"
+                  loading="lazy"
+                  tabIndex={-1}
+                />
+                <div style={{
+                  position: "absolute",
+                  bottom: 0, left: 0, right: 0,
+                  height: 80,
+                  background: "linear-gradient(to top, rgba(0,0,0,0.85) 60%, transparent)",
+                  pointerEvents: "none",
+                  zIndex: 2,
+                }} />
+                <div style={{
+                  position: "absolute",
+                  bottom: 0, left: 0, right: 0,
+                  padding: "12px 16px",
+                  pointerEvents: "none",
+                  zIndex: 3,
+                }}>
+                  <p style={{ fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, color: "#fff" }}>
+                    {reel.label}
+                  </p>
+                  <p style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "rgba(255,255,255,0.6)" }}>
+                    {reel.country}
+                  </p>
+                </div>
+              </a>
+            ))}
+
+            {/* This Could Be You Next — CTA Card */}
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 16,
+                borderRadius: 16,
+                height: m ? 280 : 380,
+                background: "linear-gradient(135deg, #001f5d, #0052dc)",
+                textDecoration: "none",
+                cursor: "pointer",
+                transition: "transform 200ms ease",
+                position: "relative",
+                overflow: "hidden",
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.02)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
+            >
+              <div style={{
+                position: "absolute", inset: 0,
+                background: "radial-gradient(circle at 30% 70%, rgba(87,132,255,0.3), transparent 60%)",
+              }} />
+              <div style={{
+                width: 64, height: 64, borderRadius: "50%",
+                backgroundColor: "rgba(255,255,255,0.15)",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                position: "relative",
+              }}>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <line x1="19" y1="8" x2="19" y2="14" />
+                  <line x1="22" y1="11" x2="16" y2="11" />
+                </svg>
+              </div>
+              <p style={{
+                fontFamily: "var(--font-display)",
+                fontSize: m ? 18 : 22,
+                fontWeight: 800,
+                color: "#fff",
+                textAlign: "center",
+                position: "relative",
+              }}>
+                This Could Be<br />You Next
+              </p>
+              <span style={{
+                fontFamily: "var(--font-body)",
+                fontSize: 13,
+                fontWeight: 600,
+                color: "rgba(255,255,255,0.7)",
+                padding: "8px 20px",
+                borderRadius: 20,
+                border: "1px solid rgba(255,255,255,0.25)",
+                position: "relative",
+              }}>
+                Apply Now &uarr;
+              </span>
+            </a>
+          </div>
+
+          {/* Follow on Instagram */}
+          <div style={{ textAlign: "center", marginTop: 32 }}>
+            <a
+              href="https://www.instagram.com/shiva.travels.consultants/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                padding: "12px 24px",
+                borderRadius: 10,
+                border: "1px solid #c4c6ce",
+                backgroundColor: "#f8f9ff",
+                textDecoration: "none",
+                transition: "all 200ms ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "#5784ff";
+                e.currentTarget.style.backgroundColor = "#eff4ff";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "#c4c6ce";
+                e.currentTarget.style.backgroundColor = "#f8f9ff";
+              }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0b1c30" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+              <span style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>
+                Follow Us on Instagram
+              </span>
+            </a>
+          </div>
         </div>
       </section>
     </main>

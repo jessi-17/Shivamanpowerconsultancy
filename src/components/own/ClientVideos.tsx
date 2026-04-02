@@ -295,7 +295,6 @@ export default function ClientVideos() {
                 pointerEvents: "none",
               }}
               scrolling="no"
-              allowTransparency
               allow="encrypted-media"
               loading="lazy"
               tabIndex={-1}

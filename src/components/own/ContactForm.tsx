@@ -106,7 +106,7 @@ export default function ContactForm() {
           <p style={{
             fontFamily: "var(--font-body)", fontSize: 12, color: "rgba(255,255,255,0.35)", marginTop: 32,
           }}>
-            Visit us: Golden Avenue, Near Time Cafe, Nakodar, Punjab
+            Visit us: Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040
           </p>
         </div>
       </div>

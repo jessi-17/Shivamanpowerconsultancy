@@ -244,7 +244,7 @@ export default function HeroSection() {
           width: "100%",
           maxWidth: "var(--max-width)",
           margin: "0 auto",
-          padding: m ? "120px 20px 80px" : "140px 60px 160px",
+          padding: m ? "120px 20px 60px" : "140px 60px 80px",
           willChange: "transform, opacity",
         }}
       >
@@ -312,82 +312,10 @@ export default function HeroSection() {
               margin: 0,
             }}
           >
-            Punjab&apos;s #1 trusted recruitment partner. Connecting skilled talent with premium employers across Europe and the Middle East.
+            Shiva Travel &amp; Manpower Consultancy is a government-licensed recruitment agency in Nakodar, near Jalandhar. Placing Punjab&apos;s skilled workers in premium jobs across Dubai, Saudi Arabia, Qatar, Kuwait &amp; Europe.
           </p>
 
-          {/* CTA Buttons */}
-          <div
-            className="hero-animate"
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: 16,
-              paddingTop: 8,
-            }}
-          >
-            <a
-              href="/contactus"
-
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: m ? "12px 20px" : "16px 32px",
-                backgroundColor: "#0052dc",
-                color: "#ffffff",
-                fontFamily: "var(--font-display)",
-                fontSize: m ? 14 : 16,
-                fontWeight: 800,
-                borderRadius: 12,
-                textDecoration: "none",
-                boxShadow: "0 4px 24px rgba(0,82,220,0.35)",
-                transition:
-                  "transform 150ms cubic-bezier(0.16,1,0.3,1), box-shadow 150ms cubic-bezier(0.16,1,0.3,1)",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-2px) scale(1.02)";
-                e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,82,220,0.5)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0) scale(1)";
-                e.currentTarget.style.boxShadow = "0 4px 24px rgba(0,82,220,0.35)";
-              }}
-            >
-              Book Free Consultation
-            </a>
-
-            <a
-              href="/current-demands"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: m ? "12px 20px" : "16px 32px",
-                backgroundColor: "transparent",
-                color: "#ffffff",
-                fontFamily: "var(--font-display)",
-                fontSize: m ? 14 : 16,
-                fontWeight: 700,
-                borderRadius: 12,
-                textDecoration: "none",
-                border: "1.5px solid rgba(255,255,255,0.2)",
-                transition: "all 150ms cubic-bezier(0.16,1,0.3,1)",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.08)";
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.45)";
-                e.currentTarget.style.transform = "translateY(-2px)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "transparent";
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)";
-                e.currentTarget.style.transform = "translateY(0)";
-              }}
-            >
-              View All Jobs
-            </a>
-          </div>
-          {/* Quick Inquiry Form — inline under CTA buttons */}
+          {/* Quick Inquiry Form */}
           <HeroInquiryForm />
         </div>
       </div>
@@ -400,30 +328,16 @@ function HeroInquiryForm() {
   const [form, setForm] = useState({ destination: "", phone: "" });
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.phone) return;
-    setStatus("loading");
-    try {
-      const res = await fetch("/api/submit-form", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          yourname: "Hero Quick Inquiry",
-          phone: form.phone,
-          email: "",
-          interest: form.destination,
-          experience: "",
-          message: `Quick inquiry: ${form.destination || "Not selected"}`,
-        }),
-      });
-      if (res.ok) {
-        setStatus("success");
-        setForm({ destination: "", phone: "" });
-      }
-    } catch {
-      setStatus("idle");
-    }
+    const country = form.destination || "Not selected";
+    const message = `Hi, I'm interested in jobs in ${country}. My phone number is ${form.phone}. Please contact me.`;
+    const whatsappUrl = `https://wa.me/919815358832?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+    setStatus("success");
+    setForm({ destination: "", phone: "" });
+    setTimeout(() => setStatus("idle"), 3000);
   };
 
   const fieldStyle: React.CSSProperties = {
@@ -452,7 +366,7 @@ function HeroInquiryForm() {
         border: "1px solid rgba(255,255,255,0.08)",
         borderRadius: 14,
         flexWrap: m ? "wrap" : "nowrap",
-        marginTop: 4,
+        marginTop: 8,
       }}
     >
       <select
@@ -497,7 +411,7 @@ function HeroInquiryForm() {
         type="submit"
         disabled={status === "loading"}
         style={{
-          flex: m ? "1 1 100%" : "0 0 auto",
+          flex: m ? "1 1 100%" : "1 1 auto",
           padding: "14px 28px",
           backgroundColor: status === "success" ? "#16a34a" : "#0052dc",
           color: "#fff",
@@ -509,9 +423,20 @@ function HeroInquiryForm() {
           cursor: status === "loading" ? "wait" : "pointer",
           transition: "all 150ms cubic-bezier(0.16,1,0.3,1)",
           whiteSpace: "nowrap",
+          boxShadow: status === "success"
+            ? "0 0 20px rgba(22,163,74,0.5), 0 0 40px rgba(22,163,74,0.25)"
+            : "0 0 20px rgba(0,82,220,0.5), 0 0 40px rgba(0,82,220,0.25)",
         }}
-        onMouseEnter={(e) => { if (status === "idle") e.currentTarget.style.transform = "translateY(-2px)"; }}
-        onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
+        onMouseEnter={(e) => {
+          if (status === "idle") {
+            e.currentTarget.style.transform = "translateY(-2px)";
+            e.currentTarget.style.boxShadow = "0 0 25px rgba(0,82,220,0.65), 0 0 50px rgba(0,82,220,0.35)";
+          }
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "translateY(0)";
+          e.currentTarget.style.boxShadow = "0 0 20px rgba(0,82,220,0.5), 0 0 40px rgba(0,82,220,0.25)";
+        }}
       >
         {status === "loading" ? "Sending..." : status === "success" ? "We'll Call You!" : "Get Free Consultation →"}
       </button>
