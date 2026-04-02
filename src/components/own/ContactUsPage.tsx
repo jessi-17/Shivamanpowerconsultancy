@@ -84,7 +84,7 @@ export default function ContactUsPage() {
   ];
 
   return (
-    <main style={{ backgroundColor: "#f8f9ff" }}>
+    <main className="contact-page" style={{ backgroundColor: "#f8f9ff" }}>
       {/* ===== HERO SECTION ===== */}
       <section
         ref={heroRef}
@@ -364,12 +364,13 @@ export default function ContactUsPage() {
         style={{
           backgroundColor: "#ffffff",
           borderTop: "1px solid #c4c6ce",
-          padding: m ? "40px 20px" : "64px var(--spacing-8)",
+          padding: m ? "40px 0" : "64px 0",
         }}
       >
         <div style={{
           maxWidth: "var(--max-width)",
           margin: "0 auto",
+          padding: m ? "0 20px" : "0 var(--spacing-8)",
           display: "grid",
           gridTemplateColumns: m ? "repeat(2, 1fr)" : "repeat(4, 1fr)",
           gap: m ? 32 : 16,
@@ -411,14 +412,17 @@ export default function ContactUsPage() {
         ref={officeRef}
         className="reveal"
         style={{
+          padding: m ? "40px 0" : "64px 0",
+        }}
+      >
+        <div style={{
           maxWidth: "var(--max-width)",
           margin: "0 auto",
-          padding: m ? "40px 20px" : "64px 50px",
+          padding: m ? "0 20px" : "0 50px",
           display: "flex",
           flexWrap: "wrap",
           gap: m ? 32 : 48,
-        }}
-      >
+        }}>
         {/* Left — Office Card */}
         <div style={{
           flex: "1 1 400px",
@@ -466,7 +470,7 @@ export default function ContactUsPage() {
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" />
               </svg>
               <span style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "#43474d" }}>
-                info@shivamanpower.com
+                info@shivatravelconsultant.in
               </span>
             </div>
             {/* Map embed placeholder */}
@@ -481,7 +485,7 @@ export default function ContactUsPage() {
               overflow: "hidden",
             }}>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3399.5!2d75.47!3d31.12!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDA3JzEyLjAiTiA3NcKwMjgnMTIuMCJF!5e0!3m2!1sen!2sin!4v1"
+                src="https://www.google.com/maps/place/Shiva+Travel+%26+Manpower+Consultants+-Best+Travel+Agent,+Visa+And+Work+Permit+Consultants,+Travel+Agency/@31.1353763,75.4815797,21z/data=!4m6!3m5!1s0x391a69fabdbdae21:0xf30a21ac23d4724a!8m2!3d31.135376!4d75.4817507!16s%2Fg%2F11l1p0zx6s?hl=en-GB&entry=ttu&g_ep=EgoyMDI2MDMzMS4wIKXMDSoASAFQAw%3D%3D"
                 width="100%"
                 height="100%"
                 style={{ border: 0, borderRadius: 8 }}
@@ -652,18 +656,18 @@ export default function ContactUsPage() {
             </div>
           </div>
         </div>
+        </div>
       </section>
 
       {/* ===== UPCOMING INTERVIEWS ===== */}
-      <section
+      {/* <section
         ref={interviewRef}
         className="reveal"
         style={{
-          maxWidth: "var(--max-width)",
-          margin: "0 auto",
-          padding: m ? "40px 20px" : "64px var(--spacing-8)",
+          padding: m ? "40px 0" : "64px 0",
         }}
       >
+        <div style={{ maxWidth: "var(--max-width)", margin: "0 auto", padding: m ? "0 20px" : "0 var(--spacing-8)" }}>
         <p style={{
           fontFamily: "var(--font-body)",
           fontSize: 16,
@@ -697,14 +701,14 @@ export default function ContactUsPage() {
         </p>
 
         {/* Pagination dots */}
-        <div style={{ display: "flex", gap: 8, marginBottom: 32 }}>
+        {/* <div style={{ display: "flex", gap: 8, marginBottom: 32 }}>
           <div style={{ width: 96, height: 4, backgroundColor: "#0052dc", borderRadius: 2 }} />
           <div style={{ width: 48, height: 4, backgroundColor: "#c4c6ce", borderRadius: 2 }} />
           <div style={{ width: 48, height: 4, backgroundColor: "#c4c6ce", borderRadius: 2 }} />
         </div>
 
         {/* City Cards */}
-        <div style={{
+        {/* <div style={{
           display: "grid",
           gridTemplateColumns: m ? "1fr" : "repeat(3, 1fr)",
           gap: 24,
@@ -717,15 +721,15 @@ export default function ContactUsPage() {
               boxShadow: "0 1px 2px rgba(0,0,0,0.05)",
             }}>
               {/* Card Image */}
-              <div style={{
+              {/* <div style={{
                 height: 192,
                 backgroundColor: "#001f5d",
                 backgroundImage: `url('${city.image}')`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-              }} />
+              }} /> */}
               {/* Card Content */}
-              <div style={{ padding: 32, display: "flex", flexDirection: "column", gap: 12 }}>
+              {/* <div style={{ padding: 32, display: "flex", flexDirection: "column", gap: 12 }}>
                 <h3 style={{
                   fontFamily: "var(--font-display)",
                   fontSize: 20,
@@ -788,19 +792,18 @@ export default function ContactUsPage() {
             </div>
           ))}
         </div>
-      </section>
+        </div>
+      // </section> */}
 
       {/* ===== JOURNEY TRACKER ===== */}
       <section
         ref={journeyRef}
         className="reveal"
         style={{
-          maxWidth: "var(--max-width)",
-          margin: "0 auto",
-          padding: m ? "40px 20px 80px" : "16px 32px 80px",
-          textAlign: "center",
+          padding: m ? "40px 0 80px" : "16px 0 80px",
         }}
       >
+        <div style={{ maxWidth: "var(--max-width)", margin: "0 auto", padding: m ? "0 20px" : "0 32px", textAlign: "center" }}>
         <h2 style={{
           fontFamily: "var(--font-display)",
           fontSize: 24,
@@ -875,6 +878,7 @@ export default function ContactUsPage() {
               </div>
             ))}
           </div>
+        </div>
         </div>
       </section>
     </main>

@@ -548,3 +548,10 @@ section {
   opacity: 1;
   transform: scale(1);
 }
+
+/* Contact page — sections go full width edge-to-edge */
+.contact-page section {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
