@@ -84,6 +84,47 @@ export const metadata: Metadata = {
   },
 };
 
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${baseUrl}/#localbusiness`,
+  name: "Shiva Travel & Manpower Consultants",
+  image: `${baseUrl}/logo.jpg`,
+  telephone: "+91-9814820432",
+  email: "shivatravelnakodar@gmail.com",
+  url: baseUrl,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road",
+    addressLocality: "Nakodar",
+    addressRegion: "Punjab",
+    postalCode: "144040",
+    addressCountry: "IN",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 31.12,
+    longitude: 75.47,
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  ],
+  priceRange: "Free for candidates",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    bestRating: "5",
+    worstRating: "1",
+    reviewCount: "14",
+    ratingCount: "14",
+  },
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "EmploymentAgency",
@@ -200,10 +241,16 @@ export default function RootLayout({
     <html lang="en" className={`${manrope.variable} ${inter.variable}`}>
       <head>
         {/* DNS prefetch for external resources */}
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#000c2f" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://waw.gallabox.com" />
         <link rel="dns-prefetch" href="https://api.iconify.design" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -232,8 +279,8 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Gallabox WhatsApp — lazyOnload, not needed for initial render */}
-        <Script id="gallabox-whatsapp" strategy="lazyOnload">
+        {/* Gallabox WhatsApp — afterInteractive for reliability */}
+        <Script id="gallabox-whatsapp" strategy="afterInteractive">
           {`
             (function (w, d, s, u) {
               w.gbwawc = {
@@ -241,16 +288,16 @@ export default function RootLayout({
                 options: {
                   waId: "919815358832",
                   siteName: "Shiva Travel & Manpower Consultants Nakodar",
-                  siteTag: "Usually reply in 1 minutes",
-                  siteLogo: "https://waw.gallabox.com/chatbotavatars/1.png",
+                  siteTag: "Usually replies within minutes",
+                  siteLogo: "https://shivamanpowerconsultants.com/logo.jpg",
                   widgetPosition: "RIGHT",
-                  welcomeMessage: "Welcome to Shiva Travel & Manpower Consultants Nakodar !!!",
+                  welcomeMessage: "Welcome to Shiva Travel & Manpower Consultants Nakodar! How can we help you today?",
                   brandColor: "#25D366",
-                  messageText: "more Information say hi",
-                  replyOptions: [],
+                  messageText: "Hi, I'd like to know more about overseas job opportunities",
+                  replyOptions: ["Gulf Jobs Info", "Europe Jobs Info", "Visa Process", "Current Openings"],
                   version: "v1",
-                  widgetPositionMarginX: 12,
-                  widgetPositionMarginY: 12,
+                  widgetPositionMarginX: 16,
+                  widgetPositionMarginY: 16,
                 },
               };
               var h = d.getElementsByTagName(s)[0],

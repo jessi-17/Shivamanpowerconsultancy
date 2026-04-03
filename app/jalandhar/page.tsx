@@ -83,6 +83,25 @@ const trustReasons = [
   { title: "End-to-End Support", desc: "From skill testing to visa stamping to airport send-off. We handle everything so you don\u2019t have to worry." },
 ];
 
+const faqs = [
+  { q: "Is Shiva Travel a government licensed agency for overseas jobs?", a: "Yes. We hold RA License B-1794 issued by the Ministry of External Affairs, Government of India. We are E-Migrate registered and a member of ALMRA Punjab." },
+  { q: "Do I need to pay any fees to get a job abroad through Shiva Travel?", a: "No. We charge zero fees from candidates. All recruitment costs are borne by the hiring employers as per Indian government regulations." },
+  { q: "How far is your office from Jalandhar?", a: "Our office is located on Jalandhar Road, Nakodar — just 20 minutes from Jalandhar city centre. Walk-in consultations are available Monday to Saturday, 9am to 6pm." },
+  { q: "Which countries can I get a job in through Shiva Travel?", a: "We place workers in 20+ countries including UAE (Dubai, Abu Dhabi), Saudi Arabia, Qatar, Kuwait, Bahrain, Poland, Romania, Croatia, and other European nations." },
+  { q: "What types of jobs are available for workers from Jalandhar?", a: "We recruit for construction, factory work, hospitality, driving, electrical, welding, plumbing, nursing, and many other skilled and semi-skilled roles across Gulf and European countries." },
+  { q: "How long does the visa process take?", a: "Typically 30-60 days from job offer to departure, depending on the destination country. Urgent positions can sometimes be fast-tracked." },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function JalandharPage() {
   return (
     <>
@@ -96,6 +115,10 @@ export default function JalandharPage() {
           { name: "Home", href: "/" },
           { name: "Jalandhar", href: "/jalandhar" },
         ])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       <main style={{ backgroundColor: "#f8f9ff" }}>
@@ -251,6 +274,32 @@ export default function JalandharPage() {
                     {t.location}
                   </div>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ===== FAQs ===== */}
+        <section style={{ padding: "80px 0", backgroundColor: "#f8f9ff" }}>
+          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
+            <div style={{ textAlign: "center", marginBottom: 56 }}>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>Frequently Asked Questions</h2>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
+                Common questions from job seekers in the Jalandhar region.
+              </p>
+            </div>
+
+            <div style={{ maxWidth: 800, margin: "0 auto", display: "flex", flexDirection: "column", gap: 16 }}>
+              {faqs.map((faq) => (
+                <details key={faq.q} style={{ backgroundColor: "#ffffff", borderRadius: 16, padding: "24px 28px", border: "1px solid #e5e7eb" }}>
+                  <summary style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700, color: "#0b1c30", cursor: "pointer", listStyle: "none", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    {faq.q}
+                    <span style={{ fontSize: 20, color: "#64748b", flexShrink: 0, marginLeft: 16 }}>+</span>
+                  </summary>
+                  <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#43474d", lineHeight: 1.7, marginTop: 14 }}>
+                    {faq.a}
+                  </p>
+                </details>
               ))}
             </div>
           </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getBlogs } from "../_lib/data/getBlogs";
+import BlogSearch from "@/components/own/BlogSearch";
 
 export const metadata: Metadata = {
   title: "Blog | Overseas Job Guides, Visa Tips & Worker Resources",
@@ -339,6 +340,8 @@ export default function Blog() {
                 Browse by topic or explore our curated guides
               </p>
             </div>
+
+            <BlogSearch posts={sortedPosts.map(({ slug, title, excerpt, image, category, date, readTime }) => ({ slug, title, excerpt, image, category, date, readTime }))} />
 
             <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
               {categories.map((cat, i) => (
