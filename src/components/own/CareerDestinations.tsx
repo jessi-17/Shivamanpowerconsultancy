@@ -1,15 +1,19 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
 const featured = [
-  { name: "UAE (Dubai)", subtitle: "CONSTRUCTION & TECH", image: "/UAE.jpg", color: "#c9a227" },
-  { name: "Poland", subtitle: "MANUFACTURING", image: "/poland job.webp", color: "#dc3545" },
-  { name: "Romania", subtitle: "LOGISTICS & FMCG", image: "/Romania jobs.webp", color: "#0052dc" },
-  { name: "Saudi Arabia", subtitle: "ENGINEERING", image: "/Saudi arabia job.webp", color: "#006d3a" },
+  { name: "UAE (Dubai)", subtitle: "CONSTRUCTION & TECH", image: "/UAE.jpg", color: "#c9a227", href: "/jobs/uae" },
+  { name: "Poland", subtitle: "MANUFACTURING", image: "/poland job.webp", color: "#dc3545", href: "/jobs/poland" },
+  { name: "Romania", subtitle: "LOGISTICS & FMCG", image: "/Romania jobs.webp", color: "#0052dc", href: "/jobs/romania" },
+  { name: "Saudi Arabia", subtitle: "ENGINEERING", image: "/Saudi arabia job.webp", color: "#006d3a", href: "/jobs/saudi-arabia" },
+  { name: "Croatia", subtitle: "CONSTRUCTION & INDUSTRY", image: "/Rectangle 3.webp", color: "#0052dc", href: "/jobs/europe" },
+  { name: "Qatar", subtitle: "OIL & GAS", image: "/Rectangle 4.webp", color: "#8b1a3a", href: "/jobs/qatar" },
+  { name: "Europe", subtitle: "SKILLED & SEMI-SKILLED", image: "/Rectangle 2.webp", color: "#f59e0b", href: "/jobs/europe" },
 ];
 
 const moreCountries = [
@@ -104,22 +108,24 @@ export default function CareerDestinations() {
           style={{ display: "flex", gap: 16, flexWrap: "wrap", paddingTop: 10, paddingBottom: 12 }}
         >
           {featured.map((dest, i) => (
-            <div
+            <Link
               key={dest.name}
+              href={dest.href}
               className="reveal-child"
               style={{
                 "--i": i,
-                flex: m ? "1 1 100%" : "1 0 240px",
-                maxWidth: m ? "100%" : 280,
+                flex: m ? "1 1 100%" : "1 0 180px",
+                maxWidth: m ? "100%" : 220,
                 height: m ? 280 : 360,
                 cursor: "pointer",
                 transition: "transform 300ms cubic-bezier(0.16,1,0.3,1)",
+                textDecoration: "none",
               } as React.CSSProperties}
               onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-6px)"; }}
               onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
             >
               <div style={{ width: "100%", height: "100%", borderRadius: 20, position: "relative", overflow: "hidden" }}>
-                <Image src={dest.image} alt={`Jobs in ${dest.name} from Shiva Manpower Consultants Nakodar`} fill sizes="(max-width: 640px) 100vw, 25vw" loading="lazy" style={{ objectFit: "cover" }} />
+                <Image src={dest.image} alt={`Jobs in ${dest.name} from Shiva Manpower Consultants Nakodar`} fill sizes="(max-width: 640px) 100vw, 20vw" loading="lazy" style={{ objectFit: "cover" }} />
                 <div
                   style={{
                     position: "absolute",
@@ -137,7 +143,7 @@ export default function CareerDestinations() {
                   </p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
 
           {/* More Countries card */}
