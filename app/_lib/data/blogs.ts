@@ -997,7 +997,7 @@ Shiva Travel & Manpower Consultants is a government-licensed recruitment agency 
 
 Visit us at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040** or call **+91 98148-20432** to register for upcoming Europe opportunities.
     `,
-    image: "/Blog-13.jpg",
+    image: "/Blog-1.jpg",
     category: "Visa Guide",
     date: "2025-04-01",
     readTime: "8 min read",
@@ -1099,7 +1099,7 @@ Shiva Travel & Manpower Consultants has established direct relationships with Cr
 
 Visit our office at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040** or call **+91 98148-20432** to register for Croatia job openings.
     `,
-    image: "/Blog-14.jpg",
+    image: "/Blog-3.jpg",
     category: "Europe Jobs",
     date: "2025-03-25",
     readTime: "7 min read",
@@ -1220,7 +1220,7 @@ Shiva Travel & Manpower Consultants has been guiding Punjab youth through the ov
 
 Walk into our office at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040** or call **+91 98148-20432** to start your journey today.
     `,
-    image: "/Blog-15.jpg",
+    image: "/Blog-5.jpg",
     category: "Career Guide",
     date: "2025-03-20",
     readTime: "9 min read",
@@ -1353,7 +1353,7 @@ At Shiva Travel & Manpower Consultants, we guide candidates through the specific
 
 Visit us at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040** or call **+91 98148-20432** to get started with your overseas job application.
     `,
-    image: "/Blog-16.jpg",
+    image: "/Blog-7.jpg",
     category: "Visa Guide",
     date: "2025-03-18",
     readTime: "9 min read",

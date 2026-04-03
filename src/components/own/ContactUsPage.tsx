@@ -89,6 +89,7 @@ export default function ContactUsPage() {
       <section
         ref={heroRef}
         className="reveal"
+        data-navbar-theme="dark"
         style={{
           position: "relative",
           backgroundColor: "#001f5d",

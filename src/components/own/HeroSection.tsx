@@ -139,6 +139,7 @@ export default function HeroSection() {
   return (
     <div
       ref={sectionRef}
+      data-navbar-theme="dark"
       style={{
         position: "relative",
         width: "100%",
