@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import Link from "next/link";
 
@@ -17,13 +18,24 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [hasDarkHero, setHasDarkHero] = useState(false);
   const m = useIsMobile();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    // Re-detect dark hero on every route change
+    const darkHero = document.querySelector("[data-navbar-theme='dark']");
+    setHasDarkHero(!!darkHero);
+  }, [pathname]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Use white text only when over a dark hero AND not scrolled
+  const useWhiteText = hasDarkHero && !scrolled;
 
   return (
     <nav
@@ -62,7 +74,7 @@ export default function Navbar() {
               fontFamily: "var(--font-display)",
               fontSize: m ? 16 : 24,
               fontWeight: 700,
-              color: scrolled ? "var(--primary)" : "#ffffff",
+              color: scrolled ? "var(--primary)" : useWhiteText ? "#ffffff" : "var(--primary)",
               transition: `color var(--duration-normal) var(--ease-out)`,
               lineHeight: 1.15,
               display: "inline-block",
@@ -90,17 +102,17 @@ export default function Navbar() {
                 fontFamily: "var(--font-display)",
                 fontSize: 14,
                 fontWeight: 500,
-                color: scrolled ? "var(--on-surface-variant)" : "rgba(255,255,255,0.8)",
+                color: scrolled ? "var(--on-surface-variant)" : useWhiteText ? "rgba(255,255,255,0.8)" : "var(--on-surface-variant)",
                 textDecoration: "none",
                 transition: `color var(--duration-fast) var(--ease-out)`,
               }}
               onMouseEnter={(e) =>
-                (e.currentTarget.style.color = scrolled ? "var(--primary)" : "#ffffff")
+                (e.currentTarget.style.color = scrolled ? "var(--primary)" : useWhiteText ? "#ffffff" : "var(--primary)")
               }
               onMouseLeave={(e) =>
                 (e.currentTarget.style.color = scrolled
                   ? "var(--on-surface-variant)"
-                  : "rgba(255,255,255,0.8)")
+                  : useWhiteText ? "rgba(255,255,255,0.8)" : "var(--on-surface-variant)")
               }
             >
               {link.label}
@@ -163,7 +175,7 @@ export default function Navbar() {
                   width: 22,
                   height: 2,
                   borderRadius: 2,
-                  backgroundColor: scrolled ? "var(--on-surface)" : "#ffffff",
+                  backgroundColor: scrolled ? "var(--on-surface)" : useWhiteText ? "#ffffff" : "var(--on-surface)",
                   transition: `all var(--duration-fast) var(--ease-out)`,
                   transform: mobileOpen
                     ? i === 0
