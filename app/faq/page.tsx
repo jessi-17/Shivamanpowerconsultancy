@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -110,106 +111,228 @@ export default function FAQPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      {/* Hero */}
+      {/* ===== HERO -- Split Layout ===== */}
       <section
         ref={heroRef}
         className="reveal"
+        style={{ paddingTop: 120, paddingBottom: 80, backgroundColor: "#f8f9ff" }}
+      >
+        <div
+          style={{
+            maxWidth: 1300,
+            margin: "0 auto",
+            padding: "0 32px",
+            display: "flex",
+            alignItems: "center",
+            gap: 60,
+            flexWrap: "wrap",
+          }}
+        >
+          {/* Left -- Text */}
+          <div style={{ flex: "1 1 480px", minWidth: 0 }}>
+            <div
+              style={{
+                display: "inline-block",
+                padding: "6px 16px",
+                backgroundColor: "#eff4ff",
+                borderRadius: 20,
+                marginBottom: 24,
+              }}
+            >
+              <span
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 12,
+                  fontWeight: 700,
+                  color: "#0052dc",
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                }}
+              >
+                Got Questions? We Have Answers
+              </span>
+            </div>
+
+            <h1
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(2.25rem, 5vw, 3.5rem)",
+                fontWeight: 800,
+                color: "#0b1c30",
+                lineHeight: 1.05,
+                letterSpacing: "-1.5px",
+                marginBottom: 24,
+              }}
+            >
+              Frequently Asked
+              <br />
+              <span style={{ color: "#0052dc" }}>Questions.</span>
+            </h1>
+
+            <p
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: 17,
+                color: "#43474d",
+                lineHeight: 1.7,
+                marginBottom: 32,
+                maxWidth: 520,
+              }}
+            >
+              Everything you need to know about working abroad with Shiva Travel
+              &amp; Manpower Consultancy. From recruitment to post-placement
+              support, we have you covered.
+            </p>
+
+            {/* Badges */}
+            <div style={{ display: "flex", gap: 16, marginBottom: 32, flexWrap: "wrap" }}>
+              {["Zero Candidate Fees", "MEA Licensed"].map((badge) => (
+                <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <div
+                    style={{
+                      width: 8,
+                      height: 8,
+                      borderRadius: "50%",
+                      backgroundColor: "#0b1c30",
+                    }}
+                  />
+                  <span
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      fontSize: 13,
+                      fontWeight: 600,
+                      color: "#0b1c30",
+                    }}
+                  >
+                    {badge}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right -- Image with overlay stat */}
+          <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
+            <div
+              style={{
+                position: "relative",
+                borderRadius: 16,
+                overflow: "hidden",
+                aspectRatio: "4/3",
+              }}
+            >
+              <Image
+                src="/office image .webp"
+                alt="Shiva Travel Manpower Consultants office"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                style={{ objectFit: "cover" }}
+                priority
+              />
+            </div>
+            <div
+              style={{
+                position: "absolute",
+                bottom: -20,
+                right: 24,
+                backgroundColor: "#001f5d",
+                borderRadius: 12,
+                padding: "20px 28px",
+                boxShadow: "0 8px 32px rgba(0,12,47,0.3)",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: 28,
+                  fontWeight: 800,
+                  color: "#fff",
+                  lineHeight: 1,
+                }}
+              >
+                5
+              </div>
+              <div
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 10,
+                  fontWeight: 700,
+                  color: "rgba(255,255,255,0.6)",
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  marginTop: 4,
+                }}
+              >
+                FAQ Categories
+                <br />
+                Covered
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== STATS BAR ===== */}
+      <section
         style={{
-          position: "relative",
-          backgroundColor: "#001f5d",
-          overflow: "hidden",
-          paddingTop: m ? 120 : 160,
-          paddingBottom: m ? 60 : 100,
+          padding: "60px 0",
+          backgroundColor: "#ffffff",
+          borderTop: "1px solid #e5e7eb",
+          borderBottom: "1px solid #e5e7eb",
         }}
       >
         <div
           style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "radial-gradient(ellipse at 60% 40%, rgba(0,82,220,0.25), transparent 60%)",
-            pointerEvents: "none",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            bottom: -1,
-            left: 0,
-            right: 0,
-            lineHeight: 0,
-          }}
-        >
-          <svg
-            viewBox="0 0 1280 120"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ width: "100%", display: "block" }}
-          >
-            <path
-              d="M0 60C320 120 640 0 960 60C1120 90 1200 100 1280 80V120H0V60Z"
-              fill="#f8f9ff"
-            />
-          </svg>
-        </div>
-        <div
-          style={{
-            position: "relative",
-            zIndex: 1,
-            maxWidth: "var(--max-width)",
+            maxWidth: 1300,
             margin: "0 auto",
-            padding: m ? "0 20px" : "0 var(--spacing-8)",
-            textAlign: "center",
+            padding: "0 32px",
+            display: "flex",
+            justifyContent: "center",
+            gap: m ? 32 : 64,
+            flexWrap: "wrap",
           }}
         >
-          <p
-            style={{
-              fontFamily: "var(--font-body)",
-              fontSize: m ? 12 : 14,
-              fontWeight: 700,
-              color: "#bfdbfe",
-              letterSpacing: "1.6px",
-              textTransform: "uppercase",
-              marginBottom: 16,
-            }}
-          >
-            Got Questions? We Have Answers
-          </p>
-          <h1
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: m ? "clamp(2rem, 8vw, 2.5rem)" : 56,
-              fontWeight: 800,
-              color: "#ffffff",
-              lineHeight: 1.1,
-              letterSpacing: "-1.5px",
-              marginBottom: 20,
-            }}
-          >
-            Frequently Asked
-            <br />
-            Questions
-          </h1>
-          <p
-            style={{
-              fontFamily: "var(--font-body)",
-              fontSize: m ? 15 : 18,
-              color: "#dbeafe",
-              lineHeight: 1.6,
-              maxWidth: 560,
-              margin: "0 auto",
-            }}
-          >
-            Everything you need to know about working abroad with Shiva Travel &
-            Manpower Consultancy.
-          </p>
+          {[
+            { value: "50+", label: "Questions Answered" },
+            { value: "5", label: "Categories" },
+            { value: "Same Day", label: "Response Time" },
+            { value: "Mon-Sat", label: "9 AM - 6 PM Support" },
+          ].map((s) => (
+            <div key={s.label} style={{ textAlign: "center" }}>
+              <div
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: 28,
+                  fontWeight: 800,
+                  color: "#001f5d",
+                  lineHeight: 1,
+                }}
+              >
+                {s.value}
+              </div>
+              <div
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 11,
+                  fontWeight: 600,
+                  color: "#64748b",
+                  letterSpacing: "0.05em",
+                  textTransform: "uppercase",
+                  marginTop: 4,
+                }}
+              >
+                {s.label}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* FAQ Content */}
+      {/* ===== FAQ CONTENT ===== */}
       <section
         style={{
-          padding: m ? "40px 0 80px" : "64px 0 100px",
+          padding: m ? "48px 0 80px" : "80px 0 100px",
+          backgroundColor: "#f8f9ff",
         }}
       >
         <div
@@ -219,9 +342,37 @@ export default function FAQPage() {
             padding: m ? "0 20px" : "0 32px",
           }}
         >
+          {/* Section heading */}
+          <div style={{ textAlign: "center", marginBottom: 56 }}>
+            <h2
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
+                fontWeight: 700,
+                color: "#0b1c30",
+                marginBottom: 12,
+              }}
+            >
+              Browse by Category
+            </h2>
+            <p
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: 16,
+                color: "#43474d",
+                lineHeight: 1.7,
+                maxWidth: 540,
+                margin: "0 auto",
+              }}
+            >
+              Select a topic below to find the answers you need. Can&apos;t find
+              what you&apos;re looking for? Reach out to our team directly.
+            </p>
+          </div>
+
           {faqs.map((category) => (
             <div key={category.category} style={{ marginBottom: 48 }}>
-              <h2
+              <h3
                 style={{
                   fontFamily: "var(--font-display)",
                   fontSize: m ? 18 : 22,
@@ -245,7 +396,7 @@ export default function FAQPage() {
                   }}
                 />
                 {category.category}
-              </h2>
+              </h3>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                 {category.items.map((item) => (
                   <AccordionItem key={item.q} q={item.q} a={item.a} m={m} />
@@ -255,7 +406,7 @@ export default function FAQPage() {
           ))}
         </div>
 
-        {/* Still have questions CTA */}
+        {/* ===== STILL HAVE QUESTIONS CTA ===== */}
         <div
           style={{
             maxWidth: 800,
@@ -265,9 +416,9 @@ export default function FAQPage() {
         >
           <div
             style={{
-              backgroundColor: "#000c2f",
-              borderRadius: 16,
-              padding: m ? "32px 24px" : "48px",
+              background: "linear-gradient(135deg, #000c2f 0%, #001f5d 100%)",
+              borderRadius: 24,
+              padding: m ? "40px 24px" : "56px 48px",
               textAlign: "center",
               position: "relative",
               overflow: "hidden",
@@ -276,9 +427,14 @@ export default function FAQPage() {
             <div
               style={{
                 position: "absolute",
-                inset: 0,
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: 500,
+                height: 500,
+                borderRadius: "50%",
                 background:
-                  "radial-gradient(circle at 30% 70%, rgba(0,82,220,0.25), transparent 60%)",
+                  "radial-gradient(circle, rgba(0,82,220,0.15) 0%, transparent 70%)",
                 pointerEvents: "none",
               }}
             />
@@ -298,11 +454,11 @@ export default function FAQPage() {
               style={{
                 fontFamily: "var(--font-body)",
                 fontSize: m ? 14 : 16,
-                color: "#bfdbfe",
-                lineHeight: 1.6,
-                marginBottom: 24,
+                color: "rgba(255,255,255,0.6)",
+                lineHeight: 1.7,
+                marginBottom: 32,
                 maxWidth: 480,
-                margin: "0 auto 24px",
+                margin: "0 auto 32px",
                 position: "relative",
               }}
             >
@@ -313,7 +469,7 @@ export default function FAQPage() {
               style={{
                 display: "flex",
                 justifyContent: "center",
-                gap: 12,
+                gap: 16,
                 flexWrap: "wrap",
                 position: "relative",
               }}
@@ -326,16 +482,16 @@ export default function FAQPage() {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: 8,
-                  padding: "14px 28px",
+                  padding: "16px 36px",
                   backgroundColor: "#16a34a",
                   color: "#fff",
                   fontFamily: "var(--font-display)",
                   fontSize: 15,
                   fontWeight: 700,
-                  borderRadius: 10,
+                  borderRadius: 50,
                   textDecoration: "none",
-                  transition: "transform 150ms, box-shadow 150ms",
                   boxShadow: "0 0 20px rgba(22,163,74,0.4)",
+                  transition: "transform 150ms, box-shadow 150ms",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "translateY(-2px)";
@@ -359,15 +515,15 @@ export default function FAQPage() {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: 8,
-                  padding: "14px 28px",
+                  padding: "16px 36px",
                   backgroundColor: "transparent",
+                  border: "1.5px solid rgba(255,255,255,0.25)",
                   color: "#fff",
                   fontFamily: "var(--font-display)",
                   fontSize: 15,
                   fontWeight: 700,
-                  borderRadius: 10,
+                  borderRadius: 50,
                   textDecoration: "none",
-                  border: "1.5px solid rgba(255,255,255,0.2)",
                   transition: "all 150ms",
                 }}
                 onMouseEnter={(e) => {
@@ -405,6 +561,7 @@ function AccordionItem({ q, a, m }: { q: string; a: string; m: boolean }) {
     >
       <button
         onClick={() => setOpen(!open)}
+        aria-expanded={open}
         style={{
           width: "100%",
           display: "flex",
@@ -462,6 +619,8 @@ function AccordionItem({ q, a, m }: { q: string; a: string; m: boolean }) {
         </span>
       </button>
       <div
+        role="region"
+        aria-hidden={!open}
         style={{
           maxHeight: open ? 300 : 0,
           overflow: "hidden",

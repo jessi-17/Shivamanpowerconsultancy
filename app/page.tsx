@@ -20,7 +20,7 @@ const ContactForm = dynamic(() => import("@/components/own/ContactForm"));
 export const metadata: Metadata = {
   title: "Shiva Travel & Manpower Consultants Nakodar | Overseas Recruitment Agency Punjab",
   description:
-    "Government licensed manpower consultancy in Nakodar, near Jalandhar, Punjab. 25+ years placing workers from Jalandhar, Kapurthala, Phagwara & Doaba region in UAE, Saudi Arabia, Qatar, Poland, Romania. Zero candidate fees.",
+    "Government licensed overseas placement agency in Nakodar, Punjab. Shiva Travel & Manpower Consultants — 25+ years placing workers from Jalandhar, Kapurthala, Phagwara & Doaba region in UAE, Saudi Arabia, Qatar, Poland, Romania. Zero candidate fees. Walk-in office.",
   alternates: {
     canonical: "/",
   },

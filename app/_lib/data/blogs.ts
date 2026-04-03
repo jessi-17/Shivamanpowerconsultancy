@@ -23,7 +23,7 @@ Dubai is one of the most popular destinations for Indian workers, especially fro
 
 ### Why Dubai?
 
-Dubai offers tax-free salaries, world-class infrastructure, and opportunities in construction, hospitality, logistics, healthcare, and more. For workers from Punjab, the salary difference is significant — even an entry-level position in Dubai can pay 3-5x more than a similar role in India.
+Dubai offers tax-free salaries, modern infrastructure, and opportunities in construction, hospitality, logistics, healthcare, and more. For workers from Punjab, the salary difference is significant — even an entry-level position in Dubai can pay 3-5x more than a similar role in India.
 
 ### Step 1: Find a Genuine Recruitment Agency
 
@@ -89,11 +89,11 @@ With 25+ years of experience and a government license, we handle everything from
   },
   {
     slug: "best-manpower-consultancy-nakodar-punjab",
-    title: "Best Manpower Consultancy in Nakodar Punjab – Why Shiva Travel Stands Out",
+    title: "Trusted Manpower Consultancy in Nakodar Punjab – Why Shiva Travel Stands Out",
     excerpt:
-      "Looking for a trusted manpower consultancy in Nakodar? Here's what makes a genuine overseas recruitment agency and why Shiva Travel & Manpower Consultants is the top choice in the Doaba region.",
+      "Looking for a trusted manpower consultancy in Nakodar? Here's what makes a genuine overseas recruitment agency and why Shiva Travel & Manpower Consultants is a trusted choice in the Doaba region.",
     content: `
-## What Makes the Best Manpower Consultancy in Nakodar?
+## What Makes a Trusted Manpower Consultancy in Nakodar?
 
 Nakodar, located in the heart of Punjab's Doaba region, has a long history of overseas migration. For decades, families from Nakodar, Jalandhar, Kapurthala, and surrounding areas have sent their sons and daughters to work in Gulf countries. But finding a genuine, government-licensed consultancy has always been the challenge.
 
@@ -145,7 +145,7 @@ We primarily serve candidates from:
     date: "2025-03-10",
     readTime: "6 min read",
     keywords: [
-      "best manpower consultancy in Nakodar Punjab",
+      "manpower consultancy in Nakodar Punjab",
       "Nakodar job consultancy",
       "trusted manpower consultancy in Nakodar Punjab",
       "Jalandhar job consultants",
@@ -231,7 +231,7 @@ We've been processing Dubai visas for 25+ years. Our direct employer relationshi
       "Dubai visa process from India",
       "fast visa process for Dubai jobs from India",
       "Dubai work visa agent Punjab",
-      "best Dubai visa services",
+      "Dubai visa services",
     ],
   },
   {
@@ -313,13 +313,13 @@ We have direct relationships with factory and manufacturing companies across the
     slug: "saudi-arabia-jobs-indian-workers-2025",
     title: "Saudi Arabia Jobs for Indian Workers 2025 – Salary, Visa & How to Apply",
     excerpt:
-      "Everything Indian workers need to know about jobs in Saudi Arabia — top sectors, salary ranges, visa process, and how to apply through a licensed agency from Punjab.",
+      "Everything Indian workers need to know about jobs in Saudi Arabia — key sectors, salary ranges, visa process, and how to apply through a licensed agency from Punjab.",
     content: `
 ## Saudi Arabia Jobs for Indian Workers: Complete Guide 2025
 
 Saudi Arabia is the largest employer of Indian workers in the Gulf region. With Vision 2030 driving massive infrastructure projects, the demand for skilled and semi-skilled Indian workers has never been higher.
 
-### Top Sectors Hiring Indian Workers
+### Key Sectors Hiring Indian Workers
 
 1. **Construction** — Engineers, supervisors, masons, carpenters, plumbers, electricians
 2. **Oil & Gas** — Fitters, welders, riggers, scaffolders, safety officers
@@ -369,7 +369,7 @@ We've been placing workers in Saudi Arabia since 1998. Our direct relationships 
     keywords: [
       "Saudi Arabia jobs for Indian workers",
       "Saudi Arabia visa agent Punjab",
-      "best manpower agency for Saudi Arabia",
+      "licensed manpower agency for Saudi Arabia",
       "Saudi work visa from India",
     ],
   },
@@ -585,7 +585,7 @@ Most construction companies in Dubai provide:
 
 ### Apply with Shiva Manpower
 
-We receive construction demands weekly from top UAE contractors. Skilled workers with ITI certificates and experience are in the highest demand. Register at our Nakodar office.
+We receive construction demands weekly from major UAE contractors. Skilled workers with ITI certificates and experience are in the highest demand. Register at our Nakodar office.
     `,
     image: "/Blog-8.jpg",
     category: "Dubai Jobs",
@@ -670,12 +670,12 @@ Register with Shiva Manpower Consultants with a copy of your license and experie
     content: `
 ## Nursing Jobs in Gulf Countries: A Guide for Indian Nurses
 
-The Gulf region offers excellent opportunities for Indian nurses, with competitive tax-free salaries, professional growth, and the chance to work in world-class hospitals. Qatar, Saudi Arabia, and UAE are the top destinations.
+The Gulf region offers excellent opportunities for Indian nurses, with competitive tax-free salaries, professional growth, and the chance to work in leading hospitals. Qatar, Saudi Arabia, and UAE are the most popular destinations.
 
 ### Why Gulf Countries for Nurses?
 
 - **Tax-free salary** — 3-5x more than Indian nursing salaries
-- **World-class facilities** — Work with latest medical technology
+- **Modern facilities** — Work with latest medical technology
 - **Professional growth** — International experience valued globally
 - **Benefits package** — Free accommodation, transport, medical insurance
 - **Career advancement** — Many nurses move to UK, Canada, Australia after Gulf experience
@@ -738,7 +738,7 @@ We guide nurses through the entire process — from Dataflow verification to lic
 
 Punjab has a rich tradition of international migration. Today, the opportunities are bigger and more diverse than ever — from construction in Dubai to IT in Romania, from nursing in Qatar to hospitality in Bahrain.
 
-### Top Destinations for Punjab Youth
+### Popular Destinations for Punjab Youth
 
 **Gulf Countries (Most Popular):**
 - 🇦🇪 UAE (Dubai, Abu Dhabi, Sharjah)
@@ -899,7 +899,7 @@ The UAE's booming tourism and hospitality industry creates thousands of jobs eve
 
 ### Apply Through Shiva Manpower
 
-We regularly receive demands from top hotel chains in Dubai and Abu Dhabi, including Rotana, Marriott, Hilton, and others. Register at our Nakodar office.
+We regularly receive demands from major hotel chains in Dubai and Abu Dhabi, including Rotana, Marriott, Hilton, and others. Register at our Nakodar office.
     `,
     image: "/Blog-12.jpg",
     category: "Job Guide",
@@ -920,7 +920,7 @@ We regularly receive demands from top hotel chains in Dubai and Abu Dhabi, inclu
     content: `
 ## Schengen Work Visa from India: Your Complete Guide
 
-Europe is quickly becoming a top destination for Indian workers seeking better salaries, quality of life, and international career growth. The Schengen Area — a zone of 29 European countries with open internal borders — offers some of the best work opportunities for skilled and semi-skilled workers from India.
+Europe is quickly becoming a popular destination for Indian workers seeking better salaries, quality of life, and international career growth. The Schengen Area — a zone of 29 European countries with open internal borders — offers strong work opportunities for skilled and semi-skilled workers from India.
 
 ### What is the Schengen Area?
 
@@ -932,7 +932,7 @@ Key Schengen countries include France, Germany, Italy, Spain, Poland, Portugal, 
 
 Not all Schengen countries actively recruit from India. The ones with the highest demand for Indian workers are:
 
-| Country | Top Sectors | Avg. Monthly Salary (EUR) |
+| Country | Key Sectors | Avg. Monthly Salary (EUR) |
 |---------|------------|--------------------------|
 | Poland | Construction, Manufacturing, Logistics | 800 – 1,500 |
 | Romania | Construction, Agriculture, Hospitality | 600 – 1,200 |
@@ -1362,6 +1362,453 @@ Visit us at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Pu
       "documents required for work visa",
       "Gulf work permit from India",
       "Europe work permit requirements",
+    ],
+  },
+  {
+    slug: "how-to-go-abroad-for-work-from-india-complete-guide",
+    title: "How to Go Abroad for Work from India — Complete Step-by-Step Guide 2025",
+    excerpt:
+      "Everything you need to know about going abroad for work from India — from choosing a country and finding a licensed agency to visa processing, E-Migrate, and pre-departure preparation.",
+    content: `
+## How to Go Abroad for Work from India — The Complete Roadmap
+
+Every year, lakhs of Indians leave for overseas employment. Whether it is the Gulf, Europe, or Southeast Asia, working abroad can be a life-changing opportunity. But the process involves multiple steps, and cutting corners often leads to fraud or rejection.
+
+This guide walks you through the entire journey — start to finish.
+
+## Why Go Abroad for Work?
+
+- **Higher salaries** — Even mid-level positions abroad can pay 3-8x more than equivalent roles in India
+- **Skill development** — Exposure to international work standards and technology
+- **Savings potential** — Lower tax or tax-free income in Gulf countries means more money sent home
+- **Career growth** — International experience opens doors for future roles
+- **Family welfare** — Better education and healthcare options for your family back home
+
+## Who is Eligible?
+
+Most overseas jobs require:
+
+- Age between 21 and 45 (varies by country and role)
+- Valid Indian passport with at least 12 months remaining validity
+- Relevant skills or trade certification (ITI, diploma, or degree)
+- Basic medical fitness
+- No criminal record
+
+For unskilled or semi-skilled roles, formal education requirements are lower, but you may still need to pass a trade test.
+
+## Step 1: Choose Your Destination Country
+
+Different countries suit different workers:
+
+| Region | Best For | Typical Salary Range |
+|--------|----------|---------------------|
+| UAE / Dubai | Construction, hospitality, logistics | ₹25,000 – ₹80,000/month |
+| Saudi Arabia | Construction, oil & gas, driving | ₹20,000 – ₹70,000/month |
+| Qatar / Oman | Construction, maintenance, retail | ₹20,000 – ₹65,000/month |
+| Poland / Romania | Manufacturing, warehouse, agriculture | ₹90,000 – ₹1,50,000/month |
+| Croatia / Malta | Construction, tourism, hospitality | ₹80,000 – ₹1,40,000/month |
+
+Consider factors like climate, language, salary, visa processing time, and whether a Permanent Residency path exists.
+
+## Step 2: Find a Licensed Recruitment Agency
+
+This is where most people make mistakes. A genuine agency must hold:
+
+- **RA License** issued by the Ministry of External Affairs (MEA)
+- **E-Migrate registration** for processing overseas employment
+- A **physical office** you can visit and verify
+
+Never trust agents who operate only through WhatsApp or social media. Always verify the license number on [emigrate.gov.in](https://emigrate.gov.in).
+
+Shiva Travel & Manpower Consultants, Nakodar, holds RA License **B-1794/PUN/PER/100/5/10094/2022** and has been helping workers from Punjab go abroad for over 25 years.
+
+## Step 3: Prepare Your Documents
+
+Gather and organise the following:
+
+- Passport (original + photocopies)
+- Educational certificates (10th, 12th, ITI, diploma, degree)
+- Work experience letters from previous employers
+- Updated CV/resume
+- Passport-size photographs (white background)
+- Trade test certificates (if applicable)
+- Aadhaar card and PAN card
+
+For European countries, you may also need documents to be apostilled and translated.
+
+## Step 4: Register on the E-Migrate System
+
+The E-Migrate portal ([emigrate.gov.in](https://emigrate.gov.in)) is the Government of India's system for tracking overseas employment. Every Indian worker going abroad through a recruitment agency must be registered here.
+
+Your agency will:
+
+1. Create your profile on the portal
+2. Upload your documents
+3. Link your employment offer to the system
+4. Generate an Emigration Clearance
+
+This system protects you by ensuring that your job offer, employer, and agency are all verified by the government.
+
+## Step 5: Complete Medical Tests
+
+Most countries require a medical fitness certificate before issuing a work visa.
+
+- **Gulf countries** — GAMCA medical test through approved centres
+- **European countries** — Medical from a panel doctor or government hospital
+- **General tests** — Blood work, chest X-ray, general physical, and sometimes drug screening
+
+Medical test results are typically valid for 3 to 6 months.
+
+## Step 6: Visa Processing
+
+Once your documents and medical are clear, the visa application is submitted. Processing times vary:
+
+- Gulf countries: 2 to 6 weeks
+- European countries: 4 to 12 weeks
+- Some countries require a personal interview at the embassy or VFS centre
+
+Your agency should keep you updated at every stage. At Shiva Manpower, we provide regular status updates so candidates are never left guessing.
+
+## Step 7: Pre-Departure Preparation
+
+Before you board your flight:
+
+- Attend a **Pre-Departure Orientation Seminar (PDOS)** — mandatory for ECR passport holders
+- Save copies of all documents in your email and phone
+- Inform your bank about international transactions
+- Carry some foreign currency for initial expenses
+- Know your employer's address and emergency contact numbers
+
+## Common Mistakes to Avoid
+
+1. **Paying large sums to agents** — Legitimate agencies charge zero or minimal fees to candidates
+2. **Not verifying the agency license** — Always check on the MEA website
+3. **Trusting verbal promises** — Get every detail in writing, including salary, accommodation, and contract duration
+4. **Ignoring the contract language** — Read your employment contract carefully before signing
+5. **Skipping the E-Migrate process** — Without emigration clearance, you have no legal protection abroad
+6. **Travelling on a tourist visa for work** — This is illegal and can result in deportation and a ban
+
+## Ready to Start Your Journey?
+
+If you are from Punjab and looking to work abroad, Shiva Travel & Manpower Consultants can guide you through every step. Visit us at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040** or call **+91 98148-20432**.
+    `,
+    image: "/Blog-4.jpg",
+    category: "Career Guide",
+    date: "2025-04-01",
+    readTime: "10 min read",
+    keywords: [
+      "how to go abroad for work from India",
+      "overseas employment India guide",
+      "work abroad from Punjab",
+      "foreign job process India",
+    ],
+  },
+  {
+    slug: "gamca-medical-test-gulf-countries-complete-guide",
+    title: "GAMCA Medical Test for Gulf Countries — What to Expect, Cost & Process 2025",
+    excerpt:
+      "Complete guide to the GAMCA medical test required for Gulf country work visas — registration process, approved centres in Punjab, tests included, costs, and tips to pass.",
+    content: `
+## GAMCA Medical Test — Everything You Need to Know
+
+If you are planning to work in any Gulf Cooperation Council (GCC) country, you will need to clear the GAMCA medical test. This is a mandatory health screening that ensures workers are medically fit before travelling abroad.
+
+Here is a straightforward guide to help you understand the process, costs, and how to prepare.
+
+## What is GAMCA?
+
+GAMCA stands for **Gulf Approved Medical Centres Association**. It is the body that manages medical examinations for workers travelling to GCC countries. The test is conducted at government-approved medical centres across India.
+
+## Which Countries Require GAMCA?
+
+The GAMCA medical test is mandatory for employment visas to:
+
+- United Arab Emirates (UAE / Dubai)
+- Saudi Arabia
+- Qatar
+- Oman
+- Bahrain
+- Kuwait
+
+If your destination is a European country (like Poland or Romania), GAMCA is not required — you will need a different medical process.
+
+## How to Register for the GAMCA Medical Test
+
+Follow these steps:
+
+1. **Visit the GCC GAMCA portal** — Go to [gcchmc.org](https://gcchmc.org) or the official GAMCA website
+2. **Create an account** — Enter your passport details, personal information, and the destination country
+3. **Select a medical centre** — Choose an approved centre near your location
+4. **Book an appointment** — Pick a date and time slot
+5. **Pay the registration fee** — Online payment is usually required
+6. **Visit the centre on your appointment date** — Carry your passport, appointment slip, and passport-size photos
+
+## Approved GAMCA Centres in Punjab
+
+Several approved medical centres operate in Punjab, including in:
+
+- Jalandhar
+- Ludhiana
+- Amritsar
+- Chandigarh
+
+Your recruitment agency can recommend the nearest and most reliable centre. At Shiva Manpower, we help candidates book their GAMCA appointments and guide them on preparation.
+
+## What Tests Are Included?
+
+The GAMCA medical examination typically covers:
+
+- **Blood tests** — Complete blood count (CBC), blood sugar, liver and kidney function, HIV, Hepatitis B and C
+- **Chest X-ray** — To check for tuberculosis and other lung conditions
+- **General physical examination** — Height, weight, blood pressure, vision, hearing
+- **Urine test** — For infections and drug screening
+- **ECG** — Sometimes required for candidates above 40 years of age
+
+The entire process usually takes 2 to 4 hours at the medical centre.
+
+## Cost of the GAMCA Medical Test
+
+The cost typically ranges from **₹1,500 to ₹3,000** depending on:
+
+- The destination country
+- The medical centre you choose
+- Any additional tests required based on your age or job type
+
+This fee is paid directly to the medical centre and is separate from any visa or agency fees.
+
+## How Long is the Report Valid?
+
+GAMCA medical reports are generally valid for **3 months** from the date of examination. If your visa processing takes longer, you may need to repeat the test.
+
+## What Happens if You Fail?
+
+If the medical test reveals a health issue:
+
+- **Minor issues** (e.g., high blood sugar, treatable infections) — You may be asked to get treatment and re-test after a few weeks
+- **Major issues** (e.g., active tuberculosis, HIV positive) — You will be declared unfit, and the visa application will be rejected
+
+Some conditions are treated differently by different countries, so the result depends on the destination country's health policies.
+
+## Tips to Pass the GAMCA Medical Test
+
+- **Fast for 10-12 hours** before the test (water is usually allowed)
+- **Avoid alcohol and smoking** for at least 48 hours before the test
+- **Get enough sleep** the night before
+- **Carry all required documents** — Passport, appointment slip, photos
+- **Disclose any existing conditions** — Hiding a condition can lead to problems later
+- **If you wear glasses, bring them** — Vision tests are part of the checkup
+
+## Need Help with Your GAMCA Medical?
+
+Shiva Travel & Manpower Consultants assists candidates with GAMCA registration, appointment booking, and follow-up. If you are heading to Dubai, Saudi Arabia, Qatar, or any Gulf country, we ensure your medical process is smooth and on time.
+
+Contact us at **+91 98148-20432** or visit our Nakodar office.
+    `,
+    image: "/Blog-7.jpg",
+    category: "Visa Guide",
+    date: "2025-03-28",
+    readTime: "6 min read",
+    keywords: [
+      "GAMCA medical test",
+      "GAMCA medical test for Dubai",
+      "Gulf medical test India",
+      "medical test for work visa UAE",
+    ],
+  },
+  {
+    slug: "romania-vs-poland-jobs-indian-workers-comparison",
+    title: "Romania vs Poland — Which European Country is Better for Indian Workers in 2025?",
+    excerpt:
+      "A detailed comparison of Romania and Poland for Indian workers — salaries, cost of living, visa timelines, language, weather, and the path to Permanent Residency in Europe.",
+    content: `
+## Romania vs Poland — A Practical Comparison for Indian Workers
+
+Europe has become a popular destination for Indian workers looking beyond the Gulf. Two countries leading this trend are **Romania** and **Poland**. Both offer legal work opportunities, decent salaries, and a potential path to long-term residency in the European Union.
+
+But which one is the better choice for you? Let us break it down.
+
+## Side-by-Side Comparison
+
+| Factor | Romania | Poland |
+|--------|---------|--------|
+| **Average Monthly Salary** | ₹70,000 – ₹1,20,000 | ₹90,000 – ₹1,50,000 |
+| **Cost of Living** | Lower — more affordable rent and food | Moderate — slightly higher than Romania |
+| **Work Visa Processing Time** | 8 – 16 weeks | 6 – 14 weeks |
+| **Language** | Romanian (Latin-based, easier for some) | Polish (Slavic, considered harder) |
+| **Weather** | Milder winters in the south, cold in the north | Cold winters across the country |
+| **Popular Job Sectors** | Construction, manufacturing, agriculture | Manufacturing, warehouse, logistics, agriculture |
+| **Indian Worker Community** | Growing, but still small | Larger and more established |
+| **Path to PR/Long-term Stay** | Possible after 5 years of legal residence | Possible after 5 years of legal residence |
+| **EU Schengen Access** | Not yet in Schengen (expected soon) | Full Schengen member — travel freely in 27 countries |
+| **Overtime & Bonuses** | Available in many sectors | Common, especially in manufacturing |
+
+## Romania — Pros and Cons
+
+### Pros
+- **Lower cost of living** — Rent, groceries, and transport are cheaper than Poland
+- **Growing demand for workers** — Romania's economy is expanding, creating new opportunities
+- **Easier language** — Romanian is a Latin language, which many Indian workers find slightly easier to pick up
+- **Less competition** — Fewer Indian workers means less competition for available positions
+- **Improving infrastructure** — Major cities like Bucharest, Cluj, and Timisoara are modernising rapidly
+
+### Cons
+- **Lower salaries** compared to Poland
+- **Not yet in the Schengen zone** — You cannot freely travel to other EU countries without an additional visa (though this is expected to change soon)
+- **Smaller Indian community** — Fewer Indian restaurants, shops, and social networks
+- **Fewer direct flights** from India
+
+## Poland — Pros and Cons
+
+### Pros
+- **Higher salaries** — Especially in manufacturing, logistics, and skilled trades
+- **Schengen membership** — Travel freely across 27 European countries on weekends and holidays
+- **Established Indian community** — Easier to find Indian food, social support, and community events
+- **Stronger economy** — Poland has one of the fastest-growing economies in the EU
+- **More overtime opportunities** — Many factories offer significant overtime pay
+
+### Cons
+- **Higher cost of living** — Rent and daily expenses are higher, especially in cities like Warsaw and Krakow
+- **Harsh winters** — Temperatures can drop to -15 to -20 degrees Celsius
+- **Polish language is difficult** — Most Indian workers find it harder to learn than Romanian
+- **More competition** — A larger number of Indian and other foreign workers means more competition for roles
+
+## Which Country is Better for You?
+
+It depends on your priorities:
+
+- **If salary is your top priority** — Poland is the better choice. Higher wages and overtime opportunities mean more savings.
+- **If you want lower expenses and a simpler lifestyle** — Romania offers a more affordable cost of living, so your net savings could be comparable.
+- **If you want to travel Europe** — Poland's Schengen membership is a clear advantage.
+- **If you prefer a warmer climate** — Romania has milder weather, especially in the southern regions.
+- **If you are in construction** — Both countries have strong demand, but Romania is currently hiring aggressively for infrastructure projects.
+- **If you are in manufacturing or warehouse** — Poland has more positions and higher pay in these sectors.
+
+## Can You Switch Between the Two Countries?
+
+Not directly. Each country issues its own work permit, and you would need to go through a fresh visa process to move from one to the other. However, having European work experience in either country strengthens your profile for future opportunities across the EU.
+
+## How Shiva Manpower Helps with Both Countries
+
+At Shiva Travel & Manpower Consultants, we have active employer tie-ups in both Romania and Poland. We handle:
+
+- Job matching based on your skills and experience
+- Complete visa and work permit documentation
+- Apostille and translation of certificates
+- Pre-departure briefing on what to expect
+- Post-arrival support to help you settle in
+
+Whether you choose Romania or Poland, we ensure the process is transparent, legal, and efficient. We hold RA License **B-1794/PUN/PER/100/5/10094/2022** and never charge candidates for placement.
+
+Visit us at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040** or call **+91 98148-20432** to discuss your options.
+    `,
+    image: "/Blog-6.jpg",
+    category: "Job Guide",
+    date: "2025-03-20",
+    readTime: "8 min read",
+    keywords: [
+      "Romania vs Poland jobs",
+      "Poland or Romania for Indian workers",
+      "Europe jobs comparison India",
+      "Romania vs Poland salary",
+    ],
+  },
+  {
+    slug: "how-to-verify-recruitment-agency-license-india",
+    title: "How to Verify a Recruitment Agency License in India — Avoid Fraud Agents",
+    excerpt:
+      "Learn how to check if a recruitment agency is genuinely licensed by the Indian government. Step-by-step guide to verify RA licenses on the MEA website and spot fake agents.",
+    content: `
+## How to Verify a Recruitment Agency License in India
+
+Every year, thousands of Indians lose money to fake recruitment agents who promise overseas jobs but deliver nothing. The good news is that verifying whether an agency is legitimate takes less than five minutes.
+
+Here is exactly how to do it.
+
+## Why Verification Matters
+
+Unlicensed agents and fraudulent agencies:
+
+- Collect large fees and disappear
+- Provide fake offer letters and visa stamps
+- Send workers abroad on tourist visas (which is illegal)
+- Offer no legal protection if something goes wrong
+- May be involved in human trafficking networks
+
+A licensed agency, on the other hand, is regulated by the Ministry of External Affairs (MEA) and must follow strict rules — including the E-Migrate system that tracks every worker sent abroad.
+
+## Step-by-Step: How to Check on the MEA Website
+
+1. **Open the E-Migrate portal** — Visit [emigrate.gov.in](https://emigrate.gov.in)
+2. **Go to "Search RA"** — Look for a menu option like "Search Recruiting Agent" or "RA Details"
+3. **Enter the agency name or license number** — You can search by name, state, or license number
+4. **Review the results** — The portal will show:
+   - Agency name and address
+   - License number and validity dates
+   - Authorised signatory details
+   - Current status (Active / Suspended / Cancelled)
+5. **Match the details** — Confirm that the address, license number, and validity period match what the agency told you
+
+If the agency does not appear in the results, or if the license is expired or suspended, do not proceed with them.
+
+## What a Valid License Looks Like
+
+A genuine Recruiting Agent license includes:
+
+- A unique **RA license number** (e.g., B-1794/PUN/PER/100/5/10094/2022)
+- The **state** where the agency is registered
+- **Validity dates** — Licenses are renewed periodically and must be current
+- The **name and address** of the registered office
+- Details of the **authorised person** who can sign documents
+
+The agency should be able to show you a copy of this license at their office. If they hesitate or make excuses, that is a red flag.
+
+## Red Flags of Fake Agencies
+
+Watch out for these warning signs:
+
+- **No physical office** — They only operate through WhatsApp, social media, or phone calls
+- **Demand large upfront payments** — Genuine agencies charge zero or very minimal fees to candidates
+- **Promise guaranteed jobs** — No agency can guarantee a specific job; they can only facilitate the process
+- **Pressure you to decide immediately** — Legitimate processes take time; urgency is a manipulation tactic
+- **Cannot provide a license number** — If they dodge the question, walk away
+- **Offer jobs in countries they are not authorised for** — Some licenses are restricted to specific countries
+- **Ask for your original passport** — No agency should hold your original passport
+
+## What to Do if You Have Been Scammed
+
+If you suspect you have been defrauded by a fake agency:
+
+1. **File a complaint with the local police** — Provide all documents, receipts, and communication records
+2. **Report to the MEA** — Use the Protector General of Emigrants (PGE) office or the E-Migrate helpline
+3. **File a complaint on the National Consumer Helpline** — Call 1800-11-4000 or visit [consumerhelpline.gov.in](https://consumerhelpline.gov.in)
+4. **Contact the Overseas Workers Resource Centre (OWRC)** — Helpline: 1800-11-3090 (toll-free)
+5. **Gather all evidence** — Screenshots of messages, payment receipts, fake offer letters
+
+## Shiva Manpower's License Details
+
+Shiva Travel & Manpower Consultants is a fully licensed recruitment agency:
+
+- **RA License Number:** B-1794/PUN/PER/100/5/10094/2022
+- **Registered State:** Punjab
+- **Valid Through:** June 2027
+- **Office Address:** Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040
+- **Contact:** +91 98148-20432
+
+You can verify our license anytime on the [E-Migrate portal](https://emigrate.gov.in). We encourage every candidate to check — transparency is the foundation of trust.
+
+## Stay Safe, Stay Informed
+
+Before handing over any money or documents to a recruitment agency, spend five minutes verifying their license. It is the simplest step you can take to protect yourself and your family from fraud.
+    `,
+    image: "/Blog-2.webp",
+    category: "Safety Guide",
+    date: "2025-03-25",
+    readTime: "5 min read",
+    keywords: [
+      "verify recruitment agency license India",
+      "MEA licensed agency check",
+      "how to check RA license",
+      "fake recruitment agency India",
     ],
   },
 ];

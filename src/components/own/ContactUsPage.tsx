@@ -147,7 +147,7 @@ export default function ContactUsPage() {
               letterSpacing: "-1.5px",
               marginBottom: 20,
             }}>
-              Contact the Best<br />in Punjab.
+              Get in Touch<br />With Us.
             </h1>
             <p style={{
               fontFamily: "var(--font-body)",

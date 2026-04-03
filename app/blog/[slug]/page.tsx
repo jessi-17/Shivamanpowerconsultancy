@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import blogs from "../../_lib/data/blogs";
+import { getBlogs } from "../../_lib/data/getBlogs";
 
 /* ------------------------------------------------------------------ */
 /*  Simple Markdown-to-HTML converter (no external libraries)          */
@@ -168,6 +168,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  const blogs = getBlogs();
   const post = blogs.find((b) => b.slug === slug);
 
   if (!post) {
@@ -195,7 +196,7 @@ export async function generateMetadata({
 /* ------------------------------------------------------------------ */
 
 export async function generateStaticParams() {
-  return blogs.map((post) => ({ slug: post.slug }));
+  return getBlogs().map((post) => ({ slug: post.slug }));
 }
 
 /* ------------------------------------------------------------------ */
@@ -208,6 +209,7 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const blogs = getBlogs();
   const post = blogs.find((b) => b.slug === slug);
 
   if (!post) {
@@ -234,18 +236,30 @@ export default async function BlogPostPage({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://shivamanpowerconsultants.com/blog/${post.slug}`,
+    },
     headline: post.title,
     description: post.excerpt,
-    image: post.image,
+    image: `https://shivamanpowerconsultants.com${post.image}`,
+    url: `https://shivamanpowerconsultants.com/blog/${post.slug}`,
     datePublished: post.date,
+    dateModified: post.date,
     author: {
       "@type": "Organization",
       name: "Shiva Travel & Manpower Consultants",
+      url: "https://shivamanpowerconsultants.com",
     },
     publisher: {
       "@type": "Organization",
       name: "Shiva Travel & Manpower Consultants",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://shivamanpowerconsultants.com/logo.jpg",
+      },
     },
+    keywords: post.keywords.join(", "),
   };
 
   return (

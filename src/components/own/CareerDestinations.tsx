@@ -7,9 +7,9 @@ import { useIsMobile } from "@/hooks/useIsMobile";
 
 const featured = [
   { name: "UAE (Dubai)", subtitle: "CONSTRUCTION & TECH", image: "/UAE.jpg", color: "#c9a227" },
-  { name: "Poland", subtitle: "MANUFACTURING", image: "/poland job.png", color: "#dc3545" },
-  { name: "Romania", subtitle: "LOGISTICS & FMCG", image: "/Romania jobs.png", color: "#0052dc" },
-  { name: "Saudi Arabia", subtitle: "ENGINEERING", image: "/Saudi arabia job.png", color: "#006d3a" },
+  { name: "Poland", subtitle: "MANUFACTURING", image: "/poland job.webp", color: "#dc3545" },
+  { name: "Romania", subtitle: "LOGISTICS & FMCG", image: "/Romania jobs.webp", color: "#0052dc" },
+  { name: "Saudi Arabia", subtitle: "ENGINEERING", image: "/Saudi arabia job.webp", color: "#006d3a" },
 ];
 
 const moreCountries = [

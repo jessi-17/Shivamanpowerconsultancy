@@ -54,7 +54,7 @@ export default function AboutUs() {
               </div>
 
               <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.05, letterSpacing: "-1.5px", marginBottom: 24 }}>
-                Punjab&apos;s Most Trusted
+                Punjab&apos;s Government-Licensed
                 <br />
                 <span style={{ color: "#0052dc" }}>Overseas Partner.</span>
               </h1>
@@ -130,9 +130,9 @@ export default function AboutUs() {
         <section style={{ padding: "60px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb", borderBottom: "1px solid #e5e7eb" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 48, flexWrap: "wrap" }}>
             <div style={{ flex: "1 1 500px", minWidth: 0 }}>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 16 }}>The Best Service in Punjab</h2>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 16 }}>Trusted Service Across Punjab</h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#43474d", lineHeight: 1.7, maxWidth: 560 }}>
-                Local expertise meets global excellence. Our Nakodar headquarters serves as the central hub for thousands of families across the state who trust us for the best travel agency experience and seamless documentation.
+                Local expertise meets global excellence. Our Nakodar headquarters serves as the central hub for thousands of families across the state who trust us for a reliable travel agency experience and seamless documentation.
               </p>
             </div>
             <div style={{ flex: "0 0 auto", display: "flex", gap: 40, flexWrap: "wrap" }}>
@@ -168,7 +168,7 @@ export default function AboutUs() {
                 Starting in 2002, our vision was simple: to eliminate the exploitation of manpower. Today, Shiva Manpower stands as a beacon of trust. We treat every application as if it were our own family member&apos;s journey.
               </p>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#43474d", lineHeight: 1.7 }}>
-                Our commitment to the &apos;Best Travel Agency&apos; title isn&apos;t about volume — it&apos;s about the quality of life our candidates enjoy once they land. That is our true metric of success.
+                Our commitment isn&apos;t about volume — it&apos;s about the quality of life our candidates enjoy once they land. That is our true metric of success.
               </p>
             </div>
           </div>
