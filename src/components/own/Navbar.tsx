@@ -9,24 +9,21 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
   { label: "Visa Services", href: "/services" },
-  { label: "Opportunities", href: "/current-demands" },
   { label: "Success Stories", href: "/success-stories" },
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
 ];
 
+// Pages that have a dark hero background at the top
+const DARK_HERO_PAGES = ["/", "/contactus", "/employers", "/job-seekers"];
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [hasDarkHero, setHasDarkHero] = useState(false);
   const m = useIsMobile();
   const pathname = usePathname();
 
-  useEffect(() => {
-    // Re-detect dark hero on every route change
-    const darkHero = document.querySelector("[data-navbar-theme='dark']");
-    setHasDarkHero(!!darkHero);
-  }, [pathname]);
+  const hasDarkHero = DARK_HERO_PAGES.includes(pathname) || pathname.startsWith("/jobs/");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -34,12 +31,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Use white text only when over a dark hero AND not scrolled
-  const useWhiteText = hasDarkHero && !scrolled;
+  // White text when on a dark hero page AND not scrolled
+  const light = hasDarkHero && !scrolled;
+
+  const textColor = light ? "#ffffff" : "var(--primary)";
+  const linkColor = light ? "rgba(255,255,255,0.8)" : "var(--on-surface-variant)";
+  const linkHover = light ? "#ffffff" : "var(--primary)";
+  const hamburgerColor = light ? "#ffffff" : "var(--on-surface)";
 
   return (
     <nav
-      className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}
       style={{
         position: "fixed",
         top: 0,
@@ -50,11 +51,11 @@ export default function Navbar() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        transition: `all var(--duration-normal) var(--ease-out)`,
-        backgroundColor: scrolled ? "rgba(255,255,255,0.92)" : "transparent",
+        transition: "all 300ms ease",
+        backgroundColor: scrolled ? "rgba(255,255,255,0.95)" : "transparent",
         backdropFilter: scrolled ? "blur(16px)" : "none",
         WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
-        boxShadow: scrolled ? "var(--shadow-sm)" : "none",
+        boxShadow: scrolled ? "0 1px 3px rgba(0,0,0,0.08)" : "none",
       }}
     >
       <div
@@ -74,8 +75,8 @@ export default function Navbar() {
               fontFamily: "var(--font-display)",
               fontSize: m ? 16 : 24,
               fontWeight: 700,
-              color: scrolled ? "var(--primary)" : useWhiteText ? "#ffffff" : "var(--primary)",
-              transition: `color var(--duration-normal) var(--ease-out)`,
+              color: scrolled ? "var(--primary)" : textColor,
+              transition: "color 300ms ease",
               lineHeight: 1.15,
               display: "inline-block",
               whiteSpace: "pre-line",
@@ -102,18 +103,16 @@ export default function Navbar() {
                 fontFamily: "var(--font-display)",
                 fontSize: 14,
                 fontWeight: 500,
-                color: scrolled ? "var(--on-surface-variant)" : useWhiteText ? "rgba(255,255,255,0.8)" : "var(--on-surface-variant)",
+                color: scrolled ? "var(--on-surface-variant)" : linkColor,
                 textDecoration: "none",
-                transition: `color var(--duration-fast) var(--ease-out)`,
+                transition: "color 200ms ease",
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = scrolled ? "var(--primary)" : useWhiteText ? "#ffffff" : "var(--primary)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = scrolled
-                  ? "var(--on-surface-variant)"
-                  : useWhiteText ? "rgba(255,255,255,0.8)" : "var(--on-surface-variant)")
-              }
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = scrolled ? "var(--primary)" : linkHover;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = scrolled ? "var(--on-surface-variant)" : linkColor;
+              }}
             >
               {link.label}
             </Link>
@@ -130,27 +129,25 @@ export default function Navbar() {
               alignItems: "center",
               justifyContent: "center",
               padding: "10px 24px",
-              background: scrolled
-                ? "linear-gradient(135deg, var(--primary), var(--primary-container))"
-                : "linear-gradient(135deg, #0052dc, #1d4ed8)",
+              background: "linear-gradient(135deg, #0052dc, #1d4ed8)",
               color: "#ffffff",
               fontFamily: "var(--font-display)",
               fontSize: 14,
               fontWeight: 700,
               borderRadius: "var(--radius-sm)",
               textDecoration: "none",
-              transition: `transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out)`,
+              transition: "transform 200ms ease, box-shadow 200ms ease",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "scale(1.02)";
-              e.currentTarget.style.boxShadow = "var(--shadow-md)";
+              e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,82,220,0.3)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "scale(1)";
               e.currentTarget.style.boxShadow = "none";
             }}
           >
-           Contact us
+            Contact us
           </Link>
 
           {/* Mobile Hamburger */}
@@ -158,6 +155,7 @@ export default function Navbar() {
             className="nav-hamburger"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
             style={{
               display: "none",
               flexDirection: "column",
@@ -175,8 +173,8 @@ export default function Navbar() {
                   width: 22,
                   height: 2,
                   borderRadius: 2,
-                  backgroundColor: scrolled ? "var(--on-surface)" : useWhiteText ? "#ffffff" : "var(--on-surface)",
-                  transition: `all var(--duration-fast) var(--ease-out)`,
+                  backgroundColor: scrolled ? "var(--on-surface)" : hamburgerColor,
+                  transition: "all 200ms ease",
                   transform: mobileOpen
                     ? i === 0
                       ? "rotate(45deg) translate(5px, 5px)"
@@ -207,7 +205,7 @@ export default function Navbar() {
             display: "flex",
             flexDirection: "column",
             gap: "var(--spacing-4)",
-            boxShadow: "var(--shadow-lg)",
+            boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
           }}
         >
           {navLinks.map((link) => (

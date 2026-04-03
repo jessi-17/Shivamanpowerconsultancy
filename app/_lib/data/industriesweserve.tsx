@@ -1,8 +1,8 @@
 import { title } from "process";
-import industry1 from "../../../public/Rectangle 1.png"
-import industry2 from "../../../public/Rectangle 2.png"
-import industry3 from "../../../public/Rectangle 3.png"
-import industry4 from "../../../public/Rectangle 4.png"
+import industry1 from "../../../public/Rectangle 1.webp"
+import industry2 from "../../../public/Rectangle 2.webp"
+import industry3 from "../../../public/Rectangle 3.webp"
+import industry4 from "../../../public/Rectangle 4.webp"
 const industries = [
     {
         id: 1,

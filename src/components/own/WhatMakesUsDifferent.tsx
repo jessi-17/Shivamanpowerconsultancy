@@ -141,9 +141,9 @@ export default function WhatMakesUsDifferent() {
               marginBottom: 20,
             }}
           >
-            What Makes the Best Manpower<br />
-            Consultancy in Nakodar &amp; Jalandhar<br />
-            Different from the Rest?
+            What Makes Shiva Manpower<br />
+            Consultants in Nakodar &amp; Jalandhar<br />
+            Different?
           </h2>
 
           <p

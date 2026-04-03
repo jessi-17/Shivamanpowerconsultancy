@@ -86,16 +86,17 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "EmploymentAgency",
   "@id": `${baseUrl}/#organization`,
   name: "Shiva Travel & Manpower Consultants",
   alternateName: "Shiva Manpower Consultants Nakodar",
   description:
-    "Best Dubai visa services and government-licensed overseas recruitment agency specializing in Gulf & Romania placements for skilled Indian workers across UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Romania.",
+    "Government-licensed overseas recruitment agency offering Dubai visa services and specializing in Gulf & European placements for skilled Indian workers across UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Poland, Romania, and Croatia.",
   url: baseUrl,
   logo: `${baseUrl}/logo.jpg`,
   image: `${baseUrl}/logo.jpg`,
   telephone: "+91-9814820432",
+  email: "shivatravelnakodar@gmail.com",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road",
@@ -109,12 +110,20 @@ const jsonLd = {
     latitude: 31.12,
     longitude: 75.47,
   },
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    opens: "09:00",
-    closes: "18:00",
+  founder: {
+    "@type": "Person",
+    name: "Tarsem Lal",
+    jobTitle: "Founder & Managing Director",
   },
+  foundingDate: "1998",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  ],
   sameAs: [
     "https://www.facebook.com/shivatravelnakodar/",
     "https://www.instagram.com/shiva.travels.consultants/",
@@ -133,13 +142,16 @@ const jsonLd = {
     { "@type": "Country", name: "Qatar" },
     { "@type": "Country", name: "Kuwait" },
     { "@type": "Country", name: "Bahrain" },
+    { "@type": "Country", name: "Poland" },
     { "@type": "Country", name: "Romania" },
+    { "@type": "Country", name: "Croatia" },
   ],
   knowsAbout: [
     "Overseas recruitment",
     "Gulf manpower supply",
     "Dubai visa services",
     "Romania work visa",
+    "Poland work permit",
     "E-Migrate processing",
     "Visa and documentation assistance",
     "Trade testing and skill screening",
@@ -147,6 +159,18 @@ const jsonLd = {
     "Industrial workforce supply",
     "Overseas placement from India",
   ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Recruitment & Visa Services",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Work Visa Processing", description: "End-to-end work visa processing for Gulf and European countries" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Document Attestation", description: "Educational and experience certificate attestation for overseas employment" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Medical Coordination", description: "GAMCA and embassy-approved medical examination coordination" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "E-Migrate Compliance", description: "Full E-Migrate registration and emigration clearance processing" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Pre-Departure Orientation", description: "Comprehensive briefing on destination country laws, rights, and procedures" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Employer Verification & Job Matching", description: "Verified employer matching with skill-based job placement" } },
+    ],
+  },
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "5.0",
@@ -155,6 +179,16 @@ const jsonLd = {
     reviewCount: "14",
     ratingCount: "14",
   },
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${baseUrl}/#website`,
+  name: "Shiva Travel & Manpower Consultants",
+  url: baseUrl,
+  publisher: { "@id": `${baseUrl}/#organization` },
+  inLanguage: "en-IN",
 };
 
 export default function RootLayout({
@@ -173,6 +207,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body>

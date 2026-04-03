@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 
 export default function HeroSection() {
@@ -181,7 +182,7 @@ export default function HeroSection() {
         }}
       >
         <Image
-          src="/Hero Section.png"
+          src="/Hero Section.webp"
           alt=""
           fill
           priority
@@ -247,9 +248,15 @@ export default function HeroSection() {
           margin: "0 auto",
           padding: m ? "120px 20px 60px" : "140px 60px 80px",
           willChange: "transform, opacity",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          gap: m ? 32 : 48,
+          flexWrap: m ? "wrap" : "nowrap",
         }}
       >
-        <div style={{ maxWidth: 768, display: "flex", flexDirection: "column", gap: 24 }}>
+        {/* Left — text content */}
+        <div style={{ maxWidth: 640, display: "flex", flexDirection: "column", gap: 24, flex: "1 1 auto" }}>
           {/* Badge */}
           <div className="hero-animate">
             <span
@@ -295,9 +302,8 @@ export default function HeroSection() {
               perspective: 600,
             }}
           >
-            <span className="hero-line" style={{ display: m ? "inline" : "block" }}>{m ? "Trusted Overseas Partners for Punjab's Talent" : "Trusted Overseas"}</span>
-            {!m && <span className="hero-line" style={{ display: "block" }}>Partners for Punjab&apos;s</span>}
-            {!m && <span className="hero-line" style={{ display: "block" }}>Talent</span>}
+            <span className="hero-line" style={{ display: m ? "inline" : "block" }}>{m ? "Trusted Overseas Partners for Punjab's Talent" : "Trusted Overseas Partners"}</span>
+            {!m && <span className="hero-line" style={{ display: "block" }}>for Punjab&apos;s Talent</span>}
           </h1>
 
           {/* Subtext */}
@@ -318,6 +324,146 @@ export default function HeroSection() {
 
           {/* Quick Inquiry Form */}
           <HeroInquiryForm />
+        </div>
+
+        {/* Right — glassy portal boxes */}
+        <div
+          className="hero-animate"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 16,
+            flex: m ? "1 1 100%" : "0 0 320px",
+            width: m ? "100%" : 320,
+          }}
+        >
+          {/* For Employers */}
+          <Link href="/employers" style={{ textDecoration: "none" }}>
+            <div
+              style={{
+                padding: m ? "20px" : "28px",
+                backgroundColor: "rgba(255,255,255,0.12)",
+                backdropFilter: "blur(24px)",
+                WebkitBackdropFilter: "blur(24px)",
+                border: "1px solid rgba(255,255,255,0.18)",
+                borderRadius: 16,
+                transition: "all 250ms cubic-bezier(0.16,1,0.3,1)",
+                cursor: "pointer",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.18)";
+                e.currentTarget.style.borderColor = "rgba(96,165,250,0.4)";
+                e.currentTarget.style.transform = "translateY(-4px)";
+                e.currentTarget.style.boxShadow = "0 16px 40px rgba(0,82,220,0.2)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.12)";
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.18)";
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
+                <div style={{
+                  width: 36, height: 36, borderRadius: 10,
+                  backgroundColor: "rgba(0,82,220,0.35)",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 700,
+                  color: "#fff", margin: 0,
+                }}>
+                  For Employers
+                </h3>
+              </div>
+              <p style={{
+                fontFamily: "var(--font-body)", fontSize: 13,
+                color: "rgba(255,255,255,0.7)", lineHeight: 1.55,
+                margin: "0 0 14px",
+              }}>
+                Hire pre-screened skilled workers from India. End-to-end recruitment, visa processing &amp; deployment support.
+              </p>
+              <span style={{
+                display: "inline-flex", alignItems: "center", gap: 6,
+                fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 700,
+                color: "#60a5fa",
+              }}>
+                Partner With Us
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                </svg>
+              </span>
+            </div>
+          </Link>
+
+          {/* For Job Seekers */}
+          <Link href="/job-seekers" style={{ textDecoration: "none" }}>
+            <div
+              style={{
+                padding: m ? "20px" : "28px",
+                backgroundColor: "rgba(255,255,255,0.12)",
+                backdropFilter: "blur(24px)",
+                WebkitBackdropFilter: "blur(24px)",
+                border: "1px solid rgba(255,255,255,0.18)",
+                borderRadius: 16,
+                transition: "all 250ms cubic-bezier(0.16,1,0.3,1)",
+                cursor: "pointer",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.18)";
+                e.currentTarget.style.borderColor = "rgba(96,165,250,0.4)";
+                e.currentTarget.style.transform = "translateY(-4px)";
+                e.currentTarget.style.boxShadow = "0 16px 40px rgba(0,82,220,0.2)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.12)";
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.18)";
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
+                <div style={{
+                  width: 36, height: 36, borderRadius: 10,
+                  backgroundColor: "rgba(0,82,220,0.35)",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 700,
+                  color: "#fff", margin: 0,
+                }}>
+                  For Job Seekers
+                </h3>
+              </div>
+              <p style={{
+                fontFamily: "var(--font-body)", fontSize: 13,
+                color: "rgba(255,255,255,0.7)", lineHeight: 1.55,
+                margin: "0 0 14px",
+              }}>
+                Browse overseas jobs, get salary info &amp; subscribe for daily/weekly job alerts. Zero fees guaranteed.
+              </p>
+              <span style={{
+                display: "inline-flex", alignItems: "center", gap: 6,
+                fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 700,
+                color: "#60a5fa",
+              }}>
+                Find Jobs
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                </svg>
+              </span>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
@@ -412,18 +558,19 @@ function HeroInquiryForm() {
         type="submit"
         disabled={status === "loading"}
         style={{
-          flex: m ? "1 1 100%" : "1 1 auto",
-          padding: "14px 28px",
+          flex: m ? "1 1 100%" : "0 0 auto",
+          padding: "14px 20px",
           backgroundColor: status === "success" ? "#16a34a" : "#0052dc",
           color: "#fff",
           fontFamily: "var(--font-display)",
-          fontSize: 15,
+          fontSize: m ? 13 : 15,
           fontWeight: 700,
           border: "none",
           borderRadius: 10,
           cursor: status === "loading" ? "wait" : "pointer",
           transition: "all 150ms cubic-bezier(0.16,1,0.3,1)",
           whiteSpace: "nowrap",
+          minWidth: "fit-content",
           boxShadow: status === "success"
             ? "0 0 20px rgba(22,163,74,0.5), 0 0 40px rgba(22,163,74,0.25)"
             : "0 0 20px rgba(0,82,220,0.5), 0 0 40px rgba(0,82,220,0.25)",
@@ -439,7 +586,7 @@ function HeroInquiryForm() {
           e.currentTarget.style.boxShadow = "0 0 20px rgba(0,82,220,0.5), 0 0 40px rgba(0,82,220,0.25)";
         }}
       >
-        {status === "loading" ? "Sending..." : status === "success" ? "We'll Call You!" : "Get Free Consultation →"}
+        {status === "loading" ? "Sending..." : status === "success" ? "We'll Call You!" : m ? "Get Consultation →" : "Get Free Consultation →"}
       </button>
     </form>
   );

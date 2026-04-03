@@ -93,7 +93,7 @@ export default function LocalCTA() {
             fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700,
             letterSpacing: "0.1em", color: "#0052dc", textTransform: "uppercase", marginBottom: 16,
           }}>
-            NAKODAR &amp; JALANDHAR&apos;S #1 CHOICE
+            TRUSTED IN NAKODAR &amp; JALANDHAR
           </p>
           <h2 style={{
             fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
