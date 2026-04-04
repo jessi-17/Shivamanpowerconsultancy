@@ -6,7 +6,7 @@ import { breadcrumbJsonLd } from "../_lib/breadcrumb";
 export const metadata: Metadata = {
   title: "Visa Services | Work Visa Processing for Gulf & Europe | Nakodar & Jalandhar",
   description:
-    "Complete visa processing and E-Migrate services from Nakodar, Punjab. Work visa for UAE, Saudi Arabia, Qatar, Poland, Romania. Document attestation, medical coordination, pre-departure orientation. Government licensed agency.",
+    "Visa processing guidance and overseas recruitment from Nakodar, Punjab. Work visa for UAE, Saudi Arabia, Qatar, Poland, Romania. E-Migrate, document attestation, and medical guidance. Government licensed agency.",
 };
 
 export default function Services() {
@@ -122,7 +122,7 @@ export default function Services() {
 
                 <div style={{ display: "flex", gap: 32, marginBottom: 28, flexWrap: "wrap" }}>
                   {[
-                    { title: "Document Attestation", desc: "Swift handling of degrees, certificates, and legal papers." },
+                    { title: "Document Attestation Guide", desc: "We guide you through attesting degrees, certificates, and legal papers." },
                     { title: "Visa Processing", desc: "Work permit applications for Europe, Gulf, and SE Asia." },
                   ].map((item) => (
                     <div key={item.title} style={{ flex: "1 1 180px" }}>

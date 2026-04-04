@@ -35,11 +35,11 @@ const visaServices = [
 const immigrationServices = [
   { label: "Immigration Office Nakodar", href: "/nakodar" },
   { label: "Visa Consultant Nakodar", href: "/nakodar" },
-  { label: "E-Migrate Processing", href: "/services/e-migrate" },
-  { label: "Document Attestation", href: "/services/document-attestation" },
-  { label: "GAMCA Medical", href: "/services/gamca-medical" },
-  { label: "Passport Assistance", href: "/services/passport-assistance" },
-  { label: "Embassy Coordination", href: "/services/embassy-coordination" },
+  { label: "E-Migrate Guidance", href: "/services/e-migrate" },
+  { label: "Document Attestation Guide", href: "/services/document-attestation" },
+  { label: "GAMCA Medical Guide", href: "/services/gamca-medical" },
+  { label: "Passport Guidance", href: "/services/passport-assistance" },
+  { label: "Embassy Guidance", href: "/services/embassy-coordination" },
   { label: "Pre-Departure Briefing", href: "/services/pre-departure-briefing" },
 ];
 
