@@ -272,41 +272,44 @@ export default function RootLayout({
         <FloatingCTA />
         <Analytics />
 
-        {/* Google Analytics — lazyOnload so it doesn't block paint */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-3NSV8DNDZ6" strategy="lazyOnload" />
-        <Script id="google-analytics" strategy="lazyOnload">
+        {/* Google Analytics & Facebook Pixel — only load after cookie consent */}
+        <Script id="cookie-consent-analytics" strategy="lazyOnload">
           {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-3NSV8DNDZ6');
-          `}
-        </Script>
+            function loadAnalytics() {
+              if (window.__analyticsLoaded) return;
+              window.__analyticsLoaded = true;
 
-        {/* Facebook Pixel — replace YOUR_PIXEL_ID with your actual pixel ID from Meta Business Suite */}
-        <Script id="facebook-pixel" strategy="lazyOnload">
-          {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '782998073170981');
-            fbq('track', 'PageView');
-          `}
-        </Script>
+              // Google Analytics
+              var gs = document.createElement('script');
+              gs.src = 'https://www.googletagmanager.com/gtag/js?id=G-3NSV8DNDZ6';
+              gs.async = true;
+              document.head.appendChild(gs);
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-3NSV8DNDZ6');
+              gtag('config', 'AW-18056191353');
 
-        {/* Google Ads Conversion Tag — replace AW-XXXXXXXXX with your Google Ads ID */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX" strategy="lazyOnload" />
-        <Script id="google-ads-tag" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-XXXXXXXXX');
+              // Facebook Pixel
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '782998073170981');
+              fbq('track', 'PageView');
+            }
+
+            // If already accepted, load immediately
+            if (localStorage.getItem('cookie-consent') === 'accepted') {
+              loadAnalytics();
+            }
+
+            // Listen for accept event from CookieBanner
+            window.addEventListener('cookie-consent-accepted', loadAnalytics);
           `}
         </Script>
 

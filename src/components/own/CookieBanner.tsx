@@ -32,6 +32,7 @@ export default function CookieBanner() {
 
   const handleAccept = () => {
     localStorage.setItem("cookie-consent", "accepted");
+    window.dispatchEvent(new Event("cookie-consent-accepted"));
     dismiss();
   };
 
