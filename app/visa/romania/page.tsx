@@ -93,7 +93,7 @@ const serviceJsonLd = {
   provider: {
     "@type": "Organization",
     name: "Shiva Travel & Manpower Consultants",
-    url: "https://shivamanpowerconsultants.com",
+    url: "https://shivatravelconsultant.in",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Golden Avenue",

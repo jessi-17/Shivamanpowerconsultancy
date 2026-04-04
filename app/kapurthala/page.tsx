@@ -30,7 +30,7 @@ const jsonLd = {
   name: "Shiva Travel & Manpower Consultants — Kapurthala Region",
   description:
     "Government licensed overseas recruitment agency serving Kapurthala, Punjab. Specializing in Gulf & European placements since 2002.",
-  url: "https://shivamanpowerconsultants.com/kapurthala",
+  url: "https://shivatravelconsultant.in/kapurthala",
   telephone: "+91-9814820432",
   address: {
     "@type": "PostalAddress",

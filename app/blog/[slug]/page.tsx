@@ -180,7 +180,7 @@ export async function generateMetadata({
 
   const absoluteImage = post.image.startsWith("http")
     ? post.image
-    : `https://shivamanpowerconsultants.com${post.image}`;
+    : `https://shivatravelconsultant.in${post.image}`;
 
   return {
     title: post.title,
@@ -189,7 +189,7 @@ export async function generateMetadata({
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `https://shivamanpowerconsultants.com/blog/${slug}`,
+      url: `https://shivatravelconsultant.in/blog/${slug}`,
       images: [{ url: absoluteImage, width: 1200, height: 630, alt: post.title }],
       type: "article",
       publishedTime: post.date,
@@ -281,18 +281,18 @@ export default async function BlogPostPage({
     "@type": "BlogPosting",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://shivamanpowerconsultants.com/blog/${post.slug}`,
+      "@id": `https://shivatravelconsultant.in/blog/${post.slug}`,
     },
     headline: post.title,
     description: post.excerpt,
-    image: `https://shivamanpowerconsultants.com${post.image}`,
-    url: `https://shivamanpowerconsultants.com/blog/${post.slug}`,
+    image: `https://shivatravelconsultant.in${post.image}`,
+    url: `https://shivatravelconsultant.in/blog/${post.slug}`,
     datePublished: post.date,
     dateModified: post.date,
     author: {
       "@type": "Organization",
       name: "Shiva Travel & Manpower Consultants",
-      url: "https://shivamanpowerconsultants.com",
+      url: "https://shivatravelconsultant.in",
       sameAs: [
         "https://www.facebook.com/shivatravelnakodar/",
         "https://www.instagram.com/shiva.travels.consultants/",
@@ -305,13 +305,13 @@ export default async function BlogPostPage({
       name: "Shiva Travel & Manpower Consultants",
       logo: {
         "@type": "ImageObject",
-        url: "https://shivamanpowerconsultants.com/logo.jpg",
+        url: "https://shivatravelconsultant.in/logo.jpg",
       },
     },
     isPartOf: {
       "@type": "WebSite",
       name: "Shiva Travel & Manpower Consultants",
-      url: "https://shivamanpowerconsultants.com",
+      url: "https://shivatravelconsultant.in",
     },
     keywords: post.keywords.join(", "),
   };
@@ -514,7 +514,7 @@ export default async function BlogPostPage({
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
               {/* WhatsApp */}
               <a
-                href={`https://wa.me/?text=${encodeURIComponent(post.title + " — " + "https://shivamanpowerconsultants.com/blog/" + post.slug)}`}
+                href={`https://wa.me/?text=${encodeURIComponent(post.title + " — " + "https://shivatravelconsultant.in/blog/" + post.slug)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -530,7 +530,7 @@ export default async function BlogPostPage({
               </a>
               {/* Facebook */}
               <a
-                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://shivamanpowerconsultants.com/blog/" + post.slug)}`}
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://shivatravelconsultant.in/blog/" + post.slug)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -546,7 +546,7 @@ export default async function BlogPostPage({
               </a>
               {/* Twitter / X */}
               <a
-                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent("https://shivamanpowerconsultants.com/blog/" + post.slug)}`}
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent("https://shivatravelconsultant.in/blog/" + post.slug)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -562,7 +562,7 @@ export default async function BlogPostPage({
               </a>
               {/* LinkedIn */}
               <a
-                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://shivamanpowerconsultants.com/blog/" + post.slug)}`}
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://shivatravelconsultant.in/blog/" + post.slug)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

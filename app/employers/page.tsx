@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "For Employers – Hire Skilled Workers from India | Shiva Manpower Consultants",
     description: "Government-licensed recruitment agency supplying pre-screened skilled workers from India. 25+ years, 5,000+ deployments, zero compliance issues.",
-    url: "https://shivamanpowerconsultants.com/employers",
+    url: "https://shivatravelconsultant.in/employers",
     type: "website",
   },
 };

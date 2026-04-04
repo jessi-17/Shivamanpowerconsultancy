@@ -30,7 +30,7 @@ const jsonLd = {
   name: "Shiva Travel & Manpower Consultants — Nawanshahr Region",
   description:
     "Government licensed overseas recruitment agency serving Nawanshahr (Shaheed Bhagat Singh Nagar), Punjab. Specializing in Gulf & European placements since 2002.",
-  url: "https://shivamanpowerconsultants.com/nawanshahr",
+  url: "https://shivatravelconsultant.in/nawanshahr",
   telephone: "+91-9814820432",
   address: {
     "@type": "PostalAddress",
