@@ -306,6 +306,33 @@ export default function HeroSection() {
             {!m && <span className="hero-line" style={{ display: "block" }}>for Punjab&apos;s Talent</span>}
           </h1>
 
+          {/* Urgency banner */}
+          <div
+            className="hero-animate"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 10,
+              padding: "8px 16px",
+              borderRadius: 10,
+              backgroundColor: "rgba(239,68,68,0.15)",
+              border: "1px solid rgba(239,68,68,0.3)",
+              maxWidth: "fit-content",
+            }}
+          >
+            <span style={{
+              width: 8, height: 8, borderRadius: "50%",
+              backgroundColor: "#ef4444", display: "inline-block",
+              animation: "pulse-dot 1.5s ease-in-out infinite",
+            }} />
+            <span style={{
+              fontFamily: "var(--font-display)", fontSize: m ? 12 : 14,
+              fontWeight: 700, color: "#fca5a5",
+            }}>
+              Limited Gulf Openings — Apply Before Slots Fill
+            </span>
+          </div>
+
           {/* Subtext */}
           <p
             className="hero-animate"
@@ -521,7 +548,8 @@ function HeroInquiryForm() {
         onChange={(e) => setForm({ ...form, destination: e.target.value })}
         style={{
           ...fieldStyle,
-          flex: m ? "1 1 100%" : "0 0 170px",
+          flex: m ? "1 1 100%" : "1 1 0",
+          minWidth: 0,
           appearance: "none",
           WebkitAppearance: "none",
           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E")`,
@@ -548,7 +576,8 @@ function HeroInquiryForm() {
         required
         style={{
           ...fieldStyle,
-          flex: m ? "1 1 100%" : "0 0 170px",
+          flex: m ? "1 1 100%" : "1 1 0",
+          minWidth: 0,
         }}
         onFocus={(e) => { e.currentTarget.style.borderColor = "#60a5fa"; }}
         onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)"; }}

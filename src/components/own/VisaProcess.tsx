@@ -170,7 +170,7 @@ export default function VisaProcess() {
               className="process-card"
               style={{
                 backgroundColor: "#fff",
-                borderRadius: 18,
+                borderRadius: 16,
                 padding: "28px 28px",
                 boxShadow: "0 2px 16px rgba(0,0,0,0.04)",
                 border: "1px solid rgba(0,0,0,0.05)",

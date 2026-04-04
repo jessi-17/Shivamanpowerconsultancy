@@ -6,6 +6,7 @@ import { breadcrumbJsonLd } from "../_lib/breadcrumb";
 const PopularDestinations = dynamic(() => import("@/components/own/PopularDestinations"));
 const VisaProcess = dynamic(() => import("@/components/own/VisaProcess"));
 const CTASection = dynamic(() => import("@/components/own/CTASection"));
+import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 
 export const metadata: Metadata = {
   title: "Jobs Abroad for Indians – UAE, Saudi, Qatar, Europe | Shiva Manpower Consultants",
@@ -47,6 +48,7 @@ export default function JobSeekersPage() {
       <JobSeekerHero />
       <PopularDestinations />
       <VisaProcess />
+      <SalaryCalcCTA />
       <CTASection />
     </>
   );
