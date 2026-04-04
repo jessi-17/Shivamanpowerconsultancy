@@ -206,12 +206,12 @@ const jsonLd = {
     "@type": "OfferCatalog",
     name: "Recruitment & Visa Services",
     itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Work Visa Processing", description: "End-to-end work visa processing for Gulf and European countries" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Document Attestation", description: "Educational and experience certificate attestation for overseas employment" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Medical Coordination", description: "GAMCA and embassy-approved medical examination coordination" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "E-Migrate Compliance", description: "Full E-Migrate registration and emigration clearance processing" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Overseas Job Placement", description: "Skill-based job matching with verified international employers across Gulf and Europe" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Work Visa Guidance", description: "Step-by-step guidance through work visa processing for Gulf and European countries" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "E-Migrate Guidance", description: "Guidance through E-Migrate registration and emigration clearance process" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Pre-Departure Orientation", description: "Comprehensive briefing on destination country laws, rights, and procedures" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Employer Verification & Job Matching", description: "Verified employer matching with skill-based job placement" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Employer Verification", description: "Background verification of overseas employers before sending workers" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Interview Preparation", description: "Interview coaching and skill assessment for overseas job candidates" } },
     ],
   },
   aggregateRating: {
