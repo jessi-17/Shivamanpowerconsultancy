@@ -65,7 +65,7 @@ export default function PartnersBar() {
   const m = useIsMobile();
 
   return (
-    <div style={{ padding: m ? "24px 0" : "60px 0", backgroundColor: "var(--surface)" }}>
+    <div style={{ padding: m ? "40px 0" : "80px 0", backgroundColor: "var(--surface)" }}>
       <div ref={ref} className="reveal-stagger" style={{ maxWidth: "var(--max-width)", margin: "0 auto", padding: "0 var(--spacing-8)", textAlign: "center" }}>
         <h2 style={{
           fontFamily: "var(--font-display)", fontSize: "clamp(1.25rem, 2vw, 1.5rem)", fontWeight: 700,

@@ -12,7 +12,6 @@ export default function CTASection() {
       style={{
         backgroundColor: "#000c2f",
         padding: m ? "48px 0" : "80px 0",
-        marginTop: m ? 32 : 80,
         position: "relative",
         overflow: "hidden",
       }}
@@ -75,10 +74,10 @@ export default function CTASection() {
           <a
             href="/contactus"
             style={{
-              display: "inline-flex", alignItems: "center", padding: "16px 32px",
+              display: "inline-flex", alignItems: "center", padding: "14px 28px",
               backgroundColor: "#0052dc", color: "#ffffff",
-              fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700,
-              borderRadius: 12, textDecoration: "none",
+              fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700,
+              borderRadius: 10, textDecoration: "none",
               boxShadow: "0 4px 20px rgba(0,82,220,0.4)",
               transition: "all 150ms cubic-bezier(0.16,1,0.3,1)",
             }}
@@ -92,7 +91,7 @@ export default function CTASection() {
             style={{
               display: "flex", alignItems: "center", gap: 12,
               padding: "14px 24px", backgroundColor: "rgba(255,255,255,0.06)",
-              borderRadius: 12, border: "1px solid rgba(255,255,255,0.1)",
+              borderRadius: 10, border: "1px solid rgba(255,255,255,0.1)",
               textDecoration: "none", transition: "all 200ms ease",
             }}
             onMouseEnter={(e) => {

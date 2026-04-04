@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import { gsap } from "@/lib/gsap";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const reels = [
   { id: "DWEVQ5PjuBd", label: "Interviews", country: "Nakodar Office" },
@@ -16,6 +17,7 @@ const reels = [
 const allReels = [...reels, ...reels, ...reels];
 
 export default function ClientVideos() {
+  const m = useIsMobile();
   const ref = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const tweenRef = useRef<gsap.core.Tween | null>(null);
@@ -126,7 +128,7 @@ export default function ClientVideos() {
     <div
       ref={ref}
       style={{
-        padding: "80px 0",
+        padding: m ? "48px 0" : "80px 0",
         background: "var(--surface)",
         overflow: "hidden",
         position: "relative",
@@ -176,9 +178,9 @@ export default function ClientVideos() {
           <p
             style={{
               fontFamily: "var(--font-body)",
-              fontSize: 11,
+              fontSize: 12,
               fontWeight: 700,
-              letterSpacing: "0.12em",
+              letterSpacing: "0.1em",
               color: "var(--surface-tint)",
               textTransform: "uppercase",
               marginBottom: 10,

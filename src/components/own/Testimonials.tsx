@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import { gsap } from "@/lib/gsap";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const reviewsRow1 = [
   { name: "Ruksarmani Dadrha", location: "Nakodar", rating: 5, text: "Shiva Travel is the most trusted consultant for Gulf and Europe work permits. They helped me and my cousin both. One went to Dubai, the other to Poland. Very professional." },
@@ -133,6 +134,7 @@ function MarqueeRow({ reviews, direction }: { reviews: typeof reviewsRow1; direc
 
 export default function Testimonials() {
   const ref = useRef<HTMLDivElement>(null);
+  const m = useIsMobile();
 
   useEffect(() => {
     if (!ref.current) return;
@@ -147,7 +149,7 @@ export default function Testimonials() {
     <div
       ref={ref}
       style={{
-        padding: "80px 0",
+        padding: m ? "48px 0" : "80px 0",
         backgroundColor: "#000c2f",
         position: "relative",
         overflow: "hidden",

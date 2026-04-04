@@ -9,13 +9,14 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
   { label: "Visa Services", href: "/services" },
+  { label: "Salary Calculator", href: "/salary-calculator" },
   { label: "Success Stories", href: "/success-stories" },
+  { label: "Nakodar Office", href: "/nakodar" },
   { label: "Blog", href: "/blog" },
-  { label: "FAQ", href: "/faq" },
 ];
 
 // Pages that have a dark hero background at the top
-const DARK_HERO_PAGES = ["/", "/contactus", "/employers", "/job-seekers"];
+const DARK_HERO_PAGES = ["/", "/contactus", "/employers", "/job-seekers", "/salary-calculator"];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -23,7 +24,7 @@ export default function Navbar() {
   const m = useIsMobile();
   const pathname = usePathname();
 
-  const hasDarkHero = DARK_HERO_PAGES.includes(pathname) || pathname.startsWith("/jobs/");
+  const hasDarkHero = DARK_HERO_PAGES.includes(pathname) || pathname.startsWith("/blog");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);

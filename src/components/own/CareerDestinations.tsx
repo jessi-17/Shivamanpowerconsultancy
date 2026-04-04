@@ -83,7 +83,7 @@ export default function CareerDestinations() {
               fontFamily: "var(--font-display)",
               fontSize: 14,
               fontWeight: 600,
-              borderRadius: "var(--radius-full)",
+              borderRadius: 10,
               textDecoration: "none",
               transition: "all 150ms cubic-bezier(0.16,1,0.3,1)",
               whiteSpace: "nowrap",
@@ -114,8 +114,8 @@ export default function CareerDestinations() {
               className="reveal-child"
               style={{
                 "--i": i,
-                flex: m ? "1 1 100%" : "1 0 180px",
-                maxWidth: m ? "100%" : 220,
+                flex: m ? "1 1 100%" : "1 1 calc(25% - 12px)",
+                maxWidth: m ? "100%" : "calc(25% - 12px)",
                 height: m ? 280 : 360,
                 cursor: "pointer",
                 transition: "transform 300ms cubic-bezier(0.16,1,0.3,1)",
@@ -151,9 +151,9 @@ export default function CareerDestinations() {
             className="reveal-child"
             style={{
               "--i": featured.length,
-              flex: m ? "1 1 100%" : "1 0 220px",
-              maxWidth: m ? "100%" : 260,
-              height: m ? 220 : 288,
+              flex: m ? "1 1 100%" : "1 1 calc(25% - 12px)",
+              maxWidth: m ? "100%" : "calc(25% - 12px)",
+              height: m ? 220 : 360,
               borderRadius: 20,
               backgroundColor: "#000c2f",
               display: "flex",

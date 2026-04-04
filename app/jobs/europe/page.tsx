@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
+import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 
 export const metadata: Metadata = {
   title: "Jobs in Europe | Poland, Romania, Croatia Work Opportunities",
@@ -322,6 +323,8 @@ export default function JobsInEurope() {
             </div>
           </div>
         </section>
+
+        <SalaryCalcCTA country="Europe" />
 
         {/* ===== CTA ===== */}
         <section style={{ padding: "96px 24px", maxWidth: 1300, margin: "0 auto", background: "linear-gradient(135deg, #0f2744 0%, #1e3a5f 100%)", textAlign: "center", position: "relative", overflow: "hidden", borderRadius: 24 }}>

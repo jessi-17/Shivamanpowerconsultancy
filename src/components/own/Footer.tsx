@@ -12,10 +12,47 @@ const quickLinks = [
   { label: "Visa Services", href: "/services" },
   { label: "For Employers", href: "/employers" },
   { label: "For Job Seekers", href: "/job-seekers" },
+  { label: "Salary Calculator", href: "/salary-calculator" },
+  { label: "Current Demands", href: "/current-demands" },
   { label: "Success Stories", href: "/success-stories" },
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact Us", href: "/contactus" },
+];
+
+const visaServices = [
+  { label: "Schengen Visa", href: "/visa/schengen" },
+  { label: "Romania Visa", href: "/visa/romania" },
+  { label: "Poland Visa", href: "/visa/poland" },
+  { label: "UAE / Dubai Visa", href: "/visa/uae" },
+  { label: "Croatia Visa", href: "/visa/croatia" },
+  { label: "Saudi Arabia Visa", href: "/visa/saudi-arabia" },
+  { label: "Qatar Visa", href: "/visa/qatar" },
+  { label: "Kuwait Visa", href: "/visa/kuwait" },
+  { label: "Bahrain Visa", href: "/visa/bahrain" },
+];
+
+const immigrationServices = [
+  { label: "Immigration Office Nakodar", href: "/nakodar" },
+  { label: "Visa Consultant Nakodar", href: "/nakodar" },
+  { label: "E-Migrate Processing", href: "/services" },
+  { label: "Document Attestation", href: "/services" },
+  { label: "GAMCA Medical", href: "/services" },
+  { label: "Passport Assistance", href: "/services" },
+  { label: "Embassy Coordination", href: "/services" },
+  { label: "Pre-Departure Briefing", href: "/services" },
+];
+
+const workPermits = [
+  { label: "UAE Work Permit", href: "/visa/uae" },
+  { label: "Saudi Arabia Work Permit", href: "/visa/saudi-arabia" },
+  { label: "Qatar Work Permit", href: "/visa/qatar" },
+  { label: "Poland Work Permit", href: "/visa/poland" },
+  { label: "Romania Work Permit", href: "/visa/romania" },
+  { label: "Croatia Work Permit", href: "/visa/croatia" },
+  { label: "Kuwait Work Permit", href: "/visa/kuwait" },
+  { label: "Bahrain Work Permit", href: "/visa/bahrain" },
+  { label: "Europe Work Permit", href: "/visa/schengen" },
 ];
 
 const destinations = [
@@ -27,11 +64,13 @@ const destinations = [
   { label: "Jobs in Romania", href: "/jobs/romania" },
 ];
 
-const blogPosts = [
-  { label: "How to Get a Work Visa for UAE", href: "/blog" },
-  { label: "Top Factory Jobs in Europe 2025", href: "/blog" },
-  { label: "Saudi Arabia Work Permit Guide", href: "/blog" },
-  { label: "Why Choose a Licensed Agency?", href: "/blog" },
+const serviceAreas = [
+  { label: "Nakodar Office (HQ)", href: "/nakodar" },
+  { label: "Jalandhar", href: "/jalandhar" },
+  { label: "Kapurthala", href: "/kapurthala" },
+  { label: "Phagwara", href: "/phagwara" },
+  { label: "Hoshiarpur", href: "/hoshiarpur" },
+  { label: "Nawanshahr", href: "/nawanshahr" },
 ];
 
 const socials = [
@@ -178,7 +217,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <div ref={wrapperRef} style={{ position: "relative", backgroundColor: "#060e24" }}>
+    <div ref={wrapperRef} style={{ position: "relative", backgroundColor: "#060e24", marginTop: m ? 48 : 80 }}>
       <footer ref={footerRef} style={{
         backgroundColor: "#f8fafc",
         position: "relative",
@@ -264,12 +303,84 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Destinations */}
+            {/* Visa Services */}
             <div className="footer-col">
               <h4 style={{
                 fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700,
                 color: "#000c2f", marginBottom: 16,
-              }}>Destinations</h4>
+              }}>Visa Services</h4>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {visaServices.map((l) => (
+                  <Link
+                    key={l.label}
+                    href={l.href}
+                    style={{
+                      fontFamily: "var(--font-body)", fontSize: 14, color: "#64748b",
+                      textDecoration: "none", transition: "color 150ms",
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = "#0052dc"; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = "#64748b"; }}
+                  >
+                    {l.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Immigration */}
+            <div className="footer-col">
+              <h4 style={{
+                fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700,
+                color: "#000c2f", marginBottom: 16,
+              }}>Immigration</h4>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {immigrationServices.map((l) => (
+                  <Link
+                    key={l.label}
+                    href={l.href}
+                    style={{
+                      fontFamily: "var(--font-body)", fontSize: 14, color: "#64748b",
+                      textDecoration: "none", transition: "color 150ms",
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = "#0052dc"; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = "#64748b"; }}
+                  >
+                    {l.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Work Permits */}
+            <div className="footer-col">
+              <h4 style={{
+                fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700,
+                color: "#000c2f", marginBottom: 16,
+              }}>Work Permits</h4>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {workPermits.map((l) => (
+                  <Link
+                    key={l.label}
+                    href={l.href}
+                    style={{
+                      fontFamily: "var(--font-body)", fontSize: 14, color: "#64748b",
+                      textDecoration: "none", transition: "color 150ms",
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = "#0052dc"; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = "#64748b"; }}
+                  >
+                    {l.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Jobs Abroad */}
+            <div className="footer-col">
+              <h4 style={{
+                fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700,
+                color: "#000c2f", marginBottom: 16,
+              }}>Jobs Abroad</h4>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 {destinations.map((l) => (
                   <Link
@@ -288,14 +399,14 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Blog */}
+            {/* Service Areas */}
             <div className="footer-col">
               <h4 style={{
                 fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700,
                 color: "#000c2f", marginBottom: 16,
-              }}>From Our Blog</h4>
+              }}>Service Areas</h4>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {blogPosts.map((l) => (
+                {serviceAreas.map((l) => (
                   <Link
                     key={l.label}
                     href={l.href}
@@ -375,7 +486,7 @@ export default function Footer() {
             borderTop: "1px solid rgba(0,0,0,0.06)", paddingTop: 20, textAlign: "center",
           }}>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "#94a3b8" }}>
-              © 2025 Shiva Travel & Manpower Consultants. Licensed by Ministry of External Affairs (RA B-1794). All Rights Reserved.
+              © 2026 Shiva Travel & Manpower Consultants. Licensed by Ministry of External Affairs (RA B-1794). All Rights Reserved.
             </p>
           </div>
         </div>

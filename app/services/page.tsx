@@ -230,6 +230,37 @@ export default function Services() {
           </div>
         </section>
 
+        {/* ===== SALARY CALCULATOR CTA ===== */}
+        <section style={{ padding: "0 24px 64px", backgroundColor: "#f8f9ff" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <Link href="/salary-calculator" style={{ textDecoration: "none", display: "block" }}>
+              <div style={{
+                background: "linear-gradient(135deg, #064e3b 0%, #065f46 100%)",
+                borderRadius: 20, padding: "36px 40px", display: "flex", alignItems: "center",
+                gap: 24, flexWrap: "wrap", cursor: "pointer",
+                transition: "transform 200ms, box-shadow 200ms",
+              }}>
+                <div style={{ flex: "0 0 56px", width: 56, height: 56, borderRadius: 14, backgroundColor: "rgba(255,255,255,0.12)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6ee7b7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="4" y="2" width="16" height="20" rx="2" /><line x1="8" y1="6" x2="16" y2="6" /><line x1="8" y1="10" x2="10" y2="10" /><line x1="14" y1="10" x2="16" y2="10" /><line x1="8" y1="14" x2="10" y2="14" /><line x1="14" y1="14" x2="16" y2="14" /><line x1="8" y1="18" x2="16" y2="18" />
+                  </svg>
+                </div>
+                <div style={{ flex: 1, minWidth: 200 }}>
+                  <p style={{ fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: "#6ee7b7", textTransform: "uppercase", marginBottom: 4 }}>FREE TOOL</p>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 800, color: "#fff", marginBottom: 4 }}>How much will you earn abroad?</h3>
+                  <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.5 }}>Use our salary calculator to see estimated earnings by country, trade &amp; experience level — in INR.</p>
+                </div>
+                <div style={{ flexShrink: 0 }}>
+                  <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "10px 22px", borderRadius: 10, backgroundColor: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700 }}>
+                    Calculate Now
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                  </span>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </section>
+
         {/* ===== CTA ===== */}
         <section style={{ padding: "96px 24px", backgroundColor: "#f8f9ff", textAlign: "center" }}>
           <div style={{ maxWidth: 640, margin: "0 auto" }}>
