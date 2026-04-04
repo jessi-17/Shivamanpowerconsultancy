@@ -35,12 +35,12 @@ const visaServices = [
 const immigrationServices = [
   { label: "Immigration Office Nakodar", href: "/nakodar" },
   { label: "Visa Consultant Nakodar", href: "/nakodar" },
-  { label: "E-Migrate Processing", href: "/services" },
-  { label: "Document Attestation", href: "/services" },
-  { label: "GAMCA Medical", href: "/services" },
-  { label: "Passport Assistance", href: "/services" },
-  { label: "Embassy Coordination", href: "/services" },
-  { label: "Pre-Departure Briefing", href: "/services" },
+  { label: "E-Migrate Processing", href: "/services/e-migrate" },
+  { label: "Document Attestation", href: "/services/document-attestation" },
+  { label: "GAMCA Medical", href: "/services/gamca-medical" },
+  { label: "Passport Assistance", href: "/services/passport-assistance" },
+  { label: "Embassy Coordination", href: "/services/embassy-coordination" },
+  { label: "Pre-Departure Briefing", href: "/services/pre-departure-briefing" },
 ];
 
 const workPermits = [
