@@ -34,9 +34,9 @@ const localBusinessJsonLd = {
   name: "Shiva Travel & Manpower Consultants",
   description:
     "Government licensed immigration office and overseas recruitment agency in Nakodar, Punjab. Specializing in Romania, Schengen, Poland, UAE, Croatia, Saudi Arabia & Qatar visas since 1998.",
-  url: "https://shivamanpowerconsultants.com/nakodar",
+  url: "https://shivatravelconsultant.in/nakodar",
   telephone: "+91-9814820432",
-  image: "https://shivamanpowerconsultants.com/Professional Punjab office environment.webp",
+  image: "https://shivatravelconsultant.in/Professional Punjab office environment.webp",
   priceRange: "Free (Zero Candidate Fees)",
   address: {
     "@type": "PostalAddress",
@@ -63,7 +63,7 @@ const localBusinessJsonLd = {
     closes: "18:00",
   },
   sameAs: [
-    "https://shivamanpowerconsultants.com",
+    "https://shivatravelconsultant.in",
   ],
 };
 

@@ -22,7 +22,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const baseUrl = "https://shivamanpowerconsultants.com";
+const baseUrl = "https://shivatravelconsultant.in";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),

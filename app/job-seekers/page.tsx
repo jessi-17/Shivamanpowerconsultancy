@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jobs Abroad for Indians – UAE, Saudi, Qatar, Europe | Shiva Manpower",
     description: "Find your dream overseas job. Zero fees, government-licensed, 5,000+ workers placed. Subscribe for job alerts.",
-    url: "https://shivamanpowerconsultants.com/job-seekers",
+    url: "https://shivatravelconsultant.in/job-seekers",
     type: "website",
   },
 };

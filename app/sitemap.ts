@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getBlogs } from "./_lib/data/getBlogs";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://shivamanpowerconsultants.com";
+  const baseUrl = "https://shivatravelconsultant.in";
 
   const staticPages: MetadataRoute.Sitemap = [
     {

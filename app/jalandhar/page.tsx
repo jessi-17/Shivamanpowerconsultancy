@@ -30,7 +30,7 @@ const jsonLd = {
   name: "Shiva Travel & Manpower Consultants — Jalandhar Region",
   description:
     "Government licensed overseas recruitment agency serving Jalandhar, Punjab. Specializing in Gulf & European placements since 2002.",
-  url: "https://shivamanpowerconsultants.com/jalandhar",
+  url: "https://shivatravelconsultant.in/jalandhar",
   telephone: "+91-9814820432",
   address: {
     "@type": "PostalAddress",

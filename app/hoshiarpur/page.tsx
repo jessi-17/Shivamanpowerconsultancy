@@ -30,7 +30,7 @@ const jsonLd = {
   name: "Shiva Travel & Manpower Consultants — Hoshiarpur Region",
   description:
     "Government licensed overseas recruitment agency serving Hoshiarpur, Punjab. Specializing in Gulf & European placements since 2002.",
-  url: "https://shivamanpowerconsultants.com/hoshiarpur",
+  url: "https://shivatravelconsultant.in/hoshiarpur",
   telephone: "+91-9814820432",
   address: {
     "@type": "PostalAddress",

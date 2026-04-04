@@ -1,4 +1,4 @@
-const BASE_URL = "https://shivamanpowerconsultants.com";
+const BASE_URL = "https://shivatravelconsultant.in";
 
 export interface BreadcrumbItem {
   name: string;
