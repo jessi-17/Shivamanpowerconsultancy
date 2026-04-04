@@ -273,13 +273,13 @@ export default function RootLayout({
         <Analytics />
 
         {/* Google Analytics — lazyOnload so it doesn't block paint */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-6WTP8DK0FM" strategy="lazyOnload" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-3NSV8DNDZ6" strategy="lazyOnload" />
         <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-6WTP8DK0FM');
+            gtag('config', 'G-3NSV8DNDZ6');
           `}
         </Script>
 
