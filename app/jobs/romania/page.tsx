@@ -7,7 +7,7 @@ import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 export const metadata: Metadata = {
   title: "Jobs in Romania | Factory, Construction & Agriculture Work for Indians",
   description:
-    "Find factory, construction, and agriculture jobs in Romania through Shiva Travel & Manpower Consultants. EU work permit with Schengen access. Government licensed recruitment. Zero candidate fees.",
+    "Find factory, construction, and agriculture jobs in Romania through Shiva Travel & Manpower Consultants. EU work permit with Schengen access. Government licensed recruitment. No hidden fees.",
 };
 
 const jobCategories = [
@@ -54,7 +54,7 @@ const faqs = [
   { q: "How is the weather?", a: "Romania has four seasons. Summers (June-August) are warm, 25-35°C — great for outdoor work. Winters (December-February) are cold, -5°C to -10°C. All accommodation is heated." },
   { q: "Is Romania cheaper than Poland?", a: "Yes, Romania generally has a lower cost of living than Poland. This means your savings potential is higher even if the base salary is slightly lower." },
   { q: "How long does the visa process take?", a: "Romanian work permits typically take 4-8 weeks. The entire process from application to departure takes about 3-4 months. We handle all paperwork and guide you through every step." },
-  { q: "Do I need to pay any fees?", a: "No. Through Shiva Travel & Manpower Consultants, we charge zero recruitment fees from candidates. The employer bears all costs including work permit and recruitment charges as per regulations." },
+  { q: "Do I need to pay any fees?", a: "No. Through Shiva Travel & Manpower Consultants, we maintain minimal and transparent charges with no hidden fees. The employer bears most costs including work permit and recruitment charges as per regulations." },
 ];
 
 const faqJsonLd = {
@@ -148,7 +148,7 @@ export default function JobsInRomania() {
               { value: "500+", label: "Workers Placed" },
               { value: "27", label: "Schengen Countries" },
               { value: "40%", label: "Lower Cost of Living" },
-              { value: "Zero", label: "Candidate Fees" },
+              { value: "No", label: "Hidden Fees" },
             ].map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#1e40af", lineHeight: 1 }}>{s.value}</div>

@@ -85,7 +85,7 @@ const embassies = [
 const faqs = [
   { q: "Why do I need embassy coordination services?", a: "Embassies have complex, country-specific processes with strict documentation requirements. A small error — wrong photo size, missing attestation, incorrect fee payment — can cause rejection or weeks of delay. Our team has processed thousands of embassy submissions and knows exactly what each embassy requires, ensuring your application goes through smoothly the first time." },
   { q: "Do I need to visit the embassy myself?", a: "It depends on the country. Gulf country embassies (UAE, Saudi, Qatar, Kuwait) generally do not require the worker to visit in person — applications are submitted by the authorized recruiting agent. For European countries like Poland and Romania, biometric appointments at VFS Global centres may be required, and we guide you through that process." },
-  { q: "Which embassies do you coordinate with?", a: "We coordinate with embassies and consulates of all major destination countries including UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman, Poland, Romania, Croatia, and other European nations. Our 25+ years of experience means we have established working processes with all these embassies." },
+  { q: "Which embassies do you coordinate with?", a: "We coordinate with embassies and consulates of all major destination countries including UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman, Poland, Romania, Croatia, and other European nations. Our 20+ years of experience means we have established working processes with all these embassies." },
   { q: "How long does embassy processing take?", a: "Processing times vary significantly by country. Gulf country visas typically take 1-3 weeks after submission. European work visas (Poland, Romania, Croatia) can take 4-8 weeks due to additional verification steps. We provide realistic timelines for your specific case and actively follow up to prevent unnecessary delays." },
   { q: "What if my visa application is rejected by the embassy?", a: "Rejections happen due to incomplete documentation, employer-side issues, or security concerns. We analyze the rejection reason, address the specific issue, and resubmit with proper documentation. Our experience helps us anticipate common rejection reasons and prevent them before submission." },
   { q: "Is there a charge for embassy coordination?", a: "When you are going through Shiva Travel for overseas employment, embassy coordination is part of our end-to-end recruitment service — no additional charges to the candidate. Embassy fees and government charges are separate and are borne by the employer as per Indian recruitment regulations." },
@@ -265,7 +265,7 @@ export default function EmbassyCoordinationPage() {
               </a>
             </div>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "rgba(255,255,255,0.35)", marginTop: 24 }}>
-              Government Licensed | RA B-1794 | Zero Candidate Fees
+              Government Licensed | RA B-1794 | No Hidden Fees
             </p>
           </div>
         </section>

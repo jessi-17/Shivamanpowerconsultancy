@@ -7,7 +7,7 @@ import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 export const metadata: Metadata = {
   title: "Romania Visa & Work Permit in Nakodar | Shiva Travel Consultants",
   description:
-    "Apply for Romania visa and work permit from Nakodar, Punjab. Shiva Travel & Manpower Consultants — government licensed Romania visa agent. EU work permit, document attestation, embassy appointment. Zero candidate fees.",
+    "Apply for Romania visa and work permit from Nakodar, Punjab. Shiva Travel & Manpower Consultants — government licensed Romania visa agent. EU work permit, document attestation, embassy appointment. No hidden fees.",
   keywords:
     "romania visa nakodar, romania work permit Punjab, romania visa consultant nakodar, romania visa agent, romania work visa from India, EU work permit nakodar",
   alternates: {
@@ -64,7 +64,7 @@ const visaTypes = [
 
 const faqs = [
   { q: "Where to apply for Romania visa in Nakodar?", a: "Visit Shiva Travel & Manpower Consultants at Golden Avenue, Nakodar (Jalandhar, Punjab). We are a government licensed overseas recruitment agency handling Romania work visas. Walk in or call +91 98148-20432." },
-  { q: "How much does Romania work visa cost?", a: "Through Shiva Travel & Manpower Consultants, candidates pay ZERO recruitment or visa processing fees. The Romanian employer bears all costs including work permit fees, recruitment charges, and visa expenses as per Indian government regulations." },
+  { q: "How much does Romania work visa cost?", a: "Through Shiva Travel & Manpower Consultants, we maintain minimal and transparent charges with no hidden fees. The Romanian employer bears most costs including work permit fees, recruitment charges, and visa expenses as per Indian government regulations." },
   { q: "Can I get Romania visa from Punjab?", a: "Yes. Our Nakodar office handles the complete Romania visa process for candidates from all over Punjab, Haryana, and North India. We coordinate document preparation, embassy appointments in Delhi, and all paperwork from our local office." },
   { q: "How long does Romania visa take?", a: "The complete process from application to visa stamping takes approximately 3–4 months. Work permit processing by Romanian authorities takes 4–8 weeks, followed by embassy appointment and visa stamping which takes another 2–4 weeks." },
   { q: "Do I need IELTS for Romania work visa?", a: "No. IELTS or any English language test is NOT required for Romania work visa. Romania's official language is Romanian, and most employers provide on-site training. No language certificate is needed for the visa application." },
@@ -149,7 +149,7 @@ export default function RomaniaVisaPage() {
               </h1>
 
               <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                Government licensed Romania visa consultant in Nakodar. We handle your complete work permit application, document attestation, embassy appointment, and e-Migrate processing. Zero fees from candidates.
+                Government licensed Romania visa consultant in Nakodar. We handle your complete work permit application, document attestation, embassy appointment, and e-Migrate processing. No hidden fees.
               </p>
 
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 32 }}>
@@ -163,7 +163,7 @@ export default function RomaniaVisaPage() {
               </div>
 
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["Work Permit Processing", "Embassy Coordination", "Zero Fees"].map((badge) => (
+                {["Work Permit Processing", "Embassy Coordination", "No Hidden Fees"].map((badge) => (
                   <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#1e40af" }} />
                     <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
@@ -192,7 +192,7 @@ export default function RomaniaVisaPage() {
             {[
               { value: "500+", label: "Visas Processed" },
               { value: "3–4", label: "Months Processing" },
-              { value: "Zero", label: "Candidate Fees" },
+              { value: "No", label: "Hidden Fees" },
               { value: "27", label: "Schengen Countries" },
               { value: "100%", label: "Licensed & Verified" },
             ].map((s) => (
@@ -348,15 +348,15 @@ export default function RomaniaVisaPage() {
         <section style={{ padding: "80px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb" }}>
           <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 32px", textAlign: "center" }}>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 16 }}>
-              Cost &amp; Fees — Zero Charges for Candidates
+              Cost &amp; Fees — Transparent, Minimal Charges
             </h2>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 680, margin: "0 auto 40px" }}>
-              As per Indian Government regulations and our ethical recruitment policy, Shiva Travel &amp; Manpower Consultants charges absolutely no fees from candidates. The Romanian employer bears all costs.
+              As per Indian Government regulations and our ethical recruitment policy, Shiva Travel &amp; Manpower Consultants maintains minimal and transparent charges with no hidden fees. The Romanian employer bears most costs.
             </p>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))", gap: 20, textAlign: "left" }}>
               {[
-                { label: "Recruitment Fee", value: "Zero", note: "No charges from candidates" },
+                { label: "Recruitment Fee", value: "Minimal", note: "Transparent, no hidden charges" },
                 { label: "Work Permit Fee", value: "Employer Paid", note: "Filed and paid by Romanian employer" },
                 { label: "Visa Fee", value: "Employer Paid", note: "Embassy visa fee covered by employer" },
                 { label: "Medical Examination", value: "Candidate*", note: "Approx. INR 2,000–4,000 at authorized centre" },
@@ -365,7 +365,7 @@ export default function RomaniaVisaPage() {
               ].map((item) => (
                 <div key={item.label} style={{ backgroundColor: "#f8f9ff", borderRadius: 16, padding: 24, border: "1px solid #e5e7eb" }}>
                   <div style={{ fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 700, color: "#64748b", letterSpacing: "0.05em", textTransform: "uppercase", marginBottom: 6 }}>{item.label}</div>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 800, color: item.value === "Zero" ? "#1e40af" : "#0b1c30", marginBottom: 4 }}>{item.value}</div>
+                  <div style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 800, color: item.value === "Minimal" ? "#1e40af" : "#0b1c30", marginBottom: 4 }}>{item.value}</div>
                   <div style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "#64748b" }}>{item.note}</div>
                 </div>
               ))}
@@ -404,7 +404,7 @@ export default function RomaniaVisaPage() {
               Start Your Romania<br />Visa Process Today
             </h2>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: 36, maxWidth: 480, margin: "0 auto 36px" }}>
-              Visit our office at Golden Avenue, Nakodar or call us now. Free consultation. Zero candidate fees. Government licensed Romania visa consultant in Punjab.
+              Visit our office at Golden Avenue, Nakodar or call us now. Free consultation. No hidden fees. Government licensed Romania visa consultant in Punjab.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 32 }}>
               <Link href="/contactus" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "#ffffff", color: "#1e40af", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>

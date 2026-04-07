@@ -11,17 +11,18 @@ export const metadata: Metadata = {
 };
 
 const milestones = [
-  { year: "2002", title: "Licensed & Launched", desc: "Obtained the official Recruiting Agent license from the Ministry of External Affairs. Began placing workers in Gulf countries from our Nakodar office." },
-  { year: "2008", title: "1,000+ Placements", desc: "Crossed the milestone of 1,000 successful overseas placements across UAE, Saudi Arabia, and Qatar." },
-  { year: "2015", title: "European Expansion", desc: "Expanded recruitment to European countries including Poland, Romania, and Croatia to meet growing demand for Indian workers." },
-  { year: "2020", title: "Digital Transformation", desc: "Adopted video interviews and digital documentation to continue placements even during the pandemic." },
-  { year: "2024", title: "5,000+ Workers Placed", desc: "Surpassed 5,000 successful placements across 12+ countries with zero recruitment fees charged to candidates." },
+  { year: "2002", title: "Journey Started", desc: "Began our mission in the overseas manpower and emigration space, laying the foundation for what would become a trusted name in recruitment." },
+  { year: "2008", title: "Emigration Expertise", desc: "Developed deep expertise in emigration processes, building strong relationships with employers across Gulf countries." },
+  { year: "2014", title: "Building Our Own Business", desc: "Established Shiva Travel & Manpower Consultants as an independent consultancy, serving families across India." },
+  { year: "2017", title: "Government Approved", desc: "Obtained the official Recruiting Agent license (RA B-1794) from the Ministry of External Affairs, Government of India." },
+  { year: "2018", title: "Dubai Office Opened", desc: "Expanded operations with a new office in Dubai, strengthening our direct employer connections in the Gulf region." },
+  { year: "2022", title: "ALMRA Member", desc: "Became a registered member of ALMRA, reinforcing our commitment to ethical and regulated overseas recruitment." },
 ];
 
 const values = [
-  { icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5", title: "Zero Candidate Fees", desc: "We never charge workers for placement. Employers bear all recruitment costs. This is both our policy and Indian law — and we follow it strictly." },
+  { icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5", title: "Minimal & Transparent Charges", desc: "We keep our service charges affordable and fully transparent. No hidden fees, no surprise deductions — every cost is communicated upfront before you proceed." },
   { icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z", title: "Government Licensed", desc: "We hold RA License B-1794 from the Ministry of External Affairs, valid through June 2027. Fully compliant with E-Migrate regulations." },
-  { icon: "M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4L12 14.01l-3-3", title: "Ethical Recruitment", desc: "We follow ILO fair recruitment principles. No deception, no hidden charges, no passport retention. Every worker is briefed on their rights." },
+  { icon: "M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4L12 14.01l-3-3", title: "Ethical Recruitment", desc: "We follow ILO fair recruitment principles. No deception, no hidden costs, no passport retention. Every worker is briefed on their rights." },
   { icon: "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75", title: "End-to-End Support", desc: "From document preparation to visa processing, pre-departure orientation to post-arrival follow-up — we support workers through every step." },
   { icon: "M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2", title: "Verified Employers Only", desc: "We only work with employers who provide proper contracts, accommodation, and comply with local labour laws." },
   { icon: "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z", title: "Community First", desc: "Based in Nakodar, we serve the Doaba region — Jalandhar, Kapurthala, Nawanshahr, Hoshiarpur. Our doors are always open." },
@@ -54,13 +55,13 @@ export default function AboutUs() {
               </div>
 
               <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.05, letterSpacing: "-1.5px", marginBottom: 24 }}>
-                Punjab&apos;s Government-Licensed
+                India&apos;s Government-Licensed
                 <br />
                 <span style={{ color: "#0052dc" }}>Overseas Partner.</span>
               </h1>
 
               <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                For over two decades, Shiva Manpower has been the bridge between Punjab&apos;s talent and global opportunity. Government licensed, zero candidate fees, and 5,000+ successful placements across 12+ countries.
+                For over two decades, Shiva Manpower has been the bridge between India&apos;s talent and global opportunity. Government licensed, transparent and minimal charges, and 5,000+ successful placements across 12+ countries.
               </p>
 
               {/* Badges */}
@@ -117,9 +118,9 @@ export default function AboutUs() {
               <div style={{ backgroundColor: "#001f5d", borderRadius: 16, padding: 40, display: "flex", flexDirection: "column", gap: 20, position: "relative", overflow: "hidden" }}>
                 <div style={{ position: "absolute", top: -40, right: -40, width: 200, height: 200, borderRadius: "50%", background: "radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%)" }} />
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
-                <h3 style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 700, color: "#ffffff", position: "relative" }}>Zero Hidden Fees</h3>
+                <h3 style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 700, color: "#ffffff", position: "relative" }}>No Hidden Fees</h3>
                 <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#bfdbfe", lineHeight: 1.7, position: "relative" }}>
-                  Our ethical recruitment model ensures transparency. No middlemen, no &quot;ghost&quot; charges. Just direct pathways to success.
+                  Our ethical recruitment model ensures complete transparency. Minimal, upfront charges — no middlemen, no &quot;ghost&quot; costs. Just direct pathways to success.
                 </p>
               </div>
             </div>
@@ -130,13 +131,13 @@ export default function AboutUs() {
         <section style={{ padding: "60px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb", borderBottom: "1px solid #e5e7eb" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 48, flexWrap: "wrap" }}>
             <div style={{ flex: "1 1 500px", minWidth: 0 }}>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 16 }}>Trusted Service Across Punjab</h2>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 16 }}>Trusted Service Across India</h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#43474d", lineHeight: 1.7, maxWidth: 560 }}>
-                Local expertise meets global excellence. Our Nakodar headquarters serves as the central hub for thousands of families across the state who trust us for a reliable travel agency experience and seamless documentation.
+                Local expertise meets global excellence. Our Nakodar headquarters serves as the central hub for thousands of families across India who trust us for a reliable travel agency experience and seamless documentation.
               </p>
             </div>
             <div style={{ flex: "0 0 auto", display: "flex", gap: 40, flexWrap: "wrap" }}>
-              {[{ value: "25+", label: "Years" }, { value: "5,000+", label: "Workers Placed" }, { value: "12+", label: "Countries" }, { value: "Zero", label: "Candidate Fees" }].map((s) => (
+              {[{ value: "20+", label: "Years" }, { value: "5,000+", label: "Workers Placed" }, { value: "12+", label: "Countries" }, { value: "100%", label: "Transparent Fees" }].map((s) => (
                 <div key={s.label} style={{ textAlign: "center" }}>
                   <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#001f5d", lineHeight: 1 }}>{s.value}</div>
                   <div style={{ fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 600, color: "#64748b", letterSpacing: "0.05em", textTransform: "uppercase", marginTop: 4 }}>{s.label}</div>
@@ -165,7 +166,7 @@ export default function AboutUs() {
                 We don&apos;t just find jobs; we architect futures. My promise to every Punjabi youth is a path built on dignity, legality, and the relentless pursuit of excellence.
               </blockquote>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#43474d", lineHeight: 1.7, marginBottom: 16 }}>
-                Starting in 2002, our vision was simple: to eliminate the exploitation of manpower. Today, Shiva Manpower stands as a beacon of trust. We treat every application as if it were our own family member&apos;s journey.
+                Starting in 2002, our vision was simple: to bring integrity and transparency to overseas recruitment. Today, Shiva Manpower stands as a beacon of trust. We treat every application as if it were our own family member&apos;s journey.
               </p>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#43474d", lineHeight: 1.7 }}>
                 Our commitment isn&apos;t about volume — it&apos;s about the quality of life our candidates enjoy once they land. That is our true metric of success.
@@ -214,7 +215,8 @@ export default function AboutUs() {
                   { label: "Issuing Authority", value: "Ministry of External Affairs, Govt. of India" },
                   { label: "Valid Through", value: "June 2027" },
                   { label: "E-Migrate Registered", value: "Yes" },
-                  { label: "ALMRA Punjab Member", value: "Yes" },
+                  { label: "ALMRA Member", value: "Yes" },
+                  { label: "License Scope", value: "All India" },
                 ].map((item) => (
                   <div key={item.label} style={{ padding: "8px 0" }}>
                     <div style={{ fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 700, color: "#64748b", letterSpacing: "0.05em", textTransform: "uppercase", marginBottom: 2 }}>{item.label}</div>

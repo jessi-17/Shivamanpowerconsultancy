@@ -7,7 +7,7 @@ import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 export const metadata: Metadata = {
   title: "Jobs in Qatar | Doha Work Opportunities for Indian Workers",
   description:
-    "Find high-paying jobs in Qatar through Shiva Travel & Manpower Consultants. Government licensed recruitment for Doha and across Qatar. Construction, hospitality, oil & gas jobs. Zero candidate fees.",
+    "Find high-paying jobs in Qatar through Shiva Travel & Manpower Consultants. Government licensed recruitment for Doha and across Qatar. Construction, hospitality, oil & gas jobs. No hidden fees.",
 };
 
 const jobCategories = [
@@ -54,7 +54,7 @@ const faqs = [
   { q: "How is the weather in Qatar?", a: "Hot summers (May-September, 35-50°C) with outdoor work restrictions during peak hours. Winters (November-March) are pleasant at 15-25°C. Most accommodation is air-conditioned." },
   { q: "Is Qatar expensive to live in?", a: "With employer-provided accommodation and food, your daily expenses are minimal. Worker camps have cooking facilities, and Indian groceries are widely available and affordable." },
   { q: "How long is a work contract?", a: "Typically 2 years. After completion, you're entitled to end-of-service benefits, return ticket, and can renew or find a new employer." },
-  { q: "Do I need to pay any fees to get a job in Qatar?", a: "No. Through Shiva Travel & Manpower Consultants, we charge zero recruitment fees from candidates. The employer bears all costs including visa, ticket, and recruitment charges as per Qatar and Indian government regulations." },
+  { q: "Do I need to pay any fees to get a job in Qatar?", a: "No. Through Shiva Travel & Manpower Consultants, we maintain minimal and transparent charges with no hidden fees. The employer bears most costs including visa, ticket, and recruitment charges as per Qatar and Indian government regulations." },
 ];
 
 const faqJsonLd = {
@@ -148,7 +148,7 @@ export default function JobsInQatar() {
               { value: "1,500+", label: "Workers Placed" },
               { value: "0%", label: "Income Tax" },
               { value: "4-5 hrs", label: "Flight from Punjab" },
-              { value: "Zero", label: "Candidate Fees" },
+              { value: "No", label: "Hidden Fees" },
             ].map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#5b1a3a", lineHeight: 1 }}>{s.value}</div>

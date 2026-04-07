@@ -477,7 +477,7 @@ export default function HeroSection() {
                 color: "rgba(255,255,255,0.7)", lineHeight: 1.55,
                 margin: "0 0 14px",
               }}>
-                Browse overseas jobs, get salary info &amp; subscribe for daily/weekly job alerts. Zero fees guaranteed.
+                Browse overseas jobs, get salary info &amp; subscribe for daily/weekly job alerts. Transparent, minimal charges.
               </p>
               <span style={{
                 display: "inline-flex", alignItems: "center", gap: 6,

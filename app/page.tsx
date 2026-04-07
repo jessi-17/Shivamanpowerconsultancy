@@ -20,7 +20,7 @@ const ContactForm = dynamic(() => import("@/components/own/ContactForm"));
 export const metadata: Metadata = {
   title: "Shiva Travel & Manpower Consultants Nakodar | Overseas Recruitment Agency Punjab",
   description:
-    "Government licensed overseas placement agency in Nakodar, Punjab. Shiva Travel & Manpower Consultants — 25+ years placing workers from Jalandhar, Kapurthala, Phagwara & Doaba region in UAE, Saudi Arabia, Qatar, Poland, Romania. Zero candidate fees. Walk-in office.",
+    "Government licensed overseas placement agency in Nakodar, Punjab. Shiva Travel & Manpower Consultants — 20+ years placing workers from Jalandhar, Kapurthala, Phagwara & Doaba region in UAE, Saudi Arabia, Qatar, Poland, Romania. No hidden fees. Walk-in office.",
   alternates: {
     canonical: "/",
   },
@@ -43,7 +43,7 @@ const faqJsonLd = {
       name: "Which countries in the Gulf do you specialize in?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "We specialize in placements across the UAE, Saudi Arabia, Qatar, Kuwait, and Bahrain. Our 25+ years of experience span construction, hospitality, healthcare, oil & gas, and logistics sectors in these countries.",
+        text: "We specialize in placements across the UAE, Saudi Arabia, Qatar, Kuwait, and Bahrain. Our 20+ years of experience span construction, hospitality, healthcare, oil & gas, and logistics sectors in these countries.",
       },
     },
     {
@@ -51,7 +51,7 @@ const faqJsonLd = {
       name: "Are there any fees for candidates to apply for a job?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No. We charge zero fees to candidates. Our services are funded entirely by the hiring employers. This is our commitment to ethical, transparent recruitment.",
+        text: "We maintain minimal and transparent charges with no hidden fees. This is our commitment to ethical, transparent recruitment.",
       },
     },
     {

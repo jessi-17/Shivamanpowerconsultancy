@@ -6,11 +6,12 @@ import { gsap } from "@/lib/gsap";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
 const milestones = [
-  { year: "2002", title: "Govt. Licensed" },
-  { year: "2008", title: "ALMRA Member" },
-  { year: "2015", title: "Gulf & Europe" },
-  { year: "2022", title: "License Renewed" },
-  { year: "Now", title: "5,000+ Placed" },
+  { year: "2002", title: "Journey Started" },
+  { year: "2008", title: "Emigration Expertise" },
+  { year: "2014", title: "Own Business" },
+  { year: "2017", title: "Govt. Licensed" },
+  { year: "2018", title: "Dubai Office" },
+  { year: "2022", title: "ALMRA Member" },
 ];
 
 export default function FounderTimeline() {

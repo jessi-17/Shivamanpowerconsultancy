@@ -52,7 +52,7 @@ const jobSectors = [
 const faqs = [
   { q: "Can I get a Croatia visa from Nakodar?", a: "Yes. Shiva Travel & Manpower Consultants at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar processes Croatia work visas. We handle the complete process from document preparation to embassy coordination. Call +91-9814820432." },
   { q: "Is Croatia in the EU?", a: "Yes, Croatia has been a full European Union member since July 2013 and joined the Schengen area in January 2023. Your Croatian work permit gives you EU worker protections and visa-free travel across Schengen countries." },
-  { q: "How much does a Croatia work visa cost?", a: "Through Shiva Travel & Manpower Consultants, candidates pay zero recruitment fees. The employer bears work permit and recruitment costs. You only need to cover personal expenses like passport fees, medical certificate, and police clearance." },
+  { q: "How much does a Croatia work visa cost?", a: "Through Shiva Travel & Manpower Consultants, we maintain minimal and transparent charges with no hidden fees. The employer bears most work permit and recruitment costs. You only need to cover personal expenses like passport fees, medical certificate, and police clearance." },
   { q: "How long does Croatia visa processing take?", a: "A Croatia work permit typically takes 4-8 weeks after the employer submits the application. The entire process from our office to your departure takes about 2-4 months, depending on document preparation and embassy appointment availability." },
   { q: "What is the salary in Croatia?", a: "Croatia's average gross salary is around EUR 1,200-1,500 per month. Construction workers earn EUR 900-1,400, hospitality staff EUR 800-1,100, and skilled tradespeople like welders can earn EUR 1,200-1,800. Accommodation is often provided by employers." },
   { q: "Do I need to know Croatian language?", a: "Not for most manual and semi-skilled jobs. Employers provide on-site training and many have English-speaking supervisors. Learning basic Croatian phrases is helpful for daily life but not a visa requirement." },
@@ -144,7 +144,7 @@ export default function CroatiaVisaPage() {
               </div>
 
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["EU Work Permit", "Schengen Travel", "Zero Recruitment Fees"].map((badge) => (
+                {["EU Work Permit", "Schengen Travel", "No Hidden Fees"].map((badge) => (
                   <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#1e40af" }} />
                     <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
@@ -175,7 +175,7 @@ export default function CroatiaVisaPage() {
               { value: "27", label: "Schengen Countries" },
               { value: "4", label: "Key Job Sectors" },
               { value: "5 yrs", label: "Path to EU Residency" },
-              { value: "Zero", label: "Candidate Fees" },
+              { value: "No", label: "Hidden Fees" },
             ].map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#1e40af", lineHeight: 1 }}>{s.value}</div>
@@ -317,7 +317,7 @@ export default function CroatiaVisaPage() {
               Ready to Work in<br />Croatia?
             </h2>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: 36, maxWidth: 480, margin: "0 auto 36px" }}>
-              Visit our office at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040. Call +91-9814820432 or WhatsApp +91-9815358832. Government licensed. Zero candidate fees.
+              Visit our office at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040. Call +91-9814820432 or WhatsApp +91-9815358832. Government licensed. No hidden fees.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
               <Link href="/contactus" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "#ffffff", color: "#1e40af", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>

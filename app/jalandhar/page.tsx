@@ -6,7 +6,7 @@ import { breadcrumbJsonLd } from "../_lib/breadcrumb";
 export const metadata: Metadata = {
   title: "Manpower Consultancy Near Jalandhar | Shiva Travel & Manpower Consultants",
   description:
-    "Looking to work abroad from Jalandhar? Shiva Travel & Manpower Consultants — government licensed (RA B-1794), 25+ years experience. Dubai visa agent, Saudi Arabia, Qatar, Poland, Romania jobs. Zero candidate fees. Office just 20 min from Jalandhar on Jalandhar Road, Nakodar.",
+    "Looking to work abroad from Jalandhar? Shiva Travel & Manpower Consultants — government licensed (RA B-1794), 20+ years experience. Dubai visa agent, Saudi Arabia, Qatar, Poland, Romania jobs. Minimal & transparent charges. Office just 20 min from Jalandhar on Jalandhar Road, Nakodar.",
   keywords: [
     "manpower consultancy Jalandhar",
     "overseas recruitment agency Jalandhar",
@@ -62,10 +62,10 @@ const destinations = [
 ];
 
 const stats = [
-  { value: "25+", label: "Years Experience" },
+  { value: "20+", label: "Years Experience" },
   { value: "5,000+", label: "Workers Placed" },
   { value: "20+", label: "Countries" },
-  { value: "Zero", label: "Fees Charged" },
+  { value: "100%", label: "Transparent Fees" },
 ];
 
 const testimonials = [
@@ -76,8 +76,8 @@ const testimonials = [
 
 const trustReasons = [
   { title: "Government Licensed", desc: "RA License B-1794 issued by Ministry of External Affairs. E-Migrate registered. ALMRA Punjab member." },
-  { title: "Zero Candidate Fees", desc: "We never charge candidates. All costs are borne by the hiring employers. 100% transparent process." },
-  { title: "25+ Years of Trust", desc: "Founded in 1998, serving Jalandhar, Nakodar, Kapurthala, and the entire Doaba belt for over two decades." },
+  { title: "Minimal & Transparent Charges", desc: "We keep our service charges affordable and fully transparent. No hidden fees — every cost is communicated upfront." },
+  { title: "20+ Years of Trust", desc: "Since 2002, serving Jalandhar, Nakodar, Kapurthala, and the entire Doaba belt for over two decades." },
   { title: "Just 20 Min from Jalandhar", desc: "Our office on Jalandhar Road, Nakodar is easily accessible. Walk-in consultations Monday to Saturday, 9am-6pm." },
   { title: "Direct Employer Ties", desc: "We work directly with 500+ employers across UAE, Saudi Arabia, Qatar, Poland, Romania — no middlemen." },
   { title: "End-to-End Support", desc: "From skill testing to visa stamping to airport send-off. We handle everything so you don\u2019t have to worry." },
@@ -85,7 +85,7 @@ const trustReasons = [
 
 const faqs = [
   { q: "Is Shiva Travel a government licensed agency for overseas jobs?", a: "Yes. We hold RA License B-1794 issued by the Ministry of External Affairs, Government of India. We are E-Migrate registered and a member of ALMRA Punjab." },
-  { q: "Do I need to pay any fees to get a job abroad through Shiva Travel?", a: "No. We charge zero fees from candidates. All recruitment costs are borne by the hiring employers as per Indian government regulations." },
+  { q: "What are the fees to get a job abroad through Shiva Travel?", a: "We maintain minimal and transparent service charges. Every cost is communicated upfront — no hidden fees or surprise deductions. We follow all Indian government regulations." },
   { q: "How far is your office from Jalandhar?", a: "Our office is located on Jalandhar Road, Nakodar — just 20 minutes from Jalandhar city centre. Walk-in consultations are available Monday to Saturday, 9am to 6pm." },
   { q: "Which countries can I get a job in through Shiva Travel?", a: "We place workers in 20+ countries including UAE (Dubai, Abu Dhabi), Saudi Arabia, Qatar, Kuwait, Bahrain, Poland, Romania, Croatia, and other European nations." },
   { q: "What types of jobs are available for workers from Jalandhar?", a: "We recruit for construction, factory work, hospitality, driving, electrical, welding, plumbing, nursing, and many other skilled and semi-skilled roles across Gulf and European countries." },
@@ -155,7 +155,7 @@ export default function JalandharPage() {
 
               {/* Badges */}
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["Government Licensed", "Zero Fees", "25+ Years"].map((badge) => (
+                {["Government Licensed", "No Hidden Fees", "20+ Years"].map((badge) => (
                   <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#0b1c30" }} />
                     <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
@@ -197,7 +197,7 @@ export default function JalandharPage() {
             <div style={{ textAlign: "center", marginBottom: 56 }}>
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>Why Families from Jalandhar Trust Shiva Travel</h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
-                Government licensed, zero fees, and decades of proven results for the Doaba region.
+                Government licensed, transparent charges, and decades of proven results for the Doaba region.
               </p>
             </div>
 
@@ -327,7 +327,7 @@ export default function JalandharPage() {
               </a>
             </div>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "rgba(255,255,255,0.35)", marginTop: 24 }}>
-              Government Licensed | RA B-1794 | Zero Candidate Fees
+              Government Licensed | RA B-1794 | No Hidden Fees
             </p>
           </div>
         </section>

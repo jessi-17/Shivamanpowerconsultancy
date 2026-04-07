@@ -290,7 +290,7 @@ export default function PassportAssistancePage() {
               </a>
             </div>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "rgba(255,255,255,0.35)", marginTop: 24 }}>
-              Government Licensed | RA B-1794 | Zero Candidate Fees
+              Government Licensed | RA B-1794 | No Hidden Fees
             </p>
           </div>
         </section>

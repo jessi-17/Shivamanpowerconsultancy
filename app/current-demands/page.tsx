@@ -7,7 +7,7 @@ import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 export const metadata: Metadata = {
   title: "Current Demands | Shiva Travel & Manpower Consultants Nakodar",
   description:
-    "Browse current overseas job openings across Gulf and European countries. Construction, factory, driving, hospitality, healthcare and more. Zero recruitment fees. Government licensed agency in Nakodar, Punjab.",
+    "Browse current overseas job openings across Gulf and European countries. Construction, factory, driving, hospitality, healthcare and more. Transparent and affordable service charges. Government licensed agency in Nakodar, Punjab.",
 };
 
 const destinations = [
@@ -59,12 +59,12 @@ export default function CurrentDemands() {
               </h1>
 
               <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                Browse live openings in Gulf and European countries. Every listing is verified, every employer is vetted, and you pay absolutely zero recruitment fees. Your next career move starts here.
+                Browse live openings in Gulf and European countries. Every listing is verified, every employer is vetted, and we maintain minimal and transparent charges with no hidden fees. Your next career move starts here.
               </p>
 
               {/* Badges */}
               <div style={{ display: "flex", gap: 16, marginBottom: 32, flexWrap: "wrap" }}>
-                {["Gulf Countries", "European Union", "Zero Fees"].map((badge) => (
+                {["Gulf Countries", "European Union", "No Hidden Fees"].map((badge) => (
                   <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#0b1c30" }} />
                     <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
@@ -95,7 +95,7 @@ export default function CurrentDemands() {
               { value: "12+", label: "Active Countries" },
               { value: "500+", label: "Openings This Month" },
               { value: "30-60", label: "Days Avg Processing" },
-              { value: "Zero", label: "Candidate Fees" },
+              { value: "No", label: "Hidden Fees" },
             ].map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#001f5d", lineHeight: 1 }}>{s.value}</div>

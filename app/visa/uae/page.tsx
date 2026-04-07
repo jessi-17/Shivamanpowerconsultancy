@@ -60,7 +60,7 @@ const emirates = [
 
 const faqs = [
   { q: "Where can I get a Dubai visa in Nakodar?", a: "Shiva Travel & Manpower Consultants at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar is your trusted Dubai visa consultant. We are government licensed and have placed hundreds of workers in the UAE. Visit us or call +91-9814820432." },
-  { q: "How much does a Dubai work visa cost?", a: "Through Shiva Travel & Manpower Consultants, candidates pay zero recruitment fees. The UAE employer bears visa and recruitment costs as per regulations. You only need to cover personal expenses like GAMCA medical (approx. Rs. 2,500-3,000) and passport fees if applicable." },
+  { q: "How much does a Dubai work visa cost?", a: "Through Shiva Travel & Manpower Consultants, we maintain minimal and transparent charges with no hidden fees. The UAE employer bears most visa and recruitment costs as per regulations. You only need to cover personal expenses like GAMCA medical (approx. Rs. 2,500-3,000) and passport fees if applicable." },
   { q: "What is GAMCA medical for UAE visa?", a: "GAMCA (GCC Approved Medical Centres Association) medical is a mandatory health screening for all workers going to UAE and other Gulf countries. It includes blood tests, chest X-ray, and general physical examination. We help you book and complete this at an approved centre." },
   { q: "How long does UAE visa processing take?", a: "A standard UAE employment visa takes 2-4 weeks after the employer submits the application. The entire process from our office to your departure typically takes 4-8 weeks, depending on document attestation and medical clearance timelines." },
   { q: "Do I need to know English or Arabic for UAE jobs?", a: "Basic English is helpful but not always required for manual and semi-skilled jobs. Many UAE workplaces have Hindi and Punjabi-speaking supervisors. For skilled positions, conversational English is usually expected." },
@@ -153,7 +153,7 @@ export default function UAEVisaPage() {
               </div>
 
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["Tax-Free Salary", "GAMCA Medical Help", "Zero Recruitment Fees"].map((badge) => (
+                {["Tax-Free Salary", "GAMCA Medical Help", "No Hidden Fees"].map((badge) => (
                   <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#1e40af" }} />
                     <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
@@ -184,7 +184,7 @@ export default function UAEVisaPage() {
               { value: "1000+", label: "Workers Placed" },
               { value: "0%", label: "Income Tax" },
               { value: "3 hrs", label: "Flight from Punjab" },
-              { value: "Zero", label: "Candidate Fees" },
+              { value: "No", label: "Hidden Fees" },
             ].map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#1e40af", lineHeight: 1 }}>{s.value}</div>
@@ -349,7 +349,7 @@ export default function UAEVisaPage() {
               Ready to Work in<br />Dubai &amp; UAE?
             </h2>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: 36, maxWidth: 480, margin: "0 auto 36px" }}>
-              Visit our office at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040. Call +91-9814820432 or WhatsApp +91-9815358832. Government licensed. Zero candidate fees.
+              Visit our office at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040. Call +91-9814820432 or WhatsApp +91-9815358832. Government licensed. No hidden fees.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
               <Link href="/contactus" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "#ffffff", color: "#1e40af", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>

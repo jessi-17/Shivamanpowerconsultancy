@@ -68,7 +68,7 @@ const faqs = [
   { q: "How long does E-Migrate processing take?", a: "When all documents are in order, E-Migrate clearance typically takes 3 to 7 working days. However, if the POE raises queries or if the employer's FE registration is pending, it can take longer. We handle all follow-ups to ensure minimum delays." },
   { q: "Can I apply for E-Migrate on my own?", a: "Technically, the portal allows individual registration. However, the process requires coordination between the worker, the recruiting agent (RA), and the foreign employer (FE). Since the employer must be registered and linked, and many steps require RA involvement, most workers process it through a licensed agency like ours." },
   { q: "What happens if my E-Migrate is rejected?", a: "Common reasons for rejection include mismatched contract details, incomplete employer registration, or document discrepancies. We review the rejection reason, correct the issues, and resubmit. Our experience with the POE office helps resolve queries quickly." },
-  { q: "Is there a fee for E-Migrate registration?", a: "The government portal itself does not charge workers a fee. As per Indian law, all recruitment costs are borne by the employer. Shiva Travel charges zero fees from candidates — this includes E-Migrate processing, documentation, and coordination." },
+  { q: "Is there a fee for E-Migrate registration?", a: "The government portal itself does not charge workers a fee. As per Indian law, all recruitment costs are borne by the employer. Shiva Travel maintains minimal and transparent charges with no hidden fees — this includes E-Migrate processing, documentation, and coordination." },
 ];
 
 const faqJsonLd = {
@@ -148,7 +148,7 @@ export default function EMigratePage() {
               </div>
 
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["Licensed RA B-1794", "Zero Fees", "POE Approved"].map((badge) => (
+                {["Licensed RA B-1794", "No Hidden Fees", "POE Approved"].map((badge) => (
                   <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#0b1c30" }} />
                     <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
@@ -277,11 +277,11 @@ export default function EMigratePage() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 360px), 1fr))", gap: 24 }}>
               {[
                 { title: "MEA Licensed Recruiting Agent", desc: "We hold RA License B-1794 from the Ministry of External Affairs. Only licensed agents can link worker applications on the E-Migrate portal. Processing through unlicensed agents is illegal and risky." },
-                { title: "Zero Fees from Candidates", desc: "Indian law mandates that all recruitment costs are borne by the employer. We strictly follow this — you pay nothing for E-Migrate processing, documentation, or any part of the recruitment process." },
+                { title: "No Hidden Fees", desc: "Indian law mandates that all major recruitment costs are borne by the employer. We maintain minimal and transparent charges — no hidden fees for E-Migrate processing, documentation, or any part of the recruitment process." },
                 { title: "Direct POE Coordination", desc: "We have processed thousands of emigration clearances and have established working relationships with POE offices. Any queries or objections raised are resolved quickly with proper documentation." },
                 { title: "Local Office in Nakodar", desc: "No need to travel to Jalandhar, Chandigarh, or Delhi. Walk into our Nakodar office with your documents, and we handle everything. Monday to Saturday, 9am to 6pm." },
                 { title: "End-to-End Support", desc: "E-Migrate is just one step. We also handle your visa processing, GAMCA medical, document attestation, insurance, and pre-departure briefing — all from one office." },
-                { title: "25+ Years of Experience", desc: "Since 1998, we have been sending workers from Punjab to the Gulf and Europe. Our experience means fewer rejections, faster clearances, and complete compliance." },
+                { title: "20+ Years of Experience", desc: "Since 2002, we have been sending workers from Punjab to the Gulf and Europe. Our experience means fewer rejections, faster clearances, and complete compliance." },
               ].map((item) => (
                 <div key={item.title} style={{ backgroundColor: "#ffffff", borderRadius: 16, padding: 32, border: "1px solid #e5e7eb" }}>
                   <h3 style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 700, color: "#0b1c30", marginBottom: 10 }}>{item.title}</h3>
@@ -335,7 +335,7 @@ export default function EMigratePage() {
               </a>
             </div>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "rgba(255,255,255,0.35)", marginTop: 24 }}>
-              Government Licensed | RA B-1794 | Zero Candidate Fees
+              Government Licensed | RA B-1794 | No Hidden Fees
             </p>
           </div>
         </section>
