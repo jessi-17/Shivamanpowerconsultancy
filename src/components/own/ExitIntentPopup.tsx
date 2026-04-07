@@ -125,7 +125,7 @@ export default function ExitIntentPopup() {
             fontFamily: "var(--font-body)", fontSize: 13,
             color: "rgba(255,255,255,0.85)", lineHeight: 1.5,
           }}>
-            Share your number — our expert will call you within 2 hours with matching opportunities. Zero fees.
+            Share your number — our expert will call you within 2 hours with matching opportunities. No hidden fees.
           </p>
         </div>
 
@@ -192,7 +192,7 @@ export default function ExitIntentPopup() {
           }}>
             <span>Govt Licensed</span>
             <span>&#8226;</span>
-            <span>Zero Fees</span>
+            <span>No Hidden Fees</span>
             <span>&#8226;</span>
             <span>5,000+ Placed</span>
           </div>
