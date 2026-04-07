@@ -76,8 +76,8 @@ const testimonials = [
 
 const trustReasons = [
   { title: "Government Licensed", desc: "RA License B-1794 issued by Ministry of External Affairs. E-Migrate registered. ALMRA Punjab member." },
-  { title: "Zero Candidate Fees", desc: "We never charge candidates. All costs are borne by the hiring employers. 100% transparent process." },
-  { title: "25+ Years of Trust", desc: "Founded in 1998, serving Nawanshahr, Nakodar, Jalandhar, and the entire Doaba belt for over two decades." },
+  { title: "Minimal & Transparent Charges", desc: "We keep our service charges affordable and fully transparent. No hidden fees — every cost is communicated upfront." },
+  { title: "20+ Years of Trust", desc: "Since 2002, serving Nawanshahr, Nakodar, Jalandhar, and the entire Doaba belt for over two decades." },
   { title: "About 40 Min from Nawanshahr", desc: "Our office on Jalandhar Road, Nakodar is well-connected from Nawanshahr (Shaheed Bhagat Singh Nagar). Walk-in consultations Monday to Saturday, 9am-6pm." },
   { title: "Direct Employer Ties", desc: "We work directly with 500+ employers across UAE, Saudi Arabia, Qatar, Poland, Romania — no middlemen." },
   { title: "End-to-End Support", desc: "From skill testing to visa stamping to airport send-off. We handle everything so you don\u2019t have to worry." },
@@ -132,7 +132,7 @@ export default function NawanshahrPage() {
 
               {/* Badges */}
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["Government Licensed", "Zero Fees", "25+ Years"].map((badge) => (
+                {["Government Licensed", "No Hidden Fees", "20+ Years"].map((badge) => (
                   <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#0b1c30" }} />
                     <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>

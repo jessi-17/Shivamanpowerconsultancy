@@ -7,7 +7,7 @@ import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 export const metadata: Metadata = {
   title: "Poland Visa & Work Permit in Nakodar | Shiva Travel Consultants",
   description:
-    "Apply for Poland visa & work permit from Nakodar, Punjab. Type A work permit, seasonal permits, Schengen access. Government licensed consultant. Zero candidate fees. Shiva Travel & Manpower Consultants.",
+    "Apply for Poland visa & work permit from Nakodar, Punjab. Type A work permit, seasonal permits, Schengen access. Government licensed consultant. No hidden fees. Shiva Travel & Manpower Consultants.",
   keywords:
     "poland visa in nakodar, poland work permit Punjab, poland visa consultant nakodar, poland work visa from India, poland work permit agent nakodar, poland visa Punjab, poland job visa nakodar",
   alternates: {
@@ -66,7 +66,7 @@ const faqs = [
   { q: "Do I need to know Polish language?", a: "Not for most manual and factory jobs. Employers provide on-site training and many workplaces have multilingual supervisors. However, learning basic Polish phrases helps with daily life. We provide a basic language guide during pre-departure briefing." },
   { q: "Can I bring my family to Poland?", a: "Yes. After you receive your residence card (Karta Pobytu) in Poland, you can apply for family reunification. Your spouse and children under 18 can join you with a dependent visa. They may also be eligible to work in Poland." },
   { q: "What types of jobs are available in Poland for Indians?", a: "Poland has high demand for construction workers, welders, factory operators, warehouse staff, truck drivers, farm workers, and food processing workers. We match your skills to the right employer in Poland." },
-  { q: "Is there any fee to apply through Shiva Travel Consultants?", a: "No. We charge zero recruitment fees from candidates. The Polish employer bears all recruitment and work permit costs as per Indian government regulations. Our service is completely free for workers." },
+  { q: "Is there any fee to apply through Shiva Travel Consultants?", a: "We maintain minimal and transparent charges with no hidden fees. The Polish employer bears most recruitment and work permit costs as per Indian government regulations." },
 ];
 
 const serviceJsonLd = {
@@ -91,7 +91,7 @@ const serviceJsonLd = {
     name: "Nakodar, Punjab, India",
   },
   description:
-    "Government-licensed Poland visa and work permit services from Nakodar, Punjab. Type A work permits, seasonal permits, document attestation, embassy coordination, and E-Migrate assistance. Zero candidate fees.",
+    "Government-licensed Poland visa and work permit services from Nakodar, Punjab. Type A work permits, seasonal permits, document attestation, embassy coordination, and E-Migrate assistance. No hidden fees.",
   serviceType: "Immigration Consulting",
 };
 
@@ -145,7 +145,7 @@ export default function PolandVisaPage() {
               </h1>
 
               <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                Government-licensed Poland visa and work permit services from Nakodar, Punjab. We handle Type A work permits, seasonal permits, document attestation, embassy coordination, and complete E-Migrate assistance. Zero fees for candidates.
+                Government-licensed Poland visa and work permit services from Nakodar, Punjab. We handle Type A work permits, seasonal permits, document attestation, embassy coordination, and complete E-Migrate assistance. Minimal and transparent charges, no hidden fees.
               </p>
 
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 32 }}>
@@ -159,7 +159,7 @@ export default function PolandVisaPage() {
               </div>
 
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["EU Work Permit", "Schengen Travel", "Zero Fees"].map((badge) => (
+                {["EU Work Permit", "Schengen Travel", "No Hidden Fees"].map((badge) => (
                   <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#1e40af" }} />
                     <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
@@ -190,7 +190,7 @@ export default function PolandVisaPage() {
               { value: "2-3", label: "Months Processing" },
               { value: "27", label: "Countries Access" },
               { value: "PLN 4,300+", label: "Monthly Minimum Wage" },
-              { value: "Zero", label: "Candidate Fees" },
+              { value: "No", label: "Hidden Fees" },
             ].map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#1e40af", lineHeight: 1 }}>{s.value}</div>
@@ -338,13 +338,13 @@ export default function PolandVisaPage() {
         <section style={{ padding: "64px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb" }}>
           <div style={{ maxWidth: 800, margin: "0 auto", padding: "0 32px", textAlign: "center" }}>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 16 }}>
-              Zero Candidate Fees
+              Minimal & Transparent Charges
             </h2>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 600, margin: "0 auto", marginBottom: 28 }}>
-              As per Indian government regulations, we charge absolutely zero recruitment fees from candidates. The Polish employer bears all costs including work permit fees, recruitment charges, and processing expenses. Your only costs are passport, medical, and travel.
+              As per Indian government regulations, we maintain minimal and transparent charges with no hidden fees. The Polish employer bears most costs including work permit fees and processing expenses. Your only costs are passport, medical, and travel.
             </p>
             <div style={{ display: "inline-flex", gap: 24, flexWrap: "wrap", justifyContent: "center" }}>
-              {["Work Permit Fee — Employer Pays", "Recruitment Fee — Zero", "Visa Fee — Employer Pays"].map((item) => (
+              {["Work Permit Fee — Employer Pays", "Recruitment Fee — Minimal", "Visa Fee — Employer Pays"].map((item) => (
                 <div key={item} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1e40af" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
                   <span style={{ fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 600, color: "#0b1c30" }}>{item}</span>
@@ -381,7 +381,7 @@ export default function PolandVisaPage() {
               Ready to Apply for Your<br />Poland Work Visa?
             </h2>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: 36, maxWidth: 480, margin: "0 auto 36px" }}>
-              Visit our office at Golden Avenue, Nakodar or call us today. Free consultation. Zero candidate fees. Government licensed recruitment. EU work permit with Schengen access.
+              Visit our office at Golden Avenue, Nakodar or call us today. Free consultation. No hidden fees. Government licensed recruitment. EU work permit with Schengen access.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 28 }}>
               <Link href="/contactus" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "#ffffff", color: "#1e40af", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>

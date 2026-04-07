@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s | Shiva Manpower Consultants",
   },
   description:
-    "Shiva Travel & Manpower Consultants Nakodar. Government licensed overseas recruitment agency in Punjab (RA B-1794). Placing workers in UAE, Saudi Arabia, Qatar, Poland, Romania since 2002. Zero candidate fees. Walk in office in Nakodar, Jalandhar.",
+    "Shiva Travel & Manpower Consultants Nakodar. Government licensed overseas recruitment agency in Punjab (RA B-1794). Placing workers in UAE, Saudi Arabia, Qatar, Poland, Romania since 2002. Minimal & transparent charges, no hidden fees. Walk in office in Nakodar, Jalandhar.",
   keywords: [
     "Shiva Travel Manpower Consultants Nakodar",
     "manpower consultancy Nakodar Punjab",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     siteName: "Shiva Manpower Consultants",
     title: "Shiva Travel & Manpower Consultants Nakodar | Overseas Recruitment Punjab",
     description:
-      "Government licensed manpower consultancy in Nakodar, Punjab. Placing workers in UAE, Saudi Arabia, Qatar, Poland, Romania since 2002. Zero candidate fees.",
+      "Government licensed manpower consultancy in Nakodar, Punjab. Placing workers in UAE, Saudi Arabia, Qatar, Poland, Romania since 2002. Minimal & transparent charges, no hidden fees.",
     images: [
       {
         url: "/logo.jpg",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shiva Travel & Manpower Consultants Nakodar | Overseas Recruitment Punjab",
     description:
-      "Government licensed manpower consultancy in Nakodar, Punjab. Placing workers in UAE, Saudi Arabia, Qatar, Poland, Romania since 2002. Zero candidate fees.",
+      "Government licensed manpower consultancy in Nakodar, Punjab. Placing workers in UAE, Saudi Arabia, Qatar, Poland, Romania since 2002. Minimal & transparent charges, no hidden fees.",
     images: ["/logo.jpg"],
   },
   alternates: {
@@ -158,7 +158,7 @@ const jsonLd = {
     name: "Tarsem Lal",
     jobTitle: "Founder & Managing Director",
   },
-  foundingDate: "1998",
+  foundingDate: "2002",
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",

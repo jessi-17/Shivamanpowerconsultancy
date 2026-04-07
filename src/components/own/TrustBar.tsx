@@ -11,8 +11,8 @@ const stats = [
         <polyline points="12,6 12,12 16,14" />
       </svg>
     ),
-    title: "25+ Years Experience",
-    description: "Pioneering overseas recruitment in Punjab with a legacy of trust and reliability.",
+    title: "20+ Years Experience",
+    description: "Pioneering overseas recruitment across India with a legacy of trust and reliability.",
   },
   {
     icon: (
@@ -21,7 +21,7 @@ const stats = [
       </svg>
     ),
     title: "100% Legal Process",
-    description: "Full compliance with MEA regulations and zero hidden charges policy.",
+    description: "Full compliance with MEA regulations. Transparent, minimal charges with no hidden fees.",
   },
   {
     icon: (

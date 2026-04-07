@@ -6,7 +6,7 @@ import { breadcrumbJsonLd } from "../_lib/breadcrumb";
 export const metadata: Metadata = {
   title: "Immigration Office in Nakodar | Visa Consultant | Shiva Travel & Manpower Consultants",
   description:
-    "Shiva Travel & Manpower Consultants — the #1 immigration office in Nakodar. Government licensed (RA B-1794), 25+ years experience. Romania visa, Schengen visa, Poland visa, UAE visa, work permits & overseas recruitment from Nakodar, Punjab. Zero candidate fees.",
+    "Shiva Travel & Manpower Consultants — the #1 immigration office in Nakodar. Government licensed (RA B-1794), 20+ years experience. Romania visa, Schengen visa, Poland visa, UAE visa, work permits & overseas recruitment from Nakodar, Punjab. Minimal & transparent charges.",
   keywords: [
     "immigration office in nakodar",
     "visa consultant nakodar",
@@ -33,11 +33,11 @@ const localBusinessJsonLd = {
   "@type": ["LocalBusiness", "EmploymentAgency"],
   name: "Shiva Travel & Manpower Consultants",
   description:
-    "Government licensed immigration office and overseas recruitment agency in Nakodar, Punjab. Specializing in Romania, Schengen, Poland, UAE, Croatia, Saudi Arabia & Qatar visas since 1998.",
+    "Government licensed immigration office and overseas recruitment agency in Nakodar, Punjab. Specializing in Romania, Schengen, Poland, UAE, Croatia, Saudi Arabia & Qatar visas since 2002.",
   url: "https://shivatravelconsultant.in/nakodar",
   telephone: "+91-9814820432",
   image: "https://shivatravelconsultant.in/Professional Punjab office environment.webp",
-  priceRange: "Free (Zero Candidate Fees)",
+  priceRange: "Affordable (Minimal & Transparent Charges)",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road",
@@ -87,10 +87,10 @@ const destinations = [
 ];
 
 const stats = [
-  { value: "25+", label: "Years in Nakodar" },
+  { value: "20+", label: "Years in Nakodar" },
   { value: "5,000+", label: "Workers Placed" },
   { value: "20+", label: "Countries" },
-  { value: "Zero", label: "Fees Charged" },
+  { value: "100%", label: "Transparent Fees" },
 ];
 
 const testimonials = [
@@ -101,8 +101,8 @@ const testimonials = [
 
 const trustReasons = [
   { title: "Government Licensed Office in Nakodar", desc: "RA License B-1794 issued by Ministry of External Affairs. E-Migrate registered. ALMRA Punjab member. The only fully licensed immigration office in Nakodar." },
-  { title: "Zero Candidate Fees", desc: "We never charge candidates. All costs are borne by the hiring employers. 100% transparent process as per Indian government regulations." },
-  { title: "25+ Years Serving Nakodar", desc: "Founded in 1998, Shiva Travel has been the trusted name in Nakodar for overseas recruitment for over two decades. Our roots are here." },
+  { title: "Minimal & Transparent Charges", desc: "We keep our service charges affordable and fully transparent. No hidden fees, no surprise deductions — every cost is communicated upfront as per Indian government regulations." },
+  { title: "20+ Years Serving Nakodar", desc: "Since 2002, Shiva Travel has been the trusted name in Nakodar for overseas recruitment for over two decades. Our roots are here." },
   { title: "Walk-In Office in Nakodar City", desc: "No need to travel to Jalandhar or Ludhiana. Visit our office at Golden Avenue, Jalandhar Road, Nakodar. Walk-in consultations Monday to Saturday, 9am-6pm." },
   { title: "Direct Employer Connections", desc: "We work directly with 500+ employers across UAE, Saudi Arabia, Qatar, Poland, Romania, Croatia — no middlemen, no sub-agents." },
   { title: "Complete Visa & Immigration Support", desc: "From skill testing to visa stamping to airport send-off. We handle documentation, medical, insurance, and everything in between." },
@@ -112,11 +112,11 @@ const faqs = [
   { q: "Where is the best immigration office in Nakodar?", a: "Shiva Travel & Manpower Consultants is the leading government-licensed immigration office in Nakodar, located at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar 144040. We have been serving the community for over 25 years with RA License B-1794." },
   { q: "Can I get a Romania visa from Nakodar?", a: "Yes. Shiva Travel & Manpower Consultants in Nakodar specializes in Romania work visas. We have direct tie-ups with Romanian employers for construction, manufacturing, and industrial jobs. Visit our Nakodar office for a free consultation." },
   { q: "Is there a Schengen visa consultant in Nakodar?", a: "Yes. Our Nakodar office provides complete Schengen visa assistance including documentation, appointment booking, and interview preparation for all 27 Schengen countries." },
-  { q: "Do I need to pay fees for overseas recruitment in Nakodar?", a: "No. Shiva Travel charges zero fees from candidates. All recruitment costs are borne by the hiring employers as per Indian government regulations. We are 100% transparent." },
+  { q: "What are the fees for overseas recruitment in Nakodar?", a: "Shiva Travel maintains minimal and transparent service charges. Every cost is communicated upfront — no hidden fees, no surprise deductions. We follow Indian government regulations and maintain 100% transparency." },
   { q: "Which countries can I get a work visa for from Nakodar?", a: "From our Nakodar office, we process work visas for 20+ countries including Romania, Poland, Croatia, UAE (Dubai), Saudi Arabia, Qatar, Kuwait, Bahrain, and other European and Gulf nations." },
   { q: "What is the phone number of Shiva Travel in Nakodar?", a: "You can call us at +91-9814820432 or WhatsApp us at +91-9815358832. Our Nakodar office is open Monday to Saturday, 9am to 6pm for walk-in consultations." },
   { q: "How long does the Poland visa process take from Nakodar?", a: "The Poland work visa process typically takes 45-60 days from application to departure. We handle everything from our Nakodar office — documentation, skill testing, visa stamping, and travel arrangements." },
-  { q: "Is Shiva Travel & Manpower Consultants a genuine agency?", a: "Absolutely. We hold RA License B-1794 from the Ministry of External Affairs, Government of India. We are E-Migrate registered and a member of ALMRA Punjab. Our Nakodar office has been operational for over 25 years." },
+  { q: "Is Shiva Travel & Manpower Consultants a genuine agency?", a: "Absolutely. We hold RA License B-1794 from the Ministry of External Affairs, Government of India. We are E-Migrate registered and a member of ALMRA. Our license is valid for all of India. Our Nakodar office has been operational for over 20 years." },
 ];
 
 const faqJsonLd = {
@@ -156,7 +156,7 @@ export default function NakodarPage() {
             <div style={{ flex: "1 1 480px", minWidth: 0 }}>
               <div style={{ display: "inline-block", padding: "6px 16px", backgroundColor: "#eff4ff", borderRadius: 20, marginBottom: 24 }}>
                 <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#0052dc", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                  Nakodar&apos;s #1 Immigration Office Since 1998
+                  Nakodar&apos;s #1 Immigration Office Since 2002
                 </span>
               </div>
 
@@ -169,7 +169,7 @@ export default function NakodarPage() {
               </h1>
 
               <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                Shiva Travel & Manpower Consultants is Nakodar&apos;s leading government-licensed immigration office and visa consultancy. Based right here in Nakodar since 1998, we have placed 5,000+ workers from Punjab in premium jobs across the Gulf & Europe. Romania visa, Schengen visa, Poland visa, UAE visa — all processed from our Nakodar office.
+                Shiva Travel & Manpower Consultants is Nakodar&apos;s leading government-licensed immigration office and visa consultancy. Based right here in Nakodar since 2002, we have placed 5,000+ workers from across India in premium jobs across the Gulf & Europe. Romania visa, Schengen visa, Poland visa, UAE visa — all processed from our Nakodar office.
               </p>
 
               {/* CTA Buttons */}
@@ -184,7 +184,7 @@ export default function NakodarPage() {
 
               {/* Badges */}
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["Government Licensed", "Zero Fees", "25+ Years in Nakodar"].map((badge) => (
+                {["Government Licensed", "No Hidden Fees", "20+ Years in Nakodar"].map((badge) => (
                   <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#0b1c30" }} />
                     <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
@@ -254,7 +254,7 @@ export default function NakodarPage() {
             <div style={{ textAlign: "center", marginBottom: 56 }}>
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>Why Nakodar Trusts Shiva Travel & Manpower Consultants</h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
-                The only government-licensed immigration office based in Nakodar with 25+ years of proven results.
+                The only government-licensed immigration office based in Nakodar with 20+ years of proven results.
               </p>
             </div>
 
@@ -384,7 +384,7 @@ export default function NakodarPage() {
               </a>
             </div>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "rgba(255,255,255,0.35)", marginTop: 24 }}>
-              Government Licensed | RA B-1794 | Zero Candidate Fees
+              Government Licensed | RA B-1794 | No Hidden Fees
             </p>
           </div>
         </section>

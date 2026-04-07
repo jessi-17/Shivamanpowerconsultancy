@@ -45,7 +45,7 @@ const faqs = [
     items: [
       {
         q: "Are there any fees for candidates to apply for a job?",
-        a: "No. We charge zero fees to candidates. Our services are funded entirely by the hiring employers. This is our commitment to ethical, transparent recruitment.",
+        a: "No. We maintain minimal and transparent charges with no hidden fees. Our services are primarily funded by the hiring employers. This is our commitment to ethical, transparent recruitment.",
       },
       {
         q: "Do I need to pay for my visa?",
@@ -58,7 +58,7 @@ const faqs = [
     items: [
       {
         q: "Which countries do you specialize in?",
-        a: "We specialize in placements across the UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Poland, Romania, and other European countries. Our 25+ years of experience span construction, hospitality, healthcare, oil & gas, and logistics sectors.",
+        a: "We specialize in placements across the UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Poland, Romania, and other European countries. Our 20+ years of experience span construction, hospitality, healthcare, oil & gas, and logistics sectors.",
       },
       {
         q: "What types of jobs are available?",
@@ -186,7 +186,7 @@ export default function FAQPage() {
 
             {/* Badges */}
             <div style={{ display: "flex", gap: 16, marginBottom: 32, flexWrap: "wrap" }}>
-              {["Zero Candidate Fees", "MEA Licensed"].map((badge) => (
+              {["No Hidden Fees", "MEA Licensed"].map((badge) => (
                 <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                   <div
                     style={{

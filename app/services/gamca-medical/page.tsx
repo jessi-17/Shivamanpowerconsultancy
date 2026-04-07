@@ -130,7 +130,7 @@ export default function GAMCAMedicalPage() {
               </div>
 
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["GCC Approved Process", "Zero Fees", "All 6 Gulf Countries"].map((badge) => (
+                {["GCC Approved Process", "No Hidden Fees", "All 6 Gulf Countries"].map((badge) => (
                   <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#0b1c30" }} />
                     <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
@@ -257,7 +257,7 @@ export default function GAMCAMedicalPage() {
               </a>
             </div>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "rgba(255,255,255,0.35)", marginTop: 24 }}>
-              Government Licensed | RA B-1794 | Zero Candidate Fees
+              Government Licensed | RA B-1794 | No Hidden Fees
             </p>
           </div>
         </section>

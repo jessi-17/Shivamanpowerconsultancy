@@ -7,7 +7,7 @@ import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 export const metadata: Metadata = {
   title: "Schengen Visa Services in Nakodar | Europe Work Visa | Shiva Travel & Manpower Consultants",
   description:
-    "Apply for Schengen visa from Nakodar, Punjab. Work visa for 27 European countries — Poland, Romania, Croatia, Malta, Hungary, Czech Republic. Government licensed consultant. Zero fees. Visit Shiva Travel & Manpower Consultants office in Nakodar.",
+    "Apply for Schengen visa from Nakodar, Punjab. Work visa for 27 European countries — Poland, Romania, Croatia, Malta, Hungary, Czech Republic. Government licensed consultant. No hidden fees. Visit Shiva Travel & Manpower Consultants office in Nakodar.",
   keywords: [
     "schengen visa nakodar",
     "schengen visa consultant nakodar",
@@ -55,18 +55,18 @@ const requirements = [
 
 const trustFactors = [
   { title: "Government Licensed", desc: "Registered with the Ministry of External Affairs, Government of India. License verified and renewed regularly. Fully compliant with all emigration regulations.", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
-  { title: "25+ Years Experience", desc: "Established in 1999, we have over two decades of experience sending workers to Europe, the Gulf, and beyond. Thousands of successful placements from Punjab.", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
-  { title: "Zero Candidate Fees", desc: "We charge absolutely no recruitment fees from candidates. All costs including work permit and recruitment charges are borne by the employer as per international regulations.", icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
+  { title: "20+ Years Experience", desc: "Established in 2002, we have over two decades of experience sending workers to Europe, the Gulf, and beyond. Thousands of successful placements from Punjab.", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
+  { title: "No Hidden Fees", desc: "We maintain minimal and transparent charges with no hidden fees. All major costs including work permit and recruitment charges are borne by the employer as per international regulations.", icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
   { title: "Nakodar Office", desc: "Walk in to our office at Golden Avenue, Jalandhar Road, Nakodar, Punjab. Face-to-face consultation, document verification, and complete visa assistance — all under one roof.", icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z" },
 ];
 
 const faqs = [
   { q: "Where can I apply for Schengen visa in Nakodar?", a: "You can apply at Shiva Travel & Manpower Consultants, Golden Avenue, Jalandhar Road, Nakodar. We are a government-licensed recruitment agency providing Schengen work visa services for all 27 European countries. Walk in or call +91 98148-20432 for an appointment." },
-  { q: "How much does Schengen visa cost from Nakodar?", a: "Through Shiva Travel & Manpower Consultants, candidates pay zero recruitment fees. The employer bears all work permit and recruitment costs. You only pay for standard government charges like passport, medical test, and police clearance — which are minimal." },
+  { q: "How much does Schengen visa cost from Nakodar?", a: "Through Shiva Travel & Manpower Consultants, candidates pay minimal and transparent charges with no hidden fees. The employer bears all work permit and recruitment costs. You only pay for standard government charges like passport, medical test, and police clearance — which are minimal." },
   { q: "Can I get a Schengen work visa from Punjab?", a: "Yes. Our Nakodar office processes Schengen work visas for candidates across Punjab. We handle everything from document preparation to embassy appointments. Thousands of workers from Jalandhar, Nakodar, Kapurthala, and surrounding areas have gone to Europe through us." },
   { q: "Which European countries can I work in with Schengen visa?", a: "A Schengen work visa is issued by a specific country (e.g., Poland, Romania, Croatia) but allows you to travel across all 27 Schengen countries. You must work in the country that issued your permit, but you can visit other Schengen nations during holidays." },
   { q: "How long does Schengen visa processing take?", a: "The complete process from initial consultation to departure typically takes 3-5 months. Work permit processing alone takes 4-10 weeks depending on the destination country. Poland and Romania tend to be faster. We keep you updated at every stage." },
-  { q: "Is Shiva Travel authorized for Schengen visa processing?", a: "Yes. Shiva Travel & Manpower Consultants is licensed by the Ministry of External Affairs, Government of India (License No. verified). We have been sending workers to Europe since 1999 and have a proven track record of successful placements across Schengen countries." },
+  { q: "Is Shiva Travel authorized for Schengen visa processing?", a: "Yes. Shiva Travel & Manpower Consultants is licensed by the Ministry of External Affairs, Government of India (License No. verified). We have been sending workers to Europe since 2002 and have a proven track record of successful placements across Schengen countries." },
   { q: "What jobs are available in Europe through Schengen visa?", a: "We recruit for construction, manufacturing, agriculture, food processing, hospitality, warehousing, and transport sectors. Common roles include factory worker, welder, mason, carpenter, farm worker, truck driver, and hotel staff. Salaries range from €700 to €1,600/month." },
   { q: "Do I need to know a European language for Schengen work visa?", a: "Not for most manual and factory jobs. Employers provide on-site training and many workplaces have multilingual supervisors. However, learning basic phrases of the local language helps in daily life. We can guide you on language resources before departure." },
 ];
@@ -106,7 +106,7 @@ const serviceJsonLd = {
     name: "Nakodar, Punjab, India",
   },
   description:
-    "Schengen work visa processing for 27 European countries including Poland, Romania, Croatia, Malta, Hungary, and Czech Republic. Government licensed recruitment agency with zero candidate fees.",
+    "Schengen work visa processing for 27 European countries including Poland, Romania, Croatia, Malta, Hungary, and Czech Republic. Government licensed recruitment agency with no hidden fees.",
   serviceType: "Visa Consulting",
 };
 
@@ -147,7 +147,7 @@ export default function SchengenVisaPage() {
               </h1>
 
               <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                Apply for Schengen work visas for 27 European countries from our Nakodar office. Shiva Travel &amp; Manpower Consultants provides complete visa processing — from document preparation to embassy stamping. Government licensed. Zero candidate fees.
+                Apply for Schengen work visas for 27 European countries from our Nakodar office. Shiva Travel &amp; Manpower Consultants provides complete visa processing — from document preparation to embassy stamping. Government licensed. No hidden fees.
               </p>
 
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 32 }}>
@@ -161,7 +161,7 @@ export default function SchengenVisaPage() {
               </div>
 
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["27 Schengen Countries", "Work Permit Included", "Zero Fees"].map((badge) => (
+                {["27 Schengen Countries", "Work Permit Included", "No Hidden Fees"].map((badge) => (
                   <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#1e40af" }} />
                     <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
@@ -190,9 +190,9 @@ export default function SchengenVisaPage() {
             {[
               { value: "27", label: "Schengen Countries" },
               { value: "1000+", label: "Workers Sent to Europe" },
-              { value: "25+", label: "Years Experience" },
+              { value: "20+", label: "Years Experience" },
               { value: "6", label: "Countries We Process" },
-              { value: "Zero", label: "Candidate Fees" },
+              { value: "No", label: "Hidden Fees" },
             ].map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#1e40af", lineHeight: 1 }}>{s.value}</div>

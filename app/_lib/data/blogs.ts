@@ -30,7 +30,7 @@ Dubai offers tax-free salaries, modern infrastructure, and opportunities in cons
 This is the most important step. Always verify that your agency is:
 - **Government licensed** — Check the RA (Recruiting Agent) license on the Ministry of External Affairs website
 - **E-Migrate registered** — All legitimate overseas placements must go through the E-Migrate system
-- **Zero fees for candidates** — Legitimate agencies never charge job seekers
+- **No hidden fees** — Legitimate agencies maintain minimal & transparent charges
 
 Shiva Travel & Manpower Consultants Nakodar holds RA License B-1794/PUN/PER/100/5/10094/2022, valid through June 2027.
 
@@ -74,7 +74,7 @@ Your employer typically provides:
 
 ### How Shiva Manpower Can Help
 
-With 25+ years of experience and a government license, we handle everything from document preparation to post-arrival support. Our Nakodar office is open Monday–Saturday, 9am–6pm.
+With 20+ years of experience and a government license, we handle everything from document preparation to post-arrival support. Our Nakodar office is open Monday–Saturday, 9am–6pm.
     `,
     image: "/Blog-1.jpg",
     category: "Dubai Jobs",
@@ -111,19 +111,19 @@ Punjab has unfortunately seen many cases of fraud in overseas recruitment:
 2. **ALMRA Membership** — Association of Licensed Manpower Recruitment Agencies
 3. **E-Migrate Registration** — Mandatory for all overseas placements
 4. **Physical Office** — A real office you can visit, not just a phone number
-5. **Zero Candidate Fees** — Genuine agencies are paid by employers, not workers
+5. **No Hidden Fees** — Genuine agencies maintain minimal & transparent charges
 6. **Track Record** — Years of successful placements
 
 ### Why Shiva Travel & Manpower Consultants?
 
-Founded in 1998 in Nakodar, we've been serving the Doaba region for over 25 years:
+Since 2002 in Nakodar, we've been serving the Doaba region for over 20 years:
 
 - **RA License**: B-1794/PUN/PER/100/5/10094/2022 (valid till June 2027)
 - **ALMRA Member**: Punjab chapter
 - **E-Migrate Registered**: Full compliance
-- **25+ Years**: Thousands of successful placements
+- **20+ Years**: Thousands of successful placements
 - **4.5★ JustDial Rating**: Verified reviews from real candidates
-- **Zero Fees**: We never charge candidates
+- **No Hidden Fees**: Minimal & transparent charges
 
 ### Our Office
 
@@ -153,7 +153,7 @@ We primarily serve candidates from:
   },
   {
     slug: "dubai-visa-process-india-complete-guide",
-    title: "Dubai Visa Process from India – Fast Visa, Zero Fees, Step-by-Step Guide",
+    title: "Dubai Visa Process from India – Fast Visa, No Hidden Fees, Step-by-Step Guide",
     excerpt:
       "Complete guide to the Dubai work visa process from India. Learn about visa types, documents needed, processing time, E-Migrate, and how to get fast visa processing through a licensed agency.",
     content: `
@@ -210,7 +210,7 @@ Typical timeline: **30–60 days** from job offer to departure. Urgent positions
 
 ### Cost
 
-**Zero fees for candidates.** All legitimate overseas recruitment agencies are paid by the hiring employer. If an agent asks you for money, they are likely not genuine.
+**No hidden fees.** All legitimate overseas recruitment agencies maintain minimal and transparent charges. If an agent asks you for large sums of money, they are likely not genuine.
 
 ### Common Scams to Avoid
 
@@ -221,7 +221,7 @@ Typical timeline: **30–60 days** from job offer to departure. Urgent positions
 
 ### Fast Visa Process with Shiva Manpower
 
-We've been processing Dubai visas for 25+ years. Our direct employer relationships mean faster shortlisting, quicker visa processing, and reliable placements. Contact us at our Nakodar office or WhatsApp us.
+We've been processing Dubai visas for 20+ years. Our direct employer relationships mean faster shortlisting, quicker visa processing, and reliable placements. Contact us at our Nakodar office or WhatsApp us.
     `,
     image: "/Blog-3.jpg",
     category: "Visa Guide",
@@ -292,7 +292,7 @@ Factory and industrial worker jobs are among the most in-demand positions in the
 3. Complete documentation and medical
 4. Receive your visa and fly to Dubai
 
-**Important**: Never pay any fees to apply. Genuine agencies charge zero fees to candidates.
+**Important**: Never pay any fees to apply. Genuine agencies maintain minimal charges with no hidden fees.
 
 ### Apply Through Shiva Manpower
 
@@ -355,11 +355,11 @@ Saudi Aramco, SABIC, Saudi Binladin Group, and other mega-companies regularly hi
 
 ### How Shiva Manpower Helps
 
-We've been placing workers in Saudi Arabia since 1998. Our direct relationships with Saudi employers mean:
+We've been placing workers in Saudi Arabia since 2002. Our direct relationships with Saudi employers mean:
 - Faster shortlisting (within 72 hours)
 - Genuine job offers from verified companies
 - Full E-Migrate compliance
-- Zero fees for candidates
+- No hidden fees
 - Post-placement support
     `,
     image: "/Blog-5.jpg",
@@ -993,7 +993,7 @@ Not all Schengen countries actively recruit from India. The ones with the highes
 
 ### How Shiva Manpower Helps
 
-Shiva Travel & Manpower Consultants is a government-licensed recruitment agency (RA License B-1794/PUN/PER/100/5/10094/2022) with active partnerships with employers across Poland, Romania, Croatia, and other European countries. We handle the entire process — from matching your profile to visa stamping — with zero fees to candidates.
+Shiva Travel & Manpower Consultants is a government-licensed recruitment agency (RA License B-1794/PUN/PER/100/5/10094/2022) with active partnerships with employers across Poland, Romania, Croatia, and other European countries. We handle the entire process — from matching your profile to visa stamping — with minimal and transparent charges, no hidden fees.
 
 Visit us at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040** or call **+91 98148-20432** to register for upcoming Europe opportunities.
     `,
@@ -1095,7 +1095,7 @@ The entire process from job offer to departure typically takes **60–90 days**.
 
 ### How Shiva Manpower Helps
 
-Shiva Travel & Manpower Consultants has established direct relationships with Croatian employers in construction, manufacturing, and hospitality sectors. As a government-licensed agency (RA License B-1794/PUN/PER/100/5/10094/2022), we handle the complete process from profile matching to visa stamping — with zero fees charged to candidates.
+Shiva Travel & Manpower Consultants has established direct relationships with Croatian employers in construction, manufacturing, and hospitality sectors. As a government-licensed agency (RA License B-1794/PUN/PER/100/5/10094/2022), we handle the complete process from profile matching to visa stamping — with minimal and transparent charges, no hidden fees.
 
 Visit our office at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040** or call **+91 98148-20432** to register for Croatia job openings.
     `,
@@ -1216,7 +1216,7 @@ All Indian workers travelling to ECR (Emigration Check Required) countries must 
 
 ### How Shiva Manpower Helps
 
-Shiva Travel & Manpower Consultants has been guiding Punjab youth through the overseas job process for over 25 years. As a government-licensed agency (RA License B-1794/PUN/PER/100/5/10094/2022), we provide end-to-end support — from document preparation to post-arrival assistance — with zero fees to candidates.
+Shiva Travel & Manpower Consultants has been guiding Punjab youth through the overseas job process for over 20 years. As a government-licensed agency (RA License B-1794/PUN/PER/100/5/10094/2022), we provide end-to-end support — from document preparation to post-arrival assistance — with minimal and transparent charges, no hidden fees.
 
 Walk into our office at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040** or call **+91 98148-20432** to start your journey today.
     `,
@@ -1266,7 +1266,7 @@ Regardless of the destination, every Indian worker going abroad for employment n
 | **E-Migrate** | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | **Passport Validity** | 6 months | 6 months | 6 months | 6 months | 12 months | 12 months | 12 months |
 | **Processing Time** | 30–45 days | 30–60 days | 30–60 days | 45–60 days | 45–90 days | 45–90 days | 60–90 days |
-| **Visa Cost to Worker** | Zero | Zero | Zero | Zero | Zero | Zero | Zero |
+| **Visa Cost to Worker** | Minimal | Minimal | Minimal | Minimal | Minimal | Minimal | Minimal |
 
 ### Medical Requirements
 
@@ -1349,7 +1349,7 @@ Your licensed agency handles the E-Migrate registration. The process takes 2–5
 
 ### How Shiva Manpower Helps
 
-At Shiva Travel & Manpower Consultants, we guide candidates through the specific requirements for each destination country. Our experienced team ensures your documents are complete, correctly attested, and submitted on time — whether you are heading to Dubai, Saudi Arabia, Qatar, Poland, Romania, or Croatia. We hold RA License B-1794/PUN/PER/100/5/10094/2022 and charge zero fees to candidates.
+At Shiva Travel & Manpower Consultants, we guide candidates through the specific requirements for each destination country. Our experienced team ensures your documents are complete, correctly attested, and submitted on time — whether you are heading to Dubai, Saudi Arabia, Qatar, Poland, Romania, or Croatia. We hold RA License B-1794/PUN/PER/100/5/10094/2022 and maintain minimal and transparent charges with no hidden fees.
 
 Visit us at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040** or call **+91 98148-20432** to get started with your overseas job application.
     `,
@@ -1481,7 +1481,7 @@ Before you board your flight:
 
 ## Common Mistakes to Avoid
 
-1. **Paying large sums to agents** — Legitimate agencies charge zero or minimal fees to candidates
+1. **Paying large sums to agents** — Legitimate agencies charge only minimal and transparent fees to candidates
 2. **Not verifying the agency license** — Always check on the MEA website
 3. **Trusting verbal promises** — Get every detail in writing, including salary, accommodation, and contract duration
 4. **Ignoring the contract language** — Read your employment contract carefully before signing
@@ -1767,7 +1767,7 @@ The agency should be able to show you a copy of this license at their office. If
 Watch out for these warning signs:
 
 - **No physical office** — They only operate through WhatsApp, social media, or phone calls
-- **Demand large upfront payments** — Genuine agencies charge zero or very minimal fees to candidates
+- **Demand large upfront payments** — Genuine agencies charge only minimal and transparent fees to candidates
 - **Promise guaranteed jobs** — No agency can guarantee a specific job; they can only facilitate the process
 - **Pressure you to decide immediately** — Legitimate processes take time; urgency is a manipulation tactic
 - **Cannot provide a license number** — If they dodge the question, walk away

@@ -7,7 +7,7 @@ import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 export const metadata: Metadata = {
   title: "Jobs in UAE | Dubai, Abu Dhabi, Sharjah Work Opportunities",
   description:
-    "Find high-paying jobs in UAE — Dubai, Abu Dhabi, Sharjah. Factory jobs, construction, driving, hospitality. Tax-free salary with free accommodation. Government licensed recruitment from Punjab. Zero candidate fees.",
+    "Find high-paying jobs in UAE — Dubai, Abu Dhabi, Sharjah. Factory jobs, construction, driving, hospitality. Tax-free salary with free accommodation. Government licensed recruitment from Punjab. No hidden fees.",
 };
 
 const jobCategories = [
@@ -49,7 +49,7 @@ const visaProcess = [
 ];
 
 const faqs = [
-  { q: "Do I need to pay any fees to get a job in UAE?", a: "No. Through Shiva Travel & Manpower Consultants, we charge zero recruitment fees from candidates. The employer bears all costs including visa, ticket, and recruitment charges as per UAE and Indian government regulations." },
+  { q: "Do I need to pay any fees to get a job in UAE?", a: "No. Through Shiva Travel & Manpower Consultants, we maintain minimal and transparent charges with no hidden fees. The employer bears most costs including visa, ticket, and recruitment charges as per UAE and Indian government regulations." },
   { q: "What documents do I need?", a: "Valid passport (minimum 6 months validity), passport-size photographs, medical fitness certificate from a GAMCA-approved center, educational certificates, and experience certificates if applicable." },
   { q: "How long does the visa process take?", a: "Typically 2-4 weeks after employer selection. This includes visa stamping, medical clearance, and emigration clearance from the Indian government." },
   { q: "Is accommodation provided?", a: "Yes, most UAE employers provide free shared accommodation, daily transport to work, and meals. Some companies offer a housing allowance instead." },
@@ -148,7 +148,7 @@ export default function JobsInUAE() {
               { value: "2,000+", label: "Workers Placed" },
               { value: "99%", label: "Visa Approval" },
               { value: "3-4 hrs", label: "Flight from Punjab" },
-              { value: "Zero", label: "Candidate Fees" },
+              { value: "No", label: "Hidden Fees" },
             ].map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#001f5d", lineHeight: 1 }}>{s.value}</div>

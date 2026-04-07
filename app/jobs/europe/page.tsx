@@ -7,7 +7,7 @@ import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 export const metadata: Metadata = {
   title: "Jobs in Europe | Poland, Romania, Croatia Work Opportunities",
   description:
-    "Find factory, warehouse, and skilled worker jobs in Europe through Shiva Travel & Manpower Consultants. Government licensed recruitment for Poland, Romania, Croatia, Malta. Work permit assistance. Zero candidate fees.",
+    "Find factory, warehouse, and skilled worker jobs in Europe through Shiva Travel & Manpower Consultants. Government licensed recruitment for Poland, Romania, Croatia, Malta. Work permit assistance. No hidden fees.",
 };
 
 const countries = [
@@ -173,7 +173,7 @@ export default function JobsInEurope() {
               { value: "5 yrs", label: "Path to PR" },
               { value: "500+", label: "Workers Placed" },
               { value: "6", label: "Countries We Recruit" },
-              { value: "Zero", label: "Candidate Fees" },
+              { value: "No", label: "Hidden Fees" },
             ].map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#1e3a5f", lineHeight: 1 }}>{s.value}</div>

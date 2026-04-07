@@ -294,7 +294,7 @@ export default function SalaryCalculator() {
                   fontFamily: "var(--font-body)", fontSize: 14, color: "rgba(255,255,255,0.6)",
                   marginBottom: 16, lineHeight: 1.6,
                 }}>
-                  We have verified {job} openings in {country} right now. Apply for free — zero candidate fees guaranteed.
+                  We have verified {job} openings in {country} right now. Apply today — minimal charges, no hidden fees.
                 </p>
                 <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap" }}>
                   <a

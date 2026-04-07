@@ -80,7 +80,7 @@ export default function JobSeekerHero() {
                 width: 8, height: 8, borderRadius: "50%", backgroundColor: "#60a5fa",
                 display: "inline-block", animation: "pulse-dot 2s ease-in-out infinite",
               }} />
-              ZERO FEES &bull; 100% FREE FOR JOB SEEKERS
+              MINIMAL CHARGES &bull; NO HIDDEN FEES &bull; 100% TRANSPARENT
             </span>
           </div>
 
@@ -151,7 +151,7 @@ export default function JobSeekerHero() {
             {[
               { num: "5,000+", label: "Workers Placed" },
               { num: "12+", label: "Countries" },
-              { num: "Zero", label: "Fees Charged" },
+              { num: "100%", label: "Transparent Fees" },
             ].map((s) => (
               <div key={s.label}>
                 <span style={{

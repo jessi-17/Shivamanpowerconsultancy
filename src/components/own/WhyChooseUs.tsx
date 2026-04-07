@@ -12,7 +12,7 @@ const features = [
       </svg>
     ),
     title: "Zero Fraud Guarantee",
-    desc: "Our processes are documented and verified at every step. We are government-licensed (RA B-1794) with zero fraud complaints in 25+ years.",
+    desc: "Our processes are documented and verified at every step. We are government-licensed (RA B-1794) with zero fraud complaints in 20+ years.",
   },
   {
     icon: (
@@ -20,8 +20,8 @@ const features = [
         <line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
       </svg>
     ),
-    title: "No Hidden Commissions",
-    desc: "Total transparency in fee structures. We operate on an employer funded service model. Zero charges to candidates.",
+    title: "No Hidden Charges",
+    desc: "Total transparency in fee structures. Minimal, upfront service charges with no hidden commissions or surprise deductions.",
   },
   {
     icon: (
@@ -44,7 +44,7 @@ const features = [
 ];
 
 const stats = [
-  { num: "25+", label: "Years serving Punjab" },
+  { num: "20+", label: "Years serving India" },
   { num: "5,000+", label: "Workers placed" },
   { num: "Zero", label: "Fraud complaints" },
   { num: "3 Gen", label: "Families trust us" },

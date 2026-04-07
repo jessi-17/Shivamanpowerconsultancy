@@ -7,7 +7,7 @@ import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 export const metadata: Metadata = {
   title: "Jobs in Poland | Factory, Construction & Warehouse Work for Indians",
   description:
-    "Find factory, construction, and warehouse jobs in Poland. EU work permit with Schengen access and path to PR. Poland work permit agent in Punjab. Government licensed recruitment. Zero candidate fees.",
+    "Find factory, construction, and warehouse jobs in Poland. EU work permit with Schengen access and path to PR. Poland work permit agent in Punjab. Government licensed recruitment. No hidden fees.",
 };
 
 const jobCategories = [
@@ -148,7 +148,7 @@ export default function JobsInPoland() {
               { value: "27", label: "Schengen Countries" },
               { value: "500+", label: "Workers Placed" },
               { value: "PLN 4,300", label: "Minimum Wage/Mo" },
-              { value: "Zero", label: "Candidate Fees" },
+              { value: "No", label: "Hidden Fees" },
             ].map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#991b1b", lineHeight: 1 }}>{s.value}</div>

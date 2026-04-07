@@ -7,7 +7,7 @@ import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 export const metadata: Metadata = {
   title: "Jobs in Saudi Arabia | Riyadh, Jeddah, Dammam Work Opportunities",
   description:
-    "Find high-paying jobs in Saudi Arabia through Shiva Travel & Manpower Consultants. Government licensed recruitment for Riyadh, Jeddah, Dammam. Construction, oil & gas, hospitality jobs. Zero candidate fees.",
+    "Find high-paying jobs in Saudi Arabia through Shiva Travel & Manpower Consultants. Government licensed recruitment for Riyadh, Jeddah, Dammam. Construction, oil & gas, hospitality jobs. No hidden fees.",
 };
 
 const jobCategories = [
@@ -148,7 +148,7 @@ export default function JobsInSaudi() {
               { value: "1,500+", label: "Workers Placed" },
               { value: "0%", label: "Income Tax" },
               { value: "4-5 hrs", label: "Flight from Punjab" },
-              { value: "Zero", label: "Candidate Fees" },
+              { value: "No", label: "Hidden Fees" },
             ].map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#1a472a", lineHeight: 1 }}>{s.value}</div>

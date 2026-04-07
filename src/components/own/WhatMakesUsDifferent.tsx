@@ -7,7 +7,7 @@ import { gsap } from "@/lib/gsap";
 
 const points = [
   "Government licensed (RA B-1794/PUN). Not a freelance agent operating from a back office.",
-  "Zero candidate fees. Our revenue comes from employers, not from workers' pockets.",
+  "Minimal & transparent charges. No hidden fees — every cost is communicated upfront before you proceed.",
   "Walk-in office in Nakodar. Meet us face to face, verify our credentials, ask any question.",
   "Post deployment support. We don't disappear after you land. Our team stays in touch until you're settled.",
 ];
@@ -102,13 +102,13 @@ export default function WhatMakesUsDifferent() {
               fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800,
               color: "#60a5fa", marginBottom: 2,
             }}>
-              25+
+              20+
             </p>
             <p style={{
               fontFamily: "var(--font-body)", fontSize: 12,
               color: "rgba(255,255,255,0.7)", lineHeight: 1.4,
             }}>
-              Years serving families in Nakodar &amp; Jalandhar
+              Years serving families across India
             </p>
           </div>
         </div>
@@ -157,9 +157,9 @@ export default function WhatMakesUsDifferent() {
               maxWidth: 520,
             }}
           >
-            Punjab has hundreds of recruitment agents. Most operate without proper licensing,
+            India has hundreds of recruitment agents. Most operate without proper licensing,
             charge hidden fees, and vanish after collecting money. Shiva Manpower Consultants has
-            built its reputation over 25 years by doing the exact opposite.
+            built its reputation over 20 years by doing the exact opposite.
           </p>
 
           {/* Bullet points */}
