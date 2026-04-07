@@ -613,7 +613,7 @@ export default async function BlogPostPage({
               }}
             >
               Get in touch with our team for genuine job opportunities abroad.
-              Zero fees, government licensed, 25+ years of trust.
+              No hidden fees, government licensed, 20+ years of trust.
             </p>
             <div
               style={{
