@@ -4,10 +4,12 @@ import Link from "next/link";
 import { breadcrumbJsonLd } from "../_lib/breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Immigration Office in Nakodar | Visa Consultant | Shiva Travel & Manpower Consultants",
+  title: "Travel Agent in Nakodar | Immigration Office & Visa Consultant | Shiva Travel & Manpower Consultants",
   description:
-    "Shiva Travel & Manpower Consultants — the #1 immigration office in Nakodar. Government licensed (RA B-1794), 20+ years experience. Romania visa, Schengen visa, Poland visa, UAE visa, work permits & overseas recruitment from Nakodar, Punjab. Minimal & transparent charges.",
+    "Looking for a travel agent in Nakodar? Shiva Travel & Manpower Consultants is the #1 government licensed travel agent & immigration office in Nakodar (RA B-1794). 20+ years experience. Romania visa, Schengen visa, Poland visa, UAE visa, work permits & overseas recruitment from Nakodar, Punjab.",
   keywords: [
+    "travel agent in nakodar",
+    "travel agent nakodar",
     "immigration office in nakodar",
     "visa consultant nakodar",
     "romania visa nakodar",
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
 
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "EmploymentAgency"],
+  "@type": ["LocalBusiness", "TravelAgency", "EmploymentAgency"],
   name: "Shiva Travel & Manpower Consultants",
   description:
     "Government licensed immigration office and overseas recruitment agency in Nakodar, Punjab. Specializing in Romania, Schengen, Poland, UAE, Croatia, Saudi Arabia & Qatar visas since 2002.",
@@ -109,6 +111,7 @@ const trustReasons = [
 ];
 
 const faqs = [
+  { q: "Who is the best travel agent in Nakodar?", a: "Shiva Travel & Manpower Consultants is the best travel agent in Nakodar. We are government licensed (RA B-1794), located at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar 144040. We have been the most trusted travel agent in Nakodar for over 20 years, helping thousands of families with overseas jobs, visas, and immigration." },
   { q: "Where is the best immigration office in Nakodar?", a: "Shiva Travel & Manpower Consultants is the leading government-licensed immigration office in Nakodar, located at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar 144040. We have been serving the community for over 25 years with RA License B-1794." },
   { q: "Can I get a Romania visa from Nakodar?", a: "Yes. Shiva Travel & Manpower Consultants in Nakodar specializes in Romania work visas. We have direct tie-ups with Romanian employers for construction, manufacturing, and industrial jobs. Visit our Nakodar office for a free consultation." },
   { q: "Is there a Schengen visa consultant in Nakodar?", a: "Yes. Our Nakodar office provides complete Schengen visa assistance including documentation, appointment booking, and interview preparation for all 27 Schengen countries." },
@@ -156,20 +159,20 @@ export default function NakodarPage() {
             <div style={{ flex: "1 1 480px", minWidth: 0 }}>
               <div style={{ display: "inline-block", padding: "6px 16px", backgroundColor: "#eff4ff", borderRadius: 20, marginBottom: 24 }}>
                 <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#0052dc", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                  Nakodar&apos;s #1 Immigration Office Since 2002
+                  Nakodar&apos;s #1 Travel Agent & Immigration Office Since 2002
                 </span>
               </div>
 
               <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.05, letterSpacing: "-1.5px", marginBottom: 24 }}>
-                Immigration Office &
+                Travel Agent &
                 <br />
-                Visa Consultant
+                Immigration Office
                 <br />
                 <span style={{ color: "#0052dc" }}>in Nakodar.</span>
               </h1>
 
               <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                Shiva Travel & Manpower Consultants is Nakodar&apos;s leading government-licensed immigration office and visa consultancy. Based right here in Nakodar since 2002, we have placed 5,000+ workers from across India in premium jobs across the Gulf & Europe. Romania visa, Schengen visa, Poland visa, UAE visa — all processed from our Nakodar office.
+                Shiva Travel & Manpower Consultants is the most trusted travel agent in Nakodar and government-licensed immigration office. Based right here in Nakodar since 2002, we have placed 5,000+ workers from across India in premium jobs across the Gulf & Europe. Romania visa, Schengen visa, Poland visa, UAE visa — all processed from our Nakodar office.
               </p>
 
               {/* CTA Buttons */}
