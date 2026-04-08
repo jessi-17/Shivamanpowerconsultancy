@@ -8,6 +8,7 @@ import Link from "next/link";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
+  { label: "For Employers", href: "/employers" },
   { label: "Visa Services", href: "/services" },
   { label: "Salary Calculator", href: "/salary-calculator" },
   { label: "Success Stories", href: "/success-stories" },
@@ -24,7 +25,7 @@ export default function Navbar() {
   const m = useIsMobile();
   const pathname = usePathname();
 
-  const hasDarkHero = DARK_HERO_PAGES.includes(pathname) || pathname.startsWith("/blog");
+  const hasDarkHero = DARK_HERO_PAGES.includes(pathname) || pathname.startsWith("/blog") || pathname.startsWith("/employers/");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -93,7 +94,7 @@ export default function Navbar() {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "var(--spacing-8)",
+            gap: 20,
           }}
         >
           {navLinks.map((link) => (
@@ -102,8 +103,9 @@ export default function Navbar() {
               href={link.href}
               style={{
                 fontFamily: "var(--font-display)",
-                fontSize: 14,
+                fontSize: 13,
                 fontWeight: 500,
+                whiteSpace: "nowrap",
                 color: scrolled ? "var(--on-surface-variant)" : linkColor,
                 textDecoration: "none",
                 transition: "color 200ms ease",
