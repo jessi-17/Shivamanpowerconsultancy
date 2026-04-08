@@ -9,7 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: [
         "/api/",
-        "/*?l=*",
         "/*?utm_*",
         "/content.php",
         "/instructors/",
