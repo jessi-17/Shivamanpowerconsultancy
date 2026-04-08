@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getBlogs } from "./_lib/data/getBlogs";
+import { employerCountries } from "./_lib/data/employerCountries";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://shivatravelconsultant.in";
@@ -243,5 +244,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...blogPages];
+  const employerPages: MetadataRoute.Sitemap = employerCountries.map((c) => ({
+    url: `${baseUrl}/employers/${c.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.9,
+  }));
+
+  return [...staticPages, ...employerPages, ...blogPages];
 }
