@@ -7,22 +7,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: [
-        "/api/",
-        "/*?utm_*",
-        "/content.php",
-        "/instructors/",
-        "/four-slots-*",
-        "/pin-up-*",
-        "/browse-conditions-*",
-        "/strategies-for-*",
-        "/ein-aufregendes-*",
-        "/wp-*",
-        "/wp-admin/",
-        "/wp-content/",
-        "/wp-includes/",
-        "/*.php$",
-      ],
+      disallow: ["/api/", "/*?utm_*"],
     },
     sitemap: `${baseUrl}/sitemap.xml`,
   };
