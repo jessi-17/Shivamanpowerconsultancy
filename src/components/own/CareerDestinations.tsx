@@ -71,7 +71,7 @@ export default function CareerDestinations() {
               direct recruitment for skilled professionals across three continents.
             </p>
           </div>
-          <a
+          <Link
             href="/current-demands"
             style={{
               display: "inline-flex",
@@ -98,7 +98,7 @@ export default function CareerDestinations() {
             }}
           >
             View All Opportunities →
-          </a>
+          </Link>
         </div>
 
         {/* Featured destination cards */}
@@ -179,9 +179,9 @@ export default function CareerDestinations() {
             <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "rgba(255,255,255,0.6)", lineHeight: 1.5 }}>
               Qatar, Kuwait, Oman, Croatia, Bahrain & more.
             </p>
-            <a href="/current-demands" style={{ fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 600, color: "#60a5fa", textDecoration: "none" }}>
+            <Link href="/current-demands" style={{ fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 600, color: "#60a5fa", textDecoration: "none" }}>
               View All →
-            </a>
+            </Link>
           </div>
         </div>
 
