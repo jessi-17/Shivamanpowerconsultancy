@@ -80,7 +80,7 @@ export default function EmployersPage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
             {[...gulfCountries, ...europeCountries].map((c) => {
               const countryImages: Record<string, string> = {
-                uae: "/UAE.webp",
+                uae: "/UAE.jpg",
                 "saudi-arabia": "/Saudi arabia job.webp",
                 qatar: "/Blog-7.jpg",
                 kuwait: "/Blog-8.jpg",

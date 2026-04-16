@@ -1,66 +1,16 @@
 "use client";
 
-import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import EmployerQuoteForm from "./EmployerQuoteForm";
 
 export default function EmployerInquiryForm() {
   const ref = useScrollReveal();
   const m = useIsMobile();
-  const [form, setForm] = useState({
-    companyName: "", country: "", industry: "", workersNeeded: "",
-    contactPerson: "", email: "", phone: "", message: "",
-  });
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("loading");
-    try {
-      const res = await fetch("/api/employer-inquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (res.ok) {
-        setStatus("success");
-        setForm({ companyName: "", country: "", industry: "", workersNeeded: "", contactPerson: "", email: "", phone: "", message: "" });
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
-  };
-
-  const inputStyle: React.CSSProperties = {
-    width: "100%",
-    padding: m ? "8px 10px" : "14px 16px",
-    backgroundColor: "#f8f9ff",
-    border: "1.5px solid rgba(0,0,0,0.06)",
-    borderRadius: m ? 8 : 10,
-    fontFamily: "var(--font-body)",
-    fontSize: m ? 13 : 14,
-    color: "var(--on-surface)",
-    outline: "none",
-    transition: "border-color 150ms",
-  };
-
-  const labelStyle: React.CSSProperties = {
-    fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 600,
-    color: "var(--on-surface-variant)", marginBottom: 6, display: "block",
-  };
-
-  const focusHandler = (e: React.FocusEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    e.currentTarget.style.borderColor = "#0052dc";
-  };
-  const blurHandler = (e: React.FocusEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    e.currentTarget.style.borderColor = "rgba(0,0,0,0.06)";
-  };
 
   return (
     <div
-      id="inquiry-form"
+      id="inquiry-form-bottom"
       ref={ref}
       className="reveal"
       style={{
@@ -103,12 +53,12 @@ export default function EmployerInquiryForm() {
 
           <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
             {[
-              { icon: "check", text: "Free consultation & manpower audit" },
-              { icon: "check", text: "Customized recruitment plan within 24 hours" },
-              { icon: "check", text: "Dedicated account manager assigned" },
-              { icon: "check", text: "Full compliance & documentation support" },
-            ].map((item) => (
-              <div key={item.text} style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              "Free consultation & manpower audit",
+              "Customized recruitment plan within 24 hours",
+              "Dedicated account manager assigned",
+              "Full compliance & documentation support",
+            ].map((text) => (
+              <div key={text} style={{ display: "flex", alignItems: "center", gap: 12 }}>
                 <div style={{
                   width: 24, height: 24, borderRadius: "50%",
                   backgroundColor: "rgba(96,165,250,0.2)",
@@ -119,7 +69,7 @@ export default function EmployerInquiryForm() {
                   </svg>
                 </div>
                 <span style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "rgba(255,255,255,0.8)" }}>
-                  {item.text}
+                  {text}
                 </span>
               </div>
             ))}
@@ -136,114 +86,7 @@ export default function EmployerInquiryForm() {
 
       {/* Right — form */}
       <div style={{ flex: "1 1 400px", backgroundColor: "#fff", padding: m ? "32px 20px" : "48px 40px" }}>
-        <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: m ? 8 : 16 }}>
-          <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-            <div style={{ flex: "1 1 200px" }}>
-              <label style={labelStyle}>COMPANY NAME</label>
-              <input type="text" placeholder="Your company" value={form.companyName}
-                onChange={(e) => setForm({ ...form, companyName: e.target.value })}
-                required style={inputStyle} onFocus={focusHandler} onBlur={blurHandler} />
-            </div>
-            <div style={{ flex: "1 1 200px" }}>
-              <label style={labelStyle}>COUNTRY</label>
-              <input type="text" placeholder="e.g. Saudi Arabia, UAE" value={form.country}
-                onChange={(e) => setForm({ ...form, country: e.target.value })}
-                style={inputStyle} onFocus={focusHandler} onBlur={blurHandler} />
-            </div>
-          </div>
-
-          <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-            <div style={{ flex: "1 1 200px" }}>
-              <label style={labelStyle}>INDUSTRY</label>
-              <select value={form.industry}
-                onChange={(e) => setForm({ ...form, industry: e.target.value })}
-                style={{ ...inputStyle, appearance: "none", cursor: "pointer" }}
-                onFocus={focusHandler} onBlur={blurHandler}>
-                <option value="">Select Industry</option>
-                <option value="Construction">Construction</option>
-                <option value="Manufacturing">Manufacturing</option>
-                <option value="Oil & Gas">Oil &amp; Gas</option>
-                <option value="Hospitality">Hospitality</option>
-                <option value="Healthcare">Healthcare</option>
-                <option value="Logistics">Logistics</option>
-                <option value="Retail">Retail</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div style={{ flex: "1 1 200px" }}>
-              <label style={labelStyle}>WORKERS NEEDED</label>
-              <select value={form.workersNeeded}
-                onChange={(e) => setForm({ ...form, workersNeeded: e.target.value })}
-                style={{ ...inputStyle, appearance: "none", cursor: "pointer" }}
-                onFocus={focusHandler} onBlur={blurHandler}>
-                <option value="">Select Range</option>
-                <option value="1-10">1 – 10</option>
-                <option value="10-50">10 – 50</option>
-                <option value="50-100">50 – 100</option>
-                <option value="100-500">100 – 500</option>
-                <option value="500+">500+</option>
-              </select>
-            </div>
-          </div>
-
-          <div>
-            <label style={labelStyle}>CONTACT PERSON</label>
-            <input type="text" placeholder="Your name" value={form.contactPerson}
-              onChange={(e) => setForm({ ...form, contactPerson: e.target.value })}
-              required style={inputStyle} onFocus={focusHandler} onBlur={blurHandler} />
-          </div>
-
-          <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-            <div style={{ flex: "1 1 200px" }}>
-              <label style={labelStyle}>EMAIL</label>
-              <input type="email" placeholder="company@email.com" value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                required style={inputStyle} onFocus={focusHandler} onBlur={blurHandler} />
-            </div>
-            <div style={{ flex: "1 1 200px" }}>
-              <label style={labelStyle}>PHONE</label>
-              <input type="tel" placeholder="+966 / +971" value={form.phone}
-                onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                style={inputStyle} onFocus={focusHandler} onBlur={blurHandler} />
-            </div>
-          </div>
-
-          <div>
-            <label style={labelStyle}>YOUR REQUIREMENTS</label>
-            <textarea placeholder="Describe the roles, skills, and any other specifics..."
-              value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
-              rows={3}
-              style={{ ...inputStyle, resize: "vertical" }}
-              onFocus={focusHandler} onBlur={blurHandler} />
-          </div>
-
-          <button
-            type="submit"
-            disabled={status === "loading"}
-            style={{
-              width: "100%", padding: m ? "10px" : "16px",
-              backgroundColor: "#0052dc", color: "#fff",
-              fontFamily: "var(--font-display)", fontSize: m ? 14 : 16, fontWeight: 700,
-              border: "none", borderRadius: 12,
-              cursor: status === "loading" ? "wait" : "pointer",
-              transition: "all 150ms cubic-bezier(0.16,1,0.3,1)",
-              opacity: status === "loading" ? 0.7 : 1,
-            }}
-            onMouseEnter={(e) => {
-              if (status !== "loading") {
-                e.currentTarget.style.transform = "translateY(-2px)";
-                e.currentTarget.style.boxShadow = "0 6px 20px rgba(0,82,220,0.35)";
-              }
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "none";
-            }}
-          >
-            {status === "loading" ? "Submitting..." : status === "success" ? "Submitted! We'll contact you within 24 hours." : status === "error" ? "Something went wrong. Try again." : "Submit Inquiry"}
-          </button>
-        </form>
+        <EmployerQuoteForm />
       </div>
     </div>
   );

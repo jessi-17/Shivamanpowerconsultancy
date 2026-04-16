@@ -3,21 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../_lib/breadcrumb";
 import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
+import { readDemands } from "../api/admin/demands/route";
+import { DemandCard, DemandsEmpty } from "@/components/own/DemandCard";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Current Demands | Shiva Travel & Manpower Consultants Nakodar",
   description:
     "Browse current overseas job openings across Gulf and European countries. Construction, factory, driving, hospitality, healthcare and more. Transparent and affordable service charges. Government licensed agency in Nakodar, Punjab.",
 };
-
-const destinations = [
-  { flag: "\u{1F1E6}\u{1F1EA}", country: "UAE", sectors: ["Construction", "Factory", "Driving", "Hospitality"], href: "/jobs/uae" },
-  { flag: "\u{1F1F8}\u{1F1E6}", country: "Saudi Arabia", sectors: ["Oil & Gas", "Construction", "Healthcare"], href: "/jobs/saudi-arabia" },
-  { flag: "\u{1F1F6}\u{1F1E6}", country: "Qatar", sectors: ["Construction", "Transport", "Hospitality"], href: "/jobs/qatar" },
-  { flag: "\u{1F1F5}\u{1F1F1}", country: "Poland", sectors: ["Factory", "Food Processing", "Agriculture"], href: "/jobs/poland" },
-  { flag: "\u{1F1F7}\u{1F1F4}", country: "Romania", sectors: ["Construction", "Manufacturing", "Agriculture"], href: "/jobs/romania" },
-  { flag: "\u{1F1EA}\u{1F1FA}", country: "Europe", sectors: ["Croatia", "Malta", "Hungary", "Czech Republic"], href: "/jobs/europe" },
-];
 
 const steps = [
   { num: "01", title: "Walk In or Call", desc: "Visit our office in Nakodar or call us directly at +91 98148-20432. No appointment needed." },
@@ -27,6 +22,7 @@ const steps = [
 ];
 
 export default function CurrentDemands() {
+  const demands = readDemands();
   return (
     <>
       <script
@@ -76,7 +72,7 @@ export default function CurrentDemands() {
             {/* Right — Image with overlay stat */}
             <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
               <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/overseasplacement.png" alt="Overseas job placement opportunities across the globe" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
+                <Image src="/Professional Indian executive.webp" alt="Professional placement candidates ready for overseas opportunities" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
               </div>
               <div style={{ position: "absolute", bottom: -20, right: 24, backgroundColor: "#001f5d", borderRadius: 12, padding: "20px 28px", boxShadow: "0 8px 32px rgba(0,12,47,0.3)" }}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff", lineHeight: 1 }}>500+</div>
@@ -105,59 +101,25 @@ export default function CurrentDemands() {
           </div>
         </section>
 
-        {/* ===== FEATURED DESTINATIONS ===== */}
+        {/* ===== LIVE DEMANDS ===== */}
         <section style={{ padding: "80px 0", backgroundColor: "#f8f9ff" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
             <div style={{ textAlign: "center", marginBottom: 56 }}>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>Featured Destinations</h2>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>Live Demands</h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
-                Explore job opportunities by country. Each destination has verified employers and active openings across multiple sectors.
+                Every demand below is a current opening from a verified employer. Tap a card to apply — our team will call you back.
               </p>
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 360px), 1fr))", gap: 24 }}>
-              {destinations.map((d) => (
-                <Link
-                  key={d.country}
-                  href={d.href}
-                  style={{
-                    backgroundColor: "#ffffff",
-                    borderRadius: 16,
-                    padding: "36px 32px",
-                    border: "1px solid #e5e7eb",
-                    textDecoration: "none",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 16,
-                    transition: "box-shadow 0.2s, border-color 0.2s",
-                  }}
-                >
-                  <div style={{ fontSize: 40, lineHeight: 1 }}>{d.flag}</div>
-                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 700, color: "#0b1c30" }}>{d.country}</h3>
-                  <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                    {d.sectors.map((sector) => (
-                      <span
-                        key={sector}
-                        style={{
-                          fontFamily: "var(--font-body)",
-                          fontSize: 12,
-                          fontWeight: 600,
-                          color: "#0052dc",
-                          backgroundColor: "#eff4ff",
-                          padding: "4px 12px",
-                          borderRadius: 20,
-                        }}
-                      >
-                        {sector}
-                      </span>
-                    ))}
-                  </div>
-                  <div style={{ fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 700, color: "#0052dc", marginTop: "auto" }}>
-                    View Jobs &rarr;
-                  </div>
-                </Link>
-              ))}
-            </div>
+            {demands.length === 0 ? (
+              <DemandsEmpty />
+            ) : (
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: 24 }}>
+                {demands.map((d) => (
+                  <DemandCard key={d.id} demand={d} />
+                ))}
+              </div>
+            )}
           </div>
         </section>
 

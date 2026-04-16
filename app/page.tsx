@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import HeroSection from "@/components/own/HeroSection";
 import TrustBar from "@/components/own/TrustBar";
+import SubmissionToast from "@/components/own/SubmissionToast";
 import { breadcrumbJsonLd } from "./_lib/breadcrumb";
 
 // Lazy load all below-fold components — only HeroSection + TrustBar load immediately
@@ -94,6 +95,7 @@ export default function Home() {
           { name: "Home", href: "/" },
         ])) }}
       />
+      <SubmissionToast />
       <HeroSection />
       <TrustBar />
       <LocalCTA />
