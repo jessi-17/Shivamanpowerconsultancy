@@ -31,17 +31,13 @@ export function DemandCard({ demand }: { demand: Demand }) {
         e.currentTarget.style.borderColor = "#e5e7eb";
       }}
     >
-      {/* Poster — full image, no cropping */}
+      {/* Poster — always fills the space */}
       <div
         style={{
           width: "100%",
-          height: 280,
+          aspectRatio: "4/5",
           backgroundColor: "#f1f5f9",
-          backgroundImage: "linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%)",
           position: "relative",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
           overflow: "hidden",
         }}
       >
@@ -53,14 +49,25 @@ export function DemandCard({ demand }: { demand: Demand }) {
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "contain",
+              objectFit: "cover",
               display: "block",
             }}
           />
         ) : (
-          <span style={{ color: "#94a3b8", fontFamily: "var(--font-body)", fontSize: 13 }}>
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "#94a3b8",
+              fontFamily: "var(--font-body)",
+              fontSize: 13,
+            }}
+          >
             No poster
-          </span>
+          </div>
         )}
 
         {demand.country && (
@@ -87,11 +94,11 @@ export function DemandCard({ demand }: { demand: Demand }) {
       </div>
 
       {/* Body */}
-      <div style={{ padding: "20px 22px 22px", display: "flex", flexDirection: "column", gap: 10, flex: 1 }}>
+      <div style={{ padding: "16px 18px 18px", display: "flex", flexDirection: "column", gap: 8, flex: 1 }}>
         <h3
           style={{
             fontFamily: "var(--font-display)",
-            fontSize: 17,
+            fontSize: 15,
             fontWeight: 700,
             color: "#0b1c30",
             lineHeight: 1.3,
