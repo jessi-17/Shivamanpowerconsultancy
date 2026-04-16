@@ -1,8 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+
+function FormPrefill({ onPrefill }: { onPrefill: (patch: { interest?: string; message?: string }) => void }) {
+  const searchParams = useSearchParams();
+  useEffect(() => {
+    const interest = searchParams.get("interest");
+    const demand = searchParams.get("demand");
+    const patch: { interest?: string; message?: string } = {};
+    if (interest) patch.interest = interest;
+    if (demand) patch.message = `I would like to apply for: ${demand}`;
+    if (Object.keys(patch).length) onPrefill(patch);
+  }, [searchParams, onPrefill]);
+  return null;
+}
 
 export default function ContactUsPage() {
   const m = useIsMobile();
@@ -85,6 +99,9 @@ export default function ContactUsPage() {
 
   return (
     <main className="contact-page" style={{ backgroundColor: "#f8f9ff" }}>
+      <Suspense fallback={null}>
+        <FormPrefill onPrefill={(patch) => setForm((prev) => ({ ...prev, ...patch }))} />
+      </Suspense>
       {/* ===== HERO SECTION ===== */}
       <section
         ref={heroRef}
