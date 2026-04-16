@@ -1,14 +1,28 @@
 "use client";
 
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import type { Demand } from "../../../app/api/admin/demands/route";
+import ShareButtons from "@/components/own/ShareButtons";
 
 export function DemandCard({ demand }: { demand: Demand }) {
-  const href = `/contactus?interest=${encodeURIComponent(demand.country || "")}&demand=${encodeURIComponent(demand.title)}`;
+  const router = useRouter();
+  const href = `/current-demands/${demand.id}`;
+
+  const goToDetail = () => {
+    router.push(href);
+  };
 
   return (
-    <Link
-      href={href}
+    <div
+      role="link"
+      tabIndex={0}
+      onClick={goToDetail}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          goToDetail();
+        }
+      }}
       style={{
         display: "flex",
         flexDirection: "column",
@@ -16,7 +30,7 @@ export function DemandCard({ demand }: { demand: Demand }) {
         border: "1px solid #e5e7eb",
         borderRadius: 20,
         overflow: "hidden",
-        textDecoration: "none",
+        cursor: "pointer",
         boxShadow: "0 2px 8px rgba(0,12,47,0.05), 0 1px 3px rgba(0,12,47,0.03)",
         transition: "transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease",
       }}
@@ -117,7 +131,7 @@ export function DemandCard({ demand }: { demand: Demand }) {
               fontFamily: "var(--font-body)",
               fontSize: 13,
               color: "#64748b",
-              lineHeight: 1.6,
+              lineHeight: 1.55,
               display: "-webkit-box",
               WebkitLineClamp: 2,
               WebkitBoxOrient: "vertical",
@@ -162,21 +176,33 @@ export function DemandCard({ demand }: { demand: Demand }) {
           </div>
         )}
 
+        {/* Footer: share + apply */}
         <div
           style={{
-            fontFamily: "var(--font-body)",
-            fontSize: 13,
-            fontWeight: 700,
-            color: "#0052dc",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
             marginTop: "auto",
             paddingTop: 10,
             borderTop: "1px solid #f1f5f9",
+            gap: 10,
           }}
         >
-          Apply Now &rarr;
+          <ShareButtons path={href} text={demand.title} size="sm" />
+          <span
+            style={{
+              fontFamily: "var(--font-body)",
+              fontSize: 12,
+              fontWeight: 700,
+              color: "#0052dc",
+              whiteSpace: "nowrap",
+            }}
+          >
+            Apply &rarr;
+          </span>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
 

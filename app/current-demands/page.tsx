@@ -7,6 +7,7 @@ import { readDemands } from "../api/admin/demands/route";
 import { readOffer } from "../api/admin/offer/route";
 import { DemandCard, DemandsEmpty } from "@/components/own/DemandCard";
 import SidePosterRails from "@/components/own/SidePosterRails";
+import DemandsTicker from "@/components/own/DemandsTicker";
 
 export const dynamic = "force-dynamic";
 
@@ -25,7 +26,7 @@ const steps = [
 
 export default function CurrentDemands() {
   const demands = readDemands();
-  const offer = readOffer();
+  const offer = readOffer("gulf");
   return (
     <>
       <script
@@ -39,11 +40,12 @@ export default function CurrentDemands() {
           ),
         }}
       />
-      <main className="cd-page" style={{ backgroundColor: "#f8f9ff", position: "relative" }}>
+      <main className="cd-page" style={{ backgroundColor: "#f8f9ff", position: "relative", paddingTop: 80 }}>
         <SidePosterRails
           leftImages={offer.leftMarqueeImages}
           rightImages={offer.rightMarqueeImages}
         />
+        <DemandsTicker demands={demands} />
         <style>{`
           @media (min-width: 1200px) {
             .cd-page .cd-inner { padding-left: 220px !important; padding-right: 220px !important; }
@@ -51,7 +53,7 @@ export default function CurrentDemands() {
         `}</style>
         <div className="cd-inner">
         {/* ===== HERO — Split Layout ===== */}
-        <section style={{ paddingTop: 120, paddingBottom: 80, backgroundColor: "#f8f9ff" }}>
+        <section style={{ paddingTop: 48, paddingBottom: 80, backgroundColor: "#f8f9ff" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
             {/* Left — Text */}
             <div style={{ flex: "1 1 480px", minWidth: 0 }}>
@@ -94,23 +96,6 @@ export default function CurrentDemands() {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* ===== STATS BAR ===== */}
-        <section style={{ padding: "60px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb", borderBottom: "1px solid #e5e7eb" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", justifyContent: "center", gap: 60, flexWrap: "wrap" }}>
-            {[
-              { value: "12+", label: "Active Countries" },
-              { value: "500+", label: "Openings This Month" },
-              { value: "30-60", label: "Days Avg Processing" },
-              { value: "No", label: "Hidden Fees" },
-            ].map((s) => (
-              <div key={s.label} style={{ textAlign: "center" }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#001f5d", lineHeight: 1 }}>{s.value}</div>
-                <div style={{ fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 600, color: "#64748b", letterSpacing: "0.05em", textTransform: "uppercase", marginTop: 4 }}>{s.label}</div>
-              </div>
-            ))}
           </div>
         </section>
 

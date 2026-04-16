@@ -7,7 +7,7 @@ import LeadPopup from "@/components/own/LeadPopup";
 import ExitIntentPopup from "@/components/own/ExitIntentPopup";
 import FloatingCTA from "@/components/own/FloatingCTA";
 
-const NO_CHROME_PATHS = ["/offer"];
+const NO_CHROME_PATHS = ["/offer", "/current-demands", "/admin"];
 
 export default function SiteChrome() {
   const pathname = usePathname();

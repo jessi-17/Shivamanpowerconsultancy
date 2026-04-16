@@ -183,7 +183,7 @@ export default function SidePosterRails({
       <style>{`
         .poster-rail {
           position: fixed;
-          top: 96px;
+          top: 140px;
           bottom: 20px;
           width: 180px;
           overflow: hidden;

@@ -2,10 +2,11 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import type { OfferContent } from "../api/admin/offer/route";
-import type { Demand } from "../api/admin/demands/route";
+import type { OfferContent, Region } from "../../api/admin/offer/route";
+import type { Demand } from "../../api/admin/demands/route";
 import { DemandCard, DemandsEmpty } from "@/components/own/DemandCard";
 import SidePosterRails from "@/components/own/SidePosterRails";
+import DemandsTicker from "@/components/own/DemandsTicker";
 
 declare global {
   interface Window {
@@ -15,24 +16,44 @@ declare global {
 
 const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "fbclid"];
 
-function CountryOptions() {
+function CountryOptions({ region }: { region: Region }) {
+  if (region === "europe") {
+    return (
+      <>
+        <option value="">Select Country</option>
+        <option value="Poland">Poland</option>
+        <option value="Romania">Romania</option>
+        <option value="Croatia">Croatia</option>
+        <option value="Malta">Malta</option>
+        <option value="Hungary">Hungary</option>
+        <option value="Czech Republic">Czech Republic</option>
+        <option value="Other">Other</option>
+      </>
+    );
+  }
   return (
     <>
       <option value="">Select Country</option>
       <option value="UAE">UAE</option>
       <option value="Saudi Arabia">Saudi Arabia</option>
       <option value="Qatar">Qatar</option>
-      <option value="Poland">Poland</option>
-      <option value="Romania">Romania</option>
       <option value="Kuwait">Kuwait</option>
       <option value="Bahrain">Bahrain</option>
-      <option value="Croatia">Croatia</option>
+      <option value="Oman">Oman</option>
       <option value="Other">Other</option>
     </>
   );
 }
 
-function OfferInner({ offer, demands }: { offer: OfferContent; demands: Demand[] }) {
+function OfferInner({
+  offer,
+  demands,
+  region,
+}: {
+  offer: OfferContent;
+  demands: Demand[];
+  region: Region;
+}) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -55,7 +76,10 @@ function OfferInner({ offer, demands }: { offer: OfferContent; demands: Demand[]
       const v = searchParams.get(key);
       if (v) utmParts.push(`${key}=${v}`);
     }
-    const utmSuffix = utmParts.length ? `\n\n--- source: /offer ${utmParts.join(" ")}` : "\n\n--- source: /offer";
+    const source = `/offer/${region}`;
+    const utmSuffix = utmParts.length
+      ? `\n\n--- source: ${source} ${utmParts.join(" ")}`
+      : `\n\n--- source: ${source}`;
 
     try {
       const res = await fetch("/api/submit-form", {
@@ -64,7 +88,7 @@ function OfferInner({ offer, demands }: { offer: OfferContent; demands: Demand[]
         body: JSON.stringify({
           ...form,
           email: form.email || `noemail+${Date.now()}@offer.local`,
-          message: (form.message || "Ad landing page lead") + utmSuffix,
+          message: (form.message || `Ad landing page lead (${region})`) + utmSuffix,
         }),
       });
 
@@ -99,13 +123,40 @@ function OfferInner({ offer, demands }: { offer: OfferContent; demands: Demand[]
       style={{
         minHeight: "100vh",
         backgroundColor: "#ffffff",
-        backgroundImage:
-          "radial-gradient(1000px 500px at 50% -10%, rgba(0,82,220,0.06), transparent 60%)",
         paddingTop: 90,
         paddingBottom: 60,
         position: "relative",
       }}
     >
+      {/* Faint region background */}
+      {offer.bgImage && (
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: `url(${offer.bgImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.08,
+            pointerEvents: "none",
+            zIndex: 0,
+          }}
+        />
+      )}
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: "radial-gradient(1000px 500px at 50% -10%, rgba(0,82,220,0.06), transparent 60%)",
+          pointerEvents: "none",
+          zIndex: 0,
+        }}
+      />
+
+      <DemandsTicker demands={demands} />
+
       <SidePosterRails
         leftImages={offer.leftMarqueeImages}
         rightImages={offer.rightMarqueeImages}
@@ -123,6 +174,8 @@ function OfferInner({ offer, demands }: { offer: OfferContent; demands: Demand[]
           flexDirection: "column",
           gap: 28,
           position: "relative",
+          zIndex: 1,
+          marginTop: 24,
         }}
       >
         {/* Hero */}
@@ -225,7 +278,7 @@ function OfferInner({ offer, demands }: { offer: OfferContent; demands: Demand[]
                 style={{ ...inputStyle, appearance: "none", cursor: "pointer" }}
                 required
               >
-                <CountryOptions />
+                <CountryOptions region={region} />
               </select>
               <select
                 value={form.experience}
@@ -318,6 +371,7 @@ function OfferInner({ offer, demands }: { offer: OfferContent; demands: Demand[]
           margin: "80px auto 0",
           padding: "0 24px",
           position: "relative",
+          zIndex: 1,
         }}
       >
         <div style={{ textAlign: "center", marginBottom: 40 }}>
@@ -359,7 +413,7 @@ function OfferInner({ offer, demands }: { offer: OfferContent; demands: Demand[]
               margin: "0 auto",
             }}
           >
-            Tap a country to apply — our team will reach out once you fill the quick form.
+            Tap a card to see details and apply — our team will reach out once you fill the quick form.
           </p>
         </div>
 
@@ -390,7 +444,15 @@ function OfferInner({ offer, demands }: { offer: OfferContent; demands: Demand[]
   );
 }
 
-export default function OfferClient({ offer, demands }: { offer: OfferContent; demands: Demand[] }) {
+export default function OfferClient({
+  offer,
+  demands,
+  region,
+}: {
+  offer: OfferContent;
+  demands: Demand[];
+  region: Region;
+}) {
   useEffect(() => {
     document.body.style.backgroundColor = "#ffffff";
     return () => {
@@ -400,7 +462,7 @@ export default function OfferClient({ offer, demands }: { offer: OfferContent; d
 
   return (
     <Suspense fallback={<div style={{ minHeight: "100vh", backgroundColor: "#ffffff" }} />}>
-      <OfferInner offer={offer} demands={demands} />
+      <OfferInner offer={offer} demands={demands} region={region} />
     </Suspense>
   );
 }

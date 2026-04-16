@@ -36,10 +36,29 @@ export async function POST(req: NextRequest) {
   const adminPassword = process.env.ADMIN_PASSWORD || "shiva2025";
 
   if (password === adminPassword) {
-    // Reset attempts on success
     attempts.delete(ip);
-    return NextResponse.json({ success: true });
+    const res = NextResponse.json({ success: true });
+    res.cookies.set("admin_session", adminPassword, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      path: "/",
+      maxAge: 60 * 60 * 24 * 7, // 7 days
+    });
+    return res;
   }
 
   return NextResponse.json({ error: "Invalid password" }, { status: 401 });
+}
+
+export async function DELETE() {
+  const res = NextResponse.json({ success: true });
+  res.cookies.set("admin_session", "", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    path: "/",
+    maxAge: 0,
+  });
+  return res;
 }
