@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useMemo, useState, useCallback } from "react";
 import Link from "next/link";
 
 type Region = "gulf" | "europe";
@@ -46,7 +46,10 @@ export default function AdminOfferPage() {
 
   // Defensive merge with emptyOffer so any missing field from a legacy API response
   // doesn't cause a runtime crash (e.g. undefined arrays before we call .length).
-  const offer: OfferContent = { ...emptyOffer, ...(file[region] ?? {}) };
+  const offer: OfferContent = useMemo(
+    () => ({ ...emptyOffer, ...(file[region] ?? {}) }),
+    [file, region]
+  );
   const setOffer = (updater: (prev: OfferContent) => OfferContent) => {
     setFile((prev) => {
       const safePrev = { ...emptyOffer, ...(prev[region] ?? {}) };
