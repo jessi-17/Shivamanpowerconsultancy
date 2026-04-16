@@ -3,6 +3,8 @@
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 
+type Region = "gulf" | "europe";
+
 interface OfferContent {
   heading: string;
   subheading: string;
@@ -11,8 +13,11 @@ interface OfferContent {
   formSubtitle: string;
   leftMarqueeImages: string[];
   rightMarqueeImages: string[];
+  bgImage: string;
   updatedAt: string;
 }
+
+type OfferFile = Record<Region, OfferContent>;
 
 const emptyOffer: OfferContent = {
   heading: "",
@@ -22,21 +27,46 @@ const emptyOffer: OfferContent = {
   formSubtitle: "",
   leftMarqueeImages: [],
   rightMarqueeImages: [],
+  bgImage: "",
   updatedAt: "",
 };
 
+const REGION_LABEL: Record<Region, string> = {
+  gulf: "Gulf",
+  europe: "Europe",
+};
+
 export default function AdminOfferPage() {
-  const [offer, setOffer] = useState<OfferContent>(emptyOffer);
+  const [file, setFile] = useState<OfferFile>({ gulf: emptyOffer, europe: emptyOffer });
+  const [region, setRegion] = useState<Region>("gulf");
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
-  const [uploadingSide, setUploadingSide] = useState<"left" | "right" | null>(null);
+  const [uploadingField, setUploadingField] = useState<"left" | "right" | "bg" | null>(null);
+
+  // Defensive merge with emptyOffer so any missing field from a legacy API response
+  // doesn't cause a runtime crash (e.g. undefined arrays before we call .length).
+  const offer: OfferContent = { ...emptyOffer, ...(file[region] ?? {}) };
+  const setOffer = (updater: (prev: OfferContent) => OfferContent) => {
+    setFile((prev) => {
+      const safePrev = { ...emptyOffer, ...(prev[region] ?? {}) };
+      return { ...prev, [region]: updater(safePrev) };
+    });
+  };
 
   useEffect(() => {
     fetch("/api/admin/offer")
       .then((r) => r.json())
-      .then((data: OfferContent) => {
-        setOffer(data);
+      .then((data: Partial<OfferFile> | OfferContent) => {
+        // If the API returned the legacy flat shape, treat it as gulf
+        const isLegacy = data && typeof data === "object" && !("gulf" in data) && "heading" in data;
+        const file: OfferFile = isLegacy
+          ? { gulf: { ...emptyOffer, ...(data as OfferContent) }, europe: emptyOffer }
+          : {
+              gulf: { ...emptyOffer, ...((data as Partial<OfferFile>).gulf ?? {}) },
+              europe: { ...emptyOffer, ...((data as Partial<OfferFile>).europe ?? {}) },
+            };
+        setFile(file);
         setLoading(false);
       });
   }, []);
@@ -47,27 +77,27 @@ export default function AdminOfferPage() {
     const res = await fetch("/api/admin/offer", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(offer),
+      body: JSON.stringify({ region, ...offer }),
     });
     if (res.ok) {
       const data: OfferContent = await res.json();
-      setOffer(data);
+      setFile((prev) => ({ ...prev, [region]: data }));
       setSaved(true);
       setTimeout(() => setSaved(false), 3000);
     }
     setSaving(false);
-  }, [offer]);
+  }, [region, offer]);
 
   const handleImageUpload = async (
     e: React.ChangeEvent<HTMLInputElement>,
     side: "left" | "right"
   ) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    setUploadingSide(side);
+    const img = e.target.files?.[0];
+    if (!img) return;
+    setUploadingField(side);
 
     const formData = new FormData();
-    formData.append("file", file);
+    formData.append("file", img);
     formData.append("prefix", "offer");
 
     const res = await fetch("/api/admin/upload", { method: "POST", body: formData });
@@ -77,7 +107,23 @@ export default function AdminOfferPage() {
       const key = side === "left" ? "leftMarqueeImages" : "rightMarqueeImages";
       setOffer((prev) => ({ ...prev, [key]: [...prev[key], data.url] }));
     }
-    setUploadingSide(null);
+    setUploadingField(null);
+    e.target.value = "";
+  };
+
+  const handleBgUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const img = e.target.files?.[0];
+    if (!img) return;
+    setUploadingField("bg");
+
+    const formData = new FormData();
+    formData.append("file", img);
+    formData.append("prefix", "offer-bg");
+
+    const res = await fetch("/api/admin/upload", { method: "POST", body: formData });
+    const data = await res.json();
+    if (data.url) setOffer((prev) => ({ ...prev, bgImage: data.url }));
+    setUploadingField(null);
     e.target.value = "";
   };
 
@@ -112,7 +158,7 @@ export default function AdminOfferPage() {
   if (loading) {
     return (
       <div style={{ padding: "120px 32px", textAlign: "center", fontFamily: "var(--font-body)", fontSize: 16, color: "#64748b" }}>
-        Loading offer page...
+        Loading offer pages...
       </div>
     );
   }
@@ -127,21 +173,18 @@ export default function AdminOfferPage() {
       </div>
 
       {/* Header */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 32, flexWrap: "wrap", gap: 16 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24, flexWrap: "wrap", gap: 16 }}>
         <div>
           <h1 style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#0b1c30", marginBottom: 4 }}>
-            Ads Landing Page
+            Ads Landing Pages
           </h1>
           <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "#64748b" }}>
-            Edit the page that Meta ads point to. Changes go live on save.{" "}
-            {offer.updatedAt && (
-              <span>Last saved: {new Date(offer.updatedAt).toLocaleString()}</span>
-            )}
+            Two separate landing pages — one for Gulf ads, one for Europe ads. Edit each region independently.
           </p>
         </div>
         <div style={{ display: "flex", gap: 12 }}>
           <Link
-            href="/offer"
+            href={`/offer/${region}`}
             target="_blank"
             style={{
               padding: "10px 20px",
@@ -173,23 +216,61 @@ export default function AdminOfferPage() {
               boxShadow: "0 0 16px rgba(0,82,220,0.3)",
             }}
           >
-            {saving ? "Saving..." : saved ? "Saved!" : "Save"}
+            {saving ? "Saving..." : saved ? "Saved!" : `Save ${REGION_LABEL[region]}`}
           </button>
         </div>
+      </div>
+
+      {/* Region tabs */}
+      <div style={{ display: "flex", gap: 8, marginBottom: 24, borderBottom: "1px solid #e5e7eb" }}>
+        {(["gulf", "europe"] as const).map((r) => (
+          <button
+            key={r}
+            onClick={() => setRegion(r)}
+            style={{
+              padding: "12px 22px",
+              backgroundColor: "transparent",
+              border: "none",
+              borderBottom: region === r ? "3px solid #0052dc" : "3px solid transparent",
+              fontFamily: "var(--font-display)",
+              fontSize: 14,
+              fontWeight: region === r ? 800 : 600,
+              color: region === r ? "#0052dc" : "#64748b",
+              cursor: "pointer",
+              marginBottom: -1,
+            }}
+          >
+            {REGION_LABEL[r]}
+          </button>
+        ))}
+        {offer.updatedAt && (
+          <span
+            style={{
+              marginLeft: "auto",
+              alignSelf: "center",
+              fontFamily: "var(--font-body)",
+              fontSize: 11,
+              color: "#94a3b8",
+              paddingBottom: 12,
+            }}
+          >
+            Last saved: {new Date(offer.updatedAt).toLocaleString()}
+          </span>
+        )}
       </div>
 
       {/* Text content */}
       <div style={{ backgroundColor: "#fff", borderRadius: 12, padding: 24, border: "1px solid #e5e7eb", marginBottom: 24 }}>
         <h2 style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700, color: "#0b1c30", marginBottom: 20 }}>
-          Hero Content
+          Hero Content — {REGION_LABEL[region]}
         </h2>
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
           <div>
             <label style={labelStyle}>Heading</label>
             <input
               value={offer.heading}
-              onChange={(e) => setOffer({ ...offer, heading: e.target.value })}
-              placeholder="e.g. Work Abroad in 60 Days"
+              onChange={(e) => setOffer((p) => ({ ...p, heading: e.target.value }))}
+              placeholder="e.g. Work in the Gulf in 60 Days"
               style={{ ...inputStyle, fontSize: 18, fontFamily: "var(--font-display)", fontWeight: 700, padding: "14px" }}
             />
           </div>
@@ -197,7 +278,7 @@ export default function AdminOfferPage() {
             <label style={labelStyle}>Subheading</label>
             <textarea
               value={offer.subheading}
-              onChange={(e) => setOffer({ ...offer, subheading: e.target.value })}
+              onChange={(e) => setOffer((p) => ({ ...p, subheading: e.target.value }))}
               placeholder="Supporting copy under the heading"
               rows={3}
               style={{ ...inputStyle, resize: "vertical" }}
@@ -208,7 +289,7 @@ export default function AdminOfferPage() {
               <label style={labelStyle}>Form Title</label>
               <input
                 value={offer.formTitle}
-                onChange={(e) => setOffer({ ...offer, formTitle: e.target.value })}
+                onChange={(e) => setOffer((p) => ({ ...p, formTitle: e.target.value }))}
                 placeholder="Get Free Consultation"
                 style={inputStyle}
               />
@@ -217,7 +298,7 @@ export default function AdminOfferPage() {
               <label style={labelStyle}>Form Subtitle</label>
               <input
                 value={offer.formSubtitle}
-                onChange={(e) => setOffer({ ...offer, formSubtitle: e.target.value })}
+                onChange={(e) => setOffer((p) => ({ ...p, formSubtitle: e.target.value }))}
                 placeholder="We'll call you back within 24 hours"
                 style={inputStyle}
               />
@@ -227,10 +308,80 @@ export default function AdminOfferPage() {
             <label style={labelStyle}>Submit Button Label</label>
             <input
               value={offer.ctaLabel}
-              onChange={(e) => setOffer({ ...offer, ctaLabel: e.target.value })}
+              onChange={(e) => setOffer((p) => ({ ...p, ctaLabel: e.target.value }))}
               placeholder="Request Free Call Back"
               style={inputStyle}
             />
+          </div>
+        </div>
+      </div>
+
+      {/* Background image */}
+      <div style={{ backgroundColor: "#fff", borderRadius: 12, padding: 24, border: "1px solid #e5e7eb", marginBottom: 24 }}>
+        <h2 style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700, color: "#0b1c30", marginBottom: 8 }}>
+          Background Image
+        </h2>
+        <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "#94a3b8", marginBottom: 16 }}>
+          Shown very faintly (≈8% opacity) behind the page content. Use a wide landscape image representing the region (e.g. skyline, landmark).
+        </p>
+        <div style={{ display: "flex", gap: 16, alignItems: "flex-start", flexWrap: "wrap" }}>
+          <div
+            style={{
+              width: 220,
+              aspectRatio: "16/9",
+              borderRadius: 10,
+              backgroundColor: "#e5e7eb",
+              backgroundImage: offer.bgImage ? `url(${offer.bgImage})` : "none",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "#94a3b8",
+              fontFamily: "var(--font-body)",
+              fontSize: 12,
+              flexShrink: 0,
+            }}
+          >
+            {!offer.bgImage && "No bg image"}
+          </div>
+          <div style={{ flex: "1 1 240px", display: "flex", flexDirection: "column", gap: 10 }}>
+            <label
+              style={{
+                display: "block",
+                padding: "10px",
+                textAlign: "center",
+                backgroundColor: "#f1f5f9",
+                borderRadius: 8,
+                border: "1px dashed #cbd5e1",
+                fontFamily: "var(--font-body)",
+                fontSize: 12,
+                fontWeight: 600,
+                color: "#64748b",
+                cursor: "pointer",
+              }}
+            >
+              {uploadingField === "bg" ? "Uploading..." : offer.bgImage ? "Replace Background" : "Upload Background"}
+              <input type="file" accept="image/*" onChange={handleBgUpload} style={{ display: "none" }} />
+            </label>
+            {offer.bgImage && (
+              <button
+                onClick={() => setOffer((p) => ({ ...p, bgImage: "" }))}
+                style={{
+                  padding: "8px 14px",
+                  backgroundColor: "#fff",
+                  border: "1px solid #fecaca",
+                  color: "#dc2626",
+                  borderRadius: 6,
+                  fontFamily: "var(--font-body)",
+                  fontSize: 12,
+                  fontWeight: 600,
+                  cursor: "pointer",
+                }}
+              >
+                Remove
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -241,7 +392,7 @@ export default function AdminOfferPage() {
           title="Left Marquee — Permits"
           side="left"
           images={offer.leftMarqueeImages}
-          uploading={uploadingSide === "left"}
+          uploading={uploadingField === "left"}
           onUpload={(e) => handleImageUpload(e, "left")}
           onRemove={(url) => removeImage("left", url)}
         />
@@ -249,7 +400,7 @@ export default function AdminOfferPage() {
           title="Right Marquee — Visa Photos"
           side="right"
           images={offer.rightMarqueeImages}
-          uploading={uploadingSide === "right"}
+          uploading={uploadingField === "right"}
           onUpload={(e) => handleImageUpload(e, "right")}
           onRemove={(url) => removeImage("right", url)}
         />

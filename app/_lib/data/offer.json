@@ -1,14 +1,28 @@
 {
-  "heading": "Work Abroad in 60 Days — Guaranteed Placement",
-  "subheading": "Free consultation with our senior recruitment consultants. Government licensed agency with 3000+ candidates placed across UAE, Qatar, Poland, Romania.",
-  "ctaLabel": "Request Free Call Back",
-  "formTitle": "Get Free Consultation",
-  "formSubtitle": "Our team will call you back within 24 hours",
-  "leftMarqueeImages": [
-    "/offer-1776325817951.jpeg"
-  ],
-  "rightMarqueeImages": [
-    "/offer-1776325822434.jpeg"
-  ],
-  "updatedAt": "2026-04-16T07:50:26.184Z"
+  "gulf": {
+    "heading": "Work in the Gulf — UAE, Qatar, Saudi & more",
+    "subheading": "Free consultation with our senior recruitment consultants. Government licensed agency with 3000+ candidates placed across UAE, Saudi Arabia, Qatar, Kuwait, Bahrain.",
+    "ctaLabel": "Request Free Call Back",
+    "formTitle": "Get Free Consultation",
+    "formSubtitle": "Our team will call you back within 24 hours",
+    "leftMarqueeImages": [
+      "/offer-1776325817951.jpeg"
+    ],
+    "rightMarqueeImages": [
+      "/offer-1776325822434.jpeg"
+    ],
+    "bgImage": "",
+    "updatedAt": "2026-04-16T07:50:26.184Z"
+  },
+  "europe": {
+    "heading": "Work in Europe — Romania, Poland, Croatia & more",
+    "subheading": "Free consultation for European work permits. Legal, government-licensed placement with full visa support for Romania, Poland, Croatia, Malta and the Schengen area.",
+    "ctaLabel": "Request Free Call Back",
+    "formTitle": "Get Free Consultation",
+    "formSubtitle": "Our team will call you back within 24 hours",
+    "leftMarqueeImages": [],
+    "rightMarqueeImages": [],
+    "bgImage": "",
+    "updatedAt": "2026-04-16T07:50:26.184Z"
+  }
 }

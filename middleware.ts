@@ -7,6 +7,20 @@ import { NextRequest, NextResponse } from "next/server";
 export function middleware(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
 
+  // Gate admin API routes — everything under /api/admin/* requires a valid session
+  // cookie. The login endpoint itself (/api/admin/auth) is excluded so users can
+  // actually log in.
+  if (
+    pathname.startsWith("/api/admin/") &&
+    !pathname.startsWith("/api/admin/auth")
+  ) {
+    const session = request.cookies.get("admin_session")?.value;
+    const adminPassword = process.env.ADMIN_PASSWORD || "shiva2025";
+    if (!session || session !== adminPassword) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+  }
+
   // Block all ?l= parameter URLs (WordPress redirect spam)
   if (search.includes("?l=") || search.includes("&l=")) {
     return new NextResponse("Gone", { status: 410 });
