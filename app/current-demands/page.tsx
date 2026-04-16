@@ -4,7 +4,9 @@ import Link from "next/link";
 import { breadcrumbJsonLd } from "../_lib/breadcrumb";
 import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 import { readDemands } from "../api/admin/demands/route";
+import { readOffer } from "../api/admin/offer/route";
 import { DemandCard, DemandsEmpty } from "@/components/own/DemandCard";
+import SidePosterRails from "@/components/own/SidePosterRails";
 
 export const dynamic = "force-dynamic";
 
@@ -23,6 +25,7 @@ const steps = [
 
 export default function CurrentDemands() {
   const demands = readDemands();
+  const offer = readOffer();
   return (
     <>
       <script
@@ -36,7 +39,17 @@ export default function CurrentDemands() {
           ),
         }}
       />
-      <main style={{ backgroundColor: "#f8f9ff" }}>
+      <main className="cd-page" style={{ backgroundColor: "#f8f9ff", position: "relative" }}>
+        <SidePosterRails
+          leftImages={offer.leftMarqueeImages}
+          rightImages={offer.rightMarqueeImages}
+        />
+        <style>{`
+          @media (min-width: 1200px) {
+            .cd-page .cd-inner { padding-left: 220px !important; padding-right: 220px !important; }
+          }
+        `}</style>
+        <div className="cd-inner">
         {/* ===== HERO — Split Layout ===== */}
         <section style={{ paddingTop: 120, paddingBottom: 80, backgroundColor: "#f8f9ff" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
@@ -114,7 +127,7 @@ export default function CurrentDemands() {
             {demands.length === 0 ? (
               <DemandsEmpty />
             ) : (
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: 24 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 20 }}>
                 {demands.map((d) => (
                   <DemandCard key={d.id} demand={d} />
                 ))}
@@ -249,6 +262,7 @@ export default function CurrentDemands() {
             </div>
           </div>
         </section>
+        </div>
       </main>
     </>
   );
