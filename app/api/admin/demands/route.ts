@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { put, list } from "@vercel/blob";
+import { put, head } from "@vercel/blob";
 import fs from "fs";
 import path from "path";
 
@@ -36,17 +36,28 @@ export async function readDemands(): Promise<Demand[]> {
   if (!HAS_BLOB) return readSeed();
 
   try {
-    const { blobs } = await list({ prefix: BLOB_PATH, limit: 1 });
-    if (blobs.length > 0) {
-      const res = await fetch(blobs[0].url, { cache: "no-store" });
-      const raw = await res.json();
-      return Array.isArray(raw) ? raw : [];
+    // head() looks up by exact pathname — no list() cache races. Cache-bust the
+    // returned URL so we never read stale content right after a write.
+    const blob = await head(BLOB_PATH);
+    const res = await fetch(`${blob.url}?t=${Date.now()}`, { cache: "no-store" });
+    const raw = await res.json();
+    return Array.isArray(raw) ? raw : [];
+  } catch (err: unknown) {
+    // BlobNotFoundError → first run; seed and persist
+    if ((err as { name?: string })?.name === "BlobNotFoundError") {
+      const seeded = readSeed();
+      try {
+        await put(BLOB_PATH, JSON.stringify(seeded), {
+          access: "public",
+          allowOverwrite: true,
+          addRandomSuffix: false,
+          cacheControlMaxAge: 0,
+        });
+      } catch {
+        /* swallow — return seed anyway */
+      }
+      return seeded;
     }
-    // First run on Blob — seed from the bundled JSON file and persist
-    const seeded = readSeed();
-    await put(BLOB_PATH, JSON.stringify(seeded), { access: "public", allowOverwrite: true });
-    return seeded;
-  } catch (err) {
     console.error("[demands] Blob read failed, falling back to seed:", err);
     return readSeed();
   }
@@ -57,7 +68,13 @@ async function writeDemands(demands: Demand[]) {
     fs.writeFileSync(SEED_PATH, JSON.stringify(demands, null, 2));
     return;
   }
-  await put(BLOB_PATH, JSON.stringify(demands), { access: "public", allowOverwrite: true });
+  await put(BLOB_PATH, JSON.stringify(demands), {
+    access: "public",
+    allowOverwrite: true,
+    addRandomSuffix: false,
+    // Don't cache our data JSON at the CDN — we need fresh reads after writes.
+    cacheControlMaxAge: 0,
+  });
 }
 
 function sanitizeSectors(input: unknown): string[] {

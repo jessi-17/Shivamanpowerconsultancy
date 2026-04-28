@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { put, list } from "@vercel/blob";
+import { put, head } from "@vercel/blob";
 import fs from "fs";
 import path from "path";
 
@@ -74,17 +74,25 @@ async function readFile(): Promise<OfferFile> {
   if (!HAS_BLOB) return readSeed();
 
   try {
-    const { blobs } = await list({ prefix: BLOB_PATH, limit: 1 });
-    if (blobs.length > 0) {
-      const res = await fetch(blobs[0].url, { cache: "no-store" });
-      const raw = await res.json();
-      return mergeWithDefaults(raw);
+    const blob = await head(BLOB_PATH);
+    const res = await fetch(`${blob.url}?t=${Date.now()}`, { cache: "no-store" });
+    const raw = await res.json();
+    return mergeWithDefaults(raw);
+  } catch (err: unknown) {
+    if ((err as { name?: string })?.name === "BlobNotFoundError") {
+      const seeded = readSeed();
+      try {
+        await put(BLOB_PATH, JSON.stringify(seeded), {
+          access: "public",
+          allowOverwrite: true,
+          addRandomSuffix: false,
+          cacheControlMaxAge: 0,
+        });
+      } catch {
+        /* swallow */
+      }
+      return seeded;
     }
-    // First run on Blob — seed from local file and persist
-    const seeded = readSeed();
-    await put(BLOB_PATH, JSON.stringify(seeded), { access: "public", allowOverwrite: true });
-    return seeded;
-  } catch (err) {
     console.error("[offer] Blob read failed, falling back to seed:", err);
     return readSeed();
   }
@@ -95,7 +103,12 @@ async function writeFile(file: OfferFile) {
     fs.writeFileSync(SEED_PATH, JSON.stringify(file, null, 2));
     return;
   }
-  await put(BLOB_PATH, JSON.stringify(file), { access: "public", allowOverwrite: true });
+  await put(BLOB_PATH, JSON.stringify(file), {
+    access: "public",
+    allowOverwrite: true,
+    addRandomSuffix: false,
+    cacheControlMaxAge: 0,
+  });
 }
 
 export async function readOffer(region: Region): Promise<OfferContent> {
