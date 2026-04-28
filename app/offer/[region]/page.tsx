@@ -32,7 +32,7 @@ export default async function OfferRegionPage({
   const { region } = await params;
   if (!VALID_REGIONS.includes(region as Region)) notFound();
 
-  const offer = readOffer(region as Region);
-  const demands = readDemands();
+  const offer = await readOffer(region as Region);
+  const demands = await readDemands();
   return <OfferClient offer={offer} demands={demands} region={region as Region} />;
 }

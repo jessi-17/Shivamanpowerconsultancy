@@ -3,7 +3,7 @@ import { getBlogs } from "./_lib/data/getBlogs";
 import { employerCountries } from "./_lib/data/employerCountries";
 import { readDemands } from "./api/admin/demands/route";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://shivatravelconsultant.in";
 
   const staticPages: MetadataRoute.Sitemap = [
@@ -252,7 +252,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  const demands = readDemands();
+  const demands = await readDemands();
   const demandPages: MetadataRoute.Sitemap = demands.map((d) => ({
     url: `${baseUrl}/current-demands/${d.id}`,
     lastModified: new Date(d.updatedAt),

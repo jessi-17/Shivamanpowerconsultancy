@@ -1,8 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
+import { put, list } from "@vercel/blob";
 import fs from "fs";
 import path from "path";
 
-const DATA_PATH = path.join(process.cwd(), "app/_lib/data/offer.json");
+const BLOB_PATH = "data/offer.json";
+const SEED_PATH = path.join(process.cwd(), "app/_lib/data/offer.json");
 
 export type Region = "gulf" | "europe";
 
@@ -45,51 +47,73 @@ const DEFAULT_FILE: OfferFile = {
   },
 };
 
-function readFile(): OfferFile {
-  if (!fs.existsSync(DATA_PATH)) {
-    fs.writeFileSync(DATA_PATH, JSON.stringify(DEFAULT_FILE, null, 2));
-    return DEFAULT_FILE;
-  }
+// A real Vercel Blob token starts with "vercel_blob_". Anything else (missing
+// or placeholder) means "use local seed file as the source of truth."
+const BLOB_TOKEN = process.env.BLOB_READ_WRITE_TOKEN || "";
+const HAS_BLOB = BLOB_TOKEN.startsWith("vercel_blob_");
+
+function mergeWithDefaults(raw: Partial<OfferFile> | null | undefined): OfferFile {
+  return {
+    gulf: { ...DEFAULT_FILE.gulf, ...(raw?.gulf || {}) },
+    europe: { ...DEFAULT_FILE.europe, ...(raw?.europe || {}) },
+  };
+}
+
+function readSeed(): OfferFile {
   try {
-    const raw = JSON.parse(fs.readFileSync(DATA_PATH, "utf-8"));
-    // Back-compat: if file is still a flat single-region object, migrate it into `gulf`
-    if (raw && typeof raw === "object" && !raw.gulf && !raw.europe && raw.heading) {
-      const migrated: OfferFile = {
-        gulf: { ...DEFAULT_REGION, ...raw, bgImage: raw.bgImage || "" },
-        europe: DEFAULT_FILE.europe,
-      };
-      fs.writeFileSync(DATA_PATH, JSON.stringify(migrated, null, 2));
-      return migrated;
-    }
-    return {
-      gulf: { ...DEFAULT_FILE.gulf, ...(raw.gulf || {}) },
-      europe: { ...DEFAULT_FILE.europe, ...(raw.europe || {}) },
-    };
+    const raw = fs.existsSync(SEED_PATH)
+      ? JSON.parse(fs.readFileSync(SEED_PATH, "utf-8"))
+      : DEFAULT_FILE;
+    return mergeWithDefaults(raw);
   } catch {
     return DEFAULT_FILE;
   }
 }
 
-function writeFile(file: OfferFile) {
-  fs.writeFileSync(DATA_PATH, JSON.stringify(file, null, 2));
+async function readFile(): Promise<OfferFile> {
+  if (!HAS_BLOB) return readSeed();
+
+  try {
+    const { blobs } = await list({ prefix: BLOB_PATH, limit: 1 });
+    if (blobs.length > 0) {
+      const res = await fetch(blobs[0].url, { cache: "no-store" });
+      const raw = await res.json();
+      return mergeWithDefaults(raw);
+    }
+    // First run on Blob — seed from local file and persist
+    const seeded = readSeed();
+    await put(BLOB_PATH, JSON.stringify(seeded), { access: "public", allowOverwrite: true });
+    return seeded;
+  } catch (err) {
+    console.error("[offer] Blob read failed, falling back to seed:", err);
+    return readSeed();
+  }
 }
 
-export function readOffer(region: Region): OfferContent {
-  return readFile()[region];
+async function writeFile(file: OfferFile) {
+  if (!HAS_BLOB) {
+    fs.writeFileSync(SEED_PATH, JSON.stringify(file, null, 2));
+    return;
+  }
+  await put(BLOB_PATH, JSON.stringify(file), { access: "public", allowOverwrite: true });
 }
 
-export function readOfferAll(): OfferFile {
+export async function readOffer(region: Region): Promise<OfferContent> {
+  return (await readFile())[region];
+}
+
+export async function readOfferAll(): Promise<OfferFile> {
   return readFile();
 }
 
 export async function GET() {
-  return NextResponse.json(readFile());
+  return NextResponse.json(await readFile());
 }
 
 export async function PUT(req: NextRequest) {
   const body = await req.json();
   const region: Region = body.region === "europe" ? "europe" : "gulf";
-  const file = readFile();
+  const file = await readFile();
   const current = file[region];
 
   const merged: OfferContent = {
@@ -109,6 +133,6 @@ export async function PUT(req: NextRequest) {
   };
 
   file[region] = merged;
-  writeFile(file);
+  await writeFile(file);
   return NextResponse.json({ region, ...merged });
 }

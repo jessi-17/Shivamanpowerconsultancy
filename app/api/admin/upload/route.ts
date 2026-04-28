@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
+import { put } from "@vercel/blob";
 import fs from "fs";
 import path from "path";
+
+const BLOB_TOKEN = process.env.BLOB_READ_WRITE_TOKEN || "";
+const HAS_BLOB = BLOB_TOKEN.startsWith("vercel_blob_");
 
 export async function POST(req: NextRequest) {
   const formData = await req.formData();
@@ -12,14 +16,17 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "No file uploaded" }, { status: 400 });
   }
 
-  const bytes = await file.arrayBuffer();
-  const buffer = Buffer.from(bytes);
-
   const ext = path.extname(file.name);
-  const name = `${prefix}-${Date.now()}${ext}`;
-  const filePath = path.join(process.cwd(), "public", name);
+  const filename = `${prefix}-${Date.now()}${ext}`;
 
-  fs.writeFileSync(filePath, buffer);
+  // Local dev fallback — write to /public so the file is served at /<filename>
+  if (!HAS_BLOB) {
+    const bytes = await file.arrayBuffer();
+    const buffer = Buffer.from(bytes);
+    fs.writeFileSync(path.join(process.cwd(), "public", filename), buffer);
+    return NextResponse.json({ url: `/${filename}` });
+  }
 
-  return NextResponse.json({ url: `/${name}` });
+  const blob = await put(`uploads/${filename}`, file, { access: "public" });
+  return NextResponse.json({ url: blob.url });
 }

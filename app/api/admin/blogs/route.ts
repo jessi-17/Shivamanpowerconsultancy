@@ -1,31 +1,36 @@
 import { NextRequest, NextResponse } from "next/server";
+import { put, list } from "@vercel/blob";
 import fs from "fs";
 import path from "path";
 
-const DATA_PATH = path.join(process.cwd(), "app/_lib/data/blogs.json");
+const BLOB_PATH = "data/blogs.json";
+const SEED_PATH = path.join(process.cwd(), "app/_lib/data/blogs.json");
 
-function readBlogs() {
-  if (!fs.existsSync(DATA_PATH)) {
-    fs.writeFileSync(DATA_PATH, "[]");
-    return [];
+async function readBlogs(): Promise<unknown[]> {
+  const { blobs } = await list({ prefix: BLOB_PATH, limit: 1 });
+  if (blobs.length > 0) {
+    const res = await fetch(blobs[0].url, { cache: "no-store" });
+    return await res.json();
   }
-  return JSON.parse(fs.readFileSync(DATA_PATH, "utf-8"));
+  // First run: seed from the bundled JSON file
+  const raw = fs.existsSync(SEED_PATH) ? fs.readFileSync(SEED_PATH, "utf-8") : "[]";
+  const blogs = JSON.parse(raw);
+  await put(BLOB_PATH, JSON.stringify(blogs), { access: "public", allowOverwrite: true });
+  return blogs;
 }
 
-function writeBlogs(blogs: unknown[]) {
-  fs.writeFileSync(DATA_PATH, JSON.stringify(blogs, null, 2));
+async function writeBlogs(blogs: unknown[]) {
+  await put(BLOB_PATH, JSON.stringify(blogs), { access: "public", allowOverwrite: true });
 }
 
-// GET all blogs
 export async function GET() {
-  const blogs = readBlogs();
+  const blogs = await readBlogs();
   return NextResponse.json(blogs);
 }
 
-// POST create new blog
 export async function POST(req: NextRequest) {
   const body = await req.json();
-  const blogs = readBlogs();
+  const blogs = await readBlogs();
 
   const slug =
     body.slug ||
@@ -46,38 +51,36 @@ export async function POST(req: NextRequest) {
     keywords: body.keywords || [],
   };
 
-  blogs.unshift(newPost);
-  writeBlogs(blogs);
+  (blogs as typeof newPost[]).unshift(newPost);
+  await writeBlogs(blogs);
 
   return NextResponse.json(newPost, { status: 201 });
 }
 
-// PUT update blog
 export async function PUT(req: NextRequest) {
   const body = await req.json();
-  const blogs = readBlogs();
-  const index = blogs.findIndex((b: { slug: string }) => b.slug === body.slug);
+  const blogs = await readBlogs() as { slug: string }[];
+  const index = blogs.findIndex((b) => b.slug === body.slug);
 
   if (index === -1) {
     return NextResponse.json({ error: "Post not found" }, { status: 404 });
   }
 
   blogs[index] = { ...blogs[index], ...body };
-  writeBlogs(blogs);
+  await writeBlogs(blogs);
 
   return NextResponse.json(blogs[index]);
 }
 
-// DELETE blog
 export async function DELETE(req: NextRequest) {
   const { slug } = await req.json();
-  const blogs = readBlogs();
-  const filtered = blogs.filter((b: { slug: string }) => b.slug !== slug);
+  const blogs = await readBlogs() as { slug: string }[];
+  const filtered = blogs.filter((b) => b.slug !== slug);
 
   if (filtered.length === blogs.length) {
     return NextResponse.json({ error: "Post not found" }, { status: 404 });
   }
 
-  writeBlogs(filtered);
+  await writeBlogs(filtered);
   return NextResponse.json({ success: true });
 }
