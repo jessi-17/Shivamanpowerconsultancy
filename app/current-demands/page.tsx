@@ -24,9 +24,9 @@ const steps = [
   { num: "04", title: "Visa & Departure", desc: "We handle everything from visa processing to travel arrangements and pre-departure orientation." },
 ];
 
-export default function CurrentDemands() {
-  const demands = readDemands();
-  const offer = readOffer("gulf");
+export default async function CurrentDemands() {
+  const demands = await readDemands();
+  const offer = await readOffer("gulf");
   return (
     <>
       <script
