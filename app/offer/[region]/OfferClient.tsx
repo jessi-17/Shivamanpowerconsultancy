@@ -2,6 +2,7 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import posthog from "posthog-js";
 import type { OfferContent, Region } from "../../api/admin/offer/route";
 import type { Demand } from "../../api/admin/demands/route";
 import { DemandCard, DemandsEmpty } from "@/components/own/DemandCard";
@@ -96,6 +97,12 @@ function OfferInner({
         if (typeof window !== "undefined" && typeof window.fbq === "function") {
           window.fbq("track", "Lead");
         }
+        posthog.capture("lead_form_submitted", {
+          source: "offer",
+          region,
+          interest: form.interest,
+          experience: form.experience,
+        });
         router.push("/?submitted=1");
       } else {
         setStatus("error");

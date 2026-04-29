@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import posthog from "posthog-js";
 
 type Size = "sm" | "md";
 
@@ -31,6 +32,7 @@ export default function ShareButtons({
     e.stopPropagation();
     const url = getUrl();
     const msg = `${text} ${url}`;
+    posthog.capture("share_clicked", { channel: "whatsapp", path });
     window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank", "noopener,noreferrer");
   };
 
@@ -38,6 +40,7 @@ export default function ShareButtons({
     e.preventDefault();
     e.stopPropagation();
     const url = getUrl();
+    posthog.capture("share_clicked", { channel: "facebook", path });
     window.open(
       `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
       "_blank",
@@ -49,6 +52,7 @@ export default function ShareButtons({
     e.preventDefault();
     e.stopPropagation();
     const url = getUrl();
+    posthog.capture("share_clicked", { channel: "copy", path });
     try {
       await navigator.clipboard.writeText(url);
       setCopied(true);

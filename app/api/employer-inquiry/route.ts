@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { google } from "googleapis";
 import { Resend } from "resend";
+import { insertLead } from "../../_lib/db";
 
 interface InquiryData {
   companyName: string;
@@ -9,37 +9,6 @@ interface InquiryData {
   phone: string;
   country: string;
   message: string;
-}
-
-async function appendToSheet(data: InquiryData) {
-  const auth = new google.auth.GoogleAuth({
-    credentials: {
-      client_email: process.env.GOOGLE_CLIENT_EMAIL,
-      private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
-      project_id: process.env.GOOGLE_PROJECT_ID,
-    },
-    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-  });
-
-  const sheets = google.sheets({ version: "v4", auth });
-  const spreadsheetId = process.env.GOOGLE_SHEET_ID!;
-
-  const values = [[
-    data.companyName,
-    data.contactPerson,
-    data.email,
-    data.phone,
-    data.country,
-    data.message,
-    new Date().toISOString(),
-  ]];
-
-  await sheets.spreadsheets.values.append({
-    spreadsheetId,
-    range: "EmployerInquiries!A:G",
-    valueInputOption: "USER_ENTERED",
-    requestBody: { values },
-  });
 }
 
 async function sendNotificationEmail(data: InquiryData) {
@@ -117,21 +86,26 @@ export async function POST(req: Request) {
       );
     }
 
-    // Run both in parallel; email failure shouldn't block sheet logging (and vice versa)
-    const [sheetResult, emailResult] = await Promise.allSettled([
-      appendToSheet(data),
+    const [dbResult, emailResult] = await Promise.allSettled([
+      insertLead({
+        type: "employer",
+        name: data.contactPerson,
+        email: data.email,
+        phone: data.phone,
+        country: data.country || null,
+        data: { companyName: data.companyName, message: data.message },
+      }),
       sendNotificationEmail(data),
     ]);
 
-    if (sheetResult.status === "rejected") {
-      console.error("[employer-inquiry] sheet error:", sheetResult.reason);
+    if (dbResult.status === "rejected") {
+      console.error("[employer-inquiry] db error:", dbResult.reason);
     }
     if (emailResult.status === "rejected") {
       console.error("[employer-inquiry] email error:", emailResult.reason);
     }
 
-    // As long as at least one succeeded, treat as success to the user
-    if (sheetResult.status === "rejected" && emailResult.status === "rejected") {
+    if (dbResult.status === "rejected" && emailResult.status === "rejected") {
       return NextResponse.json(
         { success: false, error: "Failed to record inquiry" },
         { status: 500 }
