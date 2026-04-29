@@ -91,7 +91,7 @@ const localBusinessJsonLd = {
   name: "Shiva Travel & Manpower Consultants",
   image: `${baseUrl}/logo.jpg`,
   telephone: "+91-9814820432",
-  email: "shivatravelnakodar@gmail.com",
+  email: "info@shivatravelconsultant.in",
   url: baseUrl,
   address: {
     "@type": "PostalAddress",
@@ -111,17 +111,17 @@ const localBusinessJsonLd = {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
       opens: "09:00",
-      closes: "18:00",
+      closes: "18:30",
     },
   ],
   priceRange: "Free for candidates",
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "5.0",
+    ratingValue: "4.9",
     bestRating: "5",
     worstRating: "1",
-    reviewCount: "14",
-    ratingCount: "14",
+    reviewCount: "42",
+    ratingCount: "42",
   },
 };
 
@@ -137,7 +137,7 @@ const jsonLd = {
   logo: `${baseUrl}/logo.jpg`,
   image: `${baseUrl}/logo.jpg`,
   telephone: "+91-9814820432",
-  email: "shivatravelnakodar@gmail.com",
+  email: "info@shivatravelconsultant.in",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road",
@@ -155,6 +155,7 @@ const jsonLd = {
     "@type": "Person",
     name: "Tarsem Lal",
     jobTitle: "Founder & Managing Director",
+    email: "tlbhagat@gmail.com",
   },
   foundingDate: "2002",
   openingHoursSpecification: [
@@ -162,7 +163,7 @@ const jsonLd = {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
       opens: "09:00",
-      closes: "18:00",
+      closes: "18:30",
     },
   ],
   sameAs: [
@@ -214,11 +215,11 @@ const jsonLd = {
   },
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "5.0",
+    ratingValue: "4.9",
     bestRating: "5",
     worstRating: "1",
-    reviewCount: "14",
-    ratingCount: "14",
+    reviewCount: "42",
+    ratingCount: "42",
   },
 };
 
@@ -321,7 +322,7 @@ export default function RootLayout({
                   waId: "919815358832",
                   siteName: "Shiva Travel & Manpower Consultants Nakodar",
                   siteTag: "Usually replies within minutes",
-                  siteLogo: "https://shivamanpowerconsultants.com/logo.jpg",
+                  siteLogo: "https://shivatravelconsultant.in/logo.jpg",
                   widgetPosition: "RIGHT",
                   welcomeMessage: "Welcome to Shiva Travel & Manpower Consultants Nakodar! How can we help you today?",
                   brandColor: "#25D366",

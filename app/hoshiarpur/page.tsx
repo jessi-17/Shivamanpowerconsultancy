@@ -78,7 +78,7 @@ const trustReasons = [
   { title: "Government Licensed", desc: "RA License B-1794 issued by Ministry of External Affairs. E-Migrate registered. ALMRA Punjab member." },
   { title: "Minimal & Transparent Charges", desc: "We keep our service charges affordable and fully transparent. No hidden fees — every cost is communicated upfront." },
   { title: "20+ Years of Trust", desc: "Since 2002, serving Hoshiarpur, Nakodar, Jalandhar, and the entire Doaba belt for over two decades." },
-  { title: "Easy Access from Hoshiarpur", desc: "Our office on Jalandhar Road, Nakodar is approximately 35 minutes from Hoshiarpur city. Walk-in consultations Monday to Saturday, 9am-6pm." },
+  { title: "Easy Access from Hoshiarpur", desc: "Our office on Jalandhar Road, Nakodar is approximately 35 minutes from Hoshiarpur city. Walk-in consultations Monday to Saturday, 9am-6:30pm." },
   { title: "Direct Employer Ties", desc: "We work directly with 500+ employers across UAE, Saudi Arabia, Qatar, Poland, Romania — no middlemen." },
   { title: "End-to-End Support", desc: "From skill testing to visa stamping to airport send-off. We handle everything so you don\u2019t have to worry." },
 ];
@@ -86,7 +86,7 @@ const trustReasons = [
 const faqs = [
   { q: "Is Shiva Travel a government licensed agency for overseas jobs?", a: "Yes. We hold RA License B-1794 issued by the Ministry of External Affairs, Government of India. We are E-Migrate registered and a member of ALMRA Punjab." },
   { q: "Do I need to pay any fees to get a job abroad through Shiva Travel?", a: "No. We charge zero fees from candidates. All recruitment costs are borne by the hiring employers as per Indian government regulations." },
-  { q: "How far is your office from Hoshiarpur?", a: "Our office is located on Jalandhar Road, Nakodar, approximately 35 minutes from Hoshiarpur city centre. Walk-in consultations are available Monday to Saturday, 9am to 6pm." },
+  { q: "How far is your office from Hoshiarpur?", a: "Our office is located on Jalandhar Road, Nakodar, approximately 35 minutes from Hoshiarpur city centre. Walk-in consultations are available Monday to Saturday, 9am to 6:30pm." },
   { q: "Which countries can I get a job in through Shiva Travel?", a: "We place workers in 20+ countries including UAE (Dubai, Abu Dhabi), Saudi Arabia, Qatar, Kuwait, Bahrain, Poland, Romania, Croatia, and other European nations." },
   { q: "What types of jobs are available for workers from Hoshiarpur?", a: "We recruit for construction, factory work, hospitality, driving, electrical, welding, plumbing, nursing, and many other skilled and semi-skilled roles across Gulf and European countries." },
   { q: "How long does the visa process take?", a: "Typically 30-60 days from job offer to departure, depending on the destination country. Urgent positions can sometimes be fast-tracked." },
@@ -312,7 +312,7 @@ export default function HoshiarpurPage() {
               Visit our office at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar — approximately 35 minutes from Hoshiarpur city.
             </p>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "rgba(255,255,255,0.4)", marginBottom: 36 }}>
-              Walk-in consultations available Monday to Saturday, 9am to 6pm.
+              Walk-in consultations available Monday to Saturday, 9am to 6:30pm.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
               <a href="tel:+919814820432" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "#ffffff", color: "#001f5d", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>

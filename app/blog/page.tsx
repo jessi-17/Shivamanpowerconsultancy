@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { readBlogs } from "../api/admin/blogs/route";
+import { readBlogs } from "../api/admin/blogs/store";
 import BlogSearch from "@/components/own/BlogSearch";
 
 export const dynamic = "force-dynamic";

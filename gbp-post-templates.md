@@ -35,7 +35,7 @@ Protect yourself from fake agents! Always verify:
 Shiva Travel holds RA License B-1794, valid through June 2027. Visit us at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar.
 
 **CTA Button:** Learn more
-**Link:** https://shivamanpowerconsultants.com/about-us
+**Link:** https://shivatravelconsultant.in/about-us
 
 ---
 
@@ -67,7 +67,7 @@ Congratulations to our latest batch of workers placed in UAE! From Nakodar & Jal
 Ready to start your overseas career? Visit our office on Jalandhar Road, Nakodar.
 
 **CTA Button:** Book appointment
-**Link:** https://shivamanpowerconsultants.com/contactus
+**Link:** https://shivatravelconsultant.in/contactus
 
 ---
 
@@ -115,7 +115,7 @@ We handle the entire visa process. Visit our Nakodar office or WhatsApp us.
 Families from Nakodar, Jalandhar & Kapurthala trust us with their futures.
 
 **CTA Button:** Learn more
-**Link:** https://shivamanpowerconsultants.com/success-stories
+**Link:** https://shivatravelconsultant.in/success-stories
 
 ---
 
@@ -149,7 +149,7 @@ Step 5: Complete visa process via E-Migrate
 That's it! We handle everything else. Zero fees. Visit us at Golden Avenue, Nakodar.
 
 **CTA Button:** Book appointment
-**Link:** https://shivamanpowerconsultants.com/contactus
+**Link:** https://shivatravelconsultant.in/contactus
 
 ---
 
@@ -179,7 +179,7 @@ Contact Shiva Travel Nakodar for Romania opportunities.
 Planning to go abroad for work? Walk in to our office for a FREE consultation.
 
 Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040.
-Mon-Sat: 9:00 AM - 6:00 PM
+Mon-Sat: 9:00 AM - 6:30 PM
 
 Bring your passport, certificates & experience letters. We'll guide you on the best opportunities for your profile.
 
@@ -198,7 +198,7 @@ Just 20 minutes from Jalandhar city! Shiva Travel & Manpower Consultants has bee
 Government licensed. Zero fees. 5,000+ workers placed.
 
 **CTA Button:** Learn more
-**Link:** https://shivamanpowerconsultants.com/jalandhar
+**Link:** https://shivatravelconsultant.in/jalandhar
 
 ---
 

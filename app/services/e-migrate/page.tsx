@@ -279,7 +279,7 @@ export default function EMigratePage() {
                 { title: "MEA Licensed Recruiting Agent", desc: "We hold RA License B-1794 from the Ministry of External Affairs. Only licensed agents can link worker applications on the E-Migrate portal. Processing through unlicensed agents is illegal and risky." },
                 { title: "No Hidden Fees", desc: "Indian law mandates that all major recruitment costs are borne by the employer. We maintain minimal and transparent charges — no hidden fees for E-Migrate processing, documentation, or any part of the recruitment process." },
                 { title: "Direct POE Coordination", desc: "We have processed thousands of emigration clearances and have established working relationships with POE offices. Any queries or objections raised are resolved quickly with proper documentation." },
-                { title: "Local Office in Nakodar", desc: "No need to travel to Jalandhar, Chandigarh, or Delhi. Walk into our Nakodar office with your documents, and we handle everything. Monday to Saturday, 9am to 6pm." },
+                { title: "Local Office in Nakodar", desc: "No need to travel to Jalandhar, Chandigarh, or Delhi. Walk into our Nakodar office with your documents, and we handle everything. Monday to Saturday, 9am to 6:30pm." },
                 { title: "End-to-End Support", desc: "E-Migrate is just one step. We also handle your visa processing, GAMCA medical, document attestation, insurance, and pre-departure briefing — all from one office." },
                 { title: "20+ Years of Experience", desc: "Since 2002, we have been sending workers from Punjab to the Gulf and Europe. Our experience means fewer rejections, faster clearances, and complete compliance." },
               ].map((item) => (
@@ -324,7 +324,7 @@ export default function EMigratePage() {
               Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040
             </p>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "rgba(255,255,255,0.4)", marginBottom: 36 }}>
-              Walk-in consultations available Monday to Saturday, 9am to 6pm.
+              Walk-in consultations available Monday to Saturday, 9am to 6:30pm.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
               <a href="tel:+919814820432" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "#ffffff", color: "#001f5d", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>

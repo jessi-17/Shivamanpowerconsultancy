@@ -62,7 +62,7 @@ const localBusinessJsonLd = {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
     opens: "09:00",
-    closes: "18:00",
+    closes: "18:30",
   },
   sameAs: [
     "https://shivatravelconsultant.in",
@@ -105,7 +105,7 @@ const trustReasons = [
   { title: "Government Licensed Office in Nakodar", desc: "RA License B-1794 issued by Ministry of External Affairs. E-Migrate registered. ALMRA Punjab member. The only fully licensed immigration office in Nakodar." },
   { title: "Minimal & Transparent Charges", desc: "We keep our service charges affordable and fully transparent. No hidden fees, no surprise deductions — every cost is communicated upfront as per Indian government regulations." },
   { title: "20+ Years Serving Nakodar", desc: "Since 2002, Shiva Travel has been the trusted name in Nakodar for overseas recruitment for over two decades. Our roots are here." },
-  { title: "Walk-In Office in Nakodar City", desc: "No need to travel to Jalandhar or Ludhiana. Visit our office at Golden Avenue, Jalandhar Road, Nakodar. Walk-in consultations Monday to Saturday, 9am-6pm." },
+  { title: "Walk-In Office in Nakodar City", desc: "No need to travel to Jalandhar or Ludhiana. Visit our office at Golden Avenue, Jalandhar Road, Nakodar. Walk-in consultations Monday to Saturday, 9am-6:30pm." },
   { title: "Direct Employer Connections", desc: "We work directly with 500+ employers across UAE, Saudi Arabia, Qatar, Poland, Romania, Croatia — no middlemen, no sub-agents." },
   { title: "Complete Visa & Immigration Support", desc: "From skill testing to visa stamping to airport send-off. We handle documentation, medical, insurance, and everything in between." },
 ];
@@ -117,7 +117,7 @@ const faqs = [
   { q: "Is there a Schengen visa consultant in Nakodar?", a: "Yes. Our Nakodar office provides complete Schengen visa assistance including documentation, appointment booking, and interview preparation for all 27 Schengen countries." },
   { q: "What are the fees for overseas recruitment in Nakodar?", a: "Shiva Travel maintains minimal and transparent service charges. Every cost is communicated upfront — no hidden fees, no surprise deductions. We follow Indian government regulations and maintain 100% transparency." },
   { q: "Which countries can I get a work visa for from Nakodar?", a: "From our Nakodar office, we process work visas for 20+ countries including Romania, Poland, Croatia, UAE (Dubai), Saudi Arabia, Qatar, Kuwait, Bahrain, and other European and Gulf nations." },
-  { q: "What is the phone number of Shiva Travel in Nakodar?", a: "You can call us at +91-9814820432 or WhatsApp us at +91-9815358832. Our Nakodar office is open Monday to Saturday, 9am to 6pm for walk-in consultations." },
+  { q: "What is the phone number of Shiva Travel in Nakodar?", a: "You can call us at +91-9814820432 or WhatsApp us at +91-9815358832. Our Nakodar office is open Monday to Saturday, 9am to 6:30pm for walk-in consultations." },
   { q: "How long does the Poland visa process take from Nakodar?", a: "The Poland work visa process typically takes 45-60 days from application to departure. We handle everything from our Nakodar office — documentation, skill testing, visa stamping, and travel arrangements." },
   { q: "Is Shiva Travel & Manpower Consultants a genuine agency?", a: "Absolutely. We hold RA License B-1794 from the Ministry of External Affairs, Government of India. We are E-Migrate registered and a member of ALMRA. Our license is valid for all of India. Our Nakodar office has been operational for over 20 years." },
 ];
@@ -376,7 +376,7 @@ export default function NakodarPage() {
               Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040
             </p>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "rgba(255,255,255,0.4)", marginBottom: 36 }}>
-              Walk-in consultations available Monday to Saturday, 9am to 6pm. No appointment needed.
+              Walk-in consultations available Monday to Saturday, 9am to 6:30pm. No appointment needed.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
               <a href="tel:+919814820432" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "#ffffff", color: "#001f5d", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import { identifyLead } from "@/lib/identifyLead";
 
 export default function ContactForm() {
   const ref = useScrollReveal();
@@ -21,6 +22,7 @@ export default function ContactForm() {
         body: JSON.stringify(form),
       });
       if (res.ok) {
+        identifyLead({ email: form.email, phone: form.phone, name: form.yourname });
         setStatus("success");
         setForm({ yourname: "", phone: "", email: "", interest: "", experience: "", message: "" });
       } else {
@@ -100,7 +102,7 @@ export default function ContactForm() {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" />
               </svg>
-              <span style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "#fff" }}>info@shivamanpower.com</span>
+              <span style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "#fff" }}>info@shivatravelconsultant.in</span>
             </div>
           </div>
 

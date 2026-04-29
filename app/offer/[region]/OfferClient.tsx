@@ -3,8 +3,9 @@
 import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import posthog from "posthog-js";
-import type { OfferContent, Region } from "../../api/admin/offer/route";
-import type { Demand } from "../../api/admin/demands/route";
+import { identifyLead } from "@/lib/identifyLead";
+import type { OfferContent, Region } from "../../api/admin/offer/store";
+import type { Demand } from "../../api/admin/demands/store";
 import { DemandCard, DemandsEmpty } from "@/components/own/DemandCard";
 import SidePosterRails from "@/components/own/SidePosterRails";
 import DemandsTicker from "@/components/own/DemandsTicker";
@@ -97,6 +98,7 @@ function OfferInner({
         if (typeof window !== "undefined" && typeof window.fbq === "function") {
           window.fbq("track", "Lead");
         }
+        identifyLead({ email: form.email, phone: form.phone, name: form.yourname });
         posthog.capture("lead_form_submitted", {
           source: "offer",
           region,
