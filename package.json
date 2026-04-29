@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "setup:funnels": "node --env-file=.env.local scripts/setup-posthog-funnels.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",

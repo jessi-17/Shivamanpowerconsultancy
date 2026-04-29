@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { getBlogs } from "../_lib/data/getBlogs";
+import { readBlogs } from "../api/admin/blogs/route";
 import BlogSearch from "@/components/own/BlogSearch";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Blog | Overseas Job Guides, Visa Tips & Worker Resources",
@@ -19,8 +21,8 @@ function formatDate(dateStr: string): string {
   });
 }
 
-export default function Blog() {
-  const blogs = getBlogs();
+export default async function Blog() {
+  const blogs = await readBlogs();
   const sortedPosts = [...blogs].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getBlogs } from "./_lib/data/getBlogs";
+import { readBlogs } from "./api/admin/blogs/route";
 import { employerCountries } from "./_lib/data/employerCountries";
 import { readDemands } from "./api/admin/demands/route";
 
@@ -237,7 +237,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  const blogs = getBlogs();
+  const blogs = await readBlogs();
   const blogPages: MetadataRoute.Sitemap = blogs.map((blog) => ({
     url: `${baseUrl}/blog/${blog.slug}`,
     lastModified: new Date(blog.date),
