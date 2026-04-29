@@ -454,8 +454,8 @@ export default function Footer() {
 
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
                 <Icon icon="mdi:email-outline" width={16} style={{ color: "#64748b", flexShrink: 0 }} />
-                <a href="mailto:info@shivamanpower.com" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "#64748b", textDecoration: "none" }}>
-                  info@shivamanpower.com
+                <a href="mailto:info@shivatravelconsultant.in" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "#64748b", textDecoration: "none" }}>
+                  info@shivatravelconsultant.in
                 </a>
               </div>
 

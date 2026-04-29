@@ -19,7 +19,7 @@ const faqs = [
       },
       {
         q: "What are your working hours?",
-        a: "Our office is open Monday to Saturday, 9:00 AM to 6:00 PM. You can also reach us on WhatsApp anytime.",
+        a: "Our office is open Monday to Saturday, 9:00 AM to 6:30 PM. You can also reach us on WhatsApp anytime.",
       },
     ],
   },
@@ -296,7 +296,7 @@ export default function FAQPage() {
             { value: "50+", label: "Questions Answered" },
             { value: "5", label: "Categories" },
             { value: "Same Day", label: "Response Time" },
-            { value: "Mon-Sat", label: "9 AM - 6 PM Support" },
+            { value: "Mon-Sat", label: "9 AM - 6:30 PM Support" },
           ].map((s) => (
             <div key={s.label} style={{ textAlign: "center" }}>
               <div

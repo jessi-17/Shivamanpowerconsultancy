@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { gsap } from "@/lib/gsap";
 import { flagFor } from "@/lib/countryFlags";
-import type { Demand } from "../../../app/api/admin/demands/route";
+import type { Demand } from "../../../app/api/admin/demands/store";
 
 export default function DemandsTicker({ demands }: { demands: Demand[] }) {
   const trackRef = useRef<HTMLDivElement>(null);

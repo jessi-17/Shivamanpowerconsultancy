@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import { identifyLead } from "@/lib/identifyLead";
 
 interface Props {
   defaultCountry?: string;
@@ -35,6 +36,12 @@ export default function EmployerQuoteForm({ defaultCountry = "", compact = false
         body: JSON.stringify(form),
       });
       if (res.ok) {
+        identifyLead({
+          email: form.email,
+          phone: form.phone,
+          name: form.contactPerson,
+          company: form.companyName,
+        });
         setStatus("success");
         setForm({ companyName: "", contactPerson: "", email: "", phone: "", country: defaultCountry, message: "" });
       } else {

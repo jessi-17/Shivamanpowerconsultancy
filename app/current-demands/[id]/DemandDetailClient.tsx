@@ -4,7 +4,8 @@ import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import posthog from "posthog-js";
-import type { Demand } from "../../api/admin/demands/route";
+import { identifyLead } from "@/lib/identifyLead";
+import type { Demand } from "../../api/admin/demands/store";
 import { DemandCard, DemandsEmpty } from "@/components/own/DemandCard";
 import SidePosterRails from "@/components/own/SidePosterRails";
 import DemandsTicker from "@/components/own/DemandsTicker";
@@ -71,6 +72,7 @@ function DetailInner({
         if (typeof window !== "undefined" && typeof window.fbq === "function") {
           window.fbq("track", "Lead");
         }
+        identifyLead({ email: form.email, phone: form.phone, name: form.yourname });
         posthog.capture("lead_form_submitted", {
           source: "demand_detail",
           demand_id: demand.id,

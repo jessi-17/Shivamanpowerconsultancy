@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { readOffer, type Region } from "../../api/admin/offer/route";
-import { readDemands } from "../../api/admin/demands/route";
+import { readOffer, type Region } from "../../api/admin/offer/store";
+import { readDemands } from "../../api/admin/demands/store";
 import OfferClient from "./OfferClient";
 
 const VALID_REGIONS: Region[] = ["gulf", "europe"];

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
-import { readBlogs } from "./api/admin/blogs/route";
+import { readBlogs } from "./api/admin/blogs/store";
 import { employerCountries } from "./_lib/data/employerCountries";
-import { readDemands } from "./api/admin/demands/route";
+import { readDemands } from "./api/admin/demands/store";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://shivatravelconsultant.in";

@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import posthog from "posthog-js";
-import type { Demand } from "../../../app/api/admin/demands/route";
+import type { Demand } from "../../../app/api/admin/demands/store";
 import ShareButtons from "@/components/own/ShareButtons";
 
 export function DemandCard({ demand }: { demand: Demand }) {

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import { identifyLead } from "@/lib/identifyLead";
 
 export default function NewsletterSubscription() {
   const ref = useScrollReveal();
@@ -21,6 +22,7 @@ export default function NewsletterSubscription() {
         body: JSON.stringify({ email, frequency }),
       });
       if (res.ok) {
+        identifyLead({ email });
         setStatus("success");
         setEmail("");
       } else {

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { readBlogs } from "../../api/admin/blogs/route";
+import { readBlogs } from "../../api/admin/blogs/store";
 import Article from "./_components/Article";
 import { renderMarkdown } from "./_lib/markdown";
 import "./article.css";

@@ -78,7 +78,7 @@ const trustReasons = [
   { title: "Government Licensed", desc: "RA License B-1794 issued by Ministry of External Affairs. E-Migrate registered. ALMRA Punjab member." },
   { title: "Minimal & Transparent Charges", desc: "We keep our service charges affordable and fully transparent. No hidden fees — every cost is communicated upfront." },
   { title: "20+ Years of Trust", desc: "Since 2002, serving Nawanshahr, Nakodar, Jalandhar, and the entire Doaba belt for over two decades." },
-  { title: "About 40 Min from Nawanshahr", desc: "Our office on Jalandhar Road, Nakodar is well-connected from Nawanshahr (Shaheed Bhagat Singh Nagar). Walk-in consultations Monday to Saturday, 9am-6pm." },
+  { title: "About 40 Min from Nawanshahr", desc: "Our office on Jalandhar Road, Nakodar is well-connected from Nawanshahr (Shaheed Bhagat Singh Nagar). Walk-in consultations Monday to Saturday, 9am-6:30pm." },
   { title: "Direct Employer Ties", desc: "We work directly with 500+ employers across UAE, Saudi Arabia, Qatar, Poland, Romania — no middlemen." },
   { title: "End-to-End Support", desc: "From skill testing to visa stamping to airport send-off. We handle everything so you don\u2019t have to worry." },
 ];
@@ -267,7 +267,7 @@ export default function NawanshahrPage() {
               Visit our office at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar — about 40 minutes from Nawanshahr (Shaheed Bhagat Singh Nagar).
             </p>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "rgba(255,255,255,0.4)", marginBottom: 36 }}>
-              Walk-in consultations available Monday to Saturday, 9am to 6pm.
+              Walk-in consultations available Monday to Saturday, 9am to 6:30pm.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
               <a href="tel:+919814820432" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "#ffffff", color: "#001f5d", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>

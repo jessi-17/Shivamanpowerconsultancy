@@ -99,7 +99,7 @@ def build_pdf():
     pdf.ln(6)
     pdf.cell(0, 7, "Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040", align="C", new_x="LMARGIN", new_y="NEXT")
     pdf.cell(0, 7, "Phone: +91 98148-20432 | WhatsApp: +91 98153-58832", align="C", new_x="LMARGIN", new_y="NEXT")
-    pdf.cell(0, 7, "Email: info@shivamanpower.com", align="C", new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(0, 7, "Email: info@shivatravelconsultant.in", align="C", new_x="LMARGIN", new_y="NEXT")
     pdf.ln(15)
     pdf.set_font("Helvetica", "I", 10)
     pdf.set_text_color(120, 120, 120)
@@ -315,7 +315,7 @@ def get_all_employers():
         "Licensed Recruiting Agent | RA B-1794/PUN/2022\n"
         "Ministry of External Affairs, Govt. of India\n"
         "Phone: +91 98148-20432 | WhatsApp: +91 98153-58832\n"
-        "Email: info@shivamanpower.com"
+        "Email: info@shivatravelconsultant.in"
     )
 
     employers = [

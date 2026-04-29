@@ -4,6 +4,7 @@ import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { identifyLead } from "@/lib/identifyLead";
 
 function FormPrefill({ onPrefill }: { onPrefill: (patch: { interest?: string; message?: string }) => void }) {
   const searchParams = useSearchParams();
@@ -39,6 +40,7 @@ export default function ContactUsPage() {
         body: JSON.stringify(form),
       });
       if (res.ok) {
+        identifyLead({ email: form.email, phone: form.phone, name: form.yourname });
         setStatus("success");
         setForm({ yourname: "", phone: "", email: "", interest: "", experience: "", message: "" });
       } else setStatus("error");
@@ -78,21 +80,21 @@ export default function ContactUsPage() {
       name: "Nakodar (HQ)",
       subtitle: "Primary Office & Visa Processing Centre",
       address: "Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar",
-      email: "info@shivamanpower.com",
+      email: "info@shivatravelconsultant.in",
       image: "/Office desk.webp",
     },
     {
       name: "Jalandhar",
       subtitle: "Regional Recruitment Office",
       address: "GT Road, Jalandhar, Punjab",
-      email: "info@shivamanpower.com",
+      email: "info@shivatravelconsultant.in",
       image: "/Office desk.webp",
     },
     {
       name: "Punjab Region",
       subtitle: "Outreach & Candidate Support Centre",
       address: "Multiple locations across Punjab",
-      email: "info@shivamanpower.com",
+      email: "info@shivatravelconsultant.in",
       image: "/Office desk.webp",
     },
   ];
@@ -696,7 +698,7 @@ export default function ContactUsPage() {
             </a>
             {/* Call Center */}
             <a
-              href="tel:+919814920432"
+              href="tel:+919814820432"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -726,7 +728,7 @@ export default function ContactUsPage() {
                   Call Centre
                 </div>
                 <div style={{ fontFamily: "var(--font-body)", fontSize: 16, fontWeight: 700, color: "#0b1c30" }}>
-                  +91 98149-20432
+                  +91 98148-20432
                 </div>
               </div>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0b1c30" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -815,7 +817,7 @@ export default function ContactUsPage() {
                 fontWeight: 700,
                 color: "#dbe1ff",
               }}>
-                Mon - Sat: 9:00 AM - 6:00 PM
+                Mon - Sat: 9:00 AM - 6:30 PM
               </span>
             </div>
           </div>

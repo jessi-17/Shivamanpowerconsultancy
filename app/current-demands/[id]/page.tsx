@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
-import { readDemands } from "../../api/admin/demands/route";
-import { readOfferAll } from "../../api/admin/offer/route";
+import { readDemands } from "../../api/admin/demands/store";
+import { readOfferAll } from "../../api/admin/offer/store";
 import DemandDetailClient from "./DemandDetailClient";
 
 export const dynamic = "force-dynamic";

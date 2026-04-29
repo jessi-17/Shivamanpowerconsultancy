@@ -24,7 +24,7 @@ Our office is at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar,
 Yes, we hold Recruiting Agent license number RA B-1794 issued by the Ministry of External Affairs, Government of India. You can verify our license on the official E-Migrate portal at any time. We are one of the most established licensed agencies in the Nakodar-Jalandhar area and have been operating since 1998.
 
 **Q4. What are your office hours?**
-Our Nakodar office is open Monday to Saturday, 9:30 AM to 6:00 PM. We are closed on Sundays and national holidays. You can also reach us anytime on WhatsApp at +91 98153-58832 for quick queries, and we will respond within the same business day.
+Our Nakodar office is open Monday to Saturday, 9:00 AM to 6:30 PM. We are closed on Sundays and national holidays. You can also reach us anytime on WhatsApp at +91 98153-58832 for quick queries, and we will respond within the same business day.
 
 **Q5. Do you charge any fees from candidates?**
 Absolutely not. Shiva Travel & Manpower Consultants follows a strict zero-fee policy for all candidates -- this is in line with Indian government regulations for overseas recruitment. Our placement fees are paid entirely by the foreign employer. If anyone claims to represent us and asks for money, please report it to our Nakodar office immediately.
