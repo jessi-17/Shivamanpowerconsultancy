@@ -56,6 +56,7 @@ export default function AdminBlogList() {
         <AdminNavLink href="/admin/blog" label="Blog" active />
         <AdminNavLink href="/admin/offer" label="Ads Landing Page" />
         <AdminNavLink href="/admin/demands" label="Current Demands" />
+        <AdminNavLink href="/admin/leads" label="Leads" />
       </div>
 
       {/* Header */}

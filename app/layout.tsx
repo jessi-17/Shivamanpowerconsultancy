@@ -4,6 +4,8 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/own/Navbar";
 import SiteChrome from "@/components/own/SiteChrome";
+import PostHogProvider from "@/components/own/PostHogProvider";
+import PostHogPageView from "@/components/own/PostHogPageView";
 import "./global.css";
 
 const manrope = Manrope({
@@ -259,10 +261,13 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Navbar />
-        {children}
-        <SiteChrome />
-        <Analytics />
+        <PostHogProvider>
+          <PostHogPageView />
+          <Navbar />
+          {children}
+          <SiteChrome />
+          <Analytics />
+        </PostHogProvider>
 
         {/* Facebook Pixel — loads immediately for audience building */}
         <Script id="facebook-pixel" strategy="afterInteractive">

@@ -57,6 +57,7 @@ export default function AdminDemandsList() {
         <AdminNavLink href="/admin/blog" label="Blog" />
         <AdminNavLink href="/admin/offer" label="Ads Landing Page" />
         <AdminNavLink href="/admin/demands" label="Current Demands" active />
+        <AdminNavLink href="/admin/leads" label="Leads" />
       </div>
 
       {/* Header */}

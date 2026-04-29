@@ -173,6 +173,7 @@ export default function AdminOfferPage() {
         <AdminNavLink href="/admin/blog" label="Blog" />
         <AdminNavLink href="/admin/offer" label="Ads Landing Page" active />
         <AdminNavLink href="/admin/demands" label="Current Demands" />
+        <AdminNavLink href="/admin/leads" label="Leads" />
       </div>
 
       {/* Header */}

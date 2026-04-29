@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import posthog from "posthog-js";
 import type { Demand } from "../../../app/api/admin/demands/route";
 import ShareButtons from "@/components/own/ShareButtons";
 
@@ -9,6 +10,11 @@ export function DemandCard({ demand }: { demand: Demand }) {
   const href = `/current-demands/${demand.id}`;
 
   const goToDetail = () => {
+    posthog.capture("demand_card_clicked", {
+      demand_id: demand.id,
+      title: demand.title,
+      country: demand.country,
+    });
     router.push(href);
   };
 

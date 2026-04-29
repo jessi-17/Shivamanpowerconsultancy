@@ -1,43 +1,5 @@
 import { NextResponse } from "next/server";
-import { google } from "googleapis";
-
-async function appendToSheet(data: {
-  yourname: string;
-  phone: string;
-  email: string;
-  interest: string;
-  experience: string;
-  message: string;
-}) {
-  const auth = new google.auth.GoogleAuth({
-    credentials: {
-      client_email: process.env.GOOGLE_CLIENT_EMAIL,
-      private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
-      project_id: process.env.GOOGLE_PROJECT_ID,
-    },
-    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-  });
-
-  const sheets = google.sheets({ version: "v4", auth });
-  const spreadsheetId = process.env.GOOGLE_SHEET_ID!;
-
-  const values = [[
-    data.yourname,
-    data.phone,
-    data.email,
-    data.interest,
-    data.experience,
-    data.message,
-    new Date().toISOString(),
-  ]];
-
-  await sheets.spreadsheets.values.append({
-    spreadsheetId,
-    range: "Sheet1!A:G",
-    valueInputOption: "USER_ENTERED",
-    requestBody: { values },
-  });
-}
+import { insertLead } from "../../_lib/db";
 
 async function sendWhatsApp(phone: string, yourname: string) {
   const apiKey = process.env.GALLABOX_API_KEY;
@@ -48,7 +10,6 @@ async function sendWhatsApp(phone: string, yourname: string) {
     return;
   }
 
-  // Format phone: ensure it starts with country code
   let formattedPhone = phone.replace(/[\s\-()]/g, "");
   if (formattedPhone.startsWith("0")) {
     formattedPhone = "91" + formattedPhone.slice(1);
@@ -93,10 +54,14 @@ export async function POST(req: Request) {
     if (!yourname || !email)
       return NextResponse.json({ success: false, message: "Missing fields" }, { status: 400 });
 
-    // Save to Google Sheet
-    await appendToSheet({ yourname, phone, email, interest, experience, message });
+    await insertLead({
+      type: "general",
+      name: yourname,
+      email,
+      phone: phone || null,
+      data: { interest, experience, message },
+    });
 
-    // Send WhatsApp thank-you message via Gallabox
     if (phone) {
       await sendWhatsApp(phone, yourname).catch((err) => {
         console.error("WhatsApp send failed (non-blocking):", err);
@@ -106,6 +71,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ success: true });
   } catch (err) {
     console.error("submit-form error:", err);
-    return NextResponse.json({ success: false, error: (err as any).message }, { status: 500 });
+    return NextResponse.json({ success: false, error: (err as Error).message }, { status: 500 });
   }
 }
