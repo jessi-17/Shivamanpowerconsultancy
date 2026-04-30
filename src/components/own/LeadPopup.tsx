@@ -1,13 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
+import { useModalA11y } from "@/hooks/useModalA11y";
 
 export default function LeadPopup() {
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(false);
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (sessionStorage.getItem("lead-popup-dismissed")) return;
@@ -63,6 +65,8 @@ export default function LeadPopup() {
     handleDismiss();
   };
 
+  useModalA11y(visible && !dismissed, containerRef, handleDismiss);
+
   if (!visible || dismissed) return null;
 
   return (
@@ -70,6 +74,7 @@ export default function LeadPopup() {
       {/* Backdrop */}
       <div
         onClick={handleDismiss}
+        aria-hidden="true"
         style={{
           position: "fixed",
           inset: 0,
@@ -83,6 +88,10 @@ export default function LeadPopup() {
       {/* Popup */}
       <div
         id="lead-popup"
+        ref={containerRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="lead-popup-title"
         style={{
           position: "fixed",
           bottom: 24,
@@ -107,6 +116,7 @@ export default function LeadPopup() {
           {/* Close button */}
           <button
             onClick={handleDismiss}
+            aria-label="Close"
             style={{
               position: "absolute",
               top: 12,
@@ -149,6 +159,7 @@ export default function LeadPopup() {
             FREE CONSULTATION
           </p>
           <h3
+            id="lead-popup-title"
             style={{
               fontFamily: "var(--font-display)",
               fontSize: 20,

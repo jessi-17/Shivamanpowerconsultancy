@@ -25,7 +25,7 @@ export default function Navbar() {
   const m = useIsMobile();
   const pathname = usePathname();
 
-  const hasDarkHero = DARK_HERO_PAGES.includes(pathname) || pathname.startsWith("/blog") || pathname.startsWith("/employers/");
+  const hasDarkHero = DARK_HERO_PAGES.includes(pathname) || pathname === "/blog" || pathname.startsWith("/employers/");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -71,11 +71,32 @@ export default function Navbar() {
         }}
       >
         {/* Logo */}
-        <Link href="/" style={{ textDecoration: "none" }}>
+        <Link
+          href="/"
+          style={{
+            textDecoration: "none",
+            display: "flex",
+            alignItems: "center",
+            gap: m ? 8 : 12,
+          }}
+          aria-label="Shiva Travel & Manpower Consultants — Home"
+        >
+          <img
+            src="/image.png"
+            alt="Shiva Travel & Manpower Consultants logo"
+            style={{
+              height: m ? 44 : 56,
+              width: "auto",
+              display: "block",
+              objectFit: "contain",
+              filter: light ? "drop-shadow(0 1px 2px rgba(0,0,0,0.25))" : "none",
+              transition: "filter 300ms ease",
+            }}
+          />
           <span
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: m ? 16 : 24,
+              fontSize: m ? 14 : 18,
               fontWeight: 700,
               color: scrolled ? "var(--primary)" : textColor,
               transition: "color 300ms ease",

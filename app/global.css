@@ -578,3 +578,24 @@ section {
   padding-left: 0;
   padding-right: 0;
 }
+
+/* Skip-to-content link — hidden until focused */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100000;
+  padding: 12px 20px;
+  background: #0052dc;
+  color: #fff;
+  font-family: var(--font-display), sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 0 0 8px 0;
+  text-decoration: none;
+}
+.skip-to-content:focus {
+  left: 0;
+  outline: 3px solid #60a5fa;
+  outline-offset: 2px;
+}

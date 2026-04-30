@@ -237,6 +237,13 @@ export default function Footer() {
           }}>
             {/* Brand */}
             <div className="footer-col">
+              <Link href="/" aria-label="Shiva Travel & Manpower Consultants — Home" style={{ display: "inline-block", marginBottom: 12 }}>
+                <img
+                  src="/image.png"
+                  alt="Shiva Travel & Manpower Consultants logo"
+                  style={{ height: 96, width: "auto", display: "block", objectFit: "contain" }}
+                />
+              </Link>
               <h3 style={{
                 fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 700,
                 color: "#172554", marginBottom: 12,

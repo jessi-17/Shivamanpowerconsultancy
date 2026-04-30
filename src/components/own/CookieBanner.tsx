@@ -1,10 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
+import { useModalA11y } from "@/hooks/useModalA11y";
 
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Already consented
@@ -51,11 +53,17 @@ export default function CookieBanner() {
     }
   };
 
+  useModalA11y(visible, containerRef, handleReject);
+
   if (!visible) return null;
 
   return (
     <div
       id="cookie-banner"
+      ref={containerRef}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cookie-banner-text"
       style={{
         position: "fixed",
         bottom: 24,
@@ -77,7 +85,7 @@ export default function CookieBanner() {
       }}
     >
       <div style={{ flex: "1 1 260px" }}>
-        <p style={{
+        <p id="cookie-banner-text" style={{
           fontFamily: "var(--font-body)",
           fontSize: 13,
           color: "rgba(255,255,255,0.8)",

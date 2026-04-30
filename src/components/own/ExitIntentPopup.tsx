@@ -1,11 +1,13 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
+import { useModalA11y } from "@/hooks/useModalA11y";
 
 export default function ExitIntentPopup() {
   const [visible, setVisible] = useState(false);
   const [phone, setPhone] = useState("");
   const [destination, setDestination] = useState("");
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const show = useCallback(() => {
     if (sessionStorage.getItem("exit-popup-dismissed")) return;
@@ -51,6 +53,8 @@ export default function ExitIntentPopup() {
     dismiss();
   };
 
+  useModalA11y(visible, containerRef, dismiss);
+
   if (!visible) return null;
 
   return (
@@ -58,6 +62,7 @@ export default function ExitIntentPopup() {
       {/* Backdrop */}
       <div
         onClick={dismiss}
+        aria-hidden="true"
         style={{
           position: "fixed", inset: 0,
           backgroundColor: "rgba(0,12,47,0.6)",
@@ -69,6 +74,10 @@ export default function ExitIntentPopup() {
 
       {/* Popup */}
       <div
+        ref={containerRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="exit-popup-title"
         style={{
           position: "fixed",
           top: "50%", left: "50%",
@@ -115,7 +124,7 @@ export default function ExitIntentPopup() {
           }}>
             WAIT — DON&apos;T MISS OUT
           </p>
-          <h3 style={{
+          <h3 id="exit-popup-title" style={{
             fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 800,
             color: "#fff", lineHeight: 1.2, marginBottom: 6,
           }}>

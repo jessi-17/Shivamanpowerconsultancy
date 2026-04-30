@@ -3,18 +3,13 @@
 import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import posthog from "posthog-js";
-import { identifyLead } from "@/lib/identifyLead";
+import { useLeadFormSubmit } from "@/hooks/useLeadFormSubmit";
+import FormStatus from "@/components/own/FormStatus";
 import type { OfferContent, Region } from "../../api/admin/offer/store";
 import type { Demand } from "../../api/admin/demands/store";
 import { DemandCard, DemandsEmpty } from "@/components/own/DemandCard";
 import SidePosterRails from "@/components/own/SidePosterRails";
 import DemandsTicker from "@/components/own/DemandsTicker";
-
-declare global {
-  interface Window {
-    fbq?: (...args: unknown[]) => void;
-  }
-}
 
 const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "fbclid"];
 
@@ -67,11 +62,10 @@ function OfferInner({
     experience: "Fresher",
     message: "",
   });
-  const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
+  const { status, submit } = useLeadFormSubmit("/api/submit-form");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("loading");
 
     const utmParts: string[] = [];
     for (const key of UTM_KEYS) {
@@ -83,22 +77,14 @@ function OfferInner({
       ? `\n\n--- source: ${source} ${utmParts.join(" ")}`
       : `\n\n--- source: ${source}`;
 
-    try {
-      const res = await fetch("/api/submit-form", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...form,
-          email: form.email || `noemail+${Date.now()}@offer.local`,
-          message: (form.message || `Ad landing page lead (${region})`) + utmSuffix,
-        }),
-      });
-
-      if (res.ok) {
-        if (typeof window !== "undefined" && typeof window.fbq === "function") {
-          window.fbq("track", "Lead");
-        }
-        identifyLead({ email: form.email, phone: form.phone, name: form.yourname });
+    await submit({
+      body: {
+        ...form,
+        email: form.email || `noemail+${Date.now()}@offer.local`,
+        message: (form.message || `Ad landing page lead (${region})`) + utmSuffix,
+      },
+      identify: { email: form.email, phone: form.phone, name: form.yourname },
+      onSuccess: () => {
         posthog.capture("lead_form_submitted", {
           source: "offer",
           region,
@@ -106,12 +92,8 @@ function OfferInner({
           experience: form.experience,
         });
         router.push("/?submitted=1");
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
+      },
+    });
   };
 
   const inputStyle: React.CSSProperties = {
@@ -347,6 +329,7 @@ function OfferInner({
             >
               By submitting, you agree to be contacted by our team.
             </p>
+            <FormStatus status={status} />
           </form>
         </div>
 
