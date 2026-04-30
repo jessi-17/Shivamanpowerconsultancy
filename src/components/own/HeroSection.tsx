@@ -499,31 +499,19 @@ export default function HeroSection() {
 
 function HeroInquiryForm() {
   const m = useIsMobile();
-  const [form, setForm] = useState({ destination: "", phone: "" });
-  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+  const [name, setName] = useState("");
+  const [status, setStatus] = useState<"idle" | "success">("idle");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.phone) return;
-    const country = form.destination || "Not selected";
-    const message = `Hi, I'm interested in jobs in ${country}. My phone number is ${form.phone}. Please contact me.`;
+    const cleanName = name.trim();
+    if (!cleanName) return;
+    const message = `Hi, I'm ${cleanName}. I'm interested in overseas jobs.`;
     const whatsappUrl = `https://wa.me/919815358832?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
     setStatus("success");
-    setForm({ destination: "", phone: "" });
+    setName("");
     setTimeout(() => setStatus("idle"), 3000);
-  };
-
-  const fieldStyle: React.CSSProperties = {
-    padding: m ? "12px 14px" : "14px 16px",
-    backgroundColor: "rgba(255,255,255,0.08)",
-    border: "1.5px solid rgba(255,255,255,0.12)",
-    borderRadius: 10,
-    fontFamily: "var(--font-body)",
-    fontSize: 14,
-    color: "#fff",
-    outline: "none",
-    transition: "border-color 150ms",
   };
 
   return (
@@ -543,41 +531,24 @@ function HeroInquiryForm() {
         marginTop: 8,
       }}
     >
-      <select
-        value={form.destination}
-        onChange={(e) => setForm({ ...form, destination: e.target.value })}
-        style={{
-          ...fieldStyle,
-          flex: m ? "1 1 100%" : "1 1 0",
-          minWidth: 0,
-          appearance: "none",
-          WebkitAppearance: "none",
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E")`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "right 12px center",
-          paddingRight: 32,
-        } as React.CSSProperties}
-      >
-        <option value="" style={{ color: "#000" }}>Select Country</option>
-        <option value="UAE" style={{ color: "#000" }}>UAE (Dubai)</option>
-        <option value="Saudi Arabia" style={{ color: "#000" }}>Saudi Arabia</option>
-        <option value="Poland" style={{ color: "#000" }}>Poland</option>
-        <option value="Romania" style={{ color: "#000" }}>Romania</option>
-        <option value="Qatar" style={{ color: "#000" }}>Qatar</option>
-        <option value="Kuwait" style={{ color: "#000" }}>Kuwait</option>
-        <option value="Other" style={{ color: "#000" }}>Other</option>
-      </select>
-
       <input
-        type="tel"
-        placeholder="Your Phone Number"
-        value={form.phone}
-        onChange={(e) => setForm({ ...form, phone: e.target.value })}
+        type="text"
+        placeholder="Your name — we'll WhatsApp you"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
         required
         style={{
-          ...fieldStyle,
           flex: m ? "1 1 100%" : "1 1 0",
           minWidth: 0,
+          padding: m ? "12px 14px" : "14px 16px",
+          backgroundColor: "rgba(255,255,255,0.08)",
+          border: "1.5px solid rgba(255,255,255,0.12)",
+          borderRadius: 10,
+          fontFamily: "var(--font-body)",
+          fontSize: 14,
+          color: "#fff",
+          outline: "none",
+          transition: "border-color 150ms",
         }}
         onFocus={(e) => { e.currentTarget.style.borderColor = "#60a5fa"; }}
         onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)"; }}
@@ -585,24 +556,27 @@ function HeroInquiryForm() {
 
       <button
         type="submit"
-        disabled={status === "loading"}
         style={{
           flex: m ? "1 1 100%" : "0 0 auto",
-          padding: "14px 20px",
+          padding: "14px 24px",
           backgroundColor: status === "success" ? "#16a34a" : "#0052dc",
           color: "#fff",
           fontFamily: "var(--font-display)",
-          fontSize: m ? 13 : 15,
+          fontSize: m ? 14 : 15,
           fontWeight: 700,
           border: "none",
           borderRadius: 10,
-          cursor: status === "loading" ? "wait" : "pointer",
+          cursor: "pointer",
           transition: "all 150ms cubic-bezier(0.16,1,0.3,1)",
           whiteSpace: "nowrap",
           minWidth: "fit-content",
           boxShadow: status === "success"
             ? "0 0 20px rgba(22,163,74,0.5), 0 0 40px rgba(22,163,74,0.25)"
             : "0 0 20px rgba(0,82,220,0.5), 0 0 40px rgba(0,82,220,0.25)",
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 8,
+          justifyContent: "center",
         }}
         onMouseEnter={(e) => {
           if (status === "idle") {
@@ -615,7 +589,10 @@ function HeroInquiryForm() {
           e.currentTarget.style.boxShadow = "0 0 20px rgba(0,82,220,0.5), 0 0 40px rgba(0,82,220,0.25)";
         }}
       >
-        {status === "loading" ? "Sending..." : status === "success" ? "We'll Call You!" : m ? "Get Consultation →" : "Get Free Consultation →"}
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
+        </svg>
+        {status === "success" ? "Opening WhatsApp..." : "Send on WhatsApp"}
       </button>
     </form>
   );

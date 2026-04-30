@@ -52,6 +52,7 @@ export interface SangamLeadInput {
   email?: string | null;
   phone?: string | null;
   country?: string | null;
+  trade?: string | null;
   description?: string | null;
   comment?: string | null;
   leadSource?: string;
@@ -87,6 +88,7 @@ export async function pushLeadToSangam(input: SangamLeadInput): Promise<SangamPu
   if (input.email?.trim()) fields.email = input.email.trim();
   if (phone) fields.phone = phone;
   if (country) fields.countries_interested_in_c = country;
+  if (input.trade?.trim()) fields.trade_c = input.trade.trim();
   if (input.description?.trim()) fields.description = input.description.trim();
   if (input.comment?.trim()) fields.comment = input.comment.trim();
   fields.lead_source = input.leadSource || "Web Site";

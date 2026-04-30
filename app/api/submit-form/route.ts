@@ -50,7 +50,7 @@ async function sendWhatsApp(phone: string, yourname: string) {
 
 export async function POST(req: Request) {
   try {
-    const { yourname, phone, email, interest, experience, message } = await req.json();
+    const { yourname, phone, email, interest, trade, experience, message } = await req.json();
 
     if (!yourname || !email)
       return NextResponse.json({ success: false, message: "Missing fields" }, { status: 400 });
@@ -60,7 +60,7 @@ export async function POST(req: Request) {
       name: yourname,
       email,
       phone: phone || null,
-      data: { interest, experience, message },
+      data: { interest, trade, experience, message },
     });
 
     pushLeadToSangam({
@@ -68,6 +68,7 @@ export async function POST(req: Request) {
       email,
       phone,
       country: interest,
+      trade,
       description: [message, experience ? `Experience: ${experience}` : null].filter(Boolean).join("\n\n") || null,
     }).then((r) => {
       if (!r.ok && !r.skipped) console.error("[sangam] push failed (non-blocking):", r.error);

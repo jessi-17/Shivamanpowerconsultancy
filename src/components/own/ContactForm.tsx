@@ -1,41 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useIsMobile } from "@/hooks/useIsMobile";
-import { useLeadFormSubmit } from "@/hooks/useLeadFormSubmit";
-import FormStatus from "@/components/own/FormStatus";
-
-const EMPTY_FORM = { yourname: "", phone: "", email: "", interest: "", experience: "", message: "" };
+import UnifiedContactForm from "@/components/own/UnifiedContactForm";
 
 export default function ContactForm() {
   const ref = useScrollReveal();
   const m = useIsMobile();
-  const [form, setForm] = useState(EMPTY_FORM);
-  const [showMore, setShowMore] = useState(false);
-  const { status, submit } = useLeadFormSubmit<typeof EMPTY_FORM>("/api/submit-form");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    await submit({
-      body: form,
-      identify: { email: form.email, phone: form.phone, name: form.yourname },
-      onSuccess: () => setForm(EMPTY_FORM),
-    });
-  };
-
-  const inputStyle: React.CSSProperties = {
-    width: "100%",
-    padding: m ? "8px 10px" : "14px 16px",
-    backgroundColor: "#f8f9ff",
-    border: "1.5px solid rgba(0,0,0,0.06)",
-    borderRadius: m ? 8 : 10,
-    fontFamily: "var(--font-body)",
-    fontSize: m ? 13 : 14,
-    color: "var(--on-surface)",
-    outline: "none",
-    transition: "border-color 150ms",
-  };
 
   return (
     <div
@@ -107,150 +78,11 @@ export default function ContactForm() {
 
       {/* Right — form */}
       <div style={{ flex: "1 1 400px", backgroundColor: "#fff", padding: m ? "32px 20px" : "48px 40px" }}>
-        <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: m ? 8 : 20 }}>
-          <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-            <div style={{ flex: "1 1 200px" }}>
-              <label style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 600, color: "var(--on-surface-variant)", marginBottom: 6, display: "block" }}>
-                FULL NAME
-              </label>
-              <input
-                type="text" placeholder="Ex. Rahul Singh"
-                value={form.yourname}
-                onChange={(e) => setForm({ ...form, yourname: e.target.value })}
-                required style={inputStyle}
-                onFocus={(e) => { e.currentTarget.style.borderColor = "#0052dc"; }}
-                onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(0,0,0,0.06)"; }}
-              />
-            </div>
-            <div style={{ flex: "1 1 200px" }}>
-              <label style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 600, color: "var(--on-surface-variant)", marginBottom: 6, display: "block" }}>
-                PHONE NUMBER
-              </label>
-              <input
-                type="tel" placeholder="+91"
-                value={form.phone}
-                onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                style={inputStyle}
-                onFocus={(e) => { e.currentTarget.style.borderColor = "#0052dc"; }}
-                onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(0,0,0,0.06)"; }}
-              />
-            </div>
-          </div>
-
-          {/* Destination — always visible */}
-          <div>
-            <label style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 600, color: "var(--on-surface-variant)", marginBottom: 6, display: "block" }}>
-              PREFERRED DESTINATION
-            </label>
-            <select
-              value={form.interest}
-              onChange={(e) => setForm({ ...form, interest: e.target.value })}
-              style={{ ...inputStyle, appearance: "none", cursor: "pointer" }}
-              onFocus={(e) => { e.currentTarget.style.borderColor = "#0052dc"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(0,0,0,0.06)"; }}
-            >
-              <option value="">Select Country</option>
-              <option value="UAE">UAE</option>
-              <option value="Saudi Arabia">Saudi Arabia</option>
-              <option value="Qatar">Qatar</option>
-              <option value="Poland">Poland</option>
-              <option value="Romania">Romania</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-
-          <div>
-            <label style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 600, color: "var(--on-surface-variant)", marginBottom: 6, display: "block" }}>
-              YOUR MESSAGE
-            </label>
-            <textarea
-              placeholder="Tell us about your background..."
-              value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
-              rows={m ? 2 : 3}
-              style={{ ...inputStyle, resize: "vertical" }}
-              onFocus={(e) => { e.currentTarget.style.borderColor = "#0052dc"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(0,0,0,0.06)"; }}
-            />
-          </div>
-
-          {/* Extra fields — collapsed on mobile, always visible on desktop */}
-          {(showMore || !m) && (
-            <div style={{ display: "flex", flexDirection: "column", gap: m ? 8 : 20 }}>
-              <div>
-                <label style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 600, color: "var(--on-surface-variant)", marginBottom: 6, display: "block" }}>
-                  EMAIL
-                </label>
-                <input
-                  type="email" placeholder="Enter your email"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  style={inputStyle}
-                  onFocus={(e) => { e.currentTarget.style.borderColor = "#0052dc"; }}
-                  onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(0,0,0,0.06)"; }}
-                />
-              </div>
-              <div>
-                <label style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 600, color: "var(--on-surface-variant)", marginBottom: 6, display: "block" }}>
-                  EXPERIENCE
-                </label>
-                <select
-                  value={form.experience}
-                  onChange={(e) => setForm({ ...form, experience: e.target.value })}
-                  style={{ ...inputStyle, appearance: "none", cursor: "pointer" }}
-                  onFocus={(e) => { e.currentTarget.style.borderColor = "#0052dc"; }}
-                  onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(0,0,0,0.06)"; }}
-                >
-                  <option value="Fresher">Fresher</option>
-                  <option value="1-3 years">1-3 years</option>
-                  <option value="3-5 years">3-5 years</option>
-                  <option value="5+ years">5+ years</option>
-                </select>
-              </div>
-            </div>
-          )}
-
-          {m && !showMore && (
-            <button
-              type="button"
-              onClick={() => setShowMore(true)}
-              style={{
-                background: "none", border: "none", cursor: "pointer",
-                fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600,
-                color: "#0052dc", padding: "4px 0", textAlign: "left",
-              }}
-            >
-              + Add email & experience (optional)
-            </button>
-          )}
-
-          <button
-            type="submit"
-            disabled={status === "loading"}
-            style={{
-              width: "100%", padding: m ? "10px" : "16px",
-              backgroundColor: "#0052dc", color: "#fff",
-              fontFamily: "var(--font-display)", fontSize: m ? 14 : 16, fontWeight: 700,
-              border: "none", borderRadius: 10,
-              cursor: status === "loading" ? "wait" : "pointer",
-              transition: "all 150ms cubic-bezier(0.16,1,0.3,1)",
-              opacity: status === "loading" ? 0.7 : 1,
-            }}
-            onMouseEnter={(e) => {
-              if (status !== "loading") {
-                e.currentTarget.style.transform = "translateY(-2px)";
-                e.currentTarget.style.boxShadow = "0 6px 20px rgba(0,82,220,0.35)";
-              }
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "none";
-            }}
-          >
-            {status === "loading" ? "Sending..." : status === "success" ? "Sent! We'll call you back." : "Request Call Back"}
-          </button>
-          <FormStatus status={status} successText="Form sent. We will call you back." />
-        </form>
+        <UnifiedContactForm
+          source="homepage-footer"
+          submitLabel="Request Call Back"
+          posthogContext={{ source: "homepage_footer" }}
+        />
       </div>
     </div>
   );

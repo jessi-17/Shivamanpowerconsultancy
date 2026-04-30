@@ -1,45 +1,16 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import posthog from "posthog-js";
-import { useLeadFormSubmit } from "@/hooks/useLeadFormSubmit";
-import FormStatus from "@/components/own/FormStatus";
+import { useEffect, Suspense } from "react";
+import { useRouter } from "next/navigation";
+import UnifiedContactForm from "@/components/own/UnifiedContactForm";
 import type { OfferContent, Region } from "../../api/admin/offer/store";
 import type { Demand } from "../../api/admin/demands/store";
 import { DemandCard, DemandsEmpty } from "@/components/own/DemandCard";
 import SidePosterRails from "@/components/own/SidePosterRails";
 import DemandsTicker from "@/components/own/DemandsTicker";
 
-const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "fbclid"];
-
-function CountryOptions({ region }: { region: Region }) {
-  if (region === "europe") {
-    return (
-      <>
-        <option value="">Select Country</option>
-        <option value="Poland">Poland</option>
-        <option value="Romania">Romania</option>
-        <option value="Croatia">Croatia</option>
-        <option value="Malta">Malta</option>
-        <option value="Hungary">Hungary</option>
-        <option value="Czech Republic">Czech Republic</option>
-        <option value="Other">Other</option>
-      </>
-    );
-  }
-  return (
-    <>
-      <option value="">Select Country</option>
-      <option value="UAE">UAE</option>
-      <option value="Saudi Arabia">Saudi Arabia</option>
-      <option value="Qatar">Qatar</option>
-      <option value="Kuwait">Kuwait</option>
-      <option value="Bahrain">Bahrain</option>
-      <option value="Oman">Oman</option>
-      <option value="Other">Other</option>
-    </>
-  );
+function regionLabel(region: Region): string {
+  return region === "europe" ? "Europe" : "Gulf";
 }
 
 function OfferInner({
@@ -52,62 +23,6 @@ function OfferInner({
   region: Region;
 }) {
   const router = useRouter();
-  const searchParams = useSearchParams();
-
-  const [form, setForm] = useState({
-    yourname: "",
-    phone: "",
-    email: "",
-    interest: "",
-    experience: "Fresher",
-    message: "",
-  });
-  const { status, submit } = useLeadFormSubmit("/api/submit-form");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const utmParts: string[] = [];
-    for (const key of UTM_KEYS) {
-      const v = searchParams.get(key);
-      if (v) utmParts.push(`${key}=${v}`);
-    }
-    const source = `/offer/${region}`;
-    const utmSuffix = utmParts.length
-      ? `\n\n--- source: ${source} ${utmParts.join(" ")}`
-      : `\n\n--- source: ${source}`;
-
-    await submit({
-      body: {
-        ...form,
-        email: form.email || `noemail+${Date.now()}@offer.local`,
-        message: (form.message || `Ad landing page lead (${region})`) + utmSuffix,
-      },
-      identify: { email: form.email, phone: form.phone, name: form.yourname },
-      onSuccess: () => {
-        posthog.capture("lead_form_submitted", {
-          source: "offer",
-          region,
-          interest: form.interest,
-          experience: form.experience,
-        });
-        router.push("/?submitted=1");
-      },
-    });
-  };
-
-  const inputStyle: React.CSSProperties = {
-    width: "100%",
-    padding: "14px 16px",
-    backgroundColor: "#f8f9ff",
-    border: "1.5px solid rgba(0,0,0,0.06)",
-    borderRadius: 10,
-    fontFamily: "var(--font-body)",
-    fontSize: 14,
-    color: "var(--on-surface)",
-    outline: "none",
-    transition: "border-color 150ms",
-  };
 
   return (
     <div
@@ -234,103 +149,18 @@ function OfferInner({
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-              <input
-                type="text"
-                placeholder="Full name *"
-                required
-                value={form.yourname}
-                onChange={(e) => setForm({ ...form, yourname: e.target.value })}
-                style={inputStyle}
-              />
-              <input
-                type="tel"
-                placeholder="Phone number *"
-                required
-                value={form.phone}
-                onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                style={inputStyle}
-              />
-            </div>
-
-            <input
-              type="email"
-              placeholder="Email (optional)"
-              value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-              style={inputStyle}
-            />
-
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-              <select
-                value={form.interest}
-                onChange={(e) => setForm({ ...form, interest: e.target.value })}
-                style={{ ...inputStyle, appearance: "none", cursor: "pointer" }}
-                required
-              >
-                <CountryOptions region={region} />
-              </select>
-              <select
-                value={form.experience}
-                onChange={(e) => setForm({ ...form, experience: e.target.value })}
-                style={{ ...inputStyle, appearance: "none", cursor: "pointer" }}
-              >
-                <option value="Fresher">Fresher</option>
-                <option value="1-3 years">1-3 years</option>
-                <option value="3-5 years">3-5 years</option>
-                <option value="5+ years">5+ years</option>
-              </select>
-            </div>
-
-            <textarea
-              placeholder="Tell us about your background (optional)"
-              rows={3}
-              value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
-              style={{ ...inputStyle, resize: "vertical" }}
-            />
-
-            <button
-              type="submit"
-              disabled={status === "loading"}
-              style={{
-                width: "100%",
-                padding: "16px",
-                backgroundColor: "#0052dc",
-                color: "#fff",
-                fontFamily: "var(--font-display)",
-                fontSize: 15,
-                fontWeight: 700,
-                border: "none",
-                borderRadius: 10,
-                cursor: status === "loading" ? "wait" : "pointer",
-                opacity: status === "loading" ? 0.7 : 1,
-                boxShadow: "0 8px 24px rgba(0,82,220,0.35)",
-              }}
-            >
-              {status === "loading" ? "Submitting..." : offer.ctaLabel || "Request Free Call Back"}
-            </button>
-
-            {status === "error" && (
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "#dc2626", textAlign: "center" }}>
-                Something went wrong. Please try again or call +91 98148-20432.
-              </p>
-            )}
-
-            <p
-              style={{
-                fontFamily: "var(--font-body)",
-                fontSize: 11,
-                color: "#94a3b8",
-                textAlign: "center",
-                marginTop: 4,
-              }}
-            >
-              By submitting, you agree to be contacted by our team.
-            </p>
-            <FormStatus status={status} />
-          </form>
+          <UnifiedContactForm
+            prefill={{
+              interest: regionLabel(region),
+              experience: "Fresher",
+            }}
+            source={`/offer/${region}`}
+            contextTag={`Ad landing page lead (${region})`}
+            submitLabel={offer.ctaLabel || "Request Free Call Back"}
+            posthogContext={{ source: "offer", region }}
+            onSuccess={() => router.push("/?submitted=1")}
+            compact
+          />
         </div>
 
         {/* Trust row */}
