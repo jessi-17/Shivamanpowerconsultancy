@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { insertLead } from "../../_lib/db";
+import { pushLeadToSangam } from "../../_lib/sangam";
 
 async function sendWhatsApp(phone: string, yourname: string) {
   const apiKey = process.env.GALLABOX_API_KEY;
@@ -60,6 +61,16 @@ export async function POST(req: Request) {
       email,
       phone: phone || null,
       data: { interest, experience, message },
+    });
+
+    pushLeadToSangam({
+      name: yourname,
+      email,
+      phone,
+      country: interest,
+      description: [message, experience ? `Experience: ${experience}` : null].filter(Boolean).join("\n\n") || null,
+    }).then((r) => {
+      if (!r.ok && !r.skipped) console.error("[sangam] push failed (non-blocking):", r.error);
     });
 
     if (phone) {

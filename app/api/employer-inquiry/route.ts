@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { insertLead } from "../../_lib/db";
+import { pushLeadToSangam } from "../../_lib/sangam";
 
 interface InquiryData {
   companyName: string;
@@ -86,7 +87,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const [dbResult, emailResult] = await Promise.allSettled([
+    const [dbResult, emailResult, sangamResult] = await Promise.allSettled([
       insertLead({
         type: "employer",
         name: data.contactPerson,
@@ -96,6 +97,14 @@ export async function POST(req: Request) {
         data: { companyName: data.companyName, message: data.message },
       }),
       sendNotificationEmail(data),
+      pushLeadToSangam({
+        name: data.contactPerson,
+        email: data.email,
+        phone: data.phone,
+        country: data.country,
+        description: `[Employer Inquiry]\nCompany: ${data.companyName}\n\nRequirements:\n${data.message}`,
+        leadSource: "Web Site",
+      }),
     ]);
 
     if (dbResult.status === "rejected") {
@@ -103,6 +112,11 @@ export async function POST(req: Request) {
     }
     if (emailResult.status === "rejected") {
       console.error("[employer-inquiry] email error:", emailResult.reason);
+    }
+    if (sangamResult.status === "rejected") {
+      console.error("[employer-inquiry] sangam error:", sangamResult.reason);
+    } else if (sangamResult.value && !sangamResult.value.ok && !sangamResult.value.skipped) {
+      console.error("[employer-inquiry] sangam push failed:", sangamResult.value.error);
     }
 
     if (dbResult.status === "rejected" && emailResult.status === "rejected") {

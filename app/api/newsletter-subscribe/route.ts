@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { insertLead } from "../../_lib/db";
+import { pushLeadToSangam } from "../../_lib/sangam";
 
 export async function POST(req: Request) {
   try {
@@ -14,6 +15,15 @@ export async function POST(req: Request) {
       type: "newsletter",
       email,
       data: { frequency: freq },
+    });
+
+    pushLeadToSangam({
+      name: email.split("@")[0],
+      email,
+      description: `Newsletter subscriber (${freq})`,
+      leadSource: "Web Site",
+    }).then((r) => {
+      if (!r.ok && !r.skipped) console.error("[sangam] newsletter push failed (non-blocking):", r.error);
     });
 
     return NextResponse.json({ success: true });
