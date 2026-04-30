@@ -491,9 +491,15 @@ export default function Footer() {
           {/* Copyright */}
           <div style={{
             borderTop: "1px solid rgba(0,0,0,0.06)", paddingTop: 20, textAlign: "center",
+            display: "flex", flexDirection: "column", gap: 6, alignItems: "center",
           }}>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "#94a3b8" }}>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "#94a3b8", margin: 0 }}>
               © 2026 Shiva Travel & Manpower Consultants. Licensed by Ministry of External Affairs (RA B-1794). All Rights Reserved.
+            </p>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "#94a3b8", margin: 0 }}>
+              <Link href="/privacy-policy" style={{ color: "#64748b", textDecoration: "none" }}>
+                Privacy Policy
+              </Link>
             </p>
           </div>
         </div>
