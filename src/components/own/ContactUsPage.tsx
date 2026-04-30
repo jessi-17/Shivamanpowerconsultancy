@@ -4,7 +4,10 @@ import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { identifyLead } from "@/lib/identifyLead";
+import { useLeadFormSubmit } from "@/hooks/useLeadFormSubmit";
+import FormStatus from "@/components/own/FormStatus";
+
+const EMPTY_FORM = { yourname: "", phone: "", email: "", interest: "", experience: "", message: "" };
 
 function FormPrefill({ onPrefill }: { onPrefill: (patch: { interest?: string; message?: string }) => void }) {
   const searchParams = useSearchParams();
@@ -27,26 +30,16 @@ export default function ContactUsPage() {
   const interviewRef = useScrollReveal();
   const journeyRef = useScrollReveal();
 
-  const [form, setForm] = useState({ yourname: "", phone: "", email: "", interest: "", experience: "", message: "" });
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [form, setForm] = useState(EMPTY_FORM);
+  const { status, submit } = useLeadFormSubmit<typeof EMPTY_FORM>("/api/submit-form");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("loading");
-    try {
-      const res = await fetch("/api/submit-form", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (res.ok) {
-        identifyLead({ email: form.email, phone: form.phone, name: form.yourname });
-        setStatus("success");
-        setForm({ yourname: "", phone: "", email: "", interest: "", experience: "", message: "" });
-      } else setStatus("error");
-    } catch {
-      setStatus("error");
-    }
+    await submit({
+      body: form,
+      identify: { email: form.email, phone: form.phone, name: form.yourname },
+      onSuccess: () => setForm(EMPTY_FORM),
+    });
   };
 
   const labelStyle: React.CSSProperties = {
@@ -485,6 +478,7 @@ export default function ContactUsPage() {
               >
                 {status === "loading" ? "Submitting..." : status === "success" ? "Sent! We'll contact you soon." : "Submit Inquiry"}
               </button>
+              <FormStatus status={status} successText="Inquiry sent. We will contact you soon." />
             </form>
           </div>
         </div>

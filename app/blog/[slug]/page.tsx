@@ -144,7 +144,7 @@ export default async function BlogPostPage({
             borderBottom: "1px solid #f1f5f9",
           }}
         >
-          <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <div style={{ maxWidth: 920, margin: "0 auto" }}>
             {/* Breadcrumb */}
             <nav
               style={{
@@ -209,7 +209,11 @@ export default async function BlogPostPage({
                 lineHeight: 1.6,
                 color: "#3b4858",
                 margin: "0 0 28px",
-                maxWidth: 640,
+                maxWidth: 720,
+                display: "-webkit-box",
+                WebkitLineClamp: 3,
+                WebkitBoxOrient: "vertical",
+                overflow: "hidden",
               }}
             >
               {post.excerpt}
@@ -254,7 +258,7 @@ export default async function BlogPostPage({
           {/* Cover image — wide, full-bleed, then the body breathes below */}
           <div
             style={{
-              maxWidth: 1080,
+              maxWidth: 1240,
               margin: "0 auto",
               borderRadius: "16px 16px 0 0",
               overflow: "hidden",
@@ -267,7 +271,7 @@ export default async function BlogPostPage({
               src={post.image}
               alt={post.title}
               fill
-              sizes="(max-width: 1100px) 100vw, 1080px"
+              sizes="(max-width: 1280px) 100vw, 1240px"
               style={{ objectFit: "cover" }}
               priority
             />

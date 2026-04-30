@@ -2,11 +2,21 @@
 
 import { useState } from "react";
 import { useIsMobile } from "@/hooks/useIsMobile";
-import { identifyLead } from "@/lib/identifyLead";
+import { useLeadFormSubmit } from "@/hooks/useLeadFormSubmit";
+import FormStatus from "@/components/own/FormStatus";
 
 interface Props {
   defaultCountry?: string;
   compact?: boolean;
+}
+
+interface EmployerForm {
+  companyName: string;
+  contactPerson: string;
+  email: string;
+  phone: string;
+  country: string;
+  message: string;
 }
 
 const countries = [
@@ -16,40 +26,30 @@ const countries = [
 
 export default function EmployerQuoteForm({ defaultCountry = "", compact = false }: Props) {
   const m = useIsMobile();
-  const [form, setForm] = useState({
+  const emptyForm: EmployerForm = {
     companyName: "",
     contactPerson: "",
     email: "",
     phone: "",
     country: defaultCountry,
     message: "",
-  });
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  };
+  const [form, setForm] = useState<EmployerForm>(emptyForm);
+  const { status, submit } = useLeadFormSubmit<EmployerForm>("/api/employer-inquiry");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("loading");
-    try {
-      const res = await fetch("/api/employer-inquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (res.ok) {
-        identifyLead({
-          email: form.email,
-          phone: form.phone,
-          name: form.contactPerson,
-          company: form.companyName,
-        });
-        setStatus("success");
-        setForm({ companyName: "", contactPerson: "", email: "", phone: "", country: defaultCountry, message: "" });
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
+    await submit({
+      body: form,
+      identify: {
+        email: form.email,
+        phone: form.phone,
+        name: form.contactPerson,
+        company: form.companyName,
+      },
+      trackPixel: false,
+      onSuccess: () => setForm(emptyForm),
+    });
   };
 
   const pad = compact ? (m ? "10px 12px" : "11px 14px") : (m ? "12px 14px" : "13px 16px");
@@ -224,6 +224,7 @@ export default function EmployerQuoteForm({ defaultCountry = "", compact = false
       }}>
         No obligation. Free consultation. We respond within 24 hours.
       </p>
+      <FormStatus status={status} successText="Inquiry submitted. We will contact you within 24 hours." />
     </form>
   );
 }

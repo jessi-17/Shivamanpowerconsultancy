@@ -3,34 +3,29 @@
 import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useIsMobile } from "@/hooks/useIsMobile";
-import { identifyLead } from "@/lib/identifyLead";
+import { useLeadFormSubmit } from "@/hooks/useLeadFormSubmit";
+import FormStatus from "@/components/own/FormStatus";
+
+interface NewsletterBody {
+  email: string;
+  frequency: "weekly" | "daily";
+}
 
 export default function NewsletterSubscription() {
   const ref = useScrollReveal();
   const m = useIsMobile();
   const [email, setEmail] = useState("");
   const [frequency, setFrequency] = useState<"weekly" | "daily">("weekly");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const { status, submit } = useLeadFormSubmit<NewsletterBody>("/api/newsletter-subscribe");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("loading");
-    try {
-      const res = await fetch("/api/newsletter-subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, frequency }),
-      });
-      if (res.ok) {
-        identifyLead({ email });
-        setStatus("success");
-        setEmail("");
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
+    await submit({
+      body: { email, frequency },
+      identify: { email },
+      trackPixel: false,
+      onSuccess: () => setEmail(""),
+    });
   };
 
   return (
@@ -161,6 +156,7 @@ export default function NewsletterSubscription() {
           >
             {status === "loading" ? "Subscribing..." : status === "success" ? "Subscribed!" : status === "error" ? "Try Again" : "Subscribe"}
           </button>
+          <FormStatus status={status} successText="Subscribed to the newsletter." />
         </form>
 
         <p style={{

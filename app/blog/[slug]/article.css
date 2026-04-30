@@ -363,14 +363,14 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 32px;
-  max-width: 1080px;
+  max-width: 1240px;
   margin: 0 auto;
 }
 
 @media (min-width: 1024px) {
   .article-shell {
-    grid-template-columns: minmax(0, 700px) 240px;
-    gap: 64px;
+    grid-template-columns: minmax(0, 880px) 260px;
+    gap: 72px;
     justify-content: center;
   }
 }

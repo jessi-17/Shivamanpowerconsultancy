@@ -4,19 +4,14 @@ import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import posthog from "posthog-js";
-import { identifyLead } from "@/lib/identifyLead";
+import { useLeadFormSubmit } from "@/hooks/useLeadFormSubmit";
+import FormStatus from "@/components/own/FormStatus";
 import type { Demand } from "../../api/admin/demands/store";
 import { DemandCard, DemandsEmpty } from "@/components/own/DemandCard";
 import SidePosterRails from "@/components/own/SidePosterRails";
 import DemandsTicker from "@/components/own/DemandsTicker";
 import ShareButtons from "@/components/own/ShareButtons";
 import { flagFor } from "@/lib/countryFlags";
-
-declare global {
-  interface Window {
-    fbq?: (...args: unknown[]) => void;
-  }
-}
 
 const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "fbclid"];
 
@@ -42,11 +37,10 @@ function DetailInner({
     experience: "Fresher",
     message: "",
   });
-  const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
+  const { status, submit } = useLeadFormSubmit("/api/submit-form");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("loading");
 
     const utmParts: string[] = [];
     for (const key of UTM_KEYS) {
@@ -57,22 +51,14 @@ function DetailInner({
     const utmSuffix = utmParts.length ? ` ${utmParts.join(" ")}` : "";
     const demandTag = `\n\n--- demand: ${demand.title} (${demand.id}) — source: ${source}${utmSuffix}`;
 
-    try {
-      const res = await fetch("/api/submit-form", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...form,
-          email: form.email || `noemail+${Date.now()}@demand.local`,
-          message: (form.message || `Applying for: ${demand.title}`) + demandTag,
-        }),
-      });
-
-      if (res.ok) {
-        if (typeof window !== "undefined" && typeof window.fbq === "function") {
-          window.fbq("track", "Lead");
-        }
-        identifyLead({ email: form.email, phone: form.phone, name: form.yourname });
+    await submit({
+      body: {
+        ...form,
+        email: form.email || `noemail+${Date.now()}@demand.local`,
+        message: (form.message || `Applying for: ${demand.title}`) + demandTag,
+      },
+      identify: { email: form.email, phone: form.phone, name: form.yourname },
+      onSuccess: () => {
         posthog.capture("lead_form_submitted", {
           source: "demand_detail",
           demand_id: demand.id,
@@ -82,12 +68,8 @@ function DetailInner({
           experience: form.experience,
         });
         router.push("/?submitted=1");
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
+      },
+    });
   };
 
   const inputStyle: React.CSSProperties = {
@@ -368,6 +350,7 @@ function DetailInner({
                 >
                   By submitting, you agree to be contacted by our team.
                 </p>
+                <FormStatus status={status} />
               </form>
             </div>
           </div>

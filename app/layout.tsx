@@ -262,10 +262,13 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <a href="#main-content" className="skip-to-content">
+          Skip to main content
+        </a>
         <PostHogProvider>
           <PostHogPageView />
           <Navbar />
-          {children}
+          <div id="main-content">{children}</div>
           <SiteChrome />
           <Analytics />
         </PostHogProvider>
@@ -312,33 +315,53 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Gallabox WhatsApp — afterInteractive for reliability */}
+        {/* Gallabox WhatsApp — defer until first user interaction or 8s idle to keep INP low */}
         <Script id="gallabox-whatsapp" strategy="afterInteractive">
           {`
-            (function (w, d, s, u) {
-              w.gbwawc = {
-                url: u,
-                options: {
-                  waId: "919815358832",
-                  siteName: "Shiva Travel & Manpower Consultants Nakodar",
-                  siteTag: "Usually replies within minutes",
-                  siteLogo: "https://shivatravelconsultant.in/logo.jpg",
-                  widgetPosition: "RIGHT",
-                  welcomeMessage: "Welcome to Shiva Travel & Manpower Consultants Nakodar! How can we help you today?",
-                  brandColor: "#25D366",
-                  messageText: "Hi, I'd like to know more about overseas job opportunities",
-                  replyOptions: ["Gulf Jobs Info", "Europe Jobs Info", "Visa Process", "Current Openings"],
-                  version: "v1",
-                  widgetPositionMarginX: 16,
-                  widgetPositionMarginY: 16,
-                },
-              };
-              var h = d.getElementsByTagName(s)[0],
-                j = d.createElement(s);
-              j.async = true;
-              j.src = u + "/whatsapp-widget.min.js";
-              h.parentNode.insertBefore(j, h);
-            })(window, document, "script", "https://waw.gallabox.com");
+            (function () {
+              var loaded = false;
+              function loadGallabox() {
+                if (loaded) return;
+                loaded = true;
+                window.gbwawc = {
+                  url: "https://waw.gallabox.com",
+                  options: {
+                    waId: "919815358832",
+                    siteName: "Shiva Travel & Manpower Consultants Nakodar",
+                    siteTag: "Usually replies within minutes",
+                    siteLogo: "https://shivatravelconsultant.in/logo.jpg",
+                    widgetPosition: "RIGHT",
+                    welcomeMessage: "Welcome to Shiva Travel & Manpower Consultants Nakodar! How can we help you today?",
+                    brandColor: "#25D366",
+                    messageText: "Hi, I'd like to know more about overseas job opportunities",
+                    replyOptions: ["Gulf Jobs Info", "Europe Jobs Info", "Visa Process", "Current Openings"],
+                    version: "v1",
+                    widgetPositionMarginX: 16,
+                    widgetPositionMarginY: 16,
+                  },
+                };
+                var s = document.createElement("script");
+                s.async = true;
+                s.src = "https://waw.gallabox.com/whatsapp-widget.min.js";
+                document.head.appendChild(s);
+                cleanup();
+              }
+              var events = ["scroll", "mousemove", "touchstart", "keydown"];
+              function cleanup() {
+                events.forEach(function (e) {
+                  window.removeEventListener(e, loadGallabox, { passive: true });
+                });
+              }
+              events.forEach(function (e) {
+                window.addEventListener(e, loadGallabox, { passive: true, once: true });
+              });
+              // Fallback: load on idle / after 8s so widget appears for completely passive viewers
+              if ("requestIdleCallback" in window) {
+                window.requestIdleCallback(loadGallabox, { timeout: 8000 });
+              } else {
+                setTimeout(loadGallabox, 8000);
+              }
+            })();
           `}
         </Script>
       </body>
