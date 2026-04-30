@@ -111,21 +111,15 @@ export default function Footer() {
 
       const allChars = revealRef.current!.querySelectorAll(".footer-char");
 
-      gsap.set(allChars, {
+      gsap.from(allChars, {
         opacity: 0,
         scale: 1.4,
         filter: "blur(20px)",
         y: 20,
-      });
-
-      gsap.to(allChars, {
-        opacity: 1,
-        scale: 1,
-        filter: "blur(0px)",
-        y: 0,
         duration: 1.0,
         stagger: { each: 0.025, from: "center" },
         ease: "power2.out",
+        immediateRender: false,
         scrollTrigger: {
           trigger: revealRef.current,
           start: "top 85%",
@@ -150,18 +144,28 @@ export default function Footer() {
         scrollTrigger: { trigger: revealRef.current, start: "top bottom", end: "bottom top", scrub: 1 },
       });
 
-      gsap.fromTo(revealRef.current, { opacity: 0 }, {
-        opacity: 1, duration: 0.8, ease: "power2.out",
+      // immediateRender: false — the "from" state (opacity 0) is only applied
+      // when the ScrollTrigger fires. If the trigger never fires (stale scroll
+      // position after navigation, layout shift from late images, etc.), the
+      // elements remain at their natural visible state. No more invisible footer.
+      gsap.from(revealRef.current, {
+        opacity: 0, duration: 0.8, ease: "power2.out",
+        immediateRender: false,
         scrollTrigger: { trigger: revealRef.current, start: "top 95%", toggleActions: "play none none reverse" },
       });
 
       const footerCols = footerRef.current?.querySelectorAll(".footer-col");
       if (footerCols?.length) {
-        gsap.fromTo(footerCols, { opacity: 0, y: 30 }, {
-          opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: "power3.out",
-          scrollTrigger: { trigger: footerRef.current, start: "top 85%" },
+        gsap.from(footerCols, {
+          opacity: 0, y: 30, duration: 0.6, stagger: 0.1, ease: "power3.out",
+          immediateRender: false,
+          scrollTrigger: { trigger: footerRef.current, start: "top 85%", once: true },
         });
       }
+
+      // Refresh ScrollTrigger after the GSAP context is built so positions
+      // recompute against the final laid-out DOM (late images, font swaps).
+      ScrollTrigger.refresh();
 
       gsap.to(footerRef.current, {
         y: -20,
