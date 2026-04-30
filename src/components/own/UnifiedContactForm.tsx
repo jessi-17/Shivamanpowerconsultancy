@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import posthog from "posthog-js";
 import { useLeadFormSubmit } from "@/hooks/useLeadFormSubmit";
@@ -8,6 +8,19 @@ import FormStatus from "@/components/own/FormStatus";
 import { TRADE_OPTIONS, REGION_OPTIONS } from "@/lib/sangamOptions";
 
 const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "fbclid"];
+
+function UTMCollector({ onCollect }: { onCollect: (parts: string[]) => void }) {
+  const searchParams = useSearchParams();
+  useEffect(() => {
+    const parts: string[] = [];
+    for (const key of UTM_KEYS) {
+      const v = searchParams.get(key);
+      if (v) parts.push(`${key}=${v}`);
+    }
+    onCollect(parts);
+  }, [searchParams, onCollect]);
+  return null;
+}
 
 export type ContactFormPrefill = Partial<{
   yourname: string;
@@ -48,7 +61,6 @@ export default function UnifiedContactForm({
   compact = false,
   requireEmail = false,
 }: UnifiedContactFormProps) {
-  const searchParams = useSearchParams();
   const [form, setForm] = useState({
     yourname: prefill?.yourname || "",
     phone: prefill?.phone || "",
@@ -58,21 +70,16 @@ export default function UnifiedContactForm({
     experience: prefill?.experience || "",
     message: prefill?.message || "",
   });
+  const utmRef = useRef<string[]>([]);
   const { status, submit } = useLeadFormSubmit("/api/submit-form");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const utmParts: string[] = [];
-    for (const key of UTM_KEYS) {
-      const v = searchParams.get(key);
-      if (v) utmParts.push(`${key}=${v}`);
-    }
-
     const tagBits: string[] = [];
     if (contextTag) tagBits.push(contextTag);
     if (source) tagBits.push(`source: ${source}`);
-    if (utmParts.length) tagBits.push(utmParts.join(" "));
+    if (utmRef.current.length) tagBits.push(utmRef.current.join(" "));
     const tag = tagBits.length ? `\n\n--- ${tagBits.join(" — ")}` : "";
 
     await submit({
@@ -130,6 +137,9 @@ export default function UnifiedContactForm({
 
   return (
     <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: compact ? 12 : 16 }}>
+      <Suspense fallback={null}>
+        <UTMCollector onCollect={(parts) => { utmRef.current = parts; }} />
+      </Suspense>
       {/* Name + Phone */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
         <div>
