@@ -4,17 +4,14 @@ import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { useLeadFormSubmit } from "@/hooks/useLeadFormSubmit";
-import FormStatus from "@/components/own/FormStatus";
+import UnifiedContactForm, { type ContactFormPrefill } from "@/components/own/UnifiedContactForm";
 
-const EMPTY_FORM = { yourname: "", phone: "", email: "", interest: "", experience: "", message: "" };
-
-function FormPrefill({ onPrefill }: { onPrefill: (patch: { interest?: string; message?: string }) => void }) {
+function FormPrefillReader({ onPrefill }: { onPrefill: (patch: ContactFormPrefill) => void }) {
   const searchParams = useSearchParams();
   useEffect(() => {
     const interest = searchParams.get("interest");
     const demand = searchParams.get("demand");
-    const patch: { interest?: string; message?: string } = {};
+    const patch: ContactFormPrefill = {};
     if (interest) patch.interest = interest;
     if (demand) patch.message = `I would like to apply for: ${demand}`;
     if (Object.keys(patch).length) onPrefill(patch);
@@ -30,41 +27,7 @@ export default function ContactUsPage() {
   const interviewRef = useScrollReveal();
   const journeyRef = useScrollReveal();
 
-  const [form, setForm] = useState(EMPTY_FORM);
-  const { status, submit } = useLeadFormSubmit<typeof EMPTY_FORM>("/api/submit-form");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    await submit({
-      body: form,
-      identify: { email: form.email, phone: form.phone, name: form.yourname },
-      onSuccess: () => setForm(EMPTY_FORM),
-    });
-  };
-
-  const labelStyle: React.CSSProperties = {
-    fontFamily: "var(--font-body)",
-    fontSize: 11,
-    fontWeight: 700,
-    color: "#43474d",
-    letterSpacing: "0.55px",
-    textTransform: "uppercase",
-    marginBottom: 6,
-    display: "block",
-  };
-
-  const inputStyle: React.CSSProperties = {
-    width: "100%",
-    padding: "14px 12px",
-    backgroundColor: "#eff4ff",
-    border: "none",
-    borderRadius: 8,
-    fontFamily: "var(--font-body)",
-    fontSize: 16,
-    color: "#0b1c30",
-    outline: "none",
-    transition: "box-shadow 150ms",
-  };
+  const [prefill, setPrefill] = useState<ContactFormPrefill>({});
 
   const journeySteps = ["Initial Inquiry", "Profiling", "Interview", "Visa Process", "Deployment"];
 
@@ -95,7 +58,7 @@ export default function ContactUsPage() {
   return (
     <main className="contact-page" style={{ backgroundColor: "#f8f9ff" }}>
       <Suspense fallback={null}>
-        <FormPrefill onPrefill={(patch) => setForm((prev) => ({ ...prev, ...patch }))} />
+        <FormPrefillReader onPrefill={(patch) => setPrefill((prev) => ({ ...prev, ...patch }))} />
       </Suspense>
       {/* ===== HERO SECTION ===== */}
       <section
@@ -339,147 +302,13 @@ export default function ContactUsPage() {
             }}>
               Inquiry Form
             </h2>
-            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-              {/* Name + Phone */}
-              <div style={{ display: "flex", gap: 16, flexDirection: m ? "column" : "row" }}>
-                <div style={{ flex: "1 1 0" }}>
-                  <label style={labelStyle}>Full Name</label>
-                  <input
-                    type="text"
-                    placeholder="Ex. Rahul Singh"
-                    value={form.yourname}
-                    onChange={(e) => setForm({ ...form, yourname: e.target.value })}
-                    required
-                    style={inputStyle}
-                    onFocus={(e) => { e.currentTarget.style.boxShadow = "0 0 0 2px #0052dc33"; }}
-                    onBlur={(e) => { e.currentTarget.style.boxShadow = "none"; }}
-                  />
-                </div>
-                <div style={{ flex: "1 1 0" }}>
-                  <label style={labelStyle}>Phone Number</label>
-                  <div style={{ display: "flex", gap: 8 }}>
-                    <div style={{
-                      backgroundColor: "#eff4ff",
-                      borderRadius: 8,
-                      padding: "14px 12px",
-                      fontFamily: "var(--font-body)",
-                      fontSize: 14,
-                      fontWeight: 500,
-                      color: "#43474d",
-                      whiteSpace: "nowrap",
-                    }}>
-                      +91
-                    </div>
-                    <input
-                      type="tel"
-                      placeholder="98XXX XXXXX"
-                      value={form.phone}
-                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      style={{ ...inputStyle, flex: 1 }}
-                      onFocus={(e) => { e.currentTarget.style.boxShadow = "0 0 0 2px #0052dc33"; }}
-                      onBlur={(e) => { e.currentTarget.style.boxShadow = "none"; }}
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Email */}
-              <div>
-                <label style={labelStyle}>Email</label>
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  required
-                  style={inputStyle}
-                  onFocus={(e) => { e.currentTarget.style.boxShadow = "0 0 0 2px #0052dc33"; }}
-                  onBlur={(e) => { e.currentTarget.style.boxShadow = "none"; }}
-                />
-              </div>
-
-              {/* Destination Interest */}
-              <div>
-                <label style={labelStyle}>Destination Interest</label>
-                <div style={{ position: "relative" }}>
-                  <select
-                    value={form.interest}
-                    onChange={(e) => setForm({ ...form, interest: e.target.value })}
-                    style={{
-                      ...inputStyle,
-                      appearance: "none",
-                      cursor: "pointer",
-                      paddingRight: 36,
-                    }}
-                    onFocus={(e) => { e.currentTarget.style.boxShadow = "0 0 0 2px #0052dc33"; }}
-                    onBlur={(e) => { e.currentTarget.style.boxShadow = "none"; }}
-                  >
-                    <option value="">Select Destination</option>
-                    <option value="UAE">UAE</option>
-                    <option value="Saudi Arabia">Saudi Arabia</option>
-                    <option value="Qatar">Qatar</option>
-                    <option value="Poland">Poland</option>
-                    <option value="Romania">Romania</option>
-                    <option value="Other">Other</option>
-                  </select>
-                  <svg
-                    width="10" height="6" viewBox="0 0 10 6" fill="none"
-                    style={{ position: "absolute", right: 14, top: "50%", transform: "translateY(-50%)", pointerEvents: "none" }}
-                  >
-                    <path d="M1 1L5 5L9 1" stroke="#43474d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </div>
-              </div>
-
-              {/* Message */}
-              <div>
-                <label style={labelStyle}>Additional Message</label>
-                <textarea
-                  placeholder="Briefly describe your career goals..."
-                  value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  rows={4}
-                  style={{ ...inputStyle, resize: "vertical", minHeight: 120 }}
-                  onFocus={(e) => { e.currentTarget.style.boxShadow = "0 0 0 2px #0052dc33"; }}
-                  onBlur={(e) => { e.currentTarget.style.boxShadow = "none"; }}
-                />
-              </div>
-
-              {/* Submit */}
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                style={{
-                  width: "100%",
-                  padding: "16px",
-                  background: "linear-gradient(135deg, #000c2f, #001f5d)",
-                  color: "#fff",
-                  fontFamily: "var(--font-body)",
-                  fontSize: 16,
-                  fontWeight: 700,
-                  letterSpacing: "0.4px",
-                  border: "none",
-                  borderRadius: 8,
-                  cursor: status === "loading" ? "wait" : "pointer",
-                  boxShadow: "0 8px 10px rgba(0,31,93,0.20), 0 20px 25px rgba(0,31,93,0.20)",
-                  transition: "all 200ms cubic-bezier(0.16,1,0.3,1)",
-                  opacity: status === "loading" ? 0.7 : 1,
-                }}
-                onMouseEnter={(e) => {
-                  if (status !== "loading") {
-                    e.currentTarget.style.transform = "translateY(-2px)";
-                    e.currentTarget.style.boxShadow = "0 12px 20px rgba(0,31,93,0.30), 0 24px 32px rgba(0,31,93,0.20)";
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "0 8px 10px rgba(0,31,93,0.20), 0 20px 25px rgba(0,31,93,0.20)";
-                }}
-              >
-                {status === "loading" ? "Submitting..." : status === "success" ? "Sent! We'll contact you soon." : "Submit Inquiry"}
-              </button>
-              <FormStatus status={status} successText="Inquiry sent. We will contact you soon." />
-            </form>
+            <UnifiedContactForm
+              prefill={prefill}
+              source="contactus-page"
+              submitLabel="Submit Inquiry"
+              posthogContext={{ source: "contactus_page" }}
+              requireEmail
+            />
           </div>
         </div>
       </section>

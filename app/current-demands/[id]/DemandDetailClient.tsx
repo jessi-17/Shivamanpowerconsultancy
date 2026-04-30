@@ -1,11 +1,9 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, Suspense } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
-import posthog from "posthog-js";
-import { useLeadFormSubmit } from "@/hooks/useLeadFormSubmit";
-import FormStatus from "@/components/own/FormStatus";
+import UnifiedContactForm from "@/components/own/UnifiedContactForm";
 import type { Demand } from "../../api/admin/demands/store";
 import { DemandCard, DemandsEmpty } from "@/components/own/DemandCard";
 import SidePosterRails from "@/components/own/SidePosterRails";
@@ -13,7 +11,13 @@ import DemandsTicker from "@/components/own/DemandsTicker";
 import ShareButtons from "@/components/own/ShareButtons";
 import { flagFor } from "@/lib/countryFlags";
 
-const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "fbclid"];
+function inferRegion(country?: string | null): string {
+  if (!country) return "";
+  const lower = country.toLowerCase();
+  const europe = ["poland", "romania", "croatia", "malta", "hungary", "czech republic", "europe", "schengen", "italy", "portugal", "germany", "france", "spain"];
+  if (europe.some((c) => lower.includes(c))) return "Europe";
+  return "Gulf";
+}
 
 function DetailInner({
   demand,
@@ -27,62 +31,6 @@ function DetailInner({
   rightMarqueeImages: string[];
 }) {
   const router = useRouter();
-  const searchParams = useSearchParams();
-
-  const [form, setForm] = useState({
-    yourname: "",
-    phone: "",
-    email: "",
-    interest: demand.country || "",
-    experience: "Fresher",
-    message: "",
-  });
-  const { status, submit } = useLeadFormSubmit("/api/submit-form");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const utmParts: string[] = [];
-    for (const key of UTM_KEYS) {
-      const v = searchParams.get(key);
-      if (v) utmParts.push(`${key}=${v}`);
-    }
-    const source = `/current-demands/${demand.id}`;
-    const utmSuffix = utmParts.length ? ` ${utmParts.join(" ")}` : "";
-    const demandTag = `\n\n--- demand: ${demand.title} (${demand.id}) — source: ${source}${utmSuffix}`;
-
-    await submit({
-      body: {
-        ...form,
-        email: form.email || `noemail+${Date.now()}@demand.local`,
-        message: (form.message || `Applying for: ${demand.title}`) + demandTag,
-      },
-      identify: { email: form.email, phone: form.phone, name: form.yourname },
-      onSuccess: () => {
-        posthog.capture("lead_form_submitted", {
-          source: "demand_detail",
-          demand_id: demand.id,
-          demand_title: demand.title,
-          demand_country: demand.country,
-          interest: form.interest,
-          experience: form.experience,
-        });
-        router.push("/?submitted=1");
-      },
-    });
-  };
-
-  const inputStyle: React.CSSProperties = {
-    width: "100%",
-    padding: "14px 16px",
-    backgroundColor: "#f8f9ff",
-    border: "1.5px solid rgba(0,0,0,0.06)",
-    borderRadius: 10,
-    fontFamily: "var(--font-body)",
-    fontSize: 14,
-    color: "var(--on-surface)",
-    outline: "none",
-  };
 
   return (
     <div
@@ -265,93 +213,23 @@ function DetailInner({
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-                  <input
-                    type="text"
-                    placeholder="Full name *"
-                    required
-                    value={form.yourname}
-                    onChange={(e) => setForm({ ...form, yourname: e.target.value })}
-                    style={inputStyle}
-                  />
-                  <input
-                    type="tel"
-                    placeholder="Phone number *"
-                    required
-                    value={form.phone}
-                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                    style={inputStyle}
-                  />
-                </div>
-
-                <input
-                  type="email"
-                  placeholder="Email (optional)"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  style={inputStyle}
-                />
-
-                <select
-                  value={form.experience}
-                  onChange={(e) => setForm({ ...form, experience: e.target.value })}
-                  style={{ ...inputStyle, appearance: "none", cursor: "pointer" }}
-                >
-                  <option value="Fresher">Fresher</option>
-                  <option value="1-3 years">1-3 years</option>
-                  <option value="3-5 years">3-5 years</option>
-                  <option value="5+ years">5+ years</option>
-                </select>
-
-                <textarea
-                  placeholder="Tell us about your background (optional)"
-                  rows={3}
-                  value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  style={{ ...inputStyle, resize: "vertical" }}
-                />
-
-                <button
-                  type="submit"
-                  disabled={status === "loading"}
-                  style={{
-                    width: "100%",
-                    padding: "16px",
-                    backgroundColor: "#0052dc",
-                    color: "#fff",
-                    fontFamily: "var(--font-display)",
-                    fontSize: 15,
-                    fontWeight: 700,
-                    border: "none",
-                    borderRadius: 10,
-                    cursor: status === "loading" ? "wait" : "pointer",
-                    opacity: status === "loading" ? 0.7 : 1,
-                    boxShadow: "0 8px 24px rgba(0,82,220,0.35)",
-                  }}
-                >
-                  {status === "loading" ? "Submitting..." : "Apply Now"}
-                </button>
-
-                {status === "error" && (
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "#dc2626", textAlign: "center" }}>
-                    Something went wrong. Please try again or call +91 98148-20432.
-                  </p>
-                )}
-
-                <p
-                  style={{
-                    fontFamily: "var(--font-body)",
-                    fontSize: 11,
-                    color: "#94a3b8",
-                    textAlign: "center",
-                    marginTop: 4,
-                  }}
-                >
-                  By submitting, you agree to be contacted by our team.
-                </p>
-                <FormStatus status={status} />
-              </form>
+              <UnifiedContactForm
+                prefill={{
+                  interest: inferRegion(demand.country),
+                  experience: "Fresher",
+                }}
+                source={`/current-demands/${demand.id}`}
+                contextTag={`demand: ${demand.title} (${demand.id})`}
+                submitLabel="Apply Now"
+                posthogContext={{
+                  source: "demand_detail",
+                  demand_id: demand.id,
+                  demand_title: demand.title,
+                  demand_country: demand.country,
+                }}
+                onSuccess={() => router.push("/?submitted=1")}
+                compact
+              />
             </div>
           </div>
         </div>
