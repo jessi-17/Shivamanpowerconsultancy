@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, Suspense } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import UnifiedContactForm from "@/components/own/UnifiedContactForm";
@@ -31,6 +31,45 @@ function DetailInner({
   rightMarqueeImages: string[];
 }) {
   const router = useRouter();
+  const [isImageOpen, setIsImageOpen] = useState(false);
+  const [back, setBack] = useState<{ href: string; label: string }>({
+    href: "/current-demands",
+    label: "All openings",
+  });
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const ref = document.referrer;
+    if (!ref) return;
+    try {
+      const url = new URL(ref);
+      if (url.origin !== window.location.origin) return;
+      if (url.pathname.startsWith("/offer/")) {
+        const region = url.pathname.split("/")[2] ?? "";
+        const label =
+          region === "europe" ? "Europe openings" :
+          region === "gulf" ? "Gulf openings" :
+          "Offer page";
+        setBack({ href: url.pathname + url.search, label });
+      }
+    } catch {
+      // ignore malformed referrer
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isImageOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsImageOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [isImageOpen]);
 
   return (
     <div
@@ -58,8 +97,8 @@ function DetailInner({
           color: "#64748b",
         }}
       >
-        <Link href="/current-demands" style={{ color: "#0052dc", textDecoration: "none" }}>
-          ← All openings
+        <Link href={back.href} style={{ color: "#0052dc", textDecoration: "none" }}>
+          ← {back.label}
         </Link>
       </div>
 
@@ -73,23 +112,42 @@ function DetailInner({
           position: "relative",
         }}
       >
-        <div className="detail-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }}>
+        <div className="detail-grid" style={{ display: "grid", gridTemplateColumns: "minmax(280px, 420px) 1fr", gap: 40 }}>
           {/* LEFT — poster + details */}
           <div>
             <div
               style={{
+                position: "relative",
                 width: "100%",
-                aspectRatio: "4/5",
+                maxHeight: 560,
                 borderRadius: 18,
                 overflow: "hidden",
-                backgroundColor: "#e5e7eb",
-                backgroundImage: demand.poster ? `url(${demand.poster})` : "none",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                position: "relative",
                 boxShadow: "0 16px 48px rgba(0,12,47,0.12)",
+                backgroundColor: "#e5e7eb",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
+              {demand.poster ? (
+                <img
+                  src={demand.poster}
+                  alt={demand.title}
+                  onClick={() => setIsImageOpen(true)}
+                  title="Click to expand"
+                  style={{
+                    maxWidth: "100%",
+                    maxHeight: 560,
+                    width: "auto",
+                    height: "auto",
+                    objectFit: "contain",
+                    display: "block",
+                    cursor: "zoom-in",
+                  }}
+                />
+              ) : (
+                <div style={{ width: "100%", aspectRatio: "4/5" }} />
+              )}
               {demand.country && (
                 <span
                   style={{
@@ -287,6 +345,89 @@ function DetailInner({
           .detail-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
         }
       `}</style>
+
+      {isImageOpen && demand.poster && (
+        <div
+          onClick={() => setIsImageOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Poster preview"
+          style={{
+            position: "fixed",
+            inset: 0,
+            backgroundColor: "rgba(0,0,0,0.88)",
+            backdropFilter: "blur(4px)",
+            WebkitBackdropFilter: "blur(4px)",
+            zIndex: 9999,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: 24,
+            cursor: "zoom-out",
+            animation: "fadeIn 200ms ease-out",
+          }}
+        >
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsImageOpen(false);
+            }}
+            aria-label="Close preview"
+            style={{
+              position: "absolute",
+              top: 20,
+              right: 20,
+              width: 48,
+              height: 48,
+              borderRadius: "50%",
+              border: "1px solid rgba(255,255,255,0.2)",
+              backgroundColor: "rgba(255,255,255,0.1)",
+              color: "#fff",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              backdropFilter: "blur(8px)",
+              WebkitBackdropFilter: "blur(8px)",
+              transition: "all 150ms ease",
+              zIndex: 1,
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.2)";
+              e.currentTarget.style.transform = "scale(1.05)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)";
+              e.currentTarget.style.transform = "scale(1)";
+            }}
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          <img
+            src={demand.poster}
+            alt={demand.title}
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              maxWidth: "95vw",
+              maxHeight: "95vh",
+              objectFit: "contain",
+              borderRadius: 12,
+              boxShadow: "0 24px 64px rgba(0,0,0,0.5)",
+              cursor: "default",
+            }}
+          />
+          <style>{`
+            @keyframes fadeIn {
+              from { opacity: 0; }
+              to { opacity: 1; }
+            }
+          `}</style>
+        </div>
+      )}
     </div>
   );
 }

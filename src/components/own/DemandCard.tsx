@@ -51,11 +51,11 @@ export function DemandCard({ demand }: { demand: Demand }) {
         e.currentTarget.style.borderColor = "#e5e7eb";
       }}
     >
-      {/* Poster — always fills the space */}
+      {/* Poster — fits fully (no cropping); grey bg fills any leftover space */}
       <div
         style={{
           width: "100%",
-          aspectRatio: "4/5",
+          aspectRatio: "4/3",
           backgroundColor: "#f1f5f9",
           position: "relative",
           overflow: "hidden",
@@ -69,7 +69,7 @@ export function DemandCard({ demand }: { demand: Demand }) {
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "cover",
+              objectFit: "contain",
               display: "block",
             }}
           />
