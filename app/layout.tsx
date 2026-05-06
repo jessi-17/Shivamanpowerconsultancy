@@ -302,6 +302,7 @@ export default function RootLayout({
               gtag('js', new Date());
               gtag('config', 'G-3NSV8DNDZ6');
               gtag('config', 'AW-18056191353');
+              gtag('config', 'AW-16507023475');
             }
 
             if (localStorage.getItem('cookie-consent') === 'accepted') {
