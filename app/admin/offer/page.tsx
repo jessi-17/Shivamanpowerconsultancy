@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState, useCallback } from "react";
 import Link from "next/link";
+import { uploadImage } from "@/lib/uploadImage";
 
 type Region = "gulf" | "europe";
 
@@ -114,17 +115,8 @@ export default function AdminOfferPage() {
         setUploadProgress({ current: i + 1, total: files.length });
 
         try {
-          const formData = new FormData();
-          formData.append("file", img);
-          formData.append("prefix", "offer");
-
-          const res = await fetch("/api/admin/upload", { method: "POST", body: formData });
-          if (!res.ok) {
-            const text = await res.text().catch(() => "");
-            throw new Error(`HTTP ${res.status}: ${text || "upload failed"}`);
-          }
-          const data = await res.json();
-          if (data.url) newUrls.push(data.url);
+          const url = await uploadImage(img, `offer/${region}/${side}`);
+          if (url) newUrls.push(url);
           else failed.push(img.name);
         } catch (err) {
           console.error(`Upload failed for ${img.name}:`, err);
@@ -155,17 +147,8 @@ export default function AdminOfferPage() {
     setUploadError(null);
 
     try {
-      const formData = new FormData();
-      formData.append("file", img);
-      formData.append("prefix", "offer-bg");
-
-      const res = await fetch("/api/admin/upload", { method: "POST", body: formData });
-      if (!res.ok) {
-        const text = await res.text().catch(() => "");
-        throw new Error(`HTTP ${res.status}: ${text || "upload failed"}`);
-      }
-      const data = await res.json();
-      if (data.url) setOffer((prev) => ({ ...prev, bgImage: data.url }));
+      const url = await uploadImage(img, `offer/${region}/bg`);
+      if (url) setOffer((prev) => ({ ...prev, bgImage: url }));
     } catch (err) {
       console.error("Background upload failed:", err);
       setUploadError(`Background upload failed: ${(err as Error).message}`);

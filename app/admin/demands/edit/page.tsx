@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
+import { uploadImage } from "@/lib/uploadImage";
 
 interface Demand {
   id: string;
@@ -109,16 +110,18 @@ function EditorContent() {
 
   const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
+    e.target.value = "";
     if (!file) return;
     setUploading(true);
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("prefix", "demand");
-    const res = await fetch("/api/admin/upload", { method: "POST", body: formData });
-    const data = await res.json();
-    if (data.url) setDemand({ ...demand, poster: data.url });
-    setUploading(false);
-    e.target.value = "";
+    try {
+      const url = await uploadImage(file, "demand");
+      if (url) setDemand({ ...demand, poster: url });
+    } catch (err) {
+      console.error("Demand poster upload failed:", err);
+      alert(`Upload failed: ${(err as Error).message}`);
+    } finally {
+      setUploading(false);
+    }
   };
 
   const addSector = () => {
