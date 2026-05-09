@@ -45,20 +45,24 @@ async function readBlobLegacy(): Promise<BlogPost[] | null> {
 }
 
 export async function readBlogs(): Promise<BlogPost[]> {
-  // Primary: Postgres
+  // Primary: Postgres (only if it has actual content)
   if (hasDb) {
     try {
       const dbValue = await readState<BlogPost[]>(STATE_KEY);
-      if (dbValue && Array.isArray(dbValue)) return dbValue;
+      if (dbValue && Array.isArray(dbValue) && dbValue.length > 0) return dbValue;
 
-      // Lazy migration: nothing in DB yet — copy from legacy Blob if present
+      // Postgres empty/missing — try lazy migration from legacy Blob
       const legacy = await readBlobLegacy();
-      if (legacy) {
+      if (legacy && legacy.length > 0) {
         await writeState(STATE_KEY, legacy).catch((err) => {
           console.error("[blogs] DB migration write failed:", err);
         });
         return legacy;
       }
+
+      // If Postgres has explicit empty array, respect it (admin deleted everything)
+      // Only fall through to seed if dbValue is truly null (no row at all)
+      if (dbValue !== null) return dbValue;
     } catch (err) {
       console.error("[blogs] Postgres read failed, falling back:", err);
     }

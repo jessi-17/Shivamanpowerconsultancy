@@ -44,20 +44,23 @@ async function readBlobLegacy(): Promise<Demand[] | null> {
 }
 
 export async function readDemands(): Promise<Demand[]> {
-  // Primary: Postgres
+  // Primary: Postgres (only if it has actual content)
   if (hasDb) {
     try {
       const dbValue = await readState<Demand[]>(STATE_KEY);
-      if (dbValue && Array.isArray(dbValue)) return dbValue;
+      if (dbValue && Array.isArray(dbValue) && dbValue.length > 0) return dbValue;
 
-      // Lazy migration: nothing in DB yet — copy from legacy Blob if present
+      // Postgres empty/missing — try lazy migration from legacy Blob
       const legacy = await readBlobLegacy();
-      if (legacy) {
+      if (legacy && legacy.length > 0) {
         await writeState(STATE_KEY, legacy).catch((err) => {
           console.error("[demands] DB migration write failed:", err);
         });
         return legacy;
       }
+
+      // If Postgres has explicit empty array, respect it (admin deleted everything)
+      if (dbValue !== null) return dbValue;
     } catch (err) {
       console.error("[demands] Postgres read failed, falling back:", err);
     }
