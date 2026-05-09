@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState, useCallback, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
+import { uploadImage } from "@/lib/uploadImage";
 import { renderMarkdown } from "../../../blog/[slug]/_lib/markdown";
 import "../../../blog/[slug]/article.css";
 
@@ -150,14 +151,18 @@ function EditorContent() {
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
+    e.target.value = "";
     if (!file) return;
     setUploading(true);
-    const formData = new FormData();
-    formData.append("file", file);
-    const res = await fetch("/api/admin/upload", { method: "POST", body: formData });
-    const data = await res.json();
-    setPost((p) => ({ ...p, image: data.url }));
-    setUploading(false);
+    try {
+      const url = await uploadImage(file, "blog");
+      if (url) setPost((p) => ({ ...p, image: url }));
+    } catch (err) {
+      console.error("Blog image upload failed:", err);
+      alert(`Upload failed: ${(err as Error).message}`);
+    } finally {
+      setUploading(false);
+    }
   };
 
   const addKeyword = () => {
