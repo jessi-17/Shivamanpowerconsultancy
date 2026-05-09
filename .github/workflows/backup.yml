@@ -1,0 +1,53 @@
+name: Bi-weekly content backup
+
+# Runs at 02:30 UTC (08:00 IST) on the 1st and 15th of every month.
+# Pulls live admin content (offer, demands, blogs) from the live API and
+# commits it to /backups/ in the repo. Provides a permanent audit trail
+# and recovery source if the live database ever loses data.
+on:
+  schedule:
+    - cron: "30 2 1,15 * *"
+  workflow_dispatch: # allow manual runs from the Actions tab
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Fetch backup from live API
+        env:
+          BACKUP_URL: ${{ secrets.BACKUP_URL }}
+          BACKUP_TOKEN: ${{ secrets.BACKUP_TOKEN }}
+        run: |
+          if [ -z "$BACKUP_URL" ] || [ -z "$BACKUP_TOKEN" ]; then
+            echo "BACKUP_URL or BACKUP_TOKEN secret not set; skipping"
+            exit 1
+          fi
+          mkdir -p backups
+          DATE=$(date -u +%Y-%m-%d)
+          OUT="backups/${DATE}.json"
+          HTTP_STATUS=$(curl -sS -o "$OUT" -w "%{http_code}" \
+            -H "Authorization: Bearer ${BACKUP_TOKEN}" \
+            "$BACKUP_URL")
+          if [ "$HTTP_STATUS" != "200" ]; then
+            echo "Backup fetch failed with HTTP $HTTP_STATUS"
+            cat "$OUT"
+            exit 1
+          fi
+          echo "Backup written to $OUT ($(wc -c < $OUT) bytes)"
+
+      - name: Commit backup
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add backups/
+          if git diff --staged --quiet; then
+            echo "No changes — backup identical to previous"
+            exit 0
+          fi
+          git commit -m "chore: bi-weekly content backup ($(date -u +%Y-%m-%d))"
+          git push
