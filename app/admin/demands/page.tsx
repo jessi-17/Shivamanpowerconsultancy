@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import VersionHistory from "@/components/own/VersionHistory";
 
 interface Demand {
   id: string;
@@ -129,6 +130,7 @@ export default function AdminDemandsList() {
             gap: 20,
           }}
         >
+          {/* version history rendered below the grid */}
           {demands.map((d) => (
             <div
               key={d.id}
@@ -229,6 +231,8 @@ export default function AdminDemandsList() {
           ))}
         </div>
       )}
+
+      <VersionHistory storeKey="demands" onRestored={fetchDemands} />
     </div>
   );
 }

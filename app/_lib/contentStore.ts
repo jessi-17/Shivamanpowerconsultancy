@@ -1,4 +1,5 @@
 import { sql } from "./db";
+import { sendAlert } from "./alertEmail";
 
 const MAX_HISTORY_PER_KEY = 30;
 
@@ -44,34 +45,45 @@ export async function readState<T>(key: string): Promise<T | null> {
 
 export async function writeState<T>(key: string, value: T, note?: string): Promise<void> {
   if (!sql) throw new Error("DATABASE_URL not configured");
-  await ensureTable();
+  try {
+    await ensureTable();
 
-  // Snapshot the previous value into history BEFORE overwriting (so we always
-  // have a way to roll back to it). Then write the new value as the live row.
-  const prev = (await sql`SELECT value FROM app_state WHERE key = ${key}`) as { value: unknown }[];
-  if (prev[0]?.value !== undefined) {
-    await sql`
-      INSERT INTO app_state_history (key, value, note)
-      VALUES (${key}, ${JSON.stringify(prev[0].value)}::jsonb, ${note ?? null})
-    `;
-    // Cap history per key to avoid unbounded growth
-    await sql`
-      DELETE FROM app_state_history
-      WHERE key = ${key}
-      AND id NOT IN (
-        SELECT id FROM app_state_history
+    // Snapshot the previous value into history BEFORE overwriting (so we always
+    // have a way to roll back to it). Then write the new value as the live row.
+    const prev = (await sql`SELECT value FROM app_state WHERE key = ${key}`) as { value: unknown }[];
+    if (prev[0]?.value !== undefined) {
+      await sql`
+        INSERT INTO app_state_history (key, value, note)
+        VALUES (${key}, ${JSON.stringify(prev[0].value)}::jsonb, ${note ?? null})
+      `;
+      // Cap history per key to avoid unbounded growth
+      await sql`
+        DELETE FROM app_state_history
         WHERE key = ${key}
-        ORDER BY created_at DESC
-        LIMIT ${MAX_HISTORY_PER_KEY}
-      )
-    `;
-  }
+        AND id NOT IN (
+          SELECT id FROM app_state_history
+          WHERE key = ${key}
+          ORDER BY created_at DESC
+          LIMIT ${MAX_HISTORY_PER_KEY}
+        )
+      `;
+    }
 
-  await sql`
-    INSERT INTO app_state (key, value, updated_at)
-    VALUES (${key}, ${JSON.stringify(value)}::jsonb, NOW())
-    ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value, updated_at = NOW()
-  `;
+    await sql`
+      INSERT INTO app_state (key, value, updated_at)
+      VALUES (${key}, ${JSON.stringify(value)}::jsonb, NOW())
+      ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value, updated_at = NOW()
+    `;
+  } catch (err) {
+    // Fire alert and re-throw so the caller can show the user an error
+    sendAlert({
+      key: `writeState-${key}`,
+      subject: `Write failed for "${key}"`,
+      message: `A save to Postgres failed for key "${key}". Admin save likely returned an error to the user. Investigate immediately to prevent data loss.`,
+      context: { key, error: (err as Error).message, stack: (err as Error).stack?.split("\n").slice(0, 3).join("\n") },
+    }).catch(() => {});
+    throw err;
+  }
 }
 
 export async function deleteState(key: string): Promise<void> {

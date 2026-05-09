@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import VersionHistory from "@/components/own/VersionHistory";
 
 interface BlogPost {
   slug: string;
@@ -217,6 +218,8 @@ export default function AdminBlogList() {
           </div>
         ))}
       </div>
+
+      <VersionHistory storeKey="blogs" onRestored={fetchPosts} />
     </div>
   );
 }

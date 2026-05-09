@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useState, useCallback } from "react";
 import Link from "next/link";
 import { uploadImage } from "@/lib/uploadImage";
+import { verifySaved } from "@/lib/verifySaved";
+import VersionHistory from "@/components/own/VersionHistory";
 
 type Region = "gulf" | "europe";
 
@@ -46,6 +48,9 @@ export default function AdminOfferPage() {
   const [uploadingField, setUploadingField] = useState<"left" | "right" | "bg" | null>(null);
   const [uploadProgress, setUploadProgress] = useState<{ current: number; total: number } | null>(null);
   const [uploadError, setUploadError] = useState<string | null>(null);
+  const [verifyStatus, setVerifyStatus] = useState<"idle" | "verifying" | "verified" | "mismatch">("idle");
+  const [verifyReason, setVerifyReason] = useState<string | null>(null);
+  const [historyRefresh, setHistoryRefresh] = useState(0);
 
   // Defensive merge with emptyOffer so any missing field from a legacy API response
   // doesn't cause a runtime crash (e.g. undefined arrays before we call .length).
@@ -80,6 +85,9 @@ export default function AdminOfferPage() {
   const handleSave = useCallback(async () => {
     setSaving(true);
     setSaved(false);
+    setVerifyStatus("idle");
+    setVerifyReason(null);
+
     const res = await fetch("/api/admin/offer", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -89,7 +97,34 @@ export default function AdminOfferPage() {
       const data: OfferContent = await res.json();
       setFile((prev) => ({ ...prev, [region]: data }));
       setSaved(true);
-      setTimeout(() => setSaved(false), 3000);
+
+      // Re-fetch and verify the save actually landed in storage
+      setVerifyStatus("verifying");
+      const result = await verifySaved<{ gulf?: OfferContent; europe?: OfferContent }, OfferContent>({
+        url: "/api/admin/offer",
+        expected: data,
+        selector: (live) => live[region],
+        compare: (actual, expected) => {
+          // Compare the user-editable fields only (skip updatedAt — server sets it)
+          const a = actual as OfferContent | undefined;
+          if (!a) return false;
+          return (
+            a.heading === expected.heading &&
+            a.subheading === expected.subheading &&
+            a.ctaLabel === expected.ctaLabel &&
+            a.formTitle === expected.formTitle &&
+            a.formSubtitle === expected.formSubtitle &&
+            a.bgImage === expected.bgImage &&
+            JSON.stringify(a.leftMarqueeImages) === JSON.stringify(expected.leftMarqueeImages) &&
+            JSON.stringify(a.rightMarqueeImages) === JSON.stringify(expected.rightMarqueeImages)
+          );
+        },
+      });
+      setVerifyStatus(result.ok ? "verified" : "mismatch");
+      setVerifyReason(result.reason ?? null);
+      setHistoryRefresh((n) => n + 1);
+
+      setTimeout(() => setSaved(false), 4000);
     }
     setSaving(false);
   }, [region, offer]);
@@ -251,6 +286,46 @@ export default function AdminOfferPage() {
           </button>
         </div>
       </div>
+
+      {/* Verify-saved status banner */}
+      {verifyStatus !== "idle" && (
+        <div
+          style={{
+            marginBottom: 16,
+            padding: "10px 14px",
+            borderRadius: 8,
+            fontFamily: "var(--font-body)",
+            fontSize: 13,
+            fontWeight: 600,
+            backgroundColor:
+              verifyStatus === "verified" ? "#dcfce7" :
+              verifyStatus === "mismatch" ? "#fef2f2" :
+              "#dbeafe",
+            color:
+              verifyStatus === "verified" ? "#166534" :
+              verifyStatus === "mismatch" ? "#991b1b" :
+              "#1e40af",
+            border: `1px solid ${
+              verifyStatus === "verified" ? "#86efac" :
+              verifyStatus === "mismatch" ? "#fecaca" :
+              "#bfdbfe"
+            }`,
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+          }}
+        >
+          {verifyStatus === "verifying" && "🔄 Verifying save…"}
+          {verifyStatus === "verified" && "✅ Verified — save persisted to database"}
+          {verifyStatus === "mismatch" && (
+            <>
+              ⚠️ Save reported success but verification failed
+              {verifyReason ? ` — ${verifyReason}. ` : ". "}
+              <strong>Try saving again, then contact support if it keeps happening.</strong>
+            </>
+          )}
+        </div>
+      )}
 
       {/* Region tabs */}
       <div style={{ display: "flex", gap: 8, marginBottom: 24, borderBottom: "1px solid #e5e7eb" }}>
@@ -474,6 +549,22 @@ export default function AdminOfferPage() {
           </button>
         </div>
       )}
+
+      <VersionHistory
+        storeKey="offer"
+        refreshKey={historyRefresh}
+        onRestored={() => {
+          // Re-fetch the live offer state after a restore
+          fetch("/api/admin/offer")
+            .then((r) => r.json())
+            .then((data: Partial<OfferFile>) => {
+              setFile({
+                gulf: { ...emptyOffer, ...(data.gulf ?? {}) },
+                europe: { ...emptyOffer, ...(data.europe ?? {}) },
+              });
+            });
+        }}
+      />
     </div>
   );
 }
