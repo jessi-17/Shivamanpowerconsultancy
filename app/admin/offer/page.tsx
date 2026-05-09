@@ -43,6 +43,8 @@ export default function AdminOfferPage() {
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const [uploadingField, setUploadingField] = useState<"left" | "right" | "bg" | null>(null);
+  const [uploadProgress, setUploadProgress] = useState<{ current: number; total: number } | null>(null);
+  const [uploadError, setUploadError] = useState<string | null>(null);
 
   // Defensive merge with emptyOffer so any missing field from a legacy API response
   // doesn't cause a runtime crash (e.g. undefined arrays before we call .length).
@@ -95,39 +97,81 @@ export default function AdminOfferPage() {
     e: React.ChangeEvent<HTMLInputElement>,
     side: "left" | "right"
   ) => {
-    const img = e.target.files?.[0];
-    if (!img) return;
-    setUploadingField(side);
-
-    const formData = new FormData();
-    formData.append("file", img);
-    formData.append("prefix", "offer");
-
-    const res = await fetch("/api/admin/upload", { method: "POST", body: formData });
-    const data = await res.json();
-
-    if (data.url) {
-      const key = side === "left" ? "leftMarqueeImages" : "rightMarqueeImages";
-      setOffer((prev) => ({ ...prev, [key]: [...prev[key], data.url] }));
-    }
-    setUploadingField(null);
+    const files = Array.from(e.target.files ?? []);
     e.target.value = "";
+    if (files.length === 0) return;
+
+    setUploadingField(side);
+    setUploadError(null);
+    setUploadProgress({ current: 0, total: files.length });
+
+    const newUrls: string[] = [];
+    const failed: string[] = [];
+
+    try {
+      for (let i = 0; i < files.length; i++) {
+        const img = files[i];
+        setUploadProgress({ current: i + 1, total: files.length });
+
+        try {
+          const formData = new FormData();
+          formData.append("file", img);
+          formData.append("prefix", "offer");
+
+          const res = await fetch("/api/admin/upload", { method: "POST", body: formData });
+          if (!res.ok) {
+            const text = await res.text().catch(() => "");
+            throw new Error(`HTTP ${res.status}: ${text || "upload failed"}`);
+          }
+          const data = await res.json();
+          if (data.url) newUrls.push(data.url);
+          else failed.push(img.name);
+        } catch (err) {
+          console.error(`Upload failed for ${img.name}:`, err);
+          failed.push(img.name);
+        }
+      }
+
+      if (newUrls.length > 0) {
+        const key = side === "left" ? "leftMarqueeImages" : "rightMarqueeImages";
+        setOffer((prev) => ({ ...prev, [key]: [...prev[key], ...newUrls] }));
+      }
+
+      if (failed.length > 0) {
+        setUploadError(`${failed.length} of ${files.length} failed: ${failed.slice(0, 3).join(", ")}${failed.length > 3 ? "..." : ""}`);
+      }
+    } finally {
+      setUploadingField(null);
+      setUploadProgress(null);
+    }
   };
 
   const handleBgUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const img = e.target.files?.[0];
-    if (!img) return;
-    setUploadingField("bg");
-
-    const formData = new FormData();
-    formData.append("file", img);
-    formData.append("prefix", "offer-bg");
-
-    const res = await fetch("/api/admin/upload", { method: "POST", body: formData });
-    const data = await res.json();
-    if (data.url) setOffer((prev) => ({ ...prev, bgImage: data.url }));
-    setUploadingField(null);
     e.target.value = "";
+    if (!img) return;
+
+    setUploadingField("bg");
+    setUploadError(null);
+
+    try {
+      const formData = new FormData();
+      formData.append("file", img);
+      formData.append("prefix", "offer-bg");
+
+      const res = await fetch("/api/admin/upload", { method: "POST", body: formData });
+      if (!res.ok) {
+        const text = await res.text().catch(() => "");
+        throw new Error(`HTTP ${res.status}: ${text || "upload failed"}`);
+      }
+      const data = await res.json();
+      if (data.url) setOffer((prev) => ({ ...prev, bgImage: data.url }));
+    } catch (err) {
+      console.error("Background upload failed:", err);
+      setUploadError(`Background upload failed: ${(err as Error).message}`);
+    } finally {
+      setUploadingField(null);
+    }
   };
 
   const removeImage = (side: "left" | "right", url: string) => {
@@ -397,6 +441,7 @@ export default function AdminOfferPage() {
           side="left"
           images={offer.leftMarqueeImages}
           uploading={uploadingField === "left"}
+          progress={uploadingField === "left" ? uploadProgress : null}
           onUpload={(e) => handleImageUpload(e, "left")}
           onRemove={(url) => removeImage("left", url)}
         />
@@ -405,10 +450,47 @@ export default function AdminOfferPage() {
           side="right"
           images={offer.rightMarqueeImages}
           uploading={uploadingField === "right"}
+          progress={uploadingField === "right" ? uploadProgress : null}
           onUpload={(e) => handleImageUpload(e, "right")}
           onRemove={(url) => removeImage("right", url)}
         />
       </div>
+
+      {uploadError && (
+        <div
+          style={{
+            marginTop: 16,
+            padding: "12px 16px",
+            backgroundColor: "#fef2f2",
+            border: "1px solid #fecaca",
+            borderRadius: 8,
+            fontFamily: "var(--font-body)",
+            fontSize: 13,
+            color: "#dc2626",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            gap: 12,
+          }}
+        >
+          <span>⚠️ {uploadError}</span>
+          <button
+            onClick={() => setUploadError(null)}
+            style={{
+              padding: "4px 10px",
+              backgroundColor: "transparent",
+              border: "1px solid #fecaca",
+              borderRadius: 6,
+              fontSize: 12,
+              fontWeight: 600,
+              color: "#dc2626",
+              cursor: "pointer",
+            }}
+          >
+            Dismiss
+          </button>
+        </div>
+      )}
     </div>
   );
 }
@@ -440,6 +522,7 @@ function MarqueeEditor({
   side,
   images,
   uploading,
+  progress,
   onUpload,
   onRemove,
 }: {
@@ -447,6 +530,7 @@ function MarqueeEditor({
   side: "left" | "right";
   images: string[];
   uploading: boolean;
+  progress: { current: number; total: number } | null;
   onUpload: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onRemove: (url: string) => void;
 }) {
@@ -508,18 +592,29 @@ function MarqueeEditor({
           display: "block",
           padding: "12px",
           textAlign: "center",
-          backgroundColor: "#f1f5f9",
+          backgroundColor: uploading ? "#dbeafe" : "#f1f5f9",
           borderRadius: 8,
-          border: "1px dashed #cbd5e1",
+          border: `1px dashed ${uploading ? "#0052dc" : "#cbd5e1"}`,
           fontFamily: "var(--font-body)",
           fontSize: 12,
           fontWeight: 600,
-          color: "#64748b",
-          cursor: "pointer",
+          color: uploading ? "#0052dc" : "#64748b",
+          cursor: uploading ? "wait" : "pointer",
         }}
       >
-        {uploading ? "Uploading..." : `+ Upload ${side === "left" ? "Permit" : "Visa"} Image`}
-        <input type="file" accept="image/*" onChange={onUpload} style={{ display: "none" }} />
+        {uploading
+          ? progress
+            ? `Uploading ${progress.current} of ${progress.total}…`
+            : "Uploading…"
+          : `+ Upload ${side === "left" ? "Permit" : "Visa"} Images (multiple OK)`}
+        <input
+          type="file"
+          accept="image/*"
+          multiple
+          onChange={onUpload}
+          disabled={uploading}
+          style={{ display: "none" }}
+        />
       </label>
     </div>
   );
