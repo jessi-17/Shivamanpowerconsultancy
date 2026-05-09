@@ -924,18 +924,23 @@ export default function ContactUsPage() {
             gridTemplateColumns: m ? "repeat(2, 1fr)" : "repeat(4, 1fr)",
             gap: 16,
           }}>
-            {[
-              { id: "DWEVQ5PjuBd", label: "Interviews", country: "Nakodar Office" },
-              { id: "DFUZ2gJNj2d", label: "Bulgaria Placement", country: "Europe" },
-              { id: "DWNzMiVFbzb", label: "Factory Worker", country: "Dubai" },
-              { id: "DUffhPTkf0C", label: "KFC Dubai Visa", country: "UAE" },
-              { id: "DUDr71Bksev", label: "Work Permit Approved", country: "Bulgaria" },
-              { id: "DSqwW-NEcHC", label: "Client Success", country: "Gulf Region" },
-              { id: "DWEVQ5PjuBd", label: "Office Tour", country: "Nakodar" },
-            ].map((reel) => (
+            {([
+              { id: "DYFARXVCp_t", label: "Latest Placement", country: "Overseas", type: "reel" },
+              { id: "DYCoFj_jBq-", label: "Visa Approved", country: "Overseas", type: "reel" },
+              { id: "DYCn5Qbj5jt", label: "New Departure", country: "Overseas", type: "reel" },
+              { id: "DYAOpKwmmdm", label: "Success Story", country: "Overseas", type: "p" },
+              { id: "DX_esaDCt4u", label: "Recent Interview", country: "Nakodar Office", type: "reel" },
+              { id: "DX68mgIyUGh", label: "Live Update", country: "Overseas", type: "reel" },
+              { id: "DWEVQ5PjuBd", label: "Interviews", country: "Nakodar Office", type: "reel" },
+              { id: "DFUZ2gJNj2d", label: "Bulgaria Placement", country: "Europe", type: "reel" },
+              { id: "DWNzMiVFbzb", label: "Factory Worker", country: "Dubai", type: "reel" },
+              { id: "DUffhPTkf0C", label: "KFC Dubai Visa", country: "UAE", type: "reel" },
+              { id: "DUDr71Bksev", label: "Work Permit Approved", country: "Bulgaria", type: "reel" },
+              { id: "DSqwW-NEcHC", label: "Client Success", country: "Gulf Region", type: "reel" },
+            ] as const).map((reel) => (
               <a
                 key={reel.id + reel.label}
-                href={`https://www.instagram.com/reel/${reel.id}/`}
+                href={`https://www.instagram.com/${reel.type}/${reel.id}/`}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -949,7 +954,7 @@ export default function ContactUsPage() {
                 }}
               >
                 <iframe
-                  src={`https://www.instagram.com/reel/${reel.id}/embed/`}
+                  src={`https://www.instagram.com/${reel.type}/${reel.id}/embed/`}
                   style={{
                     width: "130%",
                     height: "170%",
