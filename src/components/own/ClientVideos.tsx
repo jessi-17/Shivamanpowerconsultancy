@@ -4,7 +4,21 @@ import { useRef, useEffect } from "react";
 import { gsap } from "@/lib/gsap";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
-const reels = [
+type ReelType = "reel" | "p";
+interface Reel {
+  id: string;
+  label: string;
+  country: string;
+  type?: ReelType;
+}
+
+const reels: Reel[] = [
+  { id: "DYFARXVCp_t", label: "Latest Placement", country: "Overseas", type: "reel" },
+  { id: "DYCoFj_jBq-", label: "Visa Approved", country: "Overseas", type: "reel" },
+  { id: "DYCn5Qbj5jt", label: "New Departure", country: "Overseas", type: "reel" },
+  { id: "DYAOpKwmmdm", label: "Success Story", country: "Overseas", type: "p" },
+  { id: "DX_esaDCt4u", label: "Recent Interview", country: "Nakodar Office", type: "reel" },
+  { id: "DX68mgIyUGh", label: "Live Update", country: "Overseas", type: "reel" },
   { id: "DWEVQ5PjuBd", label: "Interviews", country: "Nakodar Office" },
   { id: "DFUZ2gJNj2d", label: "Bulgaria Placement", country: "Europe" },
   { id: "DWNzMiVFbzb", label: "Factory Worker", country: "Dubai" },
@@ -268,7 +282,7 @@ export default function ClientVideos() {
         {allReels.map((reel, i) => (
           <a
             key={`${reel.id}-${i}`}
-            href={`https://www.instagram.com/reel/${reel.id}/`}
+            href={`https://www.instagram.com/${reel.type ?? "reel"}/${reel.id}/`}
             target="_blank"
             rel="noopener noreferrer"
             draggable={false}
@@ -286,7 +300,7 @@ export default function ClientVideos() {
           >
             {/* Instagram embed — aggressively cropped to show only the video */}
             <iframe
-              src={`https://www.instagram.com/reel/${reel.id}/embed/`}
+              src={`https://www.instagram.com/${reel.type ?? "reel"}/${reel.id}/embed/`}
               style={{
                 width: 340,
                 height: 750,
