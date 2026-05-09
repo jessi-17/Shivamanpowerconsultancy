@@ -1,9 +1,11 @@
-import { put, head } from "@vercel/blob";
+import { head } from "@vercel/blob";
 import fs from "fs";
 import path from "path";
+import { readState, writeState, hasDb } from "../../../_lib/contentStore";
 
 const BLOB_PATH = "data/offer.json";
 const SEED_PATH = path.join(process.cwd(), "app/_lib/data/offer.json");
+const STATE_KEY = "offer";
 
 export type Region = "gulf" | "europe";
 
@@ -67,45 +69,53 @@ function readSeed(): OfferFile {
   }
 }
 
-export async function readFile(): Promise<OfferFile> {
-  if (!HAS_BLOB) return readSeed();
-
+async function readBlobLegacy(): Promise<OfferFile | null> {
+  if (!HAS_BLOB) return null;
   try {
     const blob = await head(BLOB_PATH);
     const res = await fetch(`${blob.url}?t=${Date.now()}`, { cache: "no-store" });
     const raw = await res.json();
-    return mergeWithDefaults(raw);
-  } catch (err: unknown) {
-    if ((err as { name?: string })?.name === "BlobNotFoundError") {
-      const seeded = readSeed();
-      try {
-        await put(BLOB_PATH, JSON.stringify(seeded), {
-          access: "public",
-          allowOverwrite: true,
-          addRandomSuffix: false,
-          cacheControlMaxAge: 0,
-        });
-      } catch {
-        /* swallow */
-      }
-      return seeded;
-    }
-    console.error("[offer] Blob read failed, falling back to seed:", err);
-    return readSeed();
+    return raw && typeof raw === "object" ? (raw as OfferFile) : null;
+  } catch {
+    return null;
   }
 }
 
+export async function readFile(): Promise<OfferFile> {
+  // Primary: Postgres
+  if (hasDb) {
+    try {
+      const dbValue = await readState<OfferFile>(STATE_KEY);
+      if (dbValue) return mergeWithDefaults(dbValue);
+
+      // Lazy migration: nothing in DB yet — try to read legacy Blob and copy it forward
+      const legacy = await readBlobLegacy();
+      if (legacy) {
+        await writeState(STATE_KEY, legacy).catch((err) => {
+          console.error("[offer] DB migration write failed:", err);
+        });
+        return mergeWithDefaults(legacy);
+      }
+    } catch (err) {
+      console.error("[offer] Postgres read failed, falling back:", err);
+    }
+  }
+
+  // Fallback: legacy Blob (when DB not configured)
+  const legacy = await readBlobLegacy();
+  if (legacy) return mergeWithDefaults(legacy);
+
+  // Last resort: seed file in repo
+  return readSeed();
+}
+
 export async function writeFile(file: OfferFile) {
-  if (!HAS_BLOB) {
+  if (!hasDb) {
+    // Local dev without DB — write seed file so it persists across restarts
     fs.writeFileSync(SEED_PATH, JSON.stringify(file, null, 2));
     return;
   }
-  await put(BLOB_PATH, JSON.stringify(file), {
-    access: "public",
-    allowOverwrite: true,
-    addRandomSuffix: false,
-    cacheControlMaxAge: 0,
-  });
+  await writeState(STATE_KEY, file);
 }
 
 export async function readOffer(region: Region): Promise<OfferContent> {
