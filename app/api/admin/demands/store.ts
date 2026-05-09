@@ -1,9 +1,11 @@
-import { put, head } from "@vercel/blob";
+import { head } from "@vercel/blob";
 import fs from "fs";
 import path from "path";
+import { readState, writeState, hasDb } from "../../../_lib/contentStore";
 
 const BLOB_PATH = "data/demands.json";
 const SEED_PATH = path.join(process.cwd(), "app/_lib/data/demands.json");
+const STATE_KEY = "demands";
 
 export interface Demand {
   id: string;
@@ -29,43 +31,50 @@ function readSeed(): Demand[] {
   }
 }
 
-export async function readDemands(): Promise<Demand[]> {
-  if (!HAS_BLOB) return readSeed();
-
+async function readBlobLegacy(): Promise<Demand[] | null> {
+  if (!HAS_BLOB) return null;
   try {
     const blob = await head(BLOB_PATH);
     const res = await fetch(`${blob.url}?t=${Date.now()}`, { cache: "no-store" });
     const raw = await res.json();
-    return Array.isArray(raw) ? raw : [];
-  } catch (err: unknown) {
-    if ((err as { name?: string })?.name === "BlobNotFoundError") {
-      const seeded = readSeed();
-      try {
-        await put(BLOB_PATH, JSON.stringify(seeded), {
-          access: "public",
-          allowOverwrite: true,
-          addRandomSuffix: false,
-          cacheControlMaxAge: 0,
-        });
-      } catch {
-        /* swallow — return seed anyway */
-      }
-      return seeded;
-    }
-    console.error("[demands] Blob read failed, falling back to seed:", err);
-    return readSeed();
+    return Array.isArray(raw) ? raw : null;
+  } catch {
+    return null;
   }
 }
 
+export async function readDemands(): Promise<Demand[]> {
+  // Primary: Postgres
+  if (hasDb) {
+    try {
+      const dbValue = await readState<Demand[]>(STATE_KEY);
+      if (dbValue && Array.isArray(dbValue)) return dbValue;
+
+      // Lazy migration: nothing in DB yet — copy from legacy Blob if present
+      const legacy = await readBlobLegacy();
+      if (legacy) {
+        await writeState(STATE_KEY, legacy).catch((err) => {
+          console.error("[demands] DB migration write failed:", err);
+        });
+        return legacy;
+      }
+    } catch (err) {
+      console.error("[demands] Postgres read failed, falling back:", err);
+    }
+  }
+
+  // Fallback: legacy Blob (when DB not configured)
+  const legacy = await readBlobLegacy();
+  if (legacy) return legacy;
+
+  // Last resort: seed file in repo
+  return readSeed();
+}
+
 export async function writeDemands(demands: Demand[]) {
-  if (!HAS_BLOB) {
+  if (!hasDb) {
     fs.writeFileSync(SEED_PATH, JSON.stringify(demands, null, 2));
     return;
   }
-  await put(BLOB_PATH, JSON.stringify(demands), {
-    access: "public",
-    allowOverwrite: true,
-    addRandomSuffix: false,
-    cacheControlMaxAge: 0,
-  });
+  await writeState(STATE_KEY, demands);
 }
