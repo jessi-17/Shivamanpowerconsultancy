@@ -160,7 +160,7 @@ function EditorContent() {
   };
 
   return (
-    <div style={{ padding: "120px 32px 80px", maxWidth: 1100, margin: "0 auto" }}>
+    <div style={{ padding: "40px 32px 80px", maxWidth: 1100, margin: "0 auto" }}>
       {/* Header */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 32, flexWrap: "wrap", gap: 16 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>

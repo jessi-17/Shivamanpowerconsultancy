@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import Link from "next/link";
 
 type LeadType = "general" | "employer" | "newsletter";
 
@@ -90,14 +89,7 @@ export default function AdminLeadsPage() {
   };
 
   return (
-    <div style={{ padding: "120px 32px 80px", maxWidth: 1400, margin: "0 auto" }}>
-      <div style={{ display: "flex", gap: 16, marginBottom: 32, flexWrap: "wrap" }}>
-        <AdminNavLink href="/admin/blog" label="Blog" />
-        <AdminNavLink href="/admin/offer" label="Ads Landing Page" />
-        <AdminNavLink href="/admin/demands" label="Current Demands" />
-        <AdminNavLink href="/admin/leads" label="Leads" active />
-      </div>
-
+    <div style={{ padding: "40px 32px 80px", maxWidth: 1400, margin: "0 auto" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24, flexWrap: "wrap", gap: 16 }}>
         <div>
           <h1 style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#0b1c30", marginBottom: 4 }}>
@@ -417,24 +409,3 @@ function Row({
   );
 }
 
-function AdminNavLink({ href, label, active }: { href: string; label: string; active?: boolean }) {
-  return (
-    <Link
-      href={href}
-      style={{
-        padding: "8px 16px",
-        borderRadius: 999,
-        backgroundColor: active ? "#0b1c30" : "#f1f5f9",
-        color: active ? "#fff" : "#0b1c30",
-        fontFamily: "var(--font-display)",
-        fontSize: 13,
-        fontWeight: 600,
-        textDecoration: "none",
-        border: "1px solid",
-        borderColor: active ? "#0b1c30" : "#e5e7eb",
-      }}
-    >
-      {label}
-    </Link>
-  );
-}
