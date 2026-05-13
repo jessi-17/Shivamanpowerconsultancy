@@ -33,6 +33,9 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Admin pages render their own toolbar; hide the public navbar there.
+  if (pathname.startsWith("/admin")) return null;
+
   // White text when on a dark hero page AND not scrolled
   const light = hasDarkHero && !scrolled;
 

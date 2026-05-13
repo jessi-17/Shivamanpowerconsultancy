@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { uploadImage } from "@/lib/uploadImage";
 import { verifySaved } from "@/lib/verifySaved";
@@ -125,31 +124,13 @@ export default function AdminCredibilityPage() {
           gap: 12,
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-          <Link
-            href="/admin"
-            style={{
-              padding: "8px 12px",
-              backgroundColor: "rgba(255,255,255,0.08)",
-              borderRadius: 8,
-              fontFamily: "var(--font-display)",
-              fontSize: 12,
-              fontWeight: 700,
-              color: "#fff",
-              textDecoration: "none",
-              border: "1px solid rgba(255,255,255,0.12)",
-            }}
-          >
-            ← Dashboard
-          </Link>
-          <div>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 800, letterSpacing: "0.14em", color: "#60a5fa", textTransform: "uppercase" }}>
-              Admin · Credibility
-            </p>
-            <h1 style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 800 }}>
-              Mobile Credibility Sections
-            </h1>
-          </div>
+        <div>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 800, letterSpacing: "0.14em", color: "#60a5fa", textTransform: "uppercase" }}>
+            Admin · Credibility
+          </p>
+          <h1 style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 800 }}>
+            Mobile Credibility Sections
+          </h1>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <span style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "rgba(255,255,255,0.55)" }}>

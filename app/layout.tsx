@@ -321,9 +321,13 @@ export default function RootLayout({
         <Script id="gallabox-whatsapp" strategy="afterInteractive">
           {`
             (function () {
+              // Never load the public WhatsApp widget on admin pages.
+              if (window.location.pathname.indexOf("/admin") === 0) return;
               var loaded = false;
               function loadGallabox() {
                 if (loaded) return;
+                // Re-check on deferred fire too — handles SPA nav to /admin after script registered listeners.
+                if (window.location.pathname.indexOf("/admin") === 0) return;
                 loaded = true;
                 window.gbwawc = {
                   url: "https://waw.gallabox.com",
