@@ -80,17 +80,41 @@ export default function PartnersBar() {
           Our employer network spans 500+ companies across six major industries in the Gulf, Europe, and beyond.
         </p>
 
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
-          gap: 16,
-        }}>
+        <div
+          className={m ? "mobile-hscroll" : undefined}
+          style={
+            m
+              ? {
+                  display: "flex",
+                  gap: 12,
+                  overflowX: "auto",
+                  scrollSnapType: "x mandatory",
+                  WebkitOverflowScrolling: "touch",
+                  paddingTop: 4,
+                  paddingBottom: 12,
+                  paddingLeft: "var(--spacing-8)",
+                  paddingRight: "var(--spacing-8)",
+                  marginLeft: "calc(-1 * var(--spacing-8))",
+                  marginRight: "calc(-1 * var(--spacing-8))",
+                  scrollPaddingLeft: "var(--spacing-8)",
+                  textAlign: "left",
+                }
+              : {
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+                  gap: 16,
+                }
+          }
+        >
           {sectors.map((s, i) => (
             <div
               key={s.title}
               className="reveal-child"
               style={{
                 "--i": i,
+                flex: m ? "0 0 58%" : undefined,
+                maxWidth: m ? "58%" : undefined,
+                scrollSnapAlign: m ? "start" : undefined,
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",

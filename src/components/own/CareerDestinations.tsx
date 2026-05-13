@@ -104,8 +104,26 @@ export default function CareerDestinations() {
         {/* Featured destination cards */}
         <div
           ref={cardsRef}
-          className="reveal-stagger"
-          style={{ display: "flex", gap: 16, flexWrap: "wrap", paddingTop: 10, paddingBottom: 12 }}
+          className={m ? "reveal-stagger mobile-hscroll" : "reveal-stagger"}
+          style={
+            m
+              ? {
+                  display: "flex",
+                  gap: 12,
+                  flexWrap: "nowrap",
+                  overflowX: "auto",
+                  scrollSnapType: "x mandatory",
+                  WebkitOverflowScrolling: "touch",
+                  paddingTop: 10,
+                  paddingBottom: 12,
+                  paddingLeft: "var(--spacing-8)",
+                  paddingRight: "var(--spacing-8)",
+                  marginLeft: "calc(-1 * var(--spacing-8))",
+                  marginRight: "calc(-1 * var(--spacing-8))",
+                  scrollPaddingLeft: "var(--spacing-8)",
+                }
+              : { display: "flex", gap: 16, flexWrap: "wrap", paddingTop: 10, paddingBottom: 12 }
+          }
         >
           {featured.map((dest, i) => (
             <Link
@@ -114,9 +132,10 @@ export default function CareerDestinations() {
               className="reveal-child"
               style={{
                 "--i": i,
-                flex: m ? "1 1 100%" : "1 1 calc(25% - 12px)",
-                maxWidth: m ? "100%" : "calc(25% - 12px)",
-                height: m ? 280 : 360,
+                flex: m ? "0 0 78%" : "1 1 calc(25% - 12px)",
+                maxWidth: m ? "78%" : "calc(25% - 12px)",
+                height: m ? 240 : 360,
+                scrollSnapAlign: m ? "start" : undefined,
                 cursor: "pointer",
                 transition: "transform 300ms cubic-bezier(0.16,1,0.3,1)",
                 textDecoration: "none",
@@ -151,9 +170,10 @@ export default function CareerDestinations() {
             className="reveal-child"
             style={{
               "--i": featured.length,
-              flex: m ? "1 1 100%" : "1 1 calc(25% - 12px)",
-              maxWidth: m ? "100%" : "calc(25% - 12px)",
-              height: m ? 220 : 360,
+              flex: m ? "0 0 78%" : "1 1 calc(25% - 12px)",
+              maxWidth: m ? "78%" : "calc(25% - 12px)",
+              height: m ? 240 : 360,
+              scrollSnapAlign: m ? "start" : undefined,
               borderRadius: 20,
               backgroundColor: "#000c2f",
               display: "flex",

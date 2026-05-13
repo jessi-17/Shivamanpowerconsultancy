@@ -276,8 +276,6 @@ export default function FAQPage() {
       <section
         style={{
           padding: "60px 0",
-          backgroundColor: "#ffffff",
-          borderTop: "1px solid #e5e7eb",
           borderBottom: "1px solid #e5e7eb",
         }}
       >

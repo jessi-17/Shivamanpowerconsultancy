@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
+import RelatedServices from "@/components/own/RelatedServices";
 
 export const metadata: Metadata = {
   title: "Embassy Coordination & Visa Stamping | Nakodar & Jalandhar | Shiva Travel",
@@ -242,6 +243,9 @@ export default function EmbassyCoordinationPage() {
             </div>
           </div>
         </section>
+
+        {/* ===== RELATED SERVICES — internal linking ===== */}
+        <RelatedServices currentSlug="embassy-coordination" />
 
         {/* ===== CTA ===== */}
         <section style={{ padding: "96px 24px", maxWidth: 1300, margin: "0 auto", background: "linear-gradient(135deg, #000c2f 0%, #001f5d 100%)", textAlign: "center", position: "relative", overflow: "hidden", borderRadius: 24 }}>

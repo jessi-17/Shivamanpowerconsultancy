@@ -2,17 +2,19 @@ import type { Metadata } from "next";
 import SalaryCalculator from "./SalaryCalculator";
 
 export const metadata: Metadata = {
-  title: "Gulf Salary Calculator — Estimate Your Overseas Earnings",
+  title: { absolute: "Free Gulf Salary Calculator | UAE, Saudi, Qatar, Poland Earnings" },
   description:
-    "Calculate your expected salary working in UAE, Saudi Arabia, Qatar, Kuwait, Poland or Romania. Free tool by Shiva Manpower Consultants. See take-home pay, accommodation, and benefits.",
+    "Free salary calculator for overseas jobs — estimate take-home pay in UAE, Saudi Arabia, Qatar, Kuwait, Poland & Romania. By Punjab's best govt-licensed manpower consultancy (RA B-1794).",
   keywords: [
-    "gulf salary calculator",
-    "overseas salary estimate India",
-    "UAE job salary",
+    "free gulf salary calculator",
+    "best overseas salary estimate punjab",
+    "UAE job salary calculator",
     "Saudi Arabia worker salary",
     "Qatar construction salary",
-    "overseas job earnings calculator",
+    "poland worker salary calculator",
+    "overseas job earnings calculator nakodar",
   ],
+  alternates: { canonical: "/salary-calculator" },
 };
 
 export default function SalaryCalculatorPage() {

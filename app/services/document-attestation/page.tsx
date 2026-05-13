@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
+import RelatedServices from "@/components/own/RelatedServices";
 
 export const metadata: Metadata = {
-  title: "Document Attestation Services | Nakodar & Jalandhar | Shiva Travel",
+  title: { absolute: "Fastest Document Attestation in Punjab | MEA & Embassy" },
   description:
-    "Document attestation and apostille services from Nakodar, Jalandhar for overseas employment. HRD, MEA, and embassy attestation for educational certificates, birth certificates, marriage certificates. Government licensed agency.",
+    "Fastest document attestation, apostille & embassy services in Punjab. HRD, MEA & embassy attestation for educational, birth & marriage certificates from Nakodar/Jalandhar. Govt-licensed agency (RA B-1794).",
   keywords: [
     "document attestation nakodar",
     "certificate attestation jalandhar",
@@ -245,6 +246,9 @@ export default function DocumentAttestationPage() {
             </div>
           </div>
         </section>
+
+        {/* ===== RELATED SERVICES — internal linking ===== */}
+        <RelatedServices currentSlug="document-attestation" />
 
         {/* ===== CTA ===== */}
         <section style={{ padding: "96px 24px", maxWidth: 1300, margin: "0 auto", background: "linear-gradient(135deg, #000c2f 0%, #001f5d 100%)", textAlign: "center", position: "relative", overflow: "hidden", borderRadius: 24 }}>

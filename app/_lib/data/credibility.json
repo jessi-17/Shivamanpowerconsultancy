@@ -1,0 +1,40 @@
+{
+  "visaStamps": [
+    { "img": "/WhatsApp Image 2026-05-09 at 5.07.07 PM (15).jpeg", "name": "Vijay K.", "country": "Dubai", "flag": "🇦🇪", "month": "May 2026", "type": "Work Visa" },
+    { "img": "/WhatsApp Image 2026-05-09 at 5.07.07 PM (5).jpeg", "name": "Manjit S.", "country": "Poland", "flag": "🇵🇱", "month": "May 2026", "type": "Work Permit" },
+    { "img": "/WhatsApp Image 2026-05-09 at 5.07.06 PM.jpeg", "name": "Narinder P.", "country": "Romania", "flag": "🇷🇴", "month": "Apr 2026", "type": "Work Visa" },
+    { "img": "/WhatsApp Image 2026-05-09 at 5.07.07 PM (8).jpeg", "name": "Harpreet S.", "country": "Saudi Arabia", "flag": "🇸🇦", "month": "Apr 2026", "type": "Iqama" },
+    { "img": "/WhatsApp Image 2026-05-09 at 5.04.42 PM.jpeg", "name": "Sukhdev S.", "country": "Bulgaria", "flag": "🇧🇬", "month": "Apr 2026", "type": "Work Visa" },
+    { "img": "/WhatsApp Image 2026-05-09 at 5.07.07 PM (11).jpeg", "name": "Jaspreet S.", "country": "Qatar", "flag": "🇶🇦", "month": "Mar 2026", "type": "QID Approval" },
+    { "img": "/WhatsApp Image 2026-05-09 at 5.07.07 PM (2).jpeg", "name": "Karamjit S.", "country": "Kuwait", "flag": "🇰🇼", "month": "Mar 2026", "type": "Work Visa" },
+    { "img": "/WhatsApp Image 2026-05-09 at 5.07.07 PM (13).jpeg", "name": "Balwinder S.", "country": "UAE", "flag": "🇦🇪", "month": "Mar 2026", "type": "Employment Visa" }
+  ],
+  "deployedFeed": [
+    { "day": "Mon", "name": "Vijay K.", "country": "Dubai", "role": "Construction", "flag": "🇦🇪" },
+    { "day": "Tue", "name": "Manjit S.", "country": "Poland", "role": "Welding", "flag": "🇵🇱" },
+    { "day": "Tue", "name": "Harpreet S.", "country": "Saudi Arabia", "role": "Engineering", "flag": "🇸🇦" },
+    { "day": "Wed", "name": "Narinder P.", "country": "Romania", "role": "Logistics", "flag": "🇷🇴" },
+    { "day": "Wed", "name": "Karamjit S.", "country": "Kuwait", "role": "Driver", "flag": "🇰🇼" },
+    { "day": "Thu", "name": "Jaspreet S.", "country": "Qatar", "role": "Oil & Gas", "flag": "🇶🇦" },
+    { "day": "Thu", "name": "Balwinder S.", "country": "UAE", "role": "Hospitality", "flag": "🇦🇪" },
+    { "day": "Fri", "name": "Sukhdev S.", "country": "Bulgaria", "role": "Factory", "flag": "🇧🇬" }
+  ],
+  "airportPhotos": [
+    { "img": "/WhatsApp Image 2026-05-09 at 5.07.06 PM (1).jpeg", "name": "Vijay K.", "to": "Dubai", "flag": "🇦🇪" },
+    { "img": "/WhatsApp Image 2026-05-09 at 5.07.06 PM (2).jpeg", "name": "Manjit S.", "to": "Warsaw", "flag": "🇵🇱" },
+    { "img": "/WhatsApp Image 2026-05-09 at 5.07.06 PM (3).jpeg", "name": "Harpreet S.", "to": "Riyadh", "flag": "🇸🇦" },
+    { "img": "/WhatsApp Image 2026-05-09 at 5.07.07 PM.jpeg", "name": "Narinder P.", "to": "Bucharest", "flag": "🇷🇴" },
+    { "img": "/WhatsApp Image 2026-05-09 at 5.07.07 PM (1).jpeg", "name": "Karamjit S.", "to": "Kuwait City", "flag": "🇰🇼" },
+    { "img": "/WhatsApp Image 2026-05-09 at 5.07.07 PM (3).jpeg", "name": "Jaspreet S.", "to": "Doha", "flag": "🇶🇦" },
+    { "img": "/WhatsApp Image 2026-05-09 at 5.07.07 PM (4).jpeg", "name": "Balwinder S.", "to": "Abu Dhabi", "flag": "🇦🇪" }
+  ],
+  "destinationReels": [
+    { "id": "DYAOpKwmmdm", "label": "Success Story", "country": "Overseas", "type": "p" },
+    { "id": "DX68mgIyUGh", "label": "Live Update", "country": "Overseas", "type": "reel" },
+    { "id": "DFUZ2gJNj2d", "label": "Bulgaria Placement", "country": "Europe", "type": "reel" },
+    { "id": "DWNzMiVFbzb", "label": "Factory Worker", "country": "Dubai", "type": "reel" },
+    { "id": "DUffhPTkf0C", "label": "KFC Dubai Visa", "country": "UAE", "type": "reel" },
+    { "id": "DUDr71Bksev", "label": "Work Permit Approved", "country": "Bulgaria", "type": "reel" }
+  ],
+  "updatedAt": "2026-05-13T00:00:00.000Z"
+}

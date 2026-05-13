@@ -18,6 +18,7 @@ export default function FloatingCTA() {
 
   return (
     <div
+      className="floating-cta-bar"
       style={{
         position: "fixed",
         bottom: 0,
@@ -96,6 +97,9 @@ export default function FloatingCTA() {
         @keyframes floatCTAIn {
           from { transform: translateY(100%); opacity: 0; }
           to { transform: translateY(0); opacity: 1; }
+        }
+        @media (max-width: 768px) {
+          .floating-cta-bar { display: none !important; }
         }
       `}</style>
     </div>

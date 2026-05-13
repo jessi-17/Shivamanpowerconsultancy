@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../_lib/breadcrumb";
+import PunjabCluster from "@/components/own/PunjabCluster";
+import Testimonials from "@/components/own/Testimonials";
 
 export const metadata: Metadata = {
   title: "Manpower Consultancy Near Kapurthala | Shiva Travel & Manpower Consultants",
@@ -68,19 +70,13 @@ const stats = [
   { value: "Zero", label: "Fees Charged" },
 ];
 
-const testimonials = [
-  { name: "Harpreet Singh", location: "Kapurthala", text: "The service is great. Owner is so friendly and patient. Very helpful staff and from here the work of sending people abroad gets done quickly." },
-  { name: "Mandeep Kaur", location: "Kapurthala", text: "I had a great experience with Shiva Travel & Manpower Consultants. The team is very professional, knowledgeable, and supportive throughout the entire process." },
-  { name: "Gurpreet Singh", location: "Sultanpur Lodhi", text: "My family has been using Shiva Travel for years. My father went to Dubai through them and now my brother is in Saudi Arabia. We trust them completely." },
-];
-
 const trustReasons = [
-  { title: "Government Licensed", desc: "RA License B-1794 issued by Ministry of External Affairs. E-Migrate registered. ALMRA Punjab member." },
-  { title: "Minimal & Transparent Charges", desc: "We keep our service charges affordable and fully transparent. No hidden fees — every cost is communicated upfront." },
-  { title: "20+ Years of Trust", desc: "Since 2002, serving Kapurthala, Nakodar, Jalandhar, and the entire Doaba belt for over two decades." },
-  { title: "Just 15 Min from Kapurthala", desc: "Our office on Jalandhar Road, Nakodar is easily accessible from Kapurthala. Walk-in consultations Monday to Saturday, 9am-6:30pm." },
-  { title: "Direct Employer Ties", desc: "We work directly with 500+ employers across UAE, Saudi Arabia, Qatar, Poland, Romania — no middlemen." },
-  { title: "End-to-End Support", desc: "From skill testing to visa stamping to airport send-off. We handle everything so you don\u2019t have to worry." },
+  { title: "30 Minutes from Kapurthala Bus Stand", desc: "Our Nakodar office is 22 km from Kapurthala city via the Kapurthala–Nakodar road. Direct Punjab Roadways buses every 30 minutes (₹35, 30 min). Many Kapurthala families come on Saturday afternoons after visiting Sultanpur Lodhi gurdwara." },
+  { title: "Sultanpur Lodhi & Bholath Families Welcome", desc: "We have placed 800+ workers from Kapurthala district — Sultanpur Lodhi, Bholath, Begowal, Phagwara Road. Religious-minded families value our transparent practice — no false promises, just honest assessments and verifiable license." },
+  { title: "Engineering & Technical Diploma Specialty", desc: "Kapurthala has Punjab's railway coach factory legacy and engineering colleges (PLSEI etc). Workers with technical diplomas or engineering background match Romania and Poland skilled-worker shortlists perfectly. Tell us your training, we map the right country." },
+  { title: "Govt-Licensed RA B-1794", desc: "MEA-issued, ALMRA Punjab member. Verifiable on emigrate.gov.in portal. License valid through June 2027 — search for our agency name directly on the official site to confirm." },
+  { title: "Free Documentation Review", desc: "Bring your existing certificates — diploma, degree, work experience — and we'll tell you for FREE which countries best match your profile. No commitment, no charges for first consultation. Honest assessment first, decision second." },
+  { title: "Family-First Counselling \u2014 Bring the Whole Family", desc: "Bring parents, spouses, in-laws. We sit with the whole family. Many Kapurthala families want to make the decision together \u2014 we welcome this approach and explain the process in Punjabi/Hindi/English." },
 ];
 
 export default function KapurthalaPage() {
@@ -157,7 +153,7 @@ export default function KapurthalaPage() {
         </section>
 
         {/* ===== STATS BAR ===== */}
-        <section style={{ padding: "60px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb", borderBottom: "1px solid #e5e7eb" }}>
+        <section style={{ padding: "60px 0", borderBottom: "1px solid #e5e7eb" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", justifyContent: "center", gap: 64, flexWrap: "wrap" }}>
             {stats.map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
@@ -194,7 +190,7 @@ export default function KapurthalaPage() {
         </section>
 
         {/* ===== DESTINATIONS ===== */}
-        <section style={{ padding: "80px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb" }}>
+        <section style={{ padding: "80px 0" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
             <div style={{ textAlign: "center", marginBottom: 56 }}>
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>Overseas Jobs Available from Kapurthala</h2>
@@ -221,40 +217,11 @@ export default function KapurthalaPage() {
           </div>
         </section>
 
-        {/* ===== TESTIMONIALS ===== */}
-        <section style={{ padding: "80px 0", backgroundColor: "#001f5d" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
-            <div style={{ textAlign: "center", marginBottom: 56 }}>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#fff", marginBottom: 12 }}>What Kapurthala & Doaba Families Say</h2>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
-                Real stories from families who trusted us with their futures.
-              </p>
-            </div>
+        {/* ===== TESTIMONIALS — shared Google Reviews component ===== */}
+        <Testimonials />
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 360px), 1fr))", gap: 24 }}>
-              {testimonials.map((t) => (
-                <div key={t.name} style={{ padding: 32, borderRadius: 16, backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>
-                  <div style={{ display: "flex", gap: 3, marginBottom: 16 }}>
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="none">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: 20 }}>
-                    &ldquo;{t.text}&rdquo;
-                  </p>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, color: "#fff" }}>
-                    {t.name}
-                  </div>
-                  <div style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "rgba(255,255,255,0.4)", marginTop: 2 }}>
-                    {t.location}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* ===== PUNJAB CLUSTER — internal linking ===== */}
+        <PunjabCluster currentSlug="kapurthala" />
 
         {/* ===== CTA ===== */}
         <section style={{ padding: "96px 24px", maxWidth: 1300, margin: "0 auto", background: "linear-gradient(135deg, #000c2f 0%, #001f5d 100%)", textAlign: "center", position: "relative", overflow: "hidden", borderRadius: 24 }}>

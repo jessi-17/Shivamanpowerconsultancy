@@ -49,44 +49,56 @@ function GoogleIcon() {
 }
 
 function ReviewCard({ review }: { review: typeof reviewsRow1[0] }) {
+  const m = useIsMobile();
   return (
     <div style={{
-      flex: "0 0 360px",
-      padding: "24px 28px",
+      flex: m ? "0 0 260px" : "0 0 360px",
+      padding: m ? "14px 16px" : "24px 28px",
       backgroundColor: "rgba(255,255,255,0.04)",
       border: "1px solid rgba(255,255,255,0.06)",
-      borderRadius: 16,
+      borderRadius: 14,
       backdropFilter: "blur(8px)",
     }}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 4 }}>
         <Stars count={review.rating} />
         <GoogleIcon />
       </div>
-      <p style={{
-        fontFamily: "var(--font-body)", fontSize: 14,
-        color: "rgba(255,255,255,0.7)", lineHeight: 1.6,
-        marginTop: 12, marginBottom: 16,
-      }}>
+      <p
+        style={{
+          fontFamily: "var(--font-body)",
+          fontSize: m ? 12 : 14,
+          color: "rgba(255,255,255,0.78)",
+          lineHeight: 1.5,
+          marginTop: m ? 8 : 12,
+          marginBottom: m ? 10 : 16,
+          display: "-webkit-box",
+          WebkitLineClamp: m ? 3 : undefined,
+          WebkitBoxOrient: "vertical",
+          overflow: m ? "hidden" : undefined,
+        }}
+      >
         &ldquo;{review.text}&rdquo;
       </p>
-      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: m ? 8 : 10 }}>
         <div style={{
-          width: 36, height: 36, borderRadius: "50%",
+          width: m ? 28 : 36, height: m ? 28 : 36, borderRadius: "50%",
           backgroundColor: "rgba(0,82,220,0.2)",
           display: "flex", alignItems: "center", justifyContent: "center",
-          fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700,
+          fontFamily: "var(--font-display)", fontSize: m ? 12 : 14, fontWeight: 700,
           color: "#60a5fa",
+          flexShrink: 0,
         }}>
           {review.name[0]}
         </div>
-        <div>
+        <div style={{ minWidth: 0 }}>
           <p style={{
-            fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 700, color: "#fff",
+            fontFamily: "var(--font-display)", fontSize: m ? 12 : 13, fontWeight: 700, color: "#fff",
+            whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis",
           }}>
             {review.name}
           </p>
           <p style={{
-            fontFamily: "var(--font-body)", fontSize: 11, color: "rgba(255,255,255,0.4)",
+            fontFamily: "var(--font-body)", fontSize: m ? 10 : 11, color: "rgba(255,255,255,0.4)",
           }}>
             {review.location}
           </p>
@@ -139,9 +151,9 @@ export default function Testimonials() {
   useEffect(() => {
     if (!ref.current) return;
     gsap.fromTo(ref.current.querySelector(".test-header"),
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power3.out",
-        scrollTrigger: { trigger: ref.current, start: "top 75%" } }
+      { y: 24 },
+      { y: 0, duration: 0.8, ease: "power3.out",
+        scrollTrigger: { trigger: ref.current, start: "top 90%", toggleActions: "play none none none" } }
     );
   }, []);
 
@@ -169,8 +181,8 @@ export default function Testimonials() {
 
       {/* Header */}
       <div className="test-header" style={{
-        textAlign: "center", marginBottom: 48,
-        padding: "0 var(--spacing-8)",
+        textAlign: "center", marginBottom: m ? 24 : 48,
+        padding: m ? "0 16px" : "0 var(--spacing-8)",
       }}>
         <p style={{
           fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700,

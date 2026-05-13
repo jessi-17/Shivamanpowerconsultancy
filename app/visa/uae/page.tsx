@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
 import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
+import RelatedVisas from "@/components/own/RelatedVisas";
 
 export const metadata: Metadata = {
   title: "UAE & Dubai Visa Services in Nakodar | Work Permit | Shiva Travel",
@@ -340,6 +341,9 @@ export default function UAEVisaPage() {
         </section>
 
         <SalaryCalcCTA country="UAE" />
+
+        {/* ===== RELATED VISAS — internal linking ===== */}
+        <RelatedVisas currentSlug="uae" />
 
         {/* ===== CTA ===== */}
         <section style={{ padding: "96px 24px", maxWidth: 1300, margin: "0 auto", background: "linear-gradient(135deg, #0f2557 0%, #1e40af 100%)", textAlign: "center", position: "relative", overflow: "hidden", borderRadius: 24 }}>

@@ -184,7 +184,7 @@ export default function Services() {
         </section>
 
         {/* ===== YOUR PARTNER BEYOND BORDERS ===== */}
-        <section style={{ padding: "80px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb" }}>
+        <section style={{ padding: "80px 0" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
             <div style={{ backgroundColor: "#f8fafc", borderRadius: 24, padding: "48px", display: "flex", gap: 48, flexWrap: "wrap", alignItems: "center", border: "1px solid #e5e7eb" }}>
               {/* Left */}

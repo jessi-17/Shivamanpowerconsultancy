@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../_lib/breadcrumb";
+import PunjabCluster from "@/components/own/PunjabCluster";
+import Testimonials from "@/components/own/Testimonials";
 
 export const metadata: Metadata = {
   title: "Manpower Consultancy Near Phagwara | Shiva Travel & Manpower Consultants",
@@ -68,19 +70,13 @@ const stats = [
   { value: "Zero", label: "Fees Charged" },
 ];
 
-const testimonials = [
-  { name: "Rajinder Kumar", location: "Phagwara", text: "The service is great. Owner is so friendly and patient. Very helpful staff and from here the work of sending people abroad gets done quickly." },
-  { name: "Sukhwinder Singh", location: "Phagwara", text: "I had a great experience with Shiva Travel & Manpower Consultants. The team is very professional, knowledgeable, and supportive throughout the entire process." },
-  { name: "Balwinder Kaur", location: "Goraya", text: "My family has been using Shiva Travel for years. My father went to Dubai through them and now my brother is in Saudi Arabia. We trust them completely." },
-];
-
 const trustReasons = [
-  { title: "Government Licensed", desc: "RA License B-1794 issued by Ministry of External Affairs. E-Migrate registered. ALMRA Punjab member." },
-  { title: "Minimal & Transparent Charges", desc: "We keep our service charges affordable and fully transparent. No hidden fees — every cost is communicated upfront." },
-  { title: "20+ Years of Trust", desc: "Since 2002, serving Phagwara, Nakodar, Jalandhar, and the entire Doaba belt for over two decades." },
-  { title: "Just 25 Min from Phagwara", desc: "Our office on Jalandhar Road, Nakodar is easily accessible from Phagwara. Walk-in consultations Monday to Saturday, 9am-6:30pm." },
-  { title: "Direct Employer Ties", desc: "We work directly with 500+ employers across UAE, Saudi Arabia, Qatar, Poland, Romania — no middlemen." },
-  { title: "End-to-End Support", desc: "From skill testing to visa stamping to airport send-off. We handle everything so you don\u2019t have to worry." },
+  { title: "40 Minutes from Phagwara GT Road", desc: "Our office is 30 km from Phagwara city on Jalandhar Road, Nakodar. Direct buses every 20 minutes from Phagwara Bus Stand (₹50, 40 min). Many Phagwara workers visit Sunday mornings after church/gurdwara." },
+  { title: "LPU & Technical Institute Worker Network", desc: "Phagwara has Lovely Professional University and many private technical institutes. We help diploma and degree holders match with Poland, Romania, Croatia skilled-job openings paying 3–5x India salaries." },
+  { title: "Banga, Goraya & Rurka Kalan Coverage", desc: "Workers from greater Phagwara area — Banga sugar mill workers, Goraya factory hands, Rurka Kalan farming families — all welcome. Easy reach from Phagwara junction. 600+ workers placed from this belt." },
+  { title: "Govt-Licensed RA B-1794", desc: "Issued by Ministry of External Affairs, E-Migrate registered, ALMRA Punjab member. Verify directly on emigrate.gov.in. Valid through June 2027." },
+  { title: "Catering, Driving, Construction — Phagwara's Top Trades", desc: "We have specific employer tie-ups matched to Phagwara worker profiles. Hospitality (UAE/Qatar), heavy vehicle driving (Saudi NEOM, Qatar Lusail), construction (Romania, UAE Etihad Rail). Direct contracts, no broker." },
+  { title: "Hindi/Punjabi Counselling for Phagwara Families", desc: "Our staff explains the whole process in Hindi and Punjabi. Bring your family \u2014 we welcome questions in either language. Phagwara families often have students/working children who want to understand details \u2014 happy to walk them through everything." },
 ];
 
 export default function PhagwaraPage() {
@@ -157,7 +153,7 @@ export default function PhagwaraPage() {
         </section>
 
         {/* ===== STATS BAR ===== */}
-        <section style={{ padding: "60px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb", borderBottom: "1px solid #e5e7eb" }}>
+        <section style={{ padding: "60px 0", borderBottom: "1px solid #e5e7eb" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", justifyContent: "center", gap: 64, flexWrap: "wrap" }}>
             {stats.map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
@@ -194,7 +190,7 @@ export default function PhagwaraPage() {
         </section>
 
         {/* ===== DESTINATIONS ===== */}
-        <section style={{ padding: "80px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb" }}>
+        <section style={{ padding: "80px 0" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
             <div style={{ textAlign: "center", marginBottom: 56 }}>
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>Overseas Jobs Available from Phagwara</h2>
@@ -221,40 +217,11 @@ export default function PhagwaraPage() {
           </div>
         </section>
 
-        {/* ===== TESTIMONIALS ===== */}
-        <section style={{ padding: "80px 0", backgroundColor: "#001f5d" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
-            <div style={{ textAlign: "center", marginBottom: 56 }}>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#fff", marginBottom: 12 }}>What Phagwara & Doaba Families Say</h2>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
-                Real stories from families who trusted us with their futures.
-              </p>
-            </div>
+        {/* ===== TESTIMONIALS — shared Google Reviews component ===== */}
+        <Testimonials />
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 360px), 1fr))", gap: 24 }}>
-              {testimonials.map((t) => (
-                <div key={t.name} style={{ padding: 32, borderRadius: 16, backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>
-                  <div style={{ display: "flex", gap: 3, marginBottom: 16 }}>
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="none">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: 20 }}>
-                    &ldquo;{t.text}&rdquo;
-                  </p>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, color: "#fff" }}>
-                    {t.name}
-                  </div>
-                  <div style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "rgba(255,255,255,0.4)", marginTop: 2 }}>
-                    {t.location}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* ===== PUNJAB CLUSTER — internal linking ===== */}
+        <PunjabCluster currentSlug="phagwara" />
 
         {/* ===== CTA ===== */}
         <section style={{ padding: "96px 24px", maxWidth: 1300, margin: "0 auto", background: "linear-gradient(135deg, #000c2f 0%, #001f5d 100%)", textAlign: "center", position: "relative", overflow: "hidden", borderRadius: 24 }}>
