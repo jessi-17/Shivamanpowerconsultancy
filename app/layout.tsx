@@ -4,6 +4,7 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/own/Navbar";
 import SiteChrome from "@/components/own/SiteChrome";
+import FloatingRailMount from "@/components/own/FloatingRailMount";
 import PostHogProvider from "@/components/own/PostHogProvider";
 import PostHogPageView from "@/components/own/PostHogPageView";
 import "./global.css";
@@ -265,7 +266,10 @@ export default function RootLayout({
         <PostHogProvider>
           <PostHogPageView />
           <Navbar />
-          <div id="main-content">{children}</div>
+          <div id="main-content" style={{ position: "relative" }}>
+            {children}
+            <FloatingRailMount />
+          </div>
           <SiteChrome />
           <Analytics />
         </PostHogProvider>

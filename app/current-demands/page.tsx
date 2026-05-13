@@ -12,9 +12,10 @@ import DemandsTicker from "@/components/own/DemandsTicker";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Current Demands | Shiva Travel & Manpower Consultants Nakodar",
+  title: { absolute: "Live Overseas Job Openings | UAE, Saudi, Poland Vacancies" },
   description:
-    "Browse current overseas job openings across Gulf and European countries. Construction, factory, driving, hospitality, healthcare and more. Transparent and affordable service charges. Government licensed agency in Nakodar, Punjab.",
+    "Live overseas job openings in construction, factory, driving, hospitality & healthcare. From Punjab's best govt-licensed recruitment agency — UAE, Saudi, Qatar, Poland, Romania. Apply directly, transparent fees.",
+  alternates: { canonical: "/current-demands" },
 };
 
 const steps = [
@@ -122,7 +123,7 @@ export default async function CurrentDemands() {
         </section>
 
         {/* ===== HOW IT WORKS ===== */}
-        <section style={{ padding: "80px 0", backgroundColor: "#ffffff", borderRadius: 24, maxWidth: 1300, margin: "0 auto" }}>
+        <section style={{ padding: "80px 0", maxWidth: 1300, margin: "0 auto" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
             <div style={{ textAlign: "center", marginBottom: 56 }}>
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>How It Works</h2>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import HeroSection from "@/components/own/HeroSection";
+import PortalCardsSection from "@/components/own/PortalCardsSection";
 import TrustBar from "@/components/own/TrustBar";
 import SubmissionToast from "@/components/own/SubmissionToast";
 import { breadcrumbJsonLd } from "./_lib/breadcrumb";
@@ -17,11 +18,15 @@ const WhatMakesUsDifferent = dynamic(() => import("@/components/own/WhatMakesUsD
 const Testimonials = dynamic(() => import("@/components/own/Testimonials"));
 const ClientVideos = dynamic(() => import("@/components/own/ClientVideos"));
 const ContactForm = dynamic(() => import("@/components/own/ContactForm"));
+const MobileCredibilityTop = dynamic(() => import("@/components/own/MobileCredibilityStack").then((mod) => mod.MobileCredibilityTop));
+const MobileCredibilityBottom = dynamic(() => import("@/components/own/MobileCredibilityStack").then((mod) => mod.MobileCredibilityBottom));
+const MobileVisitUs = dynamic(() => import("@/components/own/MobileVisitUs"));
+const MobileInlineCta = dynamic(() => import("@/components/own/MobileInlineCta"));
 
 export const metadata: Metadata = {
-  title: "Shiva Travel & Manpower Consultants Nakodar | Overseas Recruitment Agency Punjab",
+  title: { absolute: "Best Manpower Consultancy in Punjab | Govt-Licensed Since 2002" },
   description:
-    "Government licensed overseas placement agency in Nakodar, Punjab. Shiva Travel & Manpower Consultants — 20+ years placing workers from Jalandhar, Kapurthala, Phagwara & Doaba region in UAE, Saudi Arabia, Qatar, Poland, Romania. No hidden fees. Walk-in office.",
+    "Best travel agent, immigration office & overseas recruitment agency in Punjab. Govt-licensed (RA B-1794), 20+ years, 4.9★. UAE, Saudi, Romania, Poland.",
   alternates: {
     canonical: "/",
   },
@@ -98,14 +103,41 @@ export default function Home() {
       <SubmissionToast />
       <HeroSection />
       <TrustBar />
+      <MobileCredibilityTop />
+      <MobileInlineCta
+        kicker="You just saw real visas"
+        title="Get yours stamped next."
+        sub="Free 5-minute eligibility check on WhatsApp. No fees to ask."
+        ctaLabel="Check my eligibility"
+        href="https://wa.me/919815358832?text=Hi%2C%20I%20just%20saw%20your%20approved%20visas.%20I%27d%20like%20to%20check%20my%20eligibility."
+        variant="whatsapp"
+      />
+      <div className="desktop-only">
+        <PortalCardsSection />
+      </div>
       <LocalCTA />
       <FounderTimeline />
+      <MobileVisitUs />
       <CareerDestinations />
+      <MobileInlineCta
+        kicker="Personal reply · within 24 hrs"
+        title="Tell us your skill — we'll match it."
+        sub="Mr. Tarsem personally reviews every enquiry that comes through the website."
+        ctaLabel="Message Mr. Tarsem"
+        href="https://wa.me/919815358832?text=Hi%2C%20I%27d%20like%20advice%20on%20which%20country%20suits%20my%20skills"
+        variant="primary"
+        avatar={{ src: "/founder.webp", name: "Mr. Tarsem Lal", role: "Founder, since 2002" }}
+      />
       <PartnersBar />
       <CTASection />
-      <WhyChooseUs />
-      <VisaProcess />
-      <WhatMakesUsDifferent />
+      <div className="desktop-only">
+        <WhyChooseUs />
+        <VisaProcess />
+      </div>
+      <div className="desktop-only">
+        <WhatMakesUsDifferent />
+      </div>
+      <MobileCredibilityBottom />
       <Testimonials />
       <ClientVideos />
       <ContactForm />

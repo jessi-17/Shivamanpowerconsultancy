@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../_lib/breadcrumb";
+import PunjabCluster from "@/components/own/PunjabCluster";
+import Testimonials from "@/components/own/Testimonials";
 
 export const metadata: Metadata = {
   title: "Manpower Consultancy Near Hoshiarpur | Shiva Travel & Manpower Consultants",
@@ -68,28 +70,22 @@ const stats = [
   { value: "Zero", label: "Fees Charged" },
 ];
 
-const testimonials = [
-  { name: "Ranjit Singh", location: "Hoshiarpur", text: "Shiva Travel helped me get a job in Dubai within 3 weeks. Everything was transparent and I didn't pay a single rupee. Best consultancy for Hoshiarpur people." },
-  { name: "Deepak Kumar", location: "Hoshiarpur", text: "I was worried about fraud agents but Shiva Travel is fully government licensed. They handled my entire visa process for Saudi Arabia. Very trustworthy." },
-  { name: "Harpreet Kaur", location: "Dasuya", text: "My husband got placed in Qatar through Shiva Travel. The staff is very helpful and they kept us informed at every step. Highly recommended for families from Hoshiarpur district." },
-];
-
 const trustReasons = [
-  { title: "Government Licensed", desc: "RA License B-1794 issued by Ministry of External Affairs. E-Migrate registered. ALMRA Punjab member." },
-  { title: "Minimal & Transparent Charges", desc: "We keep our service charges affordable and fully transparent. No hidden fees — every cost is communicated upfront." },
-  { title: "20+ Years of Trust", desc: "Since 2002, serving Hoshiarpur, Nakodar, Jalandhar, and the entire Doaba belt for over two decades." },
-  { title: "Easy Access from Hoshiarpur", desc: "Our office on Jalandhar Road, Nakodar is approximately 35 minutes from Hoshiarpur city. Walk-in consultations Monday to Saturday, 9am-6:30pm." },
-  { title: "Direct Employer Ties", desc: "We work directly with 500+ employers across UAE, Saudi Arabia, Qatar, Poland, Romania — no middlemen." },
-  { title: "End-to-End Support", desc: "From skill testing to visa stamping to airport send-off. We handle everything so you don\u2019t have to worry." },
+  { title: "1-Hour Trip from Hoshiarpur (Worth It)", desc: "Our Nakodar office is 50 km from Hoshiarpur city on Jalandhar Road. Direct PRTC and private buses every 30 min from Hoshiarpur Bus Stand (₹80, 1 hour). Many Hoshiarpur families plan a Saturday trip — meet us in the morning, lunch in Nakodar, return by 4 PM." },
+  { title: "Trusted Across Hoshiarpur District", desc: "Dasuya, Mukerian, Mahilpur, Garhdiwala, Tanda — workers from across Hoshiarpur district come to us. Approximately 700+ placements from this district in 20+ years. We are the closest fully-licensed agency for the entire Hoshiarpur belt." },
+  { title: "Woodcraft, Carpentry & Construction Specialty", desc: "Hoshiarpur's famous woodcraft and carpentry tradition matches Romania, Croatia construction-fitting work and Saudi NEOM finishing-trade jobs. We position your craft skills for Europe at ₹1.2L+ monthly salaries — much higher than unskilled labour roles." },
+  { title: "Govt-Licensed RA B-1794 — Verify Yourself", desc: "MEA-issued license valid through June 2027. ALMRA Punjab member, E-Migrate registered. Search 'Shiva Travel Manpower Consultants Nakodar' on emigrate.gov.in to confirm directly." },
+  { title: "Mukerian & Dasuya Industrial Worker Profiles", desc: "Workers from Mukerian power plant area and Dasuya industrial belt have skills that match Poland and Romania manufacturing employer demands. We have direct tie-ups specifically for skilled industrial workers from this belt." },
+  { title: "Pre-Booked Sat/Sun Consultations Available", desc: "For families travelling 1 hour from Hoshiarpur, we can pre-block Saturday/Sunday afternoon slots so you don't waste your trip. Call ahead: +91 98148-20432. Walk-ins also welcome \u2014 but pre-booking guarantees your time slot." },
 ];
 
 const faqs = [
-  { q: "Is Shiva Travel a government licensed agency for overseas jobs?", a: "Yes. We hold RA License B-1794 issued by the Ministry of External Affairs, Government of India. We are E-Migrate registered and a member of ALMRA Punjab." },
-  { q: "Do I need to pay any fees to get a job abroad through Shiva Travel?", a: "No. We charge zero fees from candidates. All recruitment costs are borne by the hiring employers as per Indian government regulations." },
-  { q: "How far is your office from Hoshiarpur?", a: "Our office is located on Jalandhar Road, Nakodar, approximately 35 minutes from Hoshiarpur city centre. Walk-in consultations are available Monday to Saturday, 9am to 6:30pm." },
-  { q: "Which countries can I get a job in through Shiva Travel?", a: "We place workers in 20+ countries including UAE (Dubai, Abu Dhabi), Saudi Arabia, Qatar, Kuwait, Bahrain, Poland, Romania, Croatia, and other European nations." },
-  { q: "What types of jobs are available for workers from Hoshiarpur?", a: "We recruit for construction, factory work, hospitality, driving, electrical, welding, plumbing, nursing, and many other skilled and semi-skilled roles across Gulf and European countries." },
-  { q: "How long does the visa process take?", a: "Typically 30-60 days from job offer to departure, depending on the destination country. Urgent positions can sometimes be fast-tracked." },
+  { q: "How do I reach Nakodar from Hoshiarpur?", a: "From Hoshiarpur Bus Stand, take any Hoshiarpur→Nakodar or Hoshiarpur→Kapurthala bus (every 30 min, ₹80, 1 hour via Tanda–Phagwara route). By private vehicle: NH-44 or NH-503, 50 km, ~1 hour. Many families travel Saturday morning, finish consultation by lunch, return same day." },
+  { q: "Do you accept candidates from Dasuya, Mukerian, Mahilpur villages?", a: "Yes — Hoshiarpur district is one of our top placement regions. Workers from Dasuya, Mukerian, Garhdiwala, Tanda, Mahilpur, Bhunga regularly visit. The 1-hour journey is worth it — we are the closest government-licensed RA agency for the entire Hoshiarpur belt." },
+  { q: "I work in Hoshiarpur woodcraft / carpentry — does this skill help abroad?", a: "Hugely. Romania, Croatia, Poland have shortage of skilled carpenters and wood-fitting workers in construction. Saudi NEOM project hires interior carpentry and fit-out specialists. Your existing craft skill could mean ₹3–5L higher annual salary vs unskilled labourers. Bring photos of your work — we share with employers." },
+  { q: "What overseas jobs suit Mukerian power plant workers?", a: "Mukerian power plant fitters, electricians, mechanics match Saudi Aramco contractor demands, Qatar plant maintenance roles, and Romania industrial manufacturing. Typical salaries ₹65k–1L INR monthly + free accommodation. Bring your work experience and any vocational certificates." },
+  { q: "What are the fees for Hoshiarpur candidates?", a: "Service charges are minimal, transparent, and shown on a board in our Nakodar office. Every cost — application, GAMCA medical, visa, ticket — explained upfront before deposit. Follows Indian government regulations. We do NOT charge extra for travel from Hoshiarpur or any other district." },
+  { q: "Is Shiva Travel licensed for placements outside Gulf?", a: "Yes — our MEA RA License B-1794 is valid for placements globally, including Europe (Romania, Poland, Croatia, Schengen countries) and all Gulf countries. Many Hoshiarpur woodworkers go to Romania/Croatia, while drivers and welders prefer Gulf. We help you choose based on your skills." },
 ];
 
 const faqJsonLd = {
@@ -176,7 +172,7 @@ export default function HoshiarpurPage() {
         </section>
 
         {/* ===== STATS BAR ===== */}
-        <section style={{ padding: "60px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb", borderBottom: "1px solid #e5e7eb" }}>
+        <section style={{ padding: "60px 0", borderBottom: "1px solid #e5e7eb" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", justifyContent: "center", gap: 64, flexWrap: "wrap" }}>
             {stats.map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
@@ -213,7 +209,7 @@ export default function HoshiarpurPage() {
         </section>
 
         {/* ===== DESTINATIONS ===== */}
-        <section style={{ padding: "80px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb" }}>
+        <section style={{ padding: "80px 0" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
             <div style={{ textAlign: "center", marginBottom: 56 }}>
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>Overseas Jobs Available from Hoshiarpur</h2>
@@ -240,40 +236,8 @@ export default function HoshiarpurPage() {
           </div>
         </section>
 
-        {/* ===== TESTIMONIALS ===== */}
-        <section style={{ padding: "80px 0", backgroundColor: "#001f5d" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
-            <div style={{ textAlign: "center", marginBottom: 56 }}>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#fff", marginBottom: 12 }}>What Hoshiarpur Families Say</h2>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
-                Real stories from families who trusted us with their futures.
-              </p>
-            </div>
-
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 360px), 1fr))", gap: 24 }}>
-              {testimonials.map((t) => (
-                <div key={t.name} style={{ padding: 32, borderRadius: 16, backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>
-                  <div style={{ display: "flex", gap: 3, marginBottom: 16 }}>
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="none">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: 20 }}>
-                    &ldquo;{t.text}&rdquo;
-                  </p>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, color: "#fff" }}>
-                    {t.name}
-                  </div>
-                  <div style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "rgba(255,255,255,0.4)", marginTop: 2 }}>
-                    {t.location}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* ===== TESTIMONIALS — shared Google Reviews component ===== */}
+        <Testimonials />
 
         {/* ===== FAQs ===== */}
         <section style={{ padding: "80px 0", backgroundColor: "#f8f9ff" }}>
@@ -300,6 +264,9 @@ export default function HoshiarpurPage() {
             </div>
           </div>
         </section>
+
+        {/* ===== PUNJAB CLUSTER — internal linking ===== */}
+        <PunjabCluster currentSlug="hoshiarpur" />
 
         {/* ===== CTA ===== */}
         <section style={{ padding: "96px 24px", maxWidth: 1300, margin: "0 auto", background: "linear-gradient(135deg, #000c2f 0%, #001f5d 100%)", textAlign: "center", position: "relative", overflow: "hidden", borderRadius: 24 }}>

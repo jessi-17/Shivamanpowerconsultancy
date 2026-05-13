@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import Image from "next/image";
-import Link from "next/link";
 import gsap from "gsap";
+import HeroCredibilityCarousel from "@/components/own/HeroCredibilityCarousel";
 
 export default function HeroSection() {
   const m = useIsMobile();
@@ -21,13 +21,19 @@ export default function HeroSection() {
       if (!sectionRef.current || !contentRef.current || !bgRef.current) return;
       const rect = sectionRef.current.getBoundingClientRect();
       const scrollProgress = Math.max(0, Math.min(1, -rect.top / rect.height));
+      const isMobileVp = window.innerWidth <= 767;
 
       bgRef.current.style.transform = `translateY(${scrollProgress * 60}px) scale(${1 + scrollProgress * 0.04})`;
       if (globeRef.current) {
         globeRef.current.style.transform = `translateY(-48%) rotate(${-84 + scrollProgress * -8}deg) scale(${1 + scrollProgress * 0.03})`;
       }
-      contentRef.current.style.opacity = `${1 - scrollProgress * 1.5}`;
-      contentRef.current.style.transform = `translateY(${scrollProgress * -40}px)`;
+      if (isMobileVp) {
+        contentRef.current.style.opacity = "1";
+        contentRef.current.style.transform = "translateY(0)";
+      } else {
+        contentRef.current.style.opacity = `${1 - scrollProgress * 1.5}`;
+        contentRef.current.style.transform = `translateY(${scrollProgress * -40}px)`;
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -302,36 +308,25 @@ export default function HeroSection() {
               perspective: 600,
             }}
           >
-            <span className="hero-line" style={{ display: m ? "inline" : "block" }}>{m ? "Trusted Overseas Partners for Punjab's Talent" : "Trusted Overseas Partners"}</span>
-            {!m && <span className="hero-line" style={{ display: "block" }}>for Punjab&apos;s Talent</span>}
+            <span className="hero-line" style={{ display: m ? "inline" : "block" }}>{m ? "Punjab's Best Manpower Consultancy" : "Punjab's Best"}</span>
+            {!m && <span className="hero-line" style={{ display: "block" }}>Manpower Consultancy</span>}
           </h1>
 
-          {/* Urgency banner */}
-          <div
+          {/* Sub-headline — keyword absorber for SEO */}
+          <p
             className="hero-animate"
             style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 10,
-              padding: "8px 16px",
-              borderRadius: 10,
-              backgroundColor: "rgba(239,68,68,0.15)",
-              border: "1px solid rgba(239,68,68,0.3)",
-              maxWidth: "fit-content",
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(0.95rem, 1.5vw, 1.15rem)",
+              fontWeight: 600,
+              color: "#bfdbfe",
+              margin: 0,
+              letterSpacing: "0.01em",
+              lineHeight: 1.4,
             }}
           >
-            <span style={{
-              width: 8, height: 8, borderRadius: "50%",
-              backgroundColor: "#ef4444", display: "inline-block",
-              animation: "pulse-dot 1.5s ease-in-out infinite",
-            }} />
-            <span style={{
-              fontFamily: "var(--font-display)", fontSize: m ? 12 : 14,
-              fontWeight: 700, color: "#fca5a5",
-            }}>
-              Limited Gulf Openings — Apply Before Slots Fill
-            </span>
-          </div>
+            Travel Agent · Immigration Office · Overseas Recruitment — Govt-Licensed Since 2002
+          </p>
 
           {/* Subtext */}
           <p
@@ -339,159 +334,22 @@ export default function HeroSection() {
             style={{
               maxWidth: 576,
               fontFamily: "var(--font-body)",
-              fontSize: "clamp(0.95rem, 1.4vw, 1.25rem)",
+              fontSize: "clamp(0.82rem, 1.1vw, 1rem)",
               fontWeight: 400,
               lineHeight: 1.55,
-              color: "#b4c5ff",
+              color: "rgba(180, 197, 255, 0.65)",
               margin: 0,
             }}
           >
-            Shiva Travel &amp; Manpower Consultancy is a government-licensed recruitment agency in Nakodar, near Jalandhar. Placing Punjab&apos;s skilled workers in premium jobs across Dubai, Saudi Arabia, Qatar, Kuwait &amp; Europe.
+            Shiva Travel &amp; Manpower Consultants is the best travel agent, immigration office and overseas recruitment agency in Punjab. Government-licensed (RA B-1794), trusted by 5,000+ skilled workers across Doaba since 2002 — placing candidates in UAE, Saudi Arabia, Qatar, Kuwait, Poland and Romania.
           </p>
 
           {/* Quick Inquiry Form */}
           <HeroInquiryForm />
         </div>
 
-        {/* Right — glassy portal boxes */}
-        <div
-          className="hero-animate"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 16,
-            flex: m ? "1 1 100%" : "0 0 320px",
-            width: m ? "100%" : 320,
-          }}
-        >
-          {/* For Employers */}
-          <Link href="/employers" style={{ textDecoration: "none" }}>
-            <div
-              style={{
-                padding: m ? "20px" : "28px",
-                backgroundColor: "rgba(255,255,255,0.12)",
-                backdropFilter: "blur(24px)",
-                WebkitBackdropFilter: "blur(24px)",
-                border: "1px solid rgba(255,255,255,0.18)",
-                borderRadius: 16,
-                transition: "all 250ms cubic-bezier(0.16,1,0.3,1)",
-                cursor: "pointer",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.18)";
-                e.currentTarget.style.borderColor = "rgba(96,165,250,0.4)";
-                e.currentTarget.style.transform = "translateY(-4px)";
-                e.currentTarget.style.boxShadow = "0 16px 40px rgba(0,82,220,0.2)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.12)";
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.18)";
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "none";
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
-                <div style={{
-                  width: 36, height: 36, borderRadius: 10,
-                  backgroundColor: "rgba(0,82,220,0.35)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                  </svg>
-                </div>
-                <h3 style={{
-                  fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 700,
-                  color: "#fff", margin: 0,
-                }}>
-                  For Employers
-                </h3>
-              </div>
-              <p style={{
-                fontFamily: "var(--font-body)", fontSize: 13,
-                color: "rgba(255,255,255,0.7)", lineHeight: 1.55,
-                margin: "0 0 14px",
-              }}>
-                Hire pre-screened skilled workers from India. End-to-end recruitment, visa processing &amp; deployment support.
-              </p>
-              <span style={{
-                display: "inline-flex", alignItems: "center", gap: 6,
-                fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 700,
-                color: "#60a5fa",
-              }}>
-                Partner With Us
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
-                </svg>
-              </span>
-            </div>
-          </Link>
-
-          {/* For Job Seekers */}
-          <Link href="/job-seekers" style={{ textDecoration: "none" }}>
-            <div
-              style={{
-                padding: m ? "20px" : "28px",
-                backgroundColor: "rgba(255,255,255,0.12)",
-                backdropFilter: "blur(24px)",
-                WebkitBackdropFilter: "blur(24px)",
-                border: "1px solid rgba(255,255,255,0.18)",
-                borderRadius: 16,
-                transition: "all 250ms cubic-bezier(0.16,1,0.3,1)",
-                cursor: "pointer",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.18)";
-                e.currentTarget.style.borderColor = "rgba(96,165,250,0.4)";
-                e.currentTarget.style.transform = "translateY(-4px)";
-                e.currentTarget.style.boxShadow = "0 16px 40px rgba(0,82,220,0.2)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.12)";
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.18)";
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "none";
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
-                <div style={{
-                  width: 36, height: 36, borderRadius: 10,
-                  backgroundColor: "rgba(0,82,220,0.35)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
-                </div>
-                <h3 style={{
-                  fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 700,
-                  color: "#fff", margin: 0,
-                }}>
-                  For Job Seekers
-                </h3>
-              </div>
-              <p style={{
-                fontFamily: "var(--font-body)", fontSize: 13,
-                color: "rgba(255,255,255,0.7)", lineHeight: 1.55,
-                margin: "0 0 14px",
-              }}>
-                Browse overseas jobs, get salary info &amp; subscribe for daily/weekly job alerts. Transparent, minimal charges.
-              </p>
-              <span style={{
-                display: "inline-flex", alignItems: "center", gap: 6,
-                fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 700,
-                color: "#60a5fa",
-              }}>
-                Find Jobs
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
-                </svg>
-              </span>
-            </div>
-          </Link>
-        </div>
+        {/* Right — credibility carousel */}
+        <HeroCredibilityCarousel />
       </div>
     </div>
   );

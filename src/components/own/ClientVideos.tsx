@@ -13,9 +13,6 @@ interface Reel {
 }
 
 const reels: Reel[] = [
-  { id: "DYFARXVCp_t", label: "Latest Placement", country: "Overseas", type: "reel" },
-  { id: "DYCoFj_jBq-", label: "Visa Approved", country: "Overseas", type: "reel" },
-  { id: "DYCn5Qbj5jt", label: "New Departure", country: "Overseas", type: "reel" },
   { id: "DYAOpKwmmdm", label: "Success Story", country: "Overseas", type: "p" },
   { id: "DX_esaDCt4u", label: "Recent Interview", country: "Nakodar Office", type: "reel" },
   { id: "DX68mgIyUGh", label: "Live Update", country: "Overseas", type: "reel" },

@@ -68,14 +68,34 @@ export default function TrustBar() {
         boxShadow: "0 8px 40px rgba(11,28,48,0.08)",
       }}
     >
-      <div style={{ display: "flex", flexWrap: "wrap", gap: m ? 20 : 32 }}>
+      <div
+        className={m ? "mobile-hscroll" : undefined}
+        style={
+          m
+            ? {
+                display: "flex",
+                gap: 12,
+                overflowX: "auto",
+                scrollSnapType: "x mandatory",
+                WebkitOverflowScrolling: "touch",
+                paddingLeft: 20,
+                paddingRight: 20,
+                marginLeft: -20,
+                marginRight: -20,
+                scrollPaddingLeft: 20,
+              }
+            : { display: "flex", flexWrap: "wrap", gap: 32 }
+        }
+      >
         {stats.map((stat, i) => (
           <div
             key={stat.title}
             className="reveal-child"
             style={{
               "--i": i,
-              flex: "1 1 250px",
+              flex: m ? "0 0 70%" : "1 1 250px",
+              maxWidth: m ? "70%" : undefined,
+              scrollSnapAlign: m ? "start" : undefined,
               display: "flex",
               flexDirection: "column",
               gap: "var(--spacing-4)",

@@ -7,9 +7,10 @@ import BlogSearch from "@/components/own/BlogSearch";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Blog | Overseas Job Guides, Visa Tips & Worker Resources",
+  title: { absolute: "Best Overseas Job Blog Punjab | Gulf & Europe Visa Guides" },
   description:
-    "Read expert guides on overseas jobs, work visa processes, salary expectations, and worker rights. Updated resources for workers going to UAE, Saudi Arabia, Qatar, Poland, Romania.",
+    "Punjab's best blog on overseas jobs, work visa tips, salary expectations & worker rights. Expert guides for UAE, Saudi, Qatar, Kuwait, Poland & Romania candidates — from Nakodar's govt-licensed recruitment agency.",
+  alternates: { canonical: "/blog" },
 };
 
 function formatDate(dateStr: string): string {

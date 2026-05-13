@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../_lib/breadcrumb";
+import PunjabCluster from "@/components/own/PunjabCluster";
+import Testimonials from "@/components/own/Testimonials";
 
 export const metadata: Metadata = {
   title: "Manpower Consultancy Near Jalandhar | Shiva Travel & Manpower Consultants",
@@ -68,28 +70,22 @@ const stats = [
   { value: "100%", label: "Transparent Fees" },
 ];
 
-const testimonials = [
-  { name: "Ajit Singh Rawat", location: "Jalandhar", text: "The service is great. Owner is so friendly and patient. Very helpful staff and from here the work of sending people abroad gets done quickly." },
-  { name: "Naveen Kumar", location: "Jalandhar", text: "I had a great experience with Shiva Travel & Manpower Consultants. The team is very professional, knowledgeable, and supportive throughout the entire process." },
-  { name: "Gurpreet Singh", location: "Kapurthala", text: "My family has been using Shiva Travel for years. My father went to Dubai through them and now my brother is in Saudi Arabia. We trust them completely." },
-];
-
 const trustReasons = [
-  { title: "Government Licensed", desc: "RA License B-1794 issued by Ministry of External Affairs. E-Migrate registered. ALMRA Punjab member." },
-  { title: "Minimal & Transparent Charges", desc: "We keep our service charges affordable and fully transparent. No hidden fees — every cost is communicated upfront." },
-  { title: "20+ Years of Trust", desc: "Since 2002, serving Jalandhar, Nakodar, Kapurthala, and the entire Doaba belt for over two decades." },
-  { title: "Just 20 Min from Jalandhar", desc: "Our office on Jalandhar Road, Nakodar is easily accessible. Walk-in consultations Monday to Saturday, 9am-6:30pm." },
-  { title: "Direct Employer Ties", desc: "We work directly with 500+ employers across UAE, Saudi Arabia, Qatar, Poland, Romania — no middlemen." },
-  { title: "End-to-End Support", desc: "From skill testing to visa stamping to airport send-off. We handle everything so you don\u2019t have to worry." },
+  { title: "30 Minutes from BMC Chowk Jalandhar", desc: "Our Nakodar office on Jalandhar Road is 22 km from Jalandhar city. Direct PRTC and private buses every 15 minutes from Jalandhar Bus Stand (₹40, 30 min). Many Jalandhar workers visit Saturday mornings — finish consultation by lunch, return same day." },
+  { title: "Trusted by 600+ Workers from Jalandhar District", desc: "Workers from Jalandhar Cantt, Adampur, Kartarpur, Phillaur, Nurmahal, Shahkot regularly come. We understand the Jalandhar worker profile — many have sports goods, factory or skilled trade experience that Gulf and Europe employers actively recruit." },
+  { title: "Jalandhar Skills → Europe Salaries", desc: "Jalandhar sports goods, leather and manufacturing factory experience translates directly to Romania, Poland, Croatia skilled-worker shortlists — Europe salaries 4–6x your current Jalandhar wage. We position your CV for the right cluster." },
+  { title: "Govt-Licensed RA B-1794 (Verify Yourself)", desc: "Issued by Ministry of External Affairs, valid through June 2027. E-Migrate registered, ALMRA Punjab member. Verifiable on emigrate.gov.in. Many Jalandhar agents claim 'licensed' — verify ours directly on the official portal." },
+  { title: "Driver Profiles for Saudi NEOM & Qatar", desc: "Jalandhar district has a high concentration of HMV/HTV license holders. We have direct tie-ups with Saudi NEOM contractors, Qatar Lusail construction companies, UAE logistics firms — heavy vehicle drivers earn ₹55k–80k monthly + accommodation." },
+  { title: "Family-First Consultations", desc: "Bring your family \u2014 parents, spouse, in-laws. We sit with everyone, answer all questions in Hindi/Punjabi/English. Many Jalandhar families want collective decisions on overseas placement \u2014 we welcome this approach." },
 ];
 
 const faqs = [
-  { q: "Is Shiva Travel a government licensed agency for overseas jobs?", a: "Yes. We hold RA License B-1794 issued by the Ministry of External Affairs, Government of India. We are E-Migrate registered and a member of ALMRA Punjab." },
-  { q: "What are the fees to get a job abroad through Shiva Travel?", a: "We maintain minimal and transparent service charges. Every cost is communicated upfront — no hidden fees or surprise deductions. We follow all Indian government regulations." },
-  { q: "How far is your office from Jalandhar?", a: "Our office is located on Jalandhar Road, Nakodar — just 20 minutes from Jalandhar city centre. Walk-in consultations are available Monday to Saturday, 9am to 6:30pm." },
-  { q: "Which countries can I get a job in through Shiva Travel?", a: "We place workers in 20+ countries including UAE (Dubai, Abu Dhabi), Saudi Arabia, Qatar, Kuwait, Bahrain, Poland, Romania, Croatia, and other European nations." },
-  { q: "What types of jobs are available for workers from Jalandhar?", a: "We recruit for construction, factory work, hospitality, driving, electrical, welding, plumbing, nursing, and many other skilled and semi-skilled roles across Gulf and European countries." },
-  { q: "How long does the visa process take?", a: "Typically 30-60 days from job offer to departure, depending on the destination country. Urgent positions can sometimes be fast-tracked." },
+  { q: "How do I reach Shiva Travel from Jalandhar?", a: "From Jalandhar Bus Stand take any Jalandhar→Nakodar bus (PRTC or private, every 15 min, ₹40, 30 minutes). Get off at Nakodar Golden Avenue stop and walk 2 minutes to our office near Sukhjeet Hospital. By private vehicle: take Jalandhar–Nakodar road via Lambra, 22 km, ~30 minutes." },
+  { q: "Are there overseas jobs suited for sports goods factory workers from Jalandhar?", a: "Yes. Sports goods experience translates well to factory and manufacturing jobs in Poland and Romania (food processing, packaging, leather, sports equipment). UAE construction and Saudi NEOM projects also welcome workers with manufacturing background. Bring your work experience certificate — employers value documented factory tenure." },
+  { q: "Can someone from Adampur, Kartarpur or Phillaur also use your services?", a: "Of course. Adampur is 15 km from our office, Kartarpur 18 km, Phillaur 22 km. Workers from across Jalandhar district — Cantt, Phillaur, Nurmahal, Shahkot, Sham Chaurasi — regularly visit us. Many catch the morning bus, finish consultation by lunch, and return same day." },
+  { q: "I have a heavy vehicle license — which Gulf country pays the most?", a: "For HMV/HTV drivers, Saudi NEOM project (SAR 4,000–6,000/month, ~₹90k–1.3L INR) and Qatar Lusail construction (QR 2,500–3,500, ~₹60k–80k INR) are the highest-paying. Accommodation, transport, food typically free. You'll need valid Indian heavy vehicle license + 2+ years experience." },
+  { q: "What are the fees for overseas placement from Jalandhar?", a: "Service charges are minimal, transparent, and posted in our Nakodar office. Every cost — application, GAMCA medical, visa stamping, ticket — explained upfront before deposit. Follows Indian government regulations. No hidden commissions, no broker fees, no surprise deductions." },
+  { q: "Is Shiva Travel a genuine licensed agency?", a: "Yes — we hold RA License B-1794/PUN/PER/100/5/10094/2022 from the Ministry of External Affairs, valid through June 2027. E-Migrate registered, ALMRA Punjab member. Verify our license directly on the official eMigrate.gov.in portal — unique to our agency." },
 ];
 
 const faqJsonLd = {
@@ -180,7 +176,7 @@ export default function JalandharPage() {
         </section>
 
         {/* ===== STATS BAR ===== */}
-        <section style={{ padding: "60px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb", borderBottom: "1px solid #e5e7eb" }}>
+        <section style={{ padding: "60px 0", borderBottom: "1px solid #e5e7eb" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", justifyContent: "center", gap: 64, flexWrap: "wrap" }}>
             {stats.map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
@@ -217,7 +213,7 @@ export default function JalandharPage() {
         </section>
 
         {/* ===== DESTINATIONS ===== */}
-        <section style={{ padding: "80px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb" }}>
+        <section style={{ padding: "80px 0" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
             <div style={{ textAlign: "center", marginBottom: 56 }}>
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>Overseas Jobs Available from Jalandhar</h2>
@@ -244,40 +240,8 @@ export default function JalandharPage() {
           </div>
         </section>
 
-        {/* ===== TESTIMONIALS ===== */}
-        <section style={{ padding: "80px 0", backgroundColor: "#001f5d" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
-            <div style={{ textAlign: "center", marginBottom: 56 }}>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#fff", marginBottom: 12 }}>What Jalandhar & Doaba Families Say</h2>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
-                Real stories from families who trusted us with their futures.
-              </p>
-            </div>
-
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 360px), 1fr))", gap: 24 }}>
-              {testimonials.map((t) => (
-                <div key={t.name} style={{ padding: 32, borderRadius: 16, backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>
-                  <div style={{ display: "flex", gap: 3, marginBottom: 16 }}>
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="none">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: 20 }}>
-                    &ldquo;{t.text}&rdquo;
-                  </p>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, color: "#fff" }}>
-                    {t.name}
-                  </div>
-                  <div style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "rgba(255,255,255,0.4)", marginTop: 2 }}>
-                    {t.location}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* ===== TESTIMONIALS — shared Google Reviews component ===== */}
+        <Testimonials />
 
         {/* ===== FAQs ===== */}
         <section style={{ padding: "80px 0", backgroundColor: "#f8f9ff" }}>
@@ -304,6 +268,9 @@ export default function JalandharPage() {
             </div>
           </div>
         </section>
+
+        {/* ===== PUNJAB CLUSTER — internal linking ===== */}
+        <PunjabCluster currentSlug="jalandhar" />
 
         {/* ===== CTA ===== */}
         <section style={{ padding: "96px 24px", maxWidth: 1300, margin: "0 auto", background: "linear-gradient(135deg, #000c2f 0%, #001f5d 100%)", textAlign: "center", position: "relative", overflow: "hidden", borderRadius: 24 }}>

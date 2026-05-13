@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
+import RelatedServices from "@/components/own/RelatedServices";
 
 export const metadata: Metadata = {
-  title: "GAMCA Medical Test | GCC Approved Medical Centre | Nakodar & Jalandhar",
+  title: { absolute: "Fast GAMCA Medical for Gulf Jobs | Approved Centres Punjab" },
   description:
-    "GAMCA medical test assistance for Gulf country employment visas. GCC approved medical examination for UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman. Coordination with GAMCA-approved centres near Jalandhar. Licensed agency RA B-1794.",
+    "Fast GAMCA medical test booking & assistance for Gulf jobs. GCC-approved centres for UAE, Saudi, Qatar, Kuwait, Bahrain, Oman visas — coordinated by Punjab's best govt-licensed manpower consultancy (RA B-1794).",
   keywords: [
     "gamca medical nakodar",
     "gamca medical test jalandhar",
@@ -234,6 +235,9 @@ export default function GAMCAMedicalPage() {
             </div>
           </div>
         </section>
+
+        {/* ===== RELATED SERVICES — internal linking ===== */}
+        <RelatedServices currentSlug="gamca-medical" />
 
         {/* ===== CTA ===== */}
         <section style={{ padding: "96px 24px", maxWidth: 1300, margin: "0 auto", background: "linear-gradient(135deg, #000c2f 0%, #001f5d 100%)", textAlign: "center", position: "relative", overflow: "hidden", borderRadius: 24 }}>

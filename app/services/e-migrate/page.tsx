@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
+import RelatedServices from "@/components/own/RelatedServices";
 
 export const metadata: Metadata = {
-  title: "E-Migrate Registration & Processing | Nakodar & Jalandhar | Shiva Travel",
+  title: { absolute: "Best E-Migrate Agent in Punjab | Fast Clearance Nakodar" },
   description:
-    "Complete E-Migrate registration and emigration clearance from Nakodar, Jalandhar. Government-mandated E-Migrate processing for Gulf countries — UAE, Saudi Arabia, Qatar, Kuwait, Bahrain. Licensed agency RA B-1794.",
+    "Punjab's best E-Migrate registration & emigration clearance agent. Govt-mandated processing for UAE, Saudi, Qatar, Kuwait, Bahrain jobs from Nakodar & Jalandhar. Licensed agency RA B-1794 — fast, transparent.",
   keywords: [
     "e-migrate registration nakodar",
     "e-migrate processing jalandhar",
@@ -312,6 +313,9 @@ export default function EMigratePage() {
             </div>
           </div>
         </section>
+
+        {/* ===== RELATED SERVICES — internal linking ===== */}
+        <RelatedServices currentSlug="e-migrate" />
 
         {/* ===== CTA ===== */}
         <section style={{ padding: "96px 24px", maxWidth: 1300, margin: "0 auto", background: "linear-gradient(135deg, #000c2f 0%, #001f5d 100%)", textAlign: "center", position: "relative", overflow: "hidden", borderRadius: 24 }}>

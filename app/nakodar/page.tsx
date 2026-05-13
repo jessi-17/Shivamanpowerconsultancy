@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../_lib/breadcrumb";
+import PunjabCluster from "@/components/own/PunjabCluster";
+import Testimonials from "@/components/own/Testimonials";
 
 export const metadata: Metadata = {
-  title: "Travel Agent in Nakodar | Immigration Office & Visa Consultant | Shiva Travel & Manpower Consultants",
+  title: { absolute: "Best Travel Agent & Immigration Office in Nakodar | Since 2002" },
   description:
-    "Looking for a travel agent in Nakodar? Shiva Travel & Manpower Consultants is the #1 government licensed travel agent & immigration office in Nakodar (RA B-1794). 20+ years experience. Romania visa, Schengen visa, Poland visa, UAE visa, work permits & overseas recruitment from Nakodar, Punjab.",
+    "Best travel agent & immigration office in Nakodar — govt-licensed (RA B-1794), 20+ years. Romania, Schengen, Poland, UAE, Croatia, Saudi & Qatar visas, work permits & overseas recruitment from Nakodar, Punjab.",
   keywords: [
     "travel agent in nakodar",
     "travel agent nakodar",
@@ -95,31 +97,24 @@ const stats = [
   { value: "100%", label: "Transparent Fees" },
 ];
 
-const testimonials = [
-  { name: "Harpreet Singh", location: "Nakodar", text: "I got my Romania work visa through Shiva Travel right here in Nakodar. The entire process was smooth and transparent. They guided me from documentation to departure. Best immigration office in Nakodar." },
-  { name: "Rajinder Kumar", location: "Nakodar", text: "My brother and I both went to Dubai through Shiva Travel. Being a local Nakodar office, we could visit anytime for updates. Highly trustworthy and professional team." },
-  { name: "Sukhwinder Kaur", location: "Nakodar", text: "My husband got placed in Saudi Arabia with zero fees. We were worried about agents, but Shiva Travel is government licensed and right here in our city. No need to go to Jalandhar for anything." },
-];
-
 const trustReasons = [
-  { title: "Government Licensed Office in Nakodar", desc: "RA License B-1794 issued by Ministry of External Affairs. E-Migrate registered. ALMRA Punjab member. The only fully licensed immigration office in Nakodar." },
-  { title: "Minimal & Transparent Charges", desc: "We keep our service charges affordable and fully transparent. No hidden fees, no surprise deductions — every cost is communicated upfront as per Indian government regulations." },
-  { title: "20+ Years Serving Nakodar", desc: "Since 2002, Shiva Travel has been the trusted name in Nakodar for overseas recruitment for over two decades. Our roots are here." },
-  { title: "Walk-In Office in Nakodar City", desc: "No need to travel to Jalandhar or Ludhiana. Visit our office at Golden Avenue, Jalandhar Road, Nakodar. Walk-in consultations Monday to Saturday, 9am-6:30pm." },
-  { title: "Direct Employer Connections", desc: "We work directly with 500+ employers across UAE, Saudi Arabia, Qatar, Poland, Romania, Croatia — no middlemen, no sub-agents." },
-  { title: "Complete Visa & Immigration Support", desc: "From skill testing to visa stamping to airport send-off. We handle documentation, medical, insurance, and everything in between." },
+  { title: "Walk-in Office on Your Doorstep", desc: "Golden Avenue, Jalandhar Road — within 5–10 minutes of most Nakodar mohallas. 1 km from Nakodar Bus Stand, 2 km from Nakodar Railway Station. Your hometown RA agency — no need to travel to Jalandhar or Chandigarh." },
+  { title: "Only Govt-Licensed RA Inside Nakodar City", desc: "Other agents you may see in Nakodar are unlicensed sub-agents who refer your case to bigger agencies in Jalandhar/Chandigarh — adding hidden commission. We are the only MEA-licensed (RA B-1794) agency physically operating from inside Nakodar." },
+  { title: "Walk-In Without Appointment", desc: "Bring your family, parents, friends — no need to call ahead. Sit with our team 30–45 minutes, ask everything, no commitment. Open Mon–Sat 9 AM–6:30 PM even during peak season." },
+  { title: "23 Years of Nakodar Reputation", desc: "Tarsem Lal sir founded Shiva Travel in Nakodar in 2002. Almost every Nakodar family has visited our office, or knows a worker we've placed abroad. Local accountability — we live and work in this same neighbourhood." },
+  { title: "Direct Employer Contact — No Middlemen", desc: "From our Nakodar office we directly call employers in UAE, Saudi, Qatar, Poland, Romania, Croatia. No middleman agent, no sub-agent commission, no false promises that other Nakodar agents make. Direct contracts, direct visa stamping." },
+  { title: "Honest Free Consultation", desc: "Bring just an ID and any work certificate. We assess your profile in 30–45 minutes for free. If you genuinely qualify for an opening, we explain the next steps. If not, we tell you straight — no false hopes, no deposit pressure." },
 ];
 
 const faqs = [
-  { q: "Who is the best travel agent in Nakodar?", a: "Shiva Travel & Manpower Consultants is the best travel agent in Nakodar. We are government licensed (RA B-1794), located at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar 144040. We have been the most trusted travel agent in Nakodar for over 20 years, helping thousands of families with overseas jobs, visas, and immigration." },
-  { q: "Where is the best immigration office in Nakodar?", a: "Shiva Travel & Manpower Consultants is the leading government-licensed immigration office in Nakodar, located at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar 144040. We have been serving the community for over 25 years with RA License B-1794." },
-  { q: "Can I get a Romania visa from Nakodar?", a: "Yes. Shiva Travel & Manpower Consultants in Nakodar specializes in Romania work visas. We have direct tie-ups with Romanian employers for construction, manufacturing, and industrial jobs. Visit our Nakodar office for a free consultation." },
-  { q: "Is there a Schengen visa consultant in Nakodar?", a: "Yes. Our Nakodar office provides complete Schengen visa assistance including documentation, appointment booking, and interview preparation for all 27 Schengen countries." },
-  { q: "What are the fees for overseas recruitment in Nakodar?", a: "Shiva Travel maintains minimal and transparent service charges. Every cost is communicated upfront — no hidden fees, no surprise deductions. We follow Indian government regulations and maintain 100% transparency." },
-  { q: "Which countries can I get a work visa for from Nakodar?", a: "From our Nakodar office, we process work visas for 20+ countries including Romania, Poland, Croatia, UAE (Dubai), Saudi Arabia, Qatar, Kuwait, Bahrain, and other European and Gulf nations." },
-  { q: "What is the phone number of Shiva Travel in Nakodar?", a: "You can call us at +91-9814820432 or WhatsApp us at +91-9815358832. Our Nakodar office is open Monday to Saturday, 9am to 6:30pm for walk-in consultations." },
-  { q: "How long does the Poland visa process take from Nakodar?", a: "The Poland work visa process typically takes 45-60 days from application to departure. We handle everything from our Nakodar office — documentation, skill testing, visa stamping, and travel arrangements." },
-  { q: "Is Shiva Travel & Manpower Consultants a genuine agency?", a: "Absolutely. We hold RA License B-1794 from the Ministry of External Affairs, Government of India. We are E-Migrate registered and a member of ALMRA. Our license is valid for all of India. Our Nakodar office has been operational for over 20 years." },
+  { q: "Where exactly is your Nakodar office located?", a: "Shiva Travel & Manpower Consultants is at Golden Avenue, near Sukhjeet Hospital, Jalandhar Road, Nakodar — PIN 144040. We are 1 km from Nakodar Bus Stand (5 minutes walk) and 2 km from Nakodar Railway Station. Look for the blue Shiva Travel signboard." },
+  { q: "Can I walk in without an appointment from Nakodar?", a: "Yes — most of our Nakodar visitors are walk-ins. Open Monday to Saturday, 9 AM to 6:30 PM. The least busy times are 10 AM–12 PM and 3 PM–5 PM. Bring your family, friends, or anyone you want to consult with. No appointment, no charges for first consultation." },
+  { q: "Is Shiva Travel the only government-licensed agency in Nakodar?", a: "Yes — we are the only MEA-licensed Recruiting Agent (RA B-1794) physically operating from Nakodar city. There are unlicensed Nakodar agents who advertise overseas jobs but actually sub-agent through bigger Jalandhar/Chandigarh agencies, adding hidden commission. We deal directly with employers, fully licensed, fully transparent. Verify at emigrate.gov.in." },
+  { q: "Can I get a Romania, Poland or Schengen visa from your Nakodar office?", a: "Yes. We process Romania, Poland, Croatia, Schengen and all major European work visas entirely from our Nakodar office — including documentation, skill testing, embassy appointments. No need to travel to Delhi or Chandigarh for European visa processing." },
+  { q: "What are the fees for overseas recruitment from Nakodar?", a: "Service charges are written on a notice board in our Nakodar office. Every cost — application, GAMCA medical, visa, ticket — is explained upfront before any deposit. Charges follow Indian government regulations. No surprise deductions, no hidden commissions." },
+  { q: "How do I contact Shiva Travel in Nakodar?", a: "Call +91 98148-20432 or WhatsApp +91 98153-58832. Our Nakodar office on Golden Avenue is open Mon–Sat 9 AM–6:30 PM for walk-in consultations. You can also email us at info@shivatravelconsultant.in." },
+  { q: "How long does the visa process take from Nakodar?", a: "Gulf countries (UAE, Saudi, Qatar, Kuwait): 30–60 days. Europe (Poland 75 days, Romania 90 days, Croatia 90 days). We track every case from our Nakodar office and update you on WhatsApp at each stage." },
+  { q: "Is Shiva Travel & Manpower Consultants a genuine agency in Nakodar?", a: "Yes — we hold RA License B-1794/PUN/PER/100/5/10094/2022 from the Ministry of External Affairs, valid through June 2027. We are E-Migrate registered, ALMRA Punjab members, and operating from Nakodar since 2002. Verify our license on the official eMigrate.gov.in portal." },
 ];
 
 const faqJsonLd = {
@@ -212,7 +207,7 @@ export default function NakodarPage() {
         </section>
 
         {/* ===== STATS BAR ===== */}
-        <section style={{ padding: "60px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb", borderBottom: "1px solid #e5e7eb" }}>
+        <section style={{ padding: "60px 0", borderBottom: "1px solid #e5e7eb" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", justifyContent: "center", gap: 64, flexWrap: "wrap" }}>
             {stats.map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
@@ -252,7 +247,7 @@ export default function NakodarPage() {
         </section>
 
         {/* ===== WHY NAKODAR TRUSTS US ===== */}
-        <section style={{ padding: "80px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb" }}>
+        <section style={{ padding: "80px 0" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
             <div style={{ textAlign: "center", marginBottom: 56 }}>
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>Why Nakodar Trusts Shiva Travel & Manpower Consultants</h2>
@@ -304,40 +299,8 @@ export default function NakodarPage() {
           </div>
         </section>
 
-        {/* ===== TESTIMONIALS ===== */}
-        <section style={{ padding: "80px 0", backgroundColor: "#001f5d" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
-            <div style={{ textAlign: "center", marginBottom: 56 }}>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#fff", marginBottom: 12 }}>What Nakodar Families Say About Us</h2>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
-                Real stories from Nakodar families who trusted us with their overseas careers.
-              </p>
-            </div>
-
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 360px), 1fr))", gap: 24 }}>
-              {testimonials.map((t) => (
-                <div key={t.name} style={{ padding: 32, borderRadius: 16, backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>
-                  <div style={{ display: "flex", gap: 3, marginBottom: 16 }}>
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="none">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: 20 }}>
-                    &ldquo;{t.text}&rdquo;
-                  </p>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, color: "#fff" }}>
-                    {t.name}
-                  </div>
-                  <div style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "rgba(255,255,255,0.4)", marginTop: 2 }}>
-                    {t.location}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* ===== TESTIMONIALS — shared Google Reviews component ===== */}
+        <Testimonials />
 
         {/* ===== FAQs ===== */}
         <section style={{ padding: "80px 0", backgroundColor: "#f8f9ff" }}>
@@ -364,6 +327,9 @@ export default function NakodarPage() {
             </div>
           </div>
         </section>
+
+        {/* ===== PUNJAB CLUSTER — internal linking ===== */}
+        <PunjabCluster currentSlug="nakodar" />
 
         {/* ===== CTA ===== */}
         <section style={{ padding: "96px 24px", maxWidth: 1300, margin: "0 auto", background: "linear-gradient(135deg, #000c2f 0%, #001f5d 100%)", textAlign: "center", position: "relative", overflow: "hidden", borderRadius: 24 }}>

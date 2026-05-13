@@ -9,6 +9,7 @@ import { useIsMobile } from "@/hooks/useIsMobile";
 const quickLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
+  { label: "Best in Punjab", href: "/punjab" },
   { label: "Visa Services", href: "/services" },
   { label: "For Employers", href: "/employers" },
   { label: "For Job Seekers", href: "/job-seekers" },
@@ -65,6 +66,7 @@ const destinations = [
 ];
 
 const serviceAreas = [
+  { label: "All of Punjab (State)", href: "/punjab" },
   { label: "Nakodar Office (HQ)", href: "/nakodar" },
   { label: "Jalandhar", href: "/jalandhar" },
   { label: "Kapurthala", href: "/kapurthala" },

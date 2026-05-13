@@ -5,9 +5,10 @@ import { breadcrumbJsonLd } from "../_lib/breadcrumb";
 import AboutClient from "./AboutClient";
 
 export const metadata: Metadata = {
-  title: "About Us | Shiva Travel & Manpower Consultants Nakodar",
+  title: { absolute: "Best Govt-Licensed Manpower Consultancy in Punjab | About Us" },
   description:
-    "Learn about Shiva Travel & Manpower Consultants — a government licensed overseas recruitment agency in Nakodar, Punjab. 25+ years of ethical recruitment. Licensed by Ministry of External Affairs (RA B-1794).",
+    "About Punjab's best travel agent, immigration office & overseas recruitment agency. Govt-licensed (RA B-1794), ALMRA member, 5,000+ placed across UAE, Saudi, Romania, Poland since 2002.",
+  alternates: { canonical: "/about-us" },
 };
 
 const milestones = [
@@ -128,7 +129,7 @@ export default function AboutUs() {
         </section>
 
         {/* ===== BEST SERVICE BANNER ===== */}
-        <section style={{ padding: "60px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb", borderBottom: "1px solid #e5e7eb" }}>
+        <section style={{ padding: "60px 0", borderBottom: "1px solid #e5e7eb" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 48, flexWrap: "wrap" }}>
             <div style={{ flex: "1 1 500px", minWidth: 0 }}>
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 16 }}>Trusted Service Across India</h2>
@@ -204,9 +205,9 @@ export default function AboutUs() {
         <AboutClient values={values} />
 
         {/* ===== GOVERNMENT LICENSE ===== */}
-        <section style={{ padding: "64px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb" }}>
+        <section style={{ padding: "64px 0" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
-            <div style={{ padding: 40, borderRadius: 20, backgroundColor: "#f8fafc", border: "1px solid #e5e7eb" }}>
+            <div style={{ padding: 40, borderRadius: 20, border: "1px solid #e5e7eb" }}>
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 700, color: "#0b1c30", marginBottom: 24, textAlign: "center" }}>Government License Details</h2>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 20 }}>
                 {[

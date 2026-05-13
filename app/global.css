@@ -599,3 +599,58 @@ section {
   outline: 3px solid #60a5fa;
   outline-offset: 2px;
 }
+
+/* Floating credibility rail — desktop only (≥1400px) */
+.floating-rail-wrapper {
+  display: none;
+}
+@media (min-width: 1400px) {
+  .floating-rail-wrapper {
+    display: block;
+  }
+}
+
+/* Mobile social proof toast — mobile only (<768px) */
+.social-proof-wrapper {
+  display: none;
+}
+@media (max-width: 767px) {
+  .social-proof-wrapper {
+    display: block;
+  }
+}
+
+/* Horizontal snap-scroll for mobile sections — hide native scrollbar */
+.mobile-hscroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.mobile-hscroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile-only wrapper — content visible only on screens <=767px */
+.mobile-only {
+  display: none;
+}
+@media (max-width: 767px) {
+  .mobile-only {
+    display: block;
+  }
+}
+
+/* Desktop-only wrapper — content hidden on screens <=767px */
+.desktop-only {
+  display: block;
+}
+@media (max-width: 767px) {
+  .desktop-only {
+    display: none;
+  }
+}
+
+/* Marquee animation for "this week we deployed" ticker */
+@keyframes mc-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

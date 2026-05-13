@@ -8,9 +8,10 @@ const Testimonials = dynamic(() => import("@/components/own/Testimonials"));
 const ClientVideos = dynamic(() => import("@/components/own/ClientVideos"));
 
 export const metadata: Metadata = {
-  title: "Success Stories | Workers Placed by Shiva Travel & Manpower Consultants",
+  title: { absolute: "5,000+ Placed Abroad — Success Stories | Shiva Travel Punjab" },
   description:
-    "Real success stories from workers placed overseas by Shiva Travel & Manpower Consultants Nakodar. Read testimonials from workers in UAE, Saudi Arabia, Qatar, Poland, Romania.",
+    "Real success stories from 5,000+ workers placed overseas by Punjab's best govt-licensed recruitment agency. Testimonials from UAE, Saudi Arabia, Qatar, Kuwait, Poland & Romania — 20+ years of placements from Nakodar.",
+  alternates: { canonical: "/success-stories" },
 };
 
 
@@ -85,7 +86,7 @@ export default function SuccessStories() {
         </section>
 
         {/* ===== VIDEO STORIES ===== */}
-        <section style={{ padding: "64px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb" }}>
+        <section style={{ padding: "64px 0" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 32, flexWrap: "wrap", gap: 16 }}>
               <div>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
 import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
+import RelatedVisas from "@/components/own/RelatedVisas";
 
 export const metadata: Metadata = {
   title: "Romania Visa & Work Permit in Nakodar | Shiva Travel Consultants",
@@ -395,6 +396,9 @@ export default function RomaniaVisaPage() {
         </section>
 
         <SalaryCalcCTA country="Romania" />
+
+        {/* ===== RELATED VISAS — internal linking ===== */}
+        <RelatedVisas currentSlug="romania" />
 
         {/* ===== CTA ===== */}
         <section style={{ padding: "96px 24px", maxWidth: 1300, margin: "0 auto", background: "linear-gradient(135deg, #0f2557 0%, #1e40af 100%)", textAlign: "center", position: "relative", overflow: "hidden", borderRadius: 24 }}>
