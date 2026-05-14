@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 };
 
 const milestones = [
-  { year: "2002", title: "Journey Started", desc: "Began our mission in the overseas manpower and emigration space, laying the foundation for what would become a trusted name in recruitment." },
-  { year: "2008", title: "Emigration Expertise", desc: "Developed deep expertise in emigration processes, building strong relationships with employers across Gulf countries." },
-  { year: "2014", title: "Building Our Own Business", desc: "Established Shiva Travel & Manpower Consultants as an independent consultancy, serving families across India." },
-  { year: "2017", title: "Government Approved", desc: "Obtained the official Recruiting Agent license (RA B-1794) from the Ministry of External Affairs, Government of India." },
-  { year: "2018", title: "Dubai Office Opened", desc: "Expanded operations with a new office in Dubai, strengthening our direct employer connections in the Gulf region." },
-  { year: "2022", title: "ALMRA Member", desc: "Became a registered member of ALMRA, reinforcing our commitment to ethical and regulated overseas recruitment." },
+  { year: "2002", title: "Journey Started", desc: "Mr. Tarsem Lal began his journey in the overseas manpower and emigration space, laying the foundation for what would become a trusted name in recruitment." },
+  { year: "2014", title: "First Office Opened", desc: "Established Shiva Travel & Manpower Consultants as an independent consultancy with our first office, serving families across India." },
+  { year: "2017", title: "Punjab Govt. Approved", desc: "Received official approval from the Government of Punjab to operate as a licensed travel and manpower consultancy in the state." },
+  { year: "2023", title: "MEA Licensed (RA B-1794)", desc: "Granted the Recruiting Agent license by the Ministry of External Affairs, Government of India — the federal credential required to deploy workers overseas." },
+  { year: "2024", title: "ALMRA Member", desc: "Became a registered member of ALMRA, reinforcing our commitment to ethical and regulated overseas recruitment." },
+  { year: "2026", title: "RLA Licensed", desc: "Added RLA accreditation alongside our existing MEA license — strengthening our compliance credentials and continuing to provide the best opportunities to our brothers across India." },
 ];
 
 const values = [

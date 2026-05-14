@@ -8,17 +8,17 @@ import { useIsMobile } from "@/hooks/useIsMobile";
 
 const milestones = [
   { year: "2002", title: "Journey Started" },
-  { year: "2008", title: "Emigration Expertise" },
-  { year: "2014", title: "Own Business" },
-  { year: "2017", title: "Govt. Licensed" },
-  { year: "2018", title: "Dubai Office" },
-  { year: "2022", title: "ALMRA Member" },
+  { year: "2014", title: "First Office" },
+  { year: "2017", title: "Punjab Govt. Approved" },
+  { year: "2023", title: "MEA Licensed" },
+  { year: "2024", title: "ALMRA Member" },
+  { year: "2026", title: "RLA Licensed" },
 ];
 
 const trustBadges = [
   { label: "Since 2002", color: "#facc15" },
-  { label: "RA-1794 Licensed", color: "#60a5fa" },
-  { label: "ALMRA Member", color: "#86efac" },
+  { label: "MEA RA-1794", color: "#60a5fa" },
+  { label: "RLA Licensed", color: "#86efac" },
 ];
 
 export default function FounderTimeline() {
@@ -86,7 +86,7 @@ export default function FounderTimeline() {
               fontStyle: "italic", color: "rgba(255,255,255,0.85)",
               lineHeight: 1.55, maxWidth: 340,
             }}>
-              &ldquo;I started Shiva with one rule — no fake promises. 23 years later, that&rsquo;s still the only rule.&rdquo;
+              &ldquo;I started Shiva with one rule — no fake promises. 24 years later, that&rsquo;s still the only rule.&rdquo;
             </p>
             <div>
               <p style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 800, color: "#fff" }}>
