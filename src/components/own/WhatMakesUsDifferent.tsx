@@ -7,7 +7,7 @@ import { gsap } from "@/lib/gsap";
 
 const points = [
   "Government licensed (RA B-1794/PUN). Not a freelance agent operating from a back office.",
-  "Minimal & transparent charges. No hidden fees — every cost is communicated upfront before you proceed.",
+  "Minimal & transparent charges. No hidden fees â€” every cost is communicated upfront before you proceed.",
   "Walk-in office in Nakodar. Meet us face to face, verify our credentials, ask any question.",
   "Post deployment support. We don't disappear after you land. Our team stays in touch until you're settled.",
 ];
@@ -58,7 +58,7 @@ export default function WhatMakesUsDifferent() {
           flexWrap: "wrap",
         }}
       >
-        {/* Left — Image */}
+        {/* Left â€” Image */}
         <div
           className="diff-image"
           style={{
@@ -77,7 +77,7 @@ export default function WhatMakesUsDifferent() {
             }}
           >
             <Image
-              src="/Professional Punjab office environment.webp"
+              src="/shiva-manpower-nakodar-office-punjab.webp"
               alt="Shiva Manpower Consultants Nakodar office"
               fill
               sizes="(max-width: 640px) 100vw, 45vw"
@@ -113,7 +113,7 @@ export default function WhatMakesUsDifferent() {
           </div>
         </div>
 
-        {/* Right — Text */}
+        {/* Right â€” Text */}
         <div style={{ flex: "1 1 480px", minWidth: 0 }}>
           <p
             className="diff-animate"
@@ -243,7 +243,7 @@ export default function WhatMakesUsDifferent() {
               e.currentTarget.style.boxShadow = "none";
             }}
           >
-            Talk to Our Team →
+            Talk to Our Team â†’
           </a>
         </div>
       </div>

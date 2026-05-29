@@ -4,6 +4,7 @@ import Link from "next/link";
 import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
 import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 import RelatedVisas from "@/components/own/RelatedVisas";
+import PageHero from "@/components/own/PageHero";
 
 export const metadata: Metadata = {
   title: "Poland Visa & Work Permit in Nakodar | Shiva Travel Consultants",
@@ -47,20 +48,20 @@ const visaProcess = [
   { step: "01", title: "Visit Our Nakodar Office", desc: "Walk in to our office at Golden Avenue, Nakodar or call us. We assess your profile, skills, work experience, and preferred job type in Poland.", timeline: "Day 1" },
   { step: "02", title: "Document Collection & Preparation", desc: "We collect and verify your passport, educational certificates, experience letters, and medical reports. We handle attestation and translations if needed.", timeline: "Week 1-2" },
   { step: "03", title: "Employer Matching & Work Permit Filing", desc: "We connect you with verified Polish employers. The employer files the work permit application (Zezwolenie na prace) with the Voivode office in Poland.", timeline: "Week 3-4" },
-  { step: "04", title: "Work Permit Approval", desc: "The Polish Voivode (provincial authority) processes and approves the work permit. Processing time varies by region — typically 4-8 weeks.", timeline: "Week 5-10" },
+  { step: "04", title: "Work Permit Approval", desc: "The Polish Voivode (provincial authority) processes and approves the work permit. Processing time varies by region â€” typically 4-8 weeks.", timeline: "Week 5-10" },
   { step: "05", title: "Visa Stamping at Embassy", desc: "Once the work permit is approved, we prepare your visa file and assist with appointment booking at the Polish Embassy in New Delhi for visa stamping.", timeline: "Week 10-12" },
   { step: "06", title: "Pre-Departure & Fly to Poland", desc: "We conduct a pre-departure briefing, assist with E-Migrate, and help with flight booking. Your employer arranges airport pickup and accommodation in Poland.", timeline: "Week 12-14" },
 ];
 
 const permitTypes = [
-  { title: "Type A — General Work Permit", desc: "The standard work permit for foreign nationals employed by a Polish company. Valid for up to 3 years, renewable. This is the most common permit for Indian workers in construction, manufacturing, and logistics.", tag: "Most Common" },
-  { title: "Type B — Board Member Permit", desc: "For foreign nationals serving on the management board or as partners in a Polish company. Valid for up to 5 years. Required when the stay exceeds 6 months in a 12-month period.", tag: "Management" },
+  { title: "Type A â€” General Work Permit", desc: "The standard work permit for foreign nationals employed by a Polish company. Valid for up to 3 years, renewable. This is the most common permit for Indian workers in construction, manufacturing, and logistics.", tag: "Most Common" },
+  { title: "Type B â€” Board Member Permit", desc: "For foreign nationals serving on the management board or as partners in a Polish company. Valid for up to 5 years. Required when the stay exceeds 6 months in a 12-month period.", tag: "Management" },
   { title: "Seasonal Work Permit", desc: "Allows work in agriculture, hospitality, and food processing for up to 9 months within a calendar year. Faster processing time and lower requirements. Ideal for first-time workers.", tag: "Agriculture & Hospitality" },
   { title: "Oswiadczenie (Employer Declaration)", desc: "A simplified procedure where the Polish employer registers a declaration at the local labour office. Allows work for up to 24 months. Faster than Type A and popular with many employers.", tag: "Simplified Process" },
 ];
 
 const faqs = [
-  { q: "What are the requirements for a work permit in Poland?", a: "A Poland Type-D national work visa (the work permit route most Indian workers use) requires: (1) a signed employment contract or job offer from a registered Polish employer; (2) a Voivode-issued work permit (Zezwolenie na prace, Type A) — the employer applies for this in Poland on your behalf; (3) a valid Indian passport with 12+ months validity and 2 blank pages; (4) MEA-attested educational and experience certificates; (5) proof of trade or qualification relevant to the role; (6) health insurance covering the Schengen area; (7) proof of accommodation in Poland (often arranged by the employer); (8) bank statements and proof of funds; (9) recent Schengen-spec passport photos; (10) medical fitness certificate; (11) police clearance certificate (PCC) from local police; (12) E-Migrate clearance from MEA (mandatory for ECR-passport holders). Shiva Travel & Manpower Consultants (MEA RA Licence B-1794) handles the full document chain from Nakodar, Punjab." },
+  { q: "What are the requirements for a work permit in Poland?", a: "A Poland Type-D national work visa (the work permit route most Indian workers use) requires: (1) a signed employment contract or job offer from a registered Polish employer; (2) a Voivode-issued work permit (Zezwolenie na prace, Type A) â€” the employer applies for this in Poland on your behalf; (3) a valid Indian passport with 12+ months validity and 2 blank pages; (4) MEA-attested educational and experience certificates; (5) proof of trade or qualification relevant to the role; (6) health insurance covering the Schengen area; (7) proof of accommodation in Poland (often arranged by the employer); (8) bank statements and proof of funds; (9) recent Schengen-spec passport photos; (10) medical fitness certificate; (11) police clearance certificate (PCC) from local police; (12) E-Migrate clearance from MEA (mandatory for ECR-passport holders). Shiva Travel & Manpower Consultants (MEA RA Licence B-1794) handles the full document chain from Nakodar, Punjab." },
   { q: "Where to apply for Poland visa in Nakodar?", a: "Visit Shiva Travel & Manpower Consultants at Golden Avenue, Nakodar, Punjab. We are a government-licensed recruitment agency specializing in Poland work permits. Walk in or call +91 98148-20432 for a free consultation." },
   { q: "How long does Poland work visa take from India?", a: "The entire process from application to departure typically takes 2-3 months. Work permit approval takes 4-8 weeks depending on the Polish Voivode office, followed by 1-2 weeks for visa stamping at the embassy." },
   { q: "Is Poland visa easy to get?", a: "Poland is one of the most accessible European work visa destinations for Indian workers. The approval rates are high when you apply through a licensed consultant with proper documentation. We ensure your application is complete and error-free." },
@@ -130,59 +131,22 @@ export default function PolandVisaPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
-        {/* ===== HERO — Split Layout ===== */}
-        <section style={{ paddingTop: 120, paddingBottom: 80, backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
-            <div style={{ flex: "1 1 480px", minWidth: 0 }}>
-              <div style={{ display: "inline-block", padding: "6px 16px", backgroundColor: "#eff4ff", borderRadius: 20, marginBottom: 24 }}>
-                <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#1e40af", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                  EU Member &middot; Schengen Zone &middot; High Demand for Indians
-                </span>
-              </div>
-
-              <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.05, letterSpacing: "-1.5px", marginBottom: 24 }}>
-                Poland Visa & Work Permit
-                <br />
-                <span style={{ color: "#1e40af" }}>Services in Nakodar</span>
-              </h1>
-
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                Government-licensed Poland visa and work permit services from Nakodar, Punjab. We handle Type A work permits, seasonal permits, document attestation, embassy coordination, and complete E-Migrate assistance. Minimal and transparent charges, no hidden fees.
-              </p>
-
-              <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 32 }}>
-                <Link href="/contactus" style={{ display: "inline-flex", alignItems: "center", padding: "14px 28px", backgroundColor: "#0b1c30", color: "#fff", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, borderRadius: 10, textDecoration: "none" }}>
-                  Apply Now — It&apos;s Free
-                </Link>
-                <a href="tel:+919814820432" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 28px", backgroundColor: "#fff", color: "#0b1c30", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, borderRadius: 10, textDecoration: "none", border: "1.5px solid #e5e7eb" }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-                  +91 98148-20432
-                </a>
-              </div>
-
-              <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["EU Work Permit", "Schengen Travel", "No Hidden Fees"].map((badge) => (
-                  <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#1e40af" }} />
-                    <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
-              <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Professional Punjab office environment.webp" alt="Poland visa and work permit services at Shiva Travel Consultants Nakodar" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
-              </div>
-              <div style={{ position: "absolute", bottom: -20, right: 24, backgroundColor: "#1e40af", borderRadius: 12, padding: "20px 28px", boxShadow: "0 8px 32px rgba(0,12,47,0.3)" }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff", lineHeight: 1 }}>2-3</div>
-                <div style={{ fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 4 }}>
-                  Months Total<br />Processing Time
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          kicker="EU Member Â· Schengen Zone Â· High Demand for Indians"
+          title="Poland visa & work permit services in Nakodar."
+          highlight="in Nakodar."
+          chips={["EU Work Permit", "Schengen Travel", "Type A & Seasonal", "No Hidden Fees"]}
+          description="Govt-licensed Poland visa and work permit services from Nakodar. Type A work permits, seasonal permits, attestation, embassy coordination, and complete E-Migrate assistance."
+          primaryCta={{ label: "Apply Now â€” It's Free", href: "/contactus" }}
+          stats={[
+            { num: "2-3 mo", label: "Total Processing" },
+            { num: "EU", label: "Member State" },
+            { num: "5 yrs", label: "Path to PR" },
+          ]}
+          image={{ src: "/shiva-manpower-nakodar-office-punjab.webp", alt: "Poland visa and work permit services at Shiva Travel Consultants Nakodar" }}
+          imageSeal={{ title: "Poland Work Permit Specialist", subtitle: "Type A Â· Seasonal Â· Embassy Coordination" }}
+          microChip={{ value: "EU", label: "Schengen" }}
+        />
 
         {/* ===== STATS BAR ===== */}
         <section style={{ padding: "48px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb", borderBottom: "1px solid #e5e7eb" }}>
@@ -210,7 +174,7 @@ export default function PolandVisaPage() {
                 Why Choose Poland for Work?
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 600, margin: "0 auto" }}>
-                Poland is the top European destination for Indian workers — with EU membership, Schengen access, high demand, and a clear path to permanent residency.
+                Poland is the top European destination for Indian workers â€” with EU membership, Schengen access, high demand, and a clear path to permanent residency.
               </p>
             </div>
 
@@ -233,7 +197,7 @@ export default function PolandVisaPage() {
                 Our Visa Services for Poland
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 600, margin: "0 auto" }}>
-                End-to-end Poland visa and work permit assistance from our Nakodar office — from documentation to departure.
+                End-to-end Poland visa and work permit assistance from our Nakodar office â€” from documentation to departure.
               </p>
             </div>
 
@@ -289,7 +253,7 @@ export default function PolandVisaPage() {
                 Our streamlined 6-step process takes you from your first visit to our Nakodar office to landing in Poland in about 2-3 months. We handle all paperwork, employer coordination, and embassy procedures.
               </p>
               <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Professional Punjab office environment.webp" alt="Shiva Travel Consultants Nakodar office — Poland visa processing" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
+                <Image src="/shiva-manpower-nakodar-office-punjab.webp" alt="Shiva Travel Consultants Nakodar office â€” Poland visa processing" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
               </div>
             </div>
 
@@ -346,7 +310,7 @@ export default function PolandVisaPage() {
               As per Indian government regulations, we maintain minimal and transparent charges with no hidden fees. The Polish employer bears most costs including work permit fees and processing expenses. Your only costs are passport, medical, and travel.
             </p>
             <div style={{ display: "inline-flex", gap: 24, flexWrap: "wrap", justifyContent: "center" }}>
-              {["Work Permit Fee — Employer Pays", "Recruitment Fee — Minimal", "Visa Fee — Employer Pays"].map((item) => (
+              {["Work Permit Fee â€” Employer Pays", "Recruitment Fee â€” Minimal", "Visa Fee â€” Employer Pays"].map((item) => (
                 <div key={item} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1e40af" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
                   <span style={{ fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 600, color: "#0b1c30" }}>{item}</span>
@@ -375,7 +339,7 @@ export default function PolandVisaPage() {
 
         <SalaryCalcCTA country="Poland" />
 
-        {/* ===== RELATED VISAS — internal linking ===== */}
+        {/* ===== RELATED VISAS â€” internal linking ===== */}
         <RelatedVisas currentSlug="poland" />
 
         {/* ===== CTA ===== */}

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../_lib/breadcrumb";
 import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
@@ -8,22 +7,17 @@ import { readOffer } from "../api/admin/offer/store";
 import { DemandCard, DemandsEmpty } from "@/components/own/DemandCard";
 import SidePosterRails from "@/components/own/SidePosterRails";
 import DemandsTicker from "@/components/own/DemandsTicker";
+import PageHero from "@/components/own/PageHero";
+import NumberedProcess from "@/components/own/NumberedProcess";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: { absolute: "Live Overseas Job Openings | UAE, Saudi, Poland Vacancies" },
   description:
-    "Live overseas job openings in construction, factory, driving, hospitality & healthcare. From Punjab's best govt-licensed recruitment agency — UAE, Saudi, Qatar, Poland, Romania. Apply directly, transparent fees.",
+    "Live overseas job openings in construction, factory, driving, hospitality & healthcare. From Punjab's best govt-licensed recruitment agency â€” UAE, Saudi, Qatar, Poland, Romania. Apply directly, transparent fees.",
   alternates: { canonical: "/current-demands" },
 };
-
-const steps = [
-  { num: "01", title: "Walk In or Call", desc: "Visit our office in Nakodar or call us directly at +91 98148-20432. No appointment needed." },
-  { num: "02", title: "Profile Assessment", desc: "We evaluate your skills, experience, and preferences to match you with the right opportunity." },
-  { num: "03", title: "Interview & Selection", desc: "Direct interviews with verified employers. No middlemen, no hidden steps." },
-  { num: "04", title: "Visa & Departure", desc: "We handle everything from visa processing to travel arrangements and pre-departure orientation." },
-];
 
 export default async function CurrentDemands() {
   const demands = await readDemands();
@@ -53,52 +47,21 @@ export default async function CurrentDemands() {
           }
         `}</style>
         <div className="cd-inner">
-        {/* ===== HERO — Split Layout ===== */}
-        <section style={{ paddingTop: 48, paddingBottom: 80, backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
-            {/* Left — Text */}
-            <div style={{ flex: "1 1 480px", minWidth: 0 }}>
-              <div style={{ display: "inline-block", padding: "6px 16px", backgroundColor: "#eff4ff", borderRadius: 20, marginBottom: 24 }}>
-                <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#0052dc", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                  Updated Regularly
-                </span>
-              </div>
-
-              <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.05, letterSpacing: "-1.5px", marginBottom: 24 }}>
-                Current Job Openings
-                <br />
-                <span style={{ color: "#0052dc" }}>Across the Globe.</span>
-              </h1>
-
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                Browse live openings in Gulf and European countries. Every listing is verified, every employer is vetted, and we maintain minimal and transparent charges with no hidden fees. Your next career move starts here.
-              </p>
-
-              {/* Badges */}
-              <div style={{ display: "flex", gap: 16, marginBottom: 32, flexWrap: "wrap" }}>
-                {["Gulf Countries", "European Union", "No Hidden Fees"].map((badge) => (
-                  <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#0b1c30" }} />
-                    <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right — Image with overlay stat */}
-            <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
-              <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Professional Indian executive.webp" alt="Professional placement candidates ready for overseas opportunities" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
-              </div>
-              <div style={{ position: "absolute", bottom: -20, right: 24, backgroundColor: "#001f5d", borderRadius: 12, padding: "20px 28px", boxShadow: "0 8px 32px rgba(0,12,47,0.3)" }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff", lineHeight: 1 }}>500+</div>
-                <div style={{ fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 4 }}>
-                  Active Openings
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          kicker="Updated Regularly"
+          title="Live job openings across the globe."
+          highlight="across the globe."
+          chips={["Gulf Countries", "European Union", "No Hidden Fees"]}
+          description="Browse live openings in Gulf and European countries. Every listing is verified, every employer is vetted, and we maintain minimal & transparent charges. Your next career move starts here."
+          stats={[
+            { num: "500+", label: "Active Openings" },
+            { num: "12+", label: "Countries" },
+            { num: "Weekly", label: "Updates" },
+          ]}
+          image={{ src: "/licensed-overseas-recruitment-punjab.webp", alt: "Professional placement candidates ready for overseas opportunities" }}
+          imageSeal={{ title: "500+ Live Openings", subtitle: "Updated weekly across Gulf & Europe" }}
+          microChip={{ value: "RA B-1794", label: "MEA Licensed" }}
+        />
 
         {/* ===== LIVE DEMANDS ===== */}
         <section style={{ padding: "80px 0", backgroundColor: "#f8f9ff" }}>
@@ -106,7 +69,7 @@ export default async function CurrentDemands() {
             <div style={{ textAlign: "center", marginBottom: 56 }}>
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>Live Demands</h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
-                Every demand below is a current opening from a verified employer. Tap a card to apply — our team will call you back.
+                Every demand below is a current opening from a verified employer. Tap a card to apply â€” our team will call you back.
               </p>
             </div>
 
@@ -122,38 +85,18 @@ export default async function CurrentDemands() {
           </div>
         </section>
 
-        {/* ===== HOW IT WORKS ===== */}
-        <section style={{ padding: "80px 0", maxWidth: 1300, margin: "0 auto" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
-            <div style={{ textAlign: "center", marginBottom: 56 }}>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>How It Works</h2>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
-                From your first call to your departure day, we guide you through every step of the overseas recruitment process.
-              </p>
-            </div>
-
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))", gap: 24 }}>
-              {steps.map((step) => (
-                <div
-                  key={step.num}
-                  style={{
-                    padding: "36px 28px",
-                    borderRadius: 16,
-                    border: "1px solid #e5e7eb",
-                    backgroundColor: "#f8fafc",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 12,
-                  }}
-                >
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: 36, fontWeight: 800, color: "#0052dc", opacity: 0.2, lineHeight: 1 }}>{step.num}</div>
-                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 700, color: "#0b1c30" }}>{step.title}</h3>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "#43474d", lineHeight: 1.7 }}>{step.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <NumberedProcess
+          kicker="How It Works"
+          title="From your first call to departure day."
+          highlight="departure day."
+          intro="From your first call to the day you board your flight â€” every step is transparent, documented, and handled by us."
+          steps={[
+            { title: "Walk In or Call", desc: "Visit our office in Nakodar or call us directly at +91 98148-20432. No appointment needed." },
+            { title: "Profile Assessment", desc: "We evaluate your skills, experience, and preferences to match you with the right opportunity." },
+            { title: "Interview & Selection", desc: "Direct interviews with verified employers. No middlemen, no hidden steps." },
+            { title: "Visa & Departure", desc: "We handle everything from visa processing to travel arrangements and pre-departure orientation." },
+          ]}
+        />
 
         {/* ===== CAN'T FIND YOUR ROLE? ===== */}
         <section style={{ padding: "64px 0", backgroundColor: "#f8f9ff" }}>

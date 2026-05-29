@@ -15,7 +15,7 @@ const ADDRESS_LINE2 = "Jalandhar Road, Nakodar, Punjab 144040";
 const PHONE_CALL = "+91 98148-20432";
 const PHONE_CALL_TEL = "+919814820432";
 const PHONE_WA = "919815358832";
-const HOURS = "Mon – Sat · 9:00 AM – 6:30 PM";
+const HOURS = "Mon â€“ Sat Â· 9:00 AM â€“ 6:30 PM";
 
 const GOOGLE_MAPS_URL = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
   ADDRESS_FULL + ", India"
@@ -35,7 +35,7 @@ export default function MobileVisitUs() {
           Visit Us in Nakodar
         </div>
         <div style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "#3b4858", lineHeight: 1.5 }}>
-          Drop in for a free consultation. No appointment needed — we&rsquo;re open 6 days a week.
+          Drop in for a free consultation. No appointment needed â€” we&rsquo;re open 6 days a week.
         </div>
       </div>
 
@@ -52,7 +52,7 @@ export default function MobileVisitUs() {
         {/* Office photo */}
         <div style={{ position: "relative", width: "100%", height: 180, backgroundColor: "#0b1c30" }}>
           <Image
-            src="/office image .webp"
+            src="/shiva-manpower-support-team.webp"
             alt="Shiva Travel & Manpower Consultants office in Nakodar, Punjab"
             fill
             sizes="100vw"
@@ -103,7 +103,7 @@ export default function MobileVisitUs() {
               textTransform: "uppercase",
             }}
           >
-            Our HQ · Since 2002
+            Our HQ Â· Since 2002
           </p>
         </div>
 
@@ -160,12 +160,12 @@ export default function MobileVisitUs() {
                 {HOURS}
               </p>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "#16a34a", fontWeight: 600 }}>
-                ● Currently open
+                â— Currently open
               </p>
             </div>
           </div>
 
-          {/* CTAs — Get Directions (primary) */}
+          {/* CTAs â€” Get Directions (primary) */}
           <a
             href={GOOGLE_MAPS_URL}
             target="_blank"
@@ -194,7 +194,7 @@ export default function MobileVisitUs() {
             Get Directions on Google Maps
           </a>
 
-          {/* CTAs — Call + WhatsApp side by side */}
+          {/* CTAs â€” Call + WhatsApp side by side */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
             <a
               href={`tel:${PHONE_CALL_TEL}`}
@@ -246,7 +246,7 @@ export default function MobileVisitUs() {
           </div>
 
           <p style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "#94a3b8", textAlign: "center", marginTop: 10, lineHeight: 1.4 }}>
-            {PHONE_CALL} · {`+91 ${PHONE_WA.slice(2, 7)}-${PHONE_WA.slice(7)}`} (WhatsApp)
+            {PHONE_CALL} Â· {`+91 ${PHONE_WA.slice(2, 7)}-${PHONE_WA.slice(7)}`} (WhatsApp)
           </p>
         </div>
       </div>

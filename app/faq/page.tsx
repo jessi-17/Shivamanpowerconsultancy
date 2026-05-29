@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { useIsMobile } from "@/hooks/useIsMobile";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import SlimHero from "@/components/own/SlimHero";
 
 const faqs = [
   {
@@ -102,7 +101,6 @@ const faqJsonLd = {
 
 export default function FAQPage() {
   const m = useIsMobile();
-  const heroRef = useScrollReveal();
 
   return (
     <main className="full-width-page" style={{ backgroundColor: "#f8f9ff" }}>
@@ -111,166 +109,12 @@ export default function FAQPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      {/* ===== HERO -- Split Layout ===== */}
-      <section
-        ref={heroRef}
-        className="reveal"
-        style={{ paddingTop: 120, paddingBottom: 80, backgroundColor: "#f8f9ff" }}
-      >
-        <div
-          style={{
-            maxWidth: 1300,
-            margin: "0 auto",
-            padding: "0 32px",
-            display: "flex",
-            alignItems: "center",
-            gap: 60,
-            flexWrap: "wrap",
-          }}
-        >
-          {/* Left -- Text */}
-          <div style={{ flex: "1 1 480px", minWidth: 0 }}>
-            <div
-              style={{
-                display: "inline-block",
-                padding: "6px 16px",
-                backgroundColor: "#eff4ff",
-                borderRadius: 20,
-                marginBottom: 24,
-              }}
-            >
-              <span
-                style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: 12,
-                  fontWeight: 700,
-                  color: "#0052dc",
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                }}
-              >
-                Got Questions? We Have Answers
-              </span>
-            </div>
-
-            <h1
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: "clamp(2.25rem, 5vw, 3.5rem)",
-                fontWeight: 800,
-                color: "#0b1c30",
-                lineHeight: 1.05,
-                letterSpacing: "-1.5px",
-                marginBottom: 24,
-              }}
-            >
-              Frequently Asked
-              <br />
-              <span style={{ color: "#0052dc" }}>Questions.</span>
-            </h1>
-
-            <p
-              style={{
-                fontFamily: "var(--font-body)",
-                fontSize: 17,
-                color: "#43474d",
-                lineHeight: 1.7,
-                marginBottom: 32,
-                maxWidth: 520,
-              }}
-            >
-              Everything you need to know about working abroad with Shiva Travel
-              &amp; Manpower Consultancy. From recruitment to post-placement
-              support, we have you covered.
-            </p>
-
-            {/* Badges */}
-            <div style={{ display: "flex", gap: 16, marginBottom: 32, flexWrap: "wrap" }}>
-              {["No Hidden Fees", "MEA Licensed"].map((badge) => (
-                <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <div
-                    style={{
-                      width: 8,
-                      height: 8,
-                      borderRadius: "50%",
-                      backgroundColor: "#0b1c30",
-                    }}
-                  />
-                  <span
-                    style={{
-                      fontFamily: "var(--font-body)",
-                      fontSize: 13,
-                      fontWeight: 600,
-                      color: "#0b1c30",
-                    }}
-                  >
-                    {badge}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right -- Image with overlay stat */}
-          <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
-            <div
-              style={{
-                position: "relative",
-                borderRadius: 16,
-                overflow: "hidden",
-                aspectRatio: "4/3",
-              }}
-            >
-              <Image
-                src="/office image .webp"
-                alt="Shiva Travel Manpower Consultants office"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                style={{ objectFit: "cover" }}
-                priority
-              />
-            </div>
-            <div
-              style={{
-                position: "absolute",
-                bottom: -20,
-                right: 24,
-                backgroundColor: "#001f5d",
-                borderRadius: 12,
-                padding: "20px 28px",
-                boxShadow: "0 8px 32px rgba(0,12,47,0.3)",
-              }}
-            >
-              <div
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: 28,
-                  fontWeight: 800,
-                  color: "#fff",
-                  lineHeight: 1,
-                }}
-              >
-                5
-              </div>
-              <div
-                style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: 10,
-                  fontWeight: 700,
-                  color: "rgba(255,255,255,0.6)",
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  marginTop: 4,
-                }}
-              >
-                FAQ Categories
-                <br />
-                Covered
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SlimHero
+        kicker="Frequently Asked"
+        title="Everything you've been wondering about."
+        highlight="been wondering about."
+        description="From recruitment process to post-placement support — every question we get asked, answered in plain English. Can't find what you need? WhatsApp us."
+      />
 
       {/* ===== STATS BAR ===== */}
       <section

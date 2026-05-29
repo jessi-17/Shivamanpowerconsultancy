@@ -102,7 +102,7 @@ export default function MobileSocialProofToast() {
             border: "2px solid #facc15",
           }}
         >
-          <Image src={p.image} alt="" fill sizes="44px" style={{ objectFit: "cover" }} />
+          <Image src={p.image} alt={`${p.name} placed in ${p.country} by Shiva Manpower Consultants`} fill sizes="44px" style={{ objectFit: "cover" }} />
         </div>
 
         {/* Text */}

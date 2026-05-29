@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
 import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
+import PageHero from "@/components/own/PageHero";
 
 export const metadata: Metadata = {
   title: "Jobs in Saudi Arabia | Riyadh, Jeddah, Dammam Work Opportunities",
@@ -21,7 +22,7 @@ const jobCategories = [
 
 const whySaudi = [
   { title: "Highest Paying Gulf Country", desc: "Saudi Arabia consistently offers some of the highest salaries in the Gulf region, especially for skilled workers in oil & gas, construction, and healthcare." },
-  { title: "Vision 2030 Mega Projects", desc: "NEOM, The Line, Red Sea Project — Saudi's Vision 2030 is creating millions of jobs. This is the biggest construction boom in history." },
+  { title: "Vision 2030 Mega Projects", desc: "NEOM, The Line, Red Sea Project â€” Saudi's Vision 2030 is creating millions of jobs. This is the biggest construction boom in history." },
   { title: "Tax-Free Income", desc: "Zero income tax on salaries. Combined with employer-provided accommodation and food, workers save significantly more than in most countries." },
   { title: "Religious Significance", desc: "Home to Makkah and Madinah. Workers get the opportunity to perform Hajj and Umrah while working in the Kingdom." },
   { title: "Strong Labour Protections", desc: "The Musaned and Mudad platforms ensure transparent contracts, timely salary payments, and worker protection under Saudi Labour Law." },
@@ -29,14 +30,14 @@ const whySaudi = [
 ];
 
 const salaryRanges = [
-  { role: "Construction Worker", range: "SAR 1,500 – 2,500", inr: "₹33,000 – ₹55,000" },
-  { role: "Welder", range: "SAR 2,500 – 5,000", inr: "₹55,000 – ₹1,10,000" },
-  { role: "Pipe Fitter (Oil & Gas)", range: "SAR 3,000 – 6,000", inr: "₹66,000 – ₹1,32,000" },
-  { role: "Heavy Driver", range: "SAR 2,500 – 4,500", inr: "₹55,000 – ₹99,000" },
-  { role: "Electrician", range: "SAR 2,000 – 4,000", inr: "₹44,000 – ₹88,000" },
-  { role: "Chef / Cook", range: "SAR 2,000 – 4,000", inr: "₹44,000 – ₹88,000" },
-  { role: "Nurse", range: "SAR 4,000 – 8,000", inr: "₹88,000 – ₹1,76,000" },
-  { role: "AC Technician", range: "SAR 2,500 – 4,500", inr: "₹55,000 – ₹99,000" },
+  { role: "Construction Worker", range: "SAR 1,500 â€“ 2,500", inr: "â‚¹33,000 â€“ â‚¹55,000" },
+  { role: "Welder", range: "SAR 2,500 â€“ 5,000", inr: "â‚¹55,000 â€“ â‚¹1,10,000" },
+  { role: "Pipe Fitter (Oil & Gas)", range: "SAR 3,000 â€“ 6,000", inr: "â‚¹66,000 â€“ â‚¹1,32,000" },
+  { role: "Heavy Driver", range: "SAR 2,500 â€“ 4,500", inr: "â‚¹55,000 â€“ â‚¹99,000" },
+  { role: "Electrician", range: "SAR 2,000 â€“ 4,000", inr: "â‚¹44,000 â€“ â‚¹88,000" },
+  { role: "Chef / Cook", range: "SAR 2,000 â€“ 4,000", inr: "â‚¹44,000 â€“ â‚¹88,000" },
+  { role: "Nurse", range: "SAR 4,000 â€“ 8,000", inr: "â‚¹88,000 â€“ â‚¹1,76,000" },
+  { role: "AC Technician", range: "SAR 2,500 â€“ 4,500", inr: "â‚¹55,000 â€“ â‚¹99,000" },
 ];
 
 const visaProcess = [
@@ -51,9 +52,9 @@ const visaProcess = [
 const faqs = [
   { q: "Is it safe to work in Saudi Arabia?", a: "Yes. Saudi Arabia has strict law enforcement and is one of the safest countries in the Middle East. The government has invested heavily in worker welfare through platforms like Musaned and the Wage Protection System." },
   { q: "Do I need to know Arabic?", a: "Not for most blue-collar jobs. English or Hindi is sufficient. However, knowing basic Arabic phrases can be helpful and is appreciated by employers." },
-  { q: "What about the weather?", a: "Summers (May-September) are very hot (40-50°C). Most outdoor work is banned during peak afternoon hours (12-3 PM) in summer. Indoor and air-conditioned work continues normally." },
+  { q: "What about the weather?", a: "Summers (May-September) are very hot (40-50Â°C). Most outdoor work is banned during peak afternoon hours (12-3 PM) in summer. Indoor and air-conditioned work continues normally." },
   { q: "Can I switch jobs in Saudi Arabia?", a: "Yes. Recent labour reforms allow workers to switch jobs after completing their contract or with employer consent. The exit/re-entry visa system has also been relaxed significantly." },
-  { q: "How much can I save per month?", a: "With free accommodation and food, skilled workers typically save SAR 1,500-4,000 per month (₹33,000-88,000 approximately). This depends on your salary and spending habits." },
+  { q: "How much can I save per month?", a: "With free accommodation and food, skilled workers typically save SAR 1,500-4,000 per month (â‚¹33,000-88,000 approximately). This depends on your salary and spending habits." },
   { q: "What is the contract duration?", a: "Standard employment contracts in Saudi Arabia are for 2 years. After completion, you can renew or switch employers. You're entitled to end-of-service gratuity, return ticket, and pending leave salary." },
 ];
 
@@ -86,59 +87,22 @@ export default function JobsInSaudi() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
-        {/* ===== HERO — Split Layout ===== */}
-        <section style={{ paddingTop: 120, paddingBottom: 80, backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
-            <div style={{ flex: "1 1 480px", minWidth: 0 }}>
-              <div style={{ display: "inline-block", padding: "6px 16px", backgroundColor: "#edf7f0", borderRadius: 20, marginBottom: 24 }}>
-                <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#1a472a", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                  Riyadh &middot; Jeddah &middot; Dammam &middot; NEOM
-                </span>
-              </div>
-
-              <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.05, letterSpacing: "-1.5px", marginBottom: 24 }}>
-                Build Your Career
-                <br />
-                <span style={{ color: "#1a472a" }}>in Saudi Arabia.</span>
-              </h1>
-
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                Highest-paying Gulf country with Vision 2030 mega projects creating millions of jobs. Tax-free salaries, free accommodation, and government-approved recruitment through Shiva Travel & Manpower Consultants.
-              </p>
-
-              <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 32 }}>
-                <Link href="/contactus" style={{ display: "inline-flex", alignItems: "center", padding: "14px 28px", backgroundColor: "#0b1c30", color: "#fff", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, borderRadius: 10, textDecoration: "none" }}>
-                  Apply Now — It&apos;s Free
-                </Link>
-                <a href="tel:+919814820432" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 28px", backgroundColor: "#fff", color: "#0b1c30", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, borderRadius: 10, textDecoration: "none", border: "1.5px solid #e5e7eb" }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-                  +91 98148-20432
-                </a>
-              </div>
-
-              <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["Tax-Free Income", "Vision 2030 Jobs", "3-6 Week Visa"].map((badge) => (
-                  <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#1a472a" }} />
-                    <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
-              <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Saudi arabia job.webp" alt="Saudi Arabia skyline — job opportunities in Saudi Arabia" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
-              </div>
-              <div style={{ position: "absolute", bottom: -20, right: 24, backgroundColor: "#1a472a", borderRadius: 12, padding: "20px 28px", boxShadow: "0 8px 32px rgba(26,71,42,0.3)" }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff", lineHeight: 1 }}>1,500+</div>
-                <div style={{ fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 4 }}>
-                  Workers Placed<br />in Saudi Arabia
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          kicker="Riyadh Â· Jeddah Â· Dammam Â· NEOM"
+          title="Build your career in Saudi Arabia."
+          highlight="in Saudi Arabia."
+          chips={["Tax-Free Income", "Vision 2030 Projects", "3-6 Week Visa", "Free Accommodation"]}
+          description="Highest-paying Gulf country with Vision 2030 mega projects creating millions of jobs. Tax-free salaries, free accommodation, and government-approved recruitment from Punjab."
+          primaryCta={{ label: "Apply Now â€” It's Free", href: "/contactus" }}
+          stats={[
+            { num: "1,500+", label: "Placed in Saudi" },
+            { num: "0%", label: "Income Tax" },
+            { num: "SAR 1.5â€“3K", label: "Avg Monthly" },
+          ]}
+          image={{ src: "/saudi-arabia-jobs-shiva-manpower.webp", alt: "Saudi Arabia skyline â€” job opportunities in Saudi Arabia" }}
+          imageSeal={{ title: "1,500+ Placed in Saudi", subtitle: "Oil & Gas Â· Construction Â· Hospitality Â· Manufacturing" }}
+          microChip={{ value: "0%", label: "Income Tax" }}
+        />
 
         {/* ===== STATS BAR ===== */}
         <section style={{ padding: "48px 0", borderBottom: "1px solid #e5e7eb" }}>
@@ -166,7 +130,7 @@ export default function JobsInSaudi() {
                 Why Thousands from Punjab Choose Saudi Arabia
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 600, margin: "0 auto" }}>
-                The Kingdom offers unmatched opportunities — from the highest Gulf salaries to Vision 2030 mega projects creating millions of new jobs.
+                The Kingdom offers unmatched opportunities â€” from the highest Gulf salaries to Vision 2030 mega projects creating millions of new jobs.
               </p>
             </div>
 
@@ -260,7 +224,7 @@ export default function JobsInSaudi() {
                 Our streamlined 6-step process takes you from application to arrival. We handle all paperwork including Musaned registration so you can focus on your new career.
               </p>
               <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Saudi arabia job.webp" alt="Workers in Saudi Arabia placed by Shiva Manpower" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
+                <Image src="/saudi-arabia-jobs-shiva-manpower.webp" alt="Workers in Saudi Arabia placed by Shiva Manpower" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
               </div>
             </div>
 

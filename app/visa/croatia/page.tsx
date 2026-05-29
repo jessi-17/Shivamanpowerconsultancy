@@ -4,6 +4,7 @@ import Link from "next/link";
 import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
 import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 import RelatedVisas from "@/components/own/RelatedVisas";
+import PageHero from "@/components/own/PageHero";
 
 export const metadata: Metadata = {
   title: "Croatia Visa & Work Permit in Nakodar | Shiva Travel Consultants",
@@ -27,7 +28,7 @@ const whyCroatia = [
 
 const ourServices = [
   { title: "Work Permit Processing", desc: "Complete handling of your Croatia work permit application. We coordinate with Croatian employers and immigration authorities to secure your authorization." },
-  { title: "Document Preparation", desc: "We prepare and verify all required documents — passport, educational certificates, experience letters, medical certificates, and police clearance." },
+  { title: "Document Preparation", desc: "We prepare and verify all required documents â€” passport, educational certificates, experience letters, medical certificates, and police clearance." },
   { title: "Embassy Coordination", desc: "We guide you through the Croatian Embassy visa appointment process, prepare you for the interview, and ensure all documentation meets embassy requirements." },
   { title: "E-Migrate Registration", desc: "Mandatory registration on the Government of India's E-Migrate portal for emigration clearance. We handle the complete registration process for you." },
   { title: "Job Matching", desc: "We match your skills with verified Croatian employers in construction, tourism, agriculture, and shipbuilding. Direct interviews arranged with companies." },
@@ -114,59 +115,22 @@ export default function CroatiaVisaPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
-        {/* ===== HERO — Split Layout ===== */}
-        <section style={{ paddingTop: 120, paddingBottom: 80, backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
-            <div style={{ flex: "1 1 480px", minWidth: 0 }}>
-              <div style={{ display: "inline-block", padding: "6px 16px", backgroundColor: "#eff4ff", borderRadius: 20, marginBottom: 24 }}>
-                <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#1e40af", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                  EU Member &middot; Schengen Access &middot; Path to Residency
-                </span>
-              </div>
-
-              <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.05, letterSpacing: "-1.5px", marginBottom: 24 }}>
-                Croatia Visa &amp; Work Permit
-                <br />
-                <span style={{ color: "#1e40af" }}>Services in Nakodar.</span>
-              </h1>
-
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                Complete Croatia work visa and work permit processing from Nakodar, Punjab. EU member country with Schengen access. Construction, tourism, agriculture, and shipbuilding jobs. Government licensed recruitment through Shiva Travel &amp; Manpower Consultants.
-              </p>
-
-              <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 32 }}>
-                <Link href="/contactus" style={{ display: "inline-flex", alignItems: "center", padding: "14px 28px", backgroundColor: "#0b1c30", color: "#fff", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, borderRadius: 10, textDecoration: "none" }}>
-                  Apply Now — Free Consultation
-                </Link>
-                <a href="tel:+919814820432" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 28px", backgroundColor: "#fff", color: "#0b1c30", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, borderRadius: 10, textDecoration: "none", border: "1.5px solid #e5e7eb" }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-                  +91 98148-20432
-                </a>
-              </div>
-
-              <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["EU Work Permit", "Schengen Travel", "No Hidden Fees"].map((badge) => (
-                  <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#1e40af" }} />
-                    <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
-              <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Professional Punjab office environment.webp" alt="Croatia visa services at Shiva Travel Nakodar office" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
-              </div>
-              <div style={{ position: "absolute", bottom: -20, right: 24, backgroundColor: "#1e40af", borderRadius: 12, padding: "20px 28px", boxShadow: "0 8px 32px rgba(0,12,47,0.3)" }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff", lineHeight: 1 }}>EU</div>
-                <div style={{ fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 4 }}>
-                  Member State<br />Schengen Zone
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          kicker="EU Member Â· Schengen Access Â· Path to Residency"
+          title="Croatia visa & work permit services in Nakodar."
+          highlight="in Nakodar."
+          chips={["EU Work Permit", "Schengen Travel", "Embassy Coordination", "Path to PR"]}
+          description="Complete Croatia work visa and work permit processing from Nakodar. EU member with Schengen access â€” construction, tourism, agriculture, shipbuilding jobs."
+          primaryCta={{ label: "Apply Now â€” Free Consultation", href: "/contactus" }}
+          stats={[
+            { num: "EU", label: "Member State" },
+            { num: "Schengen", label: "2023 Entry" },
+            { num: "Tourism", label: "Hot Sector" },
+          ]}
+          image={{ src: "/shiva-manpower-nakodar-office-punjab.webp", alt: "Croatia visa services at Shiva Travel Nakodar office" }}
+          imageSeal={{ title: "Croatia Work Permit Specialist", subtitle: "Embassy Â· Attestation Â· E-Migrate" }}
+          microChip={{ value: "EU", label: "Schengen" }}
+        />
 
         {/* ===== STATS BAR ===== */}
         <section style={{ padding: "48px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb", borderBottom: "1px solid #e5e7eb" }}>
@@ -217,7 +181,7 @@ export default function CroatiaVisaPage() {
                 Our Croatia Visa Services
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 600, margin: "0 auto" }}>
-                From work permit application to embassy coordination — our Nakodar team handles everything for your Croatia journey.
+                From work permit application to embassy coordination â€” our Nakodar team handles everything for your Croatia journey.
               </p>
             </div>
 
@@ -243,7 +207,7 @@ export default function CroatiaVisaPage() {
                 Our streamlined 6-step process takes you from our Nakodar office to Croatia in about 2-4 months. We handle all paperwork including work permit, embassy coordination, and E-Migrate registration.
               </p>
               <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Professional Punjab office environment.webp" alt="Shiva Travel Nakodar office - Croatia visa processing" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
+                <Image src="/shiva-manpower-nakodar-office-punjab.webp" alt="Shiva Travel Nakodar office - Croatia visa processing" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
               </div>
             </div>
 
@@ -271,7 +235,7 @@ export default function CroatiaVisaPage() {
                 Job Sectors in Croatia
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 600, margin: "0 auto" }}>
-                We recruit for Croatia&apos;s top industries — from Adriatic coast tourism to Zagreb construction projects.
+                We recruit for Croatia&apos;s top industries â€” from Adriatic coast tourism to Zagreb construction projects.
               </p>
             </div>
 
@@ -310,7 +274,7 @@ export default function CroatiaVisaPage() {
 
         <SalaryCalcCTA country="Croatia" />
 
-        {/* ===== RELATED VISAS — internal linking ===== */}
+        {/* ===== RELATED VISAS â€” internal linking ===== */}
         <RelatedVisas currentSlug="croatia" />
 
         {/* ===== CTA ===== */}

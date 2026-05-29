@@ -13,10 +13,14 @@ export interface BlogPost {
   excerpt: string;
   content: string;
   image: string;
+  imageAlt?: string;
   category: string;
   date: string;
+  dateModified?: string;
+  lastReviewed?: string;
   readTime: string;
   keywords: string[];
+  faqs?: Array<{ question: string; answer: string }>;
 }
 
 const BLOB_TOKEN = process.env.BLOB_READ_WRITE_TOKEN || "";

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
 import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 import RelatedVisas from "@/components/own/RelatedVisas";
+import PageHero from "@/components/own/PageHero";
 
 export const metadata: Metadata = {
   title: "UAE & Dubai Visa Services in Nakodar | Work Permit | Shiva Travel",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 const whyUAE = [
   { title: "Tax-Free Income", desc: "The UAE has zero income tax. Every dirham you earn is yours to keep. This means significantly higher take-home pay compared to most other countries." },
   { title: "High Demand for Workers", desc: "Dubai, Abu Dhabi, and other emirates have massive ongoing construction, hospitality, and logistics projects. Thousands of new positions open every month for skilled and semi-skilled workers." },
-  { title: "Modern Infrastructure", desc: "The UAE boasts world-class infrastructure — modern housing, excellent public transport, top hospitals, and safe cities. Living conditions for workers have improved dramatically." },
+  { title: "Modern Infrastructure", desc: "The UAE boasts world-class infrastructure â€” modern housing, excellent public transport, top hospitals, and safe cities. Living conditions for workers have improved dramatically." },
   { title: "Large Indian Community", desc: "Indians make up the largest expat community in the UAE. You'll find Indian restaurants, temples, gurdwaras, grocery stores, and a strong Punjabi community across all emirates." },
   { title: "Direct Flights from Punjab", desc: "Multiple daily direct flights from Amritsar and Chandigarh to Dubai and Abu Dhabi. You can be home in just 3-4 hours. Weekend visits during holidays are easy and affordable." },
   { title: "Career Growth Opportunities", desc: "The UAE rewards hard work. Many workers who started in entry-level positions have grown into supervisory and management roles within a few years." },
@@ -34,7 +35,7 @@ const visaTypes = [
 ];
 
 const ourServices = [
-  { title: "Complete Visa Processing", desc: "End-to-end handling of your UAE employment visa — from document collection to visa stamping. We coordinate with UAE employers and immigration authorities." },
+  { title: "Complete Visa Processing", desc: "End-to-end handling of your UAE employment visa â€” from document collection to visa stamping. We coordinate with UAE employers and immigration authorities." },
   { title: "GAMCA Medical Assistance", desc: "We guide you through the mandatory GCC Approved Medical Centres Association (GAMCA) medical examination required for all UAE work visas. We help book appointments and prepare documentation." },
   { title: "Document Attestation", desc: "UAE requires attestation of educational and professional certificates from MEA, state HRD, and UAE Embassy. We handle the entire attestation chain for you." },
   { title: "E-Migrate Registration", desc: "Mandatory registration on the Government of India's E-Migrate portal for all emigration clearance. We complete your registration and ensure compliance." },
@@ -60,7 +61,7 @@ const emirates = [
 ];
 
 const faqs = [
-  { q: "Can I get a work visa for the UAE through a recruitment agency in India?", a: "Yes. Shiva Travel & Manpower Consultants is a Government of India MEA-licensed recruitment agency (RA Licence B-1794) based in Nakodar, Punjab and authorised to process UAE work visas. We handle the full chain: employer offer letter, MOHRE work permit, GAMCA medical, MEA attestation, E-Migrate clearance, embassy stamping, and pre-departure briefing. Using a licensed Indian recruitment agency is the legal route — the UAE employer covers most visa and recruitment costs as per UAE labour law. Only deal with MEA-licensed RAs; verify any agency on emigrate.gov.in before paying anything." },
+  { q: "Can I get a work visa for the UAE through a recruitment agency in India?", a: "Yes. Shiva Travel & Manpower Consultants is a Government of India MEA-licensed recruitment agency (RA Licence B-1794) based in Nakodar, Punjab and authorised to process UAE work visas. We handle the full chain: employer offer letter, MOHRE work permit, GAMCA medical, MEA attestation, E-Migrate clearance, embassy stamping, and pre-departure briefing. Using a licensed Indian recruitment agency is the legal route â€” the UAE employer covers most visa and recruitment costs as per UAE labour law. Only deal with MEA-licensed RAs; verify any agency on emigrate.gov.in before paying anything." },
   { q: "Where can I get a Dubai visa in Nakodar?", a: "Shiva Travel & Manpower Consultants at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar is your trusted Dubai visa consultant. We are government licensed and have placed hundreds of workers in the UAE. Visit us or call +91-9814820432." },
   { q: "How much does a Dubai work visa cost?", a: "Through Shiva Travel & Manpower Consultants, we maintain minimal and transparent charges with no hidden fees. The UAE employer bears most visa and recruitment costs as per regulations. You only need to cover personal expenses like GAMCA medical (approx. Rs. 2,500-3,000) and passport fees if applicable." },
   { q: "What is GAMCA medical for UAE visa?", a: "GAMCA (GCC Approved Medical Centres Association) medical is a mandatory health screening for all workers going to UAE and other Gulf countries. It includes blood tests, chest X-ray, and general physical examination. We help you book and complete this at an approved centre." },
@@ -124,59 +125,22 @@ export default function UAEVisaPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
-        {/* ===== HERO — Split Layout ===== */}
-        <section style={{ paddingTop: 120, paddingBottom: 80, backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
-            <div style={{ flex: "1 1 480px", minWidth: 0 }}>
-              <div style={{ display: "inline-block", padding: "6px 16px", backgroundColor: "#eff4ff", borderRadius: 20, marginBottom: 24 }}>
-                <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#1e40af", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                  Tax-Free Income &middot; High Demand &middot; Direct Flights
-                </span>
-              </div>
-
-              <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.05, letterSpacing: "-1.5px", marginBottom: 24 }}>
-                UAE &amp; Dubai Visa
-                <br />
-                <span style={{ color: "#1e40af" }}>Services in Nakodar.</span>
-              </h1>
-
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                Complete Dubai and UAE work visa processing from Nakodar, Punjab. Employment visa, GAMCA medical, document attestation, E-Migrate registration, and job placement. Government licensed recruitment through Shiva Travel &amp; Manpower Consultants.
-              </p>
-
-              <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 32 }}>
-                <Link href="/contactus" style={{ display: "inline-flex", alignItems: "center", padding: "14px 28px", backgroundColor: "#0b1c30", color: "#fff", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, borderRadius: 10, textDecoration: "none" }}>
-                  Apply Now — Free Consultation
-                </Link>
-                <a href="tel:+919814820432" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 28px", backgroundColor: "#fff", color: "#0b1c30", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, borderRadius: 10, textDecoration: "none", border: "1.5px solid #e5e7eb" }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-                  +91 98148-20432
-                </a>
-              </div>
-
-              <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["Tax-Free Salary", "GAMCA Medical Help", "No Hidden Fees"].map((badge) => (
-                  <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#1e40af" }} />
-                    <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
-              <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Professional Punjab office environment.webp" alt="UAE Dubai visa services at Shiva Travel Nakodar office" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
-              </div>
-              <div style={{ position: "absolute", bottom: -20, right: 24, backgroundColor: "#1e40af", borderRadius: 12, padding: "20px 28px", boxShadow: "0 8px 32px rgba(0,12,47,0.3)" }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff", lineHeight: 1 }}>1000+</div>
-                <div style={{ fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 4 }}>
-                  Workers Placed<br />in UAE
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          kicker="Tax-Free Income Â· High Demand Â· Direct Flights"
+          title="UAE & Dubai visa services in Nakodar."
+          highlight="in Nakodar."
+          chips={["Tax-Free Salary", "GAMCA Medical Help", "Visa in 2-4 Weeks", "No Hidden Fees"]}
+          description="Complete Dubai and UAE work visa processing from Nakodar, Punjab. Employment visa, GAMCA medical, document attestation, E-Migrate registration, and job placement."
+          primaryCta={{ label: "Apply Now â€” Free Consultation", href: "/contactus" }}
+          stats={[
+            { num: "1,000+", label: "UAE Placements" },
+            { num: "2-4 wk", label: "Visa Timeline" },
+            { num: "0%", label: "Income Tax" },
+          ]}
+          image={{ src: "/shiva-manpower-nakodar-office-punjab.webp", alt: "UAE Dubai visa services at Shiva Travel Nakodar office" }}
+          imageSeal={{ title: "1,000+ UAE Visas Processed", subtitle: "Employment Â· GAMCA Â· Attestation Â· E-Migrate" }}
+          microChip={{ value: "0%", label: "Income Tax" }}
+        />
 
         {/* ===== STATS BAR ===== */}
         <section style={{ padding: "48px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb", borderBottom: "1px solid #e5e7eb" }}>
@@ -227,7 +191,7 @@ export default function UAEVisaPage() {
                 UAE Visa Types We Process
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 600, margin: "0 auto" }}>
-                From standard employment visas to the prestigious Golden Visa — we handle all categories of UAE work and residence permits.
+                From standard employment visas to the prestigious Golden Visa â€” we handle all categories of UAE work and residence permits.
               </p>
             </div>
 
@@ -255,7 +219,7 @@ export default function UAEVisaPage() {
                 Our UAE Visa Services
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 600, margin: "0 auto" }}>
-                Everything you need for your UAE journey — from GAMCA medical to visa stamping — handled by our experienced team in Nakodar.
+                Everything you need for your UAE journey â€” from GAMCA medical to visa stamping â€” handled by our experienced team in Nakodar.
               </p>
             </div>
 
@@ -281,7 +245,7 @@ export default function UAEVisaPage() {
                 Our streamlined 6-step process gets you from our Nakodar office to the UAE in 4-8 weeks. We handle all paperwork including GAMCA medical, attestation, E-Migrate, and visa stamping.
               </p>
               <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Professional Punjab office environment.webp" alt="Shiva Travel Nakodar office - UAE visa processing" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
+                <Image src="/shiva-manpower-nakodar-office-punjab.webp" alt="Shiva Travel Nakodar office - UAE visa processing" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
               </div>
             </div>
 
@@ -309,7 +273,7 @@ export default function UAEVisaPage() {
                 Emirates We Cover
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 600, margin: "0 auto" }}>
-                We place workers across all major emirates in the UAE — from Dubai&apos;s commercial hub to Abu Dhabi&apos;s capital projects.
+                We place workers across all major emirates in the UAE â€” from Dubai&apos;s commercial hub to Abu Dhabi&apos;s capital projects.
               </p>
             </div>
 
@@ -343,7 +307,7 @@ export default function UAEVisaPage() {
 
         <SalaryCalcCTA country="UAE" />
 
-        {/* ===== RELATED VISAS — internal linking ===== */}
+        {/* ===== RELATED VISAS â€” internal linking ===== */}
         <RelatedVisas currentSlug="uae" />
 
         {/* ===== CTA ===== */}

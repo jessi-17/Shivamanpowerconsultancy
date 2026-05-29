@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/carousel";
 
 const officeImages = [
-  { src: "/office image .webp", alt: "Shiva Travel & Manpower Consultants Nakodar office front" },
+  { src: "/shiva-manpower-support-team.webp", alt: "Shiva Travel & Manpower Consultants Nakodar office front" },
   { src: "/carousel 1.webp", alt: "Shiva Manpower Consultants Nakodar office" },
   { src: "/carousel 2.webp", alt: "Shiva Travel recruitment team Jalandhar" },
   { src: "/carousel 3.webp", alt: "Overseas placement process at Shiva Manpower" },
@@ -87,7 +87,7 @@ export default function LocalCTA() {
         display: "flex", alignItems: "center", gap: m ? 32 : 60, flexWrap: "wrap",
       }}>
 
-        {/* Left — Text content */}
+        {/* Left â€” Text content */}
         <div ref={leftRef} className="reveal-left" style={{ flex: "1 1 480px", minWidth: 0 }}>
           <p style={{
             fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700,
@@ -179,7 +179,7 @@ export default function LocalCTA() {
           </div>
         </div>
 
-        {/* Right — Office carousel */}
+        {/* Right â€” Office carousel */}
         <div ref={rightRef} className="reveal-right" style={{ flex: "1 1 500px", minWidth: 0, width: "100%" }}>
           <OfficeCarousel />
         </div>

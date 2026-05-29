@@ -654,3 +654,86 @@ section {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+
+/* ============================================
+   Journey tracker — Contact page
+   ============================================ */
+
+.journey-dot {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a2755 0%, #000c2f 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display), sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0, 12, 47, 0.18);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.journey-step:hover .journey-dot {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0, 12, 47, 0.28);
+}
+
+.journey-dot--active::before,
+.journey-dot--active::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid #5784ff;
+  opacity: 0;
+}
+
+.journey-section.visible .journey-dot--active::before {
+  animation: journey-pulse 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  animation-delay: 0.8s;
+}
+
+.journey-section.visible .journey-dot--active::after {
+  animation: journey-pulse 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  animation-delay: 1.6s;
+}
+
+@keyframes journey-pulse {
+  0%   { transform: scale(1);    opacity: 0.55; }
+  70%  { transform: scale(1.7);  opacity: 0; }
+  100% { transform: scale(1.7);  opacity: 0; }
+}
+
+/* Animated progress line — draws in once on scroll */
+.journey-line-progress {
+  width: 0;
+  transition: width 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
+}
+.journey-section.visible .journey-line-progress {
+  width: 80%;
+}
+
+.journey-line-progress--vertical {
+  width: 2px;
+  height: 0;
+  transition: height 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
+}
+.journey-section.visible .journey-line-progress--vertical {
+  height: calc(100% - 16px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-line-progress,
+  .journey-line-progress--vertical {
+    transition: none;
+  }
+  .journey-section.visible .journey-dot--active::before,
+  .journey-section.visible .journey-dot--active::after {
+    animation: none;
+  }
+}

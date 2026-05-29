@@ -4,11 +4,14 @@ import Link from "next/link";
 import { breadcrumbJsonLd } from "../_lib/breadcrumb";
 import PunjabCluster from "@/components/own/PunjabCluster";
 import Testimonials from "@/components/own/Testimonials";
+import StatsRibbon from "@/components/own/StatsRibbon";
+import CityTrustGrid from "@/components/own/CityTrustGrid";
+import PageHero from "@/components/own/PageHero";
 
 export const metadata: Metadata = {
   title: "Manpower Consultancy Near Phagwara | Shiva Travel & Manpower Consultants",
   description:
-    "Looking for overseas jobs from Phagwara? Shiva Travel & Manpower Consultants — government licensed (RA B-1794), 25+ years experience. Jobs in Dubai, Saudi Arabia, Qatar, Poland, Romania. Zero candidate fees. Office near Phagwara on Jalandhar Road, Nakodar.",
+    "Looking for overseas jobs from Phagwara? Shiva Travel & Manpower Consultants â€” government licensed (RA B-1794), 25+ years experience. Jobs in Dubai, Saudi Arabia, Qatar, Poland, Romania. Zero candidate fees. Office near Phagwara on Jalandhar Road, Nakodar.",
   keywords: [
     "manpower consultancy Phagwara",
     "overseas recruitment agency Phagwara",
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "EmploymentAgency",
-  name: "Shiva Travel & Manpower Consultants — Phagwara Region",
+  name: "Shiva Travel & Manpower Consultants â€” Phagwara Region",
   description:
     "Government licensed overseas recruitment agency serving Phagwara, Punjab. Specializing in Gulf & European placements since 2002.",
   url: "https://shivatravelconsultant.in/phagwara",
@@ -60,7 +63,7 @@ const destinations = [
   { country: "Qatar", roles: "Construction, Transport, Maintenance, Hospitality", href: "/jobs/qatar" },
   { country: "Poland", roles: "Factory, Food Processing, Packaging, Agriculture", href: "/jobs/poland" },
   { country: "Romania", roles: "Construction, Manufacturing, Industrial Work", href: "/jobs/romania" },
-  { country: "Europe", roles: "Croatia, Bulgaria, Malta — Skilled & Semi-skilled", href: "/jobs/europe" },
+  { country: "Europe", roles: "Croatia, Bulgaria, Malta â€” Skilled & Semi-skilled", href: "/jobs/europe" },
 ];
 
 const stats = [
@@ -71,11 +74,11 @@ const stats = [
 ];
 
 const trustReasons = [
-  { title: "40 Minutes from Phagwara GT Road", desc: "Our office is 30 km from Phagwara city on Jalandhar Road, Nakodar. Direct buses every 20 minutes from Phagwara Bus Stand (₹50, 40 min). Many Phagwara workers visit Sunday mornings after church/gurdwara." },
-  { title: "LPU & Technical Institute Worker Network", desc: "Phagwara has Lovely Professional University and many private technical institutes. We help diploma and degree holders match with Poland, Romania, Croatia skilled-job openings paying 3–5x India salaries." },
-  { title: "Banga, Goraya & Rurka Kalan Coverage", desc: "Workers from greater Phagwara area — Banga sugar mill workers, Goraya factory hands, Rurka Kalan farming families — all welcome. Easy reach from Phagwara junction. 600+ workers placed from this belt." },
+  { title: "40 Minutes from Phagwara GT Road", desc: "Our office is 30 km from Phagwara city on Jalandhar Road, Nakodar. Direct buses every 20 minutes from Phagwara Bus Stand (â‚¹50, 40 min). Many Phagwara workers visit Sunday mornings after church/gurdwara." },
+  { title: "LPU & Technical Institute Worker Network", desc: "Phagwara has Lovely Professional University and many private technical institutes. We help diploma and degree holders match with Poland, Romania, Croatia skilled-job openings paying 3â€“5x India salaries." },
+  { title: "Banga, Goraya & Rurka Kalan Coverage", desc: "Workers from greater Phagwara area â€” Banga sugar mill workers, Goraya factory hands, Rurka Kalan farming families â€” all welcome. Easy reach from Phagwara junction. 600+ workers placed from this belt." },
   { title: "Govt-Licensed RA B-1794", desc: "Issued by Ministry of External Affairs, E-Migrate registered, ALMRA Punjab member. Verify directly on emigrate.gov.in. Valid through June 2027." },
-  { title: "Catering, Driving, Construction — Phagwara's Top Trades", desc: "We have specific employer tie-ups matched to Phagwara worker profiles. Hospitality (UAE/Qatar), heavy vehicle driving (Saudi NEOM, Qatar Lusail), construction (Romania, UAE Etihad Rail). Direct contracts, no broker." },
+  { title: "Catering, Driving, Construction â€” Phagwara's Top Trades", desc: "We have specific employer tie-ups matched to Phagwara worker profiles. Hospitality (UAE/Qatar), heavy vehicle driving (Saudi NEOM, Qatar Lusail), construction (Romania, UAE Etihad Rail). Direct contracts, no broker." },
   { title: "Hindi/Punjabi Counselling for Phagwara Families", desc: "Our staff explains the whole process in Hindi and Punjabi. Bring your family \u2014 we welcome questions in either language. Phagwara families often have students/working children who want to understand details \u2014 happy to walk them through everything." },
 ];
 
@@ -95,77 +98,35 @@ export default function PhagwaraPage() {
       />
 
       <main style={{ backgroundColor: "#f8f9ff" }}>
-        {/* ===== HERO — Split Layout ===== */}
-        <section style={{ paddingTop: 120, paddingBottom: 80, backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
-            {/* Left — Text */}
-            <div style={{ flex: "1 1 480px", minWidth: 0 }}>
-              <div style={{ display: "inline-block", padding: "6px 16px", backgroundColor: "#eff4ff", borderRadius: 20, marginBottom: 24 }}>
-                <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#0052dc", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                  Serving Phagwara & Doaba Since 2002
-                </span>
-              </div>
+        {/* ===== HERO â€” Split Layout ===== */}
+        <PageHero
+          kicker="Serving Phagwara & Doaba Since 2002"
+          title="Overseas recruitment agency near Phagwara."
+          highlight="near Phagwara."
+          chips={["25 mins from Phagwara", "Govt-Licensed", "No Hidden Fees", "20+ Years"]}
+          description="Shiva Travel & Manpower Consultants is a govt-licensed recruitment agency on Jalandhar Road, Nakodar â€” about 25 minutes from Phagwara. 5,000+ Doaba workers placed in Gulf & Europe."
+          primaryCta={{ label: "Book Free Consultation", href: "/contactus" }}
+          stats={[
+            { num: "25 min", label: "From Phagwara" },
+            { num: "5,000+", label: "Doaba Placements" },
+            { num: "RA B-1794", label: "MEA Licensed" },
+          ]}
+          image={{ src: "/shiva-manpower-nakodar-office-punjab.webp", alt: "Shiva Travel Manpower Consultants office near Phagwara" }}
+          imageSeal={{ title: "Walk-in from Phagwara", subtitle: "25 mins to Nakodar office" }}
+          microChip={{ value: "4.9â˜…", label: "200+ Reviews" }}
+        />
 
-              <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.05, letterSpacing: "-1.5px", marginBottom: 24 }}>
-                Overseas Recruitment Agency
-                <br />
-                <span style={{ color: "#0052dc" }}>Near Phagwara.</span>
-              </h1>
-
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                Shiva Travel & Manpower Consultants is a government-licensed recruitment agency on Jalandhar Road, Nakodar — about 25 minutes from Phagwara. We have placed 5,000+ workers from the Doaba region in premium jobs across the Gulf & Europe.
-              </p>
-
-              {/* CTA Buttons */}
-              <div style={{ display: "flex", gap: 16, marginBottom: 32, flexWrap: "wrap" }}>
-                <Link href="/contactus" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "#0052dc", color: "#fff", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>
-                  Book Free Consultation
-                </Link>
-                <Link href="/current-demands" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "transparent", border: "1.5px solid #0052dc", color: "#0052dc", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>
-                  View Current Openings
-                </Link>
-              </div>
-
-              {/* Badges */}
-              <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["Government Licensed", "No Hidden Fees", "20+ Years"].map((badge) => (
-                  <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#0b1c30" }} />
-                    <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right — Image with overlay stat */}
-            <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
-              <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Professional Punjab office environment.webp" alt="Shiva Travel Manpower Consultants office near Phagwara" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
-              </div>
-              <div style={{ position: "absolute", bottom: -20, right: 24, backgroundColor: "#001f5d", borderRadius: 12, padding: "20px 28px", boxShadow: "0 8px 32px rgba(0,12,47,0.3)" }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff", lineHeight: 1 }}>5,000+</div>
-                <div style={{ fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 4 }}>
-                  Workers Placed<br />Worldwide
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ===== STATS BAR ===== */}
-        <section style={{ padding: "60px 0", borderBottom: "1px solid #e5e7eb" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", justifyContent: "center", gap: 64, flexWrap: "wrap" }}>
-            {stats.map((s) => (
-              <div key={s.label} style={{ textAlign: "center" }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#001f5d", lineHeight: 1 }}>{s.value}</div>
-                <div style={{ fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 600, color: "#64748b", letterSpacing: "0.05em", textTransform: "uppercase", marginTop: 4 }}>{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </section>
+        {/* ===== STATS BAR â€” floating overlap card ===== */}
+        <StatsRibbon stats={stats} overlap={-32} />
+        <div style={{ height: 40 }} aria-hidden="true" />
 
         {/* ===== WHY FAMILIES TRUST US ===== */}
-        <section style={{ padding: "80px 0", backgroundColor: "#f8f9ff" }}>
+        <section style={{
+          padding: "80px 0",
+          backgroundColor: "#f8f9ff",
+          backgroundImage: "radial-gradient(circle at center, rgba(0,82,220,0.07) 1px, transparent 1.2px)",
+          backgroundSize: "26px 26px",
+        }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
             <div style={{ textAlign: "center", marginBottom: 56 }}>
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>Why Families from Phagwara Trust Shiva Travel</h2>
@@ -174,18 +135,14 @@ export default function PhagwaraPage() {
               </p>
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 360px), 1fr))", gap: 24 }}>
-              {trustReasons.map((item) => (
-                <div key={item.title} style={{ backgroundColor: "#ffffff", borderRadius: 16, padding: 32, border: "1px solid #e5e7eb" }}>
-                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 700, color: "#0b1c30", marginBottom: 10 }}>
-                    {item.title}
-                  </h3>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#43474d", lineHeight: 1.7 }}>
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <CityTrustGrid
+              items={trustReasons}
+              image={{
+                src: "/shiva-manpower-nakodar-office-punjab.webp",
+                alt: "Shiva Travel & Manpower Consultants office serving Phagwara â€” licensed MEA agency RA B-1794",
+              }}
+              imageCaption="Our Nakodar office â€” 40 minutes from Phagwara"
+            />
           </div>
         </section>
 
@@ -217,10 +174,10 @@ export default function PhagwaraPage() {
           </div>
         </section>
 
-        {/* ===== TESTIMONIALS — shared Google Reviews component ===== */}
+        {/* ===== TESTIMONIALS â€” shared Google Reviews component ===== */}
         <Testimonials />
 
-        {/* ===== PUNJAB CLUSTER — internal linking ===== */}
+        {/* ===== PUNJAB CLUSTER â€” internal linking ===== */}
         <PunjabCluster currentSlug="phagwara" />
 
         {/* ===== CTA ===== */}
@@ -231,7 +188,7 @@ export default function PhagwaraPage() {
               Ready to Start Your<br />Overseas Career?
             </h2>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: 12, maxWidth: 480, margin: "0 auto 12px" }}>
-              Visit our office at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar — about 25 minutes from Phagwara.
+              Visit our office at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar â€” about 25 minutes from Phagwara.
             </p>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "rgba(255,255,255,0.4)", marginBottom: 36 }}>
               Walk-in consultations available Monday to Saturday, 9am to 6:30pm.

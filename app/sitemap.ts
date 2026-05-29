@@ -6,36 +6,48 @@ import { readDemands } from "./api/admin/demands/store";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://shivatravelconsultant.in";
 
+  const img = (path: string) => `${baseUrl}/${encodeURIComponent(path)}`;
+
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
+      images: [
+        img("shiva-manpower-overseas-jobs-hero.webp"),
+        img("founder.webp"),
+        img("licensed-overseas-recruitment-punjab.webp"),
+        img("award-trophy-shiva-manpower.png"),
+      ],
     },
     {
       url: `${baseUrl}/about-us`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("founder.webp"), img("shiva-manpower-nakodar-office-punjab.webp")],
     },
     {
       url: `${baseUrl}/services`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("carousel 4.webp"), img("shiva-manpower-support-team.webp")],
     },
     {
       url: `${baseUrl}/success-stories`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
+      images: [img("success.webp")],
     },
     {
       url: `${baseUrl}/contactus`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
+      images: [img("shiva-manpower-nakodar-office-punjab.webp")],
     },
     {
       url: `${baseUrl}/blog`,
@@ -48,30 +60,35 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("shiva-manpower-nakodar-office-punjab.webp"), img("founder.webp")],
     },
     {
       url: `${baseUrl}/kapurthala`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("shiva-manpower-nakodar-office-punjab.webp"), img("founder.webp")],
     },
     {
       url: `${baseUrl}/hoshiarpur`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("shiva-manpower-nakodar-office-punjab.webp"), img("founder.webp")],
     },
     {
       url: `${baseUrl}/phagwara`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("shiva-manpower-nakodar-office-punjab.webp"), img("founder.webp")],
     },
     {
       url: `${baseUrl}/nawanshahr`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("shiva-manpower-nakodar-office-punjab.webp"), img("founder.webp")],
     },
     {
       url: `${baseUrl}/faq`,
@@ -96,114 +113,133 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("UAE.jpg")],
     },
     {
       url: `${baseUrl}/jobs/saudi-arabia`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("saudi-arabia-jobs-shiva-manpower.webp")],
     },
     {
       url: `${baseUrl}/jobs/qatar`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("saudi-arabia-jobs-indian-workers.jpg")],
     },
     {
       url: `${baseUrl}/jobs/poland`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("poland-jobs-shiva-manpower.webp")],
     },
     {
       url: `${baseUrl}/jobs/romania`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("romania-jobs-shiva-manpower.webp")],
     },
     {
       url: `${baseUrl}/jobs/europe`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("factory-worker-jobs-dubai-uae.jpg")],
     },
     {
       url: `${baseUrl}/nakodar`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
+      images: [img("shiva-manpower-nakodar-office-punjab.webp"), img("founder.webp")],
     },
     {
       url: `${baseUrl}/punjab`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.95,
+      images: [img("shiva-manpower-nakodar-office-punjab.webp"), img("founder.webp")],
     },
     {
       url: `${baseUrl}/visa/schengen`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("shiva-manpower-nakodar-office-punjab.webp")],
     },
     {
       url: `${baseUrl}/visa/romania`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("romania-jobs-shiva-manpower.webp")],
     },
     {
       url: `${baseUrl}/visa/poland`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("shiva-manpower-nakodar-office-punjab.webp")],
     },
     {
       url: `${baseUrl}/visa/uae`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("shiva-manpower-nakodar-office-punjab.webp")],
     },
     {
       url: `${baseUrl}/visa/croatia`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("shiva-manpower-nakodar-office-punjab.webp")],
     },
     {
       url: `${baseUrl}/visa/saudi-arabia`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("shiva-manpower-nakodar-office-punjab.webp")],
     },
     {
       url: `${baseUrl}/visa/qatar`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("shiva-manpower-nakodar-office-punjab.webp")],
     },
     {
       url: `${baseUrl}/visa/kuwait`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("shiva-manpower-nakodar-office-punjab.webp")],
     },
     {
       url: `${baseUrl}/visa/bahrain`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+      images: [img("shiva-manpower-nakodar-office-punjab.webp")],
     },
     {
       url: `${baseUrl}/employers`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
+      images: [img("factory-worker-jobs-dubai-uae.jpg"), img("shiva-manpower-nakodar-office-punjab.webp")],
     },
     {
       url: `${baseUrl}/job-seekers`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
+      images: [img("shiva-manpower-overseas-jobs-hero.webp")],
     },
     {
       url: `${baseUrl}/salary-calculator`,
@@ -216,12 +252,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
+      images: [img("passport-documents-nakodar-office.webp")],
     },
     {
       url: `${baseUrl}/services/document-attestation`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
+      images: [img("passport-documents-nakodar-office.webp")],
     },
     {
       url: `${baseUrl}/services/gamca-medical`,
@@ -234,6 +272,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
+      images: [img("passport-documents-nakodar-office.webp")],
     },
     {
       url: `${baseUrl}/services/embassy-coordination`,
@@ -246,6 +285,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
+      images: [img("carousel 2.webp")],
+    },
+    {
+      url: `${baseUrl}/guides`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/guides/how-to-verify-licensed-ra-agency`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/guides/work-visa-comparison`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/guides/gamca-medical-test`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
     },
   ];
 
@@ -255,6 +319,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date(blog.date),
     changeFrequency: "monthly" as const,
     priority: 0.7,
+    ...(blog.image ? { images: [blog.image.startsWith("http") ? blog.image : `${baseUrl}${blog.image.startsWith("/") ? "" : "/"}${blog.image}`] } : {}),
   }));
 
   const employerPages: MetadataRoute.Sitemap = employerCountries.map((c) => ({
@@ -270,6 +335,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date(d.updatedAt),
     changeFrequency: "weekly" as const,
     priority: 0.85,
+    ...(d.poster ? { images: [d.poster.startsWith("http") ? d.poster : `${baseUrl}${d.poster.startsWith("/") ? "" : "/"}${d.poster}`] } : {}),
   }));
 
   return [...staticPages, ...employerPages, ...blogPages, ...demandPages];

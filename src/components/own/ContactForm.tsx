@@ -22,7 +22,7 @@ export default function ContactForm() {
         boxShadow: "0 12px 48px rgba(0,12,47,0.12)",
       }}
     >
-      {/* Left — dark side */}
+      {/* Left â€” dark side */}
       <div style={{
         flex: "1 1 400px",
         backgroundColor: "#000c2f",
@@ -35,7 +35,7 @@ export default function ContactForm() {
       }}>
         <div style={{
           position: "absolute", inset: 0, opacity: 0.18,
-          backgroundImage: "url('/Office desk.webp')",
+          backgroundImage: "url('/passport-documents-nakodar-office.webp')",
           backgroundSize: "cover", backgroundPosition: "center",
         }} />
         <div style={{ position: "relative", zIndex: 1 }}>
@@ -76,7 +76,7 @@ export default function ContactForm() {
         </div>
       </div>
 
-      {/* Right — form */}
+      {/* Right â€” form */}
       <div style={{ flex: "1 1 400px", backgroundColor: "#fff", padding: m ? "32px 20px" : "48px 40px" }}>
         <UnifiedContactForm
           source="homepage-footer"

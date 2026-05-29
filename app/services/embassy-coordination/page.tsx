@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
 import RelatedServices from "@/components/own/RelatedServices";
+import PageHero from "@/components/own/PageHero";
 
 export const metadata: Metadata = {
   title: "Embassy Coordination & Visa Stamping | Nakodar & Jalandhar | Shiva Travel",
@@ -129,54 +130,22 @@ export default function EmbassyCoordinationPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       <main style={{ backgroundColor: "#f8f9ff" }}>
-        {/* ===== HERO ===== */}
-        <section style={{ paddingTop: 120, paddingBottom: 80, backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
-            <div style={{ flex: "1 1 480px", minWidth: 0 }}>
-              <div style={{ display: "inline-block", padding: "6px 16px", backgroundColor: "#eff4ff", borderRadius: 20, marginBottom: 24 }}>
-                <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#0052dc", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                  Embassy & Consulate Services
-                </span>
-              </div>
-
-              <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.05, letterSpacing: "-1.5px", marginBottom: 24 }}>
-                Embassy Coordination
-                <br />
-                & Visa Stamping
-                <br />
-                <span style={{ color: "#0052dc" }}>from Nakodar.</span>
-              </h1>
-
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                After your documents are ready, medical is cleared, and employer approval is in place — the final step is embassy submission and visa stamping. This is where most applicants face confusion and delays. We coordinate directly with embassies in New Delhi, Mumbai, and VFS Global centres to ensure your visa application is submitted correctly, tracked actively, and stamped on time.
-              </p>
-
-              <div style={{ display: "flex", gap: 16, marginBottom: 32, flexWrap: "wrap" }}>
-                <Link href="/contactus" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "#0052dc", color: "#fff", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>
-                  Start Visa Process
-                </Link>
-                <a href="tel:+919814820432" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "transparent", border: "1.5px solid #0052dc", color: "#0052dc", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>
-                  Call +91 98148-20432
-                </a>
-              </div>
-
-              <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["All Major Embassies", "VFS Global", "25+ Years Experience"].map((badge) => (
-                  <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#0b1c30" }} />
-                    <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
-              <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/carousel 4.webp" alt="Embassy coordination services at Shiva Travel Nakodar" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
-              </div>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          kicker="Embassy & Consulate Services"
+          title="Embassy coordination & visa stamping from Nakodar."
+          highlight="from Nakodar."
+          chips={["All Major Embassies", "VFS Global", "Delhi & Mumbai", "Active Tracking"]}
+          description="The final step is embassy submission and visa stamping — where most applicants face confusion and delays. We coordinate directly with embassies in New Delhi, Mumbai, and VFS Global centres."
+          primaryCta={{ label: "Start Visa Process", href: "/contactus" }}
+          stats={[
+            { num: "20+", label: "Embassies Worked With" },
+            { num: "VFS", label: "Global Centres" },
+            { num: "20+ yrs", label: "Experience" },
+          ]}
+          image={{ src: "/carousel 4.webp", alt: "Embassy coordination services at Shiva Travel Nakodar" }}
+          imageSeal={{ title: "Embassy Coordinator", subtitle: "Delhi · Mumbai · VFS Global" }}
+          microChip={{ value: "20+", label: "Embassies" }}
+        />
 
         {/* ===== WHAT WE DO ===== */}
         <section style={{ padding: "80px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb" }}>

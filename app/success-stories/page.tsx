@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { breadcrumbJsonLd } from "../_lib/breadcrumb";
+import PageHero from "@/components/own/PageHero";
+import NumberedProcess from "@/components/own/NumberedProcess";
+import ShaderCTA from "@/components/own/ShaderCTA";
 
 const Testimonials = dynamic(() => import("@/components/own/Testimonials"));
 const ClientVideos = dynamic(() => import("@/components/own/ClientVideos"));
@@ -31,59 +33,16 @@ export default function SuccessStories() {
         }}
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
-        {/* ===== HERO — Split Layout ===== */}
-        <section style={{ paddingTop: 120, paddingBottom: 60, backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
-            {/* Left */}
-            <div style={{ flex: "1 1 480px", minWidth: 0 }}>
-              <div style={{ display: "inline-block", padding: "6px 16px", backgroundColor: "#eff4ff", borderRadius: 20, marginBottom: 24 }}>
-                <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#0052dc", letterSpacing: "0.1em", textTransform: "uppercase" }}>Proven Excellence</span>
-              </div>
-
-              <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.05, letterSpacing: "-1.5px", marginBottom: 24 }}>
-                Real Journeys.<br />
-                <span style={{ color: "#0b1c30" }}>Global Careers.</span>
-              </h1>
-
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                Behind every successful visa stamp is a story of ambition and resilience. Explore how our candidates transitioned from Punjab to prestigious roles across the globe.
-              </p>
-
-              {/* Badges */}
-              <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["98% Visa Success Rate", "25+ Destinations"].map((badge) => (
-                  <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#0052dc" }} />
-                    <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right — Image with floating card */}
-            <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
-              <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/success.webp" alt="Successful overseas placements by Shiva Manpower" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
-              </div>
-
-              {/* Floating approval card */}
-              <div style={{ position: "absolute", bottom: 20, left: -20, backgroundColor: "#ffffff", borderRadius: 12, padding: "14px 20px", boxShadow: "0 8px 32px rgba(0,0,0,0.12)", display: "flex", alignItems: "center", gap: 12 }}>
-                <div style={{ width: 36, height: 36, borderRadius: 8, backgroundColor: "#dcfce7", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><path d="M22 4L12 14.01l-3-3" /></svg>
-                </div>
-                <div>
-                  <div style={{ fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 600, color: "#16a34a", letterSpacing: "0.05em", textTransform: "uppercase" }}>Approved</div>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, color: "#0b1c30" }}>Poland Work Visa</div>
-                  <div style={{ display: "flex", gap: 2, marginTop: 2 }}>
-                    {[1,2,3,4,5].map((s) => (
-                      <svg key={s} width="12" height="12" viewBox="0 0 24 24" fill="#FBBC05" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          kicker="Proven Excellence"
+          title="Real journeys. Global careers."
+          highlight="Global careers."
+          chips={["98% Visa Success Rate", "25+ Destinations", "5,000+ Placed", "20+ Years"]}
+          description="Behind every successful visa stamp is a story of ambition and resilience. Explore how our candidates transitioned from Punjab to prestigious roles across the globe."
+          image={{ src: "/success.webp", alt: "Successful overseas placements by Shiva Manpower" }}
+          imageSeal={{ title: "Poland Work Visa", subtitle: "Approved · Stamped this season" }}
+          microChip={{ value: "98%", label: "Visa Success" }}
+        />
 
         {/* ===== VIDEO STORIES ===== */}
         <section style={{ padding: "64px 0" }}>
@@ -235,33 +194,18 @@ export default function SuccessStories() {
           </div>
         </section>
 
-        {/* ===== YOUR STORY BEGINS HERE — Process Steps ===== */}
-        <section style={{ padding: "64px 0", backgroundColor: "#001f5d", borderRadius: 24, maxWidth: 1300, margin: "0 auto 40px", position: "relative", overflow: "hidden" }}>
-          <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 600, height: 600, borderRadius: "50%", background: "radial-gradient(circle, rgba(0,82,220,0.15) 0%, transparent 70%)" }} />
-          <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 32px", textAlign: "center", position: "relative" }}>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#ffffff", marginBottom: 8 }}>Your Story Begins Here</h2>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#93c5fd", lineHeight: 1.6, marginBottom: 48 }}>
-              Our 4-step precision process ensures your global transition is secure.
-            </p>
-
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 32 }}>
-              {[
-                { step: "01", title: "Profile Analysis", desc: "Complete skill assessment and documentation review." },
-                { step: "02", title: "Job Match", desc: "Aligning your profile with verified global employers." },
-                { step: "03", title: "Visa Precision", desc: "Seamless documentation, processing and filing." },
-                { step: "04", title: "Deployment", desc: "Pre-travel briefing with on-ground support." },
-              ].map((s) => (
-                <div key={s.step} style={{ textAlign: "center" }}>
-                  <div style={{ width: 48, height: 48, borderRadius: "50%", backgroundColor: "rgba(255,255,255,0.1)", border: "2px solid rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, color: "#fff" }}>
-                    {s.step}
-                  </div>
-                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, color: "#fff", marginBottom: 6 }}>{s.title}</h3>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "#93c5fd", lineHeight: 1.5 }}>{s.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <NumberedProcess
+          kicker="Your Journey"
+          title="From application to airport, in 4 steps."
+          highlight="in 4 steps."
+          intro="Our 4-step precision process ensures your transition is secure, transparent, and exactly what we promised on day one."
+          steps={[
+            { title: "Profile Analysis", desc: "Complete skill assessment, documentation review, and target-country matching in a single conversation." },
+            { title: "Job Match", desc: "We align your profile with verified global employers we've worked with before. No fake jobs, no surprises." },
+            { title: "Visa Precision", desc: "Documentation, processing, and filing under our MEA RA registration. Most visas issued in 2–4 weeks." },
+            { title: "Deployment", desc: "Pre-departure briefing at our Nakodar office, airport coordination, and on-ground support after you land." },
+          ]}
+        />
 
         {/* ===== GOOGLE REVIEWS (Testimonials component) ===== */}
         <Testimonials />
@@ -269,35 +213,14 @@ export default function SuccessStories() {
         {/* ===== WALL OF FAME ===== */}
         <ClientVideos />
 
-        {/* ===== CTA — Full Width ===== */}
-        <section style={{ padding: "80px 24px", background: "linear-gradient(135deg, #000c2f 0%, #001f5d 100%)", textAlign: "center", position: "relative", overflow: "hidden" }}>
-          <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 800, height: 800, borderRadius: "50%", background: "radial-gradient(circle, rgba(0,82,220,0.15) 0%, transparent 70%)" }} />
-
-          <div style={{ maxWidth: 700, margin: "0 auto", position: "relative" }}>
-            {/* Flags */}
-            <div style={{ display: "flex", justifyContent: "center", gap: 6, marginBottom: 28 }}>
-              {["🇦🇪", "🇸🇦", "🇶🇦", "🇵🇱", "🇷🇴", "🇭🇷"].map((flag) => (
-                <span key={flag} style={{ fontSize: 28 }}>{flag}</span>
-              ))}
-            </div>
-
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 800, color: "#fff", lineHeight: 1.1, marginBottom: 20 }}>
-              Start Your Success<br />Story Today
-            </h2>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: 40, maxWidth: 520, margin: "0 auto 40px" }}>
-              Your global career is just one application away. Join thousands of successful candidates who trusted Punjab&apos;s most reliable manpower agency.
-            </p>
-            <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-              <Link href="/contactus" style={{ display: "inline-block", padding: "18px 40px", backgroundColor: "#ffffff", color: "#001f5d", fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>
-                Apply Now
-              </Link>
-              <a href="tel:+919814820432" style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "18px 40px", backgroundColor: "transparent", border: "1.5px solid rgba(255,255,255,0.25)", color: "#fff", fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-                Request Callback
-              </a>
-            </div>
-          </div>
-        </section>
+        <ShaderCTA
+          kicker="Your Turn"
+          title="Start your success story today."
+          highlight="success story"
+          description="Your global career is just one application away. Join thousands of successful candidates who trusted Punjab's most reliable manpower agency."
+          primaryCta={{ label: "Apply Now — It's Free", href: "/contactus" }}
+          secondaryCta={{ label: "Request Callback on WhatsApp", href: "https://wa.me/919815358832" }}
+        />
       </main>
     </>
   );

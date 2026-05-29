@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
     title: body.title || "",
     excerpt: body.excerpt || "",
     content: body.content || "",
-    image: body.image || "/Blog-1.jpg",
+    image: body.image || "/dubai-jobs-from-punjab-guide.jpg",
     category: body.category || "General",
     date: body.date || new Date().toISOString().split("T")[0],
     readTime: body.readTime || "5 min read",

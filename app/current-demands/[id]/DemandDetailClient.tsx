@@ -1,453 +1,198 @@
-"use client";
-
-import { useEffect, useState, Suspense } from "react";
-import { useRouter } from "next/navigation";
+import type { Metadata } from "next";
 import Link from "next/link";
-import UnifiedContactForm from "@/components/own/UnifiedContactForm";
-import type { Demand } from "../../api/admin/demands/store";
+import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
+import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
+import { readDemands } from "../../api/admin/demands/store";
+import { readOffer } from "../../api/admin/offer/store";
 import { DemandCard, DemandsEmpty } from "@/components/own/DemandCard";
 import SidePosterRails from "@/components/own/SidePosterRails";
 import DemandsTicker from "@/components/own/DemandsTicker";
-import ShareButtons from "@/components/own/ShareButtons";
-import { flagFor } from "@/lib/countryFlags";
+import PageHero from "@/components/own/PageHero";
+import NumberedProcess from "@/components/own/NumberedProcess";
 
-function inferRegion(country?: string | null): string {
-  if (!country) return "";
-  const lower = country.toLowerCase();
-  const europe = ["poland", "romania", "croatia", "malta", "hungary", "czech republic", "europe", "schengen", "italy", "portugal", "germany", "france", "spain"];
-  if (europe.some((c) => lower.includes(c))) return "Europe";
-  return "Gulf";
-}
+export const dynamic = "force-dynamic";
 
-function DetailInner({
-  demand,
-  otherDemands,
-  leftMarqueeImages,
-  rightMarqueeImages,
-}: {
-  demand: Demand;
-  otherDemands: Demand[];
-  leftMarqueeImages: string[];
-  rightMarqueeImages: string[];
-}) {
-  const router = useRouter();
-  const [isImageOpen, setIsImageOpen] = useState(false);
-  const [back, setBack] = useState<{ href: string; label: string }>({
-    href: "/current-demands",
-    label: "All openings",
-  });
+export const metadata: Metadata = {
+  title: { absolute: "Live Overseas Job Openings | UAE, Saudi, Poland Vacancies" },
+  description:
+    "Live overseas job openings in construction, factory, driving, hospitality & healthcare. From Punjab's best govt-licensed recruitment agency â€” UAE, Saudi, Qatar, Poland, Romania. Apply directly, transparent fees.",
+  alternates: { canonical: "/current-demands" },
+};
 
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const ref = document.referrer;
-    if (!ref) return;
-    try {
-      const url = new URL(ref);
-      if (url.origin !== window.location.origin) return;
-      if (url.pathname.startsWith("/offer/")) {
-        const region = url.pathname.split("/")[2] ?? "";
-        const label =
-          region === "europe" ? "Europe openings" :
-          region === "gulf" ? "Gulf openings" :
-          "Offer page";
-        setBack({ href: url.pathname + url.search, label });
-      }
-    } catch {
-      // ignore malformed referrer
-    }
-  }, []);
-
-  useEffect(() => {
-    if (!isImageOpen) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setIsImageOpen(false);
-    };
-    document.addEventListener("keydown", onKey);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prevOverflow;
-    };
-  }, [isImageOpen]);
-
+export default async function CurrentDemands() {
+  const demands = await readDemands();
+  const offer = await readOffer("gulf");
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        backgroundColor: "#f8f9ff",
-        paddingTop: 90,
-        paddingBottom: 60,
-        position: "relative",
-      }}
-    >
-      <DemandsTicker demands={[demand, ...otherDemands]} />
-
-      <SidePosterRails leftImages={leftMarqueeImages} rightImages={rightMarqueeImages} />
-
-      {/* Breadcrumb */}
-      <div
-        className="detail-container"
-        style={{
-          maxWidth: 1200,
-          margin: "24px auto 0",
-          padding: "0 24px",
-          fontFamily: "var(--font-body)",
-          fontSize: 13,
-          color: "#64748b",
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Home", href: "/" },
+              { name: "Current Demands", href: "/current-demands" },
+            ])
+          ),
         }}
-      >
-        <Link href={back.href} style={{ color: "#0052dc", textDecoration: "none" }}>
-          ← {back.label}
-        </Link>
-      </div>
+      />
+      <main className="cd-page" style={{ backgroundColor: "#f8f9ff", position: "relative", paddingTop: 80 }}>
+        <SidePosterRails
+          leftImages={offer.leftMarqueeImages}
+          rightImages={offer.rightMarqueeImages}
+        />
+        <DemandsTicker demands={demands} />
+        <style>{`
+          @media (min-width: 1200px) {
+            .cd-page .cd-inner { padding-left: 220px !important; padding-right: 220px !important; }
+          }
+        `}</style>
+        <div className="cd-inner">
+        <PageHero
+          kicker="Updated Regularly"
+          title="Live job openings across the globe."
+          highlight="across the globe."
+          chips={["Gulf Countries", "European Union", "No Hidden Fees"]}
+          description="Browse live openings in Gulf and European countries. Every listing is verified, every employer is vetted, and we maintain minimal & transparent charges. Your next career move starts here."
+          stats={[
+            { num: "500+", label: "Active Openings" },
+            { num: "12+", label: "Countries" },
+            { num: "Weekly", label: "Updates" },
+          ]}
+          image={{ src: "/licensed-overseas-recruitment-punjab.webp", alt: "Professional placement candidates ready for overseas opportunities" }}
+          imageSeal={{ title: "500+ Live Openings", subtitle: "Updated weekly across Gulf & Europe" }}
+          microChip={{ value: "RA B-1794", label: "MEA Licensed" }}
+        />
 
-      {/* Main 2-col */}
-      <div
-        className="detail-container"
-        style={{
-          maxWidth: 1200,
-          margin: "20px auto 0",
-          padding: "0 24px",
-          position: "relative",
-        }}
-      >
-        <div className="detail-grid" style={{ display: "grid", gridTemplateColumns: "minmax(280px, 420px) 1fr", gap: 40 }}>
-          {/* LEFT — poster + details */}
-          <div>
-            <div
-              style={{
-                position: "relative",
-                width: "100%",
-                maxHeight: 560,
-                borderRadius: 18,
-                overflow: "hidden",
-                boxShadow: "0 16px 48px rgba(0,12,47,0.12)",
-                backgroundColor: "#e5e7eb",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              {demand.poster ? (
-                <img
-                  src={demand.poster}
-                  alt={demand.title}
-                  onClick={() => setIsImageOpen(true)}
-                  title="Click to expand"
-                  style={{
-                    maxWidth: "100%",
-                    maxHeight: 560,
-                    width: "auto",
-                    height: "auto",
-                    objectFit: "contain",
-                    display: "block",
-                    cursor: "zoom-in",
-                  }}
-                />
-              ) : (
-                <div style={{ width: "100%", aspectRatio: "4/5" }} />
-              )}
-              {demand.country && (
-                <span
-                  style={{
-                    position: "absolute",
-                    top: 16,
-                    left: 16,
-                    padding: "6px 16px",
-                    backgroundColor: "rgba(11,28,48,0.9)",
-                    color: "#fff",
-                    borderRadius: 999,
-                    fontFamily: "var(--font-body)",
-                    fontSize: 12,
-                    fontWeight: 700,
-                    letterSpacing: "0.04em",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 8,
-                    backdropFilter: "blur(6px)",
-                  }}
-                >
-                  <span aria-hidden>{flagFor(demand.country)}</span>
-                  {demand.country}
-                </span>
-              )}
+        {/* ===== LIVE DEMANDS ===== */}
+        <section style={{ padding: "80px 0", backgroundColor: "#f8f9ff" }}>
+          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
+            <div style={{ textAlign: "center", marginBottom: 56 }}>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>Live Demands</h2>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
+                Every demand below is a current opening from a verified employer. Tap a card to apply â€” our team will call you back.
+              </p>
             </div>
 
-            <h1
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: "clamp(1.5rem, 2.4vw, 2.1rem)",
-                fontWeight: 800,
-                color: "#0b1c30",
-                lineHeight: 1.2,
-                marginTop: 24,
-                marginBottom: 16,
-              }}
-            >
-              {demand.title}
-            </h1>
-
-            {demand.sectors.length > 0 && (
-              <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 20 }}>
-                {demand.sectors.map((s) => (
-                  <span
-                    key={s}
-                    style={{
-                      fontFamily: "var(--font-body)",
-                      fontSize: 12,
-                      fontWeight: 600,
-                      color: "#0052dc",
-                      backgroundColor: "#eff4ff",
-                      padding: "5px 12px",
-                      borderRadius: 999,
-                    }}
-                  >
-                    {s}
-                  </span>
+            {demands.length === 0 ? (
+              <DemandsEmpty />
+            ) : (
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 20 }}>
+                {demands.map((d) => (
+                  <DemandCard key={d.id} demand={d} />
                 ))}
               </div>
             )}
-
-            {demand.description && (
-              <p
-                style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: 15,
-                  color: "#43474d",
-                  lineHeight: 1.7,
-                  whiteSpace: "pre-wrap",
-                  marginBottom: 24,
-                }}
-              >
-                {demand.description}
-              </p>
-            )}
-
-            <div
-              style={{
-                padding: "18px 20px",
-                backgroundColor: "#fff",
-                border: "1px solid #e5e7eb",
-                borderRadius: 14,
-              }}
-            >
-              <p
-                style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: 11,
-                  fontWeight: 700,
-                  color: "#64748b",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  marginBottom: 10,
-                }}
-              >
-                Share this opening
-              </p>
-              <ShareButtons path={`/current-demands/${demand.id}`} text={demand.title} size="md" />
-            </div>
           </div>
+        </section>
 
-          {/* RIGHT — form */}
-          <div>
+        <NumberedProcess
+          kicker="How It Works"
+          title="From your first call to departure day."
+          highlight="departure day."
+          intro="From your first call to the day you board your flight â€” every step is transparent, documented, and handled by us."
+          steps={[
+            { title: "Walk In or Call", desc: "Visit our office in Nakodar or call us directly at +91 98148-20432. No appointment needed." },
+            { title: "Profile Assessment", desc: "We evaluate your skills, experience, and preferences to match you with the right opportunity." },
+            { title: "Interview & Selection", desc: "Direct interviews with verified employers. No middlemen, no hidden steps." },
+            { title: "Visa & Departure", desc: "We handle everything from visa processing to travel arrangements and pre-departure orientation." },
+          ]}
+        />
+
+        {/* ===== CAN'T FIND YOUR ROLE? ===== */}
+        <section style={{ padding: "64px 0", backgroundColor: "#f8f9ff" }}>
+          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
             <div
               style={{
-                backgroundColor: "#fff",
+                padding: "56px 48px",
                 borderRadius: 20,
-                padding: "32px 28px",
-                border: "1px solid #e5e7eb",
-                boxShadow: "0 16px 48px rgba(0,12,47,0.08)",
-                position: "sticky",
-                top: 100,
+                backgroundColor: "#001f5d",
+                position: "relative",
+                overflow: "hidden",
+                display: "flex",
+                alignItems: "center",
+                gap: 48,
+                flexWrap: "wrap",
               }}
             >
-              <div style={{ marginBottom: 22 }}>
-                <h2 style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 800, color: "#0b1c30", marginBottom: 6 }}>
-                  Apply for this opening
+              <div style={{ position: "absolute", top: -60, right: -60, width: 300, height: 300, borderRadius: "50%", background: "radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%)" }} />
+
+              <div style={{ flex: "1 1 400px", minWidth: 0, position: "relative" }}>
+                <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700, color: "#ffffff", marginBottom: 16 }}>
+                  Can&apos;t Find Your Role?
                 </h2>
-                <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "#64748b" }}>
-                  Fill the form and our team will call you back within 24 hours.
+                <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#bfdbfe", lineHeight: 1.7, maxWidth: 520 }}>
+                  Not every opening is listed here. We receive new demands from employers every week. Reach out to us directly and we&apos;ll match you with the right opportunity based on your skills and experience.
                 </p>
               </div>
 
-              <UnifiedContactForm
-                prefill={{
-                  interest: inferRegion(demand.country),
-                  experience: "Fresher",
-                }}
-                source={`/current-demands/${demand.id}`}
-                contextTag={`demand: ${demand.title} (${demand.id})`}
-                submitLabel="Apply Now"
-                posthogContext={{
-                  source: "demand_detail",
-                  demand_id: demand.id,
-                  demand_title: demand.title,
-                  demand_country: demand.country,
-                }}
-                onSuccess={() => router.push("/?submitted=1")}
-                compact
-              />
+              <div style={{ flex: "0 0 auto", display: "flex", gap: 16, flexWrap: "wrap", position: "relative" }}>
+                <a
+                  href="https://wa.me/919815358832"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 10,
+                    padding: "14px 28px",
+                    backgroundColor: "#25d366",
+                    color: "#fff",
+                    fontFamily: "var(--font-display)",
+                    fontSize: 14,
+                    fontWeight: 700,
+                    borderRadius: 50,
+                    textDecoration: "none",
+                  }}
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
+                  WhatsApp Us
+                </a>
+                <Link
+                  href="/contactus"
+                  style={{
+                    display: "inline-block",
+                    padding: "14px 28px",
+                    backgroundColor: "transparent",
+                    border: "1.5px solid rgba(255,255,255,0.25)",
+                    color: "#fff",
+                    fontFamily: "var(--font-display)",
+                    fontSize: 14,
+                    fontWeight: 700,
+                    borderRadius: 50,
+                    textDecoration: "none",
+                  }}
+                >
+                  Contact Us
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* More openings */}
-      <section
-        className="detail-container"
-        style={{
-          maxWidth: 1200,
-          margin: "80px auto 0",
-          padding: "0 24px",
-          position: "relative",
-        }}
-      >
-        <div style={{ textAlign: "center", marginBottom: 32 }}>
-          <h2
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(1.5rem, 3vw, 2rem)",
-              fontWeight: 800,
-              color: "#0b1c30",
-              marginBottom: 8,
-            }}
-          >
-            More openings
-          </h2>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "#64748b" }}>
-            Explore other active demands
-          </p>
-        </div>
+        <SalaryCalcCTA />
 
-        {otherDemands.length === 0 ? (
-          <DemandsEmpty />
-        ) : (
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
-              gap: 20,
-            }}
-          >
-            {otherDemands.map((d) => (
-              <DemandCard key={d.id} demand={d} />
-            ))}
+        {/* ===== CTA ===== */}
+        <section style={{ padding: "96px 24px", maxWidth: 1300, margin: "0 auto", background: "linear-gradient(135deg, #000c2f 0%, #001f5d 100%)", textAlign: "center", position: "relative", overflow: "hidden", borderRadius: 24 }}>
+          <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 600, height: 600, borderRadius: "50%", background: "radial-gradient(circle, rgba(0,82,220,0.15) 0%, transparent 70%)" }} />
+          <div style={{ maxWidth: 640, margin: "0 auto", position: "relative" }}>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 700, color: "#fff", lineHeight: 1.15, marginBottom: 20 }}>
+              Ready to move beyond<br />the ordinary?
+            </h2>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: 36, maxWidth: 480, margin: "0 auto 36px" }}>
+              Join the thousands of professionals who trusted Punjab&apos;s most reliable manpower agency. Your global career starts with a single consultation.
+            </p>
+            <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
+              <Link href="/contactus" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "#ffffff", color: "#001f5d", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>
+                Start Your Application
+              </Link>
+              <a href="https://wa.me/919815358832" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "transparent", border: "1.5px solid rgba(255,255,255,0.25)", color: "#fff", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>
+                Speak with a Consultant
+              </a>
+            </div>
           </div>
-        )}
-      </section>
-
-      <style>{`
-        @media (min-width: 1200px) {
-          .detail-container { padding-left: 220px !important; padding-right: 220px !important; max-width: 1400px !important; }
-        }
-        @media (max-width: 900px) {
-          .detail-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
-        }
-      `}</style>
-
-      {isImageOpen && demand.poster && (
-        <div
-          onClick={() => setIsImageOpen(false)}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Poster preview"
-          style={{
-            position: "fixed",
-            inset: 0,
-            backgroundColor: "rgba(0,0,0,0.88)",
-            backdropFilter: "blur(4px)",
-            WebkitBackdropFilter: "blur(4px)",
-            zIndex: 9999,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: 24,
-            cursor: "zoom-out",
-            animation: "fadeIn 200ms ease-out",
-          }}
-        >
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              setIsImageOpen(false);
-            }}
-            aria-label="Close preview"
-            style={{
-              position: "absolute",
-              top: 20,
-              right: 20,
-              width: 48,
-              height: 48,
-              borderRadius: "50%",
-              border: "1px solid rgba(255,255,255,0.2)",
-              backgroundColor: "rgba(255,255,255,0.1)",
-              color: "#fff",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              backdropFilter: "blur(8px)",
-              WebkitBackdropFilter: "blur(8px)",
-              transition: "all 150ms ease",
-              zIndex: 1,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.2)";
-              e.currentTarget.style.transform = "scale(1.05)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)";
-              e.currentTarget.style.transform = "scale(1)";
-            }}
-          >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          </button>
-          <img
-            src={demand.poster}
-            alt={demand.title}
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              maxWidth: "95vw",
-              maxHeight: "95vh",
-              objectFit: "contain",
-              borderRadius: 12,
-              boxShadow: "0 24px 64px rgba(0,0,0,0.5)",
-              cursor: "default",
-            }}
-          />
-          <style>{`
-            @keyframes fadeIn {
-              from { opacity: 0; }
-              to { opacity: 1; }
-            }
-          `}</style>
+        </section>
         </div>
-      )}
-    </div>
-  );
-}
-
-export default function DemandDetailClient(props: {
-  demand: Demand;
-  otherDemands: Demand[];
-  leftMarqueeImages: string[];
-  rightMarqueeImages: string[];
-}) {
-  useEffect(() => {
-    document.body.style.backgroundColor = "#f8f9ff";
-    return () => {
-      document.body.style.backgroundColor = "";
-    };
-  }, []);
-
-  return (
-    <Suspense fallback={<div style={{ minHeight: "100vh", backgroundColor: "#f8f9ff" }} />}>
-      <DetailInner {...props} />
-    </Suspense>
+      </main>
+    </>
   );
 }

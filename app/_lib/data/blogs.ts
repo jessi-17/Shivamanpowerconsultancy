@@ -76,7 +76,7 @@ Your employer typically provides:
 
 With 20+ years of experience and a government license, we handle everything from document preparation to post-arrival support. Our Nakodar office is open Monday–Saturday, 9am–6pm.
     `,
-    image: "/Blog-1.jpg",
+    image: "/dubai-jobs-from-punjab-guide.jpg",
     category: "Dubai Jobs",
     date: "2025-03-15",
     readTime: "8 min read",
@@ -140,7 +140,7 @@ We primarily serve candidates from:
 - Phagwara
 - And the entire Doaba region
     `,
-    image: "/Blog-2.webp",
+    image: "/manpower-consultancy-nakodar-punjab.webp",
     category: "About Us",
     date: "2025-03-10",
     readTime: "6 min read",
@@ -223,7 +223,7 @@ Typical timeline: **30–60 days** from job offer to departure. Urgent positions
 
 We've been processing Dubai visas for 20+ years. Our direct employer relationships mean faster shortlisting, quicker visa processing, and reliable placements. Contact us at our Nakodar office or WhatsApp us.
     `,
-    image: "/Blog-3.jpg",
+    image: "/dubai-visa-process-india-guide.jpg",
     category: "Visa Guide",
     date: "2025-03-08",
     readTime: "7 min read",
@@ -298,7 +298,7 @@ Factory and industrial worker jobs are among the most in-demand positions in the
 
 We have direct relationships with factory and manufacturing companies across the UAE. Register your profile at our Nakodar office or contact us on WhatsApp.
     `,
-    image: "/Blog-4.jpg",
+    image: "/factory-worker-jobs-dubai-uae.jpg",
     category: "Job Guide",
     date: "2025-03-05",
     readTime: "6 min read",
@@ -362,7 +362,7 @@ We've been placing workers in Saudi Arabia since 2002. Our direct relationships 
 - No hidden fees
 - Post-placement support
     `,
-    image: "/Blog-5.jpg",
+    image: "/saudi-arabia-jobs-indian-workers.jpg",
     category: "Job Guide",
     date: "2025-02-28",
     readTime: "7 min read",
@@ -432,7 +432,7 @@ Processing time: approximately 45–90 days.
 
 We've recently expanded our services to include Romania placements. Contact our Nakodar office or WhatsApp us to register your profile for upcoming Romania opportunities.
     `,
-    image: "/Blog-6.jpg",
+    image: "/romania-work-visa-india-jobs.jpg",
     category: "Romania Jobs",
     date: "2025-02-25",
     readTime: "6 min read",
@@ -507,7 +507,7 @@ CV Selection means the employer shortlists candidates based on their resume/CV a
 
 We regularly receive CV selection demands from UAE, Saudi Arabia, and Qatar employers. Register your profile at our Nakodar office to be considered for upcoming opportunities.
     `,
-    image: "/Blog-7.jpg",
+    image: "/direct-company-jobs-uae-without-interview.jpg",
     category: "Job Guide",
     date: "2025-02-20",
     readTime: "5 min read",
@@ -587,7 +587,7 @@ Most construction companies in Dubai provide:
 
 We receive construction demands weekly from major UAE contractors. Skilled workers with ITI certificates and experience are in the highest demand. Register at our Nakodar office.
     `,
-    image: "/Blog-8.jpg",
+    image: "/construction-jobs-dubai-from-india.jpg",
     category: "Dubai Jobs",
     date: "2025-02-15",
     readTime: "6 min read",
@@ -651,7 +651,7 @@ Register with Shiva Manpower Consultants with a copy of your license and experie
 - Keep your Indian license valid
 - Get experience in automatic transmission vehicles
     `,
-    image: "/Blog-9.jpg",
+    image: "/driver-jobs-gulf-countries-from-india.jpg",
     category: "Job Guide",
     date: "2025-02-10",
     readTime: "5 min read",
@@ -717,7 +717,7 @@ Processing time: 4–8 weeks. Your agency should guide you through this.
 
 We guide nurses through the entire process — from Dataflow verification to licensing exam preparation to final placement. Contact our Nakodar office to register.
     `,
-    image: "/Blog-10.jpg",
+    image: "/nursing-jobs-qatar-saudi-uae-from-india.jpg",
     category: "Job Guide",
     date: "2025-02-05",
     readTime: "7 min read",
@@ -809,7 +809,7 @@ A rough comparison (monthly, after accommodation):
 
 Visit our Nakodar office to register. We'll assess your profile, guide you on skill development, and match you with the right opportunity when it comes.
     `,
-    image: "/Blog-11.jpg",
+    image: "/work-abroad-punjab-youth-opportunities.jpg",
     category: "Career Guide",
     date: "2025-01-30",
     readTime: "8 min read",
@@ -901,7 +901,7 @@ The UAE's booming tourism and hospitality industry creates thousands of jobs eve
 
 We regularly receive demands from major hotel chains in Dubai and Abu Dhabi, including Rotana, Marriott, Hilton, and others. Register at our Nakodar office.
     `,
-    image: "/Blog-12.jpg",
+    image: "/hotel-jobs-uae-from-punjab.jpg",
     category: "Job Guide",
     date: "2025-01-25",
     readTime: "6 min read",
@@ -997,7 +997,7 @@ Shiva Travel & Manpower Consultants is a government-licensed recruitment agency 
 
 Visit us at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040** or call **+91 98148-20432** to register for upcoming Europe opportunities.
     `,
-    image: "/Blog-1.jpg",
+    image: "/dubai-jobs-from-punjab-guide.jpg",
     category: "Visa Guide",
     date: "2025-04-01",
     readTime: "8 min read",
@@ -1099,7 +1099,7 @@ Shiva Travel & Manpower Consultants has established direct relationships with Cr
 
 Visit our office at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040** or call **+91 98148-20432** to register for Croatia job openings.
     `,
-    image: "/Blog-3.jpg",
+    image: "/dubai-visa-process-india-guide.jpg",
     category: "Europe Jobs",
     date: "2025-03-25",
     readTime: "7 min read",
@@ -1220,7 +1220,7 @@ Shiva Travel & Manpower Consultants has been guiding Punjab youth through the ov
 
 Walk into our office at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040** or call **+91 98148-20432** to start your journey today.
     `,
-    image: "/Blog-5.jpg",
+    image: "/saudi-arabia-jobs-indian-workers.jpg",
     category: "Career Guide",
     date: "2025-03-20",
     readTime: "9 min read",
@@ -1353,7 +1353,7 @@ At Shiva Travel & Manpower Consultants, we guide candidates through the specific
 
 Visit us at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040** or call **+91 98148-20432** to get started with your overseas job application.
     `,
-    image: "/Blog-7.jpg",
+    image: "/direct-company-jobs-uae-without-interview.jpg",
     category: "Visa Guide",
     date: "2025-03-18",
     readTime: "9 min read",
@@ -1492,7 +1492,7 @@ Before you board your flight:
 
 If you are from Punjab and looking to work abroad, Shiva Travel & Manpower Consultants can guide you through every step. Visit us at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040** or call **+91 98148-20432**.
     `,
-    image: "/Blog-4.jpg",
+    image: "/factory-worker-jobs-dubai-uae.jpg",
     category: "Career Guide",
     date: "2025-04-01",
     readTime: "10 min read",
@@ -1604,7 +1604,7 @@ Shiva Travel & Manpower Consultants assists candidates with GAMCA registration, 
 
 Contact us at **+91 98148-20432** or visit our Nakodar office.
     `,
-    image: "/Blog-7.jpg",
+    image: "/direct-company-jobs-uae-without-interview.jpg",
     category: "Visa Guide",
     date: "2025-03-28",
     readTime: "6 min read",
@@ -1701,7 +1701,7 @@ Whether you choose Romania or Poland, we ensure the process is transparent, lega
 
 Visit us at **Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar, Punjab 144040** or call **+91 98148-20432** to discuss your options.
     `,
-    image: "/Blog-6.jpg",
+    image: "/romania-work-visa-india-jobs.jpg",
     category: "Job Guide",
     date: "2025-03-20",
     readTime: "8 min read",
@@ -1800,7 +1800,7 @@ You can verify our license anytime on the [E-Migrate portal](https://emigrate.go
 
 Before handing over any money or documents to a recruitment agency, spend five minutes verifying their license. It is the simplest step you can take to protect yourself and your family from fraud.
     `,
-    image: "/Blog-2.webp",
+    image: "/manpower-consultancy-nakodar-punjab.webp",
     category: "Safety Guide",
     date: "2025-03-25",
     readTime: "5 min read",

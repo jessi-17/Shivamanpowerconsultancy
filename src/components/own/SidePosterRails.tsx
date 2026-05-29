@@ -61,7 +61,7 @@ function VerticalMarquee({ images, direction }: { images: string[]; direction: "
           <img
             key={`${src}-${i}`}
             src={src}
-            alt=""
+            alt={i < images.length ? `Successful overseas placement ${i + 1} by Shiva Manpower Consultants Nakodar` : ""}
             style={{
               width: "100%",
               aspectRatio: "3/4",
@@ -133,7 +133,7 @@ function HorizontalMarquee({ images }: { images: string[] }) {
           <img
             key={`${src}-${i}`}
             src={src}
-            alt=""
+            alt={i < images.length ? `Overseas job placement story ${i + 1} — Shiva Manpower Consultants` : ""}
             style={{
               width: 130,
               height: 170,

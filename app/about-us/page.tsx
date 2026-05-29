@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../_lib/breadcrumb";
 import AboutClient from "./AboutClient";
+import PageHero from "@/components/own/PageHero";
+import BigQuote from "@/components/own/BigQuote";
+import VsThemComparison from "@/components/own/VsThemComparison";
+import EmployerLogoWall from "@/components/own/EmployerLogoWall";
+import EditorialTimeline from "@/components/own/EditorialTimeline";
 
 export const metadata: Metadata = {
   title: { absolute: "Best Govt-Licensed Manpower Consultancy in Punjab | About Us" },
@@ -15,18 +19,18 @@ const milestones = [
   { year: "2002", title: "Journey Started", desc: "Mr. Tarsem Lal began his journey in the overseas manpower and emigration space, laying the foundation for what would become a trusted name in recruitment." },
   { year: "2014", title: "First Office Opened", desc: "Established Shiva Travel & Manpower Consultants as an independent consultancy with our first office, serving families across India." },
   { year: "2017", title: "Punjab Govt. Approved", desc: "Received official approval from the Government of Punjab to operate as a licensed travel and manpower consultancy in the state." },
-  { year: "2023", title: "MEA Licensed (RA B-1794)", desc: "Granted the Recruiting Agent license by the Ministry of External Affairs, Government of India — the federal credential required to deploy workers overseas." },
+  { year: "2023", title: "MEA Licensed (RA B-1794)", desc: "Granted the Recruiting Agent license by the Ministry of External Affairs, Government of India â€” the federal credential required to deploy workers overseas." },
   { year: "2024", title: "ALMRA Member", desc: "Became a registered member of ALMRA, reinforcing our commitment to ethical and regulated overseas recruitment." },
-  { year: "2026", title: "RLA Licensed", desc: "Added RLA accreditation alongside our existing MEA license — strengthening our compliance credentials and continuing to provide the best opportunities to our brothers across India." },
+  { year: "2026", title: "RLA Licensed", desc: "Added RLA accreditation alongside our existing MEA license â€” strengthening our compliance credentials and continuing to provide the best opportunities to our brothers across India." },
 ];
 
 const values = [
-  { icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5", title: "Minimal & Transparent Charges", desc: "We keep our service charges affordable and fully transparent. No hidden fees, no surprise deductions — every cost is communicated upfront before you proceed." },
+  { icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5", title: "Minimal & Transparent Charges", desc: "We keep our service charges affordable and fully transparent. No hidden fees, no surprise deductions â€” every cost is communicated upfront before you proceed." },
   { icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z", title: "Government Licensed", desc: "We hold RA License B-1794 from the Ministry of External Affairs, valid through June 2027. Fully compliant with E-Migrate regulations." },
   { icon: "M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4L12 14.01l-3-3", title: "Ethical Recruitment", desc: "We follow ILO fair recruitment principles. No deception, no hidden costs, no passport retention. Every worker is briefed on their rights." },
-  { icon: "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75", title: "End-to-End Support", desc: "From document preparation to visa processing, pre-departure orientation to post-arrival follow-up — we support workers through every step." },
+  { icon: "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75", title: "End-to-End Support", desc: "From document preparation to visa processing, pre-departure orientation to post-arrival follow-up â€” we support workers through every step." },
   { icon: "M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2", title: "Verified Employers Only", desc: "We only work with employers who provide proper contracts, accommodation, and comply with local labour laws." },
-  { icon: "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z", title: "Community First", desc: "Based in Nakodar, we serve the Doaba region — Jalandhar, Kapurthala, Nawanshahr, Hoshiarpur. Our doors are always open." },
+  { icon: "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z", title: "Community First", desc: "Based in Nakodar, we serve the Doaba region â€” Jalandhar, Kapurthala, Nawanshahr, Hoshiarpur. Our doors are always open." },
 ];
 
 export default function AboutUs() {
@@ -44,89 +48,34 @@ export default function AboutUs() {
         }}
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
-        {/* ===== HERO — Split Layout ===== */}
-        <section style={{ paddingTop: 120, paddingBottom: 80, backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
-            {/* Left — Text */}
-            <div style={{ flex: "1 1 480px", minWidth: 0 }}>
-              <div style={{ display: "inline-block", padding: "6px 16px", backgroundColor: "#eff4ff", borderRadius: 20, marginBottom: 24 }}>
-                <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#0052dc", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                  Since 2002 — Nakodar, Punjab
-                </span>
-              </div>
+        <PageHero
+          kicker="Since 2002 Â· Nakodar, Punjab"
+          title="India's Government-Licensed Overseas Partner."
+          highlight="Overseas Partner."
+          chips={["MEA Licensed", "ALMRA Member", "RA B-1794", "25+ Nations Reached"]}
+          description="For over two decades, Shiva Manpower has been the bridge between India's talent and global opportunity. Government licensed, transparent and minimal charges, and 5,000+ successful placements across 12+ countries."
+          stats={[
+            { num: "5,000+", label: "Placements" },
+            { num: "20+", label: "Years Since 2002" },
+            { num: "12+", label: "Countries" },
+          ]}
+          image={{ src: "/shiva-manpower-nakodar-office-punjab.webp", alt: "Shiva Travel Manpower Consultants office in Nakodar, Punjab" }}
+          imageSeal={{ title: "Founded by Tarsem Lal Â· 2002", subtitle: "ALMRA Punjab Â· MEA RA B-1794" }}
+          microChip={{ value: "4.9â˜…", label: "200+ Reviews" }}
+        />
 
-              <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.05, letterSpacing: "-1.5px", marginBottom: 24 }}>
-                India&apos;s Government-Licensed
-                <br />
-                <span style={{ color: "#0052dc" }}>Overseas Partner.</span>
-              </h1>
-
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                For over two decades, Shiva Manpower has been the bridge between India&apos;s talent and global opportunity. Government licensed, transparent and minimal charges, and 5,000+ successful placements across 12+ countries.
-              </p>
-
-              {/* Badges */}
-              <div style={{ display: "flex", gap: 16, marginBottom: 32, flexWrap: "wrap" }}>
-                {["MEA Licensed", "25+ Nations Reached"].map((badge) => (
-                  <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#0b1c30" }} />
-                    <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right — Image with overlay stat */}
-            <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
-              <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Professional Punjab office environment.webp" alt="Shiva Travel Manpower Consultants office" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
-              </div>
-              <div style={{ position: "absolute", bottom: -20, right: 24, backgroundColor: "#001f5d", borderRadius: 12, padding: "20px 28px", boxShadow: "0 8px 32px rgba(0,12,47,0.3)" }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff", lineHeight: 1 }}>5,000+</div>
-                <div style={{ fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 4 }}>
-                  Workers Placed<br />Worldwide
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ===== THE ETHICAL IMPERATIVE ===== */}
-        <section style={{ padding: "80px 0", backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
-            <div style={{ textAlign: "center", marginBottom: 56 }}>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>The Ethical Imperative</h2>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
-                Beyond placement, we provide protection. Our commitment to the Ministry of External Affairs standards ensures every step of your journey is legal, safe, and transparent.
-              </p>
-            </div>
-
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 480px), 1fr))", gap: 24 }}>
-              {/* MEA Licensed */}
-              <div style={{ backgroundColor: "#ffffff", borderRadius: 16, padding: 40, border: "1px solid #e5e7eb", display: "flex", flexDirection: "column", gap: 20 }}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0052dc" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
-                <h3 style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 700, color: "#0b1c30" }}>MEA Licensed Authority</h3>
-                <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#43474d", lineHeight: 1.7 }}>
-                  We operate under the strict oversight of the Ministry of External Affairs. This isn&apos;t just a license; it&apos;s a promise that every contract we facilitate is scrutinized for fairness and every employer is vetted for security.
-                </p>
-                <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 8, padding: "12px 16px", backgroundColor: "#f1f5f9", borderRadius: 8 }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0b1c30" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
-                  <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 600, color: "#0b1c30", letterSpacing: "0.05em" }}>LICENCE NO: B-1794/PUN/PER/100/5/10094/2022</span>
-                </div>
-              </div>
-
-              {/* Zero Hidden Fees */}
-              <div style={{ backgroundColor: "#001f5d", borderRadius: 16, padding: 40, display: "flex", flexDirection: "column", gap: 20, position: "relative", overflow: "hidden" }}>
-                <div style={{ position: "absolute", top: -40, right: -40, width: 200, height: 200, borderRadius: "50%", background: "radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%)" }} />
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
-                <h3 style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 700, color: "#ffffff", position: "relative" }}>No Hidden Fees</h3>
-                <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#bfdbfe", lineHeight: 1.7, position: "relative" }}>
-                  Our ethical recruitment model ensures complete transparency. Minimal, upfront charges — no middlemen, no &quot;ghost&quot; costs. Just direct pathways to success.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <BigQuote
+          kicker="Founder's Note"
+          quote="We don't just find jobs. We architect futures. My promise to every Punjabi youth is a path built on dignity, legality, and the relentless pursuit of excellence."
+          attribution={{
+            name: "Mr. Tarsem Lal",
+            role: "Founder & Managing Director",
+            meta: "Founded Shiva Manpower in 2002 Â· Nakodar, Punjab",
+            avatar: "/founder.webp",
+            avatarAlt: "Mr. Tarsem Lal â€” Founder of Shiva Travel Manpower Consultants",
+            linkedinUrl: "https://www.linkedin.com/in/tarsem-bhagat-8151282a/",
+          }}
+        />
 
         {/* ===== BEST SERVICE BANNER ===== */}
         <section style={{ padding: "60px 0", borderBottom: "1px solid #e5e7eb" }}>
@@ -148,86 +97,195 @@ export default function AboutUs() {
           </div>
         </section>
 
-        {/* ===== FOUNDER QUOTE ===== */}
-        <section style={{ padding: "96px 0", backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 32px", display: "flex", gap: 60, flexWrap: "wrap", alignItems: "center" }}>
-            <div style={{ flex: "0 0 280px", position: "relative" }}>
-              <div style={{ width: 280, height: 340, borderRadius: 16, overflow: "hidden", position: "relative", backgroundColor: "#e5e7eb" }}>
-                <Image src="/founder.webp" alt="Mr. Tarsem Lal — Founder and Managing Director of Shiva Travel Manpower Consultants" fill sizes="280px" style={{ objectFit: "cover", objectPosition: "top" }} />
-              </div>
-              <div style={{ marginTop: 16 }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 700, color: "#0b1c30" }}>Mr. Tarsem Lal</div>
-                <div style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 600, color: "#0052dc", letterSpacing: "0.05em", textTransform: "uppercase" }}>Founder & Managing Director</div>
-              </div>
-            </div>
+        <VsThemComparison
+          kicker="The Difference"
+          title="What licensed actually means."
+          highlight="actually means."
+          intro="Words like 'licensed' get thrown around. Here's what it concretely means in your hands when something goes wrong â€” and what it doesn't, with the alternatives."
+          columns={{ us: "Shiva Manpower", middle: "Unlicensed Agents", right: "DIY Visa" }}
+          rows={[
+            { criterion: "MEA RA License", us: "RA B-1794, valid till 2027", middle: "None", right: "Not applicable" },
+            { criterion: "E-Migrate Filing", us: "Under our RA registration", middle: "Often fake or skipped", right: "You file yourself" },
+            { criterion: "Employer Verification", us: "Before any contract signed", middle: "Rarely â€” fake jobs common", right: "Up to you to verify" },
+            { criterion: "Charges", us: "Minimal & transparent, in writing", middle: "Hidden + 3â€“5Ã— higher", right: "Govt visa fee only" },
+            { criterion: "If Visa Fails", us: "Refund policy in writing", middle: "Money lost", right: "Not applicable" },
+            { criterion: "Legal Recourse", us: "MEA + Indian courts", middle: "Agent disappears", right: "Minimal" },
+          ]}
+        />
 
-            <div style={{ flex: "1 1 400px", minWidth: 0 }}>
-              <div style={{ fontFamily: "Georgia, serif", fontSize: 80, color: "#0052dc", lineHeight: 0.8, marginBottom: 8, opacity: 0.3 }}>&ldquo;</div>
-              <blockquote style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", fontWeight: 600, color: "#0b1c30", lineHeight: 1.4, marginBottom: 28 }}>
-                We don&apos;t just find jobs; we architect futures. My promise to every Punjabi youth is a path built on dignity, legality, and the relentless pursuit of excellence.
-              </blockquote>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#43474d", lineHeight: 1.7, marginBottom: 16 }}>
-                Starting in 2002, our vision was simple: to bring integrity and transparency to overseas recruitment. Today, Shiva Manpower stands as a beacon of trust. We treat every application as if it were our own family member&apos;s journey.
-              </p>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#43474d", lineHeight: 1.7 }}>
-                Our commitment isn&apos;t about volume — it&apos;s about the quality of life our candidates enjoy once they land. That is our true metric of success.
-              </p>
-            </div>
-          </div>
-        </section>
+        <EditorialTimeline
+          kicker="Our Journey"
+          title="Two decades of building trust."
+          highlight="building trust."
+          intro="From a single office in Nakodar to over 5,000 placements across the Gulf and Europe. The credentials we hold today were earned one milestone at a time."
+          milestones={milestones}
+          presentLabel="Latest"
+        />
 
-        {/* ===== OUR JOURNEY — Full Width Timeline ===== */}
-        <section style={{ padding: "80px 0", backgroundColor: "#ffffff", borderRadius: 24, maxWidth: 1300, margin: "0 auto" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", textAlign: "center", marginBottom: 56 }}>Our Journey</h2>
-
-            {/* Horizontal timeline */}
-            <div style={{ position: "relative", paddingTop: 40 }}>
-              {/* Line */}
-              <div style={{ position: "absolute", top: 47, left: 0, right: 0, height: 2, backgroundColor: "#e5e7eb" }} />
-
-              <div style={{ display: "grid", gridTemplateColumns: `repeat(${milestones.length}, 1fr)`, gap: 8 }}>
-                {milestones.map((m, i) => (
-                  <div key={m.year} style={{ textAlign: "center", position: "relative" }}>
-                    {/* Dot */}
-                    <div style={{ width: 16, height: 16, borderRadius: "50%", backgroundColor: i === milestones.length - 1 ? "#0052dc" : "#0b1c30", border: "3px solid #ffffff", boxShadow: "0 0 0 2px #e5e7eb", margin: "0 auto 20px", position: "relative", zIndex: 1 }} />
-                    <div style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#0052dc", letterSpacing: "0.1em", marginBottom: 6 }}>{m.year}</div>
-                    <h3 style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, color: "#0b1c30", marginBottom: 6 }}>{m.title}</h3>
-                    <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "#64748b", lineHeight: 1.6, padding: "0 4px" }}>{m.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ===== WHAT WE STAND FOR — with hover ===== */}
+        {/* ===== WHAT WE STAND FOR â€” with hover ===== */}
         <AboutClient values={values} />
 
-        {/* ===== GOVERNMENT LICENSE ===== */}
-        <section style={{ padding: "64px 0" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
-            <div style={{ padding: 40, borderRadius: 20, border: "1px solid #e5e7eb" }}>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 700, color: "#0b1c30", marginBottom: 24, textAlign: "center" }}>Government License Details</h2>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 20 }}>
+        {/* ===== GOVERNMENT LICENSE â€” editorial credential block ===== */}
+        <div role="region" aria-label="Government license" style={{ width: "100%", backgroundColor: "#f4f6fb", padding: "120px 0" }}>
+          <div style={{ maxWidth: "var(--max-width)", margin: "0 auto", padding: "0 60px" }}>
+            {/* Header */}
+            <div style={{ maxWidth: 820, marginBottom: 64 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
+                <span style={{ display: "inline-block", width: 36, height: 3, backgroundColor: "#001f5d", borderRadius: 2 }} />
+                <span style={{ fontFamily: "var(--font-display)", fontSize: 12, fontWeight: 800, color: "#001f5d", letterSpacing: "0.14em", textTransform: "uppercase" }}>
+                  Government Credential
+                </span>
+              </div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.05, letterSpacing: "-0.02em", margin: 0, marginBottom: 16 }}>
+                The paperwork that backs every claim.
+              </h2>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.6, margin: 0, maxWidth: 640 }}>
+                Every line of copy on this site is backed by a government-issued document. Here&apos;s the credential â€” verifiable on the Ministry of External Affairs portal.
+              </p>
+            </div>
+
+            {/* Featured credential â€” split layout, wraps on narrow viewports */}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 64, alignItems: "start", marginBottom: 48 }}>
+              {/* LEFT â€” Hero number lockup */}
+              <div>
+                <div style={{ fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 700, color: "#64748b", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 16 }}>
+                  Recruiting Agent License
+                </div>
+                <div
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: "clamp(4rem, 9vw, 7.5rem)",
+                    fontWeight: 800,
+                    color: "#001f5d",
+                    lineHeight: 0.92,
+                    letterSpacing: "-0.05em",
+                    marginBottom: 20,
+                  }}
+                >
+                  B-1794
+                </div>
+                <div style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 600, color: "#0b1c30", marginBottom: 8 }}>
+                  Ministry of External Affairs, Govt. of India
+                </div>
+                <div style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "#64748b", lineHeight: 1.5, wordBreak: "break-word" }}>
+                  Full registration: B-1794/PUN/PER/100/5/10094/2022
+                </div>
+              </div>
+
+              {/* RIGHT â€” Spec rows */}
+              <div style={{ borderTop: "1px solid rgba(11,28,48,0.12)" }}>
                 {[
-                  { label: "Agency Name", value: "Shiva Travel & Manpower Consultants" },
-                  { label: "RA License", value: "B-1794/PUN/PER/100/5/10094/2022" },
-                  { label: "Issuing Authority", value: "Ministry of External Affairs, Govt. of India" },
-                  { label: "Valid Through", value: "June 2027" },
-                  { label: "E-Migrate Registered", value: "Yes" },
-                  { label: "ALMRA Member", value: "Yes" },
-                  { label: "License Scope", value: "All India" },
+                  { label: "Agency", value: "Shiva Travel & Manpower Consultants" },
+                  { label: "Valid through", value: "June 2027" },
+                  { label: "Scope", value: "All India" },
+                  { label: "Issued from", value: "Nakodar, Punjab" },
                 ].map((item) => (
-                  <div key={item.label} style={{ padding: "8px 0" }}>
-                    <div style={{ fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 700, color: "#64748b", letterSpacing: "0.05em", textTransform: "uppercase", marginBottom: 2 }}>{item.label}</div>
-                    <div style={{ fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 600, color: "#0b1c30" }}>{item.value}</div>
+                  <div
+                    key={item.label}
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "160px 1fr",
+                      gap: 24,
+                      padding: "20px 0",
+                      borderBottom: "1px solid rgba(11,28,48,0.12)",
+                      alignItems: "baseline",
+                    }}
+                  >
+                    <div style={{ fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 700, color: "#64748b", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+                      {item.label}
+                    </div>
+                    <div style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700, color: "#0b1c30", letterSpacing: "-0.01em" }}>
+                      {item.value}
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
+
+            {/* Membership/compliance pills */}
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 36 }}>
+              {[
+                { label: "E-Migrate Registered" },
+                { label: "ALMRA Punjab Member" },
+                { label: "RLA Accredited" },
+              ].map((pill) => (
+                <div
+                  key={pill.label}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 8,
+                    padding: "10px 16px",
+                    borderRadius: 999,
+                    backgroundColor: "#fff",
+                    border: "1px solid rgba(11,28,48,0.10)",
+                  }}
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <span style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 700, color: "#0b1c30", letterSpacing: "-0.005em" }}>
+                    {pill.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* Verify CTA */}
+            <a
+              href="https://emigrate.gov.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                fontFamily: "var(--font-display)",
+                fontSize: 14,
+                fontWeight: 700,
+                color: "#001f5d",
+                textDecoration: "none",
+                borderBottom: "1.5px solid #001f5d",
+                paddingBottom: 2,
+              }}
+            >
+              Verify this license on emigrate.gov.in
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M7 17L17 7" />
+                <path d="M7 7h10v10" />
+              </svg>
+            </a>
           </div>
-        </section>
+        </div>
+
+        <EmployerLogoWall
+          kicker="Verified Employers"
+          title="Where 5,000+ workers we placed are now."
+          highlight="are now."
+          intro="Two decades of placements across the Gulf and Europe. A partial list of employer types currently hosting our workers â€” every one verified before a single CV was shared."
+          employers={[
+            { name: "Construction Contractor", sector: "Infrastructure", country: "ðŸ‡¦ðŸ‡ª" },
+            { name: "Hospitality Group", sector: "Hotels & F&B", country: "ðŸ‡¦ðŸ‡ª" },
+            { name: "Logistics Operator", sector: "Warehousing", country: "ðŸ‡¦ðŸ‡ª" },
+            { name: "MEP Contractor", sector: "Mechanical & Plumbing", country: "ðŸ‡¦ðŸ‡ª" },
+            { name: "Oil & Gas EPC", sector: "Energy", country: "ðŸ‡¸ðŸ‡¦" },
+            { name: "Steel Manufacturer", sector: "Heavy Industry", country: "ðŸ‡¸ðŸ‡¦" },
+            { name: "Food Processing Group", sector: "Manufacturing", country: "ðŸ‡¸ðŸ‡¦" },
+            { name: "Building Contractor", sector: "Construction", country: "ðŸ‡¸ðŸ‡¦" },
+            { name: "Energy Contractor", sector: "Oil & Gas", country: "ðŸ‡¶ðŸ‡¦" },
+            { name: "Hospitality Chain", sector: "Hotels", country: "ðŸ‡¶ðŸ‡¦" },
+            { name: "Industrial Group", sector: "Manufacturing", country: "ðŸ‡°ðŸ‡¼" },
+            { name: "Engineering Firm", sector: "Mechanical", country: "ðŸ‡°ðŸ‡¼" },
+            { name: "Steel Works", sector: "Heavy Industry", country: "ðŸ‡§ðŸ‡­" },
+            { name: "Logistics Company", sector: "Warehouse", country: "ðŸ‡µðŸ‡±" },
+            { name: "Factory Operator", sector: "Production", country: "ðŸ‡µðŸ‡±" },
+            { name: "Auto Plant", sector: "Automotive", country: "ðŸ‡·ðŸ‡´" },
+            { name: "Aerospace Plant", sector: "Aerospace", country: "ðŸ‡·ðŸ‡´" },
+            { name: "Marine Services", sector: "Shipping", country: "ðŸ‡­ðŸ‡·" },
+            { name: "Manufacturing Group", sector: "Industrial", country: "ðŸ‡§ðŸ‡¬" },
+            { name: "Hotel Group", sector: "Hospitality", country: "ðŸ‡²ðŸ‡¹" },
+          ]}
+        />
 
         {/* ===== CTA ===== */}
         <section style={{ padding: "96px 24px", maxWidth: 1300, margin: "0 auto", background: "linear-gradient(135deg, #000c2f 0%, #001f5d 100%)", textAlign: "center", position: "relative", overflow: "hidden", borderRadius: 24 }}>

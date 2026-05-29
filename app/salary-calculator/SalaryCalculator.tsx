@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import SlimHero from "@/components/own/SlimHero";
 
 /* ------------------------------------------------------------------ */
 /*  Salary data by country & job category                              */
@@ -88,41 +89,12 @@ export default function SalaryCalculator() {
 
   return (
     <>
-      {/* Hero */}
-      <section
-        style={{
-          background: "linear-gradient(135deg, #0b1c30 0%, #0a2540 100%)",
-          padding: m ? "120px 20px 48px" : "140px 60px 64px",
-          textAlign: "center",
-          position: "relative", overflow: "hidden",
-        }}
-      >
-        <div style={{ position: "absolute", inset: 0, opacity: 0.04, backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
-        <div style={{ position: "relative", zIndex: 1, maxWidth: 600, margin: "0 auto" }}>
-          <span style={{
-            display: "inline-flex", alignItems: "center", gap: 6,
-            padding: "4px 14px", borderRadius: 20,
-            backgroundColor: "rgba(37,99,235,0.15)", color: "#60a5fa",
-            fontFamily: "var(--font-display)", fontSize: 12, fontWeight: 700,
-            letterSpacing: "0.04em", marginBottom: 16,
-          }}>
-            FREE TOOL
-          </span>
-          <h1 style={{
-            fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.75rem)",
-            fontWeight: 800, color: "#fff", lineHeight: 1.15, marginBottom: 12,
-            letterSpacing: "-0.02em",
-          }}>
-            Gulf & Europe Salary Calculator
-          </h1>
-          <p style={{
-            fontFamily: "var(--font-body)", fontSize: "clamp(0.95rem, 1.5vw, 1.15rem)",
-            color: "rgba(255,255,255,0.6)", lineHeight: 1.6, maxWidth: 500, margin: "0 auto",
-          }}>
-            Estimate your monthly earnings abroad. Select your destination and trade to see salary ranges, benefits, and take-home pay in INR.
-          </p>
-        </div>
-      </section>
+      <SlimHero
+        kicker="Free Tool"
+        title="What you'll actually earn abroad."
+        highlight="actually earn abroad."
+        description="Estimate your monthly take-home in INR by country, trade and experience level. Numbers are based on actual placements we've made — not generic estimates."
+      />
 
       {/* Calculator */}
       <section style={{ backgroundColor: "#f8fafc", padding: m ? "40px 16px 60px" : "64px 24px 80px" }}>

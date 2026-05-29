@@ -9,7 +9,7 @@ export const popularDestinations = [
   {
     name: "Saudi Arabia",
     slug: "saudi-arabia",
-    image: "/Saudi arabia job.webp",
+    image: "/saudi-arabia-jobs-shiva-manpower.webp",
     subtitle: "Vision 2030 driving massive demand",
     roles: "Construction, Oil & Gas, Healthcare, Technical",
   },
@@ -23,14 +23,14 @@ export const popularDestinations = [
   {
     name: "Poland",
     slug: "poland",
-    image: "/poland job.webp",
+    image: "/poland-jobs-shiva-manpower.webp",
     subtitle: "EU work permit, path to permanent residency",
     roles: "Factory, Agriculture, Construction, Warehouse",
   },
   {
     name: "Romania",
     slug: "romania",
-    image: "/Romania jobs.webp",
+    image: "/romania-jobs-shiva-manpower.webp",
     subtitle: "Growing economy, Schengen access",
     roles: "Manufacturing, Agriculture, Construction",
   },
@@ -47,7 +47,7 @@ export const jobSeekerBenefits = [
   },
   {
     title: "Complete Support",
-    desc: "From documents to visa to pre-departure training — we're with you every step.",
+    desc: "From documents to visa to pre-departure training ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â we're with you every step.",
   },
   {
     title: "Post-Arrival Help",

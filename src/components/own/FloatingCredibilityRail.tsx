@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-// Subset of placement photos — using ~10 to keep bandwidth in check across every page
+// Subset of placement photos â€” using ~10 to keep bandwidth in check across every page
 const images = [
   "/WhatsApp Image 2026-05-09 at 5.04.42 PM.jpeg",
   "/WhatsApp Image 2026-05-09 at 5.07.06 PM.jpeg",
@@ -55,37 +55,9 @@ export default function FloatingCredibilityRail() {
         gap: 8,
       }}
     >
-      {/* Header chip */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 4,
-        }}
-      >
-        <span
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 5,
-            padding: "4px 9px",
-            borderRadius: 999,
-            backgroundColor: "rgba(250,204,21,0.14)",
-            border: "1px solid rgba(250,204,21,0.4)",
-            fontFamily: "var(--font-display)",
-            fontSize: 9,
-            fontWeight: 800,
-            letterSpacing: "0.08em",
-            color: "#fde68a",
-            whiteSpace: "nowrap",
-          }}
-        >
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#facc15" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-            <path d="m9 11 3 3L22 4" />
-          </svg>
-          VERIFIED · REAL
-        </span>
+      {/* Card + cup wrapper */}
+      <div style={{ position: "relative", width: "100%" }}>
+        {/* Dismiss button â€” top-left corner of card (cup occupies top-right) */}
         <button
           type="button"
           onClick={() => {
@@ -94,26 +66,32 @@ export default function FloatingCredibilityRail() {
           }}
           aria-label="Dismiss credibility carousel"
           style={{
-            width: 20,
-            height: 20,
+            position: "absolute",
+            top: 8,
+            left: 8,
+            zIndex: 4,
+            width: 22,
+            height: 22,
             borderRadius: "50%",
-            border: "1px solid rgba(255,255,255,0.2)",
-            backgroundColor: "rgba(0,12,47,0.6)",
-            color: "rgba(255,255,255,0.7)",
+            border: "1px solid rgba(255,255,255,0.25)",
+            backgroundColor: "rgba(0,12,47,0.75)",
+            color: "rgba(255,255,255,0.8)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             cursor: "pointer",
             padding: 0,
             transition: "all 200ms",
+            backdropFilter: "blur(6px)",
+            WebkitBackdropFilter: "blur(6px)",
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(0,12,47,0.9)";
+            e.currentTarget.style.backgroundColor = "rgba(0,12,47,0.95)";
             e.currentTarget.style.color = "#fff";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(0,12,47,0.6)";
-            e.currentTarget.style.color = "rgba(255,255,255,0.7)";
+            e.currentTarget.style.backgroundColor = "rgba(0,12,47,0.75)";
+            e.currentTarget.style.color = "rgba(255,255,255,0.8)";
           }}
         >
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -121,11 +99,9 @@ export default function FloatingCredibilityRail() {
             <path d="m6 6 12 12" />
           </svg>
         </button>
-      </div>
 
-      {/* Card + cup wrapper */}
-      <div style={{ position: "relative", width: "100%" }}>
-        {/* Image card — overflow:hidden directly */}
+
+        {/* Image card â€” overflow:hidden directly */}
         <div
           style={{
             position: "relative",
@@ -173,7 +149,7 @@ export default function FloatingCredibilityRail() {
           </div>
         </div>
 
-        {/* Gold cup — sibling of card */}
+        {/* Gold cup â€” sibling of card */}
         <div
           style={{
             position: "absolute",
@@ -186,7 +162,7 @@ export default function FloatingCredibilityRail() {
             filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.5))",
           }}
         >
-          <Image src="/gold cup.png" alt="" fill sizes="56px" style={{ objectFit: "contain" }} />
+          <Image src="/award-trophy-shiva-manpower.png" alt="Award-winning overseas recruitment agency in Nakodar Punjab" fill sizes="56px" style={{ objectFit: "contain" }} />
         </div>
       </div>
 

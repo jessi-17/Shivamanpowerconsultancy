@@ -4,6 +4,7 @@ import Link from "next/link";
 import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
 import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 import RelatedVisas from "@/components/own/RelatedVisas";
+import PageHero from "@/components/own/PageHero";
 
 export const metadata: Metadata = {
   title: "Kuwait Visa & Work Permit in Nakodar | Shiva Travel Consultants",
@@ -66,7 +67,7 @@ const faqs = [
   { q: "Is there a minimum wage in Kuwait?", a: "Kuwait has set a minimum wage of KWD 75 per month for domestic workers. For other sectors, wages are determined by the employment contract. Most skilled workers earn KWD 150-400 per month depending on the role and experience." },
   { q: "Do I need to pay recruitment fees?", a: "Shiva Travel & Manpower Consultants operates under government license RA B-1794. We follow all regulations regarding recruitment charges. Visit our Nakodar office for complete fee transparency." },
   { q: "Can I change jobs in Kuwait?", a: "Yes, Kuwait allows workers to transfer their visa to a new employer after completing the initial contract period or with the current employer's NOC. Recent reforms have made the process easier for workers." },
-  { q: "What accommodation is provided?", a: "Most employers in Kuwait provide shared accommodation for workers or a housing allowance. The standard varies by company — we verify accommodation arrangements as part of our contract review process." },
+  { q: "What accommodation is provided?", a: "Most employers in Kuwait provide shared accommodation for workers or a housing allowance. The standard varies by company â€” we verify accommodation arrangements as part of our contract review process." },
 ];
 
 const faqJsonLd = {
@@ -123,59 +124,22 @@ export default function KuwaitVisa() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
-        {/* ===== HERO — Split Layout ===== */}
-        <section style={{ paddingTop: 120, paddingBottom: 80, backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
-            <div style={{ flex: "1 1 480px", minWidth: 0 }}>
-              <div style={{ display: "inline-block", padding: "6px 16px", backgroundColor: "#eff4ff", borderRadius: 20, marginBottom: 24 }}>
-                <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#1e40af", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                  Oil-Rich Economy &middot; Tax-Free &middot; High Demand
-                </span>
-              </div>
-
-              <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.05, letterSpacing: "-1.5px", marginBottom: 24 }}>
-                Kuwait Visa &amp; Work Permit Services
-                <br />
-                <span style={{ color: "#1e40af" }}>in Nakodar.</span>
-              </h1>
-
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                Complete Kuwait visa processing including Visa 18, Visa 20, GAMCA medical, document attestation, and E-Migrate registration. Government licensed recruitment through Shiva Travel &amp; Manpower Consultants (RA B-1794).
-              </p>
-
-              <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 32 }}>
-                <Link href="/contactus" style={{ display: "inline-flex", alignItems: "center", padding: "14px 28px", backgroundColor: "#0b1c30", color: "#fff", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, borderRadius: 10, textDecoration: "none" }}>
-                  Apply Now
-                </Link>
-                <a href="tel:+919814820432" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 28px", backgroundColor: "#fff", color: "#0b1c30", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, borderRadius: 10, textDecoration: "none", border: "1.5px solid #e5e7eb" }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-                  +91 98148-20432
-                </a>
-              </div>
-
-              <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["Tax-Free Income", "Visa 18 & 20", "Licensed Recruitment"].map((badge) => (
-                  <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#1e40af" }} />
-                    <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
-              <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Professional Punjab office environment.webp" alt="Kuwait visa services at Shiva Travel Consultants Nakodar" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
-              </div>
-              <div style={{ position: "absolute", bottom: -20, right: 24, backgroundColor: "#1e40af", borderRadius: 12, padding: "20px 28px", boxShadow: "0 8px 32px rgba(0,12,47,0.3)" }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff", lineHeight: 1 }}>800+</div>
-                <div style={{ fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 4 }}>
-                  Workers Placed<br />in Kuwait
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          kicker="Oil-Rich Economy Â· Tax-Free Â· High Demand"
+          title="Kuwait visa & work permit services in Nakodar."
+          highlight="in Nakodar."
+          chips={["Visa 18", "Visa 20", "GAMCA Medical", "Attestation"]}
+          description="Complete Kuwait visa processing: Visa 18, Visa 20, GAMCA medical, document attestation, and E-Migrate registration. Govt-licensed (RA B-1794)."
+          primaryCta={{ label: "Apply Now", href: "/contactus" }}
+          stats={[
+            { num: "800+", label: "Kuwait Visas" },
+            { num: "0%", label: "Income Tax" },
+            { num: "Oil & Gas", label: "High Demand" },
+          ]}
+          image={{ src: "/shiva-manpower-nakodar-office-punjab.webp", alt: "Kuwait visa services at Shiva Travel Consultants Nakodar" }}
+          imageSeal={{ title: "Kuwait Visa Specialist", subtitle: "Visa 18 & 20 Â· GAMCA Â· Attestation" }}
+          microChip={{ value: "0%", label: "Income Tax" }}
+        />
 
         {/* ===== STATS BAR ===== */}
         <section style={{ padding: "48px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb", borderBottom: "1px solid #e5e7eb" }}>
@@ -275,7 +239,7 @@ export default function KuwaitVisa() {
                 Our streamlined 6-step process takes you from consultation to arrival in Kuwait. We handle GAMCA medical, attestation, E-Migrate, and contract verification for Visa 18 and Visa 20 applications.
               </p>
               <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Professional Punjab office environment.webp" alt="Kuwait visa processing at Shiva Travel Consultants" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
+                <Image src="/shiva-manpower-nakodar-office-punjab.webp" alt="Kuwait visa processing at Shiva Travel Consultants" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
               </div>
             </div>
 
@@ -341,7 +305,7 @@ export default function KuwaitVisa() {
 
         <SalaryCalcCTA country="Kuwait" />
 
-        {/* ===== RELATED VISAS — internal linking ===== */}
+        {/* ===== RELATED VISAS â€” internal linking ===== */}
         <RelatedVisas currentSlug="kuwait" />
 
         {/* ===== CTA ===== */}
