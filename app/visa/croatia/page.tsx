@@ -28,7 +28,7 @@ const whyCroatia = [
 
 const ourServices = [
   { title: "Work Permit Processing", desc: "Complete handling of your Croatia work permit application. We coordinate with Croatian employers and immigration authorities to secure your authorization." },
-  { title: "Document Preparation", desc: "We prepare and verify all required documents â€” passport, educational certificates, experience letters, medical certificates, and police clearance." },
+  { title: "Document Preparation", desc: "We prepare and verify all required documents — passport, educational certificates, experience letters, medical certificates, and police clearance." },
   { title: "Embassy Coordination", desc: "We guide you through the Croatian Embassy visa appointment process, prepare you for the interview, and ensure all documentation meets embassy requirements." },
   { title: "E-Migrate Registration", desc: "Mandatory registration on the Government of India's E-Migrate portal for emigration clearance. We handle the complete registration process for you." },
   { title: "Job Matching", desc: "We match your skills with verified Croatian employers in construction, tourism, agriculture, and shipbuilding. Direct interviews arranged with companies." },
@@ -120,8 +120,8 @@ export default function CroatiaVisaPage() {
           title="Croatia visa & work permit services in Nakodar."
           highlight="in Nakodar."
           chips={["EU Work Permit", "Schengen Travel", "Embassy Coordination", "Path to PR"]}
-          description="Complete Croatia work visa and work permit processing from Nakodar. EU member with Schengen access â€” construction, tourism, agriculture, shipbuilding jobs."
-          primaryCta={{ label: "Apply Now â€” Free Consultation", href: "/contactus" }}
+          description="Complete Croatia work visa and work permit processing from Nakodar. EU member with Schengen access — construction, tourism, agriculture, shipbuilding jobs."
+          primaryCta={{ label: "Apply Now — Free Consultation", href: "/contactus" }}
           stats={[
             { num: "EU", label: "Member State" },
             { num: "Schengen", label: "2023 Entry" },
@@ -181,7 +181,7 @@ export default function CroatiaVisaPage() {
                 Our Croatia Visa Services
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 600, margin: "0 auto" }}>
-                From work permit application to embassy coordination â€” our Nakodar team handles everything for your Croatia journey.
+                From work permit application to embassy coordination — our Nakodar team handles everything for your Croatia journey.
               </p>
             </div>
 
@@ -235,7 +235,7 @@ export default function CroatiaVisaPage() {
                 Job Sectors in Croatia
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 600, margin: "0 auto" }}>
-                We recruit for Croatia&apos;s top industries â€” from Adriatic coast tourism to Zagreb construction projects.
+                We recruit for Croatia&apos;s top industries — from Adriatic coast tourism to Zagreb construction projects.
               </p>
             </div>
 
@@ -274,7 +274,7 @@ export default function CroatiaVisaPage() {
 
         <SalaryCalcCTA country="Croatia" />
 
-        {/* ===== RELATED VISAS â€” internal linking ===== */}
+        {/* ===== RELATED VISAS — internal linking ===== */}
         <RelatedVisas currentSlug="croatia" />
 
         {/* ===== CTA ===== */}

@@ -11,7 +11,7 @@ import PageHero from "@/components/own/PageHero";
 export const metadata: Metadata = {
   title: "Manpower Consultancy Near Kapurthala | Shiva Travel & Manpower Consultants",
   description:
-    "Looking for overseas jobs from Kapurthala? Shiva Travel & Manpower Consultants â€” government licensed (RA B-1794), 25+ years experience. Jobs in Dubai, Saudi Arabia, Qatar, Poland, Romania. Zero candidate fees. Office near Kapurthala on Jalandhar Road, Nakodar.",
+    "Looking for overseas jobs from Kapurthala? Shiva Travel & Manpower Consultants — government licensed (RA B-1794), 25+ years experience. Jobs in Dubai, Saudi Arabia, Qatar, Poland, Romania. Zero candidate fees. Office near Kapurthala on Jalandhar Road, Nakodar.",
   keywords: [
     "manpower consultancy Kapurthala",
     "overseas recruitment agency Kapurthala",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "EmploymentAgency",
-  name: "Shiva Travel & Manpower Consultants â€” Kapurthala Region",
+  name: "Shiva Travel & Manpower Consultants — Kapurthala Region",
   description:
     "Government licensed overseas recruitment agency serving Kapurthala, Punjab. Specializing in Gulf & European placements since 2002.",
   url: "https://shivatravelconsultant.in/kapurthala",
@@ -63,7 +63,7 @@ const destinations = [
   { country: "Qatar", roles: "Construction, Transport, Maintenance, Hospitality", href: "/jobs/qatar" },
   { country: "Poland", roles: "Factory, Food Processing, Packaging, Agriculture", href: "/jobs/poland" },
   { country: "Romania", roles: "Construction, Manufacturing, Industrial Work", href: "/jobs/romania" },
-  { country: "Europe", roles: "Croatia, Bulgaria, Malta â€” Skilled & Semi-skilled", href: "/jobs/europe" },
+  { country: "Europe", roles: "Croatia, Bulgaria, Malta — Skilled & Semi-skilled", href: "/jobs/europe" },
 ];
 
 const stats = [
@@ -74,11 +74,11 @@ const stats = [
 ];
 
 const trustReasons = [
-  { title: "30 Minutes from Kapurthala Bus Stand", desc: "Our Nakodar office is 22 km from Kapurthala city via the Kapurthalaâ€“Nakodar road. Direct Punjab Roadways buses every 30 minutes (â‚¹35, 30 min). Many Kapurthala families come on Saturday afternoons after visiting Sultanpur Lodhi gurdwara." },
-  { title: "Sultanpur Lodhi & Bholath Families Welcome", desc: "We have placed 800+ workers from Kapurthala district â€” Sultanpur Lodhi, Bholath, Begowal, Phagwara Road. Religious-minded families value our transparent practice â€” no false promises, just honest assessments and verifiable license." },
+  { title: "30 Minutes from Kapurthala Bus Stand", desc: "Our Nakodar office is 22 km from Kapurthala city via the Kapurthala“Nakodar road. Direct Punjab Roadways buses every 30 minutes (₹35, 30 min). Many Kapurthala families come on Saturday afternoons after visiting Sultanpur Lodhi gurdwara." },
+  { title: "Sultanpur Lodhi & Bholath Families Welcome", desc: "We have placed 800+ workers from Kapurthala district — Sultanpur Lodhi, Bholath, Begowal, Phagwara Road. Religious-minded families value our transparent practice — no false promises, just honest assessments and verifiable license." },
   { title: "Engineering & Technical Diploma Specialty", desc: "Kapurthala has Punjab's railway coach factory legacy and engineering colleges (PLSEI etc). Workers with technical diplomas or engineering background match Romania and Poland skilled-worker shortlists perfectly. Tell us your training, we map the right country." },
-  { title: "Govt-Licensed RA B-1794", desc: "MEA-issued, ALMRA Punjab member. Verifiable on emigrate.gov.in portal. License valid through June 2027 â€” search for our agency name directly on the official site to confirm." },
-  { title: "Free Documentation Review", desc: "Bring your existing certificates â€” diploma, degree, work experience â€” and we'll tell you for FREE which countries best match your profile. No commitment, no charges for first consultation. Honest assessment first, decision second." },
+  { title: "Govt-Licensed RA B-1794", desc: "MEA-issued, ALMRA Punjab member. Verifiable on emigrate.gov.in portal. License valid through June 2027 — search for our agency name directly on the official site to confirm." },
+  { title: "Free Documentation Review", desc: "Bring your existing certificates — diploma, degree, work experience — and we'll tell you for FREE which countries best match your profile. No commitment, no charges for first consultation. Honest assessment first, decision second." },
   { title: "Family-First Counselling \u2014 Bring the Whole Family", desc: "Bring parents, spouses, in-laws. We sit with the whole family. Many Kapurthala families want to make the decision together \u2014 we welcome this approach and explain the process in Punjabi/Hindi/English." },
 ];
 
@@ -103,7 +103,7 @@ export default function KapurthalaPage() {
           title="Overseas recruitment agency near Kapurthala."
           highlight="near Kapurthala."
           chips={["15 mins from Kapurthala", "Govt-Licensed", "No Hidden Fees", "Doaba Coverage"]}
-          description="Shiva Travel & Manpower Consultants is a govt-licensed recruitment agency on Jalandhar Road, Nakodar â€” just 15 minutes from Kapurthala. 5,000+ Doaba workers placed in Gulf & Europe."
+          description="Shiva Travel & Manpower Consultants is a govt-licensed recruitment agency on Jalandhar Road, Nakodar — just 15 minutes from Kapurthala. 5,000+ Doaba workers placed in Gulf & Europe."
           primaryCta={{ label: "Book Free Consultation", href: "/contactus" }}
           stats={[
             { num: "15 min", label: "From Kapurthala" },
@@ -115,7 +115,7 @@ export default function KapurthalaPage() {
           microChip={{ value: "4.9â˜…", label: "200+ Reviews" }}
         />
 
-        {/* ===== STATS BAR â€” floating overlap card ===== */}
+        {/* ===== STATS BAR — floating overlap card ===== */}
         <StatsRibbon stats={stats} overlap={-32} />
         <div style={{ height: 40 }} aria-hidden="true" />
 
@@ -138,9 +138,9 @@ export default function KapurthalaPage() {
               items={trustReasons}
               image={{
                 src: "/shiva-manpower-nakodar-office-punjab.webp",
-                alt: "Shiva Travel & Manpower Consultants office near Kapurthala â€” licensed MEA agency RA B-1794",
+                alt: "Shiva Travel & Manpower Consultants office near Kapurthala — licensed MEA agency RA B-1794",
               }}
-              imageCaption="Our Nakodar office â€” 30 minutes from Kapurthala"
+              imageCaption="Our Nakodar office — 30 minutes from Kapurthala"
             />
           </div>
         </section>
@@ -173,10 +173,10 @@ export default function KapurthalaPage() {
           </div>
         </section>
 
-        {/* ===== TESTIMONIALS â€” shared Google Reviews component ===== */}
+        {/* ===== TESTIMONIALS — shared Google Reviews component ===== */}
         <Testimonials />
 
-        {/* ===== PUNJAB CLUSTER â€” internal linking ===== */}
+        {/* ===== PUNJAB CLUSTER — internal linking ===== */}
         <PunjabCluster currentSlug="kapurthala" />
 
         {/* ===== CTA ===== */}
@@ -187,7 +187,7 @@ export default function KapurthalaPage() {
               Ready to Start Your<br />Overseas Career?
             </h2>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: 12, maxWidth: 480, margin: "0 auto 12px" }}>
-              Visit our office at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar â€” just 15 minutes from Kapurthala city.
+              Visit our office at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar — just 15 minutes from Kapurthala city.
             </p>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "rgba(255,255,255,0.4)", marginBottom: 36 }}>
               Walk-in consultations available Monday to Saturday, 9am to 6:30pm.

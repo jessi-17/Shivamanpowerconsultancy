@@ -304,7 +304,7 @@ export default function QatarVisa() {
 
         <SalaryCalcCTA country="Qatar" />
 
-        {/* ===== RELATED VISAS â€” internal linking ===== */}
+        {/* ===== RELATED VISAS — internal linking ===== */}
         <RelatedVisas currentSlug="qatar" />
 
         {/* ===== CTA ===== */}

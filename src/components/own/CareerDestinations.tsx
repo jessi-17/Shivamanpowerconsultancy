@@ -7,6 +7,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
 const featured = [
+  { name: "USA & Guam", subtitle: "H-2B VISA · NEW", image: "/USA.png", color: "#60a5fa", href: "/jobs/usa" },
   { name: "UAE (Dubai)", subtitle: "CONSTRUCTION & TECH", image: "/UAE.jpg", color: "#c9a227", href: "/jobs/uae" },
   { name: "Poland", subtitle: "MANUFACTURING", image: "/poland-jobs-shiva-manpower.webp", color: "#dc3545", href: "/jobs/poland" },
   { name: "Romania", subtitle: "LOGISTICS & FMCG", image: "/romania-jobs-shiva-manpower.webp", color: "#0052dc", href: "/jobs/romania" },
@@ -97,7 +98,7 @@ export default function CareerDestinations() {
               e.currentTarget.style.boxShadow = "none";
             }}
           >
-            View All Opportunities ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢
+            View All Opportunities <Icon icon="lucide:arrow-right" width={16} height={16} style={{ verticalAlign: "middle", marginLeft: 4 }} />
           </Link>
         </div>
 
@@ -200,12 +201,12 @@ export default function CareerDestinations() {
               Qatar, Kuwait, Oman, Croatia, Bahrain & more.
             </p>
             <Link href="/current-demands" style={{ fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 600, color: "#60a5fa", textDecoration: "none" }}>
-              View All ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢
+              View All <Icon icon="lucide:arrow-right" width={16} height={16} style={{ verticalAlign: "middle", marginLeft: 4 }} />
             </Link>
           </div>
         </div>
 
-        {/* Additional country flags ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â hidden on mobile */}
+        {/* Additional country flags ÃƒÂ¢Ã¢â€šÂ¬Ã¢€Â hidden on mobile */}
         {!m && (
           <div
             ref={gridRef}

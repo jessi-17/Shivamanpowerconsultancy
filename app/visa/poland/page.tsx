@@ -172,7 +172,7 @@ export default function PolandVisaPage() {
 
             <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
               <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Professional Punjab office environment.webp" alt="Poland visa and work permit services at Shiva Travel Consultants Nakodar" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
+                <Image src="/shiva-manpower-nakodar-office-punjab.webp" alt="Poland visa and work permit services at Shiva Travel Consultants Nakodar" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
               </div>
               <div style={{ position: "absolute", bottom: -20, right: 24, backgroundColor: "#1e40af", borderRadius: 12, padding: "20px 28px", boxShadow: "0 8px 32px rgba(0,12,47,0.3)" }}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff", lineHeight: 1 }}>2-3</div>
@@ -289,7 +289,7 @@ export default function PolandVisaPage() {
                 Our streamlined 6-step process takes you from your first visit to our Nakodar office to landing in Poland in about 2-3 months. We handle all paperwork, employer coordination, and embassy procedures.
               </p>
               <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Professional Punjab office environment.webp" alt="Shiva Travel Consultants Nakodar office — Poland visa processing" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
+                <Image src="/shiva-manpower-nakodar-office-punjab.webp" alt="Shiva Travel Consultants Nakodar office — Poland visa processing" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
               </div>
             </div>
 

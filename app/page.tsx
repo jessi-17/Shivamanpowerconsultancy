@@ -10,6 +10,7 @@ import { breadcrumbJsonLd } from "./_lib/breadcrumb";
 const LocalCTA = dynamic(() => import("@/components/own/LocalCTA"));
 const FounderTimeline = dynamic(() => import("@/components/own/FounderTimeline"));
 const CareerDestinations = dynamic(() => import("@/components/own/CareerDestinations"));
+const H2BSpotlight = dynamic(() => import("@/components/own/H2BSpotlight"));
 const PartnersBar = dynamic(() => import("@/components/own/PartnersBar"));
 const CTASection = dynamic(() => import("@/components/own/CTASection"));
 const WhyChooseUs = dynamic(() => import("@/components/own/WhyChooseUs"));
@@ -119,6 +120,7 @@ export default function Home() {
       <FounderTimeline />
       <MobileVisitUs />
       <CareerDestinations />
+      <H2BSpotlight />
       <MobileInlineCta
         kicker="Personal reply · within 24 hrs"
         title="Tell us your skill — we'll match it."

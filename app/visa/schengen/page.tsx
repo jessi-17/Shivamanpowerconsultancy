@@ -9,7 +9,7 @@ import PageHero from "@/components/own/PageHero";
 export const metadata: Metadata = {
   title: "Schengen Visa Services in Nakodar | Europe Work Visa | Shiva Travel & Manpower Consultants",
   description:
-    "Apply for Schengen visa from Nakodar, Punjab. Work visa for 27 European countries â€” Poland, Romania, Croatia, Malta, Hungary, Czech Republic. Government licensed consultant. No hidden fees. Visit Shiva Travel & Manpower Consultants office in Nakodar.",
+    "Apply for Schengen visa from Nakodar, Punjab. Work visa for 27 European countries — Poland, Romania, Croatia, Malta, Hungary, Czech Republic. Government licensed consultant. No hidden fees. Visit Shiva Travel & Manpower Consultants office in Nakodar.",
   keywords: [
     "schengen visa nakodar",
     "schengen visa consultant nakodar",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 const countries = [
-  { name: "Poland", flag: "ðŸ‡µðŸ‡±", desc: "Highest demand for Indian workers â€” construction, manufacturing, and agriculture jobs with excellent pay. Poland is the top destination for Punjabi workers in Europe.", href: "/visa/poland" },
+  { name: "Poland", flag: "ðŸ‡µðŸ‡±", desc: "Highest demand for Indian workers — construction, manufacturing, and agriculture jobs with excellent pay. Poland is the top destination for Punjabi workers in Europe.", href: "/visa/poland" },
   { name: "Romania", flag: "ðŸ‡·ðŸ‡´", desc: "EU member with Schengen access and the lowest cost of living in Europe. Factory, farm, and construction work with employer-provided accommodation.", href: "/visa/romania" },
   { name: "Croatia", flag: "ðŸ‡­ðŸ‡·", desc: "Newest Schengen member with growing demand for skilled and semi-skilled workers in tourism, construction, and shipbuilding industries.", href: "/visa/croatia" },
   { name: "Malta", flag: "ðŸ‡²ðŸ‡¹", desc: "English-speaking EU island nation with strong demand in hospitality, healthcare, and manufacturing sectors. Great climate year-round.", href: "/visa/malta" },
@@ -35,11 +35,11 @@ const countries = [
 
 const visaProcess = [
   { step: "01", title: "Consultation at Nakodar Office", desc: "Visit our office at Golden Avenue, Nakodar or call us. We assess your profile, discuss your preferred European destination, and explain the complete Schengen visa process." },
-  { step: "02", title: "Document Preparation", desc: "We help you compile and verify all required documents â€” passport, photographs, educational certificates, work experience proof, medical reports, and financial statements." },
+  { step: "02", title: "Document Preparation", desc: "We help you compile and verify all required documents — passport, photographs, educational certificates, work experience proof, medical reports, and financial statements." },
   { step: "03", title: "Job Matching with European Employers", desc: "Our network of verified employers across 27 Schengen countries is matched to your skills and experience. You may have a video interview or direct selection by the employer." },
   { step: "04", title: "Work Permit Application", desc: "The European employer files for your work authorization with their country's immigration authority. Processing typically takes 4-10 weeks depending on the country." },
   { step: "05", title: "Visa Stamping", desc: "Once the work permit is approved, we guide you through visa stamping at the respective embassy. We prepare you with a pre-departure briefing on labour laws and your rights." },
-  { step: "06", title: "Departure to Europe", desc: "You fly to your destination country with a valid work visa. The employer arranges airport pickup and accommodation. You're now part of the Schengen zone â€” welcome to Europe!" },
+  { step: "06", title: "Departure to Europe", desc: "You fly to your destination country with a valid work visa. The employer arranges airport pickup and accommodation. You're now part of the Schengen zone — welcome to Europe!" },
 ];
 
 const requirements = [
@@ -59,17 +59,17 @@ const trustFactors = [
   { title: "Government Licensed", desc: "Registered with the Ministry of External Affairs, Government of India. License verified and renewed regularly. Fully compliant with all emigration regulations.", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
   { title: "20+ Years Experience", desc: "Established in 2002, we have over two decades of experience sending workers to Europe, the Gulf, and beyond. Thousands of successful placements from Punjab.", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
   { title: "No Hidden Fees", desc: "We maintain minimal and transparent charges with no hidden fees. All major costs including work permit and recruitment charges are borne by the employer as per international regulations.", icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
-  { title: "Nakodar Office", desc: "Walk in to our office at Golden Avenue, Jalandhar Road, Nakodar, Punjab. Face-to-face consultation, document verification, and complete visa assistance â€” all under one roof.", icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z" },
+  { title: "Nakodar Office", desc: "Walk in to our office at Golden Avenue, Jalandhar Road, Nakodar, Punjab. Face-to-face consultation, document verification, and complete visa assistance — all under one roof.", icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z" },
 ];
 
 const faqs = [
   { q: "Where can I apply for Schengen visa in Nakodar?", a: "You can apply at Shiva Travel & Manpower Consultants, Golden Avenue, Jalandhar Road, Nakodar. We are a government-licensed recruitment agency providing Schengen work visa services for all 27 European countries. Walk in or call +91 98148-20432 for an appointment." },
-  { q: "How much does Schengen visa cost from Nakodar?", a: "Through Shiva Travel & Manpower Consultants, candidates pay minimal and transparent charges with no hidden fees. The employer bears all work permit and recruitment costs. You only pay for standard government charges like passport, medical test, and police clearance â€” which are minimal." },
+  { q: "How much does Schengen visa cost from Nakodar?", a: "Through Shiva Travel & Manpower Consultants, candidates pay minimal and transparent charges with no hidden fees. The employer bears all work permit and recruitment costs. You only pay for standard government charges like passport, medical test, and police clearance — which are minimal." },
   { q: "Can I get a Schengen work visa from Punjab?", a: "Yes. Our Nakodar office processes Schengen work visas for candidates across Punjab. We handle everything from document preparation to embassy appointments. Thousands of workers from Jalandhar, Nakodar, Kapurthala, and surrounding areas have gone to Europe through us." },
   { q: "Which European countries can I work in with Schengen visa?", a: "A Schengen work visa is issued by a specific country (e.g., Poland, Romania, Croatia) but allows you to travel across all 27 Schengen countries. You must work in the country that issued your permit, but you can visit other Schengen nations during holidays." },
   { q: "How long does Schengen visa processing take?", a: "The complete process from initial consultation to departure typically takes 3-5 months. Work permit processing alone takes 4-10 weeks depending on the destination country. Poland and Romania tend to be faster. We keep you updated at every stage." },
   { q: "Is Shiva Travel authorized for Schengen visa processing?", a: "Yes. Shiva Travel & Manpower Consultants is licensed by the Ministry of External Affairs, Government of India (License No. verified). We have been sending workers to Europe since 2002 and have a proven track record of successful placements across Schengen countries." },
-  { q: "What jobs are available in Europe through Schengen visa?", a: "We recruit for construction, manufacturing, agriculture, food processing, hospitality, warehousing, and transport sectors. Common roles include factory worker, welder, mason, carpenter, farm worker, truck driver, and hotel staff. Salaries range from â‚¬700 to â‚¬1,600/month." },
+  { q: "What jobs are available in Europe through Schengen visa?", a: "We recruit for construction, manufacturing, agriculture, food processing, hospitality, warehousing, and transport sectors. Common roles include factory worker, welder, mason, carpenter, farm worker, truck driver, and hotel staff. Salaries range from €700 to €1,600/month." },
   { q: "Do I need to know a European language for Schengen work visa?", a: "Not for most manual and factory jobs. Employers provide on-site training and many workplaces have multilingual supervisors. However, learning basic phrases of the local language helps in daily life. We can guide you on language resources before departure." },
 ];
 
@@ -137,8 +137,8 @@ export default function SchengenVisaPage() {
           title="Schengen visa services in Nakodar."
           highlight="in Nakodar."
           chips={["27 Countries", "Work Permit Included", "Embassy Coordination", "No Hidden Fees"]}
-          description="Schengen work visas for 27 European countries from our Nakodar office. Complete visa processing â€” document preparation to embassy stamping. Government licensed."
-          primaryCta={{ label: "Apply Now â€” It's Free", href: "/contactus" }}
+          description="Schengen work visas for 27 European countries from our Nakodar office. Complete visa processing — document preparation to embassy stamping. Government licensed."
+          primaryCta={{ label: "Apply Now — It's Free", href: "/contactus" }}
           stats={[
             { num: "27", label: "Schengen Countries" },
             { num: "90 days", label: "Travel Validity" },
@@ -178,10 +178,10 @@ export default function SchengenVisaPage() {
                 The Schengen Area is a zone of 27 European countries that have abolished passport controls at their mutual borders. Once you have a work visa for any Schengen country, you can travel freely across all 27 nations during your holidays and time off.
               </p>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#43474d", lineHeight: 1.7, marginBottom: 20 }}>
-                For Indian workers, a Schengen work visa is the gateway to Europe. You get a legal work permit in one country with the freedom to explore France, Germany, Italy, Spain, and 23 other nations â€” all on a single visa.
+                For Indian workers, a Schengen work visa is the gateway to Europe. You get a legal work permit in one country with the freedom to explore France, Germany, Italy, Spain, and 23 other nations — all on a single visa.
               </p>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#43474d", lineHeight: 1.7 }}>
-                Shiva Travel &amp; Manpower Consultants processes work visas for the countries with the highest demand for Indian workers â€” Poland, Romania, Croatia, Malta, Hungary, and Czech Republic.
+                Shiva Travel &amp; Manpower Consultants processes work visas for the countries with the highest demand for Indian workers — Poland, Romania, Croatia, Malta, Hungary, and Czech Republic.
               </p>
             </div>
 
@@ -243,7 +243,7 @@ export default function SchengenVisaPage() {
                 Our 6-Step Schengen Visa Process
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#43474d", lineHeight: 1.7, marginBottom: 28 }}>
-                From your first visit to our Nakodar office to your flight to Europe â€” we handle everything. The complete process takes about 3-5 months. All paperwork, employer coordination, and embassy appointments are managed by our experienced team.
+                From your first visit to our Nakodar office to your flight to Europe — we handle everything. The complete process takes about 3-5 months. All paperwork, employer coordination, and embassy appointments are managed by our experienced team.
               </p>
               <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
                 <Image src="/shiva-manpower-nakodar-office-punjab.webp" alt="Schengen visa consultation at Shiva Travel Nakodar" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
@@ -273,7 +273,7 @@ export default function SchengenVisaPage() {
               Documents Required for Schengen Work Visa
             </h2>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, textAlign: "center", maxWidth: 600, margin: "0 auto 48px" }}>
-              Our team at the Nakodar office will help you prepare and verify every document. Don&apos;t worry if you&apos;re missing something â€” we guide you through the entire process.
+              Our team at the Nakodar office will help you prepare and verify every document. Don&apos;t worry if you&apos;re missing something — we guide you through the entire process.
             </p>
             <div style={{ backgroundColor: "#f8f9ff", borderRadius: 16, padding: 32, border: "1px solid #e5e7eb" }}>
               <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
@@ -335,7 +335,7 @@ export default function SchengenVisaPage() {
 
         <SalaryCalcCTA country="Europe" />
 
-        {/* ===== RELATED VISAS â€” internal linking ===== */}
+        {/* ===== RELATED VISAS — internal linking ===== */}
         <RelatedVisas currentSlug="schengen" />
 
         {/* ===== CTA ===== */}

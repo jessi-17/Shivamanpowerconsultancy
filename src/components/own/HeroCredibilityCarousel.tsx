@@ -63,7 +63,7 @@ export default function HeroCredibilityCarousel() {
     >
       {/* Wrapper for card + cup (cup bleeds outside card edges) */}
       <div style={{ position: "relative", width: "100%" }}>
-        {/* Image card â€” overflow:hidden directly clips the slide track */}
+        {/* Image card — overflow:hidden directly clips the slide track */}
         <div
           style={{
             position: "relative",
@@ -99,7 +99,7 @@ export default function HeroCredibilityCarousel() {
               >
                 <Image
                   src={src}
-                  alt={`Real placement story ${i + 1} â€” Shiva Travel & Manpower Consultants`}
+                  alt={`Real placement story ${i + 1} — Shiva Travel & Manpower Consultants`}
                   fill
                   sizes="(max-width: 768px) 100vw, 400px"
                   priority={i === 0}
@@ -110,7 +110,7 @@ export default function HeroCredibilityCarousel() {
           </div>
         </div>
 
-        {/* Gold cup â€” sibling of card, positioned to bleed outside */}
+        {/* Gold cup — sibling of card, positioned to bleed outside */}
         <div
           style={{
             position: "absolute",
@@ -125,7 +125,7 @@ export default function HeroCredibilityCarousel() {
         >
           <Image
             src="/award-trophy-shiva-manpower.png"
-            alt="Top-rated recruitment agency Punjab â€” 1000+ successful overseas placements"
+            alt="Top-rated recruitment agency Punjab — 1000+ successful overseas placements"
             fill
             sizes="110px"
             style={{ objectFit: "contain" }}

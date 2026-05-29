@@ -45,7 +45,7 @@ const ourServices = [
 ];
 
 const visaProcess = [
-  { step: "01", title: "Consultation & Assessment", desc: "Visit our Nakodar office or call us. We assess your skills, experience, and preferred job type in Bahrain. We advise on the best visa option â€” work visa or Flexi Permit." },
+  { step: "01", title: "Consultation & Assessment", desc: "Visit our Nakodar office or call us. We assess your skills, experience, and preferred job type in Bahrain. We advise on the best visa option — work visa or Flexi Permit." },
   { step: "02", title: "Document Preparation", desc: "We help prepare your passport, educational certificates, experience letters, and photographs. All documents are verified and organized as per Bahrain embassy requirements." },
   { step: "03", title: "GAMCA Medical & Attestation", desc: "We schedule your GAMCA medical examination and handle complete document attestation from HRD, MEA, and Bahrain Embassy." },
   { step: "04", title: "Visa Application & E-Migrate", desc: "We submit your visa application and complete your E-Migrate registration. For Flexi Permits, we handle the LMRA application process." },
@@ -304,7 +304,7 @@ export default function BahrainVisa() {
 
         <SalaryCalcCTA country="Bahrain" />
 
-        {/* ===== RELATED VISAS â€” internal linking ===== */}
+        {/* ===== RELATED VISAS — internal linking ===== */}
         <RelatedVisas currentSlug="bahrain" />
 
         {/* ===== CTA ===== */}

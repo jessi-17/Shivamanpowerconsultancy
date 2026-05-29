@@ -19,18 +19,18 @@ const milestones = [
   { year: "2002", title: "Journey Started", desc: "Mr. Tarsem Lal began his journey in the overseas manpower and emigration space, laying the foundation for what would become a trusted name in recruitment." },
   { year: "2014", title: "First Office Opened", desc: "Established Shiva Travel & Manpower Consultants as an independent consultancy with our first office, serving families across India." },
   { year: "2017", title: "Punjab Govt. Approved", desc: "Received official approval from the Government of Punjab to operate as a licensed travel and manpower consultancy in the state." },
-  { year: "2023", title: "MEA Licensed (RA B-1794)", desc: "Granted the Recruiting Agent license by the Ministry of External Affairs, Government of India â€” the federal credential required to deploy workers overseas." },
+  { year: "2023", title: "MEA Licensed (RA B-1794)", desc: "Granted the Recruiting Agent license by the Ministry of External Affairs, Government of India — the federal credential required to deploy workers overseas." },
   { year: "2024", title: "ALMRA Member", desc: "Became a registered member of ALMRA, reinforcing our commitment to ethical and regulated overseas recruitment." },
-  { year: "2026", title: "RLA Licensed", desc: "Added RLA accreditation alongside our existing MEA license â€” strengthening our compliance credentials and continuing to provide the best opportunities to our brothers across India." },
+  { year: "2026", title: "RLA Licensed", desc: "Added RLA accreditation alongside our existing MEA license — strengthening our compliance credentials and continuing to provide the best opportunities to our brothers across India." },
 ];
 
 const values = [
-  { icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5", title: "Minimal & Transparent Charges", desc: "We keep our service charges affordable and fully transparent. No hidden fees, no surprise deductions â€” every cost is communicated upfront before you proceed." },
+  { icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5", title: "Minimal & Transparent Charges", desc: "We keep our service charges affordable and fully transparent. No hidden fees, no surprise deductions — every cost is communicated upfront before you proceed." },
   { icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z", title: "Government Licensed", desc: "We hold RA License B-1794 from the Ministry of External Affairs, valid through June 2027. Fully compliant with E-Migrate regulations." },
   { icon: "M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4L12 14.01l-3-3", title: "Ethical Recruitment", desc: "We follow ILO fair recruitment principles. No deception, no hidden costs, no passport retention. Every worker is briefed on their rights." },
-  { icon: "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75", title: "End-to-End Support", desc: "From document preparation to visa processing, pre-departure orientation to post-arrival follow-up â€” we support workers through every step." },
+  { icon: "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75", title: "End-to-End Support", desc: "From document preparation to visa processing, pre-departure orientation to post-arrival follow-up — we support workers through every step." },
   { icon: "M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2", title: "Verified Employers Only", desc: "We only work with employers who provide proper contracts, accommodation, and comply with local labour laws." },
-  { icon: "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z", title: "Community First", desc: "Based in Nakodar, we serve the Doaba region â€” Jalandhar, Kapurthala, Nawanshahr, Hoshiarpur. Our doors are always open." },
+  { icon: "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z", title: "Community First", desc: "Based in Nakodar, we serve the Doaba region — Jalandhar, Kapurthala, Nawanshahr, Hoshiarpur. Our doors are always open." },
 ];
 
 export default function AboutUs() {
@@ -72,7 +72,7 @@ export default function AboutUs() {
             role: "Founder & Managing Director",
             meta: "Founded Shiva Manpower in 2002 Â· Nakodar, Punjab",
             avatar: "/founder.webp",
-            avatarAlt: "Mr. Tarsem Lal â€” Founder of Shiva Travel Manpower Consultants",
+            avatarAlt: "Mr. Tarsem Lal — Founder of Shiva Travel Manpower Consultants",
             linkedinUrl: "https://www.linkedin.com/in/tarsem-bhagat-8151282a/",
           }}
         />
@@ -101,13 +101,13 @@ export default function AboutUs() {
           kicker="The Difference"
           title="What licensed actually means."
           highlight="actually means."
-          intro="Words like 'licensed' get thrown around. Here's what it concretely means in your hands when something goes wrong â€” and what it doesn't, with the alternatives."
+          intro="Words like 'licensed' get thrown around. Here's what it concretely means in your hands when something goes wrong — and what it doesn't, with the alternatives."
           columns={{ us: "Shiva Manpower", middle: "Unlicensed Agents", right: "DIY Visa" }}
           rows={[
             { criterion: "MEA RA License", us: "RA B-1794, valid till 2027", middle: "None", right: "Not applicable" },
             { criterion: "E-Migrate Filing", us: "Under our RA registration", middle: "Often fake or skipped", right: "You file yourself" },
-            { criterion: "Employer Verification", us: "Before any contract signed", middle: "Rarely â€” fake jobs common", right: "Up to you to verify" },
-            { criterion: "Charges", us: "Minimal & transparent, in writing", middle: "Hidden + 3â€“5Ã— higher", right: "Govt visa fee only" },
+            { criterion: "Employer Verification", us: "Before any contract signed", middle: "Rarely — fake jobs common", right: "Up to you to verify" },
+            { criterion: "Charges", us: "Minimal & transparent, in writing", middle: "Hidden + 3“5Ã— higher", right: "Govt visa fee only" },
             { criterion: "If Visa Fails", us: "Refund policy in writing", middle: "Money lost", right: "Not applicable" },
             { criterion: "Legal Recourse", us: "MEA + Indian courts", middle: "Agent disappears", right: "Minimal" },
           ]}
@@ -122,10 +122,10 @@ export default function AboutUs() {
           presentLabel="Latest"
         />
 
-        {/* ===== WHAT WE STAND FOR â€” with hover ===== */}
+        {/* ===== WHAT WE STAND FOR — with hover ===== */}
         <AboutClient values={values} />
 
-        {/* ===== GOVERNMENT LICENSE â€” editorial credential block ===== */}
+        {/* ===== GOVERNMENT LICENSE — editorial credential block ===== */}
         <div role="region" aria-label="Government license" style={{ width: "100%", backgroundColor: "#f4f6fb", padding: "120px 0" }}>
           <div style={{ maxWidth: "var(--max-width)", margin: "0 auto", padding: "0 60px" }}>
             {/* Header */}
@@ -140,13 +140,13 @@ export default function AboutUs() {
                 The paperwork that backs every claim.
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.6, margin: 0, maxWidth: 640 }}>
-                Every line of copy on this site is backed by a government-issued document. Here&apos;s the credential â€” verifiable on the Ministry of External Affairs portal.
+                Every line of copy on this site is backed by a government-issued document. Here&apos;s the credential — verifiable on the Ministry of External Affairs portal.
               </p>
             </div>
 
-            {/* Featured credential â€” split layout, wraps on narrow viewports */}
+            {/* Featured credential — split layout, wraps on narrow viewports */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 64, alignItems: "start", marginBottom: 48 }}>
-              {/* LEFT â€” Hero number lockup */}
+              {/* LEFT — Hero number lockup */}
               <div>
                 <div style={{ fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 700, color: "#64748b", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 16 }}>
                   Recruiting Agent License
@@ -172,7 +172,7 @@ export default function AboutUs() {
                 </div>
               </div>
 
-              {/* RIGHT â€” Spec rows */}
+              {/* RIGHT — Spec rows */}
               <div style={{ borderTop: "1px solid rgba(11,28,48,0.12)" }}>
                 {[
                   { label: "Agency", value: "Shiva Travel & Manpower Consultants" },
@@ -262,7 +262,7 @@ export default function AboutUs() {
           kicker="Verified Employers"
           title="Where 5,000+ workers we placed are now."
           highlight="are now."
-          intro="Two decades of placements across the Gulf and Europe. A partial list of employer types currently hosting our workers â€” every one verified before a single CV was shared."
+          intro="Two decades of placements across the Gulf and Europe. A partial list of employer types currently hosting our workers — every one verified before a single CV was shared."
           employers={[
             { name: "Construction Contractor", sector: "Infrastructure", country: "ðŸ‡¦ðŸ‡ª" },
             { name: "Hospitality Group", sector: "Hotels & F&B", country: "ðŸ‡¦ðŸ‡ª" },

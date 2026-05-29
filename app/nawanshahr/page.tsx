@@ -11,7 +11,7 @@ import PageHero from "@/components/own/PageHero";
 export const metadata: Metadata = {
   title: "Manpower Consultancy Near Nawanshahr | Shiva Travel & Manpower Consultants",
   description:
-    "Looking for overseas jobs from Nawanshahr? Shiva Travel & Manpower Consultants â€” government licensed (RA B-1794), 25+ years experience. Jobs in Dubai, Saudi Arabia, Qatar, Poland, Romania. Zero candidate fees. Office near Nawanshahr on Jalandhar Road, Nakodar.",
+    "Looking for overseas jobs from Nawanshahr? Shiva Travel & Manpower Consultants — government licensed (RA B-1794), 25+ years experience. Jobs in Dubai, Saudi Arabia, Qatar, Poland, Romania. Zero candidate fees. Office near Nawanshahr on Jalandhar Road, Nakodar.",
   keywords: [
     "manpower consultancy Nawanshahr",
     "overseas recruitment agency Nawanshahr",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "EmploymentAgency",
-  name: "Shiva Travel & Manpower Consultants â€” Nawanshahr Region",
+  name: "Shiva Travel & Manpower Consultants — Nawanshahr Region",
   description:
     "Government licensed overseas recruitment agency serving Nawanshahr (Shaheed Bhagat Singh Nagar), Punjab. Specializing in Gulf & European placements since 2002.",
   url: "https://shivatravelconsultant.in/nawanshahr",
@@ -63,7 +63,7 @@ const destinations = [
   { country: "Qatar", roles: "Construction, Transport, Maintenance, Hospitality", href: "/jobs/qatar" },
   { country: "Poland", roles: "Factory, Food Processing, Packaging, Agriculture", href: "/jobs/poland" },
   { country: "Romania", roles: "Construction, Manufacturing, Industrial Work", href: "/jobs/romania" },
-  { country: "Europe", roles: "Croatia, Bulgaria, Malta â€” Skilled & Semi-skilled", href: "/jobs/europe" },
+  { country: "Europe", roles: "Croatia, Bulgaria, Malta — Skilled & Semi-skilled", href: "/jobs/europe" },
 ];
 
 const stats = [
@@ -74,10 +74,10 @@ const stats = [
 ];
 
 const trustReasons = [
-  { title: "1-Hour from Nawanshahr via Banga Route", desc: "Our office is 45 km from Nawanshahr (SBS Nagar) city on Jalandhar Road, Nakodar. Direct buses every 30 min via Banga route (â‚¹70, 1 hour). Also accessible via Phagwara â€” slightly longer at 1 hour 15 min." },
-  { title: "Agricultural Worker Specialty â€” Banga Belt", desc: "Many Nawanshahr (SBS Nagar) families have agricultural backgrounds â€” Banga sugar belt, Balachaur farming. Poland and Romania actively recruit Indian workers for agriculture, food processing, dairy farming. Salaries 5â€“8x typical India farm wages." },
+  { title: "1-Hour from Nawanshahr via Banga Route", desc: "Our office is 45 km from Nawanshahr (SBS Nagar) city on Jalandhar Road, Nakodar. Direct buses every 30 min via Banga route (₹70, 1 hour). Also accessible via Phagwara — slightly longer at 1 hour 15 min." },
+  { title: "Agricultural Worker Specialty — Banga Belt", desc: "Many Nawanshahr (SBS Nagar) families have agricultural backgrounds — Banga sugar belt, Balachaur farming. Poland and Romania actively recruit Indian workers for agriculture, food processing, dairy farming. Salaries 5“8x typical India farm wages." },
   { title: "Sugar Mill & Industrial Worker Tie-Ups", desc: "Banga sugar mill workers and Garhshankar industrial area workers have direct experience that matches Poland food processing and Romania manufacturing employer demands. Pre-existing skills translate to higher overseas pay grades." },
-  { title: "Skilled Trade Placements â€” Welders, Fitters, Electricians", desc: "Welders, electricians and fitters from Nawanshahr district routinely placed in Saudi NEOM, UAE Etihad Rail, Qatar Lusail. Highest demand, highest salaries â€” â‚¹85kâ€“1.3L monthly + free accommodation." },
+  { title: "Skilled Trade Placements — Welders, Fitters, Electricians", desc: "Welders, electricians and fitters from Nawanshahr district routinely placed in Saudi NEOM, UAE Etihad Rail, Qatar Lusail. Highest demand, highest salaries — ₹85k“1.3L monthly + free accommodation." },
   { title: "Govt-Licensed RA B-1794", desc: "MEA-issued, valid through June 2027. E-Migrate registered, ALMRA Punjab member. Verifiable on official emigrate.gov.in portal. Unlike unlicensed agents in Banga/Balachaur, we handle every step under government regulation." },
   { title: "Documentation Help in Plain Punjabi", desc: "Our team explains Punjabi forms, MEA paperwork, E-Migrate process in plain Punjabi. Bring your family for the consultation \u2014 we welcome elders. Many Nawanshahr families prefer Punjabi-only briefings; we are fluent and patient." },
 ];
@@ -103,7 +103,7 @@ export default function NawanshahrPage() {
           title="Overseas recruitment agency near Nawanshahr."
           highlight="near Nawanshahr."
           chips={["40 mins from Nawanshahr", "Govt-Licensed", "No Hidden Fees", "20+ Years"]}
-          description="Shiva Travel & Manpower Consultants is a govt-licensed recruitment agency on Jalandhar Road, Nakodar â€” about 40 minutes from Nawanshahr (Shaheed Bhagat Singh Nagar). 5,000+ Doaba workers placed."
+          description="Shiva Travel & Manpower Consultants is a govt-licensed recruitment agency on Jalandhar Road, Nakodar — about 40 minutes from Nawanshahr (Shaheed Bhagat Singh Nagar). 5,000+ Doaba workers placed."
           primaryCta={{ label: "Book Free Consultation", href: "/contactus" }}
           stats={[
             { num: "40 min", label: "From Nawanshahr" },
@@ -115,7 +115,7 @@ export default function NawanshahrPage() {
           microChip={{ value: "4.9â˜…", label: "200+ Reviews" }}
         />
 
-        {/* ===== STATS BAR â€” floating overlap card ===== */}
+        {/* ===== STATS BAR — floating overlap card ===== */}
         <StatsRibbon stats={stats} overlap={-32} />
         <div style={{ height: 40 }} aria-hidden="true" />
 
@@ -138,9 +138,9 @@ export default function NawanshahrPage() {
               items={trustReasons}
               image={{
                 src: "/shiva-manpower-nakodar-office-punjab.webp",
-                alt: "Shiva Travel & Manpower Consultants office serving Nawanshahr (SBS Nagar) â€” licensed MEA agency RA B-1794",
+                alt: "Shiva Travel & Manpower Consultants office serving Nawanshahr (SBS Nagar) — licensed MEA agency RA B-1794",
               }}
-              imageCaption="Our Nakodar office â€” 1 hour from Nawanshahr"
+              imageCaption="Our Nakodar office — 1 hour from Nawanshahr"
             />
           </div>
         </section>
@@ -173,10 +173,10 @@ export default function NawanshahrPage() {
           </div>
         </section>
 
-        {/* ===== TESTIMONIALS â€” shared Google Reviews component ===== */}
+        {/* ===== TESTIMONIALS — shared Google Reviews component ===== */}
         <Testimonials />
 
-        {/* ===== PUNJAB CLUSTER â€” internal linking ===== */}
+        {/* ===== PUNJAB CLUSTER — internal linking ===== */}
         <PunjabCluster currentSlug="nawanshahr" />
 
         {/* ===== CTA ===== */}
@@ -187,7 +187,7 @@ export default function NawanshahrPage() {
               Ready to Start Your<br />Overseas Career?
             </h2>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: 12, maxWidth: 480, margin: "0 auto 12px" }}>
-              Visit our office at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar â€” about 40 minutes from Nawanshahr (Shaheed Bhagat Singh Nagar).
+              Visit our office at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar — about 40 minutes from Nawanshahr (Shaheed Bhagat Singh Nagar).
             </p>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "rgba(255,255,255,0.4)", marginBottom: 36 }}>
               Walk-in consultations available Monday to Saturday, 9am to 6:30pm.

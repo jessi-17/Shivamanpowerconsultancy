@@ -15,7 +15,7 @@ const ADDRESS_LINE2 = "Jalandhar Road, Nakodar, Punjab 144040";
 const PHONE_CALL = "+91 98148-20432";
 const PHONE_CALL_TEL = "+919814820432";
 const PHONE_WA = "919815358832";
-const HOURS = "Mon â€“ Sat Â· 9:00 AM â€“ 6:30 PM";
+const HOURS = "Mon “ Sat Â· 9:00 AM “ 6:30 PM";
 
 const GOOGLE_MAPS_URL = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
   ADDRESS_FULL + ", India"
@@ -35,7 +35,7 @@ export default function MobileVisitUs() {
           Visit Us in Nakodar
         </div>
         <div style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "#3b4858", lineHeight: 1.5 }}>
-          Drop in for a free consultation. No appointment needed â€” we&rsquo;re open 6 days a week.
+          Drop in for a free consultation. No appointment needed — we&rsquo;re open 6 days a week.
         </div>
       </div>
 
@@ -165,7 +165,7 @@ export default function MobileVisitUs() {
             </div>
           </div>
 
-          {/* CTAs â€” Get Directions (primary) */}
+          {/* CTAs — Get Directions (primary) */}
           <a
             href={GOOGLE_MAPS_URL}
             target="_blank"
@@ -194,7 +194,7 @@ export default function MobileVisitUs() {
             Get Directions on Google Maps
           </a>
 
-          {/* CTAs â€” Call + WhatsApp side by side */}
+          {/* CTAs — Call + WhatsApp side by side */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
             <a
               href={`tel:${PHONE_CALL_TEL}`}

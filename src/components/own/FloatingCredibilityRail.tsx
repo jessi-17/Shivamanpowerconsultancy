@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-// Subset of placement photos â€” using ~10 to keep bandwidth in check across every page
+// Subset of placement photos — using ~10 to keep bandwidth in check across every page
 const images = [
   "/WhatsApp Image 2026-05-09 at 5.04.42 PM.jpeg",
   "/WhatsApp Image 2026-05-09 at 5.07.06 PM.jpeg",
@@ -57,7 +57,7 @@ export default function FloatingCredibilityRail() {
     >
       {/* Card + cup wrapper */}
       <div style={{ position: "relative", width: "100%" }}>
-        {/* Dismiss button â€” top-left corner of card (cup occupies top-right) */}
+        {/* Dismiss button — top-left corner of card (cup occupies top-right) */}
         <button
           type="button"
           onClick={() => {
@@ -101,7 +101,7 @@ export default function FloatingCredibilityRail() {
         </button>
 
 
-        {/* Image card â€” overflow:hidden directly */}
+        {/* Image card — overflow:hidden directly */}
         <div
           style={{
             position: "relative",
@@ -149,7 +149,7 @@ export default function FloatingCredibilityRail() {
           </div>
         </div>
 
-        {/* Gold cup â€” sibling of card */}
+        {/* Gold cup — sibling of card */}
         <div
           style={{
             position: "absolute",

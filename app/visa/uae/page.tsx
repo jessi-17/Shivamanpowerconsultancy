@@ -166,7 +166,7 @@ export default function UAEVisaPage() {
 
             <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
               <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Professional Punjab office environment.webp" alt="UAE Dubai visa services at Shiva Travel Nakodar office" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
+                <Image src="/shiva-manpower-nakodar-office-punjab.webp" alt="UAE Dubai visa services at Shiva Travel Nakodar office" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
               </div>
               <div style={{ position: "absolute", bottom: -20, right: 24, backgroundColor: "#1e40af", borderRadius: 12, padding: "20px 28px", boxShadow: "0 8px 32px rgba(0,12,47,0.3)" }}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff", lineHeight: 1 }}>1000+</div>
@@ -281,7 +281,7 @@ export default function UAEVisaPage() {
                 Our streamlined 6-step process gets you from our Nakodar office to the UAE in 4-8 weeks. We handle all paperwork including GAMCA medical, attestation, E-Migrate, and visa stamping.
               </p>
               <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Professional Punjab office environment.webp" alt="Shiva Travel Nakodar office - UAE visa processing" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
+                <Image src="/shiva-manpower-nakodar-office-punjab.webp" alt="Shiva Travel Nakodar office - UAE visa processing" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
               </div>
             </div>
 

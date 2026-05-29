@@ -23,21 +23,21 @@ const jobCategories = [
 const whyRomania = [
   { title: "EU Member with Schengen Access", desc: "Romania joined the Schengen area, meaning your Romanian work permit allows visa-free travel across 27 European countries during holidays." },
   { title: "Growing Demand for Workers", desc: "Romania's rapid economic growth has created severe labour shortages in construction, manufacturing, and agriculture. The government is actively recruiting foreign workers." },
-  { title: "Affordable Living", desc: "Romania has one of the lowest costs of living in the EU. Your salary goes much further here â€” rent, food, and transport are very affordable compared to Western Europe." },
+  { title: "Affordable Living", desc: "Romania has one of the lowest costs of living in the EU. Your salary goes much further here — rent, food, and transport are very affordable compared to Western Europe." },
   { title: "Path to EU Residency", desc: "After 5 years of legal work, you can apply for long-term residence. This gives you the right to live and work in any EU country." },
   { title: "Pleasant Climate", desc: "Romania has four distinct seasons with warm summers perfect for agriculture work. Winters are cold but not as harsh as Poland or the Baltics." },
   { title: "Friendly People", desc: "Romanians are known for their warmth and hospitality. There's a growing Indian community, especially in Bucharest and major industrial cities." },
 ];
 
 const salaryRanges = [
-  { role: "Factory Worker", ron: "RON 3,700 â€“ 5,000", eur: "â‚¬750 â€“ â‚¬1,000", inr: "â‚¹68,000 â€“ â‚¹92,000" },
-  { role: "Construction Worker", ron: "RON 4,000 â€“ 6,000", eur: "â‚¬800 â€“ â‚¬1,200", inr: "â‚¹74,000 â€“ â‚¹1,10,000" },
-  { role: "Welder", ron: "RON 4,500 â€“ 7,000", eur: "â‚¬900 â€“ â‚¬1,400", inr: "â‚¹83,000 â€“ â‚¹1,29,000" },
-  { role: "Farm Worker", ron: "RON 3,300 â€“ 4,500", eur: "â‚¬660 â€“ â‚¬900", inr: "â‚¹61,000 â€“ â‚¹83,000" },
-  { role: "Truck Driver", ron: "RON 5,000 â€“ 8,000", eur: "â‚¬1,000 â€“ â‚¬1,600", inr: "â‚¹92,000 â€“ â‚¹1,48,000" },
-  { role: "Meat Processing", ron: "RON 3,500 â€“ 5,000", eur: "â‚¬700 â€“ â‚¬1,000", inr: "â‚¹65,000 â€“ â‚¹92,000" },
-  { role: "Forklift Operator", ron: "RON 4,000 â€“ 5,500", eur: "â‚¬800 â€“ â‚¬1,100", inr: "â‚¹74,000 â€“ â‚¹1,02,000" },
-  { role: "Hotel Staff", ron: "RON 3,300 â€“ 4,500", eur: "â‚¬660 â€“ â‚¬900", inr: "â‚¹61,000 â€“ â‚¹83,000" },
+  { role: "Factory Worker", ron: "RON 3,700 “ 5,000", eur: "€750 “ €1,000", inr: "₹68,000 “ ₹92,000" },
+  { role: "Construction Worker", ron: "RON 4,000 “ 6,000", eur: "€800 “ €1,200", inr: "₹74,000 “ ₹1,10,000" },
+  { role: "Welder", ron: "RON 4,500 “ 7,000", eur: "€900 “ €1,400", inr: "₹83,000 “ ₹1,29,000" },
+  { role: "Farm Worker", ron: "RON 3,300 “ 4,500", eur: "€660 “ €900", inr: "₹61,000 “ ₹83,000" },
+  { role: "Truck Driver", ron: "RON 5,000 “ 8,000", eur: "€1,000 “ €1,600", inr: "₹92,000 “ ₹1,48,000" },
+  { role: "Meat Processing", ron: "RON 3,500 “ 5,000", eur: "€700 “ €1,000", inr: "₹65,000 “ ₹92,000" },
+  { role: "Forklift Operator", ron: "RON 4,000 “ 5,500", eur: "€800 “ €1,100", inr: "₹74,000 “ ₹1,02,000" },
+  { role: "Hotel Staff", ron: "RON 3,300 “ 4,500", eur: "€660 “ €900", inr: "₹61,000 “ ₹83,000" },
 ];
 
 const visaProcess = [
@@ -52,7 +52,7 @@ const visaProcess = [
 const faqs = [
   { q: "Is Romania in the EU?", a: "Yes. Romania has been an EU member since 2007 and joined the Schengen area recently. Your Romanian work permit gives you access to travel across all Schengen countries." },
   { q: "Do I need to know Romanian?", a: "Not for most manual/factory jobs. Employers provide on-site training and many have multilingual supervisors. Learning basic Romanian helps with daily life and is relatively easy for Hindi speakers." },
-  { q: "How is the weather?", a: "Romania has four seasons. Summers (June-August) are warm, 25-35Â°C â€” great for outdoor work. Winters (December-February) are cold, -5Â°C to -10Â°C. All accommodation is heated." },
+  { q: "How is the weather?", a: "Romania has four seasons. Summers (June-August) are warm, 25-35Â°C — great for outdoor work. Winters (December-February) are cold, -5Â°C to -10Â°C. All accommodation is heated." },
   { q: "Is Romania cheaper than Poland?", a: "Yes, Romania generally has a lower cost of living than Poland. This means your savings potential is higher even if the base salary is slightly lower." },
   { q: "How long does the visa process take?", a: "Romanian work permits typically take 4-8 weeks. The entire process from application to departure takes about 3-4 months. We handle all paperwork and guide you through every step." },
   { q: "Do I need to pay any fees?", a: "No. Through Shiva Travel & Manpower Consultants, we maintain minimal and transparent charges with no hidden fees. The employer bears most costs including work permit and recruitment charges as per regulations." },
@@ -93,13 +93,13 @@ export default function JobsInRomania() {
           highlight="in Romania."
           chips={["EU Work Permit", "Schengen Travel", "Low Cost of Living", "EU Labour Rights"]}
           description="EU work permit with Schengen travel access, affordable cost of living, and thousands of verified job openings in construction, manufacturing, and agriculture."
-          primaryCta={{ label: "Apply Now â€” It's Free", href: "/contactus" }}
+          primaryCta={{ label: "Apply Now — It's Free", href: "/contactus" }}
           stats={[
             { num: "500+", label: "Placed in Romania" },
-            { num: "RON 3â€“5K", label: "Avg Monthly" },
+            { num: "RON 3“5K", label: "Avg Monthly" },
             { num: "EU", label: "Member State" },
           ]}
-          image={{ src: "/romania-jobs-shiva-manpower.webp", alt: "Romania job opportunities â€” factory and construction work" }}
+          image={{ src: "/romania-jobs-shiva-manpower.webp", alt: "Romania job opportunities — factory and construction work" }}
           imageSeal={{ title: "500+ Placed in Romania", subtitle: "Construction Â· Manufacturing Â· Agriculture Â· Logistics" }}
           microChip={{ value: "EU", label: "Work Permit" }}
         />
@@ -130,7 +130,7 @@ export default function JobsInRomania() {
                 Why Thousands from Punjab Choose Romania
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 600, margin: "0 auto" }}>
-                Romania offers EU-level opportunities with affordable living â€” from Schengen access to a clear path to permanent residency.
+                Romania offers EU-level opportunities with affordable living — from Schengen access to a clear path to permanent residency.
               </p>
             </div>
 
@@ -190,7 +190,7 @@ export default function JobsInRomania() {
               <div style={{ padding: "16px 20px", backgroundColor: "#1e40af", borderRadius: 12 }}>
                 <div style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#93c5fd", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 4 }}>Cost of Living</div>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff" }}>40% Lower</div>
-                <div style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "rgba(255,255,255,0.6)" }}>than Western Europe â€” maximize your savings</div>
+                <div style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "rgba(255,255,255,0.6)" }}>than Western Europe — maximize your savings</div>
               </div>
             </div>
 

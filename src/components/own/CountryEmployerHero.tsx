@@ -68,7 +68,7 @@ export default function CountryEmployerHero({
           alignItems: m ? "stretch" : "center",
         }}
       >
-        {/* LEFT â€” Content */}
+        {/* LEFT — Content */}
         <div style={{ flex: "1 1 55%" }}>
           {/* Badge */}
           <div className="ceh-animate" style={{ marginBottom: 20 }}>
@@ -191,7 +191,7 @@ export default function CountryEmployerHero({
           </div>
         </div>
 
-        {/* RIGHT â€” Inquiry Form */}
+        {/* RIGHT — Inquiry Form */}
         <div
           className="ceh-animate"
           id="inquiry-form"
@@ -215,7 +215,7 @@ export default function CountryEmployerHero({
               fontFamily: "var(--font-body)", fontSize: 13,
               color: "var(--on-surface-variant)", lineHeight: 1.5,
             }}>
-              Tell us your requirements â€” we&apos;ll respond within 24 hours.
+              Tell us your requirements — we&apos;ll respond within 24 hours.
             </p>
           </div>
 

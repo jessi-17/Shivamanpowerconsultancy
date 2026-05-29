@@ -151,6 +151,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       images: [img("factory-worker-jobs-dubai-uae.jpg")],
     },
     {
+      url: `${baseUrl}/jobs/usa`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+      images: [img("USA.png"), img("USA0 guam.png")],
+    },
+    {
       url: `${baseUrl}/nakodar`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -228,6 +235,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       images: [img("shiva-manpower-nakodar-office-punjab.webp")],
     },
     {
+      url: `${baseUrl}/visa/usa-h2b`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+      images: [img("USA.png"), img("USA0 guam.png")],
+    },
+    {
       url: `${baseUrl}/employers`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -286,6 +300,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.7,
       images: [img("carousel 2.webp")],
+    },
+    {
+      url: `${baseUrl}/services/h2b-visa-processing`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+      images: [img("USA.png"), img("USA0 guam.png")],
     },
     {
       url: `${baseUrl}/guides`,
