@@ -87,7 +87,7 @@ export default function LocalCTA() {
         display: "flex", alignItems: "center", gap: m ? 32 : 60, flexWrap: "wrap",
       }}>
 
-        {/* Left â€” Text content */}
+        {/* Left — Text content */}
         <div ref={leftRef} className="reveal-left" style={{ flex: "1 1 480px", minWidth: 0 }}>
           <p style={{
             fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700,
@@ -179,7 +179,7 @@ export default function LocalCTA() {
           </div>
         </div>
 
-        {/* Right â€” Office carousel */}
+        {/* Right — Office carousel */}
         <div ref={rightRef} className="reveal-right" style={{ flex: "1 1 500px", minWidth: 0, width: "100%" }}>
           <OfficeCarousel />
         </div>

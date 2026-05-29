@@ -47,7 +47,7 @@ export const jobSeekerBenefits = [
   },
   {
     title: "Complete Support",
-    desc: "From documents to visa to pre-departure training ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â we're with you every step.",
+    desc: "From documents to visa to pre-departure training ÃƒÂ¢Ã¢â€šÂ¬Ã¢€Â we're with you every step.",
   },
   {
     title: "Post-Arrival Help",

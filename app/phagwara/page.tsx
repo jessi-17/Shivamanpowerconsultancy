@@ -11,7 +11,7 @@ import PageHero from "@/components/own/PageHero";
 export const metadata: Metadata = {
   title: "Manpower Consultancy Near Phagwara | Shiva Travel & Manpower Consultants",
   description:
-    "Looking for overseas jobs from Phagwara? Shiva Travel & Manpower Consultants â€” government licensed (RA B-1794), 25+ years experience. Jobs in Dubai, Saudi Arabia, Qatar, Poland, Romania. Zero candidate fees. Office near Phagwara on Jalandhar Road, Nakodar.",
+    "Looking for overseas jobs from Phagwara? Shiva Travel & Manpower Consultants — government licensed (RA B-1794), 25+ years experience. Jobs in Dubai, Saudi Arabia, Qatar, Poland, Romania. Zero candidate fees. Office near Phagwara on Jalandhar Road, Nakodar.",
   keywords: [
     "manpower consultancy Phagwara",
     "overseas recruitment agency Phagwara",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "EmploymentAgency",
-  name: "Shiva Travel & Manpower Consultants â€” Phagwara Region",
+  name: "Shiva Travel & Manpower Consultants — Phagwara Region",
   description:
     "Government licensed overseas recruitment agency serving Phagwara, Punjab. Specializing in Gulf & European placements since 2002.",
   url: "https://shivatravelconsultant.in/phagwara",
@@ -63,7 +63,7 @@ const destinations = [
   { country: "Qatar", roles: "Construction, Transport, Maintenance, Hospitality", href: "/jobs/qatar" },
   { country: "Poland", roles: "Factory, Food Processing, Packaging, Agriculture", href: "/jobs/poland" },
   { country: "Romania", roles: "Construction, Manufacturing, Industrial Work", href: "/jobs/romania" },
-  { country: "Europe", roles: "Croatia, Bulgaria, Malta â€” Skilled & Semi-skilled", href: "/jobs/europe" },
+  { country: "Europe", roles: "Croatia, Bulgaria, Malta — Skilled & Semi-skilled", href: "/jobs/europe" },
 ];
 
 const stats = [
@@ -74,11 +74,11 @@ const stats = [
 ];
 
 const trustReasons = [
-  { title: "40 Minutes from Phagwara GT Road", desc: "Our office is 30 km from Phagwara city on Jalandhar Road, Nakodar. Direct buses every 20 minutes from Phagwara Bus Stand (â‚¹50, 40 min). Many Phagwara workers visit Sunday mornings after church/gurdwara." },
-  { title: "LPU & Technical Institute Worker Network", desc: "Phagwara has Lovely Professional University and many private technical institutes. We help diploma and degree holders match with Poland, Romania, Croatia skilled-job openings paying 3â€“5x India salaries." },
-  { title: "Banga, Goraya & Rurka Kalan Coverage", desc: "Workers from greater Phagwara area â€” Banga sugar mill workers, Goraya factory hands, Rurka Kalan farming families â€” all welcome. Easy reach from Phagwara junction. 600+ workers placed from this belt." },
+  { title: "40 Minutes from Phagwara GT Road", desc: "Our office is 30 km from Phagwara city on Jalandhar Road, Nakodar. Direct buses every 20 minutes from Phagwara Bus Stand (₹50, 40 min). Many Phagwara workers visit Sunday mornings after church/gurdwara." },
+  { title: "LPU & Technical Institute Worker Network", desc: "Phagwara has Lovely Professional University and many private technical institutes. We help diploma and degree holders match with Poland, Romania, Croatia skilled-job openings paying 3“5x India salaries." },
+  { title: "Banga, Goraya & Rurka Kalan Coverage", desc: "Workers from greater Phagwara area — Banga sugar mill workers, Goraya factory hands, Rurka Kalan farming families — all welcome. Easy reach from Phagwara junction. 600+ workers placed from this belt." },
   { title: "Govt-Licensed RA B-1794", desc: "Issued by Ministry of External Affairs, E-Migrate registered, ALMRA Punjab member. Verify directly on emigrate.gov.in. Valid through June 2027." },
-  { title: "Catering, Driving, Construction â€” Phagwara's Top Trades", desc: "We have specific employer tie-ups matched to Phagwara worker profiles. Hospitality (UAE/Qatar), heavy vehicle driving (Saudi NEOM, Qatar Lusail), construction (Romania, UAE Etihad Rail). Direct contracts, no broker." },
+  { title: "Catering, Driving, Construction — Phagwara's Top Trades", desc: "We have specific employer tie-ups matched to Phagwara worker profiles. Hospitality (UAE/Qatar), heavy vehicle driving (Saudi NEOM, Qatar Lusail), construction (Romania, UAE Etihad Rail). Direct contracts, no broker." },
   { title: "Hindi/Punjabi Counselling for Phagwara Families", desc: "Our staff explains the whole process in Hindi and Punjabi. Bring your family \u2014 we welcome questions in either language. Phagwara families often have students/working children who want to understand details \u2014 happy to walk them through everything." },
 ];
 
@@ -98,13 +98,13 @@ export default function PhagwaraPage() {
       />
 
       <main style={{ backgroundColor: "#f8f9ff" }}>
-        {/* ===== HERO â€” Split Layout ===== */}
+        {/* ===== HERO — Split Layout ===== */}
         <PageHero
           kicker="Serving Phagwara & Doaba Since 2002"
           title="Overseas recruitment agency near Phagwara."
           highlight="near Phagwara."
           chips={["25 mins from Phagwara", "Govt-Licensed", "No Hidden Fees", "20+ Years"]}
-          description="Shiva Travel & Manpower Consultants is a govt-licensed recruitment agency on Jalandhar Road, Nakodar â€” about 25 minutes from Phagwara. 5,000+ Doaba workers placed in Gulf & Europe."
+          description="Shiva Travel & Manpower Consultants is a govt-licensed recruitment agency on Jalandhar Road, Nakodar — about 25 minutes from Phagwara. 5,000+ Doaba workers placed in Gulf & Europe."
           primaryCta={{ label: "Book Free Consultation", href: "/contactus" }}
           stats={[
             { num: "25 min", label: "From Phagwara" },
@@ -116,7 +116,7 @@ export default function PhagwaraPage() {
           microChip={{ value: "4.9â˜…", label: "200+ Reviews" }}
         />
 
-        {/* ===== STATS BAR â€” floating overlap card ===== */}
+        {/* ===== STATS BAR — floating overlap card ===== */}
         <StatsRibbon stats={stats} overlap={-32} />
         <div style={{ height: 40 }} aria-hidden="true" />
 
@@ -139,9 +139,9 @@ export default function PhagwaraPage() {
               items={trustReasons}
               image={{
                 src: "/shiva-manpower-nakodar-office-punjab.webp",
-                alt: "Shiva Travel & Manpower Consultants office serving Phagwara â€” licensed MEA agency RA B-1794",
+                alt: "Shiva Travel & Manpower Consultants office serving Phagwara — licensed MEA agency RA B-1794",
               }}
-              imageCaption="Our Nakodar office â€” 40 minutes from Phagwara"
+              imageCaption="Our Nakodar office — 40 minutes from Phagwara"
             />
           </div>
         </section>
@@ -174,10 +174,10 @@ export default function PhagwaraPage() {
           </div>
         </section>
 
-        {/* ===== TESTIMONIALS â€” shared Google Reviews component ===== */}
+        {/* ===== TESTIMONIALS — shared Google Reviews component ===== */}
         <Testimonials />
 
-        {/* ===== PUNJAB CLUSTER â€” internal linking ===== */}
+        {/* ===== PUNJAB CLUSTER — internal linking ===== */}
         <PunjabCluster currentSlug="phagwara" />
 
         {/* ===== CTA ===== */}
@@ -188,7 +188,7 @@ export default function PhagwaraPage() {
               Ready to Start Your<br />Overseas Career?
             </h2>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: 12, maxWidth: 480, margin: "0 auto 12px" }}>
-              Visit our office at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar â€” about 25 minutes from Phagwara.
+              Visit our office at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar — about 25 minutes from Phagwara.
             </p>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "rgba(255,255,255,0.4)", marginBottom: 36 }}>
               Walk-in consultations available Monday to Saturday, 9am to 6:30pm.

@@ -67,7 +67,7 @@ const faqs = [
   { q: "Is there a minimum wage in Kuwait?", a: "Kuwait has set a minimum wage of KWD 75 per month for domestic workers. For other sectors, wages are determined by the employment contract. Most skilled workers earn KWD 150-400 per month depending on the role and experience." },
   { q: "Do I need to pay recruitment fees?", a: "Shiva Travel & Manpower Consultants operates under government license RA B-1794. We follow all regulations regarding recruitment charges. Visit our Nakodar office for complete fee transparency." },
   { q: "Can I change jobs in Kuwait?", a: "Yes, Kuwait allows workers to transfer their visa to a new employer after completing the initial contract period or with the current employer's NOC. Recent reforms have made the process easier for workers." },
-  { q: "What accommodation is provided?", a: "Most employers in Kuwait provide shared accommodation for workers or a housing allowance. The standard varies by company â€” we verify accommodation arrangements as part of our contract review process." },
+  { q: "What accommodation is provided?", a: "Most employers in Kuwait provide shared accommodation for workers or a housing allowance. The standard varies by company — we verify accommodation arrangements as part of our contract review process." },
 ];
 
 const faqJsonLd = {
@@ -305,7 +305,7 @@ export default function KuwaitVisa() {
 
         <SalaryCalcCTA country="Kuwait" />
 
-        {/* ===== RELATED VISAS â€” internal linking ===== */}
+        {/* ===== RELATED VISAS — internal linking ===== */}
         <RelatedVisas currentSlug="kuwait" />
 
         {/* ===== CTA ===== */}

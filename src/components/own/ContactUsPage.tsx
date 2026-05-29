@@ -289,7 +289,7 @@ export default function ContactUsPage() {
             </div>
           </div>
 
-          {/* Right Ã¢â‚¬â€ Inquiry Form */}
+          {/* Right — Inquiry Form */}
           <div style={{
             flex: m ? "1 1 100%" : "1 1 400px",
             maxWidth: 520,
@@ -320,7 +320,7 @@ export default function ContactUsPage() {
         </div>
       </section>
 
-      {/* ===== TRUST INDICATORS Ã¢â‚¬â€ floating overlap card ===== */}
+      {/* ===== TRUST INDICATORS — floating overlap card ===== */}
       <div ref={trustRef} className="reveal">
         <StatsRibbon
           stats={[
@@ -349,7 +349,7 @@ export default function ContactUsPage() {
           flexDirection: m ? "column" : "row",
           gap: m ? 32 : 48,
         }}>
-        {/* Left Ã¢â‚¬â€ Office Card */}
+        {/* Left — Office Card */}
         <div style={{
           flex: m ? "1 1 100%" : "1 1 400px",
           backgroundColor: "#ffffff",
@@ -424,7 +424,7 @@ export default function ContactUsPage() {
           </div>
         </div>
 
-        {/* Right Ã¢â‚¬â€ Quick Contact Panel */}
+        {/* Right — Quick Contact Panel */}
         <div style={{
           flex: m ? "1 1 100%" : "1 1 400px",
           display: "flex",
@@ -934,7 +934,7 @@ export default function ContactUsPage() {
               fontSize: 16,
               color: "#43474d",
             }}>
-              Real workers placed in real jobs Ã¢â‚¬â€ straight from our Instagram.
+              Real workers placed in real jobs — straight from our Instagram.
             </p>
           </div>
 
@@ -1012,7 +1012,7 @@ export default function ContactUsPage() {
               </a>
             ))}
 
-            {/* This Could Be You Next Ã¢â‚¬â€ CTA Card */}
+            {/* This Could Be You Next — CTA Card */}
             <a
               href="#"
               onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}

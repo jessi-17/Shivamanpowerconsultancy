@@ -36,7 +36,7 @@ const localBusinessJsonLd = {
     "Punjab's best government-licensed travel agent, immigration office and overseas recruitment agency. Serving Nakodar, Jalandhar, Kapurthala, Phagwara, Hoshiarpur and Nawanshahr since 2002.",
   url: "https://shivatravelconsultant.in/punjab",
   telephone: "+91-9814820432",
-  image: "https://shivatravelconsultant.in/Professional Punjab office environment.webp",
+  image: "https://shivatravelconsultant.in/shiva-manpower-nakodar-office-punjab.webp",
   priceRange: "Affordable (Minimal & Transparent Charges)",
   address: {
     "@type": "PostalAddress",
@@ -203,7 +203,7 @@ export default function PunjabPage() {
 
             <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
               <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Professional Punjab office environment.webp" alt="Punjab's best govt-licensed travel agent and overseas recruitment agency office" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
+                <Image src="/shiva-manpower-nakodar-office-punjab.webp" alt="Punjab's best govt-licensed travel agent and overseas recruitment agency office" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
               </div>
               <div style={{ position: "absolute", bottom: -20, right: 24, backgroundColor: "#001f5d", borderRadius: 12, padding: "20px 28px", boxShadow: "0 8px 32px rgba(0,12,47,0.3)" }}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff", lineHeight: 1 }}>5,000+</div>

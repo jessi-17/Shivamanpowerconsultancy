@@ -31,7 +31,7 @@ export default function Services() {
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
         <PageHero
-          kicker="Govt-Licensed Ãƒâ€šÃ‚Â· MEA RA B-1794"
+          kicker="Govt-Licensed · MEA RA B-1794"
           title="Global Mobility for Punjab's Skilled Workforce."
           highlight="Skilled Workforce."
           chips={["Recruitment", "Work Visas", "Attestation", "Pre-Departure"]}
@@ -42,15 +42,15 @@ export default function Services() {
             { num: "12+", label: "Countries Served" },
           ]}
           image={{ src: "/factory-worker-jobs-dubai-uae.jpg", alt: "Construction workers in Dubai placed by Shiva Manpower" }}
-          imageSeal={{ title: "Govt-Licensed Recruiting Agent", subtitle: "MEA Ãƒâ€šÃ‚Â· RA B-1794 Ãƒâ€šÃ‚Â· Valid till 2027" }}
-          microChip={{ value: "4.9ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦", label: "200+ Reviews" }}
+          imageSeal={{ title: "Govt-Licensed Recruiting Agent", subtitle: "MEA · RA B-1794 · Valid till 2027" }}
+          microChip={{ value: "4.9ÃƒÂ¢Ã‹Å“Ã¢€Â¦", label: "200+ Reviews" }}
         />
 
         <VerifiedPlacementsWall />
 
         <NumberedProcess
           kicker="How It Works"
-          title="From your village to your visa ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â in 4 steps."
+          title="From your village to your visa ÃƒÂ¢Ã¢â€šÂ¬Ã¢€Â in 4 steps."
           highlight="in 4 steps."
           intro="No middlemen, no surprises. Transparent process from your first call to the day you board your flight."
           steps={[
@@ -64,16 +64,16 @@ export default function Services() {
             },
             {
               title: "Visa Processing",
-              desc: "We file your application via the MEA E-Migrate portal under our RA-1794 registration. Most visas issued in 2ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“4 weeks.",
+              desc: "We file your application via the MEA E-Migrate portal under our RA-1794 registration. Most visas issued in 2ÃƒÂ¢Ã¢â€šÂ¬Ã¢€Å“4 weeks.",
             },
             {
               title: "Departure & After-care",
-              desc: "Pre-departure briefing, airport coordination, post-arrival check-ins. We stay in touch ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â most agencies disappear after take-off.",
+              desc: "Pre-departure briefing, airport coordination, post-arrival check-ins. We stay in touch ÃƒÂ¢Ã¢â€šÂ¬Ã¢€Â most agencies disappear after take-off.",
             },
           ]}
         />
 
-        {/* ===== VISA & DOCUMENTATION SUPPORT ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Dark rounded card ===== */}
+        {/* ===== VISA & DOCUMENTATION SUPPORT ÃƒÂ¢Ã¢â€šÂ¬Ã¢€Â Dark rounded card ===== */}
         <section style={{ padding: "0 0 80px" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
             <div style={{ backgroundColor: "#001f5d", borderRadius: 24, padding: "60px 48px", display: "flex", gap: 48, flexWrap: "wrap", alignItems: "center", position: "relative", overflow: "hidden" }}>
@@ -123,11 +123,11 @@ export default function Services() {
           kicker="Country Playbooks"
           title="Pick your destination."
           highlight="destination."
-          intro="Each playbook covers eligibility, documents, salary range, visa timeline, and what to expect ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â written by our team in plain English. Free to read."
+          intro="Each playbook covers eligibility, documents, salary range, visa timeline, and what to expect ÃƒÂ¢Ã¢â€šÂ¬Ã¢€Â written by our team in plain English. Free to read."
           playbooks={[
             {
               image: "/UAE.jpg",
-              imageAlt: "Dubai skyline ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â UAE work opportunities",
+              imageAlt: "Dubai skyline ÃƒÂ¢Ã¢â€šÂ¬Ã¢€Â UAE work opportunities",
               tag: "Gulf",
               duration: "8 min read",
               title: "Landing a job in UAE: visa, salary, documents",
@@ -208,8 +208,8 @@ export default function Services() {
           rows={[
             { criterion: "MEA RA License", us: "RA B-1794, valid till 2027", middle: "None", right: "Not applicable" },
             { criterion: "E-Migrate Filing", us: "Under our RA registration", middle: "Often fake or skipped", right: "You file yourself" },
-            { criterion: "Employer Verification", us: "Before any contract signed", middle: "Rarely ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â fake jobs common", right: "Up to you to verify" },
-            { criterion: "Charges", us: "Minimal & transparent, in writing", middle: "Hidden + 3ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“5ÃƒÆ’Ã¢â‚¬â€ higher", right: "Govt visa fee only" },
+            { criterion: "Employer Verification", us: "Before any contract signed", middle: "Rarely ÃƒÂ¢Ã¢â€šÂ¬Ã¢€Â fake jobs common", right: "Up to you to verify" },
+            { criterion: "Charges", us: "Minimal & transparent, in writing", middle: "Hidden + 3ÃƒÂ¢Ã¢â€šÂ¬Ã¢€Å“5ÃƒÆ’— higher", right: "Govt visa fee only" },
             { criterion: "Pre-Departure Briefing", us: "Free, in-person at Nakodar", middle: "None", right: "None" },
             { criterion: "Post-Arrival Support", us: "We stay in touch", middle: "Vanish after payment", right: "On your own" },
             { criterion: "Refund If Visa Fails", us: "Refund policy in writing", middle: "Money lost", right: "Not applicable" },
@@ -221,28 +221,28 @@ export default function Services() {
           kicker="Verified Employers"
           title="Where our workers actually go."
           highlight="actually go."
-          intro="A partial list of employer types currently hosting workers we placed. We verify every employer before sending a single CV ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â contract terms, accommodation, and compliance with destination labour law."
+          intro="A partial list of employer types currently hosting workers we placed. We verify every employer before sending a single CV ÃƒÂ¢Ã¢â€šÂ¬Ã¢€Â contract terms, accommodation, and compliance with destination labour law."
           employers={[
-            { name: "Construction Contractor", sector: "Infrastructure", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¦ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Âª" },
-            { name: "Hospitality Group", sector: "Hotels & F&B", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¦ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Âª" },
-            { name: "Logistics Operator", sector: "Warehousing", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¦ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Âª" },
-            { name: "MEP Contractor", sector: "Mechanical & Plumbing", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¦ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Âª" },
-            { name: "Oil & Gas EPC", sector: "Energy", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¸ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¦" },
-            { name: "Steel Manufacturer", sector: "Heavy Industry", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¸ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¦" },
-            { name: "Food Processing Group", sector: "Manufacturing", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¸ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¦" },
-            { name: "Building Contractor", sector: "Construction", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¸ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¦" },
-            { name: "Energy Contractor", sector: "Oil & Gas", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¶ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¦" },
-            { name: "Hospitality Chain", sector: "Hotels", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¶ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¦" },
-            { name: "Industrial Group", sector: "Manufacturing", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â°ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¼" },
-            { name: "Engineering Firm", sector: "Mechanical", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â°ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¼" },
-            { name: "Steel Works", sector: "Heavy Industry", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â§ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â­" },
-            { name: "Logistics Company", sector: "Warehouse", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚ÂµÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â±" },
-            { name: "Factory Operator", sector: "Production", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚ÂµÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â±" },
-            { name: "Steel Mill", sector: "Manufacturing", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚ÂµÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â±" },
-            { name: "Auto Plant", sector: "Automotive", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â·ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â´" },
-            { name: "Aerospace Plant", sector: "Aerospace", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â·ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â´" },
-            { name: "Marine Services", sector: "Shipping", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â­ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â·" },
-            { name: "Manufacturing Group", sector: "Industrial", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â§ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¬" },
+            { name: "Construction Contractor", sector: "Infrastructure", country: "ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â¦ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Âª" },
+            { name: "Hospitality Group", sector: "Hotels & F&B", country: "ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â¦ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Âª" },
+            { name: "Logistics Operator", sector: "Warehousing", country: "ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â¦ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Âª" },
+            { name: "MEP Contractor", sector: "Mechanical & Plumbing", country: "ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â¦ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Âª" },
+            { name: "Oil & Gas EPC", sector: "Energy", country: "ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â¸ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â¦" },
+            { name: "Steel Manufacturer", sector: "Heavy Industry", country: "ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â¸ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â¦" },
+            { name: "Food Processing Group", sector: "Manufacturing", country: "ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â¸ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â¦" },
+            { name: "Building Contractor", sector: "Construction", country: "ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â¸ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â¦" },
+            { name: "Energy Contractor", sector: "Oil & Gas", country: "ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â¶ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â¦" },
+            { name: "Hospitality Chain", sector: "Hotels", country: "ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â¶ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â¦" },
+            { name: "Industrial Group", sector: "Manufacturing", country: "ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â°ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â¼" },
+            { name: "Engineering Firm", sector: "Mechanical", country: "ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â°ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â¼" },
+            { name: "Steel Works", sector: "Heavy Industry", country: "ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â§ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â­" },
+            { name: "Logistics Company", sector: "Warehouse", country: "ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚ÂµÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â±" },
+            { name: "Factory Operator", sector: "Production", country: "ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚ÂµÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â±" },
+            { name: "Steel Mill", sector: "Manufacturing", country: "ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚ÂµÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â±" },
+            { name: "Auto Plant", sector: "Automotive", country: "ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â·ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â´" },
+            { name: "Aerospace Plant", sector: "Aerospace", country: "ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â·ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â´" },
+            { name: "Marine Services", sector: "Shipping", country: "ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â­ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â·" },
+            { name: "Manufacturing Group", sector: "Industrial", country: "ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â§ÃƒÂ°Ã…Â¸Ã¢€Â¡Ã‚Â¬" },
           ]}
         />
 
@@ -264,7 +264,7 @@ export default function Services() {
                 <div style={{ flex: 1, minWidth: 200 }}>
                   <p style={{ fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: "#6ee7b7", textTransform: "uppercase", marginBottom: 4 }}>FREE TOOL</p>
                   <h3 style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 800, color: "#fff", marginBottom: 4 }}>How much will you earn abroad?</h3>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.5 }}>Use our salary calculator to see estimated earnings by country, trade &amp; experience level ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â in INR.</p>
+                  <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.5 }}>Use our salary calculator to see estimated earnings by country, trade &amp; experience level ÃƒÂ¢Ã¢â€šÂ¬Ã¢€Â in INR.</p>
                 </div>
                 <div style={{ flexShrink: 0 }}>
                   <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "10px 22px", borderRadius: 10, backgroundColor: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700 }}>

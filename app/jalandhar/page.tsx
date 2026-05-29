@@ -11,7 +11,7 @@ import PageHero from "@/components/own/PageHero";
 export const metadata: Metadata = {
   title: "Manpower Consultancy Near Jalandhar | Shiva Travel & Manpower Consultants",
   description:
-    "Looking to work abroad from Jalandhar? Shiva Travel & Manpower Consultants â€” government licensed (RA B-1794), 20+ years experience. Dubai visa agent, Saudi Arabia, Qatar, Poland, Romania jobs. Minimal & transparent charges. Office just 20 min from Jalandhar on Jalandhar Road, Nakodar.",
+    "Looking to work abroad from Jalandhar? Shiva Travel & Manpower Consultants — government licensed (RA B-1794), 20+ years experience. Dubai visa agent, Saudi Arabia, Qatar, Poland, Romania jobs. Minimal & transparent charges. Office just 20 min from Jalandhar on Jalandhar Road, Nakodar.",
   keywords: [
     "manpower consultancy Jalandhar",
     "overseas recruitment agency Jalandhar",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "EmploymentAgency",
-  name: "Shiva Travel & Manpower Consultants â€” Jalandhar Region",
+  name: "Shiva Travel & Manpower Consultants — Jalandhar Region",
   description:
     "Government licensed overseas recruitment agency serving Jalandhar, Punjab. Specializing in Gulf & European placements since 2002.",
   url: "https://shivatravelconsultant.in/jalandhar",
@@ -63,7 +63,7 @@ const destinations = [
   { country: "Qatar", roles: "Construction, Transport, Maintenance, Hospitality", href: "/jobs/qatar" },
   { country: "Poland", roles: "Factory, Food Processing, Packaging, Agriculture", href: "/jobs/poland" },
   { country: "Romania", roles: "Construction, Manufacturing, Industrial Work", href: "/jobs/romania" },
-  { country: "Europe", roles: "Croatia, Bulgaria, Malta â€” Skilled & Semi-skilled", href: "/jobs/europe" },
+  { country: "Europe", roles: "Croatia, Bulgaria, Malta — Skilled & Semi-skilled", href: "/jobs/europe" },
 ];
 
 const stats = [
@@ -74,21 +74,21 @@ const stats = [
 ];
 
 const trustReasons = [
-  { title: "30 Minutes from BMC Chowk Jalandhar", desc: "Our Nakodar office on Jalandhar Road is 22 km from Jalandhar city. Direct PRTC and private buses every 15 minutes from Jalandhar Bus Stand (â‚¹40, 30 min). Many Jalandhar workers visit Saturday mornings â€” finish consultation by lunch, return same day." },
-  { title: "Trusted by 600+ Workers from Jalandhar District", desc: "Workers from Jalandhar Cantt, Adampur, Kartarpur, Phillaur, Nurmahal, Shahkot regularly come. We understand the Jalandhar worker profile â€” many have sports goods, factory or skilled trade experience that Gulf and Europe employers actively recruit." },
-  { title: "Jalandhar Skills â†’ Europe Salaries", desc: "Jalandhar sports goods, leather and manufacturing factory experience translates directly to Romania, Poland, Croatia skilled-worker shortlists â€” Europe salaries 4â€“6x your current Jalandhar wage. We position your CV for the right cluster." },
-  { title: "Govt-Licensed RA B-1794 (Verify Yourself)", desc: "Issued by Ministry of External Affairs, valid through June 2027. E-Migrate registered, ALMRA Punjab member. Verifiable on emigrate.gov.in. Many Jalandhar agents claim 'licensed' â€” verify ours directly on the official portal." },
-  { title: "Driver Profiles for Saudi NEOM & Qatar", desc: "Jalandhar district has a high concentration of HMV/HTV license holders. We have direct tie-ups with Saudi NEOM contractors, Qatar Lusail construction companies, UAE logistics firms â€” heavy vehicle drivers earn â‚¹55kâ€“80k monthly + accommodation." },
+  { title: "30 Minutes from BMC Chowk Jalandhar", desc: "Our Nakodar office on Jalandhar Road is 22 km from Jalandhar city. Direct PRTC and private buses every 15 minutes from Jalandhar Bus Stand (₹40, 30 min). Many Jalandhar workers visit Saturday mornings — finish consultation by lunch, return same day." },
+  { title: "Trusted by 600+ Workers from Jalandhar District", desc: "Workers from Jalandhar Cantt, Adampur, Kartarpur, Phillaur, Nurmahal, Shahkot regularly come. We understand the Jalandhar worker profile — many have sports goods, factory or skilled trade experience that Gulf and Europe employers actively recruit." },
+  { title: "Jalandhar Skills â†’ Europe Salaries", desc: "Jalandhar sports goods, leather and manufacturing factory experience translates directly to Romania, Poland, Croatia skilled-worker shortlists — Europe salaries 4“6x your current Jalandhar wage. We position your CV for the right cluster." },
+  { title: "Govt-Licensed RA B-1794 (Verify Yourself)", desc: "Issued by Ministry of External Affairs, valid through June 2027. E-Migrate registered, ALMRA Punjab member. Verifiable on emigrate.gov.in. Many Jalandhar agents claim 'licensed' — verify ours directly on the official portal." },
+  { title: "Driver Profiles for Saudi NEOM & Qatar", desc: "Jalandhar district has a high concentration of HMV/HTV license holders. We have direct tie-ups with Saudi NEOM contractors, Qatar Lusail construction companies, UAE logistics firms — heavy vehicle drivers earn ₹55k“80k monthly + accommodation." },
   { title: "Family-First Consultations", desc: "Bring your family \u2014 parents, spouse, in-laws. We sit with everyone, answer all questions in Hindi/Punjabi/English. Many Jalandhar families want collective decisions on overseas placement \u2014 we welcome this approach." },
 ];
 
 const faqs = [
-  { q: "How do I reach Shiva Travel from Jalandhar?", a: "From Jalandhar Bus Stand take any Jalandharâ†’Nakodar bus (PRTC or private, every 15 min, â‚¹40, 30 minutes). Get off at Nakodar Golden Avenue stop and walk 2 minutes to our office near Sukhjeet Hospital. By private vehicle: take Jalandharâ€“Nakodar road via Lambra, 22 km, ~30 minutes." },
-  { q: "Are there overseas jobs suited for sports goods factory workers from Jalandhar?", a: "Yes. Sports goods experience translates well to factory and manufacturing jobs in Poland and Romania (food processing, packaging, leather, sports equipment). UAE construction and Saudi NEOM projects also welcome workers with manufacturing background. Bring your work experience certificate â€” employers value documented factory tenure." },
-  { q: "Can someone from Adampur, Kartarpur or Phillaur also use your services?", a: "Of course. Adampur is 15 km from our office, Kartarpur 18 km, Phillaur 22 km. Workers from across Jalandhar district â€” Cantt, Phillaur, Nurmahal, Shahkot, Sham Chaurasi â€” regularly visit us. Many catch the morning bus, finish consultation by lunch, and return same day." },
-  { q: "I have a heavy vehicle license â€” which Gulf country pays the most?", a: "For HMV/HTV drivers, Saudi NEOM project (SAR 4,000â€“6,000/month, ~â‚¹90kâ€“1.3L INR) and Qatar Lusail construction (QR 2,500â€“3,500, ~â‚¹60kâ€“80k INR) are the highest-paying. Accommodation, transport, food typically free. You'll need valid Indian heavy vehicle license + 2+ years experience." },
-  { q: "What are the fees for overseas placement from Jalandhar?", a: "Service charges are minimal, transparent, and posted in our Nakodar office. Every cost â€” application, GAMCA medical, visa stamping, ticket â€” explained upfront before deposit. Follows Indian government regulations. No hidden commissions, no broker fees, no surprise deductions." },
-  { q: "Is Shiva Travel a genuine licensed agency?", a: "Yes â€” we hold RA License B-1794/PUN/PER/100/5/10094/2022 from the Ministry of External Affairs, valid through June 2027. E-Migrate registered, ALMRA Punjab member. Verify our license directly on the official eMigrate.gov.in portal â€” unique to our agency." },
+  { q: "How do I reach Shiva Travel from Jalandhar?", a: "From Jalandhar Bus Stand take any Jalandharâ†’Nakodar bus (PRTC or private, every 15 min, ₹40, 30 minutes). Get off at Nakodar Golden Avenue stop and walk 2 minutes to our office near Sukhjeet Hospital. By private vehicle: take Jalandhar“Nakodar road via Lambra, 22 km, ~30 minutes." },
+  { q: "Are there overseas jobs suited for sports goods factory workers from Jalandhar?", a: "Yes. Sports goods experience translates well to factory and manufacturing jobs in Poland and Romania (food processing, packaging, leather, sports equipment). UAE construction and Saudi NEOM projects also welcome workers with manufacturing background. Bring your work experience certificate — employers value documented factory tenure." },
+  { q: "Can someone from Adampur, Kartarpur or Phillaur also use your services?", a: "Of course. Adampur is 15 km from our office, Kartarpur 18 km, Phillaur 22 km. Workers from across Jalandhar district — Cantt, Phillaur, Nurmahal, Shahkot, Sham Chaurasi — regularly visit us. Many catch the morning bus, finish consultation by lunch, and return same day." },
+  { q: "I have a heavy vehicle license — which Gulf country pays the most?", a: "For HMV/HTV drivers, Saudi NEOM project (SAR 4,000“6,000/month, ~₹90k“1.3L INR) and Qatar Lusail construction (QR 2,500“3,500, ~₹60k“80k INR) are the highest-paying. Accommodation, transport, food typically free. You'll need valid Indian heavy vehicle license + 2+ years experience." },
+  { q: "What are the fees for overseas placement from Jalandhar?", a: "Service charges are minimal, transparent, and posted in our Nakodar office. Every cost — application, GAMCA medical, visa stamping, ticket — explained upfront before deposit. Follows Indian government regulations. No hidden commissions, no broker fees, no surprise deductions." },
+  { q: "Is Shiva Travel a genuine licensed agency?", a: "Yes — we hold RA License B-1794/PUN/PER/100/5/10094/2022 from the Ministry of External Affairs, valid through June 2027. E-Migrate registered, ALMRA Punjab member. Verify our license directly on the official eMigrate.gov.in portal — unique to our agency." },
 ];
 
 const faqJsonLd = {
@@ -126,7 +126,7 @@ export default function JalandharPage() {
           title="Overseas recruitment agency near Jalandhar."
           highlight="near Jalandhar."
           chips={["20 mins from Jalandhar", "Govt-Licensed", "No Hidden Fees", "Local Languages"]}
-          description="Shiva Travel & Manpower Consultants is a government-licensed recruitment agency on Jalandhar Road, Nakodar â€” just 20 minutes from Jalandhar city. 5,000+ workers placed from Doaba in Gulf & Europe."
+          description="Shiva Travel & Manpower Consultants is a government-licensed recruitment agency on Jalandhar Road, Nakodar — just 20 minutes from Jalandhar city. 5,000+ workers placed from Doaba in Gulf & Europe."
           primaryCta={{ label: "Book Free Consultation", href: "/contactus" }}
           stats={[
             { num: "20 min", label: "From Jalandhar" },
@@ -138,7 +138,7 @@ export default function JalandharPage() {
           microChip={{ value: "4.9â˜…", label: "200+ Reviews" }}
         />
 
-        {/* ===== STATS BAR â€” floating overlap card ===== */}
+        {/* ===== STATS BAR — floating overlap card ===== */}
         <StatsRibbon stats={stats} overlap={-32} />
         <div style={{ height: 40 }} aria-hidden="true" />
 
@@ -161,9 +161,9 @@ export default function JalandharPage() {
               items={trustReasons}
               image={{
                 src: "/shiva-manpower-nakodar-office-punjab.webp",
-                alt: "Shiva Travel & Manpower Consultants office near Jalandhar â€” licensed MEA agency RA B-1794",
+                alt: "Shiva Travel & Manpower Consultants office near Jalandhar — licensed MEA agency RA B-1794",
               }}
-              imageCaption="Our Nakodar office â€” 30 minutes from Jalandhar"
+              imageCaption="Our Nakodar office — 30 minutes from Jalandhar"
             />
           </div>
         </section>
@@ -196,7 +196,7 @@ export default function JalandharPage() {
           </div>
         </section>
 
-        {/* ===== TESTIMONIALS â€” shared Google Reviews component ===== */}
+        {/* ===== TESTIMONIALS — shared Google Reviews component ===== */}
         <Testimonials />
 
         {/* ===== FAQs ===== */}
@@ -225,7 +225,7 @@ export default function JalandharPage() {
           </div>
         </section>
 
-        {/* ===== PUNJAB CLUSTER â€” internal linking ===== */}
+        {/* ===== PUNJAB CLUSTER — internal linking ===== */}
         <PunjabCluster currentSlug="jalandhar" />
 
         {/* ===== CTA ===== */}
@@ -236,7 +236,7 @@ export default function JalandharPage() {
               Ready to Start Your<br />Overseas Career?
             </h2>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: 12, maxWidth: 480, margin: "0 auto 12px" }}>
-              Visit our office at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar â€” just 20 minutes from Jalandhar city centre.
+              Visit our office at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar — just 20 minutes from Jalandhar city centre.
             </p>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "rgba(255,255,255,0.4)", marginBottom: 36 }}>
               Walk-in consultations available Monday to Saturday, 9am to 6:30pm.

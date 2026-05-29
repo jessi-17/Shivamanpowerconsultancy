@@ -176,7 +176,7 @@ export default function RomaniaVisaPage() {
 
             <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
               <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Romania jobs.webp" alt="Romania visa and work permit services — Shiva Travel Consultants Nakodar" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
+                <Image src="/romania-jobs-shiva-manpower.webp" alt="Romania visa and work permit services — Shiva Travel Consultants Nakodar" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
               </div>
               <div style={{ position: "absolute", bottom: -20, right: 24, backgroundColor: "#1e40af", borderRadius: 12, padding: "20px 28px", boxShadow: "0 8px 32px rgba(0,12,47,0.3)" }}>
                 <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff", lineHeight: 1 }}>500+</div>
@@ -300,7 +300,7 @@ export default function RomaniaVisaPage() {
                 The complete Romania work visa process takes approximately 3–4 months from your first consultation to departure. Here is the step-by-step timeline we follow.
               </p>
               <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Romania jobs.webp" alt="Romania visa processing timeline — Shiva Manpower Nakodar" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
+                <Image src="/romania-jobs-shiva-manpower.webp" alt="Romania visa processing timeline — Shiva Manpower Nakodar" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
               </div>
             </div>
 

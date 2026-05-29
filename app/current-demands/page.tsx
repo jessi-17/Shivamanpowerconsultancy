@@ -15,7 +15,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: { absolute: "Live Overseas Job Openings | UAE, Saudi, Poland Vacancies" },
   description:
-    "Live overseas job openings in construction, factory, driving, hospitality & healthcare. From Punjab's best govt-licensed recruitment agency â€” UAE, Saudi, Qatar, Poland, Romania. Apply directly, transparent fees.",
+    "Live overseas job openings in construction, factory, driving, hospitality & healthcare. From Punjab's best govt-licensed recruitment agency — UAE, Saudi, Qatar, Poland, Romania. Apply directly, transparent fees.",
   alternates: { canonical: "/current-demands" },
 };
 
@@ -69,7 +69,7 @@ export default async function CurrentDemands() {
             <div style={{ textAlign: "center", marginBottom: 56 }}>
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>Live Demands</h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
-                Every demand below is a current opening from a verified employer. Tap a card to apply â€” our team will call you back.
+                Every demand below is a current opening from a verified employer. Tap a card to apply — our team will call you back.
               </p>
             </div>
 
@@ -89,7 +89,7 @@ export default async function CurrentDemands() {
           kicker="How It Works"
           title="From your first call to departure day."
           highlight="departure day."
-          intro="From your first call to the day you board your flight â€” every step is transparent, documented, and handled by us."
+          intro="From your first call to the day you board your flight — every step is transparent, documented, and handled by us."
           steps={[
             { title: "Walk In or Call", desc: "Visit our office in Nakodar or call us directly at +91 98148-20432. No appointment needed." },
             { title: "Profile Assessment", desc: "We evaluate your skills, experience, and preferences to match you with the right opportunity." },

@@ -8,7 +8,7 @@ import PageHero from "@/components/own/PageHero";
 export const metadata: Metadata = {
   title: "Passport Assistance Services | New Passport & Renewal | Nakodar & Jalandhar",
   description:
-    "Passport assistance services from Nakodar, Jalandhar Ã¢â‚¬â€ new passport applications, renewal, ECR to ECNR conversion, name corrections, address changes. Complete guidance for Passport Seva Kendra applications. Licensed agency RA B-1794.",
+    "Passport assistance services from Nakodar, Jalandhar — new passport applications, renewal, ECR to ECNR conversion, name corrections, address changes. Complete guidance for Passport Seva Kendra applications. Licensed agency RA B-1794.",
   keywords: [
     "passport assistance nakodar",
     "passport help jalandhar",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 const services = [
   {
     title: "Fresh / New Passport Application",
-    desc: "Applying for a passport for the first time? We guide you through the entire process Ã¢â‚¬â€ from filling the online application on the Passport Seva portal to document preparation, appointment booking at the nearest PSK (Passport Seva Kendra) in Jalandhar, and police verification follow-up.",
+    desc: "Applying for a passport for the first time? We guide you through the entire process — from filling the online application on the Passport Seva portal to document preparation, appointment booking at the nearest PSK (Passport Seva Kendra) in Jalandhar, and police verification follow-up.",
     details: [
       "Online form filling on passportindia.gov.in",
       "Document checklist and preparation",
@@ -57,7 +57,7 @@ const services = [
   },
   {
     title: "Corrections & Changes",
-    desc: "Spelling mistakes in your name, incorrect date of birth, father's name errors Ã¢â‚¬â€ any discrepancy between your passport and other documents can cause visa rejection. We help you file correction applications and gather the supporting documents needed.",
+    desc: "Spelling mistakes in your name, incorrect date of birth, father's name errors — any discrepancy between your passport and other documents can cause visa rejection. We help you file correction applications and gather the supporting documents needed.",
     details: [
       "Name spelling corrections",
       "Date of birth corrections",
@@ -100,10 +100,10 @@ const documentChecklist = [
 const faqs = [
   { q: "How do I apply for a new passport from Nakodar?", a: "Passport applications are filed online at passportindia.gov.in. After filling the form, you need to book an appointment at the Passport Seva Kendra (PSK) in Jalandhar, which is the nearest centre to Nakodar. We help you fill the form correctly, prepare documents, book the appointment, and guide you on what to expect at the PSK." },
   { q: "How long does it take to get a new passport?", a: "A normal (non-tatkal) fresh passport takes 15-30 working days after your PSK appointment, depending on police verification. Tatkal (urgent) applications are processed in 1-3 working days but require additional fees and documentation. Renewal is usually faster at 10-15 working days." },
-  { q: "What is the difference between ECR and ECNR passport?", a: "ECR (Emigration Check Required) passports are issued to applicants who have not passed 10th class. ECR passport holders need emigration clearance from the Protector of Emigrants (through E-Migrate) when travelling to certain countries for employment. ECNR (Emigration Check Not Required) passports are issued to those with 10th pass or higher education, government officials, and certain other categories Ã¢â‚¬â€ they are exempt from emigration checks." },
+  { q: "What is the difference between ECR and ECNR passport?", a: "ECR (Emigration Check Required) passports are issued to applicants who have not passed 10th class. ECR passport holders need emigration clearance from the Protector of Emigrants (through E-Migrate) when travelling to certain countries for employment. ECNR (Emigration Check Not Required) passports are issued to those with 10th pass or higher education, government officials, and certain other categories — they are exempt from emigration checks." },
   { q: "Can I convert my ECR passport to ECNR?", a: "Yes. If you have now passed your 10th class or obtained higher education since getting your ECR passport, you can apply for ECNR endorsement. You need to file a re-issue application with your educational certificates as proof. We handle the complete process." },
   { q: "My passport has a spelling mistake. Can it be corrected?", a: "Yes. Any errors in name, date of birth, or other details can be corrected by filing a re-issue application with supporting documents (birth certificate, school records, Aadhaar, etc.). It is critical to fix such errors before applying for a visa, as mismatched details will cause rejection." },
-  { q: "Do you charge for passport assistance?", a: "When passport assistance is part of your overseas employment process through Shiva Travel, we provide this guidance at no extra cost Ã¢â‚¬â€ it is included in our recruitment services. We help you with form filling, document preparation, and appointment booking. Government fees for the passport itself are paid directly to the Passport Seva portal." },
+  { q: "Do you charge for passport assistance?", a: "When passport assistance is part of your overseas employment process through Shiva Travel, we provide this guidance at no extra cost — it is included in our recruitment services. We help you with form filling, document preparation, and appointment booking. Government fees for the passport itself are paid directly to the Passport Seva portal." },
 ];
 
 const faqJsonLd = {
@@ -148,7 +148,7 @@ export default function PassportAssistancePage() {
           title="Passport assistance & application support from Nakodar."
           highlight="from Nakodar."
           chips={["New & Renewal", "ECR to ECNR", "Corrections", "PSK Jalandhar"]}
-          description="Your passport is the foundation of your overseas journey. Whether you need a fresh passport, renewal, ECR to ECNR conversion, or corrections Ã¢â‚¬â€ we guide you through every step at Passport Seva Kendra in Jalandhar."
+          description="Your passport is the foundation of your overseas journey. Whether you need a fresh passport, renewal, ECR to ECNR conversion, or corrections — we guide you through every step at Passport Seva Kendra in Jalandhar."
           primaryCta={{ label: "Get Passport Help", href: "/contactus" }}
           stats={[
             { num: "Walk-in", label: "Nakodar Office" },
@@ -166,7 +166,7 @@ export default function PassportAssistancePage() {
             <div style={{ textAlign: "center", marginBottom: 56 }}>
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>Passport Services We Assist With</h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
-                From first-time applications to complex corrections Ã¢â‚¬â€ we have helped thousands of workers from Nakodar and Jalandhar get their passports sorted for overseas employment.
+                From first-time applications to complex corrections — we have helped thousands of workers from Nakodar and Jalandhar get their passports sorted for overseas employment.
               </p>
             </div>
 
@@ -197,7 +197,7 @@ export default function PassportAssistancePage() {
                 Documents You Will Need
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, marginBottom: 28 }}>
-                The exact requirements depend on whether you are applying for a new passport, renewal, or re-issue. Here is a general checklist Ã¢â‚¬â€ we will guide you on the specific documents needed for your case.
+                The exact requirements depend on whether you are applying for a new passport, renewal, or re-issue. Here is a general checklist — we will guide you on the specific documents needed for your case.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                 {documentChecklist.map((doc) => (
@@ -238,7 +238,7 @@ export default function PassportAssistancePage() {
           </div>
         </section>
 
-        {/* ===== RELATED SERVICES Ã¢â‚¬â€ internal linking ===== */}
+        {/* ===== RELATED SERVICES — internal linking ===== */}
         <RelatedServices currentSlug="passport-assistance" />
 
         {/* ===== CTA ===== */}

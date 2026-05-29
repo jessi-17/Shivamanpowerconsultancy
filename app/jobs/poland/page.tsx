@@ -30,14 +30,14 @@ const whyPoland = [
 ];
 
 const salaryRanges = [
-  { role: "Factory Worker", pln: "PLN 4,200 â€“ 5,500", eur: "â‚¬950 â€“ â‚¬1,250", inr: "â‚¹83,000 â€“ â‚¹1,09,000" },
-  { role: "Welder", pln: "PLN 5,000 â€“ 8,000", eur: "â‚¬1,130 â€“ â‚¬1,800", inr: "â‚¹99,000 â€“ â‚¹1,58,000" },
-  { role: "Construction Worker", pln: "PLN 4,500 â€“ 6,500", eur: "â‚¬1,000 â€“ â‚¬1,470", inr: "â‚¹88,000 â€“ â‚¹1,29,000" },
-  { role: "Forklift Operator", pln: "PLN 4,500 â€“ 6,000", eur: "â‚¬1,000 â€“ â‚¬1,360", inr: "â‚¹88,000 â€“ â‚¹1,19,000" },
-  { role: "Truck Driver (CE)", pln: "PLN 6,000 â€“ 10,000", eur: "â‚¬1,360 â€“ â‚¬2,270", inr: "â‚¹1,19,000 â€“ â‚¹1,99,000" },
-  { role: "Farm Worker", pln: "PLN 3,500 â€“ 4,500", eur: "â‚¬800 â€“ â‚¬1,020", inr: "â‚¹70,000 â€“ â‚¹89,000" },
-  { role: "Meat Processing", pln: "PLN 4,000 â€“ 5,500", eur: "â‚¬900 â€“ â‚¬1,250", inr: "â‚¹79,000 â€“ â‚¹1,09,000" },
-  { role: "CNC Operator", pln: "PLN 5,500 â€“ 8,000", eur: "â‚¬1,250 â€“ â‚¬1,800", inr: "â‚¹1,09,000 â€“ â‚¹1,58,000" },
+  { role: "Factory Worker", pln: "PLN 4,200 “ 5,500", eur: "€950 “ €1,250", inr: "₹83,000 “ ₹1,09,000" },
+  { role: "Welder", pln: "PLN 5,000 “ 8,000", eur: "€1,130 “ €1,800", inr: "₹99,000 “ ₹1,58,000" },
+  { role: "Construction Worker", pln: "PLN 4,500 “ 6,500", eur: "€1,000 “ €1,470", inr: "₹88,000 “ ₹1,29,000" },
+  { role: "Forklift Operator", pln: "PLN 4,500 “ 6,000", eur: "€1,000 “ €1,360", inr: "₹88,000 “ ₹1,19,000" },
+  { role: "Truck Driver (CE)", pln: "PLN 6,000 “ 10,000", eur: "€1,360 “ €2,270", inr: "₹1,19,000 “ ₹1,99,000" },
+  { role: "Farm Worker", pln: "PLN 3,500 “ 4,500", eur: "€800 “ €1,020", inr: "₹70,000 “ ₹89,000" },
+  { role: "Meat Processing", pln: "PLN 4,000 “ 5,500", eur: "€900 “ €1,250", inr: "₹79,000 “ ₹1,09,000" },
+  { role: "CNC Operator", pln: "PLN 5,500 “ 8,000", eur: "€1,250 “ €1,800", inr: "₹1,09,000 “ ₹1,58,000" },
 ];
 
 const visaProcess = [
@@ -92,11 +92,11 @@ export default function JobsInPoland() {
           title="Build your career in Poland."
           highlight="in Poland."
           chips={["EU Work Permit", "Schengen Travel", "Path to PR", "EU Labour Rights"]}
-          description="Factory jobs, construction, warehousing, agriculture â€” Poland is hiring thousands of Indian workers every month. EU work permit with path to permanent residency."
-          primaryCta={{ label: "Apply Now â€” It's Free", href: "/contactus" }}
+          description="Factory jobs, construction, warehousing, agriculture — Poland is hiring thousands of Indian workers every month. EU work permit with path to permanent residency."
+          primaryCta={{ label: "Apply Now — It's Free", href: "/contactus" }}
           stats={[
             { num: "500+", label: "Placed in Poland" },
-            { num: "PLN 4â€“7K", label: "Avg Monthly" },
+            { num: "PLN 4“7K", label: "Avg Monthly" },
             { num: "5 yrs", label: "Path to PR" },
           ]}
           image={{ src: "/poland-jobs-shiva-manpower.webp", alt: "Poland job opportunities for Indian workers" }}
@@ -130,7 +130,7 @@ export default function JobsInPoland() {
                 Why Punjabi Workers Choose Poland
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 600, margin: "0 auto" }}>
-                Poland offers unmatched opportunities for Indian workers â€” from EU work permits to a clear path to permanent residency and citizenship.
+                Poland offers unmatched opportunities for Indian workers — from EU work permits to a clear path to permanent residency and citizenship.
               </p>
             </div>
 
@@ -153,7 +153,7 @@ export default function JobsInPoland() {
                 Most In-Demand Jobs in Poland
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 600, margin: "0 auto" }}>
-                We recruit for all major industries across Poland â€” factory, construction, warehouse, agriculture, and transport sectors.
+                We recruit for all major industries across Poland — factory, construction, warehouse, agriculture, and transport sectors.
               </p>
             </div>
 
@@ -189,7 +189,7 @@ export default function JobsInPoland() {
               </p>
               <div style={{ padding: "16px 20px", backgroundColor: "#991b1b", borderRadius: 12 }}>
                 <div style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#fca5a5", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 4 }}>Monthly Savings</div>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff" }}>â‚¬500â€“â‚¬1,000</div>
+                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff" }}>€500“€1,000</div>
                 <div style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "rgba(255,255,255,0.6)" }}>sent home monthly due to low cost of living</div>
               </div>
             </div>
@@ -223,7 +223,7 @@ export default function JobsInPoland() {
                 How We Get You to Poland
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#43474d", lineHeight: 1.7, marginBottom: 28 }}>
-                Our streamlined 6-step process takes you from application to arrival in 3-5 months. We handle all paperwork â€” work permit, visa, and documentation â€” so you can focus on your new career in Europe.
+                Our streamlined 6-step process takes you from application to arrival in 3-5 months. We handle all paperwork — work permit, visa, and documentation — so you can focus on your new career in Europe.
               </p>
               <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
                 <Image src="/poland-jobs-shiva-manpower.webp" alt="Workers in Poland placed by Shiva Manpower" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />

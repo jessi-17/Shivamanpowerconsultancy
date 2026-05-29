@@ -22,7 +22,7 @@ export default function ContactForm() {
         boxShadow: "0 12px 48px rgba(0,12,47,0.12)",
       }}
     >
-      {/* Left â€” dark side */}
+      {/* Left — dark side */}
       <div style={{
         flex: "1 1 400px",
         backgroundColor: "#000c2f",
@@ -76,7 +76,7 @@ export default function ContactForm() {
         </div>
       </div>
 
-      {/* Right â€” form */}
+      {/* Right — form */}
       <div style={{ flex: "1 1 400px", backgroundColor: "#fff", padding: m ? "32px 20px" : "48px 40px" }}>
         <UnifiedContactForm
           source="homepage-footer"
