@@ -4,12 +4,11 @@ import Link from "next/link";
 import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
 import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 import RelatedVisas from "@/components/own/RelatedVisas";
-import PageHero from "@/components/own/PageHero";
 
 export const metadata: Metadata = {
   title: "Romania Visa & Work Permit in Nakodar | Shiva Travel Consultants",
   description:
-    "Apply for Romania visa and work permit from Nakodar, Punjab. Shiva Travel & Manpower Consultants â€” government licensed Romania visa agent. EU work permit, document attestation, embassy appointment. No hidden fees.",
+    "Apply for Romania visa and work permit from Nakodar, Punjab. Shiva Travel & Manpower Consultants — government licensed Romania visa agent. EU work permit, document attestation, embassy appointment. No hidden fees.",
   keywords:
     "romania visa nakodar, romania work permit Punjab, romania visa consultant nakodar, romania visa agent, romania work visa from India, EU work permit nakodar",
   alternates: {
@@ -19,7 +18,7 @@ export const metadata: Metadata = {
 
 const visaServices = [
   { title: "Work Permit Application", desc: "We coordinate with verified Romanian employers to file your work authorization with the General Inspectorate for Immigration. We track every stage and keep you updated until approval." },
-  { title: "Document Attestation & Preparation", desc: "We help you gather, notarize, and attest all required documents â€” passport, educational certificates, experience letters, and police clearance â€” per Romanian Embassy standards." },
+  { title: "Document Attestation & Preparation", desc: "We help you gather, notarize, and attest all required documents — passport, educational certificates, experience letters, and police clearance — per Romanian Embassy standards." },
   { title: "Embassy Appointment Booking", desc: "We schedule your visa appointment at the Romanian Embassy or VFS Global centre, prepare your application form, and brief you on interview questions and protocol." },
   { title: "Medical Coordination", desc: "We connect you with authorized medical centres for the mandatory health check-up and ensure your medical certificate meets Romanian immigration requirements." },
   { title: "E-Migrate Processing", desc: "We register your emigration on the Government of India's e-Migrate portal, which is compulsory for all ECR passport holders travelling for work to Romania." },
@@ -30,7 +29,7 @@ const whyRomania = [
   { title: "EU Member State", desc: "Romania has been a full EU member since 2007. A Romanian work permit gives you legal employment rights across all EU labour regulations with strong worker protections." },
   { title: "Schengen Area Access", desc: "Romania joined the Schengen zone, allowing your Romanian residence permit to grant visa-free travel across 27 European countries during your holidays." },
   { title: "Growing Demand for Workers", desc: "Romania's booming construction, manufacturing, and agriculture sectors face acute labour shortages. The government actively issues thousands of work permits for foreign workers annually." },
-  { title: "Path to Permanent Residency", desc: "After 5 years of continuous legal residence and work in Romania, you become eligible for EU long-term residence â€” giving you the right to live and work in any EU country." },
+  { title: "Path to Permanent Residency", desc: "After 5 years of continuous legal residence and work in Romania, you become eligible for EU long-term residence — giving you the right to live and work in any EU country." },
 ];
 
 const visaRequirements = [
@@ -38,7 +37,7 @@ const visaRequirements = [
   "Passport-size colour photographs (white background, 3.5 x 4.5 cm)",
   "Medical fitness certificate from an authorized centre",
   "Police clearance certificate (PCC) from local authorities",
-  "Educational certificates (10th, 12th, ITI, diploma â€” as applicable)",
+  "Educational certificates (10th, 12th, ITI, diploma — as applicable)",
   "Work experience certificates from previous employers",
   "Demand letter / employment contract from Romanian employer",
   "Work permit approval from Romanian General Inspectorate for Immigration",
@@ -50,26 +49,26 @@ const visaRequirements = [
 
 const processTimeline = [
   { step: "01", title: "Initial Consultation", time: "Day 1", desc: "Visit our Nakodar office or call us. We assess your skills, work experience, and eligibility for a Romania work visa." },
-  { step: "02", title: "Document Collection & Preparation", time: "Week 1â€“3", desc: "We guide you in gathering all required documents â€” passport, PCC, medical, educational and experience certificates. We handle attestation and notarization." },
-  { step: "03", title: "Employer Matching & Work Permit Filing", time: "Week 3â€“6", desc: "Your profile is matched with a verified Romanian employer. The employer files the work permit application with Romanian immigration authorities." },
-  { step: "04", title: "Work Permit Approval", time: "Week 6â€“10", desc: "The Romanian General Inspectorate processes the work permit. Average processing time is 4â€“8 weeks. We monitor progress and respond to any queries." },
-  { step: "05", title: "Visa Appointment & Stamping", time: "Week 10â€“13", desc: "Once the work permit is approved, we book your embassy appointment, prepare the visa application, and accompany you through the visa stamping process." },
-  { step: "06", title: "E-Migrate & Pre-Departure", time: "Week 13â€“14", desc: "We complete your e-Migrate registration, conduct pre-departure briefing, and coordinate your travel. The employer arranges airport pickup and accommodation in Romania." },
+  { step: "02", title: "Document Collection & Preparation", time: "Week 1–3", desc: "We guide you in gathering all required documents — passport, PCC, medical, educational and experience certificates. We handle attestation and notarization." },
+  { step: "03", title: "Employer Matching & Work Permit Filing", time: "Week 3–6", desc: "Your profile is matched with a verified Romanian employer. The employer files the work permit application with Romanian immigration authorities." },
+  { step: "04", title: "Work Permit Approval", time: "Week 6–10", desc: "The Romanian General Inspectorate processes the work permit. Average processing time is 4–8 weeks. We monitor progress and respond to any queries." },
+  { step: "05", title: "Visa Appointment & Stamping", time: "Week 10–13", desc: "Once the work permit is approved, we book your embassy appointment, prepare the visa application, and accompany you through the visa stamping process." },
+  { step: "06", title: "E-Migrate & Pre-Departure", time: "Week 13–14", desc: "We complete your e-Migrate registration, conduct pre-departure briefing, and coordinate your travel. The employer arranges airport pickup and accommodation in Romania." },
 ];
 
 const visaTypes = [
-  { title: "Long-Stay Work Visa (Type D)", desc: "The standard work visa for employment contracts of 1â€“2 years. This is the most common visa for Indian workers going to Romania for construction, factory, or agricultural jobs. Renewable in Romania." },
-  { title: "Seasonal Work Visa", desc: "For short-term employment in agriculture, tourism, or food processing â€” typically 90 days to 9 months. Ideal for harvest seasons and summer hospitality work." },
+  { title: "Long-Stay Work Visa (Type D)", desc: "The standard work visa for employment contracts of 1–2 years. This is the most common visa for Indian workers going to Romania for construction, factory, or agricultural jobs. Renewable in Romania." },
+  { title: "Seasonal Work Visa", desc: "For short-term employment in agriculture, tourism, or food processing — typically 90 days to 9 months. Ideal for harvest seasons and summer hospitality work." },
   { title: "Intra-Company Transfer Visa", desc: "For workers being transferred by a multinational company from an Indian branch to their Romanian office or facility. Requires existing employment with the company." },
   { title: "EU Blue Card", desc: "For highly skilled workers with a university degree and a salary above the Romanian threshold. Provides enhanced mobility rights across EU countries." },
 ];
 
 const faqs = [
-  { q: "How does an overseas recruitment agency in Punjab help with job placement in Romania?", a: "An MEA-licensed overseas recruitment agency in Punjab handles the entire Romania placement chain so you only need to travel once â€” to the embassy for biometrics. Shiva Travel & Manpower Consultants (Licence B-1794, Nakodar) does the following for Romania: (1) sources verified Romanian employer offers in construction, welding, hospitality, transport, and factory work; (2) signs you on an employment contract before any travel; (3) processes the Romanian work permit (Aviz de munca) via the employer; (4) prepares and attests your passport, education, experience, and PCC documents through MEA; (5) books your Romanian embassy long-stay visa (D/AM) appointment in Delhi; (6) completes mandatory E-Migrate clearance for ECR passports; (7) arranges flight, airport pickup in Bucharest/Cluj, and on-arrival residence permit support. Salaries typically range Rs.95,000â€“Rs.1.6 lakh/month with employer-paid accommodation. Walk in to Golden Avenue, Nakodar or call +91-98148-20432." },
+  { q: "How does an overseas recruitment agency in Punjab help with job placement in Romania?", a: "An MEA-licensed overseas recruitment agency in Punjab handles the entire Romania placement chain so you only need to travel once — to the embassy for biometrics. Shiva Travel & Manpower Consultants (Licence B-1794, Nakodar) does the following for Romania: (1) sources verified Romanian employer offers in construction, welding, hospitality, transport, and factory work; (2) signs you on an employment contract before any travel; (3) processes the Romanian work permit (Aviz de munca) via the employer; (4) prepares and attests your passport, education, experience, and PCC documents through MEA; (5) books your Romanian embassy long-stay visa (D/AM) appointment in Delhi; (6) completes mandatory E-Migrate clearance for ECR passports; (7) arranges flight, airport pickup in Bucharest/Cluj, and on-arrival residence permit support. Salaries typically range Rs.95,000–Rs.1.6 lakh/month with employer-paid accommodation. Walk in to Golden Avenue, Nakodar or call +91-98148-20432." },
   { q: "Where to apply for Romania visa in Nakodar?", a: "Visit Shiva Travel & Manpower Consultants at Golden Avenue, Nakodar (Jalandhar, Punjab). We are a government licensed overseas recruitment agency handling Romania work visas. Walk in or call +91 98148-20432." },
   { q: "How much does Romania work visa cost?", a: "Through Shiva Travel & Manpower Consultants, we maintain minimal and transparent charges with no hidden fees. The Romanian employer bears most costs including work permit fees, recruitment charges, and visa expenses as per Indian government regulations." },
   { q: "Can I get Romania visa from Punjab?", a: "Yes. Our Nakodar office handles the complete Romania visa process for candidates from all over Punjab, Haryana, and North India. We coordinate document preparation, embassy appointments in Delhi, and all paperwork from our local office." },
-  { q: "How long does Romania visa take?", a: "The complete process from application to visa stamping takes approximately 3â€“4 months. Work permit processing by Romanian authorities takes 4â€“8 weeks, followed by embassy appointment and visa stamping which takes another 2â€“4 weeks." },
+  { q: "How long does Romania visa take?", a: "The complete process from application to visa stamping takes approximately 3–4 months. Work permit processing by Romanian authorities takes 4–8 weeks, followed by embassy appointment and visa stamping which takes another 2–4 weeks." },
   { q: "Do I need IELTS for Romania work visa?", a: "No. IELTS or any English language test is NOT required for Romania work visa. Romania's official language is Romanian, and most employers provide on-site training. No language certificate is needed for the visa application." },
   { q: "Is Romania in Schengen area?", a: "Yes. Romania joined the Schengen area, meaning your Romanian residence permit allows visa-free travel to all 27 Schengen countries including Germany, France, Italy, Spain, and others during your holidays." },
 ];
@@ -135,29 +134,66 @@ export default function RomaniaVisaPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
-        <PageHero
-          kicker="Visa Processing Â· Work Permit Â· EU Access"
-          title="Romania visa & work permit services in Nakodar."
-          highlight="in Nakodar."
-          chips={["EU Work Permit", "Embassy Coordination", "Attestation", "No Hidden Fees"]}
-          description="Government licensed Romania visa consultant in Nakodar. Complete work permit application, document attestation, embassy appointment, and e-Migrate processing."
-          primaryCta={{ label: "Start Your Visa Process â€” Free", href: "/contactus" }}
-          stats={[
-            { num: "500+", label: "Romania Visas" },
-            { num: "EU", label: "Member State" },
-            { num: "RA B-1794", label: "MEA Licensed" },
-          ]}
-          image={{ src: "/romania-jobs-shiva-manpower.webp", alt: "Romania visa and work permit services â€” Shiva Travel Consultants Nakodar" }}
-          imageSeal={{ title: "Romania Work Permit Specialist", subtitle: "Embassy Â· Attestation Â· E-Migrate" }}
-          microChip={{ value: "EU", label: "Member" }}
-        />
+        {/* ===== HERO — Split Layout ===== */}
+        <section style={{ paddingTop: 120, paddingBottom: 80, backgroundColor: "#f8f9ff" }}>
+          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
+            <div style={{ flex: "1 1 480px", minWidth: 0 }}>
+              <div style={{ display: "inline-block", padding: "6px 16px", backgroundColor: "#eff4ff", borderRadius: 20, marginBottom: 24 }}>
+                <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#1e40af", letterSpacing: "0.1em", textTransform: "uppercase" }}>
+                  Visa Processing &middot; Work Permit &middot; EU Access
+                </span>
+              </div>
+
+              <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.05, letterSpacing: "-1.5px", marginBottom: 24 }}>
+                Romania Visa &amp; Work Permit
+                <br />
+                <span style={{ color: "#1e40af" }}>Services in Nakodar.</span>
+              </h1>
+
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
+                Government licensed Romania visa consultant in Nakodar. We handle your complete work permit application, document attestation, embassy appointment, and e-Migrate processing. No hidden fees.
+              </p>
+
+              <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 32 }}>
+                <Link href="/contactus" style={{ display: "inline-flex", alignItems: "center", padding: "14px 28px", backgroundColor: "#0b1c30", color: "#fff", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, borderRadius: 10, textDecoration: "none" }}>
+                  Start Your Visa Process — Free
+                </Link>
+                <a href="tel:+919814820432" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 28px", backgroundColor: "#fff", color: "#0b1c30", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, borderRadius: 10, textDecoration: "none", border: "1.5px solid #e5e7eb" }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+                  +91 98148-20432
+                </a>
+              </div>
+
+              <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+                {["Work Permit Processing", "Embassy Coordination", "No Hidden Fees"].map((badge) => (
+                  <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                    <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#1e40af" }} />
+                    <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
+              <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
+                <Image src="/Romania jobs.webp" alt="Romania visa and work permit services — Shiva Travel Consultants Nakodar" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
+              </div>
+              <div style={{ position: "absolute", bottom: -20, right: 24, backgroundColor: "#1e40af", borderRadius: 12, padding: "20px 28px", boxShadow: "0 8px 32px rgba(0,12,47,0.3)" }}>
+                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff", lineHeight: 1 }}>500+</div>
+                <div style={{ fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 4 }}>
+                  Visas Processed<br />for Romania
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* ===== STATS BAR ===== */}
         <section style={{ padding: "48px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb", borderBottom: "1px solid #e5e7eb" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", justifyContent: "center", gap: 48, flexWrap: "wrap" }}>
             {[
               { value: "500+", label: "Visas Processed" },
-              { value: "3â€“4", label: "Months Processing" },
+              { value: "3–4", label: "Months Processing" },
               { value: "No", label: "Hidden Fees" },
               { value: "27", label: "Schengen Countries" },
               { value: "100%", label: "Licensed & Verified" },
@@ -261,10 +297,10 @@ export default function RomaniaVisaPage() {
                 Visa Process Timeline
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#43474d", lineHeight: 1.7, marginBottom: 28 }}>
-                The complete Romania work visa process takes approximately 3â€“4 months from your first consultation to departure. Here is the step-by-step timeline we follow.
+                The complete Romania work visa process takes approximately 3–4 months from your first consultation to departure. Here is the step-by-step timeline we follow.
               </p>
               <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/romania-jobs-shiva-manpower.webp" alt="Romania visa processing timeline â€” Shiva Manpower Nakodar" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
+                <Image src="/Romania jobs.webp" alt="Romania visa processing timeline — Shiva Manpower Nakodar" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
               </div>
             </div>
 
@@ -314,7 +350,7 @@ export default function RomaniaVisaPage() {
         <section style={{ padding: "80px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb" }}>
           <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 32px", textAlign: "center" }}>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 16 }}>
-              Cost &amp; Fees â€” Transparent, Minimal Charges
+              Cost &amp; Fees — Transparent, Minimal Charges
             </h2>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 680, margin: "0 auto 40px" }}>
               As per Indian Government regulations and our ethical recruitment policy, Shiva Travel &amp; Manpower Consultants maintains minimal and transparent charges with no hidden fees. The Romanian employer bears most costs.
@@ -325,7 +361,7 @@ export default function RomaniaVisaPage() {
                 { label: "Recruitment Fee", value: "Minimal", note: "Transparent, no hidden charges" },
                 { label: "Work Permit Fee", value: "Employer Paid", note: "Filed and paid by Romanian employer" },
                 { label: "Visa Fee", value: "Employer Paid", note: "Embassy visa fee covered by employer" },
-                { label: "Medical Examination", value: "Candidate*", note: "Approx. INR 2,000â€“4,000 at authorized centre" },
+                { label: "Medical Examination", value: "Candidate*", note: "Approx. INR 2,000–4,000 at authorized centre" },
                 { label: "Passport / PCC", value: "Candidate*", note: "Government fees as applicable" },
                 { label: "Air Ticket", value: "Employer Paid", note: "One-way ticket to Romania provided" },
               ].map((item) => (
@@ -347,7 +383,7 @@ export default function RomaniaVisaPage() {
         <section style={{ padding: "80px 0", backgroundColor: "#f8f9ff" }}>
           <div style={{ maxWidth: 800, margin: "0 auto", padding: "0 32px" }}>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", textAlign: "center", marginBottom: 48 }}>
-              Romania Visa â€” Frequently Asked Questions
+              Romania Visa — Frequently Asked Questions
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               {faqs.map((faq) => (
@@ -362,7 +398,7 @@ export default function RomaniaVisaPage() {
 
         <SalaryCalcCTA country="Romania" />
 
-        {/* ===== RELATED VISAS â€” internal linking ===== */}
+        {/* ===== RELATED VISAS — internal linking ===== */}
         <RelatedVisas currentSlug="romania" />
 
         {/* ===== CTA ===== */}
