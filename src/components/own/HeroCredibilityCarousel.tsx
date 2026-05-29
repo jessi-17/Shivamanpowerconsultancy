@@ -61,39 +61,9 @@ export default function HeroCredibilityCarousel() {
         gap: 14,
       }}
     >
-      {/* Top header — verified placement chip */}
-      <div
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: 8,
-          alignSelf: "flex-start",
-          padding: "6px 14px",
-          borderRadius: 999,
-          backgroundColor: "rgba(250,204,21,0.12)",
-          border: "1px solid rgba(250,204,21,0.35)",
-        }}
-      >
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#facc15" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="m9 11 3 3L22 4" />
-          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-        </svg>
-        <span
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: 12,
-            fontWeight: 800,
-            letterSpacing: "0.08em",
-            color: "#fde68a",
-          }}
-        >
-          VERIFIED PLACEMENT · REAL CLIENTS
-        </span>
-      </div>
-
       {/* Wrapper for card + cup (cup bleeds outside card edges) */}
       <div style={{ position: "relative", width: "100%" }}>
-        {/* Image card — overflow:hidden directly clips the slide track */}
+        {/* Image card â€” overflow:hidden directly clips the slide track */}
         <div
           style={{
             position: "relative",
@@ -129,7 +99,7 @@ export default function HeroCredibilityCarousel() {
               >
                 <Image
                   src={src}
-                  alt={`Real placement story ${i + 1} — Shiva Travel & Manpower Consultants`}
+                  alt={`Real placement story ${i + 1} â€” Shiva Travel & Manpower Consultants`}
                   fill
                   sizes="(max-width: 768px) 100vw, 400px"
                   priority={i === 0}
@@ -140,7 +110,7 @@ export default function HeroCredibilityCarousel() {
           </div>
         </div>
 
-        {/* Gold cup — sibling of card, positioned to bleed outside */}
+        {/* Gold cup â€” sibling of card, positioned to bleed outside */}
         <div
           style={{
             position: "absolute",
@@ -154,13 +124,14 @@ export default function HeroCredibilityCarousel() {
           }}
         >
           <Image
-            src="/gold cup.png"
-            alt=""
+            src="/award-trophy-shiva-manpower.png"
+            alt="Top-rated recruitment agency Punjab â€” 1000+ successful overseas placements"
             fill
             sizes="110px"
             style={{ objectFit: "contain" }}
           />
         </div>
+
       </div>
 
       {/* Progress bar */}

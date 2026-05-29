@@ -34,7 +34,7 @@ const emptyPost: BlogPost = {
   title: "",
   excerpt: "",
   content: "",
-  image: "/Blog-1.jpg",
+  image: "/dubai-jobs-from-punjab-guide.jpg",
   category: "General",
   date: new Date().toISOString().split("T")[0],
   readTime: "5 min read",

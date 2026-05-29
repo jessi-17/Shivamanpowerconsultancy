@@ -151,10 +151,45 @@ const jsonLd = {
   },
   founder: {
     "@type": "Person",
+    "@id": `${baseUrl}/#founder`,
     name: "Tarsem Lal",
     jobTitle: "Founder & Managing Director",
     email: "tlbhagat@gmail.com",
+    description:
+      "Founder of Shiva Travel & Manpower Consultants since 2002. 20+ years of expertise in overseas recruitment, MEA RA license processing, E-Migrate compliance, Gulf and European work visa placements. Industry expert on ethical Indian overseas recruitment.",
+    knowsAbout: [
+      "Overseas recruitment from India",
+      "MEA Recruiting Agent regulations",
+      "E-Migrate emigration clearance",
+      "Gulf labour market (UAE, Saudi Arabia, Qatar, Kuwait, Bahrain)",
+      "European work permits (Poland, Romania, Croatia, Schengen)",
+      "GAMCA medical examination process",
+      "Document attestation for overseas employment",
+      "Ethical recruitment under ILO principles",
+    ],
+    affiliation: [
+      { "@type": "Organization", name: "ALMRA Punjab" },
+      { "@type": "Organization", name: "Ministry of External Affairs (Recruiting Agent B-1794)" },
+    ],
+    worksFor: { "@id": `${baseUrl}/#organization` },
   },
+  hasCredential: [
+    {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "License",
+      name: "MEA Recruiting Agent License",
+      identifier: "RA B-1794/PUN/PER/100/5/10094/2022",
+      issuedBy: { "@type": "GovernmentOrganization", name: "Ministry of External Affairs, Government of India" },
+      validIn: { "@type": "Country", name: "India" },
+      validFor: "P5Y",
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Membership",
+      name: "ALMRA Punjab Member",
+      issuedBy: { "@type": "Organization", name: "All India Licensed Manpower Recruitment Agents Association (Punjab Chapter)" },
+    },
+  ],
   foundingDate: "2002",
   openingHoursSpecification: [
     {

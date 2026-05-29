@@ -62,7 +62,7 @@ export default function WhyChooseUs() {
         display: "flex", gap: 48, alignItems: "center", flexWrap: "wrap",
       }}>
 
-        {/* Left — content */}
+        {/* Left â€” content */}
         <div ref={leftRef} className="reveal-left" style={{ flex: "1 1 480px" }}>
           <h2 style={{
             fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 2.5vw, 2rem)",
@@ -121,15 +121,15 @@ export default function WhyChooseUs() {
               e.currentTarget.style.boxShadow = "none";
             }}
           >
-            Apply For Active Vacancies →
+            Apply For Active Vacancies â†’
           </a>
         </div>
 
-        {/* Right — image + stats card + certified badge */}
+        {/* Right â€” image + stats card + certified badge */}
         <div ref={rightRef} className="reveal-right" style={{ flex: "1 1 400px", position: "relative" }}>
           <div style={{ width: "100%", height: m ? 280 : 480, borderRadius: 20, overflow: "hidden", position: "relative" }}>
-            <Image src="/Professional Indian executive.webp" alt="Government licensed overseas recruitment agency in Nakodar Punjab" fill sizes="(max-width: 640px) 100vw, 40vw" loading="lazy" style={{ objectFit: "cover" }} />
-            {/* Certified Hub badge — overlaid on image */}
+            <Image src="/licensed-overseas-recruitment-punjab.webp" alt="Government licensed overseas recruitment agency in Nakodar Punjab" fill sizes="(max-width: 640px) 100vw, 40vw" loading="lazy" style={{ objectFit: "cover" }} />
+            {/* Certified Hub badge â€” overlaid on image */}
             {!m && (
               <div style={{
                 position: "absolute", top: 24, left: -16,
@@ -151,7 +151,7 @@ export default function WhyChooseUs() {
             )}
           </div>
 
-          {/* Stats — on mobile: inline grid below image. On desktop: floating card */}
+          {/* Stats â€” on mobile: inline grid below image. On desktop: floating card */}
           {m ? (
             <div style={{
               display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginTop: 16,

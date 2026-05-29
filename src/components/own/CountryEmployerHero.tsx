@@ -43,7 +43,7 @@ export default function CountryEmployerHero({
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
         <div style={{
           width: "100%", height: "100%",
-          backgroundImage: "url('/Professional Punjab office environment.webp')",
+          backgroundImage: "url('/shiva-manpower-nakodar-office-punjab.webp')",
           backgroundSize: "cover", backgroundPosition: "center 30%",
           opacity: 0.15, mixBlendMode: "overlay",
         }} />
@@ -68,7 +68,7 @@ export default function CountryEmployerHero({
           alignItems: m ? "stretch" : "center",
         }}
       >
-        {/* LEFT — Content */}
+        {/* LEFT â€” Content */}
         <div style={{ flex: "1 1 55%" }}>
           {/* Badge */}
           <div className="ceh-animate" style={{ marginBottom: 20 }}>
@@ -191,7 +191,7 @@ export default function CountryEmployerHero({
           </div>
         </div>
 
-        {/* RIGHT — Inquiry Form */}
+        {/* RIGHT â€” Inquiry Form */}
         <div
           className="ceh-animate"
           id="inquiry-form"
@@ -215,7 +215,7 @@ export default function CountryEmployerHero({
               fontFamily: "var(--font-body)", fontSize: 13,
               color: "var(--on-surface-variant)", lineHeight: 1.5,
             }}>
-              Tell us your requirements — we&apos;ll respond within 24 hours.
+              Tell us your requirements â€” we&apos;ll respond within 24 hours.
             </p>
           </div>
 

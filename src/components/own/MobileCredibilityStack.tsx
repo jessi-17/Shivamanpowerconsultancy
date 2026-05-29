@@ -35,7 +35,7 @@ function useCredibilityData() {
         if (!cancelled && data && typeof data === "object") setLive(data);
       })
       .catch(() => {
-        // Network/API failure — silently fall back to module-scope arrays.
+        // Network/API failure ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â silently fall back to module-scope arrays.
       });
     return () => {
       cancelled = true;
@@ -133,14 +133,14 @@ const HSCROLL_STYLE: React.CSSProperties = {
    1. VISA STAMPS & WORK PERMITS
    ============================================================ */
 const visaStamps = [
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (15).jpeg", name: "Vijay K.", country: "Dubai", flag: "🇦🇪", month: "May 2026", type: "Work Visa" },
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (5).jpeg", name: "Manjit S.", country: "Poland", flag: "🇵🇱", month: "May 2026", type: "Work Permit" },
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.06 PM.jpeg", name: "Narinder P.", country: "Romania", flag: "🇷🇴", month: "Apr 2026", type: "Work Visa" },
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (8).jpeg", name: "Harpreet S.", country: "Saudi Arabia", flag: "🇸🇦", month: "Apr 2026", type: "Iqama" },
-  { img: "/WhatsApp Image 2026-05-09 at 5.04.42 PM.jpeg", name: "Sukhdev S.", country: "Bulgaria", flag: "🇧🇬", month: "Apr 2026", type: "Work Visa" },
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (11).jpeg", name: "Jaspreet S.", country: "Qatar", flag: "🇶🇦", month: "Mar 2026", type: "QID Approval" },
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (2).jpeg", name: "Karamjit S.", country: "Kuwait", flag: "🇰🇼", month: "Mar 2026", type: "Work Visa" },
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (13).jpeg", name: "Balwinder S.", country: "UAE", flag: "🇦🇪", month: "Mar 2026", type: "Employment Visa" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (15).jpeg", name: "Vijay K.", country: "Dubai", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Âª", month: "May 2026", type: "Work Visa" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (5).jpeg", name: "Manjit S.", country: "Poland", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚ÂµÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â±", month: "May 2026", type: "Work Permit" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.06 PM.jpeg", name: "Narinder P.", country: "Romania", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â·ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â´", month: "Apr 2026", type: "Work Visa" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (8).jpeg", name: "Harpreet S.", country: "Saudi Arabia", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¸ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¦", month: "Apr 2026", type: "Iqama" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.04.42 PM.jpeg", name: "Sukhdev S.", country: "Bulgaria", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â§ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¬", month: "Apr 2026", type: "Work Visa" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (11).jpeg", name: "Jaspreet S.", country: "Qatar", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¶ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¦", month: "Mar 2026", type: "QID Approval" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (2).jpeg", name: "Karamjit S.", country: "Kuwait", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â°ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¼", month: "Mar 2026", type: "Work Visa" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (13).jpeg", name: "Balwinder S.", country: "UAE", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Âª", month: "Mar 2026", type: "Employment Visa" },
 ];
 
 function VisaStamps({ items = visaStamps }: { items?: typeof visaStamps }) {
@@ -200,7 +200,7 @@ function VisaStamps({ items = visaStamps }: { items?: typeof visaStamps }) {
             </div>
             <div style={{ position: "absolute", bottom: 12, left: 12, right: 12 }}>
               <p style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700, color: "#fff", marginBottom: 2 }}>
-                {v.name} → {v.country} {v.flag}
+                {v.name} ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ {v.country} {v.flag}
               </p>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "rgba(255,255,255,0.75)" }}>
                 Stamped {v.month}
@@ -214,17 +214,17 @@ function VisaStamps({ items = visaStamps }: { items?: typeof visaStamps }) {
 }
 
 /* ============================================================
-   2. THIS WEEK WE DEPLOYED — marquee ticker
+   2. THIS WEEK WE DEPLOYED ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â marquee ticker
    ============================================================ */
 const deployedFeed = [
-  { day: "Mon", name: "Vijay K.", country: "Dubai", role: "Construction", flag: "🇦🇪" },
-  { day: "Tue", name: "Manjit S.", country: "Poland", role: "Welding", flag: "🇵🇱" },
-  { day: "Tue", name: "Harpreet S.", country: "Saudi Arabia", role: "Engineering", flag: "🇸🇦" },
-  { day: "Wed", name: "Narinder P.", country: "Romania", role: "Logistics", flag: "🇷🇴" },
-  { day: "Wed", name: "Karamjit S.", country: "Kuwait", role: "Driver", flag: "🇰🇼" },
-  { day: "Thu", name: "Jaspreet S.", country: "Qatar", role: "Oil & Gas", flag: "🇶🇦" },
-  { day: "Thu", name: "Balwinder S.", country: "UAE", role: "Hospitality", flag: "🇦🇪" },
-  { day: "Fri", name: "Sukhdev S.", country: "Bulgaria", role: "Factory", flag: "🇧🇬" },
+  { day: "Mon", name: "Vijay K.", country: "Dubai", role: "Construction", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Âª" },
+  { day: "Tue", name: "Manjit S.", country: "Poland", role: "Welding", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚ÂµÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â±" },
+  { day: "Tue", name: "Harpreet S.", country: "Saudi Arabia", role: "Engineering", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¸ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¦" },
+  { day: "Wed", name: "Narinder P.", country: "Romania", role: "Logistics", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â·ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â´" },
+  { day: "Wed", name: "Karamjit S.", country: "Kuwait", role: "Driver", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â°ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¼" },
+  { day: "Thu", name: "Jaspreet S.", country: "Qatar", role: "Oil & Gas", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¶ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¦" },
+  { day: "Thu", name: "Balwinder S.", country: "UAE", role: "Hospitality", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Âª" },
+  { day: "Fri", name: "Sukhdev S.", country: "Bulgaria", role: "Factory", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â§ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¬" },
 ];
 
 function DeployedTicker({ feed = deployedFeed }: { feed?: typeof deployedFeed }) {
@@ -238,7 +238,7 @@ function DeployedTicker({ feed = deployedFeed }: { feed?: typeof deployedFeed })
       }}
     >
       <SectionHeader
-        kicker="● Live This Week"
+        kicker="ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ÂÃƒâ€šÃ‚Â Live This Week"
         title="People We Deployed"
         accent="#facc15"
         onDark
@@ -275,7 +275,7 @@ function DeployedTicker({ feed = deployedFeed }: { feed?: typeof deployedFeed })
                 {d.name}
               </span>
               <span style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "rgba(255,255,255,0.6)" }}>
-                → {d.country} {d.flag} · {d.role}
+                ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ {d.country} {d.flag} ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· {d.role}
               </span>
             </div>
           ))}
@@ -289,13 +289,13 @@ function DeployedTicker({ feed = deployedFeed }: { feed?: typeof deployedFeed })
    3. AIRPORT / DEPARTURE PHOTOS
    ============================================================ */
 const airportPhotos = [
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.06 PM (1).jpeg", name: "Vijay K.", to: "Dubai", flag: "🇦🇪" },
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.06 PM (2).jpeg", name: "Manjit S.", to: "Warsaw", flag: "🇵🇱" },
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.06 PM (3).jpeg", name: "Harpreet S.", to: "Riyadh", flag: "🇸🇦" },
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM.jpeg", name: "Narinder P.", to: "Bucharest", flag: "🇷🇴" },
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (1).jpeg", name: "Karamjit S.", to: "Kuwait City", flag: "🇰🇼" },
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (3).jpeg", name: "Jaspreet S.", to: "Doha", flag: "🇶🇦" },
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (4).jpeg", name: "Balwinder S.", to: "Abu Dhabi", flag: "🇦🇪" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.06 PM (1).jpeg", name: "Vijay K.", to: "Dubai", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Âª" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.06 PM (2).jpeg", name: "Manjit S.", to: "Warsaw", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚ÂµÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â±" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.06 PM (3).jpeg", name: "Harpreet S.", to: "Riyadh", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¸ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¦" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM.jpeg", name: "Narinder P.", to: "Bucharest", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â·ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â´" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (1).jpeg", name: "Karamjit S.", to: "Kuwait City", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â°ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¼" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (3).jpeg", name: "Jaspreet S.", to: "Doha", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¶ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¦" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (4).jpeg", name: "Balwinder S.", to: "Abu Dhabi", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Âª" },
 ];
 
 function AirportPhotos({ items = airportPhotos }: { items?: typeof airportPhotos }) {
@@ -304,7 +304,7 @@ function AirportPhotos({ items = airportPhotos }: { items?: typeof airportPhotos
       <SectionHeader
         kicker="Departure Day"
         title="The Moment They Fly Out"
-        sub="Photos sent from IGI Airport — bags packed, visa in hand, family at the gate."
+        sub="Photos sent from IGI Airport ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â bags packed, visa in hand, family at the gate."
       />
       <div className="mobile-hscroll" style={HSCROLL_STYLE}>
         {items.map((p, i) => (
@@ -334,7 +334,7 @@ function AirportPhotos({ items = airportPhotos }: { items?: typeof airportPhotos
                 {p.name}
               </p>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "#facc15", fontWeight: 600 }}>
-                ✈ {p.to} {p.flag}
+                ÃƒÆ’Ã‚Â¢Ãƒâ€¦Ã¢â‚¬Å“Ãƒâ€¹Ã¢â‚¬Â  {p.to} {p.flag}
               </p>
             </div>
           </div>
@@ -354,7 +354,7 @@ const docs = [
     issuer: "Ministry of External Affairs, Govt. of India",
     validity: "Valid till June 2027",
     color: "#0052dc",
-    icon: "🛡",
+    icon: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂºÃƒâ€šÃ‚Â¡",
   },
   {
     title: "MEA Registration",
@@ -362,7 +362,7 @@ const docs = [
     issuer: "Protector General of Emigrants",
     validity: "Active",
     color: "#006d3a",
-    icon: "🏛",
+    icon: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸Ãƒâ€šÃ‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚Âº",
   },
   {
     title: "ALMRA Punjab",
@@ -370,7 +370,7 @@ const docs = [
     issuer: "Association of Licensed Manpower Recruiting Agents",
     validity: "Punjab Chapter",
     color: "#c9a227",
-    icon: "✓",
+    icon: "ÃƒÆ’Ã‚Â¢Ãƒâ€¦Ã¢â‚¬Å“ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ",
   },
   {
     title: "20+ Years Operating",
@@ -378,7 +378,7 @@ const docs = [
     issuer: "Shiva Manpower Consultants, Nakodar",
     validity: "Govt-licensed since day one",
     color: "#8b1a3a",
-    icon: "★",
+    icon: "ÃƒÆ’Ã‚Â¢Ãƒâ€¹Ã…â€œÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦",
   },
 ];
 
@@ -436,7 +436,7 @@ function LicenseDocs() {
                 {d.issuer}
               </p>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "#22c55e", fontWeight: 600, marginTop: 4 }}>
-                ✓ {d.validity}
+                ÃƒÆ’Ã‚Â¢Ãƒâ€¦Ã¢â‚¬Å“ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ {d.validity}
               </p>
             </div>
           </div>
@@ -447,14 +447,14 @@ function LicenseDocs() {
 }
 
 /* ============================================================
-   5. PAY SLIP — BEFORE / AFTER
+   5. PAY SLIP ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â BEFORE / AFTER
    ============================================================ */
 const payslips = [
-  { role: "Construction Worker", before: "₹16,000", after: "AED 4,200", afterInr: "≈ ₹95,000", country: "Dubai", flag: "🇦🇪", multiple: "6×" },
-  { role: "Welder", before: "₹20,000", after: "PLN 5,800", afterInr: "≈ ₹1,28,000", country: "Poland", flag: "🇵🇱", multiple: "6.4×" },
-  { role: "Factory Operator", before: "₹14,000", after: "RON 4,500", afterInr: "≈ ₹85,000", country: "Romania", flag: "🇷🇴", multiple: "6×" },
-  { role: "Driver", before: "₹18,000", after: "SAR 3,500", afterInr: "≈ ₹78,000", country: "Saudi Arabia", flag: "🇸🇦", multiple: "4.3×" },
-  { role: "Hospitality", before: "₹15,000", after: "QAR 3,200", afterInr: "≈ ₹73,000", country: "Qatar", flag: "🇶🇦", multiple: "4.9×" },
+  { role: "Construction Worker", before: "ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹16,000", after: "AED 4,200", afterInr: "ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°Ãƒâ€¹Ã¢â‚¬Â  ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹95,000", country: "Dubai", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Âª", multiple: "6ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â" },
+  { role: "Welder", before: "ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹20,000", after: "PLN 5,800", afterInr: "ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°Ãƒâ€¹Ã¢â‚¬Â  ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹1,28,000", country: "Poland", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚ÂµÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â±", multiple: "6.4ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â" },
+  { role: "Factory Operator", before: "ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹14,000", after: "RON 4,500", afterInr: "ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°Ãƒâ€¹Ã¢â‚¬Â  ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹85,000", country: "Romania", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â·ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â´", multiple: "6ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â" },
+  { role: "Driver", before: "ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹18,000", after: "SAR 3,500", afterInr: "ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°Ãƒâ€¹Ã¢â‚¬Â  ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹78,000", country: "Saudi Arabia", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¸ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¦", multiple: "4.3ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â" },
+  { role: "Hospitality", before: "ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹15,000", after: "QAR 3,200", afterInr: "ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°Ãƒâ€¹Ã¢â‚¬Â  ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹73,000", country: "Qatar", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¶ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¦", multiple: "4.9ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â" },
 ];
 
 function PayslipComparison() {
@@ -463,7 +463,7 @@ function PayslipComparison() {
       <SectionHeader
         kicker="What Actually Changes"
         title="From Punjab to Abroad"
-        sub="Real take-home, real roles. Lodging + food often paid on top — not shown here."
+        sub="Real take-home, real roles. Lodging + food often paid on top ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â not shown here."
       />
       <div className="mobile-hscroll" style={HSCROLL_STYLE}>
         {payslips.map((p, i) => (
@@ -524,10 +524,10 @@ function PayslipComparison() {
 
             {/* Down arrow */}
             <div style={{ textAlign: "center", color: "#16a34a", fontSize: 16, fontWeight: 700, lineHeight: 1, marginTop: -2, marginBottom: -2 }}>
-              ↓
+              ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ
             </div>
 
-            {/* After block — solid green, no gradient */}
+            {/* After block ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â solid green, no gradient */}
             <div
               style={{
                 padding: "12px 14px",
@@ -640,7 +640,7 @@ function DestinationVideos({ items = destinationReels }: { items?: typeof destin
 }
 
 /* ============================================================
-   7. PROCESS TRANSPARENCY — behind the scenes
+   7. PROCESS TRANSPARENCY ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â behind the scenes
    ============================================================ */
 const process = [
   {
@@ -654,28 +654,28 @@ const process = [
     step: "02",
     title: "E-Migrate Filing",
     desc: "Filed on the official MEA E-Migrate portal under our RA-1794 registration.",
-    img: "/Office desk.webp",
+    img: "/passport-documents-nakodar-office.webp",
     badge: "Step 2",
   },
   {
     step: "03",
     title: "Embassy Submission",
     desc: "Document submission, attestation, and visa stamping handled in-house.",
-    img: "/Professional Punjab office environment.webp",
+    img: "/shiva-manpower-nakodar-office-punjab.webp",
     badge: "Step 3",
   },
   {
     step: "04",
     title: "Pre-Departure Briefing",
     desc: "Cultural orientation + paperwork check, 48 hours before flight.",
-    img: "/Professional Indian executive.webp",
+    img: "/licensed-overseas-recruitment-punjab.webp",
     badge: "Step 4",
   },
   {
     step: "05",
     title: "Post-Arrival Follow-up",
-    desc: "We stay in touch after deployment — most agencies don't.",
-    img: "/globe.jpg",
+    desc: "We stay in touch after deployment ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â most agencies don't.",
+    img: "/global-recruitment-network.jpg",
     badge: "Step 5",
   },
 ];
@@ -757,7 +757,7 @@ function ProcessTransparency() {
             textDecoration: "none",
           }}
         >
-          Start your application — Free →
+          Start your application ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Free ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢
         </Link>
       </div>
     </section>
@@ -765,9 +765,9 @@ function ProcessTransparency() {
 }
 
 /* ============================================================
-   STACK — exported wrapper. Mobile-only via CSS class.
+   STACK ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â exported wrapper. Mobile-only via CSS class.
    ============================================================ */
-/* Top half — runs right after the hero so credibility lands in the first
+/* Top half ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â runs right after the hero so credibility lands in the first
    ~2 screens of scroll. Just the two punchiest blocks. */
 export function MobileCredibilityTop() {
   const live = useCredibilityData();
@@ -778,7 +778,7 @@ export function MobileCredibilityTop() {
   );
 }
 
-/* Bottom half — deeper proof (departure photos, license docs, payslips,
+/* Bottom half ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â deeper proof (departure photos, license docs, payslips,
    destination videos, behind-the-scenes process). Lives lower in the page. */
 export function MobileCredibilityBottom() {
   const live = useCredibilityData();
@@ -792,7 +792,7 @@ export function MobileCredibilityBottom() {
   );
 }
 
-/* Default export kept for backward compatibility — renders all 7 in order. */
+/* Default export kept for backward compatibility ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â renders all 7 in order. */
 export default function MobileCredibilityStack() {
   const live = useCredibilityData();
   return (

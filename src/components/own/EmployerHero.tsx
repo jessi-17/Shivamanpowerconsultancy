@@ -45,8 +45,8 @@ export default function EmployerHero() {
       {/* Background image */}
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
         <Image
-          src="/Professional Punjab office environment.webp"
-          alt=""
+          src="/shiva-manpower-nakodar-office-punjab.webp"
+          alt="Shiva Travel & Manpower Consultants Nakodar office â€” trusted recruitment partner for international employers"
           fill
           priority
           sizes="100vw"
@@ -73,7 +73,7 @@ export default function EmployerHero() {
           alignItems: m ? "stretch" : "center",
         }}
       >
-        {/* LEFT — Content */}
+        {/* LEFT â€” Content */}
         <div style={{ flex: "1 1 55%" }}>
           {/* Badge */}
           <div className="emp-hero-animate" style={{ marginBottom: 20 }}>
@@ -179,7 +179,7 @@ export default function EmployerHero() {
           </div>
         </div>
 
-        {/* RIGHT — Inquiry Form */}
+        {/* RIGHT â€” Inquiry Form */}
         <div
           className="emp-hero-animate"
           id="inquiry-form"
@@ -203,7 +203,7 @@ export default function EmployerHero() {
               fontFamily: "var(--font-body)", fontSize: 13,
               color: "var(--on-surface-variant)", lineHeight: 1.5,
             }}>
-              Tell us your requirements — we&apos;ll respond within 24 hours.
+              Tell us your requirements â€” we&apos;ll respond within 24 hours.
             </p>
           </div>
 

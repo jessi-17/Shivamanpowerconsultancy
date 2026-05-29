@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../_lib/breadcrumb";
+import SlimHero from "@/components/own/SlimHero";
 
 export const metadata: Metadata = {
   title: { absolute: "Overseas Job Guides for Indian Workers | Shiva Travel" },
@@ -65,23 +66,12 @@ export default function GuidesIndex() {
       />
 
       <main style={{ backgroundColor: "#f8f9ff", minHeight: "100vh" }}>
-        <section style={{ paddingTop: 120, paddingBottom: 60, backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 980, margin: "0 auto", padding: "0 32px" }}>
-            <div style={{ display: "inline-block", padding: "6px 16px", backgroundColor: "#eff4ff", borderRadius: 20, marginBottom: 20 }}>
-              <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#0052dc", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                Authoritative Guides
-              </span>
-            </div>
-
-            <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.1, letterSpacing: "-1px", marginBottom: 20 }}>
-              Overseas Job Guides for Indian Workers
-            </h1>
-
-            <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 40, maxWidth: 720 }}>
-              Deep, fact-based guides on overseas recruitment, work visas, GAMCA medical, and licensing verification — written by Punjab&apos;s most experienced govt-licensed manpower consultancy. Each guide answers the questions families across India ask before making the decision to send a worker abroad.
-            </p>
-          </div>
-        </section>
+        <SlimHero
+          kicker="Authoritative Guides"
+          title="Overseas job guides for Indian workers."
+          highlight="for Indian workers."
+          description="Deep, fact-based guides on overseas recruitment, work visas, GAMCA medical, and licensing verification — written by Punjab's most experienced govt-licensed manpower consultancy."
+        />
 
         <section style={{ padding: "0 0 80px", backgroundColor: "#f8f9ff" }}>
           <div style={{ maxWidth: 980, margin: "0 auto", padding: "0 32px", display: "flex", flexDirection: "column", gap: 20 }}>

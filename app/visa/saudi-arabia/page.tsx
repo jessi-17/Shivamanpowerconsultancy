@@ -4,6 +4,7 @@ import Link from "next/link";
 import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
 import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 import RelatedVisas from "@/components/own/RelatedVisas";
+import PageHero from "@/components/own/PageHero";
 
 export const metadata: Metadata = {
   title: "Saudi Arabia Visa & Work Permit in Nakodar | Shiva Travel Consultants",
@@ -61,8 +62,8 @@ const keySectors = [
 ];
 
 const faqs = [
-  { q: "What is the process for getting a work visa in Saudi Arabia?", a: "The Saudi Arabia work visa (Iqama-eligible employment visa) process from India has 9 stages: (1) Job offer — secure a verified offer from a Saudi employer (Kafeel/sponsor) through a Government of India MEA-licensed recruitment agency such as Shiva Travel & Manpower Consultants (RA Licence B-1794). (2) Power of Attorney + Demand Letter — employer issues a Power of Attorney, Demand Letter, and Wakala authorising the Indian RA to process. (3) MOFA approval — employer obtains Visa Authorisation Number from the Saudi Ministry of Foreign Affairs (Enjazit). (4) Document preparation — passport (12+ months validity), educational certificates, experience letters, and PCC — all attested by HRD/Notary, MEA, and the Saudi Embassy/Consulate. (5) GAMCA medical — fitness test at a GAMCA-approved centre. (6) Saudi Cultural Attache attestation (for skilled/professional roles). (7) Visa stamping — Indian RA submits at VFS Tasheer Saudi visa centre with biometrics. (8) E-Migrate clearance — MEA clearance is mandatory for ECR-passport holders. (9) Pre-departure briefing + flight + airport pickup in Riyadh/Jeddah/Dammam, then Iqama issuance within 90 days of arrival. End-to-end timeline: 6-10 weeks." },
-  { q: "What are the documents required for a work visa in Saudi Arabia?", a: "Documents required for a Saudi Arabia work visa from India: (1) Original passport with 12+ months validity and 2 blank pages; (2) Saudi employer's Demand Letter, Power of Attorney, and Wakala; (3) Saudi MOFA Visa Authorisation Number (Enjazit printout); (4) Employment contract signed by both parties; (5) Educational certificates — original + MEA-attested + Saudi Embassy attested; (6) Trade/skill experience certificates — MEA + Saudi Embassy attested; (7) PCC (Police Clearance Certificate) from local SP office; (8) GAMCA medical fitness certificate from an approved centre; (9) 6 recent Saudi-spec passport-size photos (white background, no glasses); (10) Visa application form — signed; (11) Saudi Cultural Attache attestation (for professionals — engineers, nurses, doctors, teachers); (12) E-Migrate registration printout (ECR passport holders); (13) Old passport copies (if any); (14) Aadhaar + PAN copies for KYC. Shiva Travel & Manpower Consultants handles attestation, MOFA verification, GAMCA booking, and E-Migrate clearance under one roof from Nakodar, Punjab." },
+  { q: "What is the process for getting a work visa in Saudi Arabia?", a: "The Saudi Arabia work visa (Iqama-eligible employment visa) process from India has 9 stages: (1) Job offer â€” secure a verified offer from a Saudi employer (Kafeel/sponsor) through a Government of India MEA-licensed recruitment agency such as Shiva Travel & Manpower Consultants (RA Licence B-1794). (2) Power of Attorney + Demand Letter â€” employer issues a Power of Attorney, Demand Letter, and Wakala authorising the Indian RA to process. (3) MOFA approval â€” employer obtains Visa Authorisation Number from the Saudi Ministry of Foreign Affairs (Enjazit). (4) Document preparation â€” passport (12+ months validity), educational certificates, experience letters, and PCC â€” all attested by HRD/Notary, MEA, and the Saudi Embassy/Consulate. (5) GAMCA medical â€” fitness test at a GAMCA-approved centre. (6) Saudi Cultural Attache attestation (for skilled/professional roles). (7) Visa stamping â€” Indian RA submits at VFS Tasheer Saudi visa centre with biometrics. (8) E-Migrate clearance â€” MEA clearance is mandatory for ECR-passport holders. (9) Pre-departure briefing + flight + airport pickup in Riyadh/Jeddah/Dammam, then Iqama issuance within 90 days of arrival. End-to-end timeline: 6-10 weeks." },
+  { q: "What are the documents required for a work visa in Saudi Arabia?", a: "Documents required for a Saudi Arabia work visa from India: (1) Original passport with 12+ months validity and 2 blank pages; (2) Saudi employer's Demand Letter, Power of Attorney, and Wakala; (3) Saudi MOFA Visa Authorisation Number (Enjazit printout); (4) Employment contract signed by both parties; (5) Educational certificates â€” original + MEA-attested + Saudi Embassy attested; (6) Trade/skill experience certificates â€” MEA + Saudi Embassy attested; (7) PCC (Police Clearance Certificate) from local SP office; (8) GAMCA medical fitness certificate from an approved centre; (9) 6 recent Saudi-spec passport-size photos (white background, no glasses); (10) Visa application form â€” signed; (11) Saudi Cultural Attache attestation (for professionals â€” engineers, nurses, doctors, teachers); (12) E-Migrate registration printout (ECR passport holders); (13) Old passport copies (if any); (14) Aadhaar + PAN copies for KYC. Shiva Travel & Manpower Consultants handles attestation, MOFA verification, GAMCA booking, and E-Migrate clearance under one roof from Nakodar, Punjab." },
   { q: "How long does a Saudi work visa take?", a: "The Saudi work visa process typically takes 4-8 weeks from document submission. The entire process including medical, attestation, and E-Migrate registration takes about 2-3 months. We expedite every step to minimize waiting time." },
   { q: "What is the GAMCA medical test?", a: "GAMCA (GCC Approved Medical Centres Association) medical is a mandatory health screening for all workers going to GCC countries including Saudi Arabia. It includes blood tests, chest X-ray, and physical examination at approved centres." },
   { q: "Do I need to pay any recruitment fees?", a: "Shiva Travel & Manpower Consultants operates under government license RA B-1794. We follow all regulations regarding recruitment charges. Contact us for complete fee transparency before starting the process." },
@@ -125,59 +126,22 @@ export default function SaudiArabiaVisa() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
-        {/* ===== HERO — Split Layout ===== */}
-        <section style={{ paddingTop: 120, paddingBottom: 80, backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
-            <div style={{ flex: "1 1 480px", minWidth: 0 }}>
-              <div style={{ display: "inline-block", padding: "6px 16px", backgroundColor: "#eff4ff", borderRadius: 20, marginBottom: 24 }}>
-                <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#1e40af", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                  Vision 2030 &middot; Tax-Free Income &middot; High Demand
-                </span>
-              </div>
-
-              <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.05, letterSpacing: "-1.5px", marginBottom: 24 }}>
-                Saudi Arabia Visa &amp; Work Permit Services
-                <br />
-                <span style={{ color: "#1e40af" }}>in Nakodar.</span>
-              </h1>
-
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                Complete Saudi Arabia visa processing including work visa, Iqama, GAMCA medical, document attestation, E-Migrate, and Musaned registration. Government licensed recruitment through Shiva Travel &amp; Manpower Consultants (RA B-1794).
-              </p>
-
-              <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 32 }}>
-                <Link href="/contactus" style={{ display: "inline-flex", alignItems: "center", padding: "14px 28px", backgroundColor: "#0b1c30", color: "#fff", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, borderRadius: 10, textDecoration: "none" }}>
-                  Apply Now
-                </Link>
-                <a href="tel:+919814820432" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 28px", backgroundColor: "#fff", color: "#0b1c30", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, borderRadius: 10, textDecoration: "none", border: "1.5px solid #e5e7eb" }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-                  +91 98148-20432
-                </a>
-              </div>
-
-              <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["Tax-Free Income", "Vision 2030 Jobs", "Licensed Recruitment"].map((badge) => (
-                  <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#1e40af" }} />
-                    <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
-              <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Professional Punjab office environment.webp" alt="Saudi Arabia visa services at Shiva Travel Consultants Nakodar" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
-              </div>
-              <div style={{ position: "absolute", bottom: -20, right: 24, backgroundColor: "#1e40af", borderRadius: 12, padding: "20px 28px", boxShadow: "0 8px 32px rgba(0,12,47,0.3)" }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff", lineHeight: 1 }}>1000+</div>
-                <div style={{ fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 4 }}>
-                  Workers Placed<br />in Saudi Arabia
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          kicker="Vision 2030 Â· Tax-Free Income Â· High Demand"
+          title="Saudi Arabia visa & work permit services in Nakodar."
+          highlight="in Nakodar."
+          chips={["Work Visa", "Iqama", "GAMCA Medical", "Musaned"]}
+          description="Complete Saudi Arabia visa processing: work visa, Iqama, GAMCA medical, document attestation, E-Migrate, and Musaned registration. Govt-licensed (RA B-1794)."
+          primaryCta={{ label: "Apply Now", href: "/contactus" }}
+          stats={[
+            { num: "1,000+", label: "Saudi Visas" },
+            { num: "0%", label: "Income Tax" },
+            { num: "Vision 2030", label: "Mega Projects" },
+          ]}
+          image={{ src: "/shiva-manpower-nakodar-office-punjab.webp", alt: "Saudi Arabia visa services at Shiva Travel Consultants Nakodar" }}
+          imageSeal={{ title: "Saudi Visa Specialist", subtitle: "Work Visa Â· Iqama Â· GAMCA Â· Musaned" }}
+          microChip={{ value: "0%", label: "Income Tax" }}
+        />
 
         {/* ===== STATS BAR ===== */}
         <section style={{ padding: "48px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb", borderBottom: "1px solid #e5e7eb" }}>
@@ -277,7 +241,7 @@ export default function SaudiArabiaVisa() {
                 Our streamlined 6-step process takes you from consultation to arrival in Saudi Arabia. We handle GAMCA medical, attestation, E-Migrate, and Musaned so you can focus on your new career.
               </p>
               <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Professional Punjab office environment.webp" alt="Visa processing at Shiva Travel Consultants" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
+                <Image src="/shiva-manpower-nakodar-office-punjab.webp" alt="Visa processing at Shiva Travel Consultants" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
               </div>
             </div>
 
@@ -343,7 +307,7 @@ export default function SaudiArabiaVisa() {
 
         <SalaryCalcCTA country="Saudi Arabia" />
 
-        {/* ===== RELATED VISAS — internal linking ===== */}
+        {/* ===== RELATED VISAS â€” internal linking ===== */}
         <RelatedVisas currentSlug="saudi-arabia" />
 
         {/* ===== CTA ===== */}

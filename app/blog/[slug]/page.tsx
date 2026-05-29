@@ -5,7 +5,56 @@ import { notFound } from "next/navigation";
 import { readBlogs } from "../../api/admin/blogs/store";
 import Article from "./_components/Article";
 import { renderMarkdown } from "./_lib/markdown";
+import { extractHowToSteps } from "./_lib/extractSteps";
 import "./article.css";
+
+const SITE = "https://shivatravelconsultant.in";
+const AUTHOR_NAME = "Tarsem Lal";
+const AUTHOR_URL = "https://www.linkedin.com/in/tarsem-bhagat";
+const AUTHOR_TITLE = "Founder, Shiva Travel & Manpower Consultants";
+
+function relatedServiceLinks(post: { title: string; category: string; keywords: string[] }) {
+  const text = `${post.title} ${post.category} ${post.keywords.join(" ")}`.toLowerCase();
+  const links: Array<{ href: string; label: string }> = [];
+  const add = (href: string, label: string) => {
+    if (!links.some((l) => l.href === href)) links.push({ href, label });
+  };
+  if (/dubai|uae/.test(text)) {
+    add("/jobs/uae", "UAE & Dubai Jobs");
+    add("/visa/uae", "UAE Work Visa");
+  }
+  if (/saudi/.test(text)) {
+    add("/jobs/saudi-arabia", "Saudi Arabia Jobs");
+    add("/visa/saudi-arabia", "Saudi Arabia Visa");
+  }
+  if (/qatar/.test(text)) {
+    add("/jobs/qatar", "Qatar Jobs");
+    add("/visa/qatar", "Qatar Visa");
+  }
+  if (/poland/.test(text)) {
+    add("/jobs/poland", "Poland Jobs");
+    add("/visa/poland", "Poland Work Visa");
+  }
+  if (/romania/.test(text)) {
+    add("/jobs/romania", "Romania Jobs");
+    add("/visa/romania", "Romania Work Visa");
+  }
+  if (/schengen|europe|croatia/.test(text)) {
+    add("/jobs/europe", "Europe Jobs");
+    add("/visa/schengen", "Schengen Work Visa");
+  }
+  if (/gamca|medical/.test(text)) add("/services/gamca-medical", "GAMCA Medical Test");
+  if (/e[- ]?migrate/.test(text)) add("/services/e-migrate", "E-Migrate Help");
+  if (/visa|attestation|passport/.test(text)) {
+    add("/services/document-attestation", "Document Attestation");
+    add("/services/passport-assistance", "Passport Assistance");
+  }
+  if (/pre[- ]?departure|orientation|briefing/.test(text)) {
+    add("/services/pre-departure-briefing", "Pre-Departure Briefing");
+  }
+  add("/current-demands", "Current Job Demands");
+  return links.slice(0, 5);
+}
 
 export const dynamic = "force-dynamic";
 
@@ -33,18 +82,22 @@ export async function generateMetadata({
     ? post.image
     : `https://shivatravelconsultant.in${post.image}`;
 
+  const coverAlt = post.imageAlt || `${post.title} — Shiva Manpower Consultants Nakodar`;
+
   return {
     title: post.title,
     description: post.excerpt,
     keywords: post.keywords,
+    alternates: { canonical: `${SITE}/blog/${slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `https://shivatravelconsultant.in/blog/${slug}`,
-      images: [{ url: absoluteImage, width: 1200, height: 630, alt: post.title }],
+      url: `${SITE}/blog/${slug}`,
+      images: [{ url: absoluteImage, width: 1200, height: 630, alt: coverAlt }],
       type: "article",
       publishedTime: post.date,
-      authors: ["Shiva Travel & Manpower Consultants"],
+      modifiedTime: post.dateModified || post.date,
+      authors: [AUTHOR_URL],
     },
     twitter: {
       card: "summary_large_image",
@@ -87,51 +140,98 @@ export default async function BlogPostPage({
     day: "numeric",
   });
 
-  const shareUrl = `https://shivatravelconsultant.in/blog/${post.slug}`;
+  const shareUrl = `${SITE}/blog/${post.slug}`;
+  const coverAlt = post.imageAlt || `${post.title} — Shiva Manpower Consultants Nakodar`;
+  const dateModified = post.dateModified || post.date;
+  const howToSteps = extractHowToSteps(post.content);
+  const serviceLinks = relatedServiceLinks(post);
+  const formattedReviewDate = post.lastReviewed
+    ? new Date(post.lastReviewed).toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" })
+    : null;
 
-  const jsonLd = {
+  const publisher = {
+    "@type": "Organization",
+    name: "Shiva Travel & Manpower Consultants",
+    url: SITE,
+    logo: { "@type": "ImageObject", url: `${SITE}/logo.jpg` },
+  };
+
+  const authorPerson = {
+    "@type": "Person",
+    name: AUTHOR_NAME,
+    url: AUTHOR_URL,
+    jobTitle: AUTHOR_TITLE,
+    worksFor: { "@type": "Organization", name: "Shiva Travel & Manpower Consultants", url: SITE },
+    sameAs: [
+      AUTHOR_URL,
+      "https://www.facebook.com/shivatravelnakodar/",
+      "https://www.instagram.com/shiva.travels.consultants/",
+      "https://g.co/kgs/shivamanpowerconsultants",
+    ],
+  };
+
+  const blogPostingLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     mainEntityOfPage: { "@type": "WebPage", "@id": shareUrl },
     headline: post.title,
     description: post.excerpt,
-    image: `https://shivatravelconsultant.in${post.image}`,
+    image: `${SITE}${post.image}`,
     url: shareUrl,
     datePublished: post.date,
-    dateModified: post.date,
-    author: {
-      "@type": "Organization",
-      name: "Shiva Travel & Manpower Consultants",
-      url: "https://shivatravelconsultant.in",
-      sameAs: [
-        "https://www.facebook.com/shivatravelnakodar/",
-        "https://www.instagram.com/shiva.travels.consultants/",
-        "https://www.youtube.com/@ShivaTravelNakodar",
-        "https://g.co/kgs/shivamanpowerconsultants",
-      ],
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Shiva Travel & Manpower Consultants",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://shivatravelconsultant.in/logo.jpg",
-      },
-    },
-    isPartOf: {
-      "@type": "WebSite",
-      name: "Shiva Travel & Manpower Consultants",
-      url: "https://shivatravelconsultant.in",
-    },
+    dateModified,
+    author: authorPerson,
+    publisher,
+    isPartOf: { "@type": "WebSite", name: "Shiva Travel & Manpower Consultants", url: SITE },
     keywords: post.keywords.join(", "),
+    articleSection: post.category,
   };
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE}/blog` },
+      { "@type": "ListItem", position: 3, name: post.category, item: `${SITE}/blog?category=${encodeURIComponent(post.category)}` },
+      { "@type": "ListItem", position: 4, name: post.title, item: shareUrl },
+    ],
+  };
+
+  const faqLd = post.faqs && post.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: post.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  } : null;
+
+  const howToLd = howToSteps.length >= 3 ? {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: post.title,
+    description: post.excerpt,
+    image: `${SITE}${post.image}`,
+    step: howToSteps.map((s, idx) => ({
+      "@type": "HowToStep",
+      position: idx + 1,
+      name: s.name,
+      text: s.text,
+    })),
+  } : null;
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      {faqLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      )}
+      {howToLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToLd) }} />
+      )}
 
       <main className="full-width-page" style={{ backgroundColor: "#fff" }}>
         {/* ============================================================ */}
@@ -225,34 +325,50 @@ export default async function BlogPostPage({
                 display: "flex",
                 alignItems: "center",
                 gap: 14,
+                flexWrap: "wrap",
                 fontFamily: "var(--font-body)",
                 fontSize: 13.5,
                 color: "#64748b",
-                paddingBottom: 36,
+                paddingBottom: formattedReviewDate ? 14 : 36,
               }}
             >
-              <span style={{ fontWeight: 600, color: "#0b1c30" }}>
-                Shiva Travel & Manpower Consultants
-              </span>
-              <span
-                style={{
-                  width: 3,
-                  height: 3,
-                  borderRadius: "50%",
-                  background: "#cbd5e1",
-                }}
-              />
+              <a
+                href={AUTHOR_URL}
+                target="_blank"
+                rel="noopener noreferrer author"
+                style={{ fontWeight: 600, color: "#0b1c30", textDecoration: "none" }}
+              >
+                By {AUTHOR_NAME}
+              </a>
+              <span style={{ width: 3, height: 3, borderRadius: "50%", background: "#cbd5e1" }} />
               <span>{formattedDate}</span>
-              <span
-                style={{
-                  width: 3,
-                  height: 3,
-                  borderRadius: "50%",
-                  background: "#cbd5e1",
-                }}
-              />
+              <span style={{ width: 3, height: 3, borderRadius: "50%", background: "#cbd5e1" }} />
               <span>{post.readTime}</span>
             </div>
+
+            {formattedReviewDate && (
+              <div
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  padding: "6px 12px",
+                  borderRadius: 999,
+                  background: "#ecfdf5",
+                  color: "#047857",
+                  fontFamily: "var(--font-body)",
+                  fontSize: 12,
+                  fontWeight: 600,
+                  marginBottom: 36,
+                }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                Last reviewed by {AUTHOR_NAME} on {formattedReviewDate}
+              </div>
+            )}
           </div>
 
           {/* Cover image — wide, full-bleed, then the body breathes below */}
@@ -269,7 +385,7 @@ export default async function BlogPostPage({
           >
             <Image
               src={post.image}
-              alt={post.title}
+              alt={coverAlt}
               fill
               sizes="(max-width: 1280px) 100vw, 1240px"
               style={{ objectFit: "cover" }}
@@ -283,6 +399,139 @@ export default async function BlogPostPage({
         {/* ============================================================ */}
         <section style={{ background: "#fff", padding: "56px 24px 64px" }}>
           <Article html={html} headings={headings} />
+        </section>
+
+        {/* ============================================================ */}
+        {/*  RELATED SERVICES (internal links for SEO)                    */}
+        {/* ============================================================ */}
+        {serviceLinks.length > 0 && (
+          <section style={{ background: "#fff", padding: "0 24px 48px" }}>
+            <div
+              style={{
+                maxWidth: 720,
+                margin: "0 auto",
+                padding: "28px 28px",
+                borderRadius: 16,
+                background: "#f8fafc",
+                border: "1px solid #e2e8f0",
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: 12,
+                  fontWeight: 800,
+                  color: "#0b1c30",
+                  letterSpacing: "0.05em",
+                  textTransform: "uppercase",
+                  marginBottom: 14,
+                }}
+              >
+                Related services & job openings
+              </p>
+              <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+                {serviceLinks.map((l) => (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    style={{
+                      padding: "8px 16px",
+                      borderRadius: 999,
+                      background: "#fff",
+                      border: "1px solid #cbd5e1",
+                      color: "#0052dc",
+                      fontFamily: "var(--font-display)",
+                      fontSize: 13,
+                      fontWeight: 700,
+                      textDecoration: "none",
+                    }}
+                  >
+                    {l.label} →
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* ============================================================ */}
+        {/*  AUTHOR BIO                                                   */}
+        {/* ============================================================ */}
+        <section style={{ background: "#fff", padding: "0 24px 48px" }}>
+          <div
+            style={{
+              maxWidth: 720,
+              margin: "0 auto",
+              display: "flex",
+              gap: 20,
+              padding: "24px",
+              borderRadius: 16,
+              border: "1px solid #e2e8f0",
+              alignItems: "flex-start",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                width: 64,
+                height: 64,
+                borderRadius: "50%",
+                overflow: "hidden",
+                flexShrink: 0,
+                backgroundColor: "#0b1c30",
+              }}
+            >
+              <Image
+                src="/founder.webp"
+                alt={`${AUTHOR_NAME} — ${AUTHOR_TITLE}`}
+                fill
+                sizes="64px"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <p
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: 11,
+                  fontWeight: 700,
+                  color: "#64748b",
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  marginBottom: 4,
+                }}
+              >
+                Written by
+              </p>
+              <a
+                href={AUTHOR_URL}
+                target="_blank"
+                rel="noopener noreferrer author"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: 17,
+                  fontWeight: 800,
+                  color: "#0b1c30",
+                  textDecoration: "none",
+                }}
+              >
+                {AUTHOR_NAME}
+              </a>
+              <p
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 13.5,
+                  color: "#64748b",
+                  lineHeight: 1.55,
+                  marginTop: 6,
+                }}
+              >
+                {AUTHOR_TITLE}. Government-licensed overseas recruitment agent
+                (RA License B-1794/PUN/PER/100/5/10094/2022) with 20+ years
+                placing workers from Punjab into Gulf and Europe.
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* ============================================================ */}

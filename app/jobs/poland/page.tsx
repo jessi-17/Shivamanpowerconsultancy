@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
 import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
+import PageHero from "@/components/own/PageHero";
 
 export const metadata: Metadata = {
   title: "Jobs in Poland | Factory, Construction & Warehouse Work for Indians",
@@ -29,14 +30,14 @@ const whyPoland = [
 ];
 
 const salaryRanges = [
-  { role: "Factory Worker", pln: "PLN 4,200 – 5,500", eur: "€950 – €1,250", inr: "₹83,000 – ₹1,09,000" },
-  { role: "Welder", pln: "PLN 5,000 – 8,000", eur: "€1,130 – €1,800", inr: "₹99,000 – ₹1,58,000" },
-  { role: "Construction Worker", pln: "PLN 4,500 – 6,500", eur: "€1,000 – €1,470", inr: "₹88,000 – ₹1,29,000" },
-  { role: "Forklift Operator", pln: "PLN 4,500 – 6,000", eur: "€1,000 – €1,360", inr: "₹88,000 – ₹1,19,000" },
-  { role: "Truck Driver (CE)", pln: "PLN 6,000 – 10,000", eur: "€1,360 – €2,270", inr: "₹1,19,000 – ₹1,99,000" },
-  { role: "Farm Worker", pln: "PLN 3,500 – 4,500", eur: "€800 – €1,020", inr: "₹70,000 – ₹89,000" },
-  { role: "Meat Processing", pln: "PLN 4,000 – 5,500", eur: "€900 – €1,250", inr: "₹79,000 – ₹1,09,000" },
-  { role: "CNC Operator", pln: "PLN 5,500 – 8,000", eur: "€1,250 – €1,800", inr: "₹1,09,000 – ₹1,58,000" },
+  { role: "Factory Worker", pln: "PLN 4,200 â€“ 5,500", eur: "â‚¬950 â€“ â‚¬1,250", inr: "â‚¹83,000 â€“ â‚¹1,09,000" },
+  { role: "Welder", pln: "PLN 5,000 â€“ 8,000", eur: "â‚¬1,130 â€“ â‚¬1,800", inr: "â‚¹99,000 â€“ â‚¹1,58,000" },
+  { role: "Construction Worker", pln: "PLN 4,500 â€“ 6,500", eur: "â‚¬1,000 â€“ â‚¬1,470", inr: "â‚¹88,000 â€“ â‚¹1,29,000" },
+  { role: "Forklift Operator", pln: "PLN 4,500 â€“ 6,000", eur: "â‚¬1,000 â€“ â‚¬1,360", inr: "â‚¹88,000 â€“ â‚¹1,19,000" },
+  { role: "Truck Driver (CE)", pln: "PLN 6,000 â€“ 10,000", eur: "â‚¬1,360 â€“ â‚¬2,270", inr: "â‚¹1,19,000 â€“ â‚¹1,99,000" },
+  { role: "Farm Worker", pln: "PLN 3,500 â€“ 4,500", eur: "â‚¬800 â€“ â‚¬1,020", inr: "â‚¹70,000 â€“ â‚¹89,000" },
+  { role: "Meat Processing", pln: "PLN 4,000 â€“ 5,500", eur: "â‚¬900 â€“ â‚¬1,250", inr: "â‚¹79,000 â€“ â‚¹1,09,000" },
+  { role: "CNC Operator", pln: "PLN 5,500 â€“ 8,000", eur: "â‚¬1,250 â€“ â‚¬1,800", inr: "â‚¹1,09,000 â€“ â‚¹1,58,000" },
 ];
 
 const visaProcess = [
@@ -86,59 +87,22 @@ export default function JobsInPoland() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
-        {/* ===== HERO — Split Layout ===== */}
-        <section style={{ paddingTop: 120, paddingBottom: 80, backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
-            <div style={{ flex: "1 1 480px", minWidth: 0 }}>
-              <div style={{ display: "inline-block", padding: "6px 16px", backgroundColor: "#fef2f2", borderRadius: 20, marginBottom: 24 }}>
-                <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#dc2626", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                  EU Work Permit &middot; Schengen Access &middot; Path to PR
-                </span>
-              </div>
-
-              <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.05, letterSpacing: "-1.5px", marginBottom: 24 }}>
-                Build Your Career
-                <br />
-                <span style={{ color: "#dc2626" }}>in Poland.</span>
-              </h1>
-
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                Factory jobs, construction, warehousing, agriculture — Poland is hiring thousands of Indian workers every month. EU work permit with path to permanent residency. Government-approved recruitment through Shiva Travel & Manpower Consultants.
-              </p>
-
-              <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 32 }}>
-                <Link href="/contactus" style={{ display: "inline-flex", alignItems: "center", padding: "14px 28px", backgroundColor: "#0b1c30", color: "#fff", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, borderRadius: 10, textDecoration: "none" }}>
-                  Apply Now — It&apos;s Free
-                </Link>
-                <a href="tel:+919814820432" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 28px", backgroundColor: "#fff", color: "#0b1c30", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, borderRadius: 10, textDecoration: "none", border: "1.5px solid #e5e7eb" }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-                  +91 98148-20432
-                </a>
-              </div>
-
-              <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["EU Work Permit", "Schengen Travel", "Path to PR"].map((badge) => (
-                  <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#dc2626" }} />
-                    <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
-              <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/poland job.webp" alt="Poland job opportunities for Indian workers" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
-              </div>
-              <div style={{ position: "absolute", bottom: -20, right: 24, backgroundColor: "#dc2626", borderRadius: 12, padding: "20px 28px", boxShadow: "0 8px 32px rgba(220,38,38,0.3)" }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff", lineHeight: 1 }}>500+</div>
-                <div style={{ fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 4 }}>
-                  Workers Placed<br />in Poland
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          kicker="EU Work Permit Â· Schengen Access Â· Path to PR"
+          title="Build your career in Poland."
+          highlight="in Poland."
+          chips={["EU Work Permit", "Schengen Travel", "Path to PR", "EU Labour Rights"]}
+          description="Factory jobs, construction, warehousing, agriculture â€” Poland is hiring thousands of Indian workers every month. EU work permit with path to permanent residency."
+          primaryCta={{ label: "Apply Now â€” It's Free", href: "/contactus" }}
+          stats={[
+            { num: "500+", label: "Placed in Poland" },
+            { num: "PLN 4â€“7K", label: "Avg Monthly" },
+            { num: "5 yrs", label: "Path to PR" },
+          ]}
+          image={{ src: "/poland-jobs-shiva-manpower.webp", alt: "Poland job opportunities for Indian workers" }}
+          imageSeal={{ title: "500+ Placed in Poland", subtitle: "Factory Â· Welding Â· Construction Â· Logistics" }}
+          microChip={{ value: "EU", label: "Work Permit" }}
+        />
 
         {/* ===== STATS BAR ===== */}
         <section style={{ padding: "48px 0", borderBottom: "1px solid #e5e7eb" }}>
@@ -166,7 +130,7 @@ export default function JobsInPoland() {
                 Why Punjabi Workers Choose Poland
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 600, margin: "0 auto" }}>
-                Poland offers unmatched opportunities for Indian workers — from EU work permits to a clear path to permanent residency and citizenship.
+                Poland offers unmatched opportunities for Indian workers â€” from EU work permits to a clear path to permanent residency and citizenship.
               </p>
             </div>
 
@@ -189,7 +153,7 @@ export default function JobsInPoland() {
                 Most In-Demand Jobs in Poland
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 600, margin: "0 auto" }}>
-                We recruit for all major industries across Poland — factory, construction, warehouse, agriculture, and transport sectors.
+                We recruit for all major industries across Poland â€” factory, construction, warehouse, agriculture, and transport sectors.
               </p>
             </div>
 
@@ -225,7 +189,7 @@ export default function JobsInPoland() {
               </p>
               <div style={{ padding: "16px 20px", backgroundColor: "#991b1b", borderRadius: 12 }}>
                 <div style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#fca5a5", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 4 }}>Monthly Savings</div>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff" }}>€500–€1,000</div>
+                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff" }}>â‚¬500â€“â‚¬1,000</div>
                 <div style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "rgba(255,255,255,0.6)" }}>sent home monthly due to low cost of living</div>
               </div>
             </div>
@@ -259,10 +223,10 @@ export default function JobsInPoland() {
                 How We Get You to Poland
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#43474d", lineHeight: 1.7, marginBottom: 28 }}>
-                Our streamlined 6-step process takes you from application to arrival in 3-5 months. We handle all paperwork — work permit, visa, and documentation — so you can focus on your new career in Europe.
+                Our streamlined 6-step process takes you from application to arrival in 3-5 months. We handle all paperwork â€” work permit, visa, and documentation â€” so you can focus on your new career in Europe.
               </p>
               <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/poland job.webp" alt="Workers in Poland placed by Shiva Manpower" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
+                <Image src="/poland-jobs-shiva-manpower.webp" alt="Workers in Poland placed by Shiva Manpower" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
               </div>
             </div>
 

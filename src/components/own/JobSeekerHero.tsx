@@ -45,7 +45,7 @@ export default function JobSeekerHero() {
       {/* Background */}
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
         <Image
-          src="/Hero Section.webp" alt="" fill priority sizes="100vw"
+          src="/shiva-manpower-overseas-jobs-hero.webp" alt="Punjab job seekers placed in Gulf and Europe jobs by Shiva Manpower Consultants" fill priority sizes="100vw"
           style={{ objectFit: "cover", objectPosition: "center 30%", opacity: 0.25, mixBlendMode: "overlay" }}
         />
       </div>

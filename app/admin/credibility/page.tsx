@@ -373,7 +373,7 @@ function ImageUploadField({
         }}
       >
         {value ? (
-          <Image src={value} alt="" fill sizes="80px" style={{ objectFit: "cover" }} />
+          <Image src={value} alt="Uploaded image preview" fill sizes="80px" style={{ objectFit: "cover" }} />
         ) : (
           <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", color: "#94a3b8", fontSize: 11 }}>
             No image
@@ -722,7 +722,7 @@ function PreviewVisaStamps({ items }: { items: VisaStamp[] }) {
         {items.length === 0 && <EmptyState label="No visa stamps yet — add one to see the preview." />}
         {items.map((v, i) => (
           <div key={i} style={{ flex: "0 0 78%", maxWidth: "78%", height: 260, borderRadius: 16, overflow: "hidden", position: "relative", scrollSnapAlign: "start", backgroundColor: "#000c2f", boxShadow: "0 6px 18px rgba(0,12,47,0.12)" }}>
-            {v.img && <Image src={v.img} alt="" fill sizes="295px" style={{ objectFit: "cover" }} />}
+            {v.img && <Image src={v.img} alt={`${v.type || "Visa"} for ${v.name || "worker"} to ${v.country || "overseas"} — Shiva Manpower placement`} fill sizes="295px" style={{ objectFit: "cover" }} />}
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(0,12,47,0) 40%, rgba(0,12,47,0.85) 100%)" }} />
             <div style={{ position: "absolute", top: 10, left: 10, padding: "4px 9px", backgroundColor: "rgba(250, 204, 21, 0.95)", borderRadius: 8, fontFamily: "var(--font-display)", fontSize: 10, fontWeight: 700, color: "#000c2f", letterSpacing: "0.04em" }}>
               {(v.type || "VISA").toUpperCase()}
@@ -776,7 +776,7 @@ function PreviewAirportPhotos({ items }: { items: AirportPhoto[] }) {
         {items.length === 0 && <EmptyState label="No airport photos yet." />}
         {items.map((p, i) => (
           <div key={i} style={{ flex: "0 0 65%", maxWidth: "65%", height: 320, borderRadius: 16, overflow: "hidden", position: "relative", scrollSnapAlign: "start", backgroundColor: "#000c2f" }}>
-            {p.img && <Image src={p.img} alt="" fill sizes="244px" style={{ objectFit: "cover" }} />}
+            {p.img && <Image src={p.img} alt={`${p.name || "Worker"} departing IGI airport for ${p.to || "overseas"} — placed by Shiva Manpower`} fill sizes="244px" style={{ objectFit: "cover" }} />}
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.8) 100%)" }} />
             <div style={{ position: "absolute", bottom: 14, left: 14, right: 14 }}>
               <p style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, color: "#fff" }}>

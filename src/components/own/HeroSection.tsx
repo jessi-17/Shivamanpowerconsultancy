@@ -79,7 +79,7 @@ export default function HeroSection() {
 
   // GSAP entrance animations
   useEffect(() => {
-    // Badge + subtext + buttons — simple stagger
+    // Badge + subtext + buttons Ã¢â‚¬â€ simple stagger
     const els = document.querySelectorAll<HTMLElement>(".hero-animate");
     gsap.set(els, { opacity: 0, y: 30 });
     gsap.to(els, {
@@ -91,7 +91,7 @@ export default function HeroSection() {
       delay: 0.2,
     });
 
-    // Headline — split into characters, blur-to-sharp reveal
+    // Headline Ã¢â‚¬â€ split into characters, blur-to-sharp reveal
     const headline = headlineRef.current;
     if (headline) {
       // Get each line from the <br> separated content
@@ -133,7 +133,7 @@ export default function HeroSection() {
       });
     }
 
-    // Globe entrance — scale + fade in
+    // Globe entrance Ã¢â‚¬â€ scale + fade in
     if (globeRef.current) {
       gsap.fromTo(
         globeRef.current,
@@ -158,7 +158,7 @@ export default function HeroSection() {
         cursor: "default",
       }}
     >
-      {/* Glassy blob — follows cursor */}
+      {/* Glassy blob Ã¢â‚¬â€ follows cursor */}
       <div
         ref={blobRef}
         style={{
@@ -177,7 +177,7 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Layer 1: Corporate skyscraper — 30% opacity, overlay blend */}
+      {/* Layer 1: Corporate skyscraper Ã¢â‚¬â€ 30% opacity, overlay blend */}
       <div
         ref={bgRef}
         style={{
@@ -188,8 +188,8 @@ export default function HeroSection() {
         }}
       >
         <Image
-          src="/Hero Section.webp"
-          alt=""
+          src="/shiva-manpower-overseas-jobs-hero.webp"
+          alt="Indian workers placed abroad by Shiva Travel & Manpower Consultants Nakodar Punjab"
           fill
           priority
           sizes="100vw"
@@ -214,7 +214,7 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Layer 3: Globe — values from your DevTools tweaks */}
+      {/* Layer 3: Globe Ã¢â‚¬â€ values from your DevTools tweaks */}
       <div
         ref={globeRef}
         style={{
@@ -231,8 +231,8 @@ export default function HeroSection() {
         }}
       >
         <Image
-          src="/globe.jpg"
-          alt=""
+          src="/global-recruitment-network.jpg"
+          alt="Global recruitment network Ã¢â‚¬â€ overseas job placements from Punjab to Gulf and Europe"
           fill
           sizes="100vw"
           loading="eager"
@@ -261,7 +261,7 @@ export default function HeroSection() {
           flexWrap: m ? "wrap" : "nowrap",
         }}
       >
-        {/* Left — text content */}
+        {/* Left Ã¢â‚¬â€ text content */}
         <div style={{ maxWidth: 640, display: "flex", flexDirection: "column", gap: 24, flex: "1 1 auto" }}>
           {/* Badge */}
           <div className="hero-animate">
@@ -294,7 +294,7 @@ export default function HeroSection() {
             </span>
           </div>
 
-          {/* Headline — split into lines for character animation */}
+          {/* Headline Ã¢â‚¬â€ split into lines for character animation */}
           <h1
             ref={headlineRef}
             style={{
@@ -312,7 +312,7 @@ export default function HeroSection() {
             {!m && <span className="hero-line" style={{ display: "block" }}>Manpower Consultancy</span>}
           </h1>
 
-          {/* Sub-headline — keyword absorber for SEO */}
+          {/* Sub-headline Ã¢â‚¬â€ keyword absorber for SEO */}
           <p
             className="hero-animate"
             style={{
@@ -325,7 +325,7 @@ export default function HeroSection() {
               lineHeight: 1.4,
             }}
           >
-            Travel Agent · Immigration Office · Overseas Recruitment — Govt-Licensed Since 2002
+            Travel Agent Ã‚Â· Immigration Office Ã‚Â· Overseas Recruitment Ã¢â‚¬â€ Govt-Licensed Since 2002
           </p>
 
           {/* Subtext */}
@@ -341,14 +341,14 @@ export default function HeroSection() {
               margin: 0,
             }}
           >
-            Shiva Travel &amp; Manpower Consultants is the best travel agent, immigration office and overseas recruitment agency in Punjab. Government-licensed (RA B-1794), trusted by 5,000+ skilled workers across Doaba since 2002 — placing candidates in UAE, Saudi Arabia, Qatar, Kuwait, Poland and Romania.
+            Shiva Travel &amp; Manpower Consultants is the best travel agent, immigration office and overseas recruitment agency in Punjab. Government-licensed (RA B-1794), trusted by 5,000+ skilled workers across Doaba since 2002 Ã¢â‚¬â€ placing candidates in UAE, Saudi Arabia, Qatar, Kuwait, Poland and Romania.
           </p>
 
           {/* Quick Inquiry Form */}
           <HeroInquiryForm />
         </div>
 
-        {/* Right — credibility carousel */}
+        {/* Right Ã¢â‚¬â€ credibility carousel */}
         <HeroCredibilityCarousel />
       </div>
     </div>
@@ -391,7 +391,7 @@ function HeroInquiryForm() {
     >
       <input
         type="text"
-        placeholder="Your name — we'll WhatsApp you"
+        placeholder="Your name Ã¢â‚¬â€ we'll WhatsApp you"
         value={name}
         onChange={(e) => setName(e.target.value)}
         required

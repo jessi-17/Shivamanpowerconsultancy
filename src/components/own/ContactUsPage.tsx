@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import UnifiedContactForm, { type ContactFormPrefill } from "@/components/own/UnifiedContactForm";
+import StatsRibbon from "@/components/own/StatsRibbon";
 
 function FormPrefillReader({ onPrefill }: { onPrefill: (patch: ContactFormPrefill) => void }) {
   const searchParams = useSearchParams();
@@ -29,7 +30,13 @@ export default function ContactUsPage() {
 
   const [prefill, setPrefill] = useState<ContactFormPrefill>({});
 
-  const journeySteps = ["Initial Inquiry", "Profiling", "Interview", "Visa Process", "Deployment"];
+  const journeySteps: { label: string; sub: string }[] = [
+    { label: "Initial Inquiry", sub: "We listen first" },
+    { label: "Profiling", sub: "Skills mapped to roles" },
+    { label: "Interview", sub: "Meet the employer" },
+    { label: "Visa Process", sub: "Papers, sealed" },
+    { label: "Deployment", sub: "Wheels up" },
+  ];
 
   const cities = [
     {
@@ -37,21 +44,21 @@ export default function ContactUsPage() {
       subtitle: "Primary Office & Visa Processing Centre",
       address: "Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar",
       email: "info@shivatravelconsultant.in",
-      image: "/Office desk.webp",
+      image: "/passport-documents-nakodar-office.webp",
     },
     {
       name: "Jalandhar",
       subtitle: "Regional Recruitment Office",
       address: "GT Road, Jalandhar, Punjab",
       email: "info@shivatravelconsultant.in",
-      image: "/Office desk.webp",
+      image: "/passport-documents-nakodar-office.webp",
     },
     {
       name: "Punjab Region",
       subtitle: "Outreach & Candidate Support Centre",
       address: "Multiple locations across Punjab",
       email: "info@shivatravelconsultant.in",
-      image: "/Office desk.webp",
+      image: "/passport-documents-nakodar-office.webp",
     },
   ];
 
@@ -76,7 +83,7 @@ export default function ContactUsPage() {
         {/* Background overlay */}
         <div style={{
           position: "absolute", inset: 0,
-          backgroundImage: "url('/Office desk.webp')",
+          backgroundImage: "url('/passport-documents-nakodar-office.webp')",
           backgroundSize: "cover", backgroundPosition: "center",
           opacity: 0.12,
         }} />
@@ -282,7 +289,7 @@ export default function ContactUsPage() {
             </div>
           </div>
 
-          {/* Right — Inquiry Form */}
+          {/* Right Ã¢â‚¬â€ Inquiry Form */}
           <div style={{
             flex: m ? "1 1 100%" : "1 1 400px",
             maxWidth: 520,
@@ -313,55 +320,18 @@ export default function ContactUsPage() {
         </div>
       </section>
 
-      {/* ===== TRUST INDICATORS ===== */}
-      <section
-        ref={trustRef}
-        className="reveal"
-        style={{
-          backgroundColor: "#ffffff",
-          borderTop: "1px solid #c4c6ce",
-          padding: m ? "40px 0" : "64px 0",
-        }}
-      >
-        <div style={{
-          maxWidth: "var(--max-width)",
-          margin: "0 auto",
-          padding: m ? "0 20px" : "0 var(--spacing-8)",
-          display: "grid",
-          gridTemplateColumns: m ? "repeat(2, 1fr)" : "repeat(4, 1fr)",
-          gap: m ? 32 : 16,
-          textAlign: "center",
-        }}>
-          {[
-            { value: "15+", label: "Years Exp" },
-            { value: "10k+", label: "Deployments" },
-            { value: "98%", label: "Visa Success" },
+      {/* ===== TRUST INDICATORS Ã¢â‚¬â€ floating overlap card ===== */}
+      <div ref={trustRef} className="reveal">
+        <StatsRibbon
+          stats={[
+            { value: "15+", label: "Years experience" },
+            { value: "10k+", label: "Workers deployed" },
+            { value: "98%", label: "Visa success" },
             { value: "24/7", label: "Support" },
-          ].map((stat) => (
-            <div key={stat.label}>
-              <div style={{
-                fontFamily: "var(--font-display)",
-                fontSize: m ? 24 : 30,
-                fontWeight: 800,
-                color: "#001f5d",
-                lineHeight: "36px",
-              }}>
-                {stat.value}
-              </div>
-              <div style={{
-                fontFamily: "var(--font-body)",
-                fontSize: 14,
-                fontWeight: 600,
-                color: "#43474d",
-                letterSpacing: "0.7px",
-                marginTop: 4,
-              }}>
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+          ]}
+          overlap={m ? -28 : -56}
+        />
+      </div>
 
       {/* ===== OFFICE + CONTACT PANEL ===== */}
       <section
@@ -379,7 +349,7 @@ export default function ContactUsPage() {
           flexDirection: m ? "column" : "row",
           gap: m ? 32 : 48,
         }}>
-        {/* Left — Office Card */}
+        {/* Left Ã¢â‚¬â€ Office Card */}
         <div style={{
           flex: m ? "1 1 100%" : "1 1 400px",
           backgroundColor: "#ffffff",
@@ -392,7 +362,7 @@ export default function ContactUsPage() {
             height: 192,
             position: "relative",
             backgroundColor: "#001f5d",
-            backgroundImage: "url('/office image .webp')",
+            backgroundImage: "url('/shiva-manpower-support-team.webp')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}>
@@ -454,7 +424,7 @@ export default function ContactUsPage() {
           </div>
         </div>
 
-        {/* Right — Quick Contact Panel */}
+        {/* Right Ã¢â‚¬â€ Quick Contact Panel */}
         <div style={{
           flex: m ? "1 1 100%" : "1 1 400px",
           display: "flex",
@@ -787,92 +757,141 @@ export default function ContactUsPage() {
       {/* ===== JOURNEY TRACKER ===== */}
       <section
         ref={journeyRef}
-        className="reveal"
+        className="reveal reveal-stagger journey-section"
         style={{
           padding: m ? "40px 0 80px" : "16px 0 80px",
         }}
       >
         <div style={{ maxWidth: "var(--max-width)", margin: "0 auto", padding: m ? "0 20px" : "0 32px", textAlign: "center" }}>
-        <h2 style={{
+        <h2 className="reveal-child" style={{
           fontFamily: "var(--font-display)",
           fontSize: 24,
           fontWeight: 700,
           color: "#000c2f",
           marginBottom: 8,
-        }}>
+          "--i": 0,
+        } as React.CSSProperties}>
           Your Journey with Us
         </h2>
-        <p style={{
+        <p className="reveal-child" style={{
           fontFamily: "var(--font-body)",
           fontSize: 16,
           color: "#43474d",
-          marginBottom: 40,
-        }}>
+          marginBottom: 48,
+          "--i": 1,
+        } as React.CSSProperties}>
           Transparent recruitment, every step of the way.
         </p>
 
         {/* Progress tracker */}
         <div style={{
-          maxWidth: 896,
+          maxWidth: 960,
           margin: "0 auto",
           position: "relative",
-          padding: "40px 0",
+          padding: m ? "8px 0" : "24px 0 16px",
         }}>
-          {/* Line */}
-          {!m && <div style={{
-            position: "absolute",
-            top: "50%",
-            left: "5%",
-            right: "5%",
-            height: 2,
-            backgroundColor: "#c4c6ce",
-            transform: "translateY(-50%)",
-          }} />}
+          {/* Desktop: horizontal background line + animated progress */}
+          {!m && (
+            <>
+              <div className="journey-line-bg" style={{
+                position: "absolute",
+                top: 22,
+                left: "10%",
+                right: "10%",
+                height: 2,
+                backgroundColor: "#dcdee6",
+                borderRadius: 2,
+              }} />
+              <div className="journey-line-progress" style={{
+                position: "absolute",
+                top: 22,
+                left: "10%",
+                height: 2,
+                background: "linear-gradient(90deg, #000c2f 0%, #5784ff 100%)",
+                borderRadius: 2,
+              }} />
+            </>
+          )}
+
           {/* Steps */}
           <div style={{
             display: "flex",
             justifyContent: "space-between",
             position: "relative",
             flexDirection: m ? "column" : "row",
-            gap: m ? 20 : 0,
-            alignItems: m ? "flex-start" : undefined,
-            paddingLeft: m ? 24 : 0,
+            gap: m ? 28 : 0,
+            alignItems: m ? "flex-start" : "flex-start",
+            paddingLeft: m ? 0 : 0,
           }}>
-            {m && <div style={{
-              position: "absolute",
-              top: 0,
-              bottom: 0,
-              left: 31,
-              width: 2,
-              backgroundColor: "#c4c6ce",
-            }} />}
-            {journeySteps.map((step, i) => (
-              <div key={step} style={{
-                display: "flex",
-                flexDirection: m ? "row" : "column",
-                alignItems: "center",
-                gap: 12,
-                backgroundColor: "#f8f9ff",
-                padding: m ? "4px 16px 4px 0" : "0 16px",
-              }}>
-                <div style={{
-                  width: 16,
-                  height: 16,
-                  borderRadius: "50%",
-                  backgroundColor: i === 0 ? "#000c2f" : "#c4c6ce",
-                  boxShadow: i === 0 ? "0 0 12px rgba(0,12,47,0.40)" : "none",
+            {/* Mobile: vertical background line + animated progress */}
+            {m && (
+              <>
+                <div className="journey-line-bg" style={{
+                  position: "absolute",
+                  top: 8,
+                  bottom: 8,
+                  left: 21,
+                  width: 2,
+                  backgroundColor: "#dcdee6",
+                  borderRadius: 2,
                 }} />
-                <span style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: 10,
-                  fontWeight: 700,
-                  color: i === 0 ? "#000c2f" : "#74777e",
-                  letterSpacing: "1px",
-                  textTransform: "uppercase",
-                  whiteSpace: "nowrap",
+                <div className="journey-line-progress journey-line-progress--vertical" style={{
+                  position: "absolute",
+                  top: 8,
+                  left: 21,
+                  width: 2,
+                  background: "linear-gradient(180deg, #000c2f 0%, #5784ff 100%)",
+                  borderRadius: 2,
+                }} />
+              </>
+            )}
+
+            {journeySteps.map((step, i) => (
+              <div
+                key={step.label}
+                className="reveal-child journey-step"
+                style={{
+                  display: "flex",
+                  flexDirection: m ? "row" : "column",
+                  alignItems: m ? "center" : "center",
+                  gap: m ? 16 : 14,
+                  position: "relative",
+                  zIndex: 1,
+                  flex: m ? "0 0 auto" : "1 1 0",
+                  textAlign: "center",
+                  "--i": i + 2,
+                } as React.CSSProperties}
+              >
+                <div className={`journey-dot${i === 0 ? " journey-dot--active" : ""}`}>
+                  <span>{i + 1}</span>
+                </div>
+                <div style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: m ? "flex-start" : "center",
+                  gap: 4,
                 }}>
-                  {step}
-                </span>
+                  <span style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: 11,
+                    fontWeight: 700,
+                    color: "#000c2f",
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    whiteSpace: "nowrap",
+                  }}>
+                    {step.label}
+                  </span>
+                  <span style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: 13,
+                    fontWeight: 400,
+                    color: "#5b6072",
+                    whiteSpace: "nowrap",
+                  }}>
+                    {step.sub}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
@@ -915,7 +934,7 @@ export default function ContactUsPage() {
               fontSize: 16,
               color: "#43474d",
             }}>
-              Real workers placed in real jobs — straight from our Instagram.
+              Real workers placed in real jobs Ã¢â‚¬â€ straight from our Instagram.
             </p>
           </div>
 
@@ -993,7 +1012,7 @@ export default function ContactUsPage() {
               </a>
             ))}
 
-            {/* This Could Be You Next — CTA Card */}
+            {/* This Could Be You Next Ã¢â‚¬â€ CTA Card */}
             <a
               href="#"
               onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}

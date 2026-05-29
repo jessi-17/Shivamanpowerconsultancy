@@ -8,9 +8,9 @@ import { useIsMobile } from "@/hooks/useIsMobile";
 
 const featured = [
   { name: "UAE (Dubai)", subtitle: "CONSTRUCTION & TECH", image: "/UAE.jpg", color: "#c9a227", href: "/jobs/uae" },
-  { name: "Poland", subtitle: "MANUFACTURING", image: "/poland job.webp", color: "#dc3545", href: "/jobs/poland" },
-  { name: "Romania", subtitle: "LOGISTICS & FMCG", image: "/Romania jobs.webp", color: "#0052dc", href: "/jobs/romania" },
-  { name: "Saudi Arabia", subtitle: "ENGINEERING", image: "/Saudi arabia job.webp", color: "#006d3a", href: "/jobs/saudi-arabia" },
+  { name: "Poland", subtitle: "MANUFACTURING", image: "/poland-jobs-shiva-manpower.webp", color: "#dc3545", href: "/jobs/poland" },
+  { name: "Romania", subtitle: "LOGISTICS & FMCG", image: "/romania-jobs-shiva-manpower.webp", color: "#0052dc", href: "/jobs/romania" },
+  { name: "Saudi Arabia", subtitle: "ENGINEERING", image: "/saudi-arabia-jobs-shiva-manpower.webp", color: "#006d3a", href: "/jobs/saudi-arabia" },
   { name: "Croatia", subtitle: "CONSTRUCTION & INDUSTRY", image: "/Rectangle 3.webp", color: "#0052dc", href: "/jobs/europe" },
   { name: "Qatar", subtitle: "OIL & GAS", image: "/Rectangle 4.webp", color: "#8b1a3a", href: "/jobs/qatar" },
   { name: "Europe", subtitle: "SKILLED & SEMI-SKILLED", image: "/Rectangle 2.webp", color: "#f59e0b", href: "/jobs/europe" },
@@ -97,7 +97,7 @@ export default function CareerDestinations() {
               e.currentTarget.style.boxShadow = "none";
             }}
           >
-            View All Opportunities →
+            View All Opportunities ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢
           </Link>
         </div>
 
@@ -200,12 +200,12 @@ export default function CareerDestinations() {
               Qatar, Kuwait, Oman, Croatia, Bahrain & more.
             </p>
             <Link href="/current-demands" style={{ fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 600, color: "#60a5fa", textDecoration: "none" }}>
-              View All →
+              View All ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢
             </Link>
           </div>
         </div>
 
-        {/* Additional country flags — hidden on mobile */}
+        {/* Additional country flags ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â hidden on mobile */}
         {!m && (
           <div
             ref={gridRef}

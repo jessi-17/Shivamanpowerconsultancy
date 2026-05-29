@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
 import RelatedServices from "@/components/own/RelatedServices";
+import PageHero from "@/components/own/PageHero";
 
 export const metadata: Metadata = {
   title: "Pre-Departure Orientation & Briefing | Nakodar & Jalandhar | Shiva Travel",
@@ -111,54 +112,22 @@ export default function PreDepartureBriefingPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       <main style={{ backgroundColor: "#f8f9ff" }}>
-        {/* ===== HERO ===== */}
-        <section style={{ paddingTop: 120, paddingBottom: 80, backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
-            <div style={{ flex: "1 1 480px", minWidth: 0 }}>
-              <div style={{ display: "inline-block", padding: "6px 16px", backgroundColor: "#eff4ff", borderRadius: 20, marginBottom: 24 }}>
-                <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#0052dc", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                  MEA Mandated Training
-                </span>
-              </div>
-
-              <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.05, letterSpacing: "-1.5px", marginBottom: 24 }}>
-                Pre-Departure
-                <br />
-                Orientation & Briefing
-                <br />
-                <span style={{ color: "#0052dc" }}>for Overseas Workers.</span>
-              </h1>
-
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                Before you board your flight, you need to know your rights, understand the laws of your destination country, and be prepared for life and work abroad. Our pre-departure orientation covers everything — from labour laws and worker protections to airport procedures and emergency contacts. This briefing is conducted at our Nakodar office in Punjabi and Hindi, so every worker leaves feeling confident and informed.
-              </p>
-
-              <div style={{ display: "flex", gap: 16, marginBottom: 32, flexWrap: "wrap" }}>
-                <Link href="/contactus" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "#0052dc", color: "#fff", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>
-                  Book Free Consultation
-                </Link>
-                <a href="tel:+919814820432" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "transparent", border: "1.5px solid #0052dc", color: "#0052dc", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>
-                  Call +91 98148-20432
-                </a>
-              </div>
-
-              <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["Government Mandated", "In Punjabi & Hindi", "Printed Reference Kit"].map((badge) => (
-                  <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#0b1c30" }} />
-                    <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
-              <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/carousel 1.webp" alt="Pre-departure briefing session at Shiva Travel Nakodar" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
-              </div>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          kicker="MEA Mandated Training"
+          title="Pre-departure orientation for overseas workers."
+          highlight="overseas workers."
+          chips={["Labour Rights", "Airport Procedures", "In Punjabi & Hindi", "Printed Kit"]}
+          description="Before you board your flight, you need to know your rights and the laws of your destination. Our pre-departure briefing covers labour laws, worker protections, airport procedures, emergency contacts — conducted at our Nakodar office in Punjabi and Hindi."
+          primaryCta={{ label: "Book Free Consultation", href: "/contactus" }}
+          stats={[
+            { num: "Free", label: "For Placed Workers" },
+            { num: "Hindi/Punjabi", label: "Local Language" },
+            { num: "MEA", label: "Mandated" },
+          ]}
+          image={{ src: "/carousel 1.webp", alt: "Pre-departure briefing session at Shiva Travel Nakodar" }}
+          imageSeal={{ title: "Pre-Departure Orientation", subtitle: "Free for placed candidates · Reference kit included" }}
+          microChip={{ value: "MEA", label: "Mandated" }}
+        />
 
         {/* ===== WHAT WE COVER ===== */}
         <section style={{ padding: "80px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb" }}>

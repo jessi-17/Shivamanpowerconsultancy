@@ -4,11 +4,14 @@ import Link from "next/link";
 import { breadcrumbJsonLd } from "../_lib/breadcrumb";
 import PunjabCluster from "@/components/own/PunjabCluster";
 import Testimonials from "@/components/own/Testimonials";
+import StatsRibbon from "@/components/own/StatsRibbon";
+import CityTrustGrid from "@/components/own/CityTrustGrid";
+import PageHero from "@/components/own/PageHero";
 
 export const metadata: Metadata = {
   title: "Manpower Consultancy Near Kapurthala | Shiva Travel & Manpower Consultants",
   description:
-    "Looking for overseas jobs from Kapurthala? Shiva Travel & Manpower Consultants — government licensed (RA B-1794), 25+ years experience. Jobs in Dubai, Saudi Arabia, Qatar, Poland, Romania. Zero candidate fees. Office near Kapurthala on Jalandhar Road, Nakodar.",
+    "Looking for overseas jobs from Kapurthala? Shiva Travel & Manpower Consultants â€” government licensed (RA B-1794), 25+ years experience. Jobs in Dubai, Saudi Arabia, Qatar, Poland, Romania. Zero candidate fees. Office near Kapurthala on Jalandhar Road, Nakodar.",
   keywords: [
     "manpower consultancy Kapurthala",
     "overseas recruitment agency Kapurthala",
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "EmploymentAgency",
-  name: "Shiva Travel & Manpower Consultants — Kapurthala Region",
+  name: "Shiva Travel & Manpower Consultants â€” Kapurthala Region",
   description:
     "Government licensed overseas recruitment agency serving Kapurthala, Punjab. Specializing in Gulf & European placements since 2002.",
   url: "https://shivatravelconsultant.in/kapurthala",
@@ -60,7 +63,7 @@ const destinations = [
   { country: "Qatar", roles: "Construction, Transport, Maintenance, Hospitality", href: "/jobs/qatar" },
   { country: "Poland", roles: "Factory, Food Processing, Packaging, Agriculture", href: "/jobs/poland" },
   { country: "Romania", roles: "Construction, Manufacturing, Industrial Work", href: "/jobs/romania" },
-  { country: "Europe", roles: "Croatia, Bulgaria, Malta — Skilled & Semi-skilled", href: "/jobs/europe" },
+  { country: "Europe", roles: "Croatia, Bulgaria, Malta â€” Skilled & Semi-skilled", href: "/jobs/europe" },
 ];
 
 const stats = [
@@ -71,11 +74,11 @@ const stats = [
 ];
 
 const trustReasons = [
-  { title: "30 Minutes from Kapurthala Bus Stand", desc: "Our Nakodar office is 22 km from Kapurthala city via the Kapurthala–Nakodar road. Direct Punjab Roadways buses every 30 minutes (₹35, 30 min). Many Kapurthala families come on Saturday afternoons after visiting Sultanpur Lodhi gurdwara." },
-  { title: "Sultanpur Lodhi & Bholath Families Welcome", desc: "We have placed 800+ workers from Kapurthala district — Sultanpur Lodhi, Bholath, Begowal, Phagwara Road. Religious-minded families value our transparent practice — no false promises, just honest assessments and verifiable license." },
+  { title: "30 Minutes from Kapurthala Bus Stand", desc: "Our Nakodar office is 22 km from Kapurthala city via the Kapurthalaâ€“Nakodar road. Direct Punjab Roadways buses every 30 minutes (â‚¹35, 30 min). Many Kapurthala families come on Saturday afternoons after visiting Sultanpur Lodhi gurdwara." },
+  { title: "Sultanpur Lodhi & Bholath Families Welcome", desc: "We have placed 800+ workers from Kapurthala district â€” Sultanpur Lodhi, Bholath, Begowal, Phagwara Road. Religious-minded families value our transparent practice â€” no false promises, just honest assessments and verifiable license." },
   { title: "Engineering & Technical Diploma Specialty", desc: "Kapurthala has Punjab's railway coach factory legacy and engineering colleges (PLSEI etc). Workers with technical diplomas or engineering background match Romania and Poland skilled-worker shortlists perfectly. Tell us your training, we map the right country." },
-  { title: "Govt-Licensed RA B-1794", desc: "MEA-issued, ALMRA Punjab member. Verifiable on emigrate.gov.in portal. License valid through June 2027 — search for our agency name directly on the official site to confirm." },
-  { title: "Free Documentation Review", desc: "Bring your existing certificates — diploma, degree, work experience — and we'll tell you for FREE which countries best match your profile. No commitment, no charges for first consultation. Honest assessment first, decision second." },
+  { title: "Govt-Licensed RA B-1794", desc: "MEA-issued, ALMRA Punjab member. Verifiable on emigrate.gov.in portal. License valid through June 2027 â€” search for our agency name directly on the official site to confirm." },
+  { title: "Free Documentation Review", desc: "Bring your existing certificates â€” diploma, degree, work experience â€” and we'll tell you for FREE which countries best match your profile. No commitment, no charges for first consultation. Honest assessment first, decision second." },
   { title: "Family-First Counselling \u2014 Bring the Whole Family", desc: "Bring parents, spouses, in-laws. We sit with the whole family. Many Kapurthala families want to make the decision together \u2014 we welcome this approach and explain the process in Punjabi/Hindi/English." },
 ];
 
@@ -95,77 +98,34 @@ export default function KapurthalaPage() {
       />
 
       <main style={{ backgroundColor: "#f8f9ff" }}>
-        {/* ===== HERO — Split Layout ===== */}
-        <section style={{ paddingTop: 120, paddingBottom: 80, backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
-            {/* Left — Text */}
-            <div style={{ flex: "1 1 480px", minWidth: 0 }}>
-              <div style={{ display: "inline-block", padding: "6px 16px", backgroundColor: "#eff4ff", borderRadius: 20, marginBottom: 24 }}>
-                <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#0052dc", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                  Serving Kapurthala & Doaba Since 2002
-                </span>
-              </div>
+        <PageHero
+          kicker="Serving Kapurthala & Doaba Since 2002"
+          title="Overseas recruitment agency near Kapurthala."
+          highlight="near Kapurthala."
+          chips={["15 mins from Kapurthala", "Govt-Licensed", "No Hidden Fees", "Doaba Coverage"]}
+          description="Shiva Travel & Manpower Consultants is a govt-licensed recruitment agency on Jalandhar Road, Nakodar â€” just 15 minutes from Kapurthala. 5,000+ Doaba workers placed in Gulf & Europe."
+          primaryCta={{ label: "Book Free Consultation", href: "/contactus" }}
+          stats={[
+            { num: "15 min", label: "From Kapurthala" },
+            { num: "5,000+", label: "Doaba Placements" },
+            { num: "RA B-1794", label: "MEA Licensed" },
+          ]}
+          image={{ src: "/shiva-manpower-nakodar-office-punjab.webp", alt: "Shiva Travel Manpower Consultants office near Kapurthala" }}
+          imageSeal={{ title: "Walk-in from Kapurthala", subtitle: "15 mins to Nakodar office" }}
+          microChip={{ value: "4.9â˜…", label: "200+ Reviews" }}
+        />
 
-              <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.05, letterSpacing: "-1.5px", marginBottom: 24 }}>
-                Overseas Recruitment Agency
-                <br />
-                <span style={{ color: "#0052dc" }}>Near Kapurthala.</span>
-              </h1>
-
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                Shiva Travel & Manpower Consultants is a government-licensed recruitment agency on Jalandhar Road, Nakodar — just 15 minutes from Kapurthala city. We have placed 5,000+ workers from the Doaba region in premium jobs across the Gulf & Europe.
-              </p>
-
-              {/* CTA Buttons */}
-              <div style={{ display: "flex", gap: 16, marginBottom: 32, flexWrap: "wrap" }}>
-                <Link href="/contactus" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "#0052dc", color: "#fff", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>
-                  Book Free Consultation
-                </Link>
-                <Link href="/current-demands" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "transparent", border: "1.5px solid #0052dc", color: "#0052dc", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>
-                  View Current Openings
-                </Link>
-              </div>
-
-              {/* Badges */}
-              <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["Government Licensed", "No Hidden Fees", "20+ Years"].map((badge) => (
-                  <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#0b1c30" }} />
-                    <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right — Image with overlay stat */}
-            <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
-              <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Professional Punjab office environment.webp" alt="Shiva Travel Manpower Consultants office near Kapurthala" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
-              </div>
-              <div style={{ position: "absolute", bottom: -20, right: 24, backgroundColor: "#001f5d", borderRadius: 12, padding: "20px 28px", boxShadow: "0 8px 32px rgba(0,12,47,0.3)" }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff", lineHeight: 1 }}>5,000+</div>
-                <div style={{ fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 4 }}>
-                  Workers Placed<br />Worldwide
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ===== STATS BAR ===== */}
-        <section style={{ padding: "60px 0", borderBottom: "1px solid #e5e7eb" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", justifyContent: "center", gap: 64, flexWrap: "wrap" }}>
-            {stats.map((s) => (
-              <div key={s.label} style={{ textAlign: "center" }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#001f5d", lineHeight: 1 }}>{s.value}</div>
-                <div style={{ fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 600, color: "#64748b", letterSpacing: "0.05em", textTransform: "uppercase", marginTop: 4 }}>{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </section>
+        {/* ===== STATS BAR â€” floating overlap card ===== */}
+        <StatsRibbon stats={stats} overlap={-32} />
+        <div style={{ height: 40 }} aria-hidden="true" />
 
         {/* ===== WHY FAMILIES TRUST US ===== */}
-        <section style={{ padding: "80px 0", backgroundColor: "#f8f9ff" }}>
+        <section style={{
+          padding: "80px 0",
+          backgroundColor: "#f8f9ff",
+          backgroundImage: "radial-gradient(circle at center, rgba(0,82,220,0.07) 1px, transparent 1.2px)",
+          backgroundSize: "26px 26px",
+        }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
             <div style={{ textAlign: "center", marginBottom: 56 }}>
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>Why Families from Kapurthala Trust Shiva Travel</h2>
@@ -174,18 +134,14 @@ export default function KapurthalaPage() {
               </p>
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 360px), 1fr))", gap: 24 }}>
-              {trustReasons.map((item) => (
-                <div key={item.title} style={{ backgroundColor: "#ffffff", borderRadius: 16, padding: 32, border: "1px solid #e5e7eb" }}>
-                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 700, color: "#0b1c30", marginBottom: 10 }}>
-                    {item.title}
-                  </h3>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#43474d", lineHeight: 1.7 }}>
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <CityTrustGrid
+              items={trustReasons}
+              image={{
+                src: "/shiva-manpower-nakodar-office-punjab.webp",
+                alt: "Shiva Travel & Manpower Consultants office near Kapurthala â€” licensed MEA agency RA B-1794",
+              }}
+              imageCaption="Our Nakodar office â€” 30 minutes from Kapurthala"
+            />
           </div>
         </section>
 
@@ -217,10 +173,10 @@ export default function KapurthalaPage() {
           </div>
         </section>
 
-        {/* ===== TESTIMONIALS — shared Google Reviews component ===== */}
+        {/* ===== TESTIMONIALS â€” shared Google Reviews component ===== */}
         <Testimonials />
 
-        {/* ===== PUNJAB CLUSTER — internal linking ===== */}
+        {/* ===== PUNJAB CLUSTER â€” internal linking ===== */}
         <PunjabCluster currentSlug="kapurthala" />
 
         {/* ===== CTA ===== */}
@@ -231,7 +187,7 @@ export default function KapurthalaPage() {
               Ready to Start Your<br />Overseas Career?
             </h2>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: 12, maxWidth: 480, margin: "0 auto 12px" }}>
-              Visit our office at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar — just 15 minutes from Kapurthala city.
+              Visit our office at Golden Avenue, Near Sukhjeet Hospital, Jalandhar Road, Nakodar â€” just 15 minutes from Kapurthala city.
             </p>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "rgba(255,255,255,0.4)", marginBottom: 36 }}>
               Walk-in consultations available Monday to Saturday, 9am to 6:30pm.

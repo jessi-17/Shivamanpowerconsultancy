@@ -10,6 +10,7 @@ const quickLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
   { label: "Best in Punjab", href: "/punjab" },
+  { label: "Guides", href: "/guides" },
   { label: "Visa Services", href: "/services" },
   { label: "For Employers", href: "/employers" },
   { label: "For Job Seekers", href: "/job-seekers" },

@@ -16,7 +16,7 @@ export default function PunjabCluster({ currentSlug }: { currentSlug: Slug }) {
   const locations = allLocations.filter((l) => l.slug !== currentSlug);
 
   return (
-    <section style={{ padding: "80px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb" }}>
+    <section style={{ padding: "80px 0", backgroundColor: "#f8f9ff" }}>
       <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
         <div style={{ textAlign: "center", marginBottom: 48 }}>
           <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>
@@ -34,10 +34,11 @@ export default function PunjabCluster({ currentSlug }: { currentSlug: Slug }) {
               href={l.href}
               style={{
                 display: "block",
-                backgroundColor: l.featured ? "#001f5d" : "#f8f9ff",
+                backgroundColor: l.featured ? "#001f5d" : "#ffffff",
                 borderRadius: 16,
                 padding: 28,
-                border: l.featured ? "none" : "1px solid #e5e7eb",
+                border: l.featured ? "none" : "1px solid #e8ecf3",
+                boxShadow: l.featured ? "0 12px 28px rgba(0,31,93,0.18)" : "0 1px 2px rgba(11,28,48,0.04)",
                 textDecoration: "none",
               }}
             >

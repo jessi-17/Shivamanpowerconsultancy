@@ -3,11 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
 import RelatedServices from "@/components/own/RelatedServices";
+import PageHero from "@/components/own/PageHero";
 
 export const metadata: Metadata = {
   title: { absolute: "Best E-Migrate Agent in Punjab | Fast Clearance Nakodar" },
   description:
-    "Punjab's best E-Migrate registration & emigration clearance agent. Govt-mandated processing for UAE, Saudi, Qatar, Kuwait, Bahrain jobs from Nakodar & Jalandhar. Licensed agency RA B-1794 — fast, transparent.",
+    "Punjab's best E-Migrate registration & emigration clearance agent. Govt-mandated processing for UAE, Saudi, Qatar, Kuwait, Bahrain jobs from Nakodar & Jalandhar. Licensed agency RA B-1794 Ã¢â‚¬â€ fast, transparent.",
   keywords: [
     "e-migrate registration nakodar",
     "e-migrate processing jalandhar",
@@ -26,10 +27,10 @@ export const metadata: Metadata = {
 const steps = [
   { step: "01", title: "Worker Registration", desc: "We create your profile on the official E-Migrate portal (emigrate.gov.in) with your passport, photo, and personal details. Every field is verified to avoid rejection." },
   { step: "02", title: "Employer & Foreign Principal Verification", desc: "Your employer abroad must be registered on E-Migrate as a Foreign Employer (FE). We coordinate with the employer to ensure their FE registration and project details are active and valid." },
-  { step: "03", title: "Recruiting Agent Linkage", desc: "As a licensed recruiting agent (RA B-1794), we link your application to our RA profile. This is mandatory — only MEA-licensed agents can process E-Migrate applications." },
+  { step: "03", title: "Recruiting Agent Linkage", desc: "As a licensed recruiting agent (RA B-1794), we link your application to our RA profile. This is mandatory Ã¢â‚¬â€ only MEA-licensed agents can process E-Migrate applications." },
   { step: "04", title: "Document Upload & Verification", desc: "Employment contract, visa copy, medical certificate, insurance policy, and skill certificates are uploaded. Our team cross-checks every document against POE requirements." },
   { step: "05", title: "Emigration Clearance", desc: "Once all documents are verified, the Protector of Emigrants (POE) issues emigration clearance. We track the application status and resolve any queries raised by the POE office." },
-  { step: "06", title: "Clearance Certificate & Departure", desc: "You receive your Emigration Clearance (EC) status linked to your passport. At the airport, immigration checks your EC status electronically — no paper certificate needed." },
+  { step: "06", title: "Clearance Certificate & Departure", desc: "You receive your Emigration Clearance (EC) status linked to your passport. At the airport, immigration checks your EC status electronically Ã¢â‚¬â€ no paper certificate needed." },
 ];
 
 const ecrCountries = [
@@ -65,11 +66,11 @@ const documents = [
 
 const faqs = [
   { q: "What is E-Migrate and why is it required?", a: "E-Migrate is a mandatory online system launched by the Ministry of External Affairs, Government of India. It is required for all Indian workers holding ECR (Emigration Check Required) passports who are travelling to 18 designated countries for employment. The system protects workers from exploitation by verifying employers, contracts, and working conditions before departure." },
-  { q: "Who needs E-Migrate clearance?", a: "Any Indian citizen holding an ECR passport who is going abroad for employment to an ECR country (UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman, etc.) needs E-Migrate clearance. If your passport has an ECNR (Emigration Check Not Required) stamp — typically for graduates and certain professionals — you are exempt." },
+  { q: "Who needs E-Migrate clearance?", a: "Any Indian citizen holding an ECR passport who is going abroad for employment to an ECR country (UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman, etc.) needs E-Migrate clearance. If your passport has an ECNR (Emigration Check Not Required) stamp Ã¢â‚¬â€ typically for graduates and certain professionals Ã¢â‚¬â€ you are exempt." },
   { q: "How long does E-Migrate processing take?", a: "When all documents are in order, E-Migrate clearance typically takes 3 to 7 working days. However, if the POE raises queries or if the employer's FE registration is pending, it can take longer. We handle all follow-ups to ensure minimum delays." },
   { q: "Can I apply for E-Migrate on my own?", a: "Technically, the portal allows individual registration. However, the process requires coordination between the worker, the recruiting agent (RA), and the foreign employer (FE). Since the employer must be registered and linked, and many steps require RA involvement, most workers process it through a licensed agency like ours." },
   { q: "What happens if my E-Migrate is rejected?", a: "Common reasons for rejection include mismatched contract details, incomplete employer registration, or document discrepancies. We review the rejection reason, correct the issues, and resubmit. Our experience with the POE office helps resolve queries quickly." },
-  { q: "Is there a fee for E-Migrate registration?", a: "The government portal itself does not charge workers a fee. As per Indian law, all recruitment costs are borne by the employer. Shiva Travel maintains minimal and transparent charges with no hidden fees — this includes E-Migrate processing, documentation, and coordination." },
+  { q: "Is there a fee for E-Migrate registration?", a: "The government portal itself does not charge workers a fee. As per Indian law, all recruitment costs are borne by the employer. Shiva Travel maintains minimal and transparent charges with no hidden fees Ã¢â‚¬â€ this includes E-Migrate processing, documentation, and coordination." },
 ];
 
 const faqJsonLd = {
@@ -117,60 +118,22 @@ export default function EMigratePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       <main style={{ backgroundColor: "#f8f9ff" }}>
-        {/* ===== HERO ===== */}
-        <section style={{ paddingTop: 120, paddingBottom: 80, backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
-            <div style={{ flex: "1 1 480px", minWidth: 0 }}>
-              <div style={{ display: "inline-block", padding: "6px 16px", backgroundColor: "#eff4ff", borderRadius: 20, marginBottom: 24 }}>
-                <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#0052dc", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                  Government Mandated Process
-                </span>
-              </div>
-
-              <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.05, letterSpacing: "-1.5px", marginBottom: 24 }}>
-                E-Migrate Registration
-                <br />
-                & Emigration Clearance
-                <br />
-                <span style={{ color: "#0052dc" }}>from Nakodar.</span>
-              </h1>
-
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
-                E-Migrate is the Government of India&apos;s mandatory online system that protects Indian workers going abroad for employment. Every worker with an ECR passport must get emigration clearance through the E-Migrate portal before departing for Gulf countries. We handle the entire process from our Nakodar office — registration, document upload, employer verification, and POE clearance.
-              </p>
-
-              <div style={{ display: "flex", gap: 16, marginBottom: 32, flexWrap: "wrap" }}>
-                <Link href="/contactus" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "#0052dc", color: "#fff", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>
-                  Start E-Migrate Process
-                </Link>
-                <a href="tel:+919814820432" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "transparent", border: "1.5px solid #0052dc", color: "#0052dc", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>
-                  Call +91 98148-20432
-                </a>
-              </div>
-
-              <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                {["Licensed RA B-1794", "No Hidden Fees", "POE Approved"].map((badge) => (
-                  <div key={badge} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#0b1c30" }} />
-                    <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "#0b1c30" }}>{badge}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div style={{ flex: "1 1 440px", minWidth: 0, position: "relative" }}>
-              <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Professional Punjab office environment.webp" alt="E-Migrate processing at Shiva Travel office in Nakodar" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
-              </div>
-              <div style={{ position: "absolute", bottom: -20, right: 24, backgroundColor: "#001f5d", borderRadius: 12, padding: "20px 28px", boxShadow: "0 8px 32px rgba(0,12,47,0.3)" }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 800, color: "#fff", lineHeight: 1 }}>5,000+</div>
-                <div style={{ fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 4 }}>
-                  E-Migrate Clearances<br />Processed
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          kicker="Government Mandated Process"
+          title="E-Migrate registration & emigration clearance from Nakodar."
+          highlight="from Nakodar."
+          chips={["Licensed RA B-1794", "POE Approved", "3-7 Day Clearance", "No Hidden Fees"]}
+          description="E-Migrate is the Government of India's mandatory online system protecting Indian workers going abroad. We handle the entire process Ã¢â‚¬â€ registration, document upload, employer verification, POE clearance Ã¢â‚¬â€ from our Nakodar office."
+          primaryCta={{ label: "Start E-Migrate Process", href: "/contactus" }}
+          stats={[
+            { num: "5,000+", label: "EC Clearances" },
+            { num: "RA B-1794", label: "MEA Licensed" },
+            { num: "3-7 days", label: "Avg Processing" },
+          ]}
+          image={{ src: "/shiva-manpower-nakodar-office-punjab.webp", alt: "E-Migrate processing at Shiva Travel office in Nakodar" }}
+          imageSeal={{ title: "Licensed E-Migrate Processor", subtitle: "RA B-1794 Ã‚Â· POE Approved" }}
+          microChip={{ value: "5,000+", label: "Clearances" }}
+        />
 
         {/* ===== WHAT IS E-MIGRATE ===== */}
         <section style={{ padding: "80px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb" }}>
@@ -183,7 +146,7 @@ export default function EMigratePage() {
                 E-Migrate is an online platform operated by the Ministry of External Affairs (MEA) under the Emigration Act, 1983. It was launched to create a transparent, paperless system for managing the emigration of Indian workers to countries where exploitation risks are high.
               </p>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.8, marginBottom: 20, textAlign: "center" }}>
-                The system connects three stakeholders — the <strong>worker</strong>, the <strong>recruiting agent (RA)</strong>, and the <strong>foreign employer (FE)</strong> — under the oversight of the Protector of Emigrants (POE). No Indian worker with an ECR passport can board an international flight for employment without valid emigration clearance on the E-Migrate system.
+                The system connects three stakeholders Ã¢â‚¬â€ the <strong>worker</strong>, the <strong>recruiting agent (RA)</strong>, and the <strong>foreign employer (FE)</strong> Ã¢â‚¬â€ under the oversight of the Protector of Emigrants (POE). No Indian worker with an ECR passport can board an international flight for employment without valid emigration clearance on the E-Migrate system.
               </p>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.8, textAlign: "center" }}>
                 As a registered recruiting agent (RA B-1794) with the MEA, Shiva Travel & Manpower Consultants is authorized to process E-Migrate applications. We handle hundreds of clearances every year from our Nakodar office for workers heading to UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and other ECR countries.
@@ -200,7 +163,7 @@ export default function EMigratePage() {
                 How We Process Your E-Migrate Clearance
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
-                From registration to emigration clearance — here is exactly what happens when you walk into our Nakodar office.
+                From registration to emigration clearance Ã¢â‚¬â€ here is exactly what happens when you walk into our Nakodar office.
               </p>
             </div>
 
@@ -260,7 +223,7 @@ export default function EMigratePage() {
 
             <div style={{ flex: "1 1 400px", minWidth: 0 }}>
               <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Office desk.webp" alt="Document verification for E-Migrate at Nakodar office" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+                <Image src="/passport-documents-nakodar-office.webp" alt="Document verification for E-Migrate at Nakodar office" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
               </div>
             </div>
           </div>
@@ -278,10 +241,10 @@ export default function EMigratePage() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 360px), 1fr))", gap: 24 }}>
               {[
                 { title: "MEA Licensed Recruiting Agent", desc: "We hold RA License B-1794 from the Ministry of External Affairs. Only licensed agents can link worker applications on the E-Migrate portal. Processing through unlicensed agents is illegal and risky." },
-                { title: "No Hidden Fees", desc: "Indian law mandates that all major recruitment costs are borne by the employer. We maintain minimal and transparent charges — no hidden fees for E-Migrate processing, documentation, or any part of the recruitment process." },
+                { title: "No Hidden Fees", desc: "Indian law mandates that all major recruitment costs are borne by the employer. We maintain minimal and transparent charges Ã¢â‚¬â€ no hidden fees for E-Migrate processing, documentation, or any part of the recruitment process." },
                 { title: "Direct POE Coordination", desc: "We have processed thousands of emigration clearances and have established working relationships with POE offices. Any queries or objections raised are resolved quickly with proper documentation." },
                 { title: "Local Office in Nakodar", desc: "No need to travel to Jalandhar, Chandigarh, or Delhi. Walk into our Nakodar office with your documents, and we handle everything. Monday to Saturday, 9am to 6:30pm." },
-                { title: "End-to-End Support", desc: "E-Migrate is just one step. We also handle your visa processing, GAMCA medical, document attestation, insurance, and pre-departure briefing — all from one office." },
+                { title: "End-to-End Support", desc: "E-Migrate is just one step. We also handle your visa processing, GAMCA medical, document attestation, insurance, and pre-departure briefing Ã¢â‚¬â€ all from one office." },
                 { title: "20+ Years of Experience", desc: "Since 2002, we have been sending workers from Punjab to the Gulf and Europe. Our experience means fewer rejections, faster clearances, and complete compliance." },
               ].map((item) => (
                 <div key={item.title} style={{ backgroundColor: "#ffffff", borderRadius: 16, padding: 32, border: "1px solid #e5e7eb" }}>
@@ -314,7 +277,7 @@ export default function EMigratePage() {
           </div>
         </section>
 
-        {/* ===== RELATED SERVICES — internal linking ===== */}
+        {/* ===== RELATED SERVICES Ã¢â‚¬â€ internal linking ===== */}
         <RelatedServices currentSlug="e-migrate" />
 
         {/* ===== CTA ===== */}

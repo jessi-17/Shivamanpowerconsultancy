@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../_lib/breadcrumb";
+import PageHero from "@/components/own/PageHero";
+import { VerifiedPlacementsWall } from "@/components/own/ServicesProof";
+import NumberedProcess from "@/components/own/NumberedProcess";
+import PlaybookCards from "@/components/own/PlaybookCards";
+import VsThemComparison from "@/components/own/VsThemComparison";
+import EmployerLogoWall from "@/components/own/EmployerLogoWall";
 
 export const metadata: Metadata = {
   title: "Visa Services | Work Visa Processing for Gulf & Europe | Nakodar & Jalandhar",
@@ -24,87 +30,50 @@ export default function Services() {
         }}
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
-        {/* ===== HERO — Split Layout ===== */}
-        <section style={{ paddingTop: 120, paddingBottom: 80, backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
-            {/* Left */}
-            <div style={{ flex: "1 1 480px", minWidth: 0 }}>
-              <div style={{ display: "inline-block", padding: "6px 16px", backgroundColor: "#eff4ff", borderRadius: 20, marginBottom: 24 }}>
-                <span style={{ fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700, color: "#0052dc", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                  Our Expertise
-                </span>
-              </div>
+        <PageHero
+          kicker="Govt-Licensed Ãƒâ€šÃ‚Â· MEA RA B-1794"
+          title="Global Mobility for Punjab's Skilled Workforce."
+          highlight="Skilled Workforce."
+          chips={["Recruitment", "Work Visas", "Attestation", "Pre-Departure"]}
+          description="Shiva Manpower Consultancy bridges the gap between local ambition and international opportunity. From ethical recruitment to post-departure care, we handle every step of your overseas migration journey."
+          stats={[
+            { num: "5,000+", label: "Workers Placed" },
+            { num: "20+", label: "Years Trusted" },
+            { num: "12+", label: "Countries Served" },
+          ]}
+          image={{ src: "/factory-worker-jobs-dubai-uae.jpg", alt: "Construction workers in Dubai placed by Shiva Manpower" }}
+          imageSeal={{ title: "Govt-Licensed Recruiting Agent", subtitle: "MEA Ãƒâ€šÃ‚Â· RA B-1794 Ãƒâ€šÃ‚Â· Valid till 2027" }}
+          microChip={{ value: "4.9ÃƒÂ¢Ã‹Å“Ã¢â‚¬Â¦", label: "200+ Reviews" }}
+        />
 
-              <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 5vw, 3.25rem)", fontWeight: 800, color: "#0b1c30", lineHeight: 1.08, letterSpacing: "-1.5px", marginBottom: 24 }}>
-                Global Mobility Solutions for Punjab&apos;s Skilled Workforce
-              </h1>
+        <VerifiedPlacementsWall />
 
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#43474d", lineHeight: 1.7, marginBottom: 36, maxWidth: 520 }}>
-                Shiva Manpower Consultancy bridges the gap between local ambition and international opportunity. From ethical recruitment to post-departure care, we handle every step of your overseas migration journey.
-              </p>
+        <NumberedProcess
+          kicker="How It Works"
+          title="From your village to your visa ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â in 4 steps."
+          highlight="in 4 steps."
+          intro="No middlemen, no surprises. Transparent process from your first call to the day you board your flight."
+          steps={[
+            {
+              title: "Apply With Us",
+              desc: "Walk in to our Nakodar office or message on WhatsApp. We assess your skills, target country, and timeline in a single conversation.",
+            },
+            {
+              title: "Document Preparation",
+              desc: "Passport, GAMCA medical, educational certificates, experience letters. We list exactly what's needed and help you obtain anything missing.",
+            },
+            {
+              title: "Visa Processing",
+              desc: "We file your application via the MEA E-Migrate portal under our RA-1794 registration. Most visas issued in 2ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“4 weeks.",
+            },
+            {
+              title: "Departure & After-care",
+              desc: "Pre-departure briefing, airport coordination, post-arrival check-ins. We stay in touch ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â most agencies disappear after take-off.",
+            },
+          ]}
+        />
 
-              <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                <Link href="/contactus" style={{ display: "inline-flex", alignItems: "center", padding: "14px 28px", backgroundColor: "#0b1c30", color: "#fff", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, borderRadius: 10, textDecoration: "none" }}>
-                  Get Started Today
-                </Link>
-                <a href="tel:+919814820432" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 28px", backgroundColor: "#fff", color: "#0b1c30", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, borderRadius: 10, textDecoration: "none", border: "1.5px solid #e5e7eb" }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-                  +91 98148-20432
-                </a>
-              </div>
-            </div>
-
-            {/* Right — Image */}
-            <div style={{ flex: "1 1 440px", minWidth: 0 }}>
-              <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/Blog-4.jpg" alt="Construction workers in Dubai placed by Shiva Manpower" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ===== END-TO-END RECRUITMENT ===== */}
-        <section style={{ padding: "80px 0", backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", gap: 60, flexWrap: "wrap", alignItems: "flex-start" }}>
-            {/* Left Text */}
-            <div style={{ flex: "1 1 340px", minWidth: 0 }}>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 16 }}>
-                End-to-End Recruitment
-              </h2>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#43474d", lineHeight: 1.7, marginBottom: 28 }}>
-                We implement global standards for ethical sourcing. Our methodology ensures that Punjab&apos;s skilled professionals are matched with international employers who value quality and integrity.
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                {["ISO Certified Sourcing Protocol", "Multi-stage Skill Verification", "Direct Employer Liaison"].map((item) => (
-                  <div key={item} style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0052dc" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><path d="M22 4L12 14.01l-3-3" /></svg>
-                    <span style={{ fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 500, color: "#0b1c30" }}>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right — 4 cards grid */}
-            <div style={{ flex: "1 1 560px", minWidth: 0, display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }}>
-              {[
-                { icon: "M11 19C6.55 16.54 4 12.23 4 8V5l8-3 8 3v3c0 4.23-2.55 8.54-7 11", title: "Strategic Sourcing", desc: "Leveraging a vast network across North India to find candidates that meet specific global demands.", color: "#eff4ff" },
-                { icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z", title: "Screening & Quality", desc: "Rigorous background checks and technical assessments conducted by industry veterans.", color: "#f0fdf4" },
-                { icon: "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75", title: "Interview Coordination", desc: "Managing physical and virtual interview drives for large-scale international projects.", color: "#f8f9ff" },
-                { icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z M14 2v6h6", title: "Contract Management", desc: "Transparent contract signing following MEA guidelines to protect candidate rights.", color: "#fefce8" },
-              ].map((card) => (
-                <div key={card.title} style={{ backgroundColor: card.color, borderRadius: 16, padding: 28, border: "1px solid #e5e7eb" }}>
-                  <div style={{ width: 40, height: 40, borderRadius: 10, backgroundColor: "#ffffff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16, boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0052dc" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d={card.icon} /></svg>
-                  </div>
-                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700, color: "#0b1c30", marginBottom: 8 }}>{card.title}</h3>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "#43474d", lineHeight: 1.6 }}>{card.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ===== VISA & DOCUMENTATION SUPPORT — Dark rounded card ===== */}
+        {/* ===== VISA & DOCUMENTATION SUPPORT ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Dark rounded card ===== */}
         <section style={{ padding: "0 0 80px" }}>
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
             <div style={{ backgroundColor: "#001f5d", borderRadius: 24, padding: "60px 48px", display: "flex", gap: 48, flexWrap: "wrap", alignItems: "center", position: "relative", overflow: "hidden" }}>
@@ -150,38 +119,38 @@ export default function Services() {
           </div>
         </section>
 
-        {/* ===== EMPOWERING THE PUNJABI WORKFORCE ===== */}
-        <section style={{ padding: "80px 0", backgroundColor: "#f8f9ff" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
-            <div style={{ textAlign: "center", marginBottom: 48 }}>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: 700, color: "#0b1c30", marginBottom: 12 }}>
-                Where We Place You
-              </h2>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
-                From the Gulf to Europe, we connect Punjab&apos;s skilled workers with verified employers across 12+ countries.
-              </p>
-            </div>
-
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))", gap: 24 }}>
-              {[
-                { img: "/carousel 1.webp", title: "Gulf Job Placement", desc: "Direct placements in UAE, Saudi Arabia, Qatar, Kuwait & Bahrain. Construction, hospitality, oil & gas, and industrial roles with verified employers.", link: "View Gulf Jobs" },
-                { img: "/carousel 2.webp", title: "Europe Work Permits", desc: "Work permits for Poland, Romania, Croatia & more. Factory, warehouse, agriculture, and skilled trade positions with full legal compliance.", link: "View Europe Jobs" },
-                { img: "/carousel 3.webp", title: "Pre-Departure Support", desc: "Complete orientation on destination country laws, workplace rights, cultural norms, airport procedures, and emergency contacts before you fly.", link: "Learn More" },
-              ].map((card) => (
-                <div key={card.title} style={{ borderRadius: 16, overflow: "hidden", backgroundColor: "#ffffff", border: "1px solid #e5e7eb", transition: "transform 200ms, box-shadow 200ms" }}>
-                  <div style={{ position: "relative", height: 200 }}>
-                    <Image src={card.img} alt={card.title} fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: "cover" }} />
-                  </div>
-                  <div style={{ padding: 28 }}>
-                    <h3 style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 700, color: "#0b1c30", marginBottom: 10 }}>{card.title}</h3>
-                    <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "#43474d", lineHeight: 1.7, marginBottom: 16 }}>{card.desc}</p>
-                    <span style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 700, color: "#0052dc" }}>{card.link} &rarr;</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <PlaybookCards
+          kicker="Country Playbooks"
+          title="Pick your destination."
+          highlight="destination."
+          intro="Each playbook covers eligibility, documents, salary range, visa timeline, and what to expect ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â written by our team in plain English. Free to read."
+          playbooks={[
+            {
+              image: "/UAE.jpg",
+              imageAlt: "Dubai skyline ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â UAE work opportunities",
+              tag: "Gulf",
+              duration: "8 min read",
+              title: "Landing a job in UAE: visa, salary, documents",
+              href: "/jobs/uae",
+            },
+            {
+              image: "/saudi-arabia-jobs-shiva-manpower.webp",
+              imageAlt: "Saudi Arabia work opportunities",
+              tag: "Gulf",
+              duration: "9 min read",
+              title: "Saudi Arabia work guide: Iqama, GAMCA, employer rules",
+              href: "/jobs/saudi-arabia",
+            },
+            {
+              image: "/poland-jobs-shiva-manpower.webp",
+              imageAlt: "Poland factory and skilled trade jobs",
+              tag: "Europe",
+              duration: "10 min read",
+              title: "Poland work permit playbook for Indian workers",
+              href: "/jobs/poland",
+            },
+          ]}
+        />
 
         {/* ===== YOUR PARTNER BEYOND BORDERS ===== */}
         <section style={{ padding: "80px 0" }}>
@@ -223,12 +192,59 @@ export default function Services() {
               {/* Right image */}
               <div style={{ flex: "1 1 380px", minWidth: 0 }}>
                 <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                  <Image src="/office image .webp" alt="Shiva Manpower support team" fill sizes="(max-width: 768px) 100vw, 45vw" style={{ objectFit: "cover" }} />
+                  <Image src="/shiva-manpower-support-team.webp" alt="Shiva Manpower support team" fill sizes="(max-width: 768px) 100vw, 45vw" style={{ objectFit: "cover" }} />
                 </div>
               </div>
             </div>
           </div>
         </section>
+
+        <VsThemComparison
+          kicker="Why Us"
+          title="Licensed beats cheap. Every time."
+          highlight="Every time."
+          intro="Side-by-side: what you get from a govt-licensed agency vs. unlicensed agents vs. doing the visa yourself."
+          columns={{ us: "Shiva Manpower", middle: "Unlicensed Agents", right: "DIY Visa" }}
+          rows={[
+            { criterion: "MEA RA License", us: "RA B-1794, valid till 2027", middle: "None", right: "Not applicable" },
+            { criterion: "E-Migrate Filing", us: "Under our RA registration", middle: "Often fake or skipped", right: "You file yourself" },
+            { criterion: "Employer Verification", us: "Before any contract signed", middle: "Rarely ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â fake jobs common", right: "Up to you to verify" },
+            { criterion: "Charges", us: "Minimal & transparent, in writing", middle: "Hidden + 3ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“5ÃƒÆ’Ã¢â‚¬â€ higher", right: "Govt visa fee only" },
+            { criterion: "Pre-Departure Briefing", us: "Free, in-person at Nakodar", middle: "None", right: "None" },
+            { criterion: "Post-Arrival Support", us: "We stay in touch", middle: "Vanish after payment", right: "On your own" },
+            { criterion: "Refund If Visa Fails", us: "Refund policy in writing", middle: "Money lost", right: "Not applicable" },
+            { criterion: "Legal Recourse", us: "MEA + Indian courts", middle: "Agent disappears", right: "Minimal" },
+          ]}
+        />
+
+        <EmployerLogoWall
+          kicker="Verified Employers"
+          title="Where our workers actually go."
+          highlight="actually go."
+          intro="A partial list of employer types currently hosting workers we placed. We verify every employer before sending a single CV ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â contract terms, accommodation, and compliance with destination labour law."
+          employers={[
+            { name: "Construction Contractor", sector: "Infrastructure", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¦ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Âª" },
+            { name: "Hospitality Group", sector: "Hotels & F&B", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¦ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Âª" },
+            { name: "Logistics Operator", sector: "Warehousing", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¦ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Âª" },
+            { name: "MEP Contractor", sector: "Mechanical & Plumbing", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¦ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Âª" },
+            { name: "Oil & Gas EPC", sector: "Energy", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¸ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¦" },
+            { name: "Steel Manufacturer", sector: "Heavy Industry", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¸ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¦" },
+            { name: "Food Processing Group", sector: "Manufacturing", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¸ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¦" },
+            { name: "Building Contractor", sector: "Construction", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¸ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¦" },
+            { name: "Energy Contractor", sector: "Oil & Gas", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¶ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¦" },
+            { name: "Hospitality Chain", sector: "Hotels", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¶ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¦" },
+            { name: "Industrial Group", sector: "Manufacturing", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â°ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¼" },
+            { name: "Engineering Firm", sector: "Mechanical", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â°ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¼" },
+            { name: "Steel Works", sector: "Heavy Industry", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â§ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â­" },
+            { name: "Logistics Company", sector: "Warehouse", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚ÂµÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â±" },
+            { name: "Factory Operator", sector: "Production", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚ÂµÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â±" },
+            { name: "Steel Mill", sector: "Manufacturing", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚ÂµÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â±" },
+            { name: "Auto Plant", sector: "Automotive", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â·ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â´" },
+            { name: "Aerospace Plant", sector: "Aerospace", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â·ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â´" },
+            { name: "Marine Services", sector: "Shipping", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â­ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â·" },
+            { name: "Manufacturing Group", sector: "Industrial", country: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â§ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¬" },
+          ]}
+        />
 
         {/* ===== SALARY CALCULATOR CTA ===== */}
         <section style={{ padding: "0 24px 64px", backgroundColor: "#f8f9ff" }}>
@@ -248,7 +264,7 @@ export default function Services() {
                 <div style={{ flex: 1, minWidth: 200 }}>
                   <p style={{ fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: "#6ee7b7", textTransform: "uppercase", marginBottom: 4 }}>FREE TOOL</p>
                   <h3 style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 800, color: "#fff", marginBottom: 4 }}>How much will you earn abroad?</h3>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.5 }}>Use our salary calculator to see estimated earnings by country, trade &amp; experience level — in INR.</p>
+                  <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.5 }}>Use our salary calculator to see estimated earnings by country, trade &amp; experience level ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â in INR.</p>
                 </div>
                 <div style={{ flexShrink: 0 }}>
                   <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "10px 22px", borderRadius: 10, backgroundColor: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700 }}>
