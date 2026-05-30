@@ -118,6 +118,7 @@ function EditorContent() {
   const [post, setPost] = useState<BlogPost>(emptyPost);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [uploading, setUploading] = useState(false);
   const [keywordInput, setKeywordInput] = useState("");
   const [tab, setTab] = useState<"write" | "preview">("write");
@@ -137,16 +138,42 @@ function EditorContent() {
   const handleSave = useCallback(async () => {
     setSaving(true);
     setSaved(false);
+    setError(null);
     const method = isNew ? "POST" : "PUT";
-    await fetch("/api/admin/blogs", {
-      method,
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(post),
-    });
-    setSaving(false);
-    setSaved(true);
-    setTimeout(() => setSaved(false), 3000);
-    if (isNew) router.push("/admin/blog");
+    try {
+      const res = await fetch("/api/admin/blogs", {
+        method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(post),
+      });
+
+      if (res.status === 401) {
+        setSaving(false);
+        setError(
+          "Your admin session has expired. Open /admin in a new tab, log in again, then come back and click Publish."
+        );
+        return;
+      }
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({} as { error?: string }));
+        setSaving(false);
+        setError(
+          body?.error
+            ? `Publish failed (${res.status}): ${body.error}`
+            : `Publish failed with status ${res.status}. Check server logs.`
+        );
+        return;
+      }
+
+      setSaving(false);
+      setSaved(true);
+      setTimeout(() => setSaved(false), 3000);
+      if (isNew) router.push("/admin/blog");
+    } catch (err) {
+      setSaving(false);
+      setError(`Network error — could not reach the server: ${(err as Error).message}`);
+    }
   }, [isNew, post, router]);
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -335,6 +362,78 @@ function EditorContent() {
           </button>
         </div>
       </div>
+
+      {error && (
+        <div
+          role="alert"
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+            gap: 12,
+            padding: "14px 18px",
+            background: "#fef2f2",
+            border: "1px solid #fecaca",
+            borderRadius: 10,
+            marginBottom: 24,
+          }}
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#dc2626"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            style={{ flexShrink: 0, marginTop: 1 }}
+          >
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="8" x2="12" y2="12" />
+            <line x1="12" y1="16" x2="12.01" y2="16" />
+          </svg>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <p
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: 13,
+                fontWeight: 800,
+                color: "#991b1b",
+                marginBottom: 2,
+                letterSpacing: "0.02em",
+              }}
+            >
+              Publish failed
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: 13,
+                color: "#7f1d1d",
+                lineHeight: 1.5,
+              }}
+            >
+              {error}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => setError(null)}
+            style={{
+              background: "transparent",
+              border: "none",
+              color: "#991b1b",
+              fontSize: 18,
+              cursor: "pointer",
+              padding: "0 4px",
+              lineHeight: 1,
+            }}
+            aria-label="Dismiss"
+          >
+            ×
+          </button>
+        </div>
+      )}
 
       <div
         style={{

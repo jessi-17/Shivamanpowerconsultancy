@@ -19,12 +19,29 @@ export default function AdminDemandsList() {
   const [demands, setDemands] = useState<Demand[]>([]);
   const [loading, setLoading] = useState(true);
   const [deleting, setDeleting] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const fetchDemands = async () => {
-    const res = await fetch("/api/admin/demands");
-    const data = await res.json();
-    setDemands(data);
-    setLoading(false);
+    setError(null);
+    try {
+      const res = await fetch("/api/admin/demands");
+      if (res.status === 401) {
+        setError("Your admin session has expired. Log in again at /admin and reload this page.");
+        setLoading(false);
+        return;
+      }
+      if (!res.ok) {
+        setError(`Could not load demands (status ${res.status}). Check server logs.`);
+        setLoading(false);
+        return;
+      }
+      const data = await res.json();
+      setDemands(Array.isArray(data) ? data : []);
+      setLoading(false);
+    } catch (err) {
+      setError(`Network error — could not reach the server: ${(err as Error).message}`);
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -34,19 +51,72 @@ export default function AdminDemandsList() {
   const handleDelete = async (id: string, title: string) => {
     if (!confirm(`Delete "${title}"?`)) return;
     setDeleting(id);
-    await fetch("/api/admin/demands", {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id }),
-    });
-    setDemands(demands.filter((d) => d.id !== id));
-    setDeleting(null);
+    setError(null);
+    try {
+      const res = await fetch("/api/admin/demands", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id }),
+      });
+      if (res.status === 401) {
+        setError("Your admin session has expired. Log in again at /admin and try the delete again.");
+        return;
+      }
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({} as { error?: string }));
+        setError(body?.error ? `Delete failed (${res.status}): ${body.error}` : `Delete failed with status ${res.status}.`);
+        return;
+      }
+      setDemands(demands.filter((d) => d.id !== id));
+    } catch (err) {
+      setError(`Network error during delete: ${(err as Error).message}`);
+    } finally {
+      setDeleting(null);
+    }
   };
 
   if (loading) {
     return (
       <div style={{ padding: "120px 32px", textAlign: "center", fontFamily: "var(--font-body)", fontSize: 16, color: "#64748b" }}>
         Loading demands...
+      </div>
+    );
+  }
+
+  if (error && demands.length === 0) {
+    return (
+      <div style={{ padding: "80px 32px", maxWidth: 640, margin: "0 auto", textAlign: "center" }}>
+        <div
+          style={{
+            padding: 28,
+            background: "#fef2f2",
+            border: "1px solid #fecaca",
+            borderRadius: 12,
+            fontFamily: "var(--font-body)",
+          }}
+        >
+          <p style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 800, color: "#991b1b", marginBottom: 6 }}>
+            Could not load demands
+          </p>
+          <p style={{ fontSize: 13, color: "#7f1d1d", marginBottom: 18, lineHeight: 1.5 }}>{error}</p>
+          <button
+            type="button"
+            onClick={() => { setLoading(true); fetchDemands(); }}
+            style={{
+              padding: "10px 22px",
+              background: "#0052dc",
+              color: "#fff",
+              border: "none",
+              borderRadius: 8,
+              fontFamily: "var(--font-display)",
+              fontSize: 13,
+              fontWeight: 700,
+              cursor: "pointer",
+            }}
+          >
+            Retry
+          </button>
+        </div>
       </div>
     );
   }
@@ -80,6 +150,41 @@ export default function AdminDemandsList() {
           + New Demand
         </Link>
       </div>
+
+      {error && (
+        <div
+          role="alert"
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+            gap: 12,
+            padding: "12px 16px",
+            background: "#fef2f2",
+            border: "1px solid #fecaca",
+            borderRadius: 10,
+            marginBottom: 20,
+            fontFamily: "var(--font-body)",
+          }}
+        >
+          <span style={{ flex: 1, fontSize: 13, color: "#7f1d1d", lineHeight: 1.5 }}>{error}</span>
+          <button
+            type="button"
+            onClick={() => setError(null)}
+            style={{
+              background: "transparent",
+              border: "none",
+              color: "#991b1b",
+              fontSize: 18,
+              cursor: "pointer",
+              padding: "0 4px",
+              lineHeight: 1,
+            }}
+            aria-label="Dismiss"
+          >
+            ×
+          </button>
+        </div>
+      )}
 
       {demands.length === 0 ? (
         <div

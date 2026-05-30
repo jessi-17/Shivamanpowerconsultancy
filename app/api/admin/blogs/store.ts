@@ -82,7 +82,18 @@ export async function readBlogs(): Promise<BlogPost[]> {
 
 export async function writeBlogs(blogs: BlogPost[]) {
   if (!hasDb) {
-    fs.writeFileSync(SEED_PATH, JSON.stringify(blogs, null, 2));
+    if (process.env.VERCEL) {
+      throw new Error(
+        "DATABASE_URL is not set on this deployment. Blogs cannot be saved because the Vercel filesystem is read-only. Set DATABASE_URL in the project's environment variables and redeploy."
+      );
+    }
+    try {
+      fs.writeFileSync(SEED_PATH, JSON.stringify(blogs, null, 2));
+    } catch (err) {
+      throw new Error(
+        `Could not write blogs.json locally (${(err as Error).message}). If you are on a hosted env, set DATABASE_URL.`
+      );
+    }
     return;
   }
   await writeState(STATE_KEY, blogs);

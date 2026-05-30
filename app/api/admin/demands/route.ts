@@ -56,10 +56,18 @@ export async function PUT(req: NextRequest) {
 
 export async function DELETE(req: NextRequest) {
   const { id } = await req.json();
+
+  if (!id || typeof id !== "string") {
+    return NextResponse.json(
+      { error: "An id is required to delete a demand." },
+      { status: 400 }
+    );
+  }
+
   const demands = await readDemands();
   const filtered = demands.filter((d) => d.id !== id);
   if (filtered.length === demands.length) {
-    return NextResponse.json({ error: "Demand not found" }, { status: 404 });
+    return NextResponse.json({ error: `No demand found with id "${id}".` }, { status: 404 });
   }
   await writeDemands(filtered);
   return NextResponse.json({ success: true });

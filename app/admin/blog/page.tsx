@@ -18,12 +18,29 @@ export default function AdminBlogList() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [deleting, setDeleting] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const fetchPosts = async () => {
-    const res = await fetch("/api/admin/blogs");
-    const data = await res.json();
-    setPosts(data);
-    setLoading(false);
+    setError(null);
+    try {
+      const res = await fetch("/api/admin/blogs");
+      if (res.status === 401) {
+        setError("Your admin session has expired. Log in again at /admin and reload this page.");
+        setLoading(false);
+        return;
+      }
+      if (!res.ok) {
+        setError(`Could not load posts (status ${res.status}). Check server logs.`);
+        setLoading(false);
+        return;
+      }
+      const data = await res.json();
+      setPosts(Array.isArray(data) ? data : []);
+      setLoading(false);
+    } catch (err) {
+      setError(`Network error — could not reach the server: ${(err as Error).message}`);
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -33,19 +50,72 @@ export default function AdminBlogList() {
   const handleDelete = async (slug: string) => {
     if (!confirm(`Delete "${posts.find((p) => p.slug === slug)?.title}"?`)) return;
     setDeleting(slug);
-    await fetch("/api/admin/blogs", {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ slug }),
-    });
-    setPosts(posts.filter((p) => p.slug !== slug));
-    setDeleting(null);
+    setError(null);
+    try {
+      const res = await fetch("/api/admin/blogs", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ slug }),
+      });
+      if (res.status === 401) {
+        setError("Your admin session has expired. Log in again at /admin and try the delete again.");
+        return;
+      }
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({} as { error?: string }));
+        setError(body?.error ? `Delete failed (${res.status}): ${body.error}` : `Delete failed with status ${res.status}.`);
+        return;
+      }
+      setPosts(posts.filter((p) => p.slug !== slug));
+    } catch (err) {
+      setError(`Network error during delete: ${(err as Error).message}`);
+    } finally {
+      setDeleting(null);
+    }
   };
 
   if (loading) {
     return (
       <div style={{ padding: "120px 32px", textAlign: "center", fontFamily: "var(--font-body)", fontSize: 16, color: "#64748b" }}>
         Loading posts...
+      </div>
+    );
+  }
+
+  if (error && posts.length === 0) {
+    return (
+      <div style={{ padding: "80px 32px", maxWidth: 640, margin: "0 auto", textAlign: "center" }}>
+        <div
+          style={{
+            padding: 28,
+            background: "#fef2f2",
+            border: "1px solid #fecaca",
+            borderRadius: 12,
+            fontFamily: "var(--font-body)",
+          }}
+        >
+          <p style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 800, color: "#991b1b", marginBottom: 6 }}>
+            Could not load posts
+          </p>
+          <p style={{ fontSize: 13, color: "#7f1d1d", marginBottom: 18, lineHeight: 1.5 }}>{error}</p>
+          <button
+            type="button"
+            onClick={() => { setLoading(true); fetchPosts(); }}
+            style={{
+              padding: "10px 22px",
+              background: "#0052dc",
+              color: "#fff",
+              border: "none",
+              borderRadius: 8,
+              fontFamily: "var(--font-display)",
+              fontSize: 13,
+              fontWeight: 700,
+              cursor: "pointer",
+            }}
+          >
+            Retry
+          </button>
+        </div>
       </div>
     );
   }
@@ -79,6 +149,41 @@ export default function AdminBlogList() {
           + New Post
         </Link>
       </div>
+
+      {error && (
+        <div
+          role="alert"
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+            gap: 12,
+            padding: "12px 16px",
+            background: "#fef2f2",
+            border: "1px solid #fecaca",
+            borderRadius: 10,
+            marginBottom: 20,
+            fontFamily: "var(--font-body)",
+          }}
+        >
+          <span style={{ flex: 1, fontSize: 13, color: "#7f1d1d", lineHeight: 1.5 }}>{error}</span>
+          <button
+            type="button"
+            onClick={() => setError(null)}
+            style={{
+              background: "transparent",
+              border: "none",
+              color: "#991b1b",
+              fontSize: 18,
+              cursor: "pointer",
+              padding: "0 4px",
+              lineHeight: 1,
+            }}
+            aria-label="Dismiss"
+          >
+            ×
+          </button>
+        </div>
+      )}
 
       {/* Posts table */}
       <div style={{ backgroundColor: "#fff", borderRadius: 16, border: "1px solid #e5e7eb", overflow: "hidden" }}>
