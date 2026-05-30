@@ -111,8 +111,19 @@ export async function readFile(): Promise<OfferFile> {
 
 export async function writeFile(file: OfferFile) {
   if (!hasDb) {
-    // Local dev without DB — write seed file so it persists across restarts
-    fs.writeFileSync(SEED_PATH, JSON.stringify(file, null, 2));
+    if (process.env.VERCEL) {
+      throw new Error(
+        "DATABASE_URL is not set on this deployment. Offer content cannot be saved because the Vercel filesystem is read-only. Set DATABASE_URL in the project's environment variables and redeploy."
+      );
+    }
+    try {
+      // Local dev without DB — write seed file so it persists across restarts
+      fs.writeFileSync(SEED_PATH, JSON.stringify(file, null, 2));
+    } catch (err) {
+      throw new Error(
+        `Could not write offer.json locally (${(err as Error).message}). If you are on a hosted env, set DATABASE_URL.`
+      );
+    }
     return;
   }
   await writeState(STATE_KEY, file);

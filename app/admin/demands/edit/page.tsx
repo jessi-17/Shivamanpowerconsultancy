@@ -77,34 +77,81 @@ function EditorContent() {
   const [demand, setDemand] = useState<Demand>(emptyDemand);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const [uploading, setUploading] = useState(false);
   const [sectorInput, setSectorInput] = useState("");
 
   useEffect(() => {
-    if (editId) {
-      fetch("/api/admin/demands")
-        .then((r) => r.json())
-        .then((all: Demand[]) => {
-          const found = all.find((d) => d.id === editId);
-          if (found) setDemand(found);
-        });
-    }
+    if (!editId) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch("/api/admin/demands");
+        if (cancelled) return;
+        if (res.status === 401) {
+          setLoadError("Your admin session has expired. Log in again at /admin and reload this page.");
+          return;
+        }
+        if (!res.ok) {
+          setLoadError(`Could not load demand (status ${res.status}). Do not save — you would overwrite the live record with blank data.`);
+          return;
+        }
+        const all: Demand[] = await res.json();
+        if (cancelled) return;
+        const found = all.find((d) => d.id === editId);
+        if (found) {
+          setDemand(found);
+        } else {
+          setLoadError(`No demand found with id "${editId}". It may have been deleted.`);
+        }
+      } catch (err) {
+        if (!cancelled) {
+          setLoadError(`Network error loading demand: ${(err as Error).message}. Do not save — you would overwrite the live record with blank data.`);
+        }
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
   }, [editId]);
 
   const handleSave = useCallback(async () => {
     setSaving(true);
     setSaved(false);
+    setError(null);
     const method = isNew ? "POST" : "PUT";
-    const res = await fetch("/api/admin/demands", {
-      method,
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(demand),
-    });
-    setSaving(false);
-    if (res.ok) {
+    try {
+      const res = await fetch("/api/admin/demands", {
+        method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(demand),
+      });
+
+      if (res.status === 401) {
+        setSaving(false);
+        setError("Your admin session has expired. Open /admin in a new tab, log in, then come back and click Save again.");
+        return;
+      }
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({} as { error?: string }));
+        setSaving(false);
+        setError(
+          body?.error
+            ? `Save failed (${res.status}): ${body.error}`
+            : `Save failed with status ${res.status}. Check server logs.`
+        );
+        return;
+      }
+
+      setSaving(false);
       setSaved(true);
       setTimeout(() => setSaved(false), 3000);
       if (isNew) router.push("/admin/demands");
+    } catch (err) {
+      setSaving(false);
+      setError(`Network error — could not reach the server: ${(err as Error).message}`);
     }
   }, [demand, isNew, router]);
 
@@ -113,12 +160,13 @@ function EditorContent() {
     e.target.value = "";
     if (!file) return;
     setUploading(true);
+    setError(null);
     try {
       const url = await uploadImage(file, "demand");
       if (url) setDemand({ ...demand, poster: url });
     } catch (err) {
       console.error("Demand poster upload failed:", err);
-      alert(`Upload failed: ${(err as Error).message}`);
+      setError(`Poster upload failed: ${(err as Error).message}`);
     } finally {
       setUploading(false);
     }
@@ -184,17 +232,17 @@ function EditorContent() {
         <div style={{ display: "flex", gap: 12 }}>
           <button
             onClick={handleSave}
-            disabled={saving || !demand.title}
+            disabled={saving || !demand.title || !!loadError}
             style={{
               padding: "10px 24px",
-              backgroundColor: saving || !demand.title ? "#93c5fd" : "#0052dc",
+              backgroundColor: saving || !demand.title || loadError ? "#93c5fd" : "#0052dc",
               color: "#fff",
               fontFamily: "var(--font-display)",
               fontSize: 13,
               fontWeight: 700,
               borderRadius: 8,
               border: "none",
-              cursor: saving ? "wait" : demand.title ? "pointer" : "not-allowed",
+              cursor: saving ? "wait" : demand.title && !loadError ? "pointer" : "not-allowed",
               boxShadow: "0 0 16px rgba(0,82,220,0.3)",
             }}
           >
@@ -202,6 +250,76 @@ function EditorContent() {
           </button>
         </div>
       </div>
+
+      {loadError && (
+        <div
+          role="alert"
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+            gap: 12,
+            padding: "14px 18px",
+            background: "#fef2f2",
+            border: "1px solid #fecaca",
+            borderRadius: 10,
+            marginBottom: 24,
+            fontFamily: "var(--font-body)",
+          }}
+        >
+          <svg
+            width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="#dc2626" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+            style={{ flexShrink: 0, marginTop: 1 }}
+          >
+            <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
+          </svg>
+          <div style={{ flex: 1 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 800, color: "#991b1b", marginBottom: 2 }}>
+              Could not load this demand — saving is disabled
+            </p>
+            <p style={{ fontSize: 13, color: "#7f1d1d", lineHeight: 1.5 }}>{loadError}</p>
+          </div>
+        </div>
+      )}
+
+      {error && (
+        <div
+          role="alert"
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+            gap: 12,
+            padding: "14px 18px",
+            background: "#fef2f2",
+            border: "1px solid #fecaca",
+            borderRadius: 10,
+            marginBottom: 24,
+            fontFamily: "var(--font-body)",
+          }}
+        >
+          <svg
+            width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="#dc2626" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+            style={{ flexShrink: 0, marginTop: 1 }}
+          >
+            <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
+          </svg>
+          <div style={{ flex: 1 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 800, color: "#991b1b", marginBottom: 2 }}>
+              Something went wrong
+            </p>
+            <p style={{ fontSize: 13, color: "#7f1d1d", lineHeight: 1.5 }}>{error}</p>
+          </div>
+          <button
+            type="button"
+            onClick={() => setError(null)}
+            style={{ background: "transparent", border: "none", color: "#991b1b", fontSize: 18, cursor: "pointer", padding: "0 4px", lineHeight: 1 }}
+            aria-label="Dismiss"
+          >
+            ×
+          </button>
+        </div>
+      )}
 
       <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) 320px", gap: 28 }}>
         {/* Main */}
