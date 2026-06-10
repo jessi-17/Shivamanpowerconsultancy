@@ -206,7 +206,7 @@ export default function CareerDestinations() {
           </div>
         </div>
 
-        {/* Additional country flags ÃƒÂ¢Ã¢â€šÂ¬Ã¢€Â hidden on mobile */}
+        {/* Additional country flags — hidden on mobile */}
         {!m && (
           <div
             ref={gridRef}

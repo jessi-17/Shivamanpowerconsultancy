@@ -1,24 +1,41 @@
 import { NextRequest, NextResponse } from "next/server";
+import { isAdminRequest } from "./app/_lib/adminAuth";
+
+const MUTATING_METHODS = new Set(["POST", "PUT", "PATCH", "DELETE"]);
 
 /**
  * Middleware to return 410 Gone for spam URLs left over from old WordPress hack.
  * Google deindexes 410 pages much faster than 404 pages.
+ * Also gates the admin area (pages + API) behind a signed session cookie.
  */
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
 
-  // Gate admin API routes — everything under /api/admin/* requires a valid session
-  // cookie. The login endpoint itself (/api/admin/auth) is excluded so users can
-  // actually log in.
+  // Gate admin API routes — everything under /api/admin/* requires a valid
+  // signed session cookie. Excluded: /api/admin/auth (login itself) and
+  // /api/admin/backup (uses its own BACKUP_TOKEN for the backup cron).
   if (
     pathname.startsWith("/api/admin/") &&
-    !pathname.startsWith("/api/admin/auth")
+    !pathname.startsWith("/api/admin/auth") &&
+    !pathname.startsWith("/api/admin/backup")
   ) {
-    const session = request.cookies.get("admin_session")?.value;
-    const adminPassword = process.env.ADMIN_PASSWORD || "shiva2025";
-    if (!session || session !== adminPassword) {
+    // CSRF guard: state-changing requests must come from our own origin.
+    if (MUTATING_METHODS.has(request.method)) {
+      const origin = request.headers.get("origin");
+      const host = request.headers.get("host");
+      if (origin && host && new URL(origin).host !== host) {
+        return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+      }
+    }
+    if (!(await isAdminRequest(request))) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
+  }
+
+  // Gate admin pages: /admin is the login screen, every subpage requires a
+  // valid session — unauthenticated visitors get bounced back to the login.
+  if (pathname.startsWith("/admin/") && !(await isAdminRequest(request))) {
+    return NextResponse.redirect(new URL("/admin", request.url));
   }
 
   // Block all ?l= parameter URLs (WordPress redirect spam)

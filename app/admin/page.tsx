@@ -82,85 +82,159 @@ const cards: AdminCard[] = [
 export default function AdminDashboardPage() {
   const [authed, setAuthed] = useState(false);
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [checking, setChecking] = useState(true);
+  const [loggingIn, setLoggingIn] = useState(false);
 
   useEffect(() => {
-    const stored = sessionStorage.getItem("admin-auth");
-    if (stored === "true") setAuthed(true);
-    setChecking(false);
+    // Verify the httpOnly session cookie server-side — sessionStorage flags
+    // can be faked from devtools, the signed cookie can't.
+    fetch("/api/admin/auth", { cache: "no-store" })
+      .then((r) => r.json())
+      .then((d) => setAuthed(d?.authed === true))
+      .catch(() => setAuthed(false))
+      .finally(() => setChecking(false));
   }, []);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    const res = await fetch("/api/admin/auth", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password }),
-    });
-    if (res.ok) {
-      sessionStorage.setItem("admin-auth", "true");
-      setAuthed(true);
-      setError(false);
-    } else {
-      setError(true);
+    if (loggingIn) return;
+    setLoggingIn(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/admin/auth", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      });
+      if (res.ok) {
+        setAuthed(true);
+        setPassword("");
+      } else {
+        const data = await res.json().catch(() => null);
+        setError(data?.error || "Incorrect password");
+      }
+    } catch {
+      setError("Network error — check your connection and try again.");
+    } finally {
+      setLoggingIn(false);
     }
   };
 
   const handleLogout = async () => {
     await fetch("/api/admin/auth", { method: "DELETE" });
-    sessionStorage.removeItem("admin-auth");
     setAuthed(false);
   };
 
-  if (checking) return null;
+  if (checking) {
+    return (
+      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "#f8f9ff" }}>
+        <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "#94a3b8" }}>Checking session…</p>
+      </div>
+    );
+  }
 
   if (!authed) {
     return (
-      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "#f8f9ff" }}>
-        <form onSubmit={handleLogin} style={{ width: 360, padding: 40, backgroundColor: "#fff", borderRadius: 16, border: "1px solid #e5e7eb", textAlign: "center" }}>
-          <h2 style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 800, color: "#0b1c30", marginBottom: 8 }}>Admin Login</h2>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "#64748b", marginBottom: 24 }}>Enter the admin password to access the dashboard.</p>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            autoFocus
+      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "#f8f9ff", padding: 16 }}>
+        <form onSubmit={handleLogin} style={{ width: "100%", maxWidth: 380, padding: "40px 32px", backgroundColor: "#fff", borderRadius: 16, border: "1px solid #e5e7eb", boxShadow: "0 16px 40px rgba(11,28,48,0.06)", textAlign: "center" }}>
+          <div
             style={{
-              width: "100%",
-              padding: "14px",
-              backgroundColor: "#f8fafc",
-              border: error ? "1px solid #dc2626" : "1px solid #e5e7eb",
-              borderRadius: 8,
-              fontFamily: "var(--font-body)",
-              fontSize: 14,
-              color: "#0b1c30",
-              outline: "none",
-              marginBottom: 16,
+              width: 48,
+              height: 48,
+              margin: "0 auto 16px",
+              borderRadius: 14,
+              backgroundColor: "#0052dc15",
+              color: "#0052dc",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
-          />
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          </div>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 800, color: "#0b1c30", marginBottom: 8 }}>Admin Login</h2>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "#64748b", marginBottom: 24 }}>
+            Shiva Manpower dashboard. Sessions expire after 7 days.
+          </p>
+          <div style={{ position: "relative", marginBottom: 16 }}>
+            <input
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              autoFocus
+              autoComplete="current-password"
+              style={{
+                width: "100%",
+                padding: "14px 44px 14px 14px",
+                backgroundColor: "#f8fafc",
+                border: error ? "1px solid #dc2626" : "1px solid #e5e7eb",
+                borderRadius: 8,
+                fontFamily: "var(--font-body)",
+                fontSize: 14,
+                color: "#0b1c30",
+                outline: "none",
+              }}
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword((s) => !s)}
+              aria-label={showPassword ? "Hide password" : "Show password"}
+              style={{
+                position: "absolute",
+                right: 8,
+                top: "50%",
+                transform: "translateY(-50%)",
+                padding: 6,
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                color: "#94a3b8",
+                display: "flex",
+              }}
+            >
+              {showPassword ? (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94" />
+                  <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19" />
+                  <line x1="1" y1="1" x2="23" y2="23" />
+                </svg>
+              ) : (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              )}
+            </button>
+          </div>
           {error && (
             <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "#dc2626", marginBottom: 12 }}>
-              Incorrect password
+              {error}
             </p>
           )}
           <button
             type="submit"
+            disabled={loggingIn || password.length === 0}
             style={{
               width: "100%",
               padding: "14px",
-              backgroundColor: "#0052dc",
+              backgroundColor: loggingIn || password.length === 0 ? "#93b4f5" : "#0052dc",
               color: "#fff",
               fontFamily: "var(--font-display)",
               fontSize: 14,
               fontWeight: 700,
               borderRadius: 8,
               border: "none",
-              cursor: "pointer",
+              cursor: loggingIn || password.length === 0 ? "default" : "pointer",
+              transition: "background-color 150ms ease",
             }}
           >
-            Login
+            {loggingIn ? "Signing in…" : "Login"}
           </button>
         </form>
       </div>

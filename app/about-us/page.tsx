@@ -49,7 +49,7 @@ export default function AboutUs() {
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
         <PageHero
-          kicker="Since 2002 Â· Nakodar, Punjab"
+          kicker="Since 2002 · Nakodar, Punjab"
           title="India's Government-Licensed Overseas Partner."
           highlight="Overseas Partner."
           chips={["MEA Licensed", "ALMRA Member", "RA B-1794", "25+ Nations Reached"]}
@@ -60,8 +60,8 @@ export default function AboutUs() {
             { num: "12+", label: "Countries" },
           ]}
           image={{ src: "/shiva-manpower-nakodar-office-punjab.webp", alt: "Shiva Travel Manpower Consultants office in Nakodar, Punjab" }}
-          imageSeal={{ title: "Founded by Tarsem Lal Â· 2002", subtitle: "ALMRA Punjab Â· MEA RA B-1794" }}
-          microChip={{ value: "4.9â˜…", label: "200+ Reviews" }}
+          imageSeal={{ title: "Founded by Tarsem Lal · 2002", subtitle: "ALMRA Punjab · MEA RA B-1794" }}
+          microChip={{ value: "4.9★", label: "200+ Reviews" }}
         />
 
         <BigQuote
@@ -70,7 +70,7 @@ export default function AboutUs() {
           attribution={{
             name: "Mr. Tarsem Lal",
             role: "Founder & Managing Director",
-            meta: "Founded Shiva Manpower in 2002 Â· Nakodar, Punjab",
+            meta: "Founded Shiva Manpower in 2002 · Nakodar, Punjab",
             avatar: "/founder.webp",
             avatarAlt: "Mr. Tarsem Lal — Founder of Shiva Travel Manpower Consultants",
             linkedinUrl: "https://www.linkedin.com/in/tarsem-bhagat-8151282a/",
@@ -107,7 +107,7 @@ export default function AboutUs() {
             { criterion: "MEA RA License", us: "RA B-1794, valid till 2027", middle: "None", right: "Not applicable" },
             { criterion: "E-Migrate Filing", us: "Under our RA registration", middle: "Often fake or skipped", right: "You file yourself" },
             { criterion: "Employer Verification", us: "Before any contract signed", middle: "Rarely — fake jobs common", right: "Up to you to verify" },
-            { criterion: "Charges", us: "Minimal & transparent, in writing", middle: "Hidden + 3“5Ã— higher", right: "Govt visa fee only" },
+            { criterion: "Charges", us: "Minimal & transparent, in writing", middle: "Hidden + 3“5× higher", right: "Govt visa fee only" },
             { criterion: "If Visa Fails", us: "Refund policy in writing", middle: "Money lost", right: "Not applicable" },
             { criterion: "Legal Recourse", us: "MEA + Indian courts", middle: "Agent disappears", right: "Minimal" },
           ]}
@@ -264,26 +264,26 @@ export default function AboutUs() {
           highlight="are now."
           intro="Two decades of placements across the Gulf and Europe. A partial list of employer types currently hosting our workers — every one verified before a single CV was shared."
           employers={[
-            { name: "Construction Contractor", sector: "Infrastructure", country: "ðŸ‡¦ðŸ‡ª" },
-            { name: "Hospitality Group", sector: "Hotels & F&B", country: "ðŸ‡¦ðŸ‡ª" },
-            { name: "Logistics Operator", sector: "Warehousing", country: "ðŸ‡¦ðŸ‡ª" },
-            { name: "MEP Contractor", sector: "Mechanical & Plumbing", country: "ðŸ‡¦ðŸ‡ª" },
-            { name: "Oil & Gas EPC", sector: "Energy", country: "ðŸ‡¸ðŸ‡¦" },
-            { name: "Steel Manufacturer", sector: "Heavy Industry", country: "ðŸ‡¸ðŸ‡¦" },
-            { name: "Food Processing Group", sector: "Manufacturing", country: "ðŸ‡¸ðŸ‡¦" },
-            { name: "Building Contractor", sector: "Construction", country: "ðŸ‡¸ðŸ‡¦" },
-            { name: "Energy Contractor", sector: "Oil & Gas", country: "ðŸ‡¶ðŸ‡¦" },
-            { name: "Hospitality Chain", sector: "Hotels", country: "ðŸ‡¶ðŸ‡¦" },
-            { name: "Industrial Group", sector: "Manufacturing", country: "ðŸ‡°ðŸ‡¼" },
-            { name: "Engineering Firm", sector: "Mechanical", country: "ðŸ‡°ðŸ‡¼" },
-            { name: "Steel Works", sector: "Heavy Industry", country: "ðŸ‡§ðŸ‡­" },
-            { name: "Logistics Company", sector: "Warehouse", country: "ðŸ‡µðŸ‡±" },
-            { name: "Factory Operator", sector: "Production", country: "ðŸ‡µðŸ‡±" },
-            { name: "Auto Plant", sector: "Automotive", country: "ðŸ‡·ðŸ‡´" },
-            { name: "Aerospace Plant", sector: "Aerospace", country: "ðŸ‡·ðŸ‡´" },
-            { name: "Marine Services", sector: "Shipping", country: "ðŸ‡­ðŸ‡·" },
-            { name: "Manufacturing Group", sector: "Industrial", country: "ðŸ‡§ðŸ‡¬" },
-            { name: "Hotel Group", sector: "Hospitality", country: "ðŸ‡²ðŸ‡¹" },
+            { name: "Construction Contractor", sector: "Infrastructure", country: "🇦🇪" },
+            { name: "Hospitality Group", sector: "Hotels & F&B", country: "🇦🇪" },
+            { name: "Logistics Operator", sector: "Warehousing", country: "🇦🇪" },
+            { name: "MEP Contractor", sector: "Mechanical & Plumbing", country: "🇦🇪" },
+            { name: "Oil & Gas EPC", sector: "Energy", country: "🇸🇦" },
+            { name: "Steel Manufacturer", sector: "Heavy Industry", country: "🇸🇦" },
+            { name: "Food Processing Group", sector: "Manufacturing", country: "🇸🇦" },
+            { name: "Building Contractor", sector: "Construction", country: "🇸🇦" },
+            { name: "Energy Contractor", sector: "Oil & Gas", country: "🇶🇦" },
+            { name: "Hospitality Chain", sector: "Hotels", country: "🇶🇦" },
+            { name: "Industrial Group", sector: "Manufacturing", country: "🇰🇼" },
+            { name: "Engineering Firm", sector: "Mechanical", country: "🇰🇼" },
+            { name: "Steel Works", sector: "Heavy Industry", country: "🇧🇭" },
+            { name: "Logistics Company", sector: "Warehouse", country: "🇵🇱" },
+            { name: "Factory Operator", sector: "Production", country: "🇵🇱" },
+            { name: "Auto Plant", sector: "Automotive", country: "🇷🇴" },
+            { name: "Aerospace Plant", sector: "Aerospace", country: "🇷🇴" },
+            { name: "Marine Services", sector: "Shipping", country: "🇭🇷" },
+            { name: "Manufacturing Group", sector: "Industrial", country: "🇧🇬" },
+            { name: "Hotel Group", sector: "Hospitality", country: "🇲🇹" },
           ]}
         />
 

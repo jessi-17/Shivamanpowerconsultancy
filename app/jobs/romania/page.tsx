@@ -52,7 +52,7 @@ const visaProcess = [
 const faqs = [
   { q: "Is Romania in the EU?", a: "Yes. Romania has been an EU member since 2007 and joined the Schengen area recently. Your Romanian work permit gives you access to travel across all Schengen countries." },
   { q: "Do I need to know Romanian?", a: "Not for most manual/factory jobs. Employers provide on-site training and many have multilingual supervisors. Learning basic Romanian helps with daily life and is relatively easy for Hindi speakers." },
-  { q: "How is the weather?", a: "Romania has four seasons. Summers (June-August) are warm, 25-35Â°C — great for outdoor work. Winters (December-February) are cold, -5Â°C to -10Â°C. All accommodation is heated." },
+  { q: "How is the weather?", a: "Romania has four seasons. Summers (June-August) are warm, 25-35°C — great for outdoor work. Winters (December-February) are cold, -5°C to -10°C. All accommodation is heated." },
   { q: "Is Romania cheaper than Poland?", a: "Yes, Romania generally has a lower cost of living than Poland. This means your savings potential is higher even if the base salary is slightly lower." },
   { q: "How long does the visa process take?", a: "Romanian work permits typically take 4-8 weeks. The entire process from application to departure takes about 3-4 months. We handle all paperwork and guide you through every step." },
   { q: "Do I need to pay any fees?", a: "No. Through Shiva Travel & Manpower Consultants, we maintain minimal and transparent charges with no hidden fees. The employer bears most costs including work permit and recruitment charges as per regulations." },
@@ -88,7 +88,7 @@ export default function JobsInRomania() {
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
         <PageHero
-          kicker="EU Member Â· Schengen Access Â· Path to Residency"
+          kicker="EU Member · Schengen Access · Path to Residency"
           title="Build your career in Romania."
           highlight="in Romania."
           chips={["EU Work Permit", "Schengen Travel", "Low Cost of Living", "EU Labour Rights"]}
@@ -100,7 +100,7 @@ export default function JobsInRomania() {
             { num: "EU", label: "Member State" },
           ]}
           image={{ src: "/romania-jobs-shiva-manpower.webp", alt: "Romania job opportunities — factory and construction work" }}
-          imageSeal={{ title: "500+ Placed in Romania", subtitle: "Construction Â· Manufacturing Â· Agriculture Â· Logistics" }}
+          imageSeal={{ title: "500+ Placed in Romania", subtitle: "Construction · Manufacturing · Agriculture · Logistics" }}
           microChip={{ value: "EU", label: "Work Permit" }}
         />
 

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { requireAdmin } from "../../../_lib/adminAuth";
 import { readHistory, restoreFromHistory } from "../../../_lib/contentStore";
 
 const ALLOWED_KEYS = ["offer", "demands", "blogs"] as const;
@@ -9,6 +10,8 @@ function isAllowedKey(k: string): k is AllowedKey {
 }
 
 export async function GET(req: NextRequest) {
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   const key = req.nextUrl.searchParams.get("key");
   if (!key || !isAllowedKey(key)) {
     return NextResponse.json(
@@ -21,6 +24,8 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   const body = (await req.json()) as { historyId?: unknown };
   const id = Number(body.historyId);
   if (!Number.isFinite(id) || id <= 0) {

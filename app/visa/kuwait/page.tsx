@@ -125,7 +125,7 @@ export default function KuwaitVisa() {
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
         <PageHero
-          kicker="Oil-Rich Economy Â· Tax-Free Â· High Demand"
+          kicker="Oil-Rich Economy · Tax-Free · High Demand"
           title="Kuwait visa & work permit services in Nakodar."
           highlight="in Nakodar."
           chips={["Visa 18", "Visa 20", "GAMCA Medical", "Attestation"]}
@@ -137,7 +137,7 @@ export default function KuwaitVisa() {
             { num: "Oil & Gas", label: "High Demand" },
           ]}
           image={{ src: "/shiva-manpower-nakodar-office-punjab.webp", alt: "Kuwait visa services at Shiva Travel Consultants Nakodar" }}
-          imageSeal={{ title: "Kuwait Visa Specialist", subtitle: "Visa 18 & 20 Â· GAMCA Â· Attestation" }}
+          imageSeal={{ title: "Kuwait Visa Specialist", subtitle: "Visa 18 & 20 · GAMCA · Attestation" }}
           microChip={{ value: "0%", label: "Income Tax" }}
         />
 

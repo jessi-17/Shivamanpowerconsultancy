@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import FlagIcon from "./FlagIcon";
 
 /* ============================================================
    Desktop-only proof sections for the /services page.
@@ -157,7 +158,7 @@ export function VerifiedPlacementsWall() {
               </div>
               <div style={{ position: "absolute", bottom: 14, left: 14, right: 14 }}>
                 <p style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, color: "#fff", marginBottom: 3 }}>
-                  {v.name} → {v.country} {v.flag}
+                  {v.name} → {v.country} <FlagIcon flag={v.flag} size={14} />
                 </p>
                 <p style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "rgba(255,255,255,0.7)" }}>
                   Stamped {v.month}

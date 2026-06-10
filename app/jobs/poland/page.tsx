@@ -88,7 +88,7 @@ export default function JobsInPoland() {
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
         <PageHero
-          kicker="EU Work Permit Â· Schengen Access Â· Path to PR"
+          kicker="EU Work Permit · Schengen Access · Path to PR"
           title="Build your career in Poland."
           highlight="in Poland."
           chips={["EU Work Permit", "Schengen Travel", "Path to PR", "EU Labour Rights"]}
@@ -100,7 +100,7 @@ export default function JobsInPoland() {
             { num: "5 yrs", label: "Path to PR" },
           ]}
           image={{ src: "/poland-jobs-shiva-manpower.webp", alt: "Poland job opportunities for Indian workers" }}
-          imageSeal={{ title: "500+ Placed in Poland", subtitle: "Factory Â· Welding Â· Construction Â· Logistics" }}
+          imageSeal={{ title: "500+ Placed in Poland", subtitle: "Factory · Welding · Construction · Logistics" }}
           microChip={{ value: "EU", label: "Work Permit" }}
         />
 

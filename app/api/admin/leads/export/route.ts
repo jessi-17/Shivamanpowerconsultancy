@@ -1,11 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import { requireAdmin } from "../../../../_lib/adminAuth";
 import { listLeads, hasDb, type LeadType } from "../../../../_lib/db";
-
-function isAuthed(req: NextRequest): boolean {
-  const cookie = req.cookies.get("admin_session")?.value;
-  const expected = process.env.ADMIN_PASSWORD || "shiva2025";
-  return Boolean(cookie) && cookie === expected;
-}
 
 function csvEscape(value: unknown): string {
   if (value === null || value === undefined) return "";
@@ -17,9 +12,8 @@ function csvEscape(value: unknown): string {
 }
 
 export async function GET(req: NextRequest) {
-  if (!isAuthed(req)) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   if (!hasDb) {
     return NextResponse.json({ error: "DATABASE_URL not configured" }, { status: 503 });
   }

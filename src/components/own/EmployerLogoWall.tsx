@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import FlagIcon from "./FlagIcon";
 
 /* ============================================================
    EmployerLogoWall — typographic credibility wall.
@@ -226,7 +227,7 @@ export default function EmployerLogoWall({
                 >
                   {emp.sector}
                 </span>
-                <span style={{ fontSize: m ? 16 : 20, lineHeight: 1 }}>{emp.country}</span>
+                <FlagIcon flag={emp.country} size={m ? 18 : 22} />
               </div>
             </div>
           ))}

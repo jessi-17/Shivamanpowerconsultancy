@@ -4,6 +4,7 @@ import Link from "next/link";
 import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
 import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 import PageHero from "@/components/own/PageHero";
+import FlagIcon from "@/components/own/FlagIcon";
 
 export const metadata: Metadata = {
   title: "Jobs in Europe | Poland, Romania, Croatia Work Opportunities",
@@ -187,7 +188,7 @@ export default function JobsInEurope() {
                 <div key={c.name} style={{ backgroundColor: "#f8f9ff", borderRadius: 16, padding: 28, border: "1px solid #e5e7eb" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
                     <div style={{ width: 40, height: 40, borderRadius: 10, backgroundColor: "#ffffff", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 1px 3px rgba(0,0,0,0.06)", fontSize: 24 }}>
-                      {c.flag}
+                      <FlagIcon flag={c.flag} size={24} alt={`${c.name} flag`} />
                     </div>
                     <h3 style={{ fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 700, color: "#0b1c30" }}>{c.name}</h3>
                   </div>

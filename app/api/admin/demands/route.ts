@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { requireAdmin } from "../../../_lib/adminAuth";
 import { readDemands, writeDemands, type Demand } from "./store";
 
 function sanitizeSectors(input: unknown): string[] {
@@ -25,11 +26,15 @@ function normalize(body: Partial<Demand>, existing?: Demand): Demand {
   };
 }
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   return NextResponse.json(await readDemands());
 }
 
 export async function POST(req: NextRequest) {
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   const body = await req.json();
   const demands = await readDemands();
   const demand = normalize(body);
@@ -39,6 +44,8 @@ export async function POST(req: NextRequest) {
 }
 
 export async function PUT(req: NextRequest) {
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   const body = await req.json();
   if (!body.id) {
     return NextResponse.json({ error: "id required" }, { status: 400 });
@@ -55,6 +62,8 @@ export async function PUT(req: NextRequest) {
 }
 
 export async function DELETE(req: NextRequest) {
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   const { id } = await req.json();
 
   if (!id || typeof id !== "string") {

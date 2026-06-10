@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sql } from "../../../_lib/db";
+import { timingSafeEqual } from "../../../_lib/adminAuth";
 
 const BACKUP_TOKEN = process.env.BACKUP_TOKEN || "";
 
@@ -8,7 +9,8 @@ const BACKUP_TOKEN = process.env.BACKUP_TOKEN || "";
  * as a single JSON blob. Designed to be called by a GitHub Action on a
  * bi-weekly cron, which commits the response to /backups/ in the repo.
  *
- * Auth: pass `Authorization: Bearer <BACKUP_TOKEN>` or `?token=<BACKUP_TOKEN>`.
+ * Auth: pass `Authorization: Bearer <BACKUP_TOKEN>`. Header only — query
+ * param tokens end up in access logs and browser history.
  */
 export async function GET(req: NextRequest) {
   if (!BACKUP_TOKEN) {
@@ -18,15 +20,10 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  // Accept token via header (preferred) or query param (for simple curl tests)
-  const headerToken = req.headers
-    .get("authorization")
-    ?.replace(/^Bearer\s+/i, "")
-    .trim();
-  const queryToken = req.nextUrl.searchParams.get("token") || "";
-  const provided = headerToken || queryToken;
+  const headerToken =
+    req.headers.get("authorization")?.replace(/^Bearer\s+/i, "").trim() || "";
 
-  if (provided !== BACKUP_TOKEN) {
+  if (!headerToken || !(await timingSafeEqual(headerToken, BACKUP_TOKEN))) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
 

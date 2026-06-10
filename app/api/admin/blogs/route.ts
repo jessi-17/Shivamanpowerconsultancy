@@ -1,12 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
+import { requireAdmin } from "../../../_lib/adminAuth";
 import { readBlogs, writeBlogs, type BlogPost } from "./store";
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   const blogs = await readBlogs();
   return NextResponse.json(blogs);
 }
 
 export async function POST(req: NextRequest) {
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   const body = await req.json();
 
   if (!body.title || typeof body.title !== "string" || !body.title.trim()) {
@@ -64,6 +69,8 @@ export async function POST(req: NextRequest) {
 }
 
 export async function PUT(req: NextRequest) {
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   const body = await req.json();
   const blogs = await readBlogs();
   const index = blogs.findIndex((b) => b.slug === body.slug);
@@ -79,6 +86,8 @@ export async function PUT(req: NextRequest) {
 }
 
 export async function DELETE(req: NextRequest) {
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   const { slug } = await req.json();
 
   if (!slug || typeof slug !== "string") {

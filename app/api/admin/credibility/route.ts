@@ -9,12 +9,17 @@ import {
   normalizeDestinationReels,
   type CredibilityFile,
 } from "./store";
+import { requireAdmin } from "../../../_lib/adminAuth";
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   return NextResponse.json(await readFile());
 }
 
 export async function PUT(req: NextRequest) {
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   const body = await req.json();
   const current = await readFile();
 

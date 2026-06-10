@@ -124,7 +124,7 @@ export default function BahrainVisa() {
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
         <PageHero
-          kicker="Flexi Permit Â· Growing Economy Â· Flexible Laws"
+          kicker="Flexi Permit · Growing Economy · Flexible Laws"
           title="Bahrain visa & work permit services in Nakodar."
           highlight="in Nakodar."
           chips={["Work Visa", "Flexi Permit", "GAMCA Medical", "Attestation"]}
@@ -136,7 +136,7 @@ export default function BahrainVisa() {
             { num: "Flexi", label: "Permit Available" },
           ]}
           image={{ src: "/shiva-manpower-nakodar-office-punjab.webp", alt: "Bahrain visa services at Shiva Travel Consultants Nakodar" }}
-          imageSeal={{ title: "Bahrain Visa Specialist", subtitle: "Work Visa Â· Flexi Permit Â· GAMCA" }}
+          imageSeal={{ title: "Bahrain Visa Specialist", subtitle: "Work Visa · Flexi Permit · GAMCA" }}
           microChip={{ value: "0%", label: "Income Tax" }}
         />
 

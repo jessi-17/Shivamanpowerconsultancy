@@ -131,7 +131,7 @@ export default function EMigratePage() {
             { num: "3-7 days", label: "Avg Processing" },
           ]}
           image={{ src: "/shiva-manpower-nakodar-office-punjab.webp", alt: "E-Migrate processing at Shiva Travel office in Nakodar" }}
-          imageSeal={{ title: "Licensed E-Migrate Processor", subtitle: "RA B-1794 Ã‚Â· POE Approved" }}
+          imageSeal={{ title: "Licensed E-Migrate Processor", subtitle: "RA B-1794 · POE Approved" }}
           microChip={{ value: "5,000+", label: "Clearances" }}
         />
 

@@ -134,7 +134,7 @@ export default function JalandharPage() {
             { num: "RA B-1794", label: "MEA Licensed" },
           ]}
           image={{ src: "/shiva-manpower-nakodar-office-punjab.webp", alt: "Shiva Travel Manpower Consultants office near Jalandhar" }}
-          imageSeal={{ title: "Walk-in from Jalandhar City", subtitle: "20 mins drive Â· Nakodar office" }}
+          imageSeal={{ title: "Walk-in from Jalandhar City", subtitle: "20 mins drive · Nakodar office" }}
           microChip={{ value: "4.9â˜…", label: "200+ Reviews" }}
         />
 

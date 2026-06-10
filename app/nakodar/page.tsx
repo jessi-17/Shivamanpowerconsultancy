@@ -161,7 +161,7 @@ export default function NakodarPage() {
             { num: "20+", label: "Years on Jalandhar Rd" },
           ]}
           image={{ src: "/shiva-manpower-nakodar-office-punjab.webp", alt: "Shiva Travel & Manpower Consultants immigration office in Nakodar" }}
-          imageSeal={{ title: "Headquartered in Nakodar", subtitle: "Jalandhar Rd Â· Walk-in Welcome Â· Since 2002" }}
+          imageSeal={{ title: "Headquartered in Nakodar", subtitle: "Jalandhar Rd · Walk-in Welcome · Since 2002" }}
           microChip={{ value: "HQ", label: "Nakodar" }}
         />
 
