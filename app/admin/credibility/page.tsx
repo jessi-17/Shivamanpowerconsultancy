@@ -5,6 +5,7 @@ import Image from "next/image";
 import { uploadImage } from "@/lib/uploadImage";
 import { verifySaved } from "@/lib/verifySaved";
 import VersionHistory from "@/components/own/VersionHistory";
+import FlagIcon from "@/components/own/FlagIcon";
 
 /* ============================================================
    Types — mirror /api/admin/credibility/store.ts shape exactly
@@ -729,7 +730,7 @@ function PreviewVisaStamps({ items }: { items: VisaStamp[] }) {
             </div>
             <div style={{ position: "absolute", bottom: 12, left: 12, right: 12 }}>
               <p style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, color: "#fff", marginBottom: 2 }}>
-                {v.name || "—"} → {v.country || "—"} {v.flag}
+                {v.name || "—"} → {v.country || "—"} <FlagIcon flag={v.flag} size={13} />
               </p>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "rgba(255,255,255,0.75)" }}>
                 Stamped {v.month || "—"}
@@ -758,7 +759,7 @@ function PreviewDeployedFeed({ items }: { items: DeployedEntry[] }) {
                 {d.name || "—"}
               </span>
               <span style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "rgba(255,255,255,0.6)" }}>
-                → {d.country || "—"} {d.flag} · {d.role || "—"}
+                → {d.country || "—"} <FlagIcon flag={d.flag} size={13} /> · {d.role || "—"}
               </span>
             </div>
           ))}
@@ -783,7 +784,7 @@ function PreviewAirportPhotos({ items }: { items: AirportPhoto[] }) {
                 {p.name || "—"}
               </p>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "#facc15", fontWeight: 600 }}>
-                ✈ {p.to || "—"} {p.flag}
+                ✈ {p.to || "—"} <FlagIcon flag={p.flag} size={13} />
               </p>
             </div>
           </div>

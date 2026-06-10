@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { requireAdmin } from "../../../_lib/adminAuth";
 import {
   readFile,
   writeFile,
@@ -6,11 +7,15 @@ import {
   type Region,
 } from "./store";
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   return NextResponse.json(await readFile());
 }
 
 export async function PUT(req: NextRequest) {
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   const body = await req.json();
   const region: Region = body.region === "europe" ? "europe" : "gulf";
   const file = await readFile();

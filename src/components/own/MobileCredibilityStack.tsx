@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ShieldCheck, Landmark, BadgeCheck, Star, Plane } from "lucide-react";
+import FlagIcon from "./FlagIcon";
 
 /* ============================================================
    Mobile-only credibility stack
@@ -35,7 +37,7 @@ function useCredibilityData() {
         if (!cancelled && data && typeof data === "object") setLive(data);
       })
       .catch(() => {
-        // Network/API failure ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢€Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â silently fall back to module-scope arrays.
+        // Network/API failure — silently fall back to module-scope arrays.
       });
     return () => {
       cancelled = true;
@@ -200,7 +202,7 @@ function VisaStamps({ items = visaStamps }: { items?: typeof visaStamps }) {
             </div>
             <div style={{ position: "absolute", bottom: 12, left: 12, right: 12 }}>
               <p style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700, color: "#fff", marginBottom: 2 }}>
-                {v.name} ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ {v.country} {v.flag}
+                {v.name} → {v.country} <FlagIcon flag={v.flag} size={15} />
               </p>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "rgba(255,255,255,0.75)" }}>
                 Stamped {v.month}
@@ -214,7 +216,7 @@ function VisaStamps({ items = visaStamps }: { items?: typeof visaStamps }) {
 }
 
 /* ============================================================
-   2. THIS WEEK WE DEPLOYED ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢€Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â marquee ticker
+   2. THIS WEEK WE DEPLOYED — marquee ticker
    ============================================================ */
 const deployedFeed = [
   { day: "Mon", name: "Vijay K.", country: "Dubai", role: "Construction", flag: "🇦🇪" },
@@ -238,7 +240,7 @@ function DeployedTicker({ feed = deployedFeed }: { feed?: typeof deployedFeed })
       }}
     >
       <SectionHeader
-        kicker="ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢€ÂÃƒâ€šÃ‚Â Live This Week"
+        kicker="●● Live This Week"
         title="People We Deployed"
         accent="#facc15"
         onDark
@@ -275,7 +277,7 @@ function DeployedTicker({ feed = deployedFeed }: { feed?: typeof deployedFeed })
                 {d.name}
               </span>
               <span style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "rgba(255,255,255,0.6)" }}>
-                ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ {d.country} {d.flag} ÃƒÆ’Ã¢€Å¡· {d.role}
+                → {d.country} <FlagIcon flag={d.flag} size={13} /> · {d.role}
               </span>
             </div>
           ))}
@@ -289,13 +291,13 @@ function DeployedTicker({ feed = deployedFeed }: { feed?: typeof deployedFeed })
    3. AIRPORT / DEPARTURE PHOTOS
    ============================================================ */
 const airportPhotos = [
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.06 PM (1).jpeg", name: "Vijay K.", to: "Dubai", flag: "ÃƒÆ’Ã‚Â°Ãƒ…Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â°Ãƒ…Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Âª" },
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.06 PM (2).jpeg", name: "Manjit S.", to: "Warsaw", flag: "ÃƒÆ’Ã‚Â°Ãƒ…Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚ÂµÃƒÆ’Ã‚Â°Ãƒ…Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â±" },
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.06 PM (3).jpeg", name: "Harpreet S.", to: "Riyadh", flag: "ÃƒÆ’Ã‚Â°Ãƒ…Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¸ÃƒÆ’Ã‚Â°Ãƒ…Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¦" },
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM.jpeg", name: "Narinder P.", to: "Bucharest", flag: "ÃƒÆ’Ã‚Â°Ãƒ…Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡·ÃƒÆ’Ã‚Â°Ãƒ…Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â´" },
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (1).jpeg", name: "Karamjit S.", to: "Kuwait City", flag: "ÃƒÆ’Ã‚Â°Ãƒ…Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â°ÃƒÆ’Ã‚Â°Ãƒ…Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¼" },
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (3).jpeg", name: "Jaspreet S.", to: "Doha", flag: "ÃƒÆ’Ã‚Â°Ãƒ…Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¶ÃƒÆ’Ã‚Â°Ãƒ…Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¦" },
-  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (4).jpeg", name: "Balwinder S.", to: "Abu Dhabi", flag: "ÃƒÆ’Ã‚Â°Ãƒ…Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã‚Â°Ãƒ…Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Âª" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.06 PM (1).jpeg", name: "Vijay K.", to: "Dubai", flag: "🇦🇪" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.06 PM (2).jpeg", name: "Manjit S.", to: "Warsaw", flag: "🇵🇱" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.06 PM (3).jpeg", name: "Harpreet S.", to: "Riyadh", flag: "🇸🇦" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM.jpeg", name: "Narinder P.", to: "Bucharest", flag: "🇷🇴" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (1).jpeg", name: "Karamjit S.", to: "Kuwait City", flag: "🇰🇼" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (3).jpeg", name: "Jaspreet S.", to: "Doha", flag: "🇶🇦" },
+  { img: "/WhatsApp Image 2026-05-09 at 5.07.07 PM (4).jpeg", name: "Balwinder S.", to: "Abu Dhabi", flag: "🇦🇪" },
 ];
 
 function AirportPhotos({ items = airportPhotos }: { items?: typeof airportPhotos }) {
@@ -304,7 +306,7 @@ function AirportPhotos({ items = airportPhotos }: { items?: typeof airportPhotos
       <SectionHeader
         kicker="Departure Day"
         title="The Moment They Fly Out"
-        sub="Photos sent from IGI Airport ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢€Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â bags packed, visa in hand, family at the gate."
+        sub="Photos sent from IGI Airport — bags packed, visa in hand, family at the gate."
       />
       <div className="mobile-hscroll" style={HSCROLL_STYLE}>
         {items.map((p, i) => (
@@ -334,7 +336,7 @@ function AirportPhotos({ items = airportPhotos }: { items?: typeof airportPhotos
                 {p.name}
               </p>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "#facc15", fontWeight: 600 }}>
-                ÃƒÆ’Ã‚Â¢Ãƒ…Ã¢€Å“Ãƒâ€¹Ã¢€Â  {p.to} {p.flag}
+                <Plane size={12} style={{ display: "inline-block", verticalAlign: "-1px" }} /> {p.to} <FlagIcon flag={p.flag} size={13} />
               </p>
             </div>
           </div>
@@ -354,7 +356,7 @@ const docs = [
     issuer: "Ministry of External Affairs, Govt. of India",
     validity: "Valid till June 2027",
     color: "#0052dc",
-    icon: "ÃƒÆ’Ã‚Â°Ãƒ…Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂºÃƒâ€šÃ‚Â¡",
+    icon: ShieldCheck,
   },
   {
     title: "MEA Registration",
@@ -362,7 +364,7 @@ const docs = [
     issuer: "Protector General of Emigrants",
     validity: "Active",
     color: "#006d3a",
-    icon: "ÃƒÆ’Ã‚Â°Ãƒ…Ã‚Â¸Ãƒâ€šÃ‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚Âº",
+    icon: Landmark,
   },
   {
     title: "ALMRA Punjab",
@@ -370,7 +372,7 @@ const docs = [
     issuer: "Association of Licensed Manpower Recruiting Agents",
     validity: "Punjab Chapter",
     color: "#c9a227",
-    icon: "ÃƒÆ’Ã‚Â¢Ãƒ…Ã¢€Å“ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ",
+    icon: BadgeCheck,
   },
   {
     title: "20+ Years Operating",
@@ -378,7 +380,7 @@ const docs = [
     issuer: "Shiva Manpower Consultants, Nakodar",
     validity: "Govt-licensed since day one",
     color: "#8b1a3a",
-    icon: "ÃƒÆ’Ã‚Â¢Ãƒâ€¹Ã…â€œÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦",
+    icon: Star,
   },
 ];
 
@@ -421,7 +423,7 @@ function LicenseDocs() {
                 fontSize: 22,
               }}
             >
-              {d.icon}
+              <d.icon size={22} color={d.color} />
             </div>
             <div>
               <p style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, color: "var(--on-surface)" }}>
@@ -436,7 +438,7 @@ function LicenseDocs() {
                 {d.issuer}
               </p>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "#22c55e", fontWeight: 600, marginTop: 4 }}>
-                ÃƒÆ’Ã‚Â¢Ãƒ…Ã¢€Å“ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ {d.validity}
+                ✓ {d.validity}
               </p>
             </div>
           </div>
@@ -447,14 +449,14 @@ function LicenseDocs() {
 }
 
 /* ============================================================
-   5. PAY SLIP ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢€Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â BEFORE / AFTER
+   5. PAY SLIP — BEFORE / AFTER
    ============================================================ */
 const payslips = [
-  { role: "Construction Worker", before: "ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹16,000", after: "AED 4,200", afterInr: "ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°Ãƒâ€¹Ã¢€Â  ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹95,000", country: "Dubai", flag: "🇦🇪", multiple: "6ÃƒÆ’Ã†’ÃƒÂ¢Ã¢â€šÂ¬Ã¢€Â" },
-  { role: "Welder", before: "ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹20,000", after: "PLN 5,800", afterInr: "ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°Ãƒâ€¹Ã¢€Â  ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹1,28,000", country: "Poland", flag: "🇵🇱", multiple: "6.4ÃƒÆ’Ã†’ÃƒÂ¢Ã¢â€šÂ¬Ã¢€Â" },
-  { role: "Factory Operator", before: "ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹14,000", after: "RON 4,500", afterInr: "ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°Ãƒâ€¹Ã¢€Â  ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹85,000", country: "Romania", flag: "🇷🇴", multiple: "6ÃƒÆ’Ã†’ÃƒÂ¢Ã¢â€šÂ¬Ã¢€Â" },
-  { role: "Driver", before: "ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹18,000", after: "SAR 3,500", afterInr: "ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°Ãƒâ€¹Ã¢€Â  ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹78,000", country: "Saudi Arabia", flag: "🇸🇦", multiple: "4.3ÃƒÆ’Ã†’ÃƒÂ¢Ã¢â€šÂ¬Ã¢€Â" },
-  { role: "Hospitality", before: "ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹15,000", after: "QAR 3,200", afterInr: "ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°Ãƒâ€¹Ã¢€Â  ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹73,000", country: "Qatar", flag: "🇶🇦", multiple: "4.9ÃƒÆ’Ã†’ÃƒÂ¢Ã¢â€šÂ¬Ã¢€Â" },
+  { role: "Construction Worker", before: "₹16,000", after: "AED 4,200", afterInr: "≈  ₹95,000", country: "Dubai", flag: "🇦🇪", multiple: "6×" },
+  { role: "Welder", before: "₹20,000", after: "PLN 5,800", afterInr: "≈  ₹1,28,000", country: "Poland", flag: "🇵🇱", multiple: "6.4×" },
+  { role: "Factory Operator", before: "₹14,000", after: "RON 4,500", afterInr: "≈  ₹85,000", country: "Romania", flag: "🇷🇴", multiple: "6×" },
+  { role: "Driver", before: "₹18,000", after: "SAR 3,500", afterInr: "≈  ₹78,000", country: "Saudi Arabia", flag: "🇸🇦", multiple: "4.3×" },
+  { role: "Hospitality", before: "₹15,000", after: "QAR 3,200", afterInr: "≈  ₹73,000", country: "Qatar", flag: "🇶🇦", multiple: "4.9×" },
 ];
 
 function PayslipComparison() {
@@ -463,7 +465,7 @@ function PayslipComparison() {
       <SectionHeader
         kicker="What Actually Changes"
         title="From Punjab to Abroad"
-        sub="Real take-home, real roles. Lodging + food often paid on top ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢€Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â not shown here."
+        sub="Real take-home, real roles. Lodging + food often paid on top — not shown here."
       />
       <div className="mobile-hscroll" style={HSCROLL_STYLE}>
         {payslips.map((p, i) => (
@@ -524,10 +526,10 @@ function PayslipComparison() {
 
             {/* Down arrow */}
             <div style={{ textAlign: "center", color: "#16a34a", fontSize: 16, fontWeight: 700, lineHeight: 1, marginTop: -2, marginBottom: -2 }}>
-              ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ
+              ↓
             </div>
 
-            {/* After block ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢€Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â solid green, no gradient */}
+            {/* After block — solid green, no gradient */}
             <div
               style={{
                 padding: "12px 14px",
@@ -537,7 +539,7 @@ function PayslipComparison() {
               }}
             >
               <p style={{ fontSize: 10, fontFamily: "var(--font-body)", color: "#15803d", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 4, fontWeight: 700 }}>
-                In {p.country} {p.flag}
+                In {p.country} <FlagIcon flag={p.flag} size={12} />
               </p>
               <div style={{ display: "flex", alignItems: "baseline", gap: 6, flexWrap: "wrap" }}>
                 <p style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 800, color: "#15803d" }}>
@@ -640,7 +642,7 @@ function DestinationVideos({ items = destinationReels }: { items?: typeof destin
 }
 
 /* ============================================================
-   7. PROCESS TRANSPARENCY ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢€Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â behind the scenes
+   7. PROCESS TRANSPARENCY — behind the scenes
    ============================================================ */
 const process = [
   {
@@ -674,7 +676,7 @@ const process = [
   {
     step: "05",
     title: "Post-Arrival Follow-up",
-    desc: "We stay in touch after deployment ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢€Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â most agencies don't.",
+    desc: "We stay in touch after deployment — most agencies don't.",
     img: "/global-recruitment-network.jpg",
     badge: "Step 5",
   },
@@ -757,7 +759,7 @@ function ProcessTransparency() {
             textDecoration: "none",
           }}
         >
-          Start your application ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢€Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Free ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢
+          Start your application — Free →
         </Link>
       </div>
     </section>
@@ -765,9 +767,9 @@ function ProcessTransparency() {
 }
 
 /* ============================================================
-   STACK ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢€Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â exported wrapper. Mobile-only via CSS class.
+   STACK — exported wrapper. Mobile-only via CSS class.
    ============================================================ */
-/* Top half ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢€Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â runs right after the hero so credibility lands in the first
+/* Top half — runs right after the hero so credibility lands in the first
    ~2 screens of scroll. Just the two punchiest blocks. */
 export function MobileCredibilityTop() {
   const live = useCredibilityData();
@@ -778,7 +780,7 @@ export function MobileCredibilityTop() {
   );
 }
 
-/* Bottom half ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢€Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â deeper proof (departure photos, license docs, payslips,
+/* Bottom half — deeper proof (departure photos, license docs, payslips,
    destination videos, behind-the-scenes process). Lives lower in the page. */
 export function MobileCredibilityBottom() {
   const live = useCredibilityData();
@@ -792,7 +794,7 @@ export function MobileCredibilityBottom() {
   );
 }
 
-/* Default export kept for backward compatibility ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢€Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â renders all 7 in order. */
+/* Default export kept for backward compatibility — renders all 7 in order. */
 export default function MobileCredibilityStack() {
   const live = useCredibilityData();
   return (

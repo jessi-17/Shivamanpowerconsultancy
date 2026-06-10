@@ -325,7 +325,7 @@ export default function HeroSection() {
               lineHeight: 1.4,
             }}
           >
-            Travel Agent Ã‚Â· Immigration Office Ã‚Â· Overseas Recruitment — Govt-Licensed Since 2002
+            Travel Agent · Immigration Office · Overseas Recruitment — Govt-Licensed Since 2002
           </p>
 
           {/* Subtext */}

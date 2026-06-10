@@ -137,7 +137,7 @@ Start arranging these the day you decide to apply, so you don't lose time later:
 - **Educational certificates** (matric / 10th class minimum)
 - **Aadhaar card and PAN card** (copies)
 - **8 recent passport-size photographs** with white background (US visa specification)
-- **Marriage certificate and children's birth certificates** (if married)
+- **Marriage certificate and children's birNth certificates** (if married)
 - **Bank statement** (last 6 months — sometimes requested)
 
 Our office helps you arrange any of the above you don't already have.

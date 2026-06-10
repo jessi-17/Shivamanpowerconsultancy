@@ -66,7 +66,7 @@ const faqs = [
   { q: "Is the kafala system still in place?", a: "Qatar abolished the kafala (sponsorship) system in 2020. Workers can now change jobs without employer permission after a notice period, and exit permits are no longer required for most workers." },
   { q: "Do I need to pay recruitment fees?", a: "Shiva Travel & Manpower Consultants operates under government license RA B-1794. We follow all regulations regarding recruitment. Contact our Nakodar office for complete fee transparency." },
   { q: "Can I bring my family to Qatar?", a: "Yes, if you meet the minimum salary threshold (typically QAR 10,000+), you can sponsor your spouse and children on a family visa. We assist with dependent visa applications." },
-  { q: "What is the weather like in Qatar?", a: "Qatar has a desert climate with very hot summers (40-50Â°C from June to September) and mild winters (15-25Â°C from November to March). All workplaces and accommodations have air conditioning. Outdoor work is restricted during peak summer hours." },
+  { q: "What is the weather like in Qatar?", a: "Qatar has a desert climate with very hot summers (40-50°C from June to September) and mild winters (15-25°C from November to March). All workplaces and accommodations have air conditioning. Outdoor work is restricted during peak summer hours." },
 ];
 
 const faqJsonLd = {
@@ -124,7 +124,7 @@ export default function QatarVisa() {
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
         <PageHero
-          kicker="Tax-Free Income Â· Modern Infrastructure Â· High Demand"
+          kicker="Tax-Free Income · Modern Infrastructure · High Demand"
           title="Qatar visa & work permit services in Nakodar."
           highlight="in Nakodar."
           chips={["Work Visa", "GAMCA Medical", "Attestation", "FIFA Legacy Jobs"]}
@@ -136,7 +136,7 @@ export default function QatarVisa() {
             { num: "Highest", label: "Gulf Min. Wage" },
           ]}
           image={{ src: "/shiva-manpower-nakodar-office-punjab.webp", alt: "Qatar visa services at Shiva Travel Consultants Nakodar" }}
-          imageSeal={{ title: "Qatar Visa Specialist", subtitle: "Work Visa Â· GAMCA Â· Attestation Â· QID" }}
+          imageSeal={{ title: "Qatar Visa Specialist", subtitle: "Work Visa · GAMCA · Attestation · QID" }}
           microChip={{ value: "0%", label: "Income Tax" }}
         />
 

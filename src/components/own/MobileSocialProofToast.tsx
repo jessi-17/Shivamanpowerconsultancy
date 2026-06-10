@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import FlagIcon from "./FlagIcon";
 
 // Real client placements — edit names/countries as needed
 const placements = [
@@ -119,7 +120,7 @@ export default function MobileSocialProofToast() {
           >
             <strong style={{ fontWeight: 700 }}>{p.name}</strong> got the visa to{" "}
             <strong style={{ fontWeight: 700 }}>
-              {p.country} {p.flag}
+              {p.country} <FlagIcon flag={p.flag} size={13} />
             </strong>
           </p>
           <p

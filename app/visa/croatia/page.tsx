@@ -116,7 +116,7 @@ export default function CroatiaVisaPage() {
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
         <PageHero
-          kicker="EU Member Â· Schengen Access Â· Path to Residency"
+          kicker="EU Member · Schengen Access · Path to Residency"
           title="Croatia visa & work permit services in Nakodar."
           highlight="in Nakodar."
           chips={["EU Work Permit", "Schengen Travel", "Embassy Coordination", "Path to PR"]}
@@ -128,7 +128,7 @@ export default function CroatiaVisaPage() {
             { num: "Tourism", label: "Hot Sector" },
           ]}
           image={{ src: "/shiva-manpower-nakodar-office-punjab.webp", alt: "Croatia visa services at Shiva Travel Nakodar office" }}
-          imageSeal={{ title: "Croatia Work Permit Specialist", subtitle: "Embassy Â· Attestation Â· E-Migrate" }}
+          imageSeal={{ title: "Croatia Work Permit Specialist", subtitle: "Embassy · Attestation · E-Migrate" }}
           microChip={{ value: "EU", label: "Schengen" }}
         />
 

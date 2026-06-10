@@ -741,16 +741,16 @@ Punjab has a rich tradition of international migration. Today, the opportunities
 ### Popular Destinations for Punjab Youth
 
 **Gulf Countries (Most Popular):**
-- 🇦🇪 UAE (Dubai, Abu Dhabi, Sharjah)
-- 🇸🇦 Saudi Arabia (Riyadh, Jeddah, Dammam)
-- 🇶🇦 Qatar (Doha)
-- 🇰🇼 Kuwait
-- 🇧🇭 Bahrain
+- UAE (Dubai, Abu Dhabi, Sharjah)
+- Saudi Arabia (Riyadh, Jeddah, Dammam)
+- Qatar (Doha)
+- Kuwait
+- Bahrain
 
 **Europe (Growing):**
-- 🇷🇴 Romania
-- 🇵🇱 Poland
-- 🇭🇺 Hungary
+- Romania
+- Poland
+- Hungary
 
 ### Jobs by Education Level
 

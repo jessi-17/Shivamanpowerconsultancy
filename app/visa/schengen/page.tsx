@@ -5,6 +5,7 @@ import { breadcrumbJsonLd } from "../../_lib/breadcrumb";
 import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
 import RelatedVisas from "@/components/own/RelatedVisas";
 import PageHero from "@/components/own/PageHero";
+import FlagIcon from "@/components/own/FlagIcon";
 
 export const metadata: Metadata = {
   title: "Schengen Visa Services in Nakodar | Europe Work Visa | Shiva Travel & Manpower Consultants",
@@ -25,12 +26,12 @@ export const metadata: Metadata = {
 };
 
 const countries = [
-  { name: "Poland", flag: "ðŸ‡µðŸ‡±", desc: "Highest demand for Indian workers — construction, manufacturing, and agriculture jobs with excellent pay. Poland is the top destination for Punjabi workers in Europe.", href: "/visa/poland" },
-  { name: "Romania", flag: "ðŸ‡·ðŸ‡´", desc: "EU member with Schengen access and the lowest cost of living in Europe. Factory, farm, and construction work with employer-provided accommodation.", href: "/visa/romania" },
-  { name: "Croatia", flag: "ðŸ‡­ðŸ‡·", desc: "Newest Schengen member with growing demand for skilled and semi-skilled workers in tourism, construction, and shipbuilding industries.", href: "/visa/croatia" },
-  { name: "Malta", flag: "ðŸ‡²ðŸ‡¹", desc: "English-speaking EU island nation with strong demand in hospitality, healthcare, and manufacturing sectors. Great climate year-round.", href: "/visa/malta" },
-  { name: "Hungary", flag: "ðŸ‡­ðŸ‡º", desc: "Central European hub with booming automotive and electronics manufacturing. Affordable living and growing Indian community in Budapest.", href: "/visa/hungary" },
-  { name: "Czech Republic", flag: "ðŸ‡¨ðŸ‡¿", desc: "One of Europe's lowest unemployment rates means high demand for foreign workers in engineering, automotive, and food processing industries.", href: "/visa/czech-republic" },
+  { name: "Poland", flag: "🇵🇱", desc: "Highest demand for Indian workers — construction, manufacturing, and agriculture jobs with excellent pay. Poland is the top destination for Punjabi workers in Europe.", href: "/visa/poland" },
+  { name: "Romania", flag: "🇷🇴", desc: "EU member with Schengen access and the lowest cost of living in Europe. Factory, farm, and construction work with employer-provided accommodation.", href: "/visa/romania" },
+  { name: "Croatia", flag: "🇭🇷", desc: "Newest Schengen member with growing demand for skilled and semi-skilled workers in tourism, construction, and shipbuilding industries.", href: "/visa/croatia" },
+  { name: "Malta", flag: "🇲🇹", desc: "English-speaking EU island nation with strong demand in hospitality, healthcare, and manufacturing sectors. Great climate year-round.", href: "/visa/malta" },
+  { name: "Hungary", flag: "🇭🇺", desc: "Central European hub with booming automotive and electronics manufacturing. Affordable living and growing Indian community in Budapest.", href: "/visa/hungary" },
+  { name: "Czech Republic", flag: "🇨🇿", desc: "One of Europe's lowest unemployment rates means high demand for foreign workers in engineering, automotive, and food processing industries.", href: "/visa/czech-republic" },
 ];
 
 const visaProcess = [
@@ -133,7 +134,7 @@ export default function SchengenVisaPage() {
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
         <PageHero
-          kicker="Schengen Zone Â· 27 Countries Â· Work & Travel"
+          kicker="Schengen Zone · 27 Countries · Work & Travel"
           title="Schengen visa services in Nakodar."
           highlight="in Nakodar."
           chips={["27 Countries", "Work Permit Included", "Embassy Coordination", "No Hidden Fees"]}
@@ -145,7 +146,7 @@ export default function SchengenVisaPage() {
             { num: "EU", label: "Free Movement" },
           ]}
           image={{ src: "/shiva-manpower-nakodar-office-punjab.webp", alt: "Schengen visa services at Shiva Travel Nakodar office" }}
-          imageSeal={{ title: "Schengen Visa Processor", subtitle: "27 Countries Â· Embassy Â· Attestation" }}
+          imageSeal={{ title: "Schengen Visa Processor", subtitle: "27 Countries · Embassy · Attestation" }}
           microChip={{ value: "27", label: "Countries" }}
         />
 
@@ -221,7 +222,7 @@ export default function SchengenVisaPage() {
                 <Link key={country.name} href={country.href} style={{ textDecoration: "none" }}>
                   <div style={{ backgroundColor: "#f8f9ff", borderRadius: 16, padding: 28, border: "1px solid #e5e7eb", transition: "box-shadow 0.2s", height: "100%" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
-                      <span style={{ fontSize: 28 }}>{country.flag}</span>
+                      <FlagIcon flag={country.flag} size={28} alt={`${country.name} flag`} />
                       <h3 style={{ fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 700, color: "#0b1c30" }}>{country.name}</h3>
                     </div>
                     <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "#43474d", lineHeight: 1.7, marginBottom: 16 }}>{country.desc}</p>

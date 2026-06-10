@@ -153,10 +153,10 @@ export default function PassportAssistancePage() {
           stats={[
             { num: "Walk-in", label: "Nakodar Office" },
             { num: "PSK", label: "Jalandhar Centre" },
-            { num: "All types", label: "New Ã‚Â· Renewal Ã‚Â· ECNR" },
+            { num: "All types", label: "New · Renewal · ECNR" },
           ]}
           image={{ src: "/shiva-manpower-nakodar-office-punjab.webp", alt: "Passport assistance at Shiva Travel Nakodar" }}
-          imageSeal={{ title: "Passport Seva Kendra Coordination", subtitle: "Jalandhar PSK Ã‚Â· Online Application Help" }}
+          imageSeal={{ title: "Passport Seva Kendra Coordination", subtitle: "Jalandhar PSK · Online Application Help" }}
           microChip={{ value: "PSK", label: "Jalandhar" }}
         />
 

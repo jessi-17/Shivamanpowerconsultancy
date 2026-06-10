@@ -52,7 +52,7 @@ const visaProcess = [
 const faqs = [
   { q: "Is it safe to work in Saudi Arabia?", a: "Yes. Saudi Arabia has strict law enforcement and is one of the safest countries in the Middle East. The government has invested heavily in worker welfare through platforms like Musaned and the Wage Protection System." },
   { q: "Do I need to know Arabic?", a: "Not for most blue-collar jobs. English or Hindi is sufficient. However, knowing basic Arabic phrases can be helpful and is appreciated by employers." },
-  { q: "What about the weather?", a: "Summers (May-September) are very hot (40-50Â°C). Most outdoor work is banned during peak afternoon hours (12-3 PM) in summer. Indoor and air-conditioned work continues normally." },
+  { q: "What about the weather?", a: "Summers (May-September) are very hot (40-50°C). Most outdoor work is banned during peak afternoon hours (12-3 PM) in summer. Indoor and air-conditioned work continues normally." },
   { q: "Can I switch jobs in Saudi Arabia?", a: "Yes. Recent labour reforms allow workers to switch jobs after completing their contract or with employer consent. The exit/re-entry visa system has also been relaxed significantly." },
   { q: "How much can I save per month?", a: "With free accommodation and food, skilled workers typically save SAR 1,500-4,000 per month (₹33,000-88,000 approximately). This depends on your salary and spending habits." },
   { q: "What is the contract duration?", a: "Standard employment contracts in Saudi Arabia are for 2 years. After completion, you can renew or switch employers. You're entitled to end-of-service gratuity, return ticket, and pending leave salary." },
@@ -88,7 +88,7 @@ export default function JobsInSaudi() {
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
         <PageHero
-          kicker="Riyadh Â· Jeddah Â· Dammam Â· NEOM"
+          kicker="Riyadh · Jeddah · Dammam · NEOM"
           title="Build your career in Saudi Arabia."
           highlight="in Saudi Arabia."
           chips={["Tax-Free Income", "Vision 2030 Projects", "3-6 Week Visa", "Free Accommodation"]}
@@ -100,7 +100,7 @@ export default function JobsInSaudi() {
             { num: "SAR 1.5“3K", label: "Avg Monthly" },
           ]}
           image={{ src: "/saudi-arabia-jobs-shiva-manpower.webp", alt: "Saudi Arabia skyline — job opportunities in Saudi Arabia" }}
-          imageSeal={{ title: "1,500+ Placed in Saudi", subtitle: "Oil & Gas Â· Construction Â· Hospitality Â· Manufacturing" }}
+          imageSeal={{ title: "1,500+ Placed in Saudi", subtitle: "Oil & Gas · Construction · Hospitality · Manufacturing" }}
           microChip={{ value: "0%", label: "Income Tax" }}
         />
 

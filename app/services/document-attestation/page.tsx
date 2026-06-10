@@ -51,7 +51,7 @@ const processSteps = [
 
 const gulfCountries = [
   { country: "UAE", details: "MOFA attestation required after MEA. Used for employment visa, family visa, and business setup in Dubai, Abu Dhabi, Sharjah." },
-  { country: "Saudi Arabia", details: "Saudi Cultural AttachÃ© and MOFA attestation. Mandatory for all work visas, especially NEOM and industrial projects." },
+  { country: "Saudi Arabia", details: "Saudi Cultural Attaché and MOFA attestation. Mandatory for all work visas, especially NEOM and industrial projects." },
   { country: "Qatar", details: "Qatar Embassy attestation followed by MOFA Qatar. Required for work permits and professional licensing." },
   { country: "Kuwait", details: "Kuwait Embassy attestation. Needed for employment visas, especially in oil & gas and construction sectors." },
   { country: "Bahrain", details: "Bahrain Embassy attestation after MEA. Required for work permits and professional qualifications recognition." },
@@ -109,7 +109,7 @@ export default function DocumentAttestationPage() {
           title="Document attestation for overseas employment from Nakodar."
           highlight="from Nakodar."
           chips={["HRD Attestation", "MEA Attestation", "Embassy Stamping", "Track Online"]}
-          description="Every overseas job requires attested documents. We manage the entire chain — Notary â†’ State HRD â†’ MEA â†’ Embassy — so you don't run between Chandigarh, Delhi and embassy consulates. Everything handled from our Nakodar office."
+          description="Every overseas job requires attested documents. We manage the entire chain — Notary → State HRD → MEA → Embassy — so you don't run between Chandigarh, Delhi and embassy consulates. Everything handled from our Nakodar office."
           primaryCta={{ label: "Start Attestation Process", href: "/contactus" }}
           stats={[
             { num: "10,000+", label: "Documents Attested" },
@@ -117,7 +117,7 @@ export default function DocumentAttestationPage() {
             { num: "7-14 days", label: "Avg Turnaround" },
           ]}
           image={{ src: "/passport-documents-nakodar-office.webp", alt: "Document attestation services at Shiva Travel Nakodar" }}
-          imageSeal={{ title: "Full Attestation Chain", subtitle: "Notary Â· HRD Â· MEA Â· Embassy" }}
+          imageSeal={{ title: "Full Attestation Chain", subtitle: "Notary · HRD · MEA · Embassy" }}
           microChip={{ value: "MEA", label: "Authorized" }}
         />
 

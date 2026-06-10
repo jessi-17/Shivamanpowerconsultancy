@@ -24,7 +24,19 @@ const nextConfig: NextConfig = {
         { key: "X-Content-Type-Options", value: "nosniff" },
         { key: "X-Frame-Options", value: "DENY" },
         { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+        // Force HTTPS for 2 years, incl. subdomains (browsers ignore HSTS on plain HTTP, so this is safe to send everywhere)
+        { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+        { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=()" },
       ],
+    },
+    {
+      // Admin pages and APIs must never be cached by browsers or proxies
+      source: "/admin/:path*",
+      headers: [{ key: "Cache-Control", value: "no-store" }],
+    },
+    {
+      source: "/api/admin/:path*",
+      headers: [{ key: "Cache-Control", value: "no-store" }],
     },
     {
       source: "/(.*)\\.(jpg|jpeg|png|webp|avif|svg|ico|woff|woff2)",

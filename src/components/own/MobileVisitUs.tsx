@@ -15,7 +15,7 @@ const ADDRESS_LINE2 = "Jalandhar Road, Nakodar, Punjab 144040";
 const PHONE_CALL = "+91 98148-20432";
 const PHONE_CALL_TEL = "+919814820432";
 const PHONE_WA = "919815358832";
-const HOURS = "Mon “ Sat Â· 9:00 AM “ 6:30 PM";
+const HOURS = "Mon – Sat · 9:00 AM – 6:30 PM";
 
 const GOOGLE_MAPS_URL = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
   ADDRESS_FULL + ", India"
@@ -103,7 +103,7 @@ export default function MobileVisitUs() {
               textTransform: "uppercase",
             }}
           >
-            Our HQ Â· Since 2002
+            Our HQ · Since 2002
           </p>
         </div>
 
@@ -246,7 +246,7 @@ export default function MobileVisitUs() {
           </div>
 
           <p style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "#94a3b8", textAlign: "center", marginTop: 10, lineHeight: 1.4 }}>
-            {PHONE_CALL} Â· {`+91 ${PHONE_WA.slice(2, 7)}-${PHONE_WA.slice(7)}`} (WhatsApp)
+            {PHONE_CALL} · {`+91 ${PHONE_WA.slice(2, 7)}-${PHONE_WA.slice(7)}`} (WhatsApp)
           </p>
         </div>
       </div>

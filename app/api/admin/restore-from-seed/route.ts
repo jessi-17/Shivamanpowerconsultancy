@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
+import { requireAdmin } from "../../../_lib/adminAuth";
 import { readState, writeState, hasDb } from "../../../_lib/contentStore";
 
 const VALID_KEYS = ["blogs", "demands", "offer"] as const;
@@ -29,6 +30,8 @@ function isEmpty(value: unknown): boolean {
  * - With `force: true`: overwrites whatever is in Postgres with the seed
  */
 export async function POST(req: NextRequest) {
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   if (!hasDb) {
     return NextResponse.json(
       { error: "DATABASE_URL not configured" },

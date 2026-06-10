@@ -1,16 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
+import { requireAdmin } from "../../../_lib/adminAuth";
 import { listLeads, deleteLead, hasDb, type LeadType } from "../../../_lib/db";
 
-function isAuthed(req: NextRequest): boolean {
-  const cookie = req.cookies.get("admin_session")?.value;
-  const expected = process.env.ADMIN_PASSWORD || "shiva2025";
-  return Boolean(cookie) && cookie === expected;
-}
-
 export async function GET(req: NextRequest) {
-  if (!isAuthed(req)) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   if (!hasDb) {
     return NextResponse.json(
       { error: "DATABASE_URL not configured. Add it to .env.local and restart the dev server." },
@@ -32,9 +26,8 @@ export async function GET(req: NextRequest) {
 }
 
 export async function DELETE(req: NextRequest) {
-  if (!isAuthed(req)) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   const { id } = await req.json();
   if (typeof id !== "number") {
     return NextResponse.json({ error: "id (number) required" }, { status: 400 });
