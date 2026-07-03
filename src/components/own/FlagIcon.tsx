@@ -7,6 +7,10 @@ import type { CSSProperties } from "react";
    flag emojis — visitors see plain letters like "AE" instead.
    Data keeps storing the emoji (admin panel / DB unchanged);
    conversion happens at render time.
+
+   The flag SVG is served through our own /api/iconify proxy (not
+   api.iconify.design directly) so the visitor's browser never contacts
+   the third-party host — required for GDPR cookie-consent compliance.
    ============================================================ */
 
 const RI_A = 0x1f1e6; // regional indicator "A"
@@ -33,7 +37,7 @@ export default function FlagIcon({ flag, size = 18, alt = "", style }: FlagIconP
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={`https://api.iconify.design/flagpack:${code}.svg`}
+      src={`/api/iconify/flagpack/${code}.svg`}
       alt={alt}
       width={size}
       height={Math.round(size * 0.75)}

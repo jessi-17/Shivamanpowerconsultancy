@@ -7,6 +7,7 @@ import SiteChrome from "@/components/own/SiteChrome";
 import FloatingRailMount from "@/components/own/FloatingRailMount";
 import PostHogProvider from "@/components/own/PostHogProvider";
 import PostHogPageView from "@/components/own/PostHogPageView";
+import IconifyProxy from "@/components/own/IconifyProxy";
 import "./global.css";
 
 const manrope = Manrope({
@@ -279,7 +280,6 @@ export default function RootLayout({
         <meta name="theme-color" content="#000c2f" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://waw.gallabox.com" />
-        <link rel="dns-prefetch" href="https://api.iconify.design" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
@@ -295,6 +295,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <IconifyProxy />
         <a href="#main-content" className="skip-to-content">
           Skip to main content
         </a>
@@ -309,19 +310,32 @@ export default function RootLayout({
           <Analytics />
         </PostHogProvider>
 
-        {/* Facebook Pixel — loads immediately for audience building */}
-        <Script id="facebook-pixel" strategy="afterInteractive">
+        {/* Facebook Pixel — only load after cookie consent (GDPR).
+            Fires the _fbp cookie + sends data to Meta, so it must wait
+            for consent just like Google Analytics below. */}
+        <Script id="facebook-pixel" strategy="lazyOnload">
           {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '782998073170981');
-            fbq('track', 'PageView');
+            function loadFacebookPixel() {
+              if (window.__fbPixelLoaded) return;
+              window.__fbPixelLoaded = true;
+
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '782998073170981');
+              fbq('track', 'PageView');
+            }
+
+            if (localStorage.getItem('cookie-consent') === 'accepted') {
+              loadFacebookPixel();
+            }
+
+            window.addEventListener('cookie-consent-accepted', loadFacebookPixel);
           `}
         </Script>
 
