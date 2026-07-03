@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
-import * as THREE from "three";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
@@ -184,101 +183,6 @@ export default function Footer() {
     }, wrapperRef);
 
     return () => ctx.revert();
-  }, []);
-
-  // Self-hosted three.js globe. Replaces the old webglearth.com embed, whose
-  // API script no longer initializes on modern Chrome ("The browser supports
-  // WebGL, but initialization failed") — the globe had silently vanished.
-  useEffect(() => {
-    const container = document.getElementById("footer-globe");
-    if (!container) return;
-
-    let renderer: THREE.WebGLRenderer;
-    try {
-      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    } catch {
-      return; // no WebGL — leave the dark backdrop, nothing else breaks
-    }
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.domElement.style.width = "100%";
-    renderer.domElement.style.height = "100%";
-    container.appendChild(renderer.domElement);
-
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
-    camera.position.z = 5.4;
-
-    const texture = new THREE.TextureLoader().load("/earth-texture.jpg");
-    texture.colorSpace = THREE.SRGBColorSpace;
-    texture.anisotropy = 4;
-
-    const globeGeo = new THREE.SphereGeometry(2, 64, 64);
-    const globeMat = new THREE.MeshStandardMaterial({ map: texture, roughness: 0.9 });
-    const globe = new THREE.Mesh(globeGeo, globeMat);
-    // tilt the northern hemisphere toward the camera (the old webglearth view
-    // was centered near the pole) — brighter continents, less open ocean
-    globe.rotation.x = 0.95;
-    globe.rotation.y = 2.2; // start over Asia
-    scene.add(globe);
-
-    scene.add(new THREE.AmbientLight(0xffffff, 1.7));
-    const sun = new THREE.DirectionalLight(0xbfd9ff, 1.8);
-    sun.position.set(0.5, 1.5, 4);
-    scene.add(sun);
-
-    // atmosphere — fresnel glow on an inverted slightly-larger sphere
-    const atmMat = new THREE.ShaderMaterial({
-      side: THREE.BackSide,
-      transparent: true,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
-      vertexShader: `
-        varying vec3 vNormal;
-        void main() {
-          vNormal = normalize(normalMatrix * normal);
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-        }`,
-      fragmentShader: `
-        varying vec3 vNormal;
-        void main() {
-          float intensity = pow(0.62 - dot(vNormal, vec3(0.0, 0.0, -1.0)), 4.0);
-          gl_FragColor = vec4(0.35, 0.55, 1.0, 1.0) * intensity;
-        }`,
-    });
-    const atmosphere = new THREE.Mesh(new THREE.SphereGeometry(2.12, 64, 64), atmMat);
-    scene.add(atmosphere);
-
-    const resize = () => {
-      const w = container.clientWidth;
-      const h = container.clientHeight;
-      if (!w || !h) return;
-      renderer.setSize(w, h, false);
-      camera.aspect = w / h;
-      camera.updateProjectionMatrix();
-    };
-    resize();
-    const ro = new ResizeObserver(resize);
-    ro.observe(container);
-
-    let frame = 0;
-    const tick = () => {
-      globe.rotateY(0.0009); // spin around the planet's own pole axis
-      renderer.render(scene, camera);
-      frame = requestAnimationFrame(tick);
-    };
-    tick();
-
-    return () => {
-      cancelAnimationFrame(frame);
-      ro.disconnect();
-      globeGeo.dispose();
-      globeMat.dispose();
-      atmosphere.geometry.dispose();
-      atmMat.dispose();
-      texture.dispose();
-      renderer.dispose();
-      container.removeChild(renderer.domElement);
-    };
   }, []);
 
   return (
@@ -611,14 +515,25 @@ export default function Footer() {
             background: "linear-gradient(to bottom, #060e24 0%, transparent 100%)",
             zIndex: 1, pointerEvents: "none",
           }} />
-          <div id="footer-globe" style={{
-            position: "absolute",
-            width: "200%",
-            height: "100vw",
-            overflow: "hidden",
-            left: "-50%",
-            top: "-60%",
-          }} />
+          {/* Static earth — only the top of the globe peeks up from the bottom.
+              Tune `top` to raise/lower it, `width` to scale it. mixBlendMode:
+              "screen" melts the image's black background into the dark footer. */}
+          <img
+            src="/earth-globe.png"
+            alt=""
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              left: "50%",
+              top: "5%",
+              transform: "translateX(-50%)",
+              width: "min(1750px, 165vw)",
+              height: "auto",
+              mixBlendMode: "screen",
+              pointerEvents: "none",
+              userSelect: "none",
+            }}
+          />
         </div>
       </div>
     </div>
