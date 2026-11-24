@@ -6,13 +6,12 @@ import PageHero from "@/components/own/PageHero";
 export const metadata: Metadata = {
   title: "H-2B Visa Processing from India | Govt-Licensed RA B-1794 | Shiva Travel",
   description:
-    "End-to-end H-2B visa processing for US employers and Indian workers. Sourcing, on-site trade testing in Nakodar, DS-160 filing, consular interview coordination at US Consulates in Chennai, Mumbai, and New Delhi. First H-2B cohort already mobilised to Guam.",
+    "End-to-end H-2B visa processing for US employers and Indian workers. Sourcing, on-site trade testing in Nakodar, DS-160 filing, consular interview coordination at US Consulates in Chennai, Mumbai, and New Delhi.",
   keywords: [
     "h-2b visa processing india",
     "h-2b recruitment agency punjab",
     "ds-160 filing nakodar",
     "us consulate interview coordination",
-    "h-2b mobilisation guam",
     "us employer indian workers",
     "h-2b agency mea licensed",
     "h-2b worker sourcing india",
@@ -33,7 +32,7 @@ const h2bServices = [
   },
   {
     title: "On-Site Trade Testing at Nakodar",
-    desc: "We host the US employer's selection panel at our facility, providing testing space, machinery, and physical-evaluation infrastructure. Candidates are assessed in person — the same workflow we executed for the Infratech Guam engagement where the full requirement was shortlisted in a single day.",
+    desc: "We host the US employer's selection panel at our facility, providing testing space, machinery, and physical-evaluation infrastructure. Candidates are assessed in person and shortlisted on the spot.",
   },
   {
     title: "DS-160 Filing & Documentation",
@@ -76,18 +75,17 @@ const processStages = [
     process: "Approved visas are stamped on the candidate's passport. For ECR-passport holders, mandatory e-Migrate clearance is filed by us before mobilisation. Visa stamping plus e-Migrate typically completes within 1-2 weeks after consular approval.",
   },
   {
-    country: "Stage 6 — Mobilisation to USA / Guam",
+    country: "Stage 6 — Mobilisation to the USA",
     location: "India to US employer destination",
     process: "Pre-departure orientation covering US workplace culture, US DOL rights, accommodation, banking, and emergency contacts. Flight booking assistance and on-arrival airport pickup coordinated with the US employer. Our role ends when the worker arrives safely at the US worksite.",
   },
 ];
 
 const faqs = [
-  { q: "Have you actually completed an H-2B deployment?", a: "Yes. In May 2026, Shiva Travel & Manpower Consultants completed our first end-to-end H-2B mobilisation to Guam in partnership with Infratech International, LLC. We screened 100+ candidates through our network for mason, furniture carpenter, and machine operator roles, hosted on-site trade testing at our Nakodar facility, and the US employer shortlisted the full requirement in a single day. DS-160, documentation, and consular processing for that cohort are complete and visas are awaited." },
   { q: "I am a US employer — how do I engage your H-2B services?", a: "Contact us with your approved I-129 petition number, the job order (role, headcount, wage, contract length, start date), and your US immigration counsel's contact. We will set up a video call within 48 hours to align on sourcing, testing, and mobilisation timelines. Reach us at info@shivatravelconsultant.in or +91 98148-20432." },
   { q: "I am an Indian worker — how do I apply for an H-2B role?", a: "Visit our office at Golden Avenue, Nakodar, Punjab, or call +91 98148-20432. We will assess your trade, experience, age, document readiness, and ECR-passport status against the H-2B job orders currently live with us. If your profile matches, we invite you for the US employer's on-site trade test. Walk-ins are welcome." },
   { q: "Where is the US consular interview held?", a: "US consular interviews for Indian H-2B applicants are held at the US Consulates in Chennai, Mumbai, New Delhi (and sometimes Kolkata or Hyderabad). We coordinate appointments through our associate offices in Delhi and Mumbai based on candidate geography and slot availability, and brief every candidate with mock interviews before they appear." },
-  { q: "How long does the India-side H-2B process take?", a: "Once a US employer has an approved I-129 petition in hand and engages us, the India-side process — sourcing, trade test, documentation, DS-160, consular interview, visa stamping, e-Migrate, mobilisation — typically takes 6 to 12 weeks. The Infratech Guam cohort was closed on this timeline in May 2026." },
+  { q: "How long does the India-side H-2B process take?", a: "Once a US employer has an approved I-129 petition in hand and engages us, the India-side process — sourcing, trade test, documentation, DS-160, consular interview, visa stamping, e-Migrate, mobilisation — typically takes 6 to 12 weeks." },
   { q: "Who pays for the H-2B petition, visa, and recruitment fees?", a: "Under US Department of Labor rules, the H-2B employer bears the temporary labor certification fee (PERM), the I-129 petition fee, and the inbound transportation cost. We maintain a transparent, written recruitment fee structure shared at the start of every engagement, with no hidden charges to the candidate." },
   { q: "Are you licensed to handle US recruitment?", a: "Yes. We are licensed by the Ministry of External Affairs, Government of India under Recruiting Agent Licence B-1794, valid through June 2027. We operate under both Indian e-Migrate regulations and US DOL recruitment compliance standards. Every H-2B mobilisation is fully documented and traceable." },
 ];
@@ -115,7 +113,6 @@ const serviceJsonLd = {
   },
   areaServed: [
     { "@type": "Country", name: "United States" },
-    { "@type": "Place", name: "Guam" },
     { "@type": "State", name: "Punjab" },
   ],
   serviceType: "H-2B Visa & Recruitment Consulting",
@@ -130,52 +127,21 @@ export default function H2BVisaProcessingPage() {
 
       <main style={{ backgroundColor: "#f8f9ff" }}>
         <PageHero
-          kicker="H-2B · USA & Guam · Live Deployment"
+          kicker="H-2B · USA · End-to-End Processing"
           title="End-to-end H-2B visa processing from Nakodar."
           highlight="from Nakodar."
-          chips={["US Employer Engagement", "DS-160 In-House", "Delhi & Mumbai Consular", "Guam Cohort Mobilised"]}
-          description="We just closed our first end-to-end H-2B mobilisation to Guam in partnership with Infratech International, LLC. From sourcing to consular interview to mobilisation, we own every step on the India side."
+          chips={["US Employer Engagement", "DS-160 In-House", "Delhi & Mumbai Consular", "e-Migrate Handled"]}
+          description="From sourcing to consular interview to mobilisation, we own every step of the H-2B process on the India side for US employers and Indian workers."
           primaryCta={{ label: "Start H-2B Process", href: "/contactus" }}
           stats={[
             { num: "H-2B", label: "Visa Category" },
-            { num: "100+", label: "Candidates Screened" },
-            { num: "Live", label: "Guam Deployment" },
+            { num: "6-12 wks", label: "India-Side Timeline" },
+            { num: "B-1794", label: "MEA Licensed" },
           ]}
-          image={{ src: "/USA.png", alt: "H-2B visa processing service at Shiva Travel & Manpower Consultants Nakodar" }}
-          imageSeal={{ title: "First H-2B Cohort Mobilised", subtitle: "Guam · Infratech International · May 2026" }}
+          image={{ src: "/usa-h2b-jobs-indian-workers.webp", alt: "H-2B visa processing service at Shiva Travel & Manpower Consultants Nakodar" }}
+          imageSeal={{ title: "MEA Licensed Recruiter", subtitle: "RA B-1794 · Government of India" }}
           microChip={{ value: "H-2B", label: "USA Visa" }}
         />
-
-        {/* ===== INFRATECH CASE BANNER ===== */}
-        <section style={{ padding: "60px 0", backgroundColor: "#0b1c30" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
-            <div style={{ display: "flex", gap: 32, flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }}>
-              <div style={{ flex: "1 1 520px", minWidth: 0 }}>
-                <div style={{ display: "inline-block", padding: "6px 14px", borderRadius: 20, backgroundColor: "rgba(96,165,250,0.15)", color: "#93c5fd", fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 14 }}>
-                  Recent Deployment · May 2026
-                </div>
-                <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 2.5vw, 2rem)", fontWeight: 700, color: "#fff", lineHeight: 1.2, marginBottom: 14 }}>
-                  First H-2B mobilisation to Guam, closed end-to-end.
-                </h2>
-                <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "rgba(255,255,255,0.7)", lineHeight: 1.7 }}>
-                  In partnership with <strong style={{ color: "#fff" }}>Infratech International, LLC</strong>, we sourced 100+ pre-vetted candidates for mason, furniture carpenter, and machine operator roles, hosted on-site trade testing at our Nakodar facility, and the US employer shortlisted the full requirement in a single day. DS-160, documentation, and consular processing complete; visas awaited for mobilisation.
-                </p>
-              </div>
-              <div style={{ flex: "0 0 auto", display: "flex", gap: 24, flexWrap: "wrap" }}>
-                {[
-                  { v: "100+", l: "Candidates Screened" },
-                  { v: "1 day", l: "Full Shortlist" },
-                  { v: "End-to-end", l: "Process Owned" },
-                ].map((m) => (
-                  <div key={m.l} style={{ textAlign: "center", padding: "16px 24px", borderRadius: 12, backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>
-                    <div style={{ fontFamily: "var(--font-display)", fontSize: 24, fontWeight: 800, color: "#fff" }}>{m.v}</div>
-                    <div style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "rgba(255,255,255,0.6)", marginTop: 4 }}>{m.l}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* ===== WHAT WE DO ===== */}
         <section style={{ padding: "80px 0", backgroundColor: "#ffffff", borderTop: "1px solid #e5e7eb" }}>
@@ -265,7 +231,7 @@ export default function H2BVisaProcessingPage() {
               </a>
             </div>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "rgba(255,255,255,0.35)", marginTop: 24 }}>
-              Government Licensed | RA B-1794 | Live Guam Deployment
+              Government Licensed | RA B-1794 | End-to-End H-2B Processing
             </p>
           </div>
         </section>

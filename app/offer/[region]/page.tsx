@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { readOffer, type Region } from "../../api/admin/offer/store";
-import { readDemands } from "../../api/admin/demands/store";
+import { readPublicDemands } from "../../api/admin/demands/store";
 import OfferClient from "./OfferClient";
 
 const VALID_REGIONS: Region[] = ["gulf", "europe"];
@@ -33,6 +33,6 @@ export default async function OfferRegionPage({
   if (!VALID_REGIONS.includes(region as Region)) notFound();
 
   const offer = await readOffer(region as Region);
-  const demands = await readDemands();
+  const demands = await readPublicDemands();
   return <OfferClient offer={offer} demands={demands} region={region as Region} />;
 }

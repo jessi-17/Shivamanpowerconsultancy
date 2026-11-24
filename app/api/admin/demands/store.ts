@@ -2,6 +2,7 @@ import { head } from "@vercel/blob";
 import fs from "fs";
 import path from "path";
 import { readState, writeState, hasDb } from "../../../_lib/contentStore";
+import { isHiddenFromPublic } from "../../../_lib/hiddenContent";
 
 const BLOB_PATH = "data/demands.json";
 const SEED_PATH = path.join(process.cwd(), "app/_lib/data/demands.json");
@@ -72,6 +73,11 @@ export async function readDemands(): Promise<Demand[]> {
 
   // Last resort: seed file in repo
   return readSeed();
+}
+
+/** Demands for the public site: excludes items matched by hiddenContent.ts. Admin keeps using readDemands(). */
+export async function readPublicDemands(): Promise<Demand[]> {
+  return (await readDemands()).filter((demand) => !isHiddenFromPublic(demand));
 }
 
 export async function writeDemands(demands: Demand[]) {

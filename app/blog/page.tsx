@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { readBlogs } from "../api/admin/blogs/store";
+import { readPublicBlogs } from "../api/admin/blogs/store";
 import BlogSearch from "@/components/own/BlogSearch";
 
 export const dynamic = "force-dynamic";
@@ -23,7 +23,7 @@ function formatDate(dateStr: string): string {
 }
 
 export default async function Blog() {
-  const blogs = await readBlogs();
+  const blogs = await readPublicBlogs();
   const sortedPosts = [...blogs].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );

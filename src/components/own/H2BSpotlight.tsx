@@ -6,7 +6,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
 const highlights = [
-  "First H-2B cohort to Guam mobilised — May 2026",
+  "Employer-sponsored roles, paid in US Dollars",
   "End-to-end: sourcing, DS-160, US consular interview",
   "On-site trade testing hosted at our Nakodar facility",
   "Delhi & Mumbai associate offices for consular routing",
@@ -85,7 +85,7 @@ export default function H2BSpotlight() {
                 margin: 0,
               }}
             >
-              New · USA H-2B Visa · Live Deployment
+              New · USA H-2B Visa
             </p>
           </div>
 
@@ -99,7 +99,7 @@ export default function H2BSpotlight() {
               marginBottom: 16,
             }}
           >
-            Now mobilising Indian workers to the USA &amp; Guam under the H-2B visa.
+            Now mobilising Indian workers to the USA under the H-2B visa.
           </h2>
 
           <p
@@ -112,9 +112,7 @@ export default function H2BSpotlight() {
               maxWidth: 520,
             }}
           >
-            We just closed our first end-to-end H-2B mobilisation to Guam in partnership with
-            <strong style={{ color: "#fff" }}> Infratech International, LLC</strong>. From sourcing
-            to on-site trade testing at our Nakodar facility, DS-160 filing, and US consular
+            From sourcing to on-site trade testing at our Nakodar facility, DS-160 filing, and US consular
             interview coordination in Delhi and Mumbai — we own every step on the India side.
           </p>
 
@@ -215,8 +213,8 @@ export default function H2BSpotlight() {
             }}
           >
             <Image
-              src="/USA0 guam.png"
-              alt="USA H-2B visa mobilisation by Shiva Travel & Manpower Consultants — first cohort to Guam in May 2026"
+              src="/usa-h2b-visa-services-nakodar.webp"
+              alt="USA H-2B visa services at Shiva Travel & Manpower Consultants, Nakodar"
               fill
               sizes="(max-width: 640px) 100vw, 50vw"
               loading="lazy"
@@ -251,7 +249,7 @@ export default function H2BSpotlight() {
                   marginBottom: 2,
                 }}
               >
-                Guam Deployment
+                Licensed Recruiter
               </div>
               <div
                 style={{
@@ -261,7 +259,7 @@ export default function H2BSpotlight() {
                   color: "#0b1c30",
                 }}
               >
-                Infratech International, LLC
+                MEA RA B-1794
               </div>
             </div>
             <div style={{ display: "flex", gap: 18 }}>
@@ -275,7 +273,7 @@ export default function H2BSpotlight() {
                     lineHeight: 1,
                   }}
                 >
-                  100+
+                  H-2B
                 </div>
                 <div
                   style={{
@@ -285,7 +283,7 @@ export default function H2BSpotlight() {
                     marginTop: 4,
                   }}
                 >
-                  Candidates Screened
+                  Visa Category
                 </div>
               </div>
               <div style={{ textAlign: "right" }}>
@@ -298,7 +296,7 @@ export default function H2BSpotlight() {
                     lineHeight: 1,
                   }}
                 >
-                  1 day
+                  USD $
                 </div>
                 <div
                   style={{
@@ -308,7 +306,7 @@ export default function H2BSpotlight() {
                     marginTop: 4,
                   }}
                 >
-                  Full Shortlist
+                  Paid in Dollars
                 </div>
               </div>
             </div>

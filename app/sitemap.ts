@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
-import { readBlogs } from "./api/admin/blogs/store";
+import { readPublicBlogs } from "./api/admin/blogs/store";
 import { employerCountries } from "./_lib/data/employerCountries";
-import { readDemands } from "./api/admin/demands/store";
+import { readPublicDemands } from "./api/admin/demands/store";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://shivatravelconsultant.in";
@@ -155,7 +155,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
-      images: [img("USA.png"), img("USA0 guam.png")],
+      images: [img("usa-h2b-jobs-indian-workers.webp"), img("usa-h2b-visa-services-nakodar.webp")],
     },
     {
       url: `${baseUrl}/nakodar`,
@@ -239,7 +239,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
-      images: [img("USA.png"), img("USA0 guam.png")],
+      images: [img("usa-h2b-jobs-indian-workers.webp"), img("usa-h2b-visa-services-nakodar.webp")],
     },
     {
       url: `${baseUrl}/employers`,
@@ -306,7 +306,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
-      images: [img("USA.png"), img("USA0 guam.png")],
+      images: [img("usa-h2b-jobs-indian-workers.webp"), img("usa-h2b-visa-services-nakodar.webp")],
     },
     {
       url: `${baseUrl}/guides`,
@@ -334,7 +334,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  const blogs = await readBlogs();
+  const blogs = await readPublicBlogs();
   const blogPages: MetadataRoute.Sitemap = blogs.map((blog) => ({
     url: `${baseUrl}/blog/${blog.slug}`,
     lastModified: new Date(blog.date),
@@ -350,7 +350,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.9,
   }));
 
-  const demands = await readDemands();
+  const demands = await readPublicDemands();
   const demandPages: MetadataRoute.Sitemap = demands.map((d) => ({
     url: `${baseUrl}/current-demands/${d.id}`,
     lastModified: new Date(d.updatedAt),

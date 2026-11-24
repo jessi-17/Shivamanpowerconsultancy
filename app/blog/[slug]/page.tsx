@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { readBlogs } from "../../api/admin/blogs/store";
+import { readPublicBlogs } from "../../api/admin/blogs/store";
 import Article from "./_components/Article";
 import { renderMarkdown } from "./_lib/markdown";
 import { extractHowToSteps } from "./_lib/extractSteps";
@@ -68,7 +68,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const blogs = await readBlogs();
+  const blogs = await readPublicBlogs();
   const post = blogs.find((b) => b.slug === slug);
 
   if (!post) {
@@ -118,7 +118,7 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const blogs = await readBlogs();
+  const blogs = await readPublicBlogs();
   const post = blogs.find((b) => b.slug === slug);
 
   if (!post) notFound();

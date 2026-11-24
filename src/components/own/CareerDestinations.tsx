@@ -7,7 +7,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
 const featured = [
-  { name: "USA & Guam", subtitle: "H-2B VISA · NEW", image: "/USA.png", color: "#60a5fa", href: "/jobs/usa" },
+  { name: "USA", subtitle: "H-2B VISA · NEW", image: "/usa-h2b-jobs-indian-workers.webp", color: "#60a5fa", href: "/jobs/usa" },
   { name: "UAE (Dubai)", subtitle: "CONSTRUCTION & TECH", image: "/UAE.jpg", color: "#c9a227", href: "/jobs/uae" },
   { name: "Poland", subtitle: "MANUFACTURING", image: "/poland-jobs-shiva-manpower.webp", color: "#dc3545", href: "/jobs/poland" },
   { name: "Romania", subtitle: "LOGISTICS & FMCG", image: "/romania-jobs-shiva-manpower.webp", color: "#0052dc", href: "/jobs/romania" },

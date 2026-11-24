@@ -7,9 +7,9 @@ import PageHero from "@/components/own/PageHero";
 export const metadata: Metadata = {
   title: "USA H-2B Visa from India | Govt-Licensed H-2B Recruitment Partner",
   description:
-    "End-to-end H-2B visa processing for Indian workers going to USA & Guam. MEA Licensed RA B-1794. Sourcing, trade testing, DS-160, US consular interview coordination in Delhi & Mumbai. First H-2B cohort already mobilised to Guam.",
+    "End-to-end H-2B visa processing for Indian workers going to the USA. MEA Licensed RA B-1794. Sourcing, trade testing, DS-160, US consular interview coordination in Delhi & Mumbai.",
   keywords:
-    "h-2b visa india, h-2b recruitment agency, usa work visa from punjab, guam jobs h-2b, ds-160 nakodar, us consulate interview punjab, h-2b agency nakodar, h-2b visa processing india",
+    "h-2b visa india, h-2b recruitment agency, usa work visa from punjab, ds-160 nakodar, us consulate interview punjab, h-2b agency nakodar, h-2b visa processing india",
   alternates: {
     canonical: "/visa/usa-h2b",
   },
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const whyH2B = [
   { title: "Legal Path to Skilled US Work", desc: "The H-2B is the United States non-immigrant visa category for temporary non-agricultural workers. It is the structured, lawful route used by US employers to hire foreign skilled workers in construction, hospitality, landscaping, and food processing." },
   { title: "Employer-Sponsored Pathway", desc: "The US employer files the I-129 petition with USCIS and the temporary labor certification with the Department of Labor. Most petition and processing costs are borne by the employer, not the worker, under DOL regulations." },
-  { title: "Live Deployment Track Record", desc: "In May 2026, we completed our first end-to-end H-2B mobilisation to Guam in partnership with Infratech International, LLC. Sourcing, on-site testing, documentation, and consular processing all owned by our team." },
+  { title: "One Team, End to End", desc: "Sourcing, on-site trade testing, documentation, DS-160 and consular interview coordination are all owned by our team in Nakodar, with associate offices in Delhi and Mumbai." },
   { title: "USD Wages, Federally Compliant", desc: "Wages are set by US DOL prevailing wage rules and paid in US Dollars. Even after living expenses, take-home savings are significantly higher than Gulf or European packages for the same skill level." },
   { title: "Family Reunification via H-4", desc: "Your spouse and unmarried children under 21 can apply for an H-4 dependent visa to live with you in the US for the duration of your H-2B status." },
   { title: "Govt of India Licensed Recruiter", desc: "We hold MEA Recruiting Agent Licence B-1794, are e-Migrate compliant, and operate under both Indian and US Department of Labor recruitment standards." },
@@ -27,7 +27,7 @@ const whyH2B = [
 const visaServices = [
   { title: "H-2B Job Order Intake", desc: "We receive the US employer's approved I-129 petition and DOL temporary labor certification, then translate the job order into a sourcing brief: trade, headcount, wage band, contract length, and start date." },
   { title: "Pre-Vetted Candidate Sourcing", desc: "Sourcing through our verified Punjab and pan-India network. Every candidate is screened for trade competency, age, language, document readiness, and ECR-passport compliance before being presented to the employer." },
-  { title: "On-Site Trade Testing", desc: "We host the US employer's selection panel at our Nakodar facility, providing testing space, machinery, and physical-evaluation infrastructure so candidates are assessed in person — exactly as we did for the Infratech Guam engagement." },
+  { title: "On-Site Trade Testing", desc: "We host the US employer's selection panel at our Nakodar facility, providing testing space, machinery, and physical-evaluation infrastructure so candidates are assessed in person and shortlisted on the spot." },
   { title: "DS-160 Filing & Documentation", desc: "Our team prepares the DS-160 online visa application, compiles passport, police clearance, contract attestation, medicals, and the full visa file for every shortlisted candidate." },
   { title: "US Consular Interview Coordination", desc: "Through our associate offices in Delhi and Mumbai, we schedule consular interviews at the US Consulates in Chennai, Mumbai, or New Delhi, and brief candidates with mock interviews and document checklists." },
   { title: "Pre-Departure & e-Migrate", desc: "Pre-departure orientation covering US workplace culture, contract terms, US labor rights, accommodation, and emergency contacts. Mandatory e-Migrate clearance handled in-house for ECR-passport holders." },
@@ -52,7 +52,7 @@ const visaProcess = [
   { step: "03", title: "Documentation & DS-160 Filing", desc: "Our team prepares passport renewal (if needed), police clearance, contract attestation, medicals, and the DS-160 online visa application.", timeline: "Week 2-5" },
   { step: "04", title: "US Consular Interview", desc: "Through our Delhi or Mumbai associate office, we schedule and prepare you for the consular interview at the US Consulate in Chennai, Mumbai, or New Delhi.", timeline: "Week 5-8" },
   { step: "05", title: "Visa Stamping & e-Migrate", desc: "Once the visa is approved, we coordinate passport stamping and complete e-Migrate clearance for ECR-passport holders.", timeline: "Week 8-10" },
-  { step: "06", title: "Pre-Departure & Fly to USA / Guam", desc: "Pre-departure orientation, flight booking assistance, and on-arrival logistics coordinated with the US employer.", timeline: "Week 10-12" },
+  { step: "06", title: "Pre-Departure & Fly to the USA", desc: "Pre-departure orientation, flight booking assistance, and on-arrival logistics coordinated with the US employer.", timeline: "Week 10-12" },
 ];
 
 const consulates = [
@@ -64,7 +64,6 @@ const consulates = [
 
 const faqs = [
   { q: "What is an H-2B visa and who is it for?", a: "The H-2B is a US non-immigrant visa for foreign workers coming to the United States to perform temporary non-agricultural work. It is used by US employers for skilled trades like construction, hospitality, landscaping, food processing, and seafood. It requires the employer to first obtain a temporary labor certification from the US Department of Labor and an approved I-129 petition from USCIS before the worker can apply at a US consulate." },
-  { q: "Have you actually done an H-2B deployment before?", a: "Yes. In May 2026, Shiva Travel & Manpower Consultants completed our first end-to-end H-2B mobilisation to Guam, USA in partnership with Infratech International, LLC. We screened 100+ candidates through our network for mason, furniture carpenter, and machine operator roles, hosted on-site trade testing at our Nakodar facility, and the US employer shortlisted the full requirement in a single day. DS-160, documentation, and consular processing for that cohort are complete." },
   { q: "Where do I apply for the US H-2B visa from Punjab?", a: "Visit Shiva Travel & Manpower Consultants at Golden Avenue, Nakodar, Punjab — MEA Licensed RA B-1794. We handle the full H-2B process from sourcing through consular interview coordination. Walk in or call +91 98148-20432 for a free consultation." },
   { q: "Where is the US consular interview held?", a: "US consular interviews for Indian H-2B applicants are held at the US Consulates in Chennai, Mumbai, New Delhi (and sometimes Kolkata or Hyderabad). We coordinate appointments through our associate offices in Delhi and Mumbai and brief candidates with mock interviews and document checklists." },
   { q: "How long does the H-2B process take?", a: "Once a US employer has an approved I-129 petition in hand, the India-side process — sourcing, trade test, documentation, DS-160, consular interview, visa stamping — typically takes 6 to 12 weeks. The petition stage on the US side can take 2 to 6 months depending on USCIS workload and whether premium processing is used." },
@@ -93,10 +92,9 @@ const serviceJsonLd = {
   },
   areaServed: [
     { "@type": "Country", name: "United States" },
-    { "@type": "Place", name: "Guam" },
   ],
   description:
-    "End-to-end H-2B visa processing for Indian workers going to the USA and Guam. Sourcing, on-site trade testing, DS-160 filing, US consular interview coordination at Chennai, Mumbai, and New Delhi. MEA Licensed RA B-1794.",
+    "End-to-end H-2B visa processing for Indian workers going to the USA. Sourcing, on-site trade testing, DS-160 filing, US consular interview coordination at Chennai, Mumbai, and New Delhi. MEA Licensed RA B-1794.",
   serviceType: "Immigration & Overseas Recruitment Consulting",
 };
 
@@ -134,19 +132,19 @@ export default function USAH2BVisaPage() {
       />
       <main style={{ backgroundColor: "#f8f9ff" }}>
         <PageHero
-          kicker="USA & Guam · H-2B Visa · Live Deployment Track Record"
+          kicker="USA · H-2B Visa · End-to-End Processing"
           title="USA H-2B visa processing from Nakodar."
           highlight="from Nakodar."
-          chips={["H-2B Visa", "DS-160 Filing", "Delhi & Mumbai Consular Coordination", "Live Guam Deployment"]}
-          description="End-to-end H-2B visa services from Nakodar — sourcing, on-site trade testing, DS-160 filing, US consular interview coordination, and mobilisation. MEA Licensed RA B-1794. We just deployed our first H-2B cohort to Guam."
+          chips={["H-2B Visa", "DS-160 Filing", "Delhi & Mumbai Consular Coordination", "e-Migrate Handled"]}
+          description="End-to-end H-2B visa services from Nakodar — sourcing, on-site trade testing, DS-160 filing, US consular interview coordination, and mobilisation. MEA Licensed RA B-1794."
           primaryCta={{ label: "Start H-2B Process", href: "/contactus" }}
           stats={[
             { num: "H-2B", label: "Visa Category" },
-            { num: "Live", label: "Guam Deployment" },
+            { num: "B-1794", label: "MEA Licensed" },
             { num: "Delhi · Mumbai", label: "Consular Coordination" },
           ]}
-          image={{ src: "/USA.png", alt: "USA H-2B visa services at Shiva Travel & Manpower Consultants Nakodar" }}
-          imageSeal={{ title: "First H-2B Cohort Mobilised", subtitle: "Guam · Infratech International · May 2026" }}
+          image={{ src: "/usa-h2b-jobs-indian-workers.webp", alt: "USA H-2B visa services at Shiva Travel & Manpower Consultants Nakodar" }}
+          imageSeal={{ title: "MEA Licensed Recruiter", subtitle: "RA B-1794 · Government of India" }}
           microChip={{ value: "H-2B", label: "USA Visa" }}
         />
 
@@ -155,7 +153,6 @@ export default function USAH2BVisaPage() {
           <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px", display: "flex", justifyContent: "center", gap: 48, flexWrap: "wrap" }}>
             {[
               { value: "H-2B", label: "Visa Category" },
-              { value: "100+", label: "Candidates Screened" },
               { value: "DS-160", label: "Filed In-House" },
               { value: "Delhi · Mumbai", label: "Associate Offices" },
               { value: "RA B-1794", label: "MEA Licensed" },
@@ -165,37 +162,6 @@ export default function USAH2BVisaPage() {
                 <div style={{ fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 600, color: "#64748b", letterSpacing: "0.05em", textTransform: "uppercase", marginTop: 4 }}>{s.label}</div>
               </div>
             ))}
-          </div>
-        </section>
-
-        {/* ===== INFRATECH CASE BANNER ===== */}
-        <section style={{ padding: "60px 0", backgroundColor: "#0b1c30" }}>
-          <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 32px" }}>
-            <div style={{ display: "flex", gap: 32, flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }}>
-              <div style={{ flex: "1 1 520px", minWidth: 0 }}>
-                <div style={{ display: "inline-block", padding: "6px 14px", borderRadius: 20, backgroundColor: "rgba(96,165,250,0.15)", color: "#93c5fd", fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 14 }}>
-                  Recent Deployment · May 2026
-                </div>
-                <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 2.5vw, 2rem)", fontWeight: 700, color: "#fff", lineHeight: 1.2, marginBottom: 14 }}>
-                  First H-2B cohort to Guam, closed end-to-end.
-                </h2>
-                <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "rgba(255,255,255,0.7)", lineHeight: 1.7 }}>
-                  In partnership with <strong style={{ color: "#fff" }}>Infratech International, LLC</strong>, we sourced 100+ pre-vetted candidates for mason, furniture carpenter, and machine operator roles. The US employer hosted trade testing at our Nakodar facility and shortlisted the full requirement in a single day. DS-160, documentation, and consular processing complete; visas awaited for mobilisation.
-                </p>
-              </div>
-              <div style={{ flex: "0 0 auto", display: "flex", gap: 24, flexWrap: "wrap" }}>
-                {[
-                  { v: "100+", l: "Candidates Screened" },
-                  { v: "1 day", l: "Full Shortlist" },
-                  { v: "End-to-end", l: "Process Owned" },
-                ].map((m) => (
-                  <div key={m.l} style={{ textAlign: "center", padding: "16px 24px", borderRadius: 12, backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>
-                    <div style={{ fontFamily: "var(--font-display)", fontSize: 24, fontWeight: 800, color: "#fff" }}>{m.v}</div>
-                    <div style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "rgba(255,255,255,0.6)", marginTop: 4 }}>{m.l}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </section>
 
@@ -230,7 +196,7 @@ export default function USAH2BVisaPage() {
                 Our H-2B Visa Services
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#43474d", lineHeight: 1.7, maxWidth: 600, margin: "0 auto" }}>
-                End-to-end H-2B visa processing from our Nakodar office and our associate offices in Delhi and Mumbai — exactly the same workflow we executed for the Infratech Guam deployment.
+                End-to-end H-2B visa processing from our Nakodar office and our associate offices in Delhi and Mumbai.
               </p>
             </div>
 
@@ -283,10 +249,10 @@ export default function USAH2BVisaPage() {
                 H-2B Process &amp; Timeline
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#43474d", lineHeight: 1.7, marginBottom: 28 }}>
-                Once a US employer with an approved I-129 petition engages us, the India-side process from sourcing to departure typically runs 6 to 12 weeks. We handle every step in-house — exactly the workflow we executed for the Infratech Guam cohort.
+                Once a US employer with an approved I-129 petition engages us, the India-side process from sourcing to departure typically runs 6 to 12 weeks. We handle every step in-house.
               </p>
-              <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }}>
-                <Image src="/USA0 guam.png" alt="H-2B visa processing — Guam deployment cohort at Shiva Travel & Manpower Consultants Nakodar" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
+              <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3", backgroundColor: "#0b1c30" }}>
+                <Image src="/usa-h2b-visa-services-nakodar.webp" alt="USA H-2B visa services at Shiva Travel & Manpower Consultants, Nakodar" fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "contain" }} />
               </div>
             </div>
 
@@ -378,7 +344,7 @@ export default function USAH2BVisaPage() {
               Ready to Apply for Your<br />USA H-2B Visa?
             </h2>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: 36, maxWidth: 480, margin: "0 auto 36px" }}>
-              Visit our office at Golden Avenue, Nakodar or call us today. Free consultation. MEA Licensed RA B-1794. Full transparency. We just deployed our first H-2B cohort to Guam.
+              Visit our office at Golden Avenue, Nakodar or call us today. Free consultation. MEA Licensed RA B-1794. Full transparency.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 28 }}>
               <Link href="/contactus" style={{ display: "inline-block", padding: "16px 36px", backgroundColor: "#ffffff", color: "#1e3a8a", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, borderRadius: 50, textDecoration: "none" }}>

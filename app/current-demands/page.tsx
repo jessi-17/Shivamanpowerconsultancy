@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "../_lib/breadcrumb";
 import SalaryCalcCTA from "@/components/own/SalaryCalcCTA";
-import { readDemands } from "../api/admin/demands/store";
+import { readPublicDemands } from "../api/admin/demands/store";
 import { readOffer } from "../api/admin/offer/store";
 import { DemandCard, DemandsEmpty } from "@/components/own/DemandCard";
 import SidePosterRails from "@/components/own/SidePosterRails";
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 };
 
 export default async function CurrentDemands() {
-  const demands = await readDemands();
+  const demands = await readPublicDemands();
   const offer = await readOffer("gulf");
   return (
     <>
