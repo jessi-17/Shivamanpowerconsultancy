@@ -12,12 +12,10 @@ export async function middleware(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
 
   // Gate admin API routes — everything under /api/admin/* requires a valid
-  // signed session cookie. Excluded: /api/admin/auth (login itself) and
-  // /api/admin/backup (uses its own BACKUP_TOKEN for the backup cron).
+  // signed session cookie. Excluded: /api/admin/auth (login itself).
   if (
     pathname.startsWith("/api/admin/") &&
-    !pathname.startsWith("/api/admin/auth") &&
-    !pathname.startsWith("/api/admin/backup")
+    !pathname.startsWith("/api/admin/auth")
   ) {
     // CSRF guard: state-changing requests must come from our own origin.
     if (MUTATING_METHODS.has(request.method)) {
