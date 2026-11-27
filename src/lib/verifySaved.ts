@@ -65,3 +65,15 @@ export async function verifySaved<TLive = unknown, TExpected = unknown>(
     ? { ok: true }
     : { ok: false, reason: "value mismatch after save" };
 }
+
+/**
+ * Human-readable message for a save request that came back non-2xx, so the
+ * admin UI never silently resets the Save button on a failed save.
+ */
+export async function describeSaveFailure(res: Response): Promise<string> {
+  if (res.status === 401) {
+    return "Your admin session has expired. Open /admin in a new tab, log in again, then come back and click Save. Nothing was saved.";
+  }
+  const body = (await res.json().catch(() => null)) as { error?: string } | null;
+  return `Save failed (HTTP ${res.status})${body?.error ? `: ${body.error}` : ""}. Nothing was saved.`;
+}

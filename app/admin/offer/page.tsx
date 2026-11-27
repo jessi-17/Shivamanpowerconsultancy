@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState, useCallback } from "react";
 import Link from "next/link";
 import { uploadImage } from "@/lib/uploadImage";
-import { verifySaved } from "@/lib/verifySaved";
+import { verifySaved, describeSaveFailure } from "@/lib/verifySaved";
 import VersionHistory from "@/components/own/VersionHistory";
 
 type Region = "gulf" | "europe";
@@ -51,6 +51,7 @@ export default function AdminOfferPage() {
   const [verifyStatus, setVerifyStatus] = useState<"idle" | "verifying" | "verified" | "mismatch">("idle");
   const [verifyReason, setVerifyReason] = useState<string | null>(null);
   const [historyRefresh, setHistoryRefresh] = useState(0);
+  const [saveError, setSaveError] = useState<string | null>(null);
 
   // Defensive merge with emptyOffer so any missing field from a legacy API response
   // doesn't cause a runtime crash (e.g. undefined arrays before we call .length).
@@ -87,13 +88,23 @@ export default function AdminOfferPage() {
     setSaved(false);
     setVerifyStatus("idle");
     setVerifyReason(null);
+    setSaveError(null);
 
-    const res = await fetch("/api/admin/offer", {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ region, ...offer }),
-    });
-    if (res.ok) {
+    let res: Response;
+    try {
+      res = await fetch("/api/admin/offer", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ region, ...offer }),
+      });
+    } catch (err) {
+      setSaveError(`Network error — could not reach the server, nothing was saved: ${(err as Error).message}`);
+      setSaving(false);
+      return;
+    }
+    if (!res.ok) {
+      setSaveError(await describeSaveFailure(res));
+    } else {
       const data: OfferContent = await res.json();
       setFile((prev) => ({ ...prev, [region]: data }));
       setSaved(true);
@@ -278,6 +289,25 @@ export default function AdminOfferPage() {
           </button>
         </div>
       </div>
+
+      {saveError && (
+        <div
+          role="alert"
+          style={{
+            marginBottom: 16,
+            padding: "10px 14px",
+            borderRadius: 8,
+            fontFamily: "var(--font-body)",
+            fontSize: 13,
+            fontWeight: 600,
+            backgroundColor: "#fef2f2",
+            color: "#991b1b",
+            border: "1px solid #fecaca",
+          }}
+        >
+          ✕ {saveError}
+        </div>
+      )}
 
       {/* Verify-saved status banner */}
       {verifyStatus !== "idle" && (

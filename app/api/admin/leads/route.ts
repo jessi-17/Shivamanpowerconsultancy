@@ -28,8 +28,11 @@ export async function GET(req: NextRequest) {
 export async function DELETE(req: NextRequest) {
   const denied = await requireAdmin(req);
   if (denied) return denied;
-  const { id } = await req.json();
-  if (typeof id !== "number") {
+  const body = await req.json().catch(() => ({}));
+  // BIGSERIAL ids come back from the Neon driver as strings, so the admin
+  // page sends e.g. "42" — accept numeric strings as well as numbers.
+  const id = Number(body?.id);
+  if (!Number.isSafeInteger(id) || id <= 0) {
     return NextResponse.json({ error: "id (number) required" }, { status: 400 });
   }
   const ok = await deleteLead(id);

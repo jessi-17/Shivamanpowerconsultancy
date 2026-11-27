@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { requireAdmin } from "../../../_lib/adminAuth";
 import { readHistory, restoreFromHistory } from "../../../_lib/contentStore";
 
-const ALLOWED_KEYS = ["offer", "demands", "blogs"] as const;
+const ALLOWED_KEYS = ["offer", "demands", "blogs", "credibility"] as const;
 type AllowedKey = (typeof ALLOWED_KEYS)[number];
 
 function isAllowedKey(k: string): k is AllowedKey {

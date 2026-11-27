@@ -11,7 +11,7 @@ const SECTIONS = [
   { href: "/admin/leads", label: "Leads" },
 ];
 
-export default function AdminTopNav() {
+export default function AdminTopNav({ onLogout }: { onLogout: () => void }) {
   const pathname = usePathname();
 
   return (
@@ -49,7 +49,20 @@ export default function AdminTopNav() {
         ← Dashboard
       </Link>
 
-      <div style={{ display: "flex", alignItems: "center", gap: 4, marginLeft: 8, flexWrap: "wrap" }}>
+      {/* Mobile: links drop to their own row(s) below Dashboard + Log out.
+          Desktop: everything on one row, Log out pushed to the right. */}
+      <style>{`
+        .admin-nav-links { order: 3; flex-basis: 100%; }
+        .admin-nav-logout { order: 2; }
+        @media (min-width: 768px) {
+          .admin-nav-links { order: 2; flex-basis: auto; margin-left: 8px; }
+          .admin-nav-logout { order: 3; }
+        }
+      `}</style>
+      <div
+        className="admin-nav-links"
+        style={{ display: "flex", alignItems: "center", gap: 4, flexWrap: "wrap" }}
+      >
         {SECTIONS.map((s) => {
           const active = pathname === s.href || pathname.startsWith(s.href + "/");
           return (
@@ -75,6 +88,26 @@ export default function AdminTopNav() {
           );
         })}
       </div>
+
+      <button
+        onClick={onLogout}
+        className="admin-nav-logout"
+        style={{
+          marginLeft: "auto",
+          padding: "8px 12px",
+          borderRadius: 8,
+          fontFamily: "var(--font-display)",
+          fontSize: 12,
+          fontWeight: 700,
+          color: "rgba(255,255,255,0.7)",
+          backgroundColor: "transparent",
+          border: "1px solid rgba(255,255,255,0.18)",
+          cursor: "pointer",
+          whiteSpace: "nowrap",
+        }}
+      >
+        Log out
+      </button>
     </nav>
   );
 }

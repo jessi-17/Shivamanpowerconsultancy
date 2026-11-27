@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { uploadImage } from "@/lib/uploadImage";
-import { verifySaved } from "@/lib/verifySaved";
+import { verifySaved, describeSaveFailure } from "@/lib/verifySaved";
 import VersionHistory from "@/components/own/VersionHistory";
 import FlagIcon from "@/components/own/FlagIcon";
 
@@ -52,6 +52,7 @@ export default function AdminCredibilityPage() {
   const [verifyStatus, setVerifyStatus] = useState<"idle" | "verifying" | "verified" | "mismatch">("idle");
   const [verifyReason, setVerifyReason] = useState<string | null>(null);
   const [historyRefresh, setHistoryRefresh] = useState(0);
+  const [saveError, setSaveError] = useState<string | null>(null);
 
   useEffect(() => {
     fetch("/api/admin/credibility")
@@ -65,15 +66,25 @@ export default function AdminCredibilityPage() {
   const handleSave = useCallback(async () => {
     setSaving(true);
     setSaved(false);
+    setSaveError(null);
     setVerifyStatus("idle");
 
-    const res = await fetch("/api/admin/credibility", {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
+    let res: Response;
+    try {
+      res = await fetch("/api/admin/credibility", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+    } catch (err) {
+      setSaveError(`Network error — could not reach the server, nothing was saved: ${(err as Error).message}`);
+      setSaving(false);
+      return;
+    }
 
-    if (res.ok) {
+    if (!res.ok) {
+      setSaveError(await describeSaveFailure(res));
+    } else {
       const live: CredibilityFile = await res.json();
       setData(live);
       setSaved(true);
@@ -157,6 +168,12 @@ export default function AdminCredibilityPage() {
           </button>
         </div>
       </header>
+
+      {saveError && (
+        <div role="alert" style={{ padding: "10px 28px", backgroundColor: "#fef2f2", color: "#991b1b", fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600 }}>
+          ✕ {saveError}
+        </div>
+      )}
 
       {verifyStatus === "mismatch" && (
         <div style={{ padding: "10px 28px", backgroundColor: "#fef3c7", color: "#92400e", fontFamily: "var(--font-body)", fontSize: 13 }}>

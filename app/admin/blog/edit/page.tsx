@@ -127,11 +127,16 @@ function EditorContent() {
   useEffect(() => {
     if (editSlug) {
       fetch("/api/admin/blogs")
-        .then((r) => r.json())
+        .then((r) => {
+          if (!r.ok) throw new Error(`HTTP ${r.status}`);
+          return r.json();
+        })
         .then((blogs: BlogPost[]) => {
           const found = blogs.find((b) => b.slug === editSlug);
           if (found) setPost(found);
-        });
+          else setError(`No post found with slug "${editSlug}". Go back to the Blog list and pick a post.`);
+        })
+        .catch((err) => setError(`Couldn't load this post (${(err as Error).message}). Reload the page to try again.`));
     }
   }, [editSlug]);
 
@@ -790,7 +795,16 @@ function EditorContent() {
               value={post.slug}
               onChange={(e) => setPost({ ...post, slug: e.target.value })}
               placeholder="auto-generated-from-title"
-              style={{ ...inputStyle, fontSize: 12, fontFamily: "monospace" }}
+              // Saves look the post up by slug, so changing it on an existing
+              // post would 404 or overwrite another post. It also breaks links.
+              readOnly={!isNew}
+              title={!isNew ? "The URL of a published post can't be changed" : undefined}
+              style={{
+                ...inputStyle,
+                fontSize: 12,
+                fontFamily: "monospace",
+                ...(!isNew ? { backgroundColor: "#f1f5f9", color: "#64748b", cursor: "not-allowed" } : {}),
+              }}
             />
             <p
               style={{
@@ -800,7 +814,9 @@ function EditorContent() {
                 marginTop: 4,
               }}
             >
-              Leave blank to auto-generate from title
+              {isNew
+                ? "Leave blank to auto-generate from title"
+                : "Locked after publishing so existing links keep working"}
             </p>
           </div>
 

@@ -163,7 +163,8 @@ function EditorContent() {
     setError(null);
     try {
       const url = await uploadImage(file, "demand");
-      if (url) setDemand({ ...demand, poster: url });
+      // Functional update: keep anything typed while the upload was running.
+      if (url) setDemand((prev) => ({ ...prev, poster: url }));
     } catch (err) {
       console.error("Demand poster upload failed:", err);
       setError(`Poster upload failed: ${(err as Error).message}`);

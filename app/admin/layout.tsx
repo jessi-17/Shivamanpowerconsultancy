@@ -1,12 +1,4 @@
-"use client";
-
-import { usePathname } from "next/navigation";
-import AdminTopNav from "./_components/AdminTopNav";
-
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const isDashboardRoot = pathname === "/admin";
-
   return (
     <>
       {/* Safety net: if the Gallabox widget already loaded on a previous public page,
@@ -22,7 +14,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         }
       `}</style>
 
-      {!isDashboardRoot && <AdminTopNav />}
+      {/* The section nav bar is rendered by AdminGuard (in each section's
+          layout), only after the session check passes. */}
       {children}
     </>
   );
