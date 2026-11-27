@@ -133,7 +133,12 @@ for (let i = 0; i < leads.length; i++) {
 
   // Sangam sometimes returns `message` as an object/array (e.g. for duplicates), not a string.
   const raw = r.message ?? r.error ?? "";
-  const msg = (typeof raw === "string" ? raw : JSON.stringify(raw)).replace(/[\r\n,"]+/g, " ").slice(0, 200);
+  const msg = (typeof raw === "string" ? raw : JSON.stringify(raw))
+    .replace(/[\r\n,"]+/g, " ")
+    // Sangam's duplicate replies quote the email/phone — keep them out of the log file.
+    .replace(/[^\s@]+@[^\s@]+/g, "[email]")
+    .replace(/\+?\d[\d\s-]{6,}\d/g, "[phone]")
+    .slice(0, 200);
   let result;
   // Check for duplicates first: Sangam may report a skipped duplicate with a 200 status.
   if (/duplicat|already|exist/i.test(msg)) {

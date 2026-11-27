@@ -64,10 +64,64 @@ export interface SangamPushResult {
   status?: number;
   message?: string;
   skipped?: boolean;
+  /** Sangam's duplicate check found this email/phone already in the CRM. */
+  duplicate?: boolean;
   error?: string;
 }
 
+/**
+ * Send a lead to Sangam. If it doesn't get there (settings missing, token
+ * rejected, Sangam down…), email an alert so a disconnect is noticed the same
+ * day instead of months later. The lead itself is always in admin → Leads.
+ */
 export async function pushLeadToSangam(input: SangamLeadInput): Promise<SangamPushResult> {
+  const result = await sendLeadToSangam(input);
+  if (!result.ok) await alertSangamFailure(input, result);
+  return result;
+}
+
+async function alertSangamFailure(input: SangamLeadInput, result: SangamPushResult) {
+  const lead = {
+    name: input.name || [input.firstName, input.lastName].filter(Boolean).join(" ") || null,
+    phone: input.phone || null,
+    email: input.email || null,
+    country: input.country || null,
+  };
+  const leadsPage = "https://shivatravelconsultant.in/admin/leads";
+  let key: string, subject: string, message: string;
+
+  if (result.skipped) {
+    key = "sangam-not-configured";
+    subject = "Website leads are NOT reaching Sangam CRM (settings missing)";
+    message =
+      "SANGAM_API_URL or SANGAM_API_TOKEN is missing in Vercel, so new website leads are not being sent to Sangam. " +
+      "Fix: Vercel → Settings → Environment Variables → add both (values are in Sangam: Admin → Plugins → Sangam API Integration), then redeploy. " +
+      `The lead below and any later ones are saved on ${leadsPage} — add them to Sangam by hand or re-send them once fixed.`;
+  } else if (result.status === 401 || /unauthori[sz]ed|token/i.test(result.error || "")) {
+    key = "sangam-token-rejected";
+    subject = "Website leads are NOT reaching Sangam CRM (API token rejected)";
+    message =
+      "Sangam rejected the website's API token — most likely someone clicked \"Generate Key\" in Sangam (Admin → Plugins → Sangam API Integration). " +
+      "Fix: copy the current Token Key from that page into SANGAM_API_TOKEN in Vercel, then redeploy. " +
+      `The lead below and any later ones are saved on ${leadsPage}.`;
+  } else {
+    key = "sangam-push-failed";
+    subject = "A website lead did NOT reach Sangam CRM";
+    message =
+      `Sangam didn't accept this lead (${result.error || "no response"}). If this keeps happening, Sangam may be down or a field changed in Sangam. ` +
+      `Please add the lead below to Sangam by hand. All leads are also on ${leadsPage}.`;
+  }
+
+  try {
+    // Imported lazily so scripts that reuse this file don't need the Resend setup.
+    const { sendAlert } = await import("./alertEmail");
+    await sendAlert({ key, subject, message, context: { ...lead, sangamError: result.error ?? null } });
+  } catch (err) {
+    console.error("[sangam] couldn't send failure alert:", err);
+  }
+}
+
+async function sendLeadToSangam(input: SangamLeadInput): Promise<SangamPushResult> {
   const baseUrl = process.env.SANGAM_API_URL;
   const token = process.env.SANGAM_API_TOKEN;
   const moduleName = process.env.SANGAM_MODULE || "Lead";
@@ -163,6 +217,12 @@ async function postToSangam(
     let json: { status?: number; message?: unknown } = {};
     try { json = text ? JSON.parse(text) : {}; } catch { /* keep raw text below */ }
     const message = asText(json.message);
+
+    // Duplicate check: "Record is already available with this … in CRM".
+    // The person is already in Sangam, so this isn't a failure.
+    if (message && /already available|duplicate/i.test(message)) {
+      return { ok: true, duplicate: true, status: json.status ?? res.status, message };
+    }
 
     if (!res.ok || (json.status && json.status >= 400)) {
       return {
