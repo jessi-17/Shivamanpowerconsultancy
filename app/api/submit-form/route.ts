@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 import { insertLead } from "../../_lib/db";
 import { pushLeadToSangam } from "../../_lib/sangam";
 
@@ -63,14 +63,18 @@ export async function POST(req: Request) {
       data: { interest, trade, experience, message },
     });
 
-    pushLeadToSangam({
-      name: yourname,
-      email,
-      phone,
-      country: interest,
-      trade,
-      description: [message, experience ? `Experience: ${experience}` : null].filter(Boolean).join("\n\n") || null,
-    }).then((r) => {
+    // after(): reply to the visitor right away, but keep the serverless function
+    // alive until the Sangam push finishes (a bare un-awaited promise can be cut
+    // off by Vercel once the response is sent).
+    after(async () => {
+      const r = await pushLeadToSangam({
+        name: yourname,
+        email,
+        phone,
+        country: interest,
+        trade,
+        description: [message, experience ? `Experience: ${experience}` : null].filter(Boolean).join("\n\n") || null,
+      });
       if (!r.ok && !r.skipped) console.error("[sangam] push failed (non-blocking):", r.error);
     });
 

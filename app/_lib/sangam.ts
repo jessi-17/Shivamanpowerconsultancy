@@ -73,6 +73,10 @@ export async function pushLeadToSangam(input: SangamLeadInput): Promise<SangamPu
   const moduleName = process.env.SANGAM_MODULE || "Lead";
 
   if (!baseUrl || !token) {
+    // Loud on purpose: a missing env var used to drop leads with no trace.
+    console.warn(
+      `[sangam] Lead NOT sent to Sangam: ${!baseUrl ? "SANGAM_API_URL" : "SANGAM_API_TOKEN"} is not set in this environment.`
+    );
     return { ok: false, skipped: true, error: "Sangam credentials not configured" };
   }
 

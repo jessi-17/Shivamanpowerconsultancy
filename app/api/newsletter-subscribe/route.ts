@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 import { insertLead } from "../../_lib/db";
 import { pushLeadToSangam } from "../../_lib/sangam";
 
@@ -17,12 +17,14 @@ export async function POST(req: Request) {
       data: { frequency: freq },
     });
 
-    pushLeadToSangam({
-      name: email.split("@")[0],
-      email,
-      description: `Newsletter subscriber (${freq})`,
-      leadSource: "Web Site",
-    }).then((r) => {
+    // after(): keep the function alive until the Sangam push finishes.
+    after(async () => {
+      const r = await pushLeadToSangam({
+        name: email.split("@")[0],
+        email,
+        description: `Newsletter subscriber (${freq})`,
+        leadSource: "Web Site",
+      });
       if (!r.ok && !r.skipped) console.error("[sangam] newsletter push failed (non-blocking):", r.error);
     });
 
