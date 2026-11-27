@@ -107,6 +107,43 @@ export async function pushLeadToSangam(input: SangamLeadInput): Promise<SangamPu
   }
 
   const url = `${baseUrl.replace(/\/$/, "")}/save-data`;
+
+  // Sangam rejects the WHOLE record when one dropdown value isn't accepted —
+  // e.g. the trade "Welder(Arc,Mig )": its API treats commas as multi-value
+  // separators. Rather than lose the lead, move the rejected value into the
+  // description and retry (a few times, in case more than one field is off).
+  let result = await postToSangam(url, token, moduleName, fields);
+  for (let attempt = 0; attempt < 3 && !result.ok; attempt++) {
+    const bad = /Invalid values in '([a-z0-9_]+)' parameter/i.exec(result.error || "")?.[1];
+    if (!bad || !(bad in fields) || bad === "last_name") break;
+    const label = FIELD_LABELS[bad] || bad;
+    fields.description = [fields.description, `${label}: ${fields[bad]}`].filter(Boolean).join("\n\n");
+    delete fields[bad];
+    console.warn(`[sangam] Sangam rejected the "${bad}" value — moved it into the description and retrying.`);
+    result = await postToSangam(url, token, moduleName, fields);
+  }
+  return result;
+}
+
+const FIELD_LABELS: Record<string, string> = {
+  trade_c: "Trade",
+  countries_interested_in_c: "Country interested in",
+  lead_source: "Lead source",
+  lead_status_c: "Lead status",
+};
+
+/** Sangam sometimes returns `message` as an object/array (e.g. for duplicates). */
+function asText(v: unknown): string | undefined {
+  if (v == null || v === "") return undefined;
+  return typeof v === "string" ? v : JSON.stringify(v);
+}
+
+async function postToSangam(
+  url: string,
+  token: string,
+  moduleName: string,
+  fields: Record<string, string | number>
+): Promise<SangamPushResult> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 10_000);
 
@@ -123,19 +160,20 @@ export async function pushLeadToSangam(input: SangamLeadInput): Promise<SangamPu
     });
 
     const text = await res.text();
-    let json: { status?: number; message?: string } = {};
+    let json: { status?: number; message?: unknown } = {};
     try { json = text ? JSON.parse(text) : {}; } catch { /* keep raw text below */ }
+    const message = asText(json.message);
 
     if (!res.ok || (json.status && json.status >= 400)) {
       return {
         ok: false,
         status: json.status ?? res.status,
-        message: json.message,
-        error: json.message || text || `HTTP ${res.status}`,
+        message,
+        error: message || text || `HTTP ${res.status}`,
       };
     }
 
-    return { ok: true, status: json.status ?? res.status, message: json.message };
+    return { ok: true, status: json.status ?? res.status, message };
   } catch (err) {
     return { ok: false, error: (err as Error).message };
   } finally {
